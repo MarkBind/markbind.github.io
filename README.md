@@ -11,6 +11,9 @@ MarkBind is a tool built on top of Markdown syntax, for creating websites that c
 
 ## Team
 
-* [**Jiang Sheng**](https://github.com/Gisonrg): _Founding Member_ and _Team Lead_ for Aug 2016 - Jul 2017.
 * [**Aaron Chong Jun Hao**](https://github.com/acjh): Current _Team Lead_ since Aug 2017
+* [**Chua Yun Zhi Nicholas**](https://github.com/nicholaschuayunzhi): _Project Member_ since Jan 2018
 * [**Damith C. Rajapakse**](https://github.com/damithch): _Project Mentor_ since Aug 2016
+* [**Daniel Berzin Chua Yuan Siang**](https://github.com/danielbrzn): _Project Member_ since Jan 2018
+* [**Jiang Sheng**](https://github.com/Gisonrg): _Founding Member_ and _Team Lead_ for Aug 2016 - Jul 2017.
+* [**Rachael Sim Hwee Ling**](https://github.com/rachx): _Project Member_ since Jan 2018
