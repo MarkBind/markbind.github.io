@@ -1,5 +1,0 @@
-<include src="../plugins/filterTags.mbdf" />
-
-<span id="short" class="d-none">
-  <include src="../plugins/filterTags.mbdf#short" />
-</span>
