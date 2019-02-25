@@ -85,20 +85,19 @@
             </li>
           </navbar>
         </div>
-        <div class="website-content">
-          <h1 id="getting-started">Getting Started<a class="fa fa-anchor" href="#getting-started"></a></h1>
-          <p><big><strong>Prerequisites</strong></big></p>
-          <div class="indented">
-            <p><span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a basic knowledge of <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> and <a href="https://www.w3schools.com/html/">HTML</a> syntax<br>
-              <span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a basic knowledge of running CLI commands<br>
-              <span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a recent version of <a href="https://www.npmjs.com/get-npm">npm</a> installed</p>
-          </div>
-          <p><big><strong>1. Install MarkBind</strong></big></p>
-          <p>Run the following command to install MarkBind.</p>
-          <pre><code class="hljs">$ npm install -g markbind-cli
+        <h1 id="getting-started">Getting Started<a class="fa fa-anchor" href="#getting-started"></a></h1>
+        <p><big><strong>Prerequisites</strong></big></p>
+        <div class="indented">
+          <p><span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a basic knowledge of <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> and <a href="https://www.w3schools.com/html/">HTML</a> syntax<br>
+            <span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a basic knowledge of running CLI commands<br>
+            <span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a recent version of <a href="https://www.npmjs.com/get-npm">npm</a> installed</p>
+        </div>
+        <p><big><strong>1. Install MarkBind</strong></big></p>
+        <p>Run the following command to install MarkBind.</p>
+        <pre><code class="hljs">$ npm install -g markbind-cli
 </code></pre>
-          <p>Next, run the command <code>markbind</code>. If MarkBind has been installed correctly, you should see the MarkBind ascii logo followed by a summary of MarkBind commands as the output.</p>
-          <pre><code class="hljs">$ markbind
+        <p>Next, run the command <code>markbind</code>. If MarkBind has been installed correctly, you should see the MarkBind ascii logo followed by a summary of MarkBind commands as the output.</p>
+        <pre><code class="hljs">$ markbind
   __  __                  _      ____    _               _
  |  \/  |   __ _   _ __  | | __ | __ )  (_)  _ __     __| |
  | |\/| |  / _` | | '__| | |/ / |  _ \  | | | '_ \   / _` |
@@ -108,49 +107,48 @@
  v1.x.y
 Usage: ...
 </code></pre>
-          <p><big><strong>2. Initialize a new Project (or Start with an existing Project)</strong></big></p>
-          <tabs>
-          
-            <tab header="Initializing a new project">
-              <p>Navigate into an empty directory and run the following command to initialize a skeletal MarkBind site in that directory. It will create several new files in the directory e.g., <code>index.md</code>, <code>site.json</code>.</p>
-              <pre><code class="hljs">$ markbind init
+        <p><big><strong>2. Initialize a new Project (or Start with an existing Project)</strong></big></p>
+        <tabs>
+        
+          <tab header="Initializing a new project">
+            <p>Navigate into an empty directory and run the following command to initialize a skeletal MarkBind site in that directory. It will create several new files in the directory e.g., <code>index.md</code>, <code>site.json</code>.</p>
+            <pre><code class="hljs">$ markbind init
 </code></pre>
-              <div>
-                <box border-left-color="#00B0F0">
-                  <p>
-                    <font color="#00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></font>
-                    You can add the <code>--help</code> flag to any command to show the help screen. <br> e.g., <code>markbind init --help</code></p>
-                </box>
-              </div>
-            </tab>
-          
-            <tab header="Starting with an existing project">
-              <p>Navigate to the project
-                <tooltip content="The directory that contains all the project files. It is also the directory in which the `site.json` configuration file is located.">root directory</tooltip>.</p>
-            </tab>
-          </tabs>
-          <p><big><strong>3. Preview the site</strong></big></p>
-          <p>Run the following command in the same directory. It will generate a website from your source files, start a web server, and open a
-            <trigger trigger="click" for="modal:quickStart-livePreview">live preview</trigger> of your site in your default Browser.</p>
-          <modal large="" title="Live Preview" id="modal:quickStart-livePreview">
-            <span>
+            <div>
+              <box border-left-color="#00B0F0">
+                <p>
+                  <font color="#00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></font>
+                  You can add the <code>--help</code> flag to any command to show the help screen. <br> e.g., <code>markbind init --help</code></p>
+              </box>
+            </div>
+          </tab>
+        
+          <tab header="Starting with an existing project">
+            <p>Navigate to the project
+              <tooltip content="The directory that contains all the project files. It is also the directory in which the `site.json` configuration file is located.">root directory</tooltip>.</p>
+          </tab>
+        </tabs>
+        <p><big><strong>3. Preview the site</strong></big></p>
+        <p>Run the following command in the same directory. It will generate a website from your source files, start a web server, and open a
+          <trigger trigger="click" for="modal:quickStart-livePreview">live preview</trigger> of your site in your default Browser.</p>
+        <modal large="" title="Live Preview" id="modal:quickStart-livePreview">
+          <span>
 <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
-              <tooltip content="MarkBind file"><code>.mbd</code></tooltip>,
-              <tooltip content="MarkBind fragment"><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
-            </span>
-          </modal>
-          <pre><code class="hljs">$ markbind serve
+          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
+            <tooltip content="MarkBind file"><code>.mbd</code></tooltip>,
+            <tooltip content="MarkBind fragment"><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
+          </span>
+        </modal>
+        <pre><code class="hljs">$ markbind serve
 </code></pre>
-          <p>Do some changes to the <code>index.md</code> and save the file. The live preview in the Browser should update automatically to reflect your changes.</p>
-          <p>To stop the web server, go to the console running the <code>serve</code> command and press <kbd>CTRL</kbd> + <kbd>C</kbd> (or the equivalent in your OS).</p>
-          <p><big><strong>4. Next steps</strong></big></p>
-          <ol>
-            <li><strong>Update the content of your site</strong>. More info can be found in the <a href="/userGuide/authoringContents.html"><em>User Guide: Authoring Contents</em></a> section</li>
-            <li><strong>Deploy your site</strong>. More info can be found in the <a href="/userGuide/deployingTheSite.html"><em>User Guide: Deploying the Site</em></a> section.</li>
-          </ol>
-        </div>
+        <p>Do some changes to the <code>index.md</code> and save the file. The live preview in the Browser should update automatically to reflect your changes.</p>
+        <p>To stop the web server, go to the console running the <code>serve</code> command and press <kbd>CTRL</kbd> + <kbd>C</kbd> (or the equivalent in your OS).</p>
+        <p><big><strong>4. Next steps</strong></big></p>
+        <ol>
+          <li><strong>Update the content of your site</strong>. More info can be found in the <a href="/userGuide/authoringContents.html"><em>User Guide: Authoring Contents</em></a> section</li>
+          <li><strong>Deploy your site</strong>. More info can be found in the <a href="/userGuide/deployingTheSite.html"><em>User Guide: Deploying the Site</em></a> section.</li>
+        </ol>
       </div>
     </div>
   </div>
@@ -158,7 +156,7 @@ Usage: ...
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.github.io/markbind/">MarkBind 1.19.0</a> on Tue, 19 Feb 2019 08:07:52 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.1</a> on Mon, 25 Feb 2019 03:07:58 GMT]</small></div>
 </footer>
 </div>
 </body>

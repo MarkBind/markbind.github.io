@@ -89,263 +89,261 @@
           </li>
         </navbar>
       </div>
-      <div class="website-content">
-        <h1 id="markbind-syntax-overview">MarkBind Syntax Overview<a class="fa fa-anchor" href="#markbind-syntax-overview"></a></h1>
-        <span class="lead" id="overview">
+      <h1 id="markbind-syntax-overview">MarkBind Syntax Overview<a class="fa fa-anchor" href="#markbind-syntax-overview"></a></h1>
+      <span class="lead" id="overview">
 <p><strong>A MarkBind source file may contain a mix of several popular syntax schemes</strong> used in creating web pages. MarkBind source file can be as simple as basic Markdown, and you can use progressively more complicated syntax to create progressively more sophisticated Web pages while optimizing other aspects such as content reuse.
 </p></span>
-        <p>Given below is an overview of the syntax schemes supported by MarkBind.</p>
-        <box>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Exact usage of various MarkBind syntax is described in separate sections such as <span>
+      <p>Given below is an overview of the syntax schemes supported by MarkBind.</p>
+      <box>
+        <p><span aria-hidden="true" class="fas fa-info-circle"></span> Exact usage of various MarkBind syntax is described in separate sections such as <span>
 <span><a href="/userGuide/formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span>
-          </p>
-        </box>
-        <h4 id="support-for-markdown">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for Markdown<a class="fa fa-anchor" href="#support-for-markdown"></a></h4>
-        <p>MarkBind supports all basic Markdown syntax.</p>
-        <panel type="seamless" header="Some examples ...">
+        </p>
+      </box>
+      <h4 id="support-for-markdown">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for Markdown<a class="fa fa-anchor" href="#support-for-markdown"></a></h4>
+      <p>MarkBind supports all basic Markdown syntax.</p>
+      <panel type="seamless" header="Some examples ...">
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
 ...
 <span class="hljs-section">###### Heading level 6</span>
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <h3 id="heading-level-3">Heading level 3<a class="fa fa-anchor" href="#heading-level-3"></a></h3>
-                  <p>...</p>
-                  <h6 id="heading-level-6">Heading level 6<a class="fa fa-anchor" href="#heading-level-6"></a></h6>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <h3 id="heading-level-3">Heading level 3<a class="fa fa-anchor" href="#heading-level-3"></a></h3>
+                <p>...</p>
+                <h6 id="heading-level-6">Heading level 6<a class="fa fa-anchor" href="#heading-level-6"></a></h6>
+              </box>
             </div>
           </div>
+        </div>
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code></p>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code></p>
+              </box>
             </div>
           </div>
+        </div>
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.github.io</span>).
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p>MarkBind home is at <a href="https://markbind.github.io">here</a>.</p>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <p>MarkBind home is at <a href="https://markbind.org">here</a>.</p>
+              </box>
             </div>
           </div>
-        </panel>
+        </div>
+      </panel>
 
-        <h4 id="support-for-gfmd">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for GFMD<a class="fa fa-anchor" href="#support-for-gfmd"></a></h4>
-        <p>MarkBind supports additional Markdown features provided by Github-Flavored Markdown (GFMD).</p>
-        <panel type="seamless" header="Some examples ...">
+      <h4 id="support-for-gfmd">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for GFMD<a class="fa fa-anchor" href="#support-for-gfmd"></a></h4>
+      <p>MarkBind supports additional Markdown features provided by Github-Flavored Markdown (GFMD).</p>
+      <panel type="seamless" header="Some examples ...">
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs">```xml
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs">```xml
 &lt;foo&gt;
   &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;
 &lt;/foo&gt;
 ```
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </code></pre>
-                </box>
-              </div>
+              </box>
             </div>
           </div>
+        </div>
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
    - [ ] Sub item 1.1
    - [x] Sub item 1.2
 <span class="hljs-bullet">- </span>[x] Item 2
 <span class="hljs-bullet">- </span>[ ] Item 3
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <ul class="task-list">
-                    <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 1
-                      <ul class="task-list">
-                        <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Sub item 1.1</li>
-                        <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Sub item 1.2</li>
-                      </ul>
-                    </li>
-                    <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 2</li>
-                    <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
-                  </ul>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <ul class="task-list">
+                  <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 1
+                    <ul class="task-list">
+                      <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Sub item 1.1</li>
+                      <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Sub item 1.2</li>
+                    </ul>
+                  </li>
+                  <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 2</li>
+                  <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
+                </ul>
+              </box>
             </div>
           </div>
+        </div>
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p>👍 ❗️ ❌ 🚧</p>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <p>👍 ❗️ ❌ 🚧</p>
+              </box>
             </div>
           </div>
-        </panel>
+        </div>
+      </panel>
 
-        <h4 id="markbind-extensions-to-markdown">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> MarkBind Extensions to Markdown<a class="fa fa-anchor" href="#markbind-extensions-to-markdown"></a></h4>
-        <p>MarkBind adds several Markdown-like features on top of GFMD.</p>
-        <panel type="seamless" header="Some examples ...">
+      <h4 id="markbind-extensions-to-markdown">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> MarkBind Extensions to Markdown<a class="fa fa-anchor" href="#markbind-extensions-to-markdown"></a></h4>
+      <p>MarkBind adds several Markdown-like features on top of GFMD.</p>
+      <panel type="seamless" header="Some examples ...">
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
+              </box>
             </div>
           </div>
+        </div>
+        <div>
           <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
 <span class="hljs-bullet">- </span>( ) Item 2
 <span class="hljs-bullet">- </span>(x) Item 3
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <ul radio-group="e5b87" class="radio-list">
-                    <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 1</label></li>
-                    <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 2</label></li>
-                    <li class="radio-list-item"><label><input class="radio-list-input" checked name="e5b87" type="radio"> Item 3</label></li>
-                  </ul>
-                </box>
-              </div>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <ul radio-group="e5b87" class="radio-list">
+                  <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 1</label></li>
+                  <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 2</label></li>
+                  <li class="radio-list-item"><label><input class="radio-list-input" checked name="e5b87" type="radio"> Item 3</label></li>
+                </ul>
+              </box>
             </div>
           </div>
-        </panel>
+        </div>
+      </panel>
 
-        <h4 id="markbind-custom-syntax">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> MarkBind Custom Syntax<a class="fa fa-anchor" href="#markbind-custom-syntax"></a></h4>
-        <p>Given below are some examples of custom syntax added by MarkBind.</p>
-        <blockquote>
-          <span>
+      <h4 id="markbind-custom-syntax">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> MarkBind Custom Syntax<a class="fa fa-anchor" href="#markbind-custom-syntax"></a></h4>
+      <p>Given below are some examples of custom syntax added by MarkBind.</p>
+      <blockquote>
+        <span>
 <p><strong>MarkBind variables are ideal for reusing small bits of code</strong> in multiple places; you can define a variable to represent the code bit in question and reuse it anywhere in the site by referring the variable instead of duplicating the code bit.
 </p></span></blockquote>
-        <div class="indented">
-          More info: <span>
+      <div class="indented">
+        More info: <span>
 <span><a href="/userGuide/reusingContents.html#variables"><em>User Guide → Reusing Contents → Variables</em></a></span></span>
-        </div>
-        <br>
-        <blockquote>
-          <span>
+      </div>
+      <br>
+      <blockquote>
+        <span>
 <p><strong>MarkBind has a powerful <code>&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
 </p></span></blockquote>
-        <div class="indented">
-          More info: <span>
+      <div class="indented">
+        More info: <span>
 <span><a href="/userGuide/reusingContents.html#includes"><em>User Guide → Reusing Contents → Includes</em></a></span></span>
-        </div>
-        <br>
-        <blockquote>
-          <span>
+      </div>
+      <br>
+      <blockquote>
+        <span>
 <p><strong>MarkBind provides a number of components</strong> (e.g., expandable panels, tabbed displays, navigation bars, etc.) that you can use to enhance the appearance/behavior of your pages.
 </p></span></blockquote>
-        <div class="indented">
-          More info: <span>
+      <div class="indented">
+        More info: <span>
 <span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
-        </div>
-        <br>
+      </div>
+      <br>
 
-        <h4 id="support-for-html-javascript-css">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for HTML, JavaScript, CSS<a class="fa fa-anchor" href="#support-for-html-javascript-css"></a></h4>
-        <blockquote>
-          <span>
+      <h4 id="support-for-html-javascript-css">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for HTML, JavaScript, CSS<a class="fa fa-anchor" href="#support-for-html-javascript-css"></a></h4>
+      <blockquote>
+        <span>
 <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
 </p></span></blockquote>
-        <div class="indented">
-          More info: <span>
+      <div class="indented">
+        More info: <span>
 <span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
-        </div>
-        <br>
+      </div>
+      <br>
 
-        <h4 id="support-for-vuestrap-and-bootstrap">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for VueStrap and BootStrap<a class="fa fa-anchor" href="#support-for-vuestrap-and-bootstrap"></a></h4>
-        <p>As MarkBind uses <a href="https://bootstrap-vue.js.org/docs/components/alert/">VueStrap</a> (which in turn is based on <a href="https://getbootstrap.com/docs/4.2/getting-started/introduction/">BootStrap</a>) internally, many of their syntax work
-          within MarkBind files too.</p>
+      <h4 id="support-for-vuestrap-and-bootstrap">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for VueStrap and BootStrap<a class="fa fa-anchor" href="#support-for-vuestrap-and-bootstrap"></a></h4>
+      <p>As MarkBind uses <a href="https://bootstrap-vue.js.org/docs/components/alert/">VueStrap</a> (which in turn is based on <a href="https://getbootstrap.com/docs/4.2/getting-started/introduction/">BootStrap</a>) internally, many of their syntax work
+        within MarkBind files too.</p>
 
-        <h4 id="support-for-nunjucks">
-          <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for Nunjucks<a class="fa fa-anchor" href="#support-for-nunjucks"></a></h4>
-        <p><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> is a JavaScript based templating tool. Here is a simple example:</p>
-        <p>
-          <box><span>
+      <h4 id="support-for-nunjucks">
+        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for Nunjucks<a class="fa fa-anchor" href="#support-for-nunjucks"></a></h4>
+      <p><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> is a JavaScript based templating tool. Here is a simple example:</p>
+      <p>
+        <box><span>
 <code>&lt;ul&gt;</code><br>
 <code>{<span></span>% for item in [1, 2, 3, 4] %<span></span>}</code><br>
-            <code>&lt;li&gt;</code><code>Item {<span></span>{ item }}</code><code>&lt;/li&gt;</code><br>
-            <code>{<span></span>% endfor %<span></span>}</code><br>
-            <code>&lt;/ul&gt;</code></span>
-          </box>
-        </p>
-        <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
-        <box>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-          </ul>
+          <code>&lt;li&gt;</code><code>Item {<span></span>{ item }}</code><code>&lt;/li&gt;</code><br>
+          <code>{<span></span>% endfor %<span></span>}</code><br>
+          <code>&lt;/ul&gt;</code></span>
         </box>
-        <p>As MarkBind uses Nunjucks behind the scene, <strong>MarkBind is generally compatible with Nunjucks</strong>, which means you can use Nunjucks templating in your source files. Note that <mark>the code is processed for Nunjucks syntax before the rest of the MarkBind syntax are processed</mark>.</p>
-      </div>
+      </p>
+      <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
+      <box>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+      </box>
+      <p>As MarkBind uses Nunjucks behind the scene, <strong>MarkBind is generally compatible with Nunjucks</strong>, which means you can use Nunjucks templating in your source files. Note that <mark>the code is processed for Nunjucks syntax before the rest of the MarkBind syntax are processed</mark>.</p>
     </div>
   </div>
 </div>
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.github.io/markbind/">MarkBind 1.19.0</a> on Tue, 19 Feb 2019 08:07:52 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.1</a> on Mon, 25 Feb 2019 03:07:58 GMT]</small></div>
 </footer>
 </div>
 </body>

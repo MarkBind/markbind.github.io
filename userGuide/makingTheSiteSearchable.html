@@ -101,142 +101,138 @@
             </li>
           </navbar>
         </div>
-        <div class="website-content">
-          <h1 id="making-the-site-searchable">Making the Site Searchable<a class="fa fa-anchor" href="#making-the-site-searchable"></a></h1>
-          <span class="lead" id="overview">
-<p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong>. You can add a <a href="/userGuide/usingComponents.html#search-bar">Search Bar</a> component to your pages <span class="dimmed">(e.g., into the top navigation bar)</span>          to allow readers to search your website for keywords.
-          </p>
-          </span>
-          <p><strong>All headings of levels 1-3 are captured in the search index</strong> by default. You can change this setting using the <a href="/userGuide/siteConfiguration.html#headingindexinglevel"><code>headingIndexLevel</code> property of the <code>site.json</code></a>.</p>
+        <h1 id="making-the-site-searchable">Making the Site Searchable<a class="fa fa-anchor" href="#making-the-site-searchable"></a></h1>
+        <span class="lead" id="overview">
+<p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong>. You can add a <a href="/userGuide/usingComponents.html#search-bar">Search Bar</a> component to your pages <span class="dimmed">(e.g., into the top navigation bar)</span>        to allow readers to search your website for keywords.
+        </p>
+        </span>
+        <p><strong>All headings of levels 1-3 are captured in the search index</strong> by default. You can change this setting using the <a href="/userGuide/siteConfiguration.html#headingindexinglevel"><code>headingIndexLevel</code> property of the <code>site.json</code></a>.</p>
+        <div>
+          <h2 id="search-bars">Search Bars<a class="fa fa-anchor" href="#search-bars"></a></h2>
+          <p>The <code>searchbar</code> component allows users to search all headings within any page on the site.</p>
           <div>
-            <h2 id="search-bars">Search Bars<a class="fa fa-anchor" href="#search-bars"></a></h2>
-            <p>The <code>searchbar</code> component allows users to search all headings within any page on the site.</p>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search (Right-aligned dropdown)"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </code></pre>
-                <p>To use the searchbar within a navbar, add the following markup to your file. The searchbar can be positioned using the slot attribute for the list. The following markup adds a searchbar to the right side of the navbar with appropriate
-                  styling.
-                </p>
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
+              <p>To use the searchbar within a navbar, add the following markup to your file. The searchbar can be positioned using the slot attribute for the list. The following markup adds a searchbar to the right side of the navbar with appropriate styling.</p>
+              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p>Enter a search term (eg. 'search bar') to see the search result dropdown.
-                    <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar>
-                    <br>
-                    <searchbar :data="searchData" placeholder="Search (Right-aligned dropdown)" :on-hit="searchCallback" menu-align-right=""></searchbar>
-                  </p>
-                </box>
-              </div>
             </div>
-            <p><strong><strong>Options</strong></strong>
-            </p>
-            <div class="table-responsive">
-              <table class="markbind-table table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>data</td>
-                    <td><code>Array</code></td>
-                    <td></td>
-                    <td>The local data source for suggestions. Expected to be a primitive array. To use MarkBind's search functionality, set this value to <code>&quot;searchData&quot;</code>.</td>
-                  </tr>
-                  <tr>
-                    <td>menu-align-right</td>
-                    <td><code>Boolean</code></td>
-                    <td><code>false</code></td>
-                    <td>Whether the search bar's dropdown list will be right-aligned.</td>
-                  </tr>
-                  <tr>
-                    <td>on-hit</td>
-                    <td><code>Function</code></td>
-                    <td></td>
-                    <td>A callback function when you click or hit return on an item. To use MarkBind's search functionality, set this value to <code>&quot;searchCallback&quot;</code>.</td>
-                  </tr>
-                  <tr>
-                    <td>placeholder</td>
-                    <td><code>String</code></td>
-                    <td><code>''</code></td>
-                    <td>The placeholder text shown when no keywords are entered in the search bar.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <box type="warning">
-              <p>Note: If you are using MarkBind's search functionality, then <code>enableSearch</code> <strong>must be set to <code>true</code> in <code>site.json</code></strong>.</p>
-              <p>See: <a href="/userGuide/siteConfiguration.html#enable-search">User Guide: Site Configuration → enableSearch</a>.</p>
-            </box>
-            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a>.</span>
-            </p>
-            <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span>            <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-            </code>
-            </pre>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</code></pre>
-            </span>
-            <span id="examples" class="d-none">
-<p><searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar></p></span></div>
-          <div>
-            <h2 id="keywords">Keywords<a class="fa fa-anchor" href="#keywords"></a></h2>
-            <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword
-              without rendering it in the page, add <code>d-none</code> as a class.</p>
+            <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
-              <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-              <pre><code class="hljs html">#### Developer Testing
+              <box border-left-color="grey" background-color="white">
+                <p>Enter a search term (eg. 'search bar') to see the search result dropdown.
+                  <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar>
+                  <br>
+                  <searchbar :data="searchData" placeholder="Search (Right-aligned dropdown)" :on-hit="searchCallback" menu-align-right=""></searchbar>
+                </p>
+              </box>
+            </div>
+          </div>
+          <p><strong><strong>Options</strong></strong>
+          </p>
+          <div class="table-responsive">
+            <table class="markbind-table table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data</td>
+                  <td><code>Array</code></td>
+                  <td></td>
+                  <td>The local data source for suggestions. Expected to be a primitive array. To use MarkBind's search functionality, set this value to <code>&quot;searchData&quot;</code>.</td>
+                </tr>
+                <tr>
+                  <td>menu-align-right</td>
+                  <td><code>Boolean</code></td>
+                  <td><code>false</code></td>
+                  <td>Whether the search bar's dropdown list will be right-aligned.</td>
+                </tr>
+                <tr>
+                  <td>on-hit</td>
+                  <td><code>Function</code></td>
+                  <td></td>
+                  <td>A callback function when you click or hit return on an item. To use MarkBind's search functionality, set this value to <code>&quot;searchCallback&quot;</code>.</td>
+                </tr>
+                <tr>
+                  <td>placeholder</td>
+                  <td><code>String</code></td>
+                  <td><code>''</code></td>
+                  <td>The placeholder text shown when no keywords are entered in the search bar.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <box type="warning">
+            <p>Note: If you are using MarkBind's search functionality, then <code>enableSearch</code> <strong>must be set to <code>true</code> in <code>site.json</code></strong>.</p>
+            <p>See: <a href="/userGuide/siteConfiguration.html#enable-search">User Guide: Site Configuration → enableSearch</a>.</p>
+          </box>
+          <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a>.</span>
+          </p>
+          <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span>          <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+          </code>
+          </pre>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+          </span>
+          <span id="examples" class="d-none">
+<p><searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar></p></span></div>
+        <div>
+          <h2 id="keywords">Keywords<a class="fa fa-anchor" href="#keywords"></a></h2>
+          <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword
+            without rendering it in the page, add <code>d-none</code> as a class.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
+            <pre><code class="hljs html">#### Developer Testing
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 
 This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword"</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
 </code></pre>
-              <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
-              <box>
-                <p><big><strong>Developer Testing</strong></big><br></p>
-                <p>This is good for catching <span class="keyword">regressions</span>.
-                </p>
-              </box>
-            </div>
-            <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
-            <div class="indented">
-              <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+            <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
+            <box>
+              <p><big><strong>Developer Testing</strong></big><br></p>
+              <p>This is good for catching <span class="keyword">regressions</span>.
+              </p>
+            </box>
+          </div>
+          <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
+            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   keywords: regress, regression testing, regressions
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 ...
 </code></pre>
-            </div>
-            <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            </code>
-            </pre>
-            </span>
           </div>
-          <box type="warning">
-            <p>If you do not wish to use MarkBind's searchbar (e.g. you have an external service provider), it may be helpful to include the option <code>enableSearch: false</code> in your <code>site.json</code>. This stops MarkBind from indexing search
-              headings and speeds up building.
-            </p>
-          </box>
+          <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          </code>
+          </pre>
+          </span>
         </div>
+        <box type="warning">
+          <p>If you do not wish to use MarkBind's searchbar (e.g. you have an external service provider), it may be helpful to include the option <code>enableSearch: false</code> in your <code>site.json</code>. This stops MarkBind from indexing search headings
+            and speeds up building.
+          </p>
+        </box>
       </div>
     </div>
   </div>
@@ -244,7 +240,7 @@ This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">spa
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.github.io/markbind/">MarkBind 1.19.0</a> on Tue, 19 Feb 2019 08:07:52 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.1</a> on Mon, 25 Feb 2019 03:07:58 GMT]</small></div>
 </footer>
 </div>
 </body>

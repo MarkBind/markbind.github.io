@@ -84,121 +84,120 @@
           </li>
         </navbar>
       </div>
-      <div class="website-content">
-        <h1 id="reader-facing-features">Reader-Facing Features<a class="fa fa-anchor" href="#reader-facing-features"></a></h1>
-        <div></div>
-        <h5 id="text-styles">Text Styles<a class="fa fa-anchor" href="#text-styles"></a></h5>
-        <box>
+      <h1 id="reader-facing-features">Reader-Facing Features<a class="fa fa-anchor" href="#reader-facing-features"></a></h1>
+      <div></div>
+      <h5 id="text-styles">Text Styles<a class="fa fa-anchor" href="#text-styles"></a></h5>
+      <box>
+        <div>
+          <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code>
+            <s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
+        </div>
+        <panel type="seamless" header="%%details...%%">
           <div>
-            <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code>
-              <s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
-          </div>
-          <panel type="seamless" header="%%details...%%">
-            <div>
-              <h2 id="text-styles-2">Text Styles<a class="fa fa-anchor" href="#text-styles-2"></a></h2>
-              <p>Markdown text styles:</p>
-              <span id="main-example-markdown">
-<div>
-<p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
-</code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code></p>
-                </box>
-              </div>
-            </div>
-            </span>
-            <p>Additional syntax from GFMD:</p>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs markdown">~~Strike through~~
-</code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p><s>Strike through</s></p>
-                </box>
-              </div>
-            </div>
-            <p>Syntax added by MarkBind:</p>
-            <span id="main-example-markbind">
+            <h2 id="text-styles-2">Text Styles<a class="fa fa-anchor" href="#text-styles-2"></a></h2>
+            <p>Markdown text styles:</p>
+            <span id="main-example-markdown">
 <div>
 <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
+              <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
 </code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
+                <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code></p>
               </box>
             </div>
-      </div>
-      </span>
-      <p><small>Alternative syntax: <a href="https://www.markdownguide.org/basic-syntax#emphasis">https://www.markdownguide.org/basic-syntax#emphasis</a></small></p>
-      <span id="short" class="d-none">
+          </div>
+          </span>
+          <p>Additional syntax from GFMD:</p>
+          <div>
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs markdown">~~Strike through~~
+</code></pre>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <p><s>Strike through</s></p>
+              </box>
+            </div>
+          </div>
+          <p>Syntax added by MarkBind:</p>
+          <span id="main-example-markbind">
+<div>
+<p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
+</code></pre>
+          </div>
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
+            </box>
+          </div>
+    </div>
+    </span>
+    <p><small>Alternative syntax: <a href="https://www.markdownguide.org/basic-syntax#emphasis">https://www.markdownguide.org/basic-syntax#emphasis</a></small></p>
+    <span id="short" class="d-none">
 ```markdown
 **Bold**, _Italic_, ___Bold and Italic___, `Inline Code`
 ~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, %%Dim%%
 ```
 </span>
-      <span id="examples" class="d-none">
+    <span id="examples" class="d-none">
 <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code>
 <s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
-      </span>
-    </div>
-    </panel>
-    </box>
-    <h5 id="blockquotes">Blockquotes<a class="fa fa-anchor" href="#blockquotes"></a></h5>
-    <box>
-      <div>
+    </span>
+  </div>
+  </panel>
+  </box>
+  <h5 id="blockquotes">Blockquotes<a class="fa fa-anchor" href="#blockquotes"></a></h5>
+  <box>
+    <div>
+      <blockquote>
+        <p>Blockquote, first paragraph</p>
+        <p>Second paragraph</p>
         <blockquote>
-          <p>Blockquote, first paragraph</p>
-          <p>Second paragraph</p>
-          <blockquote>
-            <p>Nested blockquote</p>
-          </blockquote>
+          <p>Nested blockquote</p>
         </blockquote>
-      </div>
-      <panel type="seamless" header="%%details...%%">
+      </blockquote>
+    </div>
+    <panel type="seamless" header="%%details...%%">
+      <div>
+        <h2 id="blockquotes-2">Blockquotes<a class="fa fa-anchor" href="#blockquotes-2"></a></h2>
         <div>
-          <h2 id="blockquotes-2">Blockquotes<a class="fa fa-anchor" href="#blockquotes-2"></a></h2>
-          <div>
-            <p><span class="dimmed">CODE:</span></p>
-            <div class="indented">
-              <pre><code class="hljs markdown">Normal text
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown">Normal text
 <span class="hljs-quote">&gt; Blockquote, first paragraph</span>
 <span class="hljs-quote">&gt;
 &gt; Second paragraph</span>
 &gt;&gt; Nested quoteblock
 </code></pre>
-            </div>
-            <p><span class="dimmed">OUTPUT:</span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <p>Normal text</p>
-                <blockquote>
-                  <p>Blockquote, first paragraph</p>
-                  <p>Second paragraph</p>
-                  <blockquote>
-                    <p>Nested blockquote</p>
-                  </blockquote>
-                </blockquote>
-              </box>
-            </div>
           </div>
-          <p>Alternatively, you can use <code>&lt;blockquote&gt;</code> tags:</p>
-          <div>
-            <p><span class="dimmed">CODE:</span></p>
-            <div class="indented">
-              <pre><code class="hljs markdown">Normal text
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <p>Normal text</p>
+              <blockquote>
+                <p>Blockquote, first paragraph</p>
+                <p>Second paragraph</p>
+                <blockquote>
+                  <p>Nested blockquote</p>
+                </blockquote>
+              </blockquote>
+            </box>
+          </div>
+        </div>
+        <p>Alternatively, you can use <code>&lt;blockquote&gt;</code> tags:</p>
+        <div>
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown">Normal text
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span></span>
 Blockquote, first paragraph
 
@@ -208,71 +207,71 @@ Nested blockquote
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span></span>
 </code></pre>
-            </div>
-            <p><span class="dimmed">OUTPUT:</span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <p>Normal text</p>
-                <blockquote>
-                  Blockquote, first paragraph
-                  <p>Second paragraph</p>
-                  <blockquote>
-                    Nested blockquote
-                  </blockquote>
-                </blockquote>
-              </box>
-            </div>
           </div>
-          <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#blockquotes-1">https://www.markdownguide.org/basic-syntax#blockquotes-1</a></small></p>
-          <span id="short" class="d-none">
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <p>Normal text</p>
+              <blockquote>
+                Blockquote, first paragraph
+                <p>Second paragraph</p>
+                <blockquote>
+                  Nested blockquote
+                </blockquote>
+              </blockquote>
+            </box>
+          </div>
+        </div>
+        <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#blockquotes-1">https://www.markdownguide.org/basic-syntax#blockquotes-1</a></small></p>
+        <span id="short" class="d-none">
 <pre><code class="hljs markdown"><span class="hljs-quote">&gt; Blockquote, first paragraph</span>
-          <span class="hljs-quote">&gt;
+        <span class="hljs-quote">&gt;
 &gt; Second paragraph</span> &gt;&gt; Nested blockquote
-          </code>
-          </pre>
-          </span>
-          <span id="examples" class="d-none">
+        </code>
+        </pre>
+        </span>
+        <span id="examples" class="d-none">
 <blockquote>
 <p>Blockquote, first paragraph</p>
 <p>Second paragraph</p>
 <blockquote>
 <p>Nested blockquote
 </p></blockquote></blockquote></span></div>
-      </panel>
-    </box>
-    <h5 id="lists">Lists<a class="fa fa-anchor" href="#lists"></a></h5>
-    <box>
+    </panel>
+  </box>
+  <h5 id="lists">Lists<a class="fa fa-anchor" href="#lists"></a></h5>
+  <box>
+    <div>
+      <ol>
+        <li>Item 1
+          <ol>
+            <li>Sub item 1.1</li>
+            <li>Sub item 1.2</li>
+          </ol>
+        </li>
+      </ol>
+      <ul>
+        <li>Item 2
+          <ul>
+            <li>item 2.1</li>
+          </ul>
+        </li>
+      </ul>
+      <ul radio-group="292b4" class="task-list">
+        <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
+        <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 4</li>
+        <li class="radio-list-item"><label><input class="radio-list-input" name="292b4" type="radio"> Item 5</label></li>
+      </ul>
+    </div>
+    <panel type="seamless" header="%%details...%%">
       <div>
-        <ol>
-          <li>Item 1
-            <ol>
-              <li>Sub item 1.1</li>
-              <li>Sub item 1.2</li>
-            </ol>
-          </li>
-        </ol>
-        <ul>
-          <li>Item 2
-            <ul>
-              <li>item 2.1</li>
-            </ul>
-          </li>
-        </ul>
-        <ul radio-group="292b4" class="task-list">
-          <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
-          <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 4</li>
-          <li class="radio-list-item"><label><input class="radio-list-input" name="292b4" type="radio"> Item 5</label></li>
-        </ul>
-      </div>
-      <panel type="seamless" header="%%details...%%">
+        <h2 id="lists-2">Lists<a class="fa fa-anchor" href="#lists-2"></a></h2>
+        <p><strong><strong>Unordered lists:</strong></strong>
+        </p>
         <div>
-          <h2 id="lists-2">Lists<a class="fa fa-anchor" href="#lists-2"></a></h2>
-          <p><strong><strong>Unordered lists:</strong></strong>
-          </p>
-          <div>
-            <p><span class="dimmed">CODE:</span></p>
-            <div class="indented">
-              <pre><code class="hljs markdown"><span class="hljs-bullet">* </span>Item 1
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown"><span class="hljs-bullet">* </span>Item 1
   * Sub item 1.1
   * Sub item 1.2<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
 <span class="hljs-code">    Second line</span>
@@ -280,117 +279,117 @@ Nested blockquote
 <span class="hljs-bullet">* </span>Item 2
 <span class="hljs-bullet">* </span>Item 3
 </code></pre>
-            </div>
-            <p><span class="dimmed">OUTPUT:</span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <ul>
-                  <li>Item 1
-                    <ul>
-                      <li>Sub item 1.1</li>
-                      <li>Sub item 1.2<br> Second line
-                        <ul>
-                          <li>Sub item 1.2.1</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
-                </ul>
-              </box>
-            </div>
           </div>
-          <p><strong><strong>Ordered lists:</strong></strong>
-          </p>
-          <div>
-            <p><span class="dimmed">CODE:</span></p>
-            <div class="indented">
-              <pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <ul>
+                <li>Item 1
+                  <ul>
+                    <li>Sub item 1.1</li>
+                    <li>Sub item 1.2<br> Second line
+                      <ul>
+                        <li>Sub item 1.2.1</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </box>
+          </div>
+        </div>
+        <p><strong><strong>Ordered lists:</strong></strong>
+        </p>
+        <div>
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1
    1. Sub item 1.1
    1. Sub item 1.2
 <span class="hljs-bullet">1. </span>Item 2
 <span class="hljs-bullet">1. </span>Item 3
 </code></pre>
-            </div>
-            <p><span class="dimmed">OUTPUT:</span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <ol>
-                  <li>Item 1
-                    <ol>
-                      <li>Sub item 1.1</li>
-                      <li>Sub item 1.2</li>
-                    </ol>
-                  </li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
-                </ol>
-              </box>
-            </div>
           </div>
-          <p><small>More info on above list types: <a href="https://www.markdownguide.org/basic-syntax#lists">https://www.markdownguide.org/basic-syntax#lists</a></small></p>
-          <p><strong><strong>Task lists</strong></strong> (from GFMD):</p>
-          <span id="main-example-gfmd">
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <ol>
+                <li>Item 1
+                  <ol>
+                    <li>Sub item 1.1</li>
+                    <li>Sub item 1.2</li>
+                  </ol>
+                </li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ol>
+            </box>
+          </div>
+        </div>
+        <p><small>More info on above list types: <a href="https://www.markdownguide.org/basic-syntax#lists">https://www.markdownguide.org/basic-syntax#lists</a></small></p>
+        <p><strong><strong>Task lists</strong></strong> (from GFMD):</p>
+        <span id="main-example-gfmd">
 <div>
 <p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
+        <div class="indented">
+          <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
    - [ ] Sub item 1.1
    - [x] Sub item 1.2
 <span class="hljs-bullet">- </span>[x] Item 2
 <span class="hljs-bullet">- </span>[ ] Item 3
 </code></pre>
-          </div>
-          <p><span class="dimmed">OUTPUT:</span></p>
-          <div class="indented">
-            <box border-left-color="grey" background-color="white">
-              <ul class="task-list">
-                <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 1
-                  <ul class="task-list">
-                    <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Sub item 1.1</li>
-                    <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Sub item 1.2</li>
-                  </ul>
-                </li>
-                <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 2</li>
-                <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
-              </ul>
-            </box>
-          </div>
         </div>
-        </span>
-        <p><strong><strong>Radio-button lists:</strong></strong>
-          <span id="main-example-markbind"></span></p>
-        <div>
-          <p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <ul class="task-list">
+              <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 1
+                <ul class="task-list">
+                  <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Sub item 1.1</li>
+                  <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Sub item 1.2</li>
+                </ul>
+              </li>
+              <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 2</li>
+              <li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
+            </ul>
+          </box>
+        </div>
+      </div>
+      </span>
+      <p><strong><strong>Radio-button lists:</strong></strong>
+        <span id="main-example-markbind"></span></p>
+      <div>
+        <p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
 <span class="hljs-bullet">- </span>( ) Item 2
 <span class="hljs-bullet">- </span>(x) Item 3
 </code></pre>
-          </div>
-          <p><span class="dimmed">OUTPUT:</span></p>
-          <div class="indented">
-            <box border-left-color="grey" background-color="white">
-              <ul radio-group="e5b87" class="radio-list">
-                <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 1</label></li>
-                <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 2</label></li>
-                <li class="radio-list-item"><label><input class="radio-list-input" checked name="e5b87" type="radio"> Item 3</label></li>
-              </ul>
-            </box>
-          </div>
         </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <ul radio-group="e5b87" class="radio-list">
+              <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 1</label></li>
+              <li class="radio-list-item"><label><input class="radio-list-input" name="e5b87" type="radio"> Item 2</label></li>
+              <li class="radio-list-item"><label><input class="radio-list-input" checked name="e5b87" type="radio"> Item 3</label></li>
+            </ul>
+          </box>
+        </div>
+      </div>
 
-        <span id="short" class="d-none">
+      <span id="short" class="d-none">
 <pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1 1. Sub item 1.1 1. Sub item 1.2
-        <span class="hljs-bullet">* </span>Item 2 * item 2.1
-        <span class="hljs-bullet">- </span>[ ] Item 3
-        <span class="hljs-bullet">- </span>[x] Item 4
-        <span class="hljs-bullet">- </span>( ) Item 5
-        </code>
-        </pre>
-        </span>
-        <span id="examples" class="d-none">
+      <span class="hljs-bullet">* </span>Item 2 * item 2.1
+      <span class="hljs-bullet">- </span>[ ] Item 3
+      <span class="hljs-bullet">- </span>[x] Item 4
+      <span class="hljs-bullet">- </span>( ) Item 5
+      </code>
+      </pre>
+      </span>
+      <span id="examples" class="d-none">
 <ol>
 <li>Item 1
 <ol>
@@ -405,60 +404,60 @@ Nested blockquote
 <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> Item 4</li>
 <li class="radio-list-item"><label><input class="radio-list-input" name="890e1" type="radio"> Item 5
 </label></li></ul></span></div>
-  </panel>
-  </box>
-  <h5 id="code">Code<a class="fa fa-anchor" href="#code"></a></h5>
-  <box>
-    <div>
-      <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+</panel>
+</box>
+<h5 id="code">Code<a class="fa fa-anchor" href="#code"></a></h5>
+<box>
+  <div>
+    <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </code></pre>
-      <p>Syntax coloring for inline code: <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>        too!</p>
-    </div>
-    <panel type="seamless" header="%%details...%%">
+    <p>Syntax coloring for inline code: <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>      too!</p>
+  </div>
+  <panel type="seamless" header="%%details...%%">
+    <div>
+      <h2 id="code-2">Code<a class="fa fa-anchor" href="#code-2"></a></h2>
+      <p>MarkBind can provide syntax coloring for a code block (aka <em>Fenced Code Blocks</em>).
+        <span id="main-example"></span></p>
       <div>
-        <h2 id="code-2">Code<a class="fa fa-anchor" href="#code-2"></a></h2>
-        <p>MarkBind can provide syntax coloring for a code block (aka <em>Fenced Code Blocks</em>).
-          <span id="main-example"></span></p>
-        <div>
-          <p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <pre><code class="hljs">```xml
+        <p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs">```xml
 &lt;foo&gt;
   &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;
 &lt;/foo&gt;
 ```
 </code></pre>
-          </div>
-          <p><span class="dimmed">OUTPUT:</span></p>
-          <div class="indented">
-            <box border-left-color="grey" background-color="white">
-              <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+        </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </code></pre>
-            </box>
-          </div>
+          </box>
         </div>
+      </div>
 
-        <p><small>More info: <a href="https://www.markdownguide.org/extended-syntax#fenced-code-blocks">https://www.markdownguide.org/extended-syntax#fenced-code-blocks</a></small></p>
-        <p>In addition, MarkBind can apply syntax-coloring on inline code too.</p>
-        <div>
-          <p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <pre><code class="hljs">Consider the xml code `&lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;`{.xml},
+      <p><small>More info: <a href="https://www.markdownguide.org/extended-syntax#fenced-code-blocks">https://www.markdownguide.org/extended-syntax#fenced-code-blocks</a></small></p>
+      <p>In addition, MarkBind can apply syntax-coloring on inline code too.</p>
+      <div>
+        <p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs">Consider the xml code `&lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;`{.xml},
 or the java code `public static void main(String[] args)`{.java}.
 </code></pre>
-          </div>
-          <p><span class="dimmed">OUTPUT:</span></p>
-          <div class="indented">
-            <box border-left-color="grey" background-color="white">
-              <p>Consider the xml code <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>,<br>                or the java code <code class="hljs inline java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span></code>.</p>
-            </box>
-          </div>
         </div>
-        <span id="short" class="d-none">
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <p>Consider the xml code <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>,<br>              or the java code <code class="hljs inline java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span></code>.</p>
+          </box>
+        </div>
+      </div>
+      <span id="short" class="d-none">
 ````
 ```xml
 <foo>
@@ -470,130 +469,129 @@ or the java code `public static void main(String[] args)`{.java}.
 `<bar type="name">goo</bar>`{.xml}
 ```
 </span>
-        <span id="examples" class="d-none">
+      <span id="examples" class="d-none">
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
-        </code>
-        </pre>
-        <p>Syntax coloring for inline code: <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>          too!</p>
-        </span>
-      </div>
-    </panel>
-  </box>
-  <h5 id="horizontal-rules">Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules"></a></h5>
-  <box>
-    <div>
-      <hr>
+      <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
+      </code>
+      </pre>
+      <p>Syntax coloring for inline code: <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>        too!</p>
+      </span>
     </div>
-    <panel type="seamless" header="%%details...%%">
+  </panel>
+</box>
+<h5 id="horizontal-rules">Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules"></a></h5>
+<box>
+  <div>
+    <hr>
+  </div>
+  <panel type="seamless" header="%%details...%%">
+    <div>
+      <h2 id="horizontal-rules-2">Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules-2"></a></h2>
+      <p>Use three or more asterisks (<code>***</code>), dashes (<code>---</code>), or underscores (<code>___</code>) to indicate a horizontal line.</p>
       <div>
-        <h2 id="horizontal-rules-2">Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules-2"></a></h2>
-        <p>Use three or more asterisks (<code>***</code>), dashes (<code>---</code>), or underscores (<code>___</code>) to indicate a horizontal line.</p>
-        <div>
-          <p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <pre><code class="hljs markdown"><span class="hljs-section">*****
+        <p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs markdown"><span class="hljs-section">*****
 -----</span>
 <span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-emphasis">___</span>_
 </code></pre>
-          </div>
-          <p><span class="dimmed">OUTPUT:</span></p>
-          <div class="indented">
-            <box border-left-color="grey" background-color="white">
-              <hr>
-              <hr>
-              <hr>
-              <hr>
-            </box>
-          </div>
         </div>
-        <span id="short" class="d-none">
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <hr>
+            <hr>
+            <hr>
+            <hr>
+          </box>
+        </div>
+      </div>
+      <span id="short" class="d-none">
 ```markdown
 *****
 -----
 ______________
 ```
 </span>
-        <span id="examples" class="d-none">
+      <span id="examples" class="d-none">
 <hr></span></div>
-    </panel>
-  </box>
-  <h5 id="links">Links<a class="fa fa-anchor" href="#links"></a></h5>
-  <box>
+  </panel>
+</box>
+<h5 id="links">Links<a class="fa fa-anchor" href="#links"></a></h5>
+<box>
+  <div>
+    <p>MarkBind home is at <a href="https://markbind.org">here</a>.</p>
+  </div>
+  <panel type="seamless" header="%%details...%%">
     <div>
-      <p>MarkBind home is at <a href="https://markbind.github.io">here</a>.</p>
-    </div>
-    <panel type="seamless" header="%%details...%%">
-      <div>
-        <h2 id="links-2">Links<a class="fa fa-anchor" href="#links-2"></a></h2>
-        <p>Basic style:</p>
-        <span id="main-example">
+      <h2 id="links-2">Links<a class="fa fa-anchor" href="#links-2"></a></h2>
+      <p>Basic style:</p>
+      <span id="main-example">
 <div>
 <p><span class="dimmed">CODE:</span></p>
-        <div class="indented">
-          <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.github.io</span>).
+      <div class="indented">
+        <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
 </code></pre>
-        </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <p>MarkBind home is at <a href="https://markbind.github.io">here</a>.</p>
-          </box>
-        </div>
       </div>
-      </span>
-      <p><em>Reference style</em> links (i.e., specify the URL in a separate place):</p>
-      <div>
-        <p><span class="dimmed">CODE:</span></p>
-        <div class="indented">
-          <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
+      <p><span class="dimmed">OUTPUT:</span></p>
+      <div class="indented">
+        <box border-left-color="grey" background-color="white">
+          <p>MarkBind home is at <a href="https://markbind.org">here</a>.</p>
+        </box>
+      </div>
+    </div>
+    </span>
+    <p><em>Reference style</em> links (i.e., specify the URL in a separate place):</p>
+    <div>
+      <p><span class="dimmed">CODE:</span></p>
+      <div class="indented">
+        <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
 
-[<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.github.io</span>
+[<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
 
 </code></pre>
-        </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <p>MarkBind home is at <a href="https://markbind.github.io">here</a></p>
-          </box>
-        </div>
       </div>
-      <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#links">https://www.markdownguide.org/basic-syntax#links</a></small></p>
-      <h4 id="intra-site-links">Intra-Site Links<a class="fa fa-anchor" href="#intra-site-links"></a></h4>
-      <div id="intraSiteLinks">
-        <p>Links to files of the generated site (e.g., an HTML page or an image file) should be specified as absolute paths and should start with
-          <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
-            <code>{<span></span>{ baseUrl }}</code> :
-          </p>
-          <ol>
-            <li><code>Click [here]({<span></span>{ baseUrl }}/userGuide/reusingContents.html).</code></li>
-            <li><code>![](</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/images/preview.png)</code></li>
-          </ol>
-        </div>
+      <p><span class="dimmed">OUTPUT:</span></p>
+      <div class="indented">
+        <box border-left-color="grey" background-color="white">
+          <p>MarkBind home is at <a href="https://markbind.org">here</a></p>
+        </box>
       </div>
-      <span id="short" class="d-none">
-<pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.github.io</span>). MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
-      [
+    </div>
+    <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#links">https://www.markdownguide.org/basic-syntax#links</a></small></p>
+    <h4 id="intra-site-links">Intra-Site Links<a class="fa fa-anchor" href="#intra-site-links"></a></h4>
+    <div id="intraSiteLinks">
+      <p>Links to files of the generated site (e.g., an HTML page or an image file) should be specified as absolute paths and should start with
+        <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).</p>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
+          <code>{<span></span>{ baseUrl }}</code> :
+        </p>
+        <ol>
+          <li><code>Click [here]({<span></span>{ baseUrl }}/userGuide/reusingContents.html).</code></li>
+          <li><code>![](</code>
+            <code>{<span></span>{ baseUrl }}</code>
+            <code>/images/preview.png)</code></li>
+        </ol>
+      </div>
+    </div>
+    <span id="short" class="d-none">
+<pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>). MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>]. [
 
-      <span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.github.io</span>
-      </code>
-      </pre>
-      </span>
-      <span id="examples" class="d-none">
-<p>MarkBind home is at <a href="https://markbind.github.io">here</a>.
+    <span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
+    </code>
+    </pre>
+    </span>
+    <span id="examples" class="d-none">
+<p>MarkBind home is at <a href="https://markbind.org">here</a>.
 </p></span></div>
-</panel>
+  </panel>
 </box>
 <h5 id="images">Images<a class="fa fa-anchor" href="#images"></a></h5>
 <box>
   <div>
-    <p><a href="https://markbind.github.io/markbind/images/logo-lightbackground.png" target="_self"><img src="https://markbind.github.io/markbind/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p>
+    <p><a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p>
   </div>
   <panel type="seamless" header="%%details...%%">
     <div>
@@ -601,23 +599,23 @@ ______________
       <div>
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
-          <pre><code class="hljs markdown">![](https://markbind.github.io/markbind/images/logo-lightbackground.png)
+          <pre><code class="hljs markdown">![](https://markbind.org/images/logo-lightbackground.png)
 </code></pre>
         </div>
         <p><span class="dimmed">OUTPUT:</span></p>
         <div class="indented">
           <box border-left-color="grey" background-color="white">
-            <p><a href="https://markbind.github.io/markbind/images/logo-lightbackground.png" target="_self"><img src="https://markbind.github.io/markbind/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p>
+            <p><a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p>
           </box>
         </div>
       </div>
       <span id="short" class="d-none">
 ```markdown
-![alt text here](https://markbind.github.io/markbind/images/logo-lightbackground.png "title here")
+![alt text here](https://markbind.org/images/logo-lightbackground.png "title here")
 ```
 </span>
       <span id="examples" class="d-none">
-<p><a href="https://markbind.github.io/markbind/images/logo-lightbackground.png" target="_self"><img src="https://markbind.github.io/markbind/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p></span></div>
+<p><a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p></span></div>
   </panel>
 </box>
 <h5 id="tables">Tables<a class="fa fa-anchor" href="#tables"></a></h5>
@@ -817,9 +815,9 @@ Cats|yes|100|
         <li>
           <p>Construct the MarkBind name for the selected icon by adding the <em>type prefix</em>. Note: Font Awesome has three different styles for their icons, each with their own type prefix. Here is an example from each type:</p>
           <ul>
-            <li><em>Solid</em> (prefix: <code>fas-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <strong><code>fas-</code></strong><code>file-code</code>)</li>
-            <li><em>Regular</em> (prefix: <code>far-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <strong><code>far-</code></strong><code>file-code</code>)</li>
-            <li><em>Brands</em> (prefix: <code>fab-</code>): e.g., <span aria-hidden="true" class="fab fa-github-alt"></span> (actual name <code>github-alt</code>, MarkBind name <strong><code>fab-</code></strong><code>github-alt</code>)</li>
+            <li><em>Solid</em> (prefix: <code>fas-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <code>fas-file-code</code>)</li>
+            <li><em>Regular</em> (prefix: <code>far-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <code>far-file-code</code>)</li>
+            <li><em>Brands</em> (prefix: <code>fab-</code>): e.g., <span aria-hidden="true" class="fab fa-github-alt"></span> (actual name <code>github-alt</code>, MarkBind name <code>fab-github-alt</code>)</li>
           </ul>
         </li>
         <li>
@@ -1941,13 +1939,8 @@ Modal content
   <panel type="seamless" header="%%details...%%">
     <div>
       <h2 id="page-navigation-menus-2">Page Navigation Menus<a class="fa fa-anchor" href="#page-navigation-menus-2"></a></h2>
-      <p><strong>You can add a <trigger trigger="click" for="modal:pageStructure-pageNavigationMenu"><em>page navigation menu</em></trigger> to a page.</strong></p>
-      <modal title="Page Naviation Menu" id="modal:pageStructure-pageNavigationMenu">
-        <div>
-          <p><em>Page Navigation Menu</em> (<em>pageNav</em> for short) is a fixed menu on the <strong>right</strong> side of your page contents, which contains the current page's headings.</p>
-        </div>
-      </modal>
-      <p>Steps to add a page navigation menu <mark>(<em>pageNav</em> for short)</mark>:</p>
+      <p><strong>A <em>Page Navigation Menu</em> (<mark><em>pageNav</em> for short</mark>) is a fixed menu on the <mark>right edge</mark> of your page contents</strong>. You can use a pageNav to show a list of the current page's headings.</p>
+      <p>Steps to add a pageNav:</p>
       <ol>
         <li>Specify your pageNav within the <code>&lt;frontmatter&gt;</code> of a page with
           <tooltip content="The value `default` will use `headingIndexingLevel` within `site.json`."><code>&quot;default&quot;</code></tooltip> or a
@@ -2164,7 +2157,7 @@ Modal content
       <div>
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Bold text** :rocket: ![](https://markbind.github.io/markbind/images/logo-lightbackground.png =x20)"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"seamless"</span>&gt;</span>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Bold text** :rocket: ![](https://markbind.org/images/logo-lightbackground.png =x20)"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"seamless"</span>&gt;</span>
   ...
 <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span>
 </code></pre>
@@ -2172,7 +2165,7 @@ Modal content
         <p><span class="dimmed">OUTPUT:</span></p>
         <div class="indented">
           <box border-left-color="grey" background-color="white">
-            <panel header="**Bold text** :rocket: ![](https://markbind.github.io/markbind/images/logo-lightbackground.png =x20)" type="seamless">
+            <panel header="**Bold text** :rocket: ![](https://markbind.org/images/logo-lightbackground.png =x20)" type="seamless">
               ...
             </panel>
           </box>
@@ -2394,7 +2387,7 @@ Modal content
 <h5 id="pictures">Pictures<a class="fa fa-anchor" href="#pictures"></a></h5>
 <box>
   <div>
-    <pic src="https://markbind.github.io/markbind/images/logo-lightbackground.png" width="300" alt="Logo">
+    <pic src="https://markbind.org/images/logo-lightbackground.png" width="300" alt="Logo">
       MarkBind Logo
     </pic>
   </div>
@@ -2405,7 +2398,7 @@ Modal content
       <div>
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">pic</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://markbind.github.io/markbind/images/logo-lightbackground.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Logo"</span>&gt;</span>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">pic</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://markbind.org/images/logo-lightbackground.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Logo"</span>&gt;</span>
   MarkBind Logo
 <span class="hljs-tag">&lt;/<span class="hljs-name">pic</span>&gt;</span>
 </code></pre>
@@ -2413,7 +2406,7 @@ Modal content
         <p><span class="dimmed">OUTPUT:</span></p>
         <div class="indented">
           <box border-left-color="grey" background-color="white">
-            <pic src="https://markbind.github.io/markbind/images/logo-lightbackground.png" width="300" alt="Logo">
+            <pic src="https://markbind.org/images/logo-lightbackground.png" width="300" alt="Logo">
               MarkBind Logo
             </pic>
           </box>
@@ -2459,7 +2452,7 @@ Modal content
           </tbody>
         </table>
       </div><span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">pic</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://markbind.github.io/markbind/images/logo-lightbackground.png"</span> <span class="hljs-attr">width</span>=
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">pic</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://markbind.org/images/logo-lightbackground.png"</span> <span class="hljs-attr">width</span>=
       <span
         class="hljs-string">"300"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Logo"</span>&gt;</span>
         MarkBind Logo
@@ -2468,7 +2461,7 @@ Modal content
         </pre>
         </span>
         <span id="examples" class="d-none">
-<pic src="https://markbind.github.io/markbind/images/logo-lightbackground.png" width="300" alt="Logo">
+<pic src="https://markbind.org/images/logo-lightbackground.png" width="300" alt="Logo">
   MarkBind Logo
 </pic></span></div>
   </panel>
@@ -2959,13 +2952,8 @@ Modal content
   <panel type="seamless" header="%%details...%%">
     <div>
       <h2 id="site-navigation-menus-2">Site Navigation Menus<a class="fa fa-anchor" href="#site-navigation-menus-2"></a></h2>
-      <p><strong>You can add a <trigger trigger="click" for="modal:pageStructure-siteNavidationMenu"><em>site navigation menu</em></trigger> to a page.</strong></p>
-      <modal title="Site Naviation Menu" id="modal:pageStructure-siteNavidationMenu">
-        <div>
-          <p><em>Site Navigation Menu</em> (<em>siteNav</em> for short) is a fixed menu on the <strong>left</strong> side of your page contents, that shows a road map of the main pages of your site.</p>
-        </div>
-      </modal>
-      <p>Steps to add a site navigation menu <mark>(<em>siteNav</em> for short)</mark>:</p>
+      <p><strong>A <em>Site Navigation Menu</em> (<mark><em>siteNav</em> for short</mark>) is a fixed menu on the <mark>left edge</mark> of a page</strong>, that can be used to show a road map of the main pages of your site.</p>
+      <p>Steps to add a siteNav:</p>
       <ol>
         <li>Format your siteNav as an unordered Markdown list and save it inside the <code>_markbind/navigation</code> directory.</li>
         <li>Specify the file as the value of the <code>siteNav</code> attribute in the <code>&lt;frontmatter&gt;</code> of the page.</li>
@@ -3426,11 +3414,10 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
 </div>
 </div>
 </div>
-</div>
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.github.io/markbind/">MarkBind 1.19.0</a> on Tue, 19 Feb 2019 08:07:52 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.1</a> on Mon, 25 Feb 2019 03:07:58 GMT]</small></div>
 </footer>
 </div>
 </body>

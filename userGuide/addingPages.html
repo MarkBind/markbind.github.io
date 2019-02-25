@@ -88,44 +88,42 @@
           </li>
         </navbar>
       </div>
-      <div class="website-content">
-        <h1 id="adding-pages">Adding Pages<a class="fa fa-anchor" href="#adding-pages"></a></h1>
-        <span class="lead" id="overview">
+      <h1 id="adding-pages">Adding Pages<a class="fa fa-anchor" href="#adding-pages"></a></h1>
+      <span class="lead" id="overview">
 <p><strong>It is easy to add files to a MarkBind site as any file inside the <tooltip content="The directory that contains all the project files. It is also the directory in which the `site.json` configuration file is located.">root directory</tooltip> becomes a part of the generated website.</strong></p></span>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If you have a file <code>tutorial/code.txt</code> in your root directory, it will be available
-            as <code>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
-        </div>
-        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code>ignore</code> field in the <code>site.config</code> file as explained <a href="/userGuide/siteConfiguration.html#ignore">here</a>.</span></p>
-        <p><strong>More importantly, <code>.md</code> and <code>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>&lt;root&gt;/tutorial/</code><strong><code>setup.md</code></strong> can be transformed
-            into <code>&lt;website-url&gt;/tutorial/</code><strong><code>setup.html</code></strong></p>
-        </div>
-        <p>Here are the steps to add a new page to your site:</p>
-        <ol>
-          <li>Add a <code>.md</code> (or <code>.mbd</code>) file anywhere inside the root directory.</li>
-          <li>Update the <a href="/userGuide/siteConfiguration.html#pages"><code>pages</code> attribute of the <code>site.json</code></a> to cover the new file, if necessary.</li>
-          <li>Use the
-            <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
-        </ol>
-        <modal large="" title="Live Preview" id="modal:addingPages-livePreview">
-          <span>
-<span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
-            <tooltip content="MarkBind file"><code>.mbd</code></tooltip>,
-            <tooltip content="MarkBind fragment"><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
-          </span>
-        </modal>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If you have a file <code>tutorial/code.txt</code> in your root directory, it will be available
+          as <code>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
       </div>
+      <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code>ignore</code> field in the <code>site.config</code> file as explained <a href="/userGuide/siteConfiguration.html#ignore">here</a>.</span></p>
+      <p><strong>More importantly, <code>.md</code> and <code>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>&lt;root&gt;/tutorial/</code><strong><code>setup.md</code></strong> can be transformed
+          into <code>&lt;website-url&gt;/tutorial/</code><strong><code>setup.html</code></strong></p>
+      </div>
+      <p>Here are the steps to add a new page to your site:</p>
+      <ol>
+        <li>Add a <code>.md</code> (or <code>.mbd</code>) file anywhere inside the root directory.</li>
+        <li>Update the <a href="/userGuide/siteConfiguration.html#pages"><code>pages</code> attribute of the <code>site.json</code></a> to cover the new file, if necessary.</li>
+        <li>Use the
+          <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
+      </ol>
+      <modal large="" title="Live Preview" id="modal:addingPages-livePreview">
+        <span>
+<span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
+        <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
+          <tooltip content="MarkBind file"><code>.mbd</code></tooltip>,
+          <tooltip content="MarkBind fragment"><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+        <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
+        </span>
+      </modal>
     </div>
   </div>
 </div>
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.github.io/markbind/">MarkBind 1.19.0</a> on Tue, 19 Feb 2019 08:07:52 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.1</a> on Mon, 25 Feb 2019 03:07:58 GMT]</small></div>
 </footer>
 </div>
 </body>

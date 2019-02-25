@@ -14,13 +14,35 @@
     <link rel="stylesheet" href="../markbind/css/markbind.css">
     <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
     <link rel="stylesheet" href="../markbind/css/site-nav.css">
-    
+    <link rel="stylesheet" href="../markbind/css/page-nav.css">
     
     <link rel="icon" href="/favicon.ico">
 </head>
-<body>
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
 <div id="app">
-    <div id="flex-body">
+    <nav id="page-nav" class="navbar navbar-light bg-transparent slim-scroll">
+
+  <nav class="nav nav-pills flex-column my-0 small" style="flex-wrap: nowrap;">
+    <a class="nav-link py-1" href="#deploying-the-site">Deploying the Site&#x200E;</a>
+    <nav class="nav nav-pills flex-column my-0" style="margin-left: 5%; flex-wrap: nowrap;">
+      <a class="nav-link py-1" href="#deploying-to-github-pages">Deploying to Github Pages&#x200E;</a>
+      <nav class="nav nav-pills flex-column my-0" style="margin-left: 5%; flex-wrap: nowrap;">
+        <a class="nav-link py-1" href="#deploying-to-github-pages-via-travis-ci">Deploying to GitHub Pages via Travis CI&#x200E;</a>
+        <nav class="nav nav-pills flex-column my-0" style="margin-left: 5%; flex-wrap: nowrap;">
+          <a class="nav-link py-1" href="#adding-your-repository-to-travis-ci">Adding your repository to Travis CI&#x200E;</a>
+          <a class="nav-link py-1" href="#configuring-your-repository-in-travis-ci">Configuring your repository in Travis CI&#x200E;</a>
+        </nav>
+      </nav>
+      <a class="nav-link py-1" href="#deploying-to-netlify">Deploying to Netlify&#x200E;</a>
+      <nav class="nav nav-pills flex-column my-0" style="margin-left: 5%; flex-wrap: nowrap;">
+        <a class="nav-link py-1" href="#setting-up-netlify-to-use-a-specific-version-of-markbind">Setting up Netlify to use a specific version of MarkBind&#x200E;</a>
+      </nav>
+    </nav>
+
+  </nav>
+</nav>
+
+<div id="flex-body">
   <div id="site-nav">
     <p><span class="indented lead"><strong>User Guide</strong></span></p>
     <ul style="list-style-type: none; margin-left:-1em">
@@ -65,26 +87,26 @@
     </div>
   </div>
   <div id="page-content">
-    <div id="content-wrapper">
-      <div>
-        <link rel="stylesheet" href="/css/main.css">
-        <navbar placement="top" type="inverse" class="temp-navbar">
-          <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-          <li><a href="/index.html" class="nav-link">HOME</a></li>
-          <li><a href="/userGuide/index.html" class="nav-link">DOCS</a></li>
-          <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-          <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-          <li>
-            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">
+    <div id="page-nav-content-wrapper">
+      <div id="content-wrapper">
+        <div>
+          <link rel="stylesheet" href="/css/main.css">
+          <navbar placement="top" type="inverse" class="temp-navbar">
+            <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+            <li><a href="/index.html" class="nav-link">HOME</a></li>
+            <li><a href="/userGuide/index.html" class="nav-link">DOCS</a></li>
+            <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+            <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+            <li>
+              <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">
       <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewbox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
-          <li slot="right">
-            <form class="navbar-form">
-              <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
-            </form>
-          </li>
-        </navbar>
-      </div>
-      <div class="website-content">
+            <li slot="right">
+              <form class="navbar-form">
+                <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+              </form>
+            </li>
+          </navbar>
+        </div>
         <h1 id="deploying-the-site">Deploying the Site<a class="fa fa-anchor" href="#deploying-the-site"></a></h1>
         <span class="lead">
 <p><strong>A site generated by MarkBind can be deployed by simply uploading the generated files to any Web server.</strong> In addition, MarkBind provides several convenient deployment options.
@@ -93,8 +115,8 @@
         <ol>
           <li>Set the <a href="/userGuide/siteConfiguration.html#baseUrl"><code>baseUrl</code> property of the <code>site.json</code> file</a> to match the deploy location.</li>
           <li>(Optional) Use the <a href="/userGuide/cliCommands.html#serve-command"><code>markbind serve</code> command</a> to stage the site locally and confirm the contents are as expected.</li>
-          <li>Use the <a href="/userGuide/cliCommands.html#build-command"><code>markbind build</code> command</a> to generate the site from source files. That command puts the generated site files in a directory named <code>_site</code> (you can
-            change the output directory using parameters supplied to the command).</li>
+          <li>Use the <a href="/userGuide/cliCommands.html#build-command"><code>markbind build</code> command</a> to generate the site from source files. That command puts the generated site files in a directory named <code>_site</code> (you can change the
+            output directory using parameters supplied to the command).</li>
           <li>Upload the site files to the Web server. The sections below explains how to automate this step for when deploying to some online platforms.</li>
         </ol>
         <h2 id="deploying-to-github-pages">Deploying to Github Pages<a class="fa fa-anchor" href="#deploying-to-github-pages"></a></h2>
@@ -135,21 +157,60 @@
         </box>
         <h3 id="deploying-to-github-pages-via-travis-ci">Deploying to GitHub Pages via Travis CI<a class="fa fa-anchor" href="#deploying-to-github-pages-via-travis-ci"></a></h3>
         <p><strong>You can setup <a href="https://www.travis-ci.org/"><tooltip content="a platform for Continuous Integration and Delivery (among other things)">Travis CI</tooltip></a> to automatically build and deploy your site on GitHub Pages every time your GitHub repo is updated.</strong></p>
-        <p>Here are the steps to set up Travis CI:</p>
+        <h4 id="adding-your-repository-to-travis-ci">Adding your repository to Travis CI<a class="fa fa-anchor" href="#adding-your-repository-to-travis-ci"></a></h4>
+        <panel header=":fas-info-circle: Travis CI Migration" type="info" expanded="">
+          <p>Since May 2018, Travis CI has been <a href="https://docs.travis-ci.com/user/migrate/open-source-on-travis-ci-com/">undergoing migration to <code>travis-ci.com</code></a>, which changes the way you setup repositories on Travis CI.</p>
+          <ul>
+            <li>If you are new to Travis CI, you should <strong>add your repository on <code>travis-ci.com</code></strong>.</li>
+            <li>Alternatively, if you are already using Travis CI on <code>travis-ci.org</code>, you can continue to <strong>add your repository on <code>travis-ci.org</code></strong>.
+            </li>
+          </ul>
+        </panel>
+
+        <p></p>
+        <tabs>
+          <tab header="Add your repository on `travis-ci.com`">
+            <ol>
+              <li><a href="https://travis-ci.com/signin">Sign in to Travis</a> using your GitHub account.</li>
+              <li>Accept the authorisation for Travis CI when you are redirected to GitHub.</li>
+              <li>Go to the <a href="https://travis-ci.com/account/repositories">Repositories page</a>, and click on the green <em>Activate</em> button.<br>
+                <span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> If you are already using Travis CI, click on the white <em>Manage Repositories on GitHub</em> button instead.</span>
+              </li>
+              <li>Select the repository with the MarkBind site, and add the Travis CI GitHub App to the repository by clicking the green <em>Approve and Install</em> button.</li>
+            </ol>
+          </tab>
+          <tab header="Add your repository on `travis-ci.org`">
+            <ol>
+              <li><a href="https://travis-ci.com/signin">Sign in to Travis</a> using your GitHub account.</li>
+              <li>Accept the authorisation for Travis CI when you are redirected to GitHub.</li>
+              <li>Go to the <a href="https://travis-ci.org/account/repositories">Repositories page</a>.</li>
+              <li>Find the repository with the MarkBind site.<br>
+                <span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> If the organization/repository is not shown in the list, click on <code>Review and add</code> link at the bottom of the list of organization and follow the
+                steps to give Travis access to the organization containing your repo. After that, come back to the <a href="https://travis-ci.org/account/repositories">Repositories page</a> and use the <code>Sync Account</code> button to sync your Travis
+                account with GitHub.</span>
+              </li>
+              <li>Activate the repo using the slider switch in front of it.
+                <span><box background-color="white" border-color="#cccccc"><span><a href="/images/travisActivateRepo.png" target="_self"><img src="/images/travisActivateRepo.png" alt="" class="img-fluid"></a></span></box>
+                </span>
+              </li>
+            </ol>
+          </tab>
+        </tabs>
+
+        <h4 id="configuring-your-repository-in-travis-ci">Configuring your repository in Travis CI<a class="fa fa-anchor" href="#configuring-your-repository-in-travis-ci"></a></h4>
         <ol>
-          <li><a href="https://travis-ci.com/signin">Sign up with GitHub</a> at <a href="https://travis-ci.com">Travis CI</a>.</li>
-          <li>Accept the authorisation for Travis CI when you are redirected to GitHub.</li>
-          <li>Click the green <em>Activate</em> button, and select the repository with the MarkBind site.</li>
           <li><a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token">Generate a GitHub personal access token</a> with <strong>repo</strong> permissions. Take note of the generated token - you will
-            not be able to see it again once you navigate away from the page.</li>
+            not be able to see it again once you navigate away from the page.
+            <span><box background-color="white" border-color="#cccccc"><span><a href="/images/githubTokenRepoPermissions.png" target="_self"><img src="/images/githubTokenRepoPermissions.png" alt="" class="img-fluid"></a></span></box>
+            </span>
+          </li>
           <li><a href="https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings">Add an environment variable in Travis CI</a> named <code>GITHUB_TOKEN</code>, with the value set to the personal access token generated
             in the previous step. <mark>Ensure that <em>Display value in the build log</em> is set to <em>Off</em>.</mark>
-            <box background-color="white" border-color="white"><span>
-<a href="/images/travisGithubToken.png" target="_self"><img src="/images/travisGithubToken.png" alt="" class="img-fluid"></a></span></box>
+            <span><box background-color="white" border-color="#cccccc"><span><a href="/images/travisGithubToken.png" target="_self"><img src="/images/travisGithubToken.png" alt="" class="img-fluid"></a></span></box>
+            </span>
           </li>
           <li>Add a <code>.travis.yml</code> file to instruct Travis CI to build and deploy the site when you push to the repository. An example <code>.travis.yml</code> file that can accomplish this is given below:
-            <box background-color="white" border-color="white">
-              <pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+            <pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
 <span class="hljs-attr">node_js:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">'8'</span>
 <span class="hljs-attr">install:</span>
@@ -158,19 +219,31 @@
 <span class="hljs-attr">branches:</span>
 <span class="hljs-attr">  only:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">master</span>
-</code></pre> More information about <code>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.
-            </box>
-          </li>
+</code></pre> More information about <code>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
           <li>Commit <code>.travis.yml</code> to your MarkBind repository and push the changes. Travis CI should begin to build your site.</li>
           <li>Select the MarkBind repository on <a href="https://travis-ci.com/auth">Travis CI</a> and <a href="https://docs.travis-ci.com/user/job-lifecycle/#breaking-the-build">check the build status</a> to see if it is successful.</li>
           <li>Once the build succeeds, your MarkBind site should be online at <code>http://&lt;username|org&gt;.github.io/&lt;repo&gt;</code> e.g., <a href="http://se-edu.github.io/se-book">http://se-edu.github.io/se-book</a>. Travis CI will automatically
-            build and deploy changes to your site as you push new changes to the repository.</li>
+            build and deploy changes to your site as you push new changes to the repository after a few seconds.<br>
+            <span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> You might have to go to the <code>Settings</code> of your repo and configure it to publish GitHub Pages from the <code>gh-pages</code> branch as MarkBind deploys
+            to that branch by default.</span>
+          </li>
         </ol>
-        <p><span aria-hidden="true" class="fas fa-info-circle"></span> Note that when Travis CI is set up as explained above, it will use the latest version of MarkBind which may be a later version than the one you use locally. If you want Travis CI to use
-          a specific version of MarkBind (eg. <code>v1.6.3</code>), change the <code>install</code> step in the <code>.travis.yml</code> given above to:</p>
-        <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
+        <box>
+          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Note that when Travis CI is set up as explained above, it will use the latest version of MarkBind which may be a later version than the one you use locally.</p>
+          <ul>
+            <li>If you want Travis CI to use a specific version of MarkBind (eg. <code>v1.6.3</code>), change the <code>install</code> step in the <code>.travis.yml</code> given above to:
+              <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@1.63</span>
 </code></pre>
+            </li>
+            <li>If you want to use the latest minor version automatically until the next major version (as major versions usually contain breaking changes), you can add a <code>^</code> in front of the version number. In the example below, Travis will use
+              the latest version of MarkBind but will stop before <code>2.*</code>
+              <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@^1.63</span>
+</code></pre>
+            </li>
+          </ul>
+        </box>
         <hr>
         <h2 id="deploying-to-netlify">Deploying to Netlify<a class="fa fa-anchor" href="#deploying-to-netlify"></a></h2>
         <p><strong>You can setup <a href="https://www.netlify.com/"><tooltip content="a platform for deploying static webpages (among other things)">Netlify</tooltip></a>
@@ -180,27 +253,31 @@ to automatically build and deploy your site on their platform every time your Gi
           <li>Go to <a href="https://app.netlify.com/">https://app.netlify.com/</a> and sign up</li>
           <li>Next go to <a href="https://app.netlify.com/account/sites">https://app.netlify.com/account/sites</a> and select <code>New site from Git</code></li>
           <li>Select your git provider
-            <box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview1.png" target="_self"><img src="/images/netlifyPreview1.png" alt="" class="img-fluid"></a></span></box>
+            <span><box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview1.png" target="_self"><img src="/images/netlifyPreview1.png" alt="" class="img-fluid"></a></span></box>
+            </span>
           </li>
           <li>Select your markbind site repository
-            <box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview2.png" target="_self"><img src="/images/netlifyPreview2.png" alt="" class="img-fluid"></a></span></box>
+            <span><box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview2.png" target="_self"><img src="/images/netlifyPreview2.png" alt="" class="img-fluid"></a></span></box>
+            </span>
           </li>
           <li>Update the build settings as follows and hit <code>Deploy site</code>:
             <ul>
               <li><code>Build Command</code>: <code>npm i markbind-cli -g &amp;&amp; markbind build --baseUrl</code></li>
               <li><code>Publish directory</code>: <code>_site</code>
-                <box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview3.png" target="_self"><img src="/images/netlifyPreview3.png" alt="" class="img-fluid"></a></span></box>
+                <span><box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview3.png" target="_self"><img src="/images/netlifyPreview3.png" alt="" class="img-fluid"></a></span></box>
+                </span>
               </li>
             </ul>
           </li>
         </ol>
         <p>Now your site will be deployed on Netlify at the given address specified after deployment. It will be updated automatically when the default branch of your repo is updated.</p>
         <p>Additionally, <strong>when contributors make a pull request to your GitHub repo, you can <em>preview</em> the updated site</strong> at the bottom of the pull request by clicking on <code>details</code> link in the PR:
-          <box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview4.png" target="_self"><img src="/images/netlifyPreview4.png" alt="" class="img-fluid"></a></span></box>
+          <span><box background-color="white" border-color="#cccccc"><span><a href="/images/netlifyPreview4.png" target="_self"><img src="/images/netlifyPreview4.png" alt="" class="img-fluid"></a></span></box>
+          </span>
         </p>
         <p><span aria-hidden="true" class="fas fa-info-circle"></span> Note that when Netlify is set up as explained above, it will use the latest version of MarkBind which may be a later version than the one you use locally. If you want Netlify to use a
           specific version of Netlify, follow the instructions in the box below:</p>
-        <box background-color="white" border-color="#cccccc">
+        <box>
           <h5 id="setting-up-netlify-to-use-a-specific-version-of-markbind">Setting up Netlify to use a specific version of MarkBind<a class="fa fa-anchor" href="#setting-up-netlify-to-use-a-specific-version-of-markbind"></a></h5>
           <p>Here are the steps to set up Netlify to use a specific version of MarkBind.</p>
           <ol>
@@ -236,7 +313,7 @@ to automatically build and deploy your site on their platform every time your Gi
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.github.io/markbind/">MarkBind 1.19.0</a> on Tue, 19 Feb 2019 08:07:52 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.1</a> on Mon, 25 Feb 2019 03:07:58 GMT]</small></div>
 </footer>
 </div>
 </body>

@@ -62,12 +62,15 @@
         "deploying-the-site": "Deploying the Site",
         "deploying-to-github-pages": "Deploying to Github Pages",
         "deploying-to-github-pages-via-travis-ci": "Deploying to GitHub Pages via Travis CI",
+        "adding-your-repository-to-travis-ci": "Adding your repository to Travis CI",
+        "configuring-your-repository-in-travis-ci": "Configuring your repository in Travis CI",
         "deploying-to-netlify": "Deploying to Netlify",
         "setting-up-netlify-to-use-a-specific-version-of-markbind": "Setting up Netlify to use a specific version of MarkBind"
       },
       "title": "User Guide - Deploying the Site",
       "footer": "footer.md",
       "siteNav": "userGuideSections.md",
+      "pageNav": "default",
       "src": "userGuide/deployingTheSite.md",
       "layout": "default"
     },
@@ -107,52 +110,6 @@
     },
     {
       "headings": {
-        "badges": "Badges",
-        "blockquotes": "Blockquotes",
-        "boxes": "Boxes",
-        "code": "Code",
-        "dropdowns": "Dropdowns",
-        "embeds": "Embeds",
-        "emoji": "Emoji",
-        "footers": "Footers",
-        "front-matter": "Front Matter",
-        "headings": "Headings",
-        "horizontal-rules": "Horizontal Rules",
-        "icons": "Icons",
-        "images": "Images",
-        "includes": "Includes",
-        "keywords": "Keywords | regressions",
-        "line-breaks": "Line Breaks",
-        "links": "Links",
-        "lists": "Lists",
-        "modals": "Modals",
-        "nav-bars": "Nav Bars",
-        "page-head": "Page Head",
-        "page-layouts": "Page Layouts",
-        "page-navigation-menus": "Page Navigation Menus",
-        "panels": "Panels",
-        "paragraphs": "Paragraphs",
-        "pictures": "Pictures",
-        "popovers": "Popovers",
-        "questions": "Questions",
-        "search-bars": "Search Bars",
-        "site-navigation-menus": "Site Navigation Menus",
-        "tables": "Tables",
-        "tabs": "Tabs",
-        "tags": "Tags",
-        "text-styles": "Text Styles",
-        "tooltips": "Tooltips",
-        "variables": "Variables",
-        "full-syntax-reference": "Full Syntax Reference"
-      },
-      "title": "User Guide: Full Syntax Reference",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/fullSyntaxReference.md",
-      "layout": "default"
-    },
-    {
-      "headings": {
         "getting-started": "Getting Started"
       },
       "title": "User Guide - Quick Start",
@@ -164,9 +121,7 @@
     {
       "headings": {
         "live-preview": "Live Preview",
-        "mbd-extension": ".mbd extension",
-        "site-navigation-menu": "Site Navigation Menu",
-        "page-navigation-menu": "Page Navigation Menu"
+        "mbd-extension": ".mbd extension"
       },
       "title": "Glossary",
       "footer": "footer.md",
@@ -201,7 +156,7 @@
       "headings": {
         "markbind-in-the-project-workflow": "MarkBind in the Project Workflow",
         "authoring-workflow": "Authoring Workflow",
-        "github-pr-workflow": "GitHub PR Workflow",
+        "github-project-workflow": "GitHub Project Workflow",
         "using-markbind-for-project-documentation": "Using MarkBind for Project Documentation"
       },
       "title": "User Guide: Using MarkBind in the Project Workflow",
@@ -213,55 +168,18 @@
     {
       "headings": {
         "markbind-syntax-overview": "MarkBind Syntax Overview",
-        "support-for-markdown": "\n           Support for Markdown",
-        "support-for-gfmd": "\n           Support for GFMD",
-        "markbind-extensions-to-markdown": "\n           MarkBind Extensions to Markdown",
-        "markbind-custom-syntax": "\n           MarkBind Custom Syntax",
-        "support-for-html-javascript-css": "\n           Support for HTML, JavaScript, CSS",
-        "support-for-vuestrap-and-bootstrap": "\n           Support for VueStrap and BootStrap",
-        "support-for-nunjucks": "\n           Support for Nunjucks"
+        "support-for-markdown": "\n         Support for Markdown",
+        "support-for-gfmd": "\n         Support for GFMD",
+        "markbind-extensions-to-markdown": "\n         MarkBind Extensions to Markdown",
+        "markbind-custom-syntax": "\n         MarkBind Custom Syntax",
+        "support-for-html-javascript-css": "\n         Support for HTML, JavaScript, CSS",
+        "support-for-vuestrap-and-bootstrap": "\n         Support for VueStrap and BootStrap",
+        "support-for-nunjucks": "\n         Support for Nunjucks"
       },
       "title": "User Guide: MarkBind Syntax Overview ",
       "footer": "footer.md",
       "siteNav": "userGuideSections.md",
       "src": "userGuide/markBindSyntaxOverview.md",
-      "layout": "default"
-    },
-    {
-      "headings": {
-        "reader-facing-features": "Reader-Facing Features",
-        "text-styles": "Text Styles",
-        "blockquotes": "Blockquotes",
-        "lists": "Lists",
-        "code": "Code",
-        "horizontal-rules": "Horizontal Rules",
-        "links": "Links",
-        "images": "Images",
-        "tables": "Tables",
-        "emoji": "Emoji",
-        "icons": "Icons",
-        "embeds": "Embeds",
-        "search-bars": "Search Bars",
-        "badges": "Badges",
-        "feature-y-stable": "Feature Y stable",
-        "boxes": "Boxes",
-        "dropdowns": "Dropdowns",
-        "footers": "Footers",
-        "modals": "Modals",
-        "nav-bars": "Nav Bars",
-        "page-navigation-menus": "Page Navigation Menus",
-        "panels": "Panels",
-        "pictures": "Pictures",
-        "popovers": "Popovers",
-        "questions": "Questions",
-        "site-navigation-menus": "Site Navigation Menus",
-        "tabs": "Tabs",
-        "tooltips": "Tooltips"
-      },
-      "title": "User Guide: Reader-Facing Features",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/readerFacingFeatures.md",
       "layout": "default"
     },
     {
@@ -316,17 +234,6 @@
       "siteNav": "userGuideSections.md",
       "keywords": "site.json",
       "src": "userGuide/siteConfiguration.md",
-      "layout": "default"
-    },
-    {
-      "headings": {
-        "syntax-cheat-sheet": "Syntax Cheat Sheet",
-        "using-boilerplate-files": "undefined | regressions"
-      },
-      "title": "User Guide: Syntax Cheat Sheet",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/syntaxCheatSheet.md",
       "layout": "default"
     },
     {
@@ -409,15 +316,17 @@
         "using-plugins": "Using Plugins",
         "adding-plugins": "Adding Plugins",
         "writing-plugins": "Writing Plugins",
+        "rendering": "Rendering",
+        "assets": "Assets",
         "built-in-plugins": "Built-in plugins",
         "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags"
       },
+      "title": "User Guide: Using Plugins",
       "footer": "userGuideFooter.md",
       "siteNav": "userGuideSections.md",
       "src": "userGuide/usingPlugins.md",
-      "title": "",
       "layout": "default"
     }
   ]

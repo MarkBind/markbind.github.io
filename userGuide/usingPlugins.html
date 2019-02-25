@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MarkBind</title>
+    <title>MarkBind - User Guide: Using Plugins</title>
     <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
     <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
     <link rel="stylesheet" href="../markbind/css/font-awesome.min.css" >
@@ -66,6 +66,7 @@
   </div>
   <div id="page-content">
     <div id="content-wrapper">
+      <div></div>
       <div>
         <link rel="stylesheet" href="/css/main.css">
         <navbar placement="top" type="inverse" class="temp-navbar">
@@ -84,24 +85,23 @@
           </li>
         </navbar>
       </div>
-      <div class="website-content">
-        <h1 id="using-plugins">Using Plugins<a class="fa fa-anchor" href="#using-plugins"></a></h1>
-        <p>A plugin is a user-defined extension that can add custom features to MarkBind. MarkBind plugins are <code>js</code> scripts that are loaded and run during the page generation. MarkBind allows plugins to modify a page's content during the page
-          generation process.</p>
-        <tip-box type="warning">
-          <p><strong>WARNING:</strong> Plugins are executable programs that can be written by anyone. This means that they might contain malicious code that may damage your computer.</p>
-          <p>Only run plugins from sources that you trust. Do not run the plugin if the source/origin of the plugin cannot be ascertained.
-          </p>
-        </tip-box>
-        <h3 id="adding-plugins">Adding Plugins<a class="fa fa-anchor" href="#adding-plugins"></a></h3>
-        <p>Plugins are stored in the <code>_markbind/plugins</code> folder which is generated on <code>init</code>. To use a plugin, place the <code>js</code> source of the plugin in the <code>_markbind/plugins</code> folder and add the following options
-          to <code>site.json</code>:</p>
-        <ul>
-          <li><code>plugins</code>: An array of plugin names to use.</li>
-          <li><code>pluginsContext</code>: A mapping of plugin names to parameters passed to each individual plugin. It is recommended to use key-value pairs for consistency.</li>
-        </ul>
-        <p>For example:</p>
-        <pre><code class="hljs js">{
+      <h1 id="using-plugins">Using Plugins<a class="fa fa-anchor" href="#using-plugins"></a></h1>
+      <p>A plugin is a user-defined extension that can add custom features to MarkBind. MarkBind plugins are <code>js</code> scripts that are loaded and run during the page generation. MarkBind allows plugins to modify a page's content during the page generation
+        process.</p>
+      <tip-box type="warning">
+        <p><strong>WARNING:</strong> Plugins are executable programs that can be written by anyone. This means that they might contain malicious code that may damage your computer.</p>
+        <p>Only run plugins from sources that you trust. Do not run the plugin if the source/origin of the plugin cannot be ascertained.
+        </p>
+      </tip-box>
+      <h3 id="adding-plugins">Adding Plugins<a class="fa fa-anchor" href="#adding-plugins"></a></h3>
+      <p>Plugins are stored in the <code>_markbind/plugins</code> folder which is generated on <code>init</code>. To use a plugin, place the <code>js</code> source of the plugin in the <code>_markbind/plugins</code> folder and add the following options to
+        <code>site.json</code>:</p>
+      <ul>
+        <li><code>plugins</code>: An array of plugin names to use.</li>
+        <li><code>pluginsContext</code>: A mapping of plugin names to parameters passed to each individual plugin. It is recommended to use key-value pairs for consistency.</li>
+      </ul>
+      <p>For example:</p>
+      <pre><code class="hljs js">{
   ...
   <span class="hljs-string">"plugins"</span>: [
     <span class="hljs-string">"plugin1"</span>,
@@ -117,28 +117,29 @@
   }
 }
 </code></pre>
-        <h3 id="writing-plugins">Writing Plugins<a class="fa fa-anchor" href="#writing-plugins"></a></h3>
-        <p><a href="/images/rendering.png" target="_self"><img src="/images/rendering.png" alt="" class="img-fluid"></a></p>
-        <p>MarkBind provides two entry points for modifying the page, pre-render and post-render. These are controlled by implementing the <code>preRender()</code> and <code>postRender()</code> functions in the plugin:</p>
-        <ul>
-          <li><code>preRender(content, pluginContext, frontMatter)</code>: Called before MarkBind renders the source from Markdown to HTML.
-            <ul>
-              <li><code>content</code>: The raw Markdown of any Markdown file (<code>.md</code>, <code>.mbd</code>, etc.).</li>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-            </ul>
-          </li>
-          <li><code>postRender(content, pluginContext, frontMatter)</code>: Called after the HTML is rendered, before writing it to a file.
-            <ul>
-              <li><code>content</code>: The rendered HTML.</li>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-            </ul>
-          </li>
-        </ul>
-        <p>MarkBind will call these functions with the respective content, and retrieve a string data that is used for the next step of the page generation process.</p>
-        <p>An example of a plugin is shown below. The plugin shows two ways of appending a paragraph of text to a specific <code>div</code> in the Markdown files:</p>
-        <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
+      <h3 id="writing-plugins">Writing Plugins<a class="fa fa-anchor" href="#writing-plugins"></a></h3>
+      <h4 id="rendering">Rendering<a class="fa fa-anchor" href="#rendering"></a></h4>
+      <p><a href="/images/rendering.png" target="_self"><img src="/images/rendering.png" alt="" class="img-fluid"></a></p>
+      <p>MarkBind provides two entry points for modifying the page, pre-render and post-render. These are controlled by implementing the <code>preRender()</code> and <code>postRender()</code> functions in the plugin:</p>
+      <ul>
+        <li><code>preRender(content, pluginContext, frontMatter)</code>: Called before MarkBind renders the source from Markdown to HTML.
+          <ul>
+            <li><code>content</code>: The raw Markdown of any Markdown file (<code>.md</code>, <code>.mbd</code>, etc.).</li>
+            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+          </ul>
+        </li>
+        <li><code>postRender(content, pluginContext, frontMatter)</code>: Called after the HTML is rendered, before writing it to a file.
+          <ul>
+            <li><code>content</code>: The rendered HTML.</li>
+            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>MarkBind will call these functions with the respective content, and retrieve a string data that is used for the next step of the page generation process.</p>
+      <p>An example of a plugin is shown below. The plugin shows two ways of appending a paragraph of text to a specific <code>div</code> in the Markdown files:</p>
+      <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
 
 <span class="hljs-keyword">const</span> cheerio = <span class="hljs-built_in">module</span>.parent.require(<span class="hljs-string">'cheerio'</span>);
 
@@ -152,7 +153,7 @@
   },
 };
 </code></pre>
-        <pre><code class="hljs js"><span class="hljs-comment">// site.json</span>
+      <pre><code class="hljs js"><span class="hljs-comment">// site.json</span>
 
 {
   ...
@@ -167,71 +168,117 @@
   }
 }
 </code></pre>
-        <pre><code class="hljs md">// index.md
+      <pre><code class="hljs md">// index.md
 
 ...
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-div"</span>&gt;</span></span>
 [Pre-render Placeholder]
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 </code></pre>
-        <h3 id="built-in-plugins">Built-in plugins<a class="fa fa-anchor" href="#built-in-plugins"></a></h3>
-        <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
-        <div>
-          <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
-          <p>You can use tags to selectively filter HTML elements when building a site.</p>
-          <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching tags to elements:</p>
-            <pre><code class="hljs html"># Print 'Hello world'
+      <h4 id="assets">Assets<a class="fa fa-anchor" href="#assets"></a></h4>
+      <p>Plugins can implement the methods <code>getLinks</code> and <code>getScripts</code> to add additional assets to the page.</p>
+      <ul>
+        <li><code>getLinks(content, pluginContext, frontMatter, utils)</code>: Called to get link elements to be added to the head of the page.
+          <ul>
+            <li><code>content</code>: The rendered HTML.</li>
+            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+            <li><code>utils</code>: Object containing the following utility functions
+              <ul>
+                <li><code>buildStylesheet(href)</code>: Builds a stylesheet link element with the specified <code>href</code>.</li>
+              </ul>
+            </li>
+            <li>Should return an array of string data containing link elements to be added.</li>
+          </ul>
+        </li>
+        <li><code>getScripts(content, pluginContext, frontMatter, utils)</code>: Called to get script elements to be added after the body of the page.
+          <ul>
+            <li><code>content</code>: The rendered HTML.</li>
+            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+            <li><code>utils</code>: Object containing the following utility functions
+              <ul>
+                <li><code>buildScript(src)</code>: Builds a script element with the specified <code>src</code>.</li>
+              </ul>
+            </li>
+            <li>Should return an array of string data containing script elements to be added.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>An example of a plugin which adds links and scripts to the page:</p>
+      <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">getLinks</span>: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter, utils</span>) =&gt;</span> [utils.buildStylesheet(<span class="hljs-string">'STYLESHEET_LINK'</span>)],
+  <span class="hljs-attr">getScripts</span>: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter, utils</span>) =&gt;</span> 
+    [utils.buildScript(<span class="hljs-string">'SCRIPT_LINK'</span>), <span class="hljs-string">'&lt;script&gt;alert("hello")&lt;/script&gt;'</span>],
+};
+
+</code></pre>
+      <p>This will add the following link and script elements to the page:</p>
+      <ul>
+        <li><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;STYLESHEET_LINK&quot;&gt;</code></li>
+        <li><code>&lt;script src=&quot;SCRIPT_LINK&quot;&gt;&lt;/script&gt;</code></li>
+        <li><code>&lt;script&gt;alert(&quot;hello&quot;)&lt;/script&gt;</code></li>
+      </ul>
+      <h3 id="built-in-plugins">Built-in plugins<a class="fa fa-anchor" href="#built-in-plugins"></a></h3>
+      <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
+      <div>
+        <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
+        <p>You can use tags to selectively filter HTML elements when building a site.</p>
+        <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
+        <div class="indented">
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching tags to elements:</p>
+          <pre><code class="hljs html"># Print 'Hello world'
 
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-            <p>You need to specify the tags to include in <code>site.json</code>, under the <code>tags</code> option:</p>
-            <pre><code class="hljs json">{
+          <p>You need to specify the tags to include in <code>site.json</code>, under the <code>tags</code> option:</p>
+          <pre><code class="hljs json">{
   ...
   <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]
 }
 </code></pre>
-            <p>All other tagged elements will be filtered out. In this case, only the element with the <code>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
-          </div>
-          <p>If the <code>tags</code> option is not specified in <code>site.json</code>, all tagged elements will be rendered.</p>
-          <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code>site.json</code>.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching multiple tags to an element:</p>
-            <pre><code class="hljs html"># For loops
+          <p>All other tagged elements will be filtered out. In this case, only the element with the <code>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
+        </div>
+        <p>If the <code>tags</code> option is not specified in <code>site.json</code>, all tagged elements will be rendered.</p>
+        <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code>site.json</code>.</p>
+        <div class="indented">
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching multiple tags to an element:</p>
+          <pre><code class="hljs html"># For loops
 
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span>
 </code></pre>
-            <p>As long as the <code>language--java</code> or <code>language--C#</code> tag is specified, the code snippet will be rendered.</p>
-          </div>
-          <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying tags in front matter:</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-  title: "Hello World"
-  tags: ["language--java"]
-<span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</code></pre>
-          </div>
-          <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-          </code>
-          </pre>
+          <p>As long as the <code>language--java</code> or <code>language--C#</code> tag is specified, the code snippet will be rendered.</p>
+        </div>
+        <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
+        <div class="indented">
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying tags in front matter:</p>
           <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
   tags: ["language--java"]
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-          </span>
-          <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-          <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
-          <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+        </div>
+        <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        </code>
+        </pre>
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+  title: "Hello World"
+  tags: ["language--java"]
+<span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</code></pre>
+        </span>
+        <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
+        <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
+        <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
+        <div class="indented">
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
   tags: ["language--*"]
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
@@ -240,13 +287,13 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-            <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
-          </div>
-          <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
-          <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
-            <pre><code class="hljs html">index.md
+          <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
+        </div>
+        <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
+        <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
+        <div class="indented">
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
+          <pre><code class="hljs html">index.md
 
 <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
@@ -257,17 +304,17 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-            <pre><code class="hljs json">site.json
+          <pre><code class="hljs json">site.json
 
 {
   ...
   <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]
 }
 </code></pre>
-            <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
-          </div>
-          <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
-          <span id="short" class="d-none">
+          <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
+        </div>
+        <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
+        <span id="short" class="d-none">
 ```html
 # Print 'Hello world'
 <p tags="language--java">System.out.println("Hello world");</p>
@@ -288,7 +335,6 @@
 }
 ```
 </span></div>
-      </div>
     </div>
   </div>
 </div>
