@@ -67,7 +67,7 @@
         "deploying-to-netlify": "Deploying to Netlify",
         "setting-up-netlify-to-use-a-specific-version-of-markbind": "Setting up Netlify to use a specific version of MarkBind"
       },
-      "title": "User Guide - Deploying the Site",
+      "title": "User Guide: Deploying the Site",
       "footer": "footer.md",
       "siteNav": "userGuideSections.md",
       "pageNav": "default",
@@ -112,7 +112,7 @@
       "headings": {
         "getting-started": "Getting Started"
       },
-      "title": "User Guide - Quick Start",
+      "title": "User Guide - Getting Started",
       "footer": "footer.md",
       "siteNav": "userGuideSections.md",
       "src": "userGuide/gettingStarted.md",
@@ -133,7 +133,7 @@
       "headings": {
         "getting-started": "Getting Started"
       },
-      "title": "User Guide - Quick Start",
+      "title": "User Guide - Getting Started",
       "footer": "footer.md",
       "siteNav": "userGuideSections.md",
       "src": "userGuide/index.md",
@@ -159,7 +159,7 @@
         "github-project-workflow": "GitHub Project Workflow",
         "using-markbind-for-project-documentation": "Using MarkBind for Project Documentation"
       },
-      "title": "User Guide: Using MarkBind in the Project Workflow",
+      "title": "User Guide: MarkBind in the Project Workflow",
       "footer": "footer.md",
       "siteNav": "userGuideSections.md",
       "src": "userGuide/markBindInTheProjectWorkflow.md",
@@ -321,10 +321,11 @@
         "built-in-plugins": "Built-in plugins",
         "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
-        "hiding-tags": "Hiding Tags"
+        "hiding-tags": "Hiding Tags",
+        "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch"
       },
       "title": "User Guide: Using Plugins",
-      "footer": "userGuideFooter.md",
+      "footer": "footer.md",
       "siteNav": "userGuideSections.md",
       "src": "userGuide/usingPlugins.md",
       "layout": "default"
