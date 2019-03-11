@@ -1208,7 +1208,7 @@ ______________
       <span><strong>Includes</strong></span>
       <div>
         <pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"foo.md#bar"</span> <span class="hljs-attr">boilerplate</span> <span class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span></span>
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"x"</span>&gt;</span></span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span>&gt;</span></span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span></span>
 </code></pre>
       </div>
@@ -1308,8 +1308,8 @@ Tip 2. ...
         <div class="indented">
           <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables in an <code>&lt;include&gt;</code>            tag:</p>
           <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"title"</span>&gt;</span>My Title<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"author"</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"title"</span>&gt;</span>My Title<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
 </code></pre>
           <p>In <code>article.md</code>:</p>
@@ -1416,8 +1416,8 @@ Author: {<span></span>{ author }}
         <span
           class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span>
           </span>
-          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"x"</span>&gt;</span>
-          </span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span>&gt;</span>
+          </span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
           </span>
           <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
           </span>
@@ -4190,7 +4190,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
     <div>
       <p>Global variables:</p>
       <p><code>_markbind/variables.md</code>:</p>
-      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </code></pre>
       <p><code>The year was {<span></span>{ year }}.</code></p>
       <p>Page variables:<br>
@@ -4207,16 +4207,17 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
 <p><strong>MarkBind variables are ideal for reusing small bits of code</strong> in multiple places; you can define a variable to represent the code bit in question and reuse it anywhere in the site by referring the variable instead of duplicating the code bit.
 </p></span>
       <h3 id="global-variables">Global Variables<a class="fa fa-anchor" href="#global-variables"></a></h3>
-      <p><strong>Global variables are to be defined in the <code>_markbind/variables.md</code> file.</strong> Each variable must have an <code>id</code> and the value can be any MarkBind-compliant code fragment. The <code>id</code> should not contain <code>-</code>        and <code>.</code>. For example, <code>search-option</code> and <code>search.options</code> are not allowed.</p>
+      <p><strong>Global variables are to be defined in the <code>_markbind/variables.md</code> file.</strong> Each variable must have an <code>name</code> and the value can be any MarkBind-compliant code fragment. The <code>name</code> should not contain
+        <code>-</code> and <code>.</code>. For example, <code>search-option</code> and <code>search.options</code> are not allowed.</p>
       <div class="indented">
         <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how you can define two variables <code>year</code> and <code>options</code>:</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"options"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"options"</span>&gt;</span>
 * yes
 * no
 * maybe
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 </code></pre>
       </div>
       <p>To include a variable value in your code, give the variable id enclosed in double curly braces.</p>
@@ -4249,13 +4250,13 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
       <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
       <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
       <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated at: Fri, 08 Mar 2019 15:07:41 GMT</p>
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated at: Mon, 11 Mar 2019 07:18:15 GMT</p>
       </div>
       <p></p>
       <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
       <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
       <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated by: <a href="https://markbind.org/">MarkBind 1.19.2</a></p>
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated by: <a href="https://markbind.org/">MarkBind 1.20.0</a></p>
       </div>
       <p></p>
       <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -4278,35 +4279,35 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
       <p><strong>Variables can refer to other variables</strong> that are declared earlier, including built-in variables.</p>
       <div class="indented">
         <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> This variable uses a built-in variable:<br>
-          <code>&lt;span id=&quot;time&quot;&gt;{<span></span>{ timestamp }}&lt;/span&gt;</code></p>
+          <code>&lt;variable name=&quot;time&quot;&gt;</code><code>{<span></span>{ timestamp }}</code><code>&lt;/variable&gt;</code></p>
         <p>Here, the second variable will be assigned the contents of the first variable.<br>
-          <code>&lt;span id=&quot;first&quot;&gt;This is the first variable.&lt;/span&gt;</code><br>
-          <code>&lt;span id=&quot;second&quot;&gt;{<span></span>{ first }}&lt;/span&gt;</code><br></p>
+          <code>&lt;variable name=&quot;first&quot;&gt;</code><code>This is the first variable.</code><code>&lt;/variable&gt;</code><br>
+          <code>&lt;variable name=&quot;second&quot;&gt;</code><code>{<span></span>{ first }}</code><code>&lt;/variable&gt;</code><br></p>
         <p>This will not work, as the <code>fourth</code> variable is declared <em>below</em> the line that refers to it.<br>
-          <code>&lt;span id=&quot;third&quot;&gt;{<span></span>{ fourth }}&lt;/span&gt;</code> ❌<br>
-          <code>&lt;span id=&quot;fourth&quot;&gt;This is the fourth variable.&lt;/span&gt;</code></p>
+          <code>&lt;variable name=&quot;third&quot;&gt;</code><code>{<span></span>{ fourth }}</code><code>&lt;/variable&gt;</code> ❌<br>
+          <code>&lt;variable name=&quot;fourth&quot;&gt;</code><code>This is the fourth variable.</code><code>&lt;/variable&gt;</code></p>
       </div>
       <p>Note that if the variable being referenced contains HTML tags, MarkBind may escape the tags and render it literally.</p>
       <div class="indented">
         <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If we declare the variables as follows,<br></p>
-        <p><code>&lt;span id=&quot;note&quot;&gt;&lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt;&lt;/span&gt;</code><br>
-          <code>&lt;span id=&quot;note_2&quot;&gt;{<span></span>{ note }}&lt;/span&gt;</code><br>
-          <code>&lt;span id=&quot;const_note&quot;&gt;{<span></span>{ note_2 }} This is a constant.&lt;/span&gt;</code></p>
+        <p><code>&lt;variable name=&quot;note&quot;&gt;</code><code>&lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt;</code><code>&lt;/variable&gt;</code><br>
+          <code>&lt;variable name=&quot;note_2&quot;&gt;</code><code>{<span></span>{ note }}</code><code>&lt;/variable&gt;</code><br>
+          <code>&lt;variable name=&quot;const_note&quot;&gt;</code><code>{<span></span>{ note_2 }} This is a constant.</code><code>&lt;/variable&gt;</code></p>
         <p>the result will be,<br></p>
         <p><code>{<span></span>{ const_note }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> &lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt; This is a constant.</p>
       </div>
       <p>You must use the <code>safe</code> filter when using such variables:</p>
       <div class="indented">
         <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If we use the safe filter for the second variable:<br></p>
-        <p><code>&lt;span id=&quot;note&quot;&gt;&lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt;&lt;/span&gt;</code><br>
-          <code>&lt;span id=&quot;note_2&quot;&gt;{<span></span>{ note | safe }}&lt;/span&gt;</code><br>
-          <code>&lt;span id=&quot;const_note&quot;&gt;{<span></span>{ note_2 }} This is a constant.&lt;/span&gt;</code></p>
+        <p><code>&lt;variable name=&quot;note&quot;&gt;</code><code>&lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt;</code><code>&lt;/variable&gt;</code><br>
+          <code>&lt;variable name=&quot;note_2&quot;&gt;</code><code>{<span></span>{ note | safe }}</code><code>&lt;/variable&gt;</code><br>
+          <code>&lt;variable name=&quot;const_note&quot;&gt;</code><code>{<span></span>{ note_2 }} This is a constant.</code><code>&lt;/variable&gt;</code></p>
         <p><code>{<span></span>{ const_note }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> <span style="color: blue">Note: </span> This is a constant.</p>
       </div>
       <span id="short" class="d-none">
 <p>Global variables:</p>
 <p><code>_markbind/variables.md</code>:</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
       </code>
       </pre>
       <p><code>The year was {<span></span>{ year }}.</code></p>
@@ -4323,7 +4324,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.19.2</a> on Fri, 08 Mar 2019 15:07:41 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.20.0</a> on Mon, 11 Mar 2019 07:18:15 GMT]</small></div>
 </footer>
 </div>
 </body>
