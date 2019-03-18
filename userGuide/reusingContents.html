@@ -4,12 +4,13 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 1.21.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MarkBind - User Guide: Reusing Contents</title>
     <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
     <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-    <link rel="stylesheet" href="../markbind/css/font-awesome.min.css" >
-    <link rel="stylesheet" href="../markbind/css/bootstrap-glyphicons.min.css" >
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css" >
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css" >
     <link rel="stylesheet" href="../markbind/css/github.min.css">
     <link rel="stylesheet" href="../markbind/css/markbind.css">
     <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
@@ -102,7 +103,7 @@
         <div></div>
         <div></div>
         <span id="link" class="d-none">
-<span><a href="/userGuide/reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
+<span><a href="reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
         <div>
           <link rel="stylesheet" href="/css/main.css">
           <navbar placement="top" type="inverse" class="temp-navbar">
@@ -112,8 +113,7 @@
             <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
             <li><a href="/about.html" class="nav-link">ABOUT</a></li>
             <li>
-              <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">
-      <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewbox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+              <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
             <li slot="right">
               <form class="navbar-form">
                 <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
@@ -158,31 +158,58 @@
           <p>Represents the root directory of the project. Used for specifying intra-site links.</p>
           <panel type="seamless" header="User Guide: MarkBind Syntax → Intra-Site Links">
             <div>
-              <p>Links to files of the generated site (e.g., an HTML page or an image file) should be specified as absolute paths and should start with
-                <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).</p>
+              <p>Links to files of the generated site (e.g., an HTML page or an image file) can be specified either as relative paths or absolute paths.</p>
+              <p>Absolute paths:</p>
               <div class="indented">
+                Links should start with
+                <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).
                 <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
                   <code>{<span></span>{ baseUrl }}</code> :
                 </p>
                 <ol>
-                  <li><code>Click [here]({<span></span>{ baseUrl }}/userGuide/reusingContents.html).</code></li>
+                  <li><code>Click [here](
+<code>{<span></span>{ baseUrl }}</code> /userGuide/reusingContents.html).
+                    </code>
+                  </li>
                   <li><code>![](</code>
                     <code>{<span></span>{ baseUrl }}</code>
                     <code>/images/preview.png)</code></li>
                 </ol>
+              </div>
+              <p>Relative paths:</p>
+              <div class="indented">
+                Links to files can also be specified relative to the file that includes it.
+                <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Assuming that we have the following folder structure:</p>
+                <pre><code class="hljs">c:/course/
+  ├── textbook/
+  |      ├── subsite.md
+  |      ├── image.png
+  |      └── site.json
+  ├── index.md
+  └── site.json
+</code></pre>
+                <p>Within <code>textbook/subsite.md</code>, we can refer to the image using:</p>
+                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
+</code></pre>
+                <p>Within <code>index.md</code>, we can also display the image using</p>
+                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
+</code></pre>
+                <p>or by including <code>subsite.md</code>:</p>
+                <pre><code class="hljs">&lt;include src=&quot;textbook/subsite.md&quot; /&gt;
+</code></pre>
               </div>
             </div>
           </panel>
           <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
           <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated at: Mon, 11 Mar 2019 07:18:15 GMT</p>
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated at: Mon, 18 Mar 2019 02:06:47 GMT</p>
           </div>
           <p></p>
           <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
           <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated by: <a href="https://markbind.org/">MarkBind 1.20.0</a></p>
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated by: <a href="https://markbind.org/">MarkBind 1.21.0</a></p>
           </div>
           <p></p>
           <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -278,9 +305,7 @@ Tip 2. ...
             <p>When setting the <code>id</code> of a fragment, be careful not to clash with heading anchor IDs auto-generated by MarkBind. For example, if you have a heading <code>## Some Useful Tips</code>, MarkBind will auto-generate an ID <code>some-useful-tips</code>              for that heading.</p>
           </box>
           <box border-left-color="#00B0F0">
-            <p>
-              <font color="#00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></font> The <code>&lt;include&gt;</code> tag works for any MarBind source file including the <em>font matter</em> section but it may not work in some <em>special</em> files such as
-              the <code>_markbind/variables.md</code>.
+            <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> The <code>&lt;include&gt;</code> tag works for any MarBind source file including the <em>font matter</em> section but it may not work in some <em>special</em>              files such as the <code>_markbind/variables.md</code>.
             </p>
           </box>
           <p><strong>Attributes:</strong></p>
@@ -301,8 +326,7 @@ Tip 2. ...
           </ul>
           <div>
             <box border-left-color="#00B0F0">
-              <p>
-                <font color="#00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></font>
+              <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
                 The <code>&lt;include&gt;</code> mechanism can be used inside any MarkBind source file (even inside the <em>front matter</em> section) but it will not work inside some <em>special</em> files such as the <code>_markbind/variables.md</code>.</p>
             </box>
           </div>
@@ -476,8 +500,7 @@ Author: {<span></span>{ author }}
         </div>
         <div>
           <box border-left-color="#00B0F0">
-            <p>
-              <font color="#00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></font>
+            <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
               If you are using Git for version control, you can set up the sub-site repository as a <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git sub-module</a> of the main site repository.</p>
           </box>
         </div>
@@ -503,16 +526,16 @@ Optional video:
           </div>
         </div>
         <h4 id="giving-alternative-contents">Giving alternative contents<a class="fa fa-anchor" href="#giving-alternative-contents"></a></h4>
-        <p>You can use a <a href="/userGuide/usingComponents.html#tabs"><em>Tabs</em> component</a> to give alternative versions of content, for example, giving a code snippet in different programming languages.</p>
+        <p>You can use a <a href="usingComponents.html#tabs"><em>Tabs</em> component</a> to give alternative versions of content, for example, giving a code snippet in different programming languages.</p>
         <h4 id="giving-access-to-additional-contents">Giving access to additional contents<a class="fa fa-anchor" href="#giving-access-to-additional-contents"></a></h4>
         <p>You can use following components to give readers an option to access additional content at their discretion.</p>
         <ul>
-          <li><a href="/userGuide/usingComponents.html#tooltip">Tooltips</a>, <a href="/userGuide/usingComponents.html#popover">Popovers</a>, <a href="/userGuide/usingComponents.html#modal">Modals</a></li>
-          <li><a href="/userGuide/usingComponents.html#panel">Expandable Panels</a></li>
+          <li><a href="usingComponents.html#tooltip">Tooltips</a>, <a href="usingComponents.html#popover">Popovers</a>, <a href="usingComponents.html#modal">Modals</a></li>
+          <li><a href="usingComponents.html#panel">Expandable Panels</a></li>
         </ul>
         <h4 id="organizing-contents-in-alternative-ways">Organizing contents in alternative ways<a class="fa fa-anchor" href="#organizing-contents-in-alternative-ways"></a></h4>
-        <p>You can take advantage of <a href="/userGuide/reusingContents.html">MarkBinds feature for content reuse</a>, you can organize content in alternative ways to cater for different readers, without having to duplicate content. For example, you can
-          have different pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p>
+        <p>You can take advantage of <a href="reusingContents.html">MarkBinds feature for content reuse</a>, you can organize content in alternative ways to cater for different readers, without having to duplicate content. For example, you can have different
+          pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p>
         <h4 id="optimizing-the-print-view">Optimizing the Print View<a class="fa fa-anchor" href="#optimizing-the-print-view"></a></h4>
         <p>To <span class="keyword">hide minimized panels in the <em>print view</em></span>, add the following code to a CSS file used in your site.</p>
         <pre><code class="hljs css">@<span class="hljs-keyword">media</span> print {
@@ -542,7 +565,7 @@ Optional video:
 }
 </code></pre>
         <h4 id="creating-slight-variations-of-content">Creating slight variations of content<a class="fa fa-anchor" href="#creating-slight-variations-of-content"></a></h4>
-        <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="/userGuide/tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a>          section for more information.</p>
+        <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a>          section for more information.</p>
         <div class="clearfix">
           <p><span class="float-left"><b-btn variant="light" href="/userGuide/tweakingThePageStructure.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Tweaking the Page Structure</span></span>
             </b-btn>
@@ -560,7 +583,7 @@ Optional video:
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.20.0</a> on Mon, 11 Mar 2019 07:18:15 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.21.0</a> on Mon, 18 Mar 2019 02:06:47 GMT]</small></div>
 </footer>
 </div>
 </body>

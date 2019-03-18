@@ -4,12 +4,13 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 1.21.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
     <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
     <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-    <link rel="stylesheet" href="../markbind/css/font-awesome.min.css" >
-    <link rel="stylesheet" href="../markbind/css/bootstrap-glyphicons.min.css" >
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css" >
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css" >
     <link rel="stylesheet" href="../markbind/css/github.min.css">
     <link rel="stylesheet" href="../markbind/css/markbind.css">
     <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
@@ -69,7 +70,7 @@
       <div></div>
       <div></div>
       <span id="link" class="d-none">
-[_User Guide → MarkBind Syntax Overview_](/userGuide/markBindSyntaxOverview.html)
+[_User Guide → MarkBind Syntax Overview_](markBindSyntaxOverview.html)
 </span>
       <div>
         <link rel="stylesheet" href="/css/main.css">
@@ -80,8 +81,7 @@
           <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
           <li><a href="/about.html" class="nav-link">ABOUT</a></li>
           <li>
-            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">
-      <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewbox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
           <li slot="right">
             <form class="navbar-form">
               <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
@@ -96,11 +96,10 @@
       <p>Given below is an overview of the syntax schemes supported by MarkBind.</p>
       <box>
         <p><span aria-hidden="true" class="fas fa-info-circle"></span> Exact usage of various MarkBind syntax is described in separate sections such as <span>
-<span><a href="/userGuide/formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span>
+<span><a href="formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span>
         </p>
       </box>
-      <h4 id="support-for-markdown">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for Markdown<a class="fa fa-anchor" href="#support-for-markdown"></a></h4>
+      <h4 id="support-for-markdown"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Markdown<a class="fa fa-anchor" href="#support-for-markdown"></a></h4>
       <p>MarkBind supports all basic Markdown syntax.</p>
       <panel type="seamless" header="Some examples ...">
         <div>
@@ -154,8 +153,7 @@
         </div>
       </panel>
 
-      <h4 id="support-for-gfmd">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for GFMD<a class="fa fa-anchor" href="#support-for-gfmd"></a></h4>
+      <h4 id="support-for-gfmd"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for GFMD<a class="fa fa-anchor" href="#support-for-gfmd"></a></h4>
       <p>MarkBind supports additional Markdown features provided by Github-Flavored Markdown (GFMD).</p>
       <panel type="seamless" header="Some examples ...">
         <div>
@@ -225,8 +223,7 @@
         </div>
       </panel>
 
-      <h4 id="markbind-extensions-to-markdown">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> MarkBind Extensions to Markdown<a class="fa fa-anchor" href="#markbind-extensions-to-markdown"></a></h4>
+      <h4 id="markbind-extensions-to-markdown"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Extensions to Markdown<a class="fa fa-anchor" href="#markbind-extensions-to-markdown"></a></h4>
       <p>MarkBind adds several Markdown-like features on top of GFMD.</p>
       <panel type="seamless" header="Some examples ...">
         <div>
@@ -267,8 +264,7 @@
         </div>
       </panel>
 
-      <h4 id="markbind-custom-syntax">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> MarkBind Custom Syntax<a class="fa fa-anchor" href="#markbind-custom-syntax"></a></h4>
+      <h4 id="markbind-custom-syntax"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Custom Syntax<a class="fa fa-anchor" href="#markbind-custom-syntax"></a></h4>
       <p>Given below are some examples of custom syntax added by MarkBind.</p>
       <blockquote>
         <span>
@@ -294,29 +290,26 @@
 </p></span></blockquote>
       <div class="indented">
         More info: <span>
-<span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
+<span><a href="usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
       </div>
       <br>
 
-      <h4 id="support-for-html-javascript-css">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for HTML, JavaScript, CSS<a class="fa fa-anchor" href="#support-for-html-javascript-css"></a></h4>
+      <h4 id="support-for-html-javascript-css"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for HTML, JavaScript, CSS<a class="fa fa-anchor" href="#support-for-html-javascript-css"></a></h4>
       <blockquote>
         <span>
 <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
 </p></span></blockquote>
       <div class="indented">
         More info: <span>
-<span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
+<span><a href="usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
       </div>
       <br>
 
-      <h4 id="support-for-vuestrap-and-bootstrap">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for VueStrap and BootStrap<a class="fa fa-anchor" href="#support-for-vuestrap-and-bootstrap"></a></h4>
+      <h4 id="support-for-vuestrap-and-bootstrap"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for VueStrap and BootStrap<a class="fa fa-anchor" href="#support-for-vuestrap-and-bootstrap"></a></h4>
       <p>As MarkBind uses <a href="https://bootstrap-vue.js.org/docs/components/alert/">VueStrap</a> (which in turn is based on <a href="https://getbootstrap.com/docs/4.2/getting-started/introduction/">BootStrap</a>) internally, many of their syntax work
         within MarkBind files too.</p>
 
-      <h4 id="support-for-nunjucks">
-        <font color="#00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></font> Support for Nunjucks<a class="fa fa-anchor" href="#support-for-nunjucks"></a></h4>
+      <h4 id="support-for-nunjucks"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Nunjucks<a class="fa fa-anchor" href="#support-for-nunjucks"></a></h4>
       <p><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> is a JavaScript based templating tool. Here is a simple example:</p>
       <p>
         <box><span>
@@ -353,7 +346,7 @@
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.20.0</a> on Mon, 11 Mar 2019 07:18:15 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.21.0</a> on Mon, 18 Mar 2019 02:06:47 GMT]</small></div>
 </footer>
 </div>
 </body>

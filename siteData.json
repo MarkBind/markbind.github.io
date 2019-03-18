@@ -168,13 +168,13 @@
     {
       "headings": {
         "markbind-syntax-overview": "MarkBind Syntax Overview",
-        "support-for-markdown": "\n         Support for Markdown",
-        "support-for-gfmd": "\n         Support for GFMD",
-        "markbind-extensions-to-markdown": "\n         MarkBind Extensions to Markdown",
-        "markbind-custom-syntax": "\n         MarkBind Custom Syntax",
-        "support-for-html-javascript-css": "\n         Support for HTML, JavaScript, CSS",
-        "support-for-vuestrap-and-bootstrap": "\n         Support for VueStrap and BootStrap",
-        "support-for-nunjucks": "\n         Support for Nunjucks"
+        "support-for-markdown": " Support for Markdown",
+        "support-for-gfmd": " Support for GFMD",
+        "markbind-extensions-to-markdown": " MarkBind Extensions to Markdown",
+        "markbind-custom-syntax": " MarkBind Custom Syntax",
+        "support-for-html-javascript-css": " Support for HTML, JavaScript, CSS",
+        "support-for-vuestrap-and-bootstrap": " Support for VueStrap and BootStrap",
+        "support-for-nunjucks": " Support for Nunjucks"
       },
       "title": "User Guide: MarkBind Syntax Overview ",
       "footer": "footer.md",

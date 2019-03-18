@@ -4,12 +4,13 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 1.21.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MarkBind - Configuring the Site</title>
     <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
     <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-    <link rel="stylesheet" href="../markbind/css/font-awesome.min.css" >
-    <link rel="stylesheet" href="../markbind/css/bootstrap-glyphicons.min.css" >
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css" >
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css" >
     <link rel="stylesheet" href="../markbind/css/github.min.css">
     <link rel="stylesheet" href="../markbind/css/markbind.css">
     <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
@@ -75,8 +76,7 @@
           <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
           <li><a href="/about.html" class="nav-link">ABOUT</a></li>
           <li>
-            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">
-      <svg height="16px" fill="#777" class="octicon octicon-mark-github" viewbox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
           <li slot="right">
             <form class="navbar-form">
               <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
@@ -148,7 +148,7 @@
       <ul>
         <li><strong><code>src</code></strong>/<strong><code>glob</code></strong>: <code>src</code> can be used to specify a file e.g., <code>docs/index.md</code>.<br> Alternatively, <code>glob</code> can be used to define a file pattern in the <a href="https://en.wikipedia.org/wiki/Glob_(programming)"><em>glob syntax</em></a>          e.g., <code>**/*.md</code>.</li>
         <li><strong><code>title</code></strong>: The page <code>&lt;title&gt;</code> for the generated web page. Titles specified here take priority over titles specified in the <a href="addingPages.html#front-matter">front matter</a> of individual pages.</li>
-        <li><strong><code>layout</code></strong>: The <a href="/userGuide/tweakingThePageStructure.html#page-layouts">layout</a> to be used by the page. Default: <code>default</code>.</li>
+        <li><strong><code>layout</code></strong>: The <a href="tweakingThePageStructure.html#page-layouts">layout</a> to be used by the page. Default: <code>default</code>.</li>
         <li><strong><code>searchable</code></strong>: Specifies that the page(s) should be excluded from searching. Default: <code>yes</code>.</li>
         <li><strong><code>externalScripts</code></strong>: An array of external scripts to be referenced on the page. Scripts referenced will be run before the layout script.</li>
       </ul>
@@ -195,7 +195,7 @@
     <p>The ignore pattern follows the <a href="https://git-scm.com/docs/gitignore#_pattern_format">glob pattern used in .gitignore</a>. For example, <code>*.md</code> ignores all markdown source files.</p>
     <div id="site-json-deploy">
       <h4 id="deploy"><strong><code>deploy</code></strong><a class="fa fa-anchor" href="#deploy"></a></h4>
-      <p><strong>The settings for <a href="/userGuide/deployingTheSite.html">auto-deployment to Github pages</a>.</strong></p>
+      <p><strong>The settings for <a href="deployingTheSite.html">auto-deployment to Github pages</a>.</strong></p>
       <ul>
         <li>
           <p><strong><code>message</code></strong> [Optional. Default: <code>&quot;Site Update.&quot;</code>]<br> The commit message used for the deployment commit.</p>
@@ -214,14 +214,14 @@
     <h4 id="headingindexinglevel"><strong><code>headingIndexingLevel</code></strong><a class="fa fa-anchor" href="#headingindexinglevel"></a></h4>
     <p><strong>The level of headings to be indexed for searching.</strong> Default: <code>3</code> <span class="dimmed">i.e., only headings of levels 1,2,3 will be indexed for searching</span>.</p>
     <h4 id="enablesearch"><strong><code>enableSearch</code></strong><a class="fa fa-anchor" href="#enablesearch"></a></h4>
-    <p><strong>Specifies that the website should use MarkBind's search functionality.</strong> Default: <code>true</code>. See <a href="/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a> for more details.</p>
+    <p><strong>Specifies that the website should use MarkBind's search functionality.</strong> Default: <code>true</code>. See <a href="makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a> for more details.</p>
   </div>
 </div>
 </div>
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.20.0</a> on Mon, 11 Mar 2019 07:18:15 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.21.0</a> on Mon, 18 Mar 2019 02:06:47 GMT]</small></div>
 </footer>
 </div>
 </body>
