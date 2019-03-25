@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 1.21.0">
+    <meta name="generator" content="MarkBind 1.22.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MarkBind - User Guide: Reader-Facing Features</title>
     <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -41,6 +41,7 @@
       </li>
       <li style="margin-top: 10px"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
       <li style="margin-top: 10px"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
+      <li style="margin-top: 10px"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
       <li style="margin-top: 10px"><button class="dropdown-btn dropdown-btn-open">References 
  <i class="dropdown-btn-icon rotate-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
@@ -1358,28 +1359,26 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
 <h5 id="dropdowns">Dropdowns<a class="fa fa-anchor" href="#dropdowns"></a></h5>
 <box>
   <div>
-    <p><span class="undefined temp-dropdown-placeholder">Action</span>
-      <dropdown text="Action" type="primary" class="temp-dropdown"></dropdown>
-    </p>
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-    <li role="separator" class="dropdown-divider"></li>
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+    <div class="temp-dropdown-placeholder">Action</div>
+    <dropdown text="Action" type="primary" class="temp-dropdown">
+      <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+      <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+      <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+      <li role="separator" class="dropdown-divider"></li>
+      <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+    </dropdown>
 
-
-    <p><span class="undefined temp-dropdown-placeholder">undefined</span>
-      <dropdown type="info" class="temp-dropdown">
-        <button slot="before" type="button" class="btn btn-info">Segmented</button></dropdown>
-    </p>
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
-
+    <div class="temp-dropdown-placeholder"></div>
+    <dropdown type="info" class="temp-dropdown">
+      <button slot="before" type="button" class="btn btn-info">Segmented</button>
+      <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
+    </dropdown>
     <p></p>
 
     <div class="btn-group d-flex" role="group">
       <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
 
-      <span class="w-100 temp-dropdown-placeholder">undefined</span>
+      <div class="w-100 temp-dropdown-placeholder"></div>
       <dropdown class="w-100 temp-dropdown">
         <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
       Action
@@ -1397,6 +1396,7 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
   <panel type="seamless" header="%%details...%%">
     <div>
       <h2 id="dropdowns-2">Dropdowns<a class="fa fa-anchor" href="#dropdowns-2"></a></h2>
+      <p><strong>You can use Dropdowns as a top level component.</strong></p>
       <div>
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
@@ -1418,8 +1418,36 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
 <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"Right aligned list"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dropdown</span>&gt;</span>
-
-<span class="hljs-comment">&lt;!-- In a button group --&gt;</span>
+</code></pre>
+        </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <div class="temp-dropdown-placeholder">Action</div>
+            <dropdown text="Action" type="primary" class="temp-dropdown">
+              <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+              <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+              <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+              <li role="separator" class="dropdown-divider"></li>
+              <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+            </dropdown>
+            <div class="temp-dropdown-placeholder"></div>
+            <dropdown type="info" class="temp-dropdown">
+              <button slot="before" type="button" class="btn btn-info">Segmented</button>
+              <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
+            </dropdown>
+            <div class="temp-dropdown-placeholder">Right aligned list</div>
+            <dropdown text="Right aligned list" type="primary" menu-align-right="" class="temp-dropdown">
+              <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+            </dropdown>
+          </box>
+        </div>
+      </div>
+      <p><strong>You can also use Dropdowns as a nested component (e.g. part of a button group).</strong></p>
+      <div>
+        <p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In a button group --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group d-flex"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger w-100"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- With slots you can handle some elements as native bootstrap --&gt;</span>
@@ -1443,11 +1471,13 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
         <p><span class="dimmed">OUTPUT:</span></p>
         <div class="indented">
           <box border-left-color="grey" background-color="white">
-            <p><span class="undefined temp-dropdown-placeholder">undefined</span>
-              <dropdown class="temp-dropdown">
-                <button slot="button" type="button" class="btn btn-secondary dropdown-toggle">
-Action
-<span class="caret"></span></button>
+            <div class="btn-group d-flex" role="group">
+              <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
+              <div class="w-100 temp-dropdown-placeholder"></div>
+              <dropdown class="w-100 temp-dropdown">
+                <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
+      Action
+      <span class="caret"></span></button>
                 <ul slot="dropdown-menu" class="dropdown-menu">
                   <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
                   <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
@@ -1456,56 +1486,7 @@ Action
                   <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
                 </ul>
               </dropdown>
-              <span class="undefined temp-dropdown-placeholder">Action</span>
-              <dropdown text="Action" type="primary" class="temp-dropdown">
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                <li role="separator" class="dropdown-divider"></li>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-              </dropdown>
-              <span class="undefined temp-dropdown-placeholder">undefined</span>
-              <dropdown class="temp-dropdown">
-                <button slot="button" type="button" class="btn btn-success dropdown-toggle">
-Action <span class="caret"></span></button>
-                <ul slot="dropdown-menu" class="dropdown-menu">
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                  <li role="separator" class="dropdown-divider"></li>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-                </ul>
-              </dropdown>
-              <span class="undefined temp-dropdown-placeholder">Disabled</span>
-              <dropdown text="Disabled" type="warning" disabled class="temp-dropdown">
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-              </dropdown>
-              <span class="undefined temp-dropdown-placeholder">undefined</span>
-              <dropdown type="info" class="temp-dropdown">
-                <button slot="before" type="button" class="btn btn-info">Segmented</button>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-              </dropdown>
-              <span class="undefined temp-dropdown-placeholder">Right aligned list</span>
-              <dropdown text="Right aligned list" type="primary" menu-align-right="" class="temp-dropdown">
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-              </dropdown>
-              <div><br></div>
-              <div class="btn-group d-flex" role="group">
-                <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
-                <span class="w-100 temp-dropdown-placeholder">undefined</span>
-                <dropdown class="w-100 temp-dropdown">
-                  <a slot="button" href="/userGuide/syntax/null" class="btn btn-warning dropdown-toggle w-100">
-Dropdown <span class="caret"></span></a>
-                  <ul slot="dropdown-menu" class="dropdown-menu">
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                    <li role="separator" class="dropdown-divider"></li>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-                  </ul>
-                </dropdown>
-                <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
-            </p>
+              <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
           </box>
         </div>
       </div>
@@ -1581,42 +1562,35 @@ Dropdown <span class="caret"></span></a>
       </pre>
       </span>
       <span id="examples" class="d-none">
-<p><span class="undefined temp-dropdown-placeholder">Action</span>
-      <dropdown text="Action" type="primary" class="temp-dropdown"></dropdown>
-      </p>
-      <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-      <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-      <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-      <li role="separator" class="dropdown-divider"></li>
-      <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+<div class="temp-dropdown-placeholder">Action</div><dropdown text="Action" type="primary" class="temp-dropdown">
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+  <li role="separator" class="dropdown-divider"></li>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li></dropdown>
 
+<div class="temp-dropdown-placeholder"></div><dropdown type="info" class="temp-dropdown">
+  <button slot="before" type="button" class="btn btn-info">Segmented</button>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li></dropdown>
+<p></p>
 
-      <p><span class="undefined temp-dropdown-placeholder">undefined</span>
-        <dropdown type="info" class="temp-dropdown">
-          <button slot="before" type="button" class="btn btn-info">Segmented</button></dropdown>
-      </p>
-      <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
-
-      <p></p>
-
-      <div class="btn-group d-flex" role="group">
-        <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
-
-        <span class="w-100 temp-dropdown-placeholder">undefined</span>
-        <dropdown class="w-100 temp-dropdown">
-          <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
+<div class="btn-group d-flex" role="group">
+  <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
+  
+  <div class="w-100 temp-dropdown-placeholder"></div><dropdown class="w-100 temp-dropdown">
+    <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
       Action
       <span class="caret"></span></button>
-          <ul slot="dropdown-menu" class="dropdown-menu">
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-            <li role="separator" class="dropdown-divider"></li>
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-          </ul>
-        </dropdown>
-        <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
-      </span>
+      <ul slot="dropdown-menu" class="dropdown-menu">
+        <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+        <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+        <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+        <li role="separator" class="dropdown-divider"></li>
+        <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+      </ul>
+      </dropdown>
+      <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
+    </span>
     </div>
   </panel>
 </box>
@@ -1844,7 +1818,7 @@ Modal content
 
       <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
-      <span class="nav-link temp-dropdown-placeholder">Dropdown</span>
+      <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
       <dropdown text="Dropdown" class="nav-link temp-dropdown">
         <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
       </dropdown>
@@ -1882,7 +1856,7 @@ Modal content
 
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
-              <span class="nav-link temp-dropdown-placeholder">Dropdown</span>
+              <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
               <dropdown text="Dropdown" class="nav-link temp-dropdown">
                 <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
               </dropdown>
@@ -1947,17 +1921,11 @@ Modal content
   
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
-  <span class="nav-link temp-dropdown-placeholder">Dropdown</span>
-            <dropdown text="Dropdown" class="nav-link temp-dropdown">
-              <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
-            </dropdown>
-
-            <li slot="right">
-              <a href="https://github.com/x/y" class="nav-link" target="_blank">Fork...</a></li>
-            </navbar>
-            <p></p>
-            </span>
-    </div>
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
+    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+  
+  <li slot="right">
+    <a href="https://github.com/x/y" class="nav-link" target="_blank">Fork...</a></li></navbar><p></p></span></div>
   </panel>
 </box>
 <h5 id="page-navigation-menus">Page Navigation Menus<a class="fa fa-anchor" href="#page-navigation-menus"></a></h5>
@@ -2501,10 +2469,8 @@ Modal content
     <p>Hover over the
       <trigger for="pop:context-target">keyword</trigger> to see the popover.</p>
     <popover id="pop:context-target" title="Popover title" placement="top">
-    
       <div slot="content">
         <p>description 👍</p>
-        <p></p>
       </div>
     </popover>
   </div>
@@ -2515,58 +2481,58 @@ Modal content
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
           <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Trigger<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"hover"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Mouseenter<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Trigger<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"hover"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Mouseenter<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"++emoji++ content :cat:"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Content using slot<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span>
-      This is a long content...
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"++emoji++ content :cat:"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Wrap Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Nice!"</span>&gt;</span>What do you say<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Content using slot<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span>
+    This is a long content...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Wrap Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Nice!"</span>&gt;</span>What do you say<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
 </code></pre>
         </div>
         <p><span class="dimmed">OUTPUT:</span></p>
@@ -2621,9 +2587,9 @@ Modal content
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
           <pre><code class="hljs html">More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pop:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pop:trigger_id"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"This popover is triggered by a trigger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-  This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pop:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pop:trigger_id"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"This popover is triggered by a trigger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pop:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
 </code></pre>
         </div>
         <p><span class="dimmed">OUTPUT:</span></p>
@@ -2738,7 +2704,9 @@ Modal content
         class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span>
 
-        description :+1:   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        description :+1:
+
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
         </code>
         </pre>
@@ -2746,9 +2714,8 @@ Modal content
         <span id="examples" class="d-none">
 <p>Hover over the <trigger for="pop:context-target">keyword</trigger> to see the popover.</p>
 <popover id="pop:context-target" title="Popover title" placement="top">
-  <div slot="content">
-<p>description 👍</p>
-<p></p></div></popover></span></div>
+<div slot="content">
+<p>description 👍</p></div></popover></span></div>
   </panel>
 </box>
 <h5 id="questions">Questions<a class="fa fa-anchor" href="#questions"></a></h5>
@@ -3264,41 +3231,40 @@ Modal content
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
           <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+Trigger
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
-  Trigger
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"focus"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Focus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"*Hello* **World**"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Hover me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Free Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">" coupling is the degree of interdependence between software modules; a measure of how closely
-  connected two routines or modules are; the strength of the relationships between modules."</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>coupling<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"focus"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Focus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"*Hello* **World**"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Hover me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Free Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>coupling<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
 </code></pre>
         </div>
         <p><span class="dimmed">OUTPUT:</span></p>
@@ -3328,8 +3294,7 @@ Modal content
                 <a href="/userGuide/syntax/null">Hover me</a></tooltip>
               <br></p>
             <p><strong>Free Text</strong>:
-              <tooltip content=" coupling is the degree of interdependence between software modules; a measure of how closely
-  connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
+              <tooltip content="coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
             </p>
           </box>
         </div>
@@ -3446,7 +3411,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.21.0</a> on Mon, 18 Mar 2019 02:06:47 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.22.0</a> on Mon, 25 Mar 2019 02:40:41 GMT]</small></div>
 </footer>
 </div>
 </body>

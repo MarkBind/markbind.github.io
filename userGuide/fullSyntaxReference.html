@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 1.21.0">
+    <meta name="generator" content="MarkBind 1.22.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MarkBind - User Guide: Full Syntax Reference</title>
     <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -41,6 +41,7 @@
       </li>
       <li style="margin-top: 10px"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
       <li style="margin-top: 10px"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
+      <li style="margin-top: 10px"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
       <li style="margin-top: 10px"><button class="dropdown-btn dropdown-btn-open">References 
  <i class="dropdown-btn-icon rotate-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
@@ -509,6 +510,7 @@ or the java code `public static void main(String[] args)`{.java}.
       <panel type="seamless" header="###### **Dropdowns**<a class='fa fa-anchor' href='#dropdowns'></a>">
         <div>
           <h2 id="dropdowns">Dropdowns<a class="fa fa-anchor" href="#dropdowns"></a></h2>
+          <p><strong>You can use Dropdowns as a top level component.</strong></p>
           <div>
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
@@ -530,8 +532,36 @@ or the java code `public static void main(String[] args)`{.java}.
 <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"Right aligned list"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dropdown</span>&gt;</span>
-
-<span class="hljs-comment">&lt;!-- In a button group --&gt;</span>
+</code></pre>
+            </div>
+            <p><span class="dimmed">OUTPUT:</span></p>
+            <div class="indented">
+              <box border-left-color="grey" background-color="white">
+                <div class="temp-dropdown-placeholder">Action</div>
+                <dropdown text="Action" type="primary" class="temp-dropdown">
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+                  <li role="separator" class="dropdown-divider"></li>
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+                </dropdown>
+                <div class="temp-dropdown-placeholder"></div>
+                <dropdown type="info" class="temp-dropdown">
+                  <button slot="before" type="button" class="btn btn-info">Segmented</button>
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
+                </dropdown>
+                <div class="temp-dropdown-placeholder">Right aligned list</div>
+                <dropdown text="Right aligned list" type="primary" menu-align-right="" class="temp-dropdown">
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+                </dropdown>
+              </box>
+            </div>
+          </div>
+          <p><strong>You can also use Dropdowns as a nested component (e.g. part of a button group).</strong></p>
+          <div>
+            <p><span class="dimmed">CODE:</span></p>
+            <div class="indented">
+              <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- In a button group --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group d-flex"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"group"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger w-100"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- With slots you can handle some elements as native bootstrap --&gt;</span>
@@ -555,11 +585,13 @@ or the java code `public static void main(String[] args)`{.java}.
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <p><span class="undefined temp-dropdown-placeholder">undefined</span>
-                  <dropdown class="temp-dropdown">
-                    <button slot="button" type="button" class="btn btn-secondary dropdown-toggle">
-Action
-<span class="caret"></span></button>
+                <div class="btn-group d-flex" role="group">
+                  <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
+                  <div class="w-100 temp-dropdown-placeholder"></div>
+                  <dropdown class="w-100 temp-dropdown">
+                    <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
+      Action
+      <span class="caret"></span></button>
                     <ul slot="dropdown-menu" class="dropdown-menu">
                       <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
                       <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
@@ -568,56 +600,7 @@ Action
                       <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
                     </ul>
                   </dropdown>
-                  <span class="undefined temp-dropdown-placeholder">Action</span>
-                  <dropdown text="Action" type="primary" class="temp-dropdown">
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                    <li role="separator" class="dropdown-divider"></li>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-                  </dropdown>
-                  <span class="undefined temp-dropdown-placeholder">undefined</span>
-                  <dropdown class="temp-dropdown">
-                    <button slot="button" type="button" class="btn btn-success dropdown-toggle">
-Action <span class="caret"></span></button>
-                    <ul slot="dropdown-menu" class="dropdown-menu">
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                      <li role="separator" class="dropdown-divider"></li>
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-                    </ul>
-                  </dropdown>
-                  <span class="undefined temp-dropdown-placeholder">Disabled</span>
-                  <dropdown text="Disabled" type="warning" disabled class="temp-dropdown">
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                  </dropdown>
-                  <span class="undefined temp-dropdown-placeholder">undefined</span>
-                  <dropdown type="info" class="temp-dropdown">
-                    <button slot="before" type="button" class="btn btn-info">Segmented</button>
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                  </dropdown>
-                  <span class="undefined temp-dropdown-placeholder">Right aligned list</span>
-                  <dropdown text="Right aligned list" type="primary" menu-align-right="" class="temp-dropdown">
-                    <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                  </dropdown>
-                  <div><br></div>
-                  <div class="btn-group d-flex" role="group">
-                    <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
-                    <span class="w-100 temp-dropdown-placeholder">undefined</span>
-                    <dropdown class="w-100 temp-dropdown">
-                      <a slot="button" href="/userGuide/syntax/null" class="btn btn-warning dropdown-toggle w-100">
-Dropdown <span class="caret"></span></a>
-                      <ul slot="dropdown-menu" class="dropdown-menu">
-                        <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                        <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                        <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                        <li role="separator" class="dropdown-divider"></li>
-                        <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-                      </ul>
-                    </dropdown>
-                    <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
-                </p>
+                  <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
               </box>
             </div>
           </div>
@@ -693,161 +676,154 @@ Dropdown <span class="caret"></span></a>
           </pre>
           </span>
           <span id="examples" class="d-none">
-<p><span class="undefined temp-dropdown-placeholder">Action</span>
-          <dropdown text="Action" type="primary" class="temp-dropdown"></dropdown>
-          </p>
-          <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-          <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-          <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-          <li role="separator" class="dropdown-divider"></li>
-          <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+<div class="temp-dropdown-placeholder">Action</div><dropdown text="Action" type="primary" class="temp-dropdown">
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+  <li role="separator" class="dropdown-divider"></li>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li></dropdown>
 
+<div class="temp-dropdown-placeholder"></div><dropdown type="info" class="temp-dropdown">
+  <button slot="before" type="button" class="btn btn-info">Segmented</button>
+  <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li></dropdown>
+<p></p>
 
-          <p><span class="undefined temp-dropdown-placeholder">undefined</span>
-            <dropdown type="info" class="temp-dropdown">
-              <button slot="before" type="button" class="btn btn-info">Segmented</button></dropdown>
-          </p>
-          <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
-
-          <p></p>
-
-          <div class="btn-group d-flex" role="group">
-            <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
-
-            <span class="w-100 temp-dropdown-placeholder">undefined</span>
-            <dropdown class="w-100 temp-dropdown">
-              <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
+<div class="btn-group d-flex" role="group">
+  <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
+  
+  <div class="w-100 temp-dropdown-placeholder"></div><dropdown class="w-100 temp-dropdown">
+    <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
       Action
       <span class="caret"></span></button>
-              <ul slot="dropdown-menu" class="dropdown-menu">
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
-                <li role="separator" class="dropdown-divider"></li>
-                <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
-              </ul>
-            </dropdown>
-            <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
-          </span>
-        </div>
-      </panel>
-      <panel type="seamless" header="###### **Embeds**<a class='fa fa-anchor' href='#embeds'></a>">
+          <ul slot="dropdown-menu" class="dropdown-menu">
+            <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
+            <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
+            <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+            <li role="separator" class="dropdown-divider"></li>
+            <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+          </ul>
+          </dropdown>
+          <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
+        </span>
+    </div>
+    </panel>
+    <panel type="seamless" header="###### **Embeds**<a class='fa fa-anchor' href='#embeds'></a>">
+      <div>
+        <h2 id="embeds">Embeds<a class="fa fa-anchor" href="#embeds"></a></h2>
+        <p><strong>There are easy ways to embed media content such as YouTube videos and PowerPoint slides</strong>.</p>
+        <h6 id="embedding-youtube-videos">Embedding Youtube Videos<a class="fa fa-anchor" href="#embedding-youtube-videos"></a></h6>
+        <p>Here are three ways of embedding YouTube videos and one example of how it will look in the page.</p>
         <div>
-          <h2 id="embeds">Embeds<a class="fa fa-anchor" href="#embeds"></a></h2>
-          <p><strong>There are easy ways to embed media content such as YouTube videos and PowerPoint slides</strong>.</p>
-          <h6 id="embedding-youtube-videos">Embedding Youtube Videos<a class="fa fa-anchor" href="#embedding-youtube-videos"></a></h6>
-          <p>Here are three ways of embedding YouTube videos and one example of how it will look in the page.</p>
-          <div>
-            <p><span class="dimmed">CODE:</span></p>
-            <div class="indented">
-              <pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>)
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>)
 @[<span class="hljs-string">youtube</span>](<span class="hljs-link">http://www.youtube.com/watch?v=v40b3ExbM0c</span>)
 @[<span class="hljs-string">youtube</span>](<span class="hljs-link">http://youtu.be/v40b3ExbM0c</span>)
-</code></pre>
-            </div>
-            <p><span class="dimmed">OUTPUT:</span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div>
-              </box>
-            </div>
-          </div>
-          <p>More media blocks, embedding services and additional options can be found in <a href="https://github.com/rotorz/markdown-it-block-embed">Markdown-it documentation</a>.</p>
-          <h6 id="embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online">Embedding Powerpoint Slides (using the embed url from Powerpoint online)<a class="fa fa-anchor" href="#embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online"></a></h6>
-          <p>Here is an example of embedding a PowerPoint slide deck:</p>
-          <div>
-            <p><span class="dimmed">CODE:</span></p>
-            <div class="indented">
-              <pre><code class="hljs markdown">@[<span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
-</code></pre>
-            </div>
-            <p><span class="dimmed">OUTPUT:</span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <div class="block-embed block-embed-service-powerpoint"><iframe type="text/html" src="https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&resid=A5AF047C4CAD67AB%212070&authkey=&em=2&action=embedview&wdAr=1.3333333333333333" frameborder="0" width="610" height="481" webkitallowfullscreen=""
-                    mozallowfullscreen="" allowfullscreen></iframe></div>
-              </box>
-            </div>
-          </div>
-          <span id="short" class="d-none">
-<pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>) @[
-          <span class="hljs-string">youtube</span>](<span class="hljs-link">http://www.youtube.com/watch?v=v40b3ExbM0c</span>) @[
-          <span class="hljs-string">youtube</span>](<span class="hljs-link">http://youtu.be/v40b3ExbM0c</span>) @[
-
-          <span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
-          </code>
-          </pre>
-          </span>
-          <span id="examples" class="d-none">
-<p>Embedded YouTube video:</p>
-<div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div>
-<p>Embedded slide deck:</p>
-<div class="block-embed block-embed-service-powerpoint"><iframe type="text/html" src="https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&resid=A5AF047C4CAD67AB%212070&authkey=&em=2&action=embedview&wdAr=1.3333333333333333" frameborder="0" width="610" height="481" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div></span></div>
-      </panel>
-      <panel type="seamless" header="###### **Emoji**<a class='fa fa-anchor' href='#emoji'></a>">
-        <div>
-          <h2 id="emoji">Emoji<a class="fa fa-anchor" href="#emoji"></a></h2>
-          <span id="main-example">
-<div>
-<p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
 </code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
             <box border-left-color="grey" background-color="white">
-              <p>👍 ❗️ ❌ 🚧</p>
+              <div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div>
             </box>
           </div>
         </div>
-        </span>
-        <div class="indented">
-          <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> <a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md">the list of supported emoji</a>.</span>
-          </p>
+        <p>More media blocks, embedding services and additional options can be found in <a href="https://github.com/rotorz/markdown-it-block-embed">Markdown-it documentation</a>.</p>
+        <h6 id="embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online">Embedding Powerpoint Slides (using the embed url from Powerpoint online)<a class="fa fa-anchor" href="#embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online"></a></h6>
+        <p>Here is an example of embedding a PowerPoint slide deck:</p>
+        <div>
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown">@[<span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
+</code></pre>
+          </div>
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <div class="block-embed block-embed-service-powerpoint"><iframe type="text/html" src="https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&resid=A5AF047C4CAD67AB%212070&authkey=&em=2&action=embedview&wdAr=1.3333333333333333" frameborder="0" width="610" height="481" webkitallowfullscreen="" mozallowfullscreen=""
+                  allowfullscreen></iframe></div>
+            </box>
+          </div>
         </div>
         <span id="short" class="d-none">
+<pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>) @[
+        <span class="hljs-string">youtube</span>](<span class="hljs-link">http://www.youtube.com/watch?v=v40b3ExbM0c</span>) @[
+        <span class="hljs-string">youtube</span>](<span class="hljs-link">http://youtu.be/v40b3ExbM0c</span>) @[
+
+        <span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
+        </code>
+        </pre>
+        </span>
+        <span id="examples" class="d-none">
+<p>Embedded YouTube video:</p>
+<div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div>
+<p>Embedded slide deck:</p>
+<div class="block-embed block-embed-service-powerpoint"><iframe type="text/html" src="https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&resid=A5AF047C4CAD67AB%212070&authkey=&em=2&action=embedview&wdAr=1.3333333333333333" frameborder="0" width="610" height="481" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div></span></div>
+    </panel>
+    <panel type="seamless" header="###### **Emoji**<a class='fa fa-anchor' href='#emoji'></a>">
+      <div>
+        <h2 id="emoji">Emoji<a class="fa fa-anchor" href="#emoji"></a></h2>
+        <span id="main-example">
+<div>
+<p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
+</code></pre>
+        </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <p>👍 ❗️ ❌ 🚧</p>
+          </box>
+        </div>
+      </div>
+      </span>
+      <div class="indented">
+        <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> <a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md">the list of supported emoji</a>.</span>
+        </p>
+      </div>
+      <span id="short" class="d-none">
 <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
 </code></pre></span>
-        <span id="examples" class="d-none">
+      <span id="examples" class="d-none">
 <p>👍 ❗️ ❌ 🚧
 </p></span></div>
-    </panel>
-    <panel type="seamless" header="###### **Footers**<a class='fa fa-anchor' href='#footers'></a>">
-      <div>
-        <h2 id="footers">Footers<a class="fa fa-anchor" href="#footers"></a></h2>
-        <p><strong>You can specify a <tooltip content="For an example of a page footer, see the bottom of this page.">page footer</tooltip></strong> using a <code>&lt;footer&gt;</code> tag.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-          <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- main body of the page --&gt;</span>
+  </panel>
+  <panel type="seamless" header="###### **Footers**<a class='fa fa-anchor' href='#footers'></a>">
+    <div>
+      <h2 id="footers">Footers<a class="fa fa-anchor" href="#footers"></a></h2>
+      <p><strong>You can specify a <tooltip content="For an example of a page footer, see the bottom of this page.">page footer</tooltip></strong> using a <code>&lt;footer&gt;</code> tag.</p>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
+        <pre><code class="hljs html"><span class="hljs-comment">&lt;!-- main body of the page --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
   This page is not updated anymore!
 <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
 </code></pre>
-        </div>
-        <p>If the same footer is to appear in many pages, instead of specifying it <em>inline</em> as explained above, you can save it as a separate file in the <code>_markbind/footers</code> and specify it in the <code>&lt;frontmatter&gt;</code> of the
-          pages in which it should appear.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>
-            <strong><code>_markbind/footers/</code></strong><code>commonFooter.md</code>:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+      </div>
+      <p>If the same footer is to appear in many pages, instead of specifying it <em>inline</em> as explained above, you can save it as a separate file in the <code>_markbind/footers</code> and specify it in the <code>&lt;frontmatter&gt;</code> of the pages
+        in which it should appear.</p>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>
+          <strong><code>_markbind/footers/</code></strong><code>commonFooter.md</code>:</p>
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
   This page is not updated anymore!
 <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
 </code></pre>
-          <p>In the page that you want to include the footer:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+        <p>In the page that you want to include the footer:</p>
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   footer: commonFooter.md
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-        </div>
-        <p>Notes:</p>
-        <ul>
-          <li>An inline footer needs to be the last element in the page.</li>
-          <li>The footer specified in the <code>&lt;frontmatter&gt;</code> overrides the inline footer, if the page has any.</li>
-          <li>Footers nested in other components or HTML tags will be shifted outside of the enclosing tag.</li>
-          <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code>&lt;include&gt;</code> tags</a> are not supported in footers.</li>
-        </ul>
-        <span id="short" class="d-none">
+      </div>
+      <p>Notes:</p>
+      <ul>
+        <li>An inline footer needs to be the last element in the page.</li>
+        <li>The footer specified in the <code>&lt;frontmatter&gt;</code> overrides the inline footer, if the page has any.</li>
+        <li>Footers nested in other components or HTML tags will be shifted outside of the enclosing tag.</li>
+        <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code>&lt;include&gt;</code> tags</a> are not supported in footers.</li>
+      </ul>
+      <span id="short" class="d-none">
 ```html
 <footer>
   This page is not updated anymore!
@@ -859,258 +835,259 @@ Dropdown <span class="caret"></span></a>
 </frontmatter>
 ```
 </span>
-        <span id="examples" class="d-none">
+      <span id="examples" class="d-none">
 <p>You can see an example of a footer <mark>at the bottom</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.
 </p></span></div>
-    </panel>
-    <panel type="seamless" header="###### **Front Matter**<a class='fa fa-anchor' href='#front-matter'></a>">
-      <div>
-        <h2 id="front-matter">Front Matter<a class="fa fa-anchor" href="#front-matter"></a></h2>
-        <p><strong>You can use a <em>Front Matter</em> section to specify page properties such as the title and keywords of the page.</strong> To specify front matter for a page, insert a <code>&lt;frontmatter&gt;</code> tag in the following format at the
-          beginning of the page.</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+  </panel>
+  <panel type="seamless" header="###### **Front Matter**<a class='fa fa-anchor' href='#front-matter'></a>">
+    <div>
+      <h2 id="front-matter">Front Matter<a class="fa fa-anchor" href="#front-matter"></a></h2>
+      <p><strong>You can use a <em>Front Matter</em> section to specify page properties such as the title and keywords of the page.</strong> To specify front matter for a page, insert a <code>&lt;frontmatter&gt;</code> tag in the following format at the
+        beginning of the page.</p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   property1: value1
   property2: value2
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here, we set the page <code>title</code> attribute as <code>Binary Search Tree</code>.</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here, we set the page <code>title</code> attribute as <code>Binary Search Tree</code>.</p>
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: Binary Search Tree
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-        </div>
-        <p><strong>Page properties:</strong></p>
-        <ul>
-          <li><strong><code>title</code></strong>: The title of the page. Will be used as the <code>&lt;title&gt;</code> attribute of the HTML page generated.</li>
-          <li>Other properties such as <code>keywords</code>, <code>layout</code>, <code>head</code> etc. will be explained in other places of this user guide.</li>
-        </ul>
-        <div>
-          <box type="warning">
-            <p>Note: Page properties that are defined in <code>site.json</code> for a particular page will override those defined in the front matter of the page.
-            </p>
-          </box>
-        </div>
-        <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-        title: Binary Search Tree pageNav: 2
-        <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-        </code>
-        </pre>
-        </span>
       </div>
-    </panel>
-    <panel type="seamless" header="###### **Headings**<a class='fa fa-anchor' href='#headings'></a>">
+      <p><strong>Page properties:</strong></p>
+      <ul>
+        <li><strong><code>title</code></strong>: The title of the page. Will be used as the <code>&lt;title&gt;</code> attribute of the HTML page generated.</li>
+        <li>Other properties such as <code>keywords</code>, <code>layout</code>, <code>head</code> etc. will be explained in other places of this user guide.</li>
+      </ul>
       <div>
-        <h2 id="headings">Headings<a class="fa fa-anchor" href="#headings"></a></h2>
-        <p>You can prepend the heading text with 1-6 <code>#</code> characters to indicate headings of levels 1-6.</p>
-        <span id="main-example">
+        <box type="warning">
+          <p>Note: Page properties that are defined in <code>site.json</code> for a particular page will override those defined in the front matter of the page.
+          </p>
+        </box>
+      </div>
+      <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+      title: Binary Search Tree pageNav: 2
+      <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+      </code>
+      </pre>
+      </span>
+    </div>
+  </panel>
+  <panel type="seamless" header="###### **Headings**<a class='fa fa-anchor' href='#headings'></a>">
+    <div>
+      <h2 id="headings">Headings<a class="fa fa-anchor" href="#headings"></a></h2>
+      <p>You can prepend the heading text with 1-6 <code>#</code> characters to indicate headings of levels 1-6.</p>
+      <span id="main-example">
 <div>
 <p><span class="dimmed">CODE:</span></p>
-        <div class="indented">
-          <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
+      <div class="indented">
+        <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
 ...
 <span class="hljs-section">###### Heading level 6</span>
 </code></pre>
-        </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <h3 id="heading-level-3">Heading level 3<a class="fa fa-anchor" href="#heading-level-3"></a></h3>
-            <p>...</p>
-            <h6 id="heading-level-6">Heading level 6<a class="fa fa-anchor" href="#heading-level-6"></a></h6>
-          </box>
-        </div>
       </div>
-      </span>
-      <p><span aria-hidden="true" class="fas fa-info-circle"></span> <strong>MarkBind auto-generates anchors for all headings.</strong><br> If the heading text is <code>Foo Bar (Goo)</code>, the ID of the generated anchor will be <code>foo-bar-goo</code>        (all lower case, special characters ommitted, joined by <code>-</code>).</p>
-      <p><small>Alternative syntax, more info: <a href="https://www.markdownguide.org/basic-syntax#headings">https://www.markdownguide.org/basic-syntax#headings</a></small></p>
-      <span id="short" class="d-none">
+      <p><span class="dimmed">OUTPUT:</span></p>
+      <div class="indented">
+        <box border-left-color="grey" background-color="white">
+          <h3 id="heading-level-3">Heading level 3<a class="fa fa-anchor" href="#heading-level-3"></a></h3>
+          <p>...</p>
+          <h6 id="heading-level-6">Heading level 6<a class="fa fa-anchor" href="#heading-level-6"></a></h6>
+        </box>
+      </div>
+    </div>
+    </span>
+    <p><span aria-hidden="true" class="fas fa-info-circle"></span> <strong>MarkBind auto-generates anchors for all headings.</strong><br> If the heading text is <code>Foo Bar (Goo)</code>, the ID of the generated anchor will be <code>foo-bar-goo</code> (all
+      lower case, special characters ommitted, joined by <code>-</code>).</p>
+    <p><small>Alternative syntax, more info: <a href="https://www.markdownguide.org/basic-syntax#headings">https://www.markdownguide.org/basic-syntax#headings</a></small></p>
+    <span id="short" class="d-none">
 ```markdown
 ### Heading level 3
 ...
 ###### Heading level 6
 ```
 </span>
-      <span id="examples" class="d-none">
+    <span id="examples" class="d-none">
 <h3 id="heading-level-3-2">Heading level 3<a class="fa fa-anchor" href="#heading-level-3-2"></a></h3>
 <p>...</p>
 <h6 id="heading-level-6-2">Heading level 6<a class="fa fa-anchor" href="#heading-level-6-2"></a></h6></span></div>
-  </panel>
-  <panel type="seamless" header="###### **Horizontal Rules**<a class='fa fa-anchor' href='#horizontal-rules'></a>">
+</panel>
+<panel type="seamless" header="###### **Horizontal Rules**<a class='fa fa-anchor' href='#horizontal-rules'></a>">
+  <div>
+    <h2 id="horizontal-rules">Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules"></a></h2>
+    <p>Use three or more asterisks (<code>***</code>), dashes (<code>---</code>), or underscores (<code>___</code>) to indicate a horizontal line.</p>
     <div>
-      <h2 id="horizontal-rules">Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules"></a></h2>
-      <p>Use three or more asterisks (<code>***</code>), dashes (<code>---</code>), or underscores (<code>___</code>) to indicate a horizontal line.</p>
-      <div>
-        <p><span class="dimmed">CODE:</span></p>
-        <div class="indented">
-          <pre><code class="hljs markdown"><span class="hljs-section">*****
+      <p><span class="dimmed">CODE:</span></p>
+      <div class="indented">
+        <pre><code class="hljs markdown"><span class="hljs-section">*****
 -----</span>
 <span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-emphasis">___</span>_
 </code></pre>
-        </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <hr>
-            <hr>
-            <hr>
-            <hr>
-          </box>
-        </div>
       </div>
-      <span id="short" class="d-none">
+      <p><span class="dimmed">OUTPUT:</span></p>
+      <div class="indented">
+        <box border-left-color="grey" background-color="white">
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+        </box>
+      </div>
+    </div>
+    <span id="short" class="d-none">
 ```markdown
 *****
 -----
 ______________
 ```
 </span>
-      <span id="examples" class="d-none">
+    <span id="examples" class="d-none">
 <hr></span></div>
-  </panel>
-  <panel type="seamless" header="###### **Icons**<a class='fa fa-anchor' href='#icons'></a>">
+</panel>
+<panel type="seamless" header="###### **Icons**<a class='fa fa-anchor' href='#icons'></a>">
+  <div>
+    <h2 id="icons">Icons<a class="fa fa-anchor" href="#icons"></a></h2>
+    <p><small><span class="dimmed">Acknowledgement: Font Awesome icons are provided by <a href="https://fontawesome.com/">Font Awesome</a> under their <a href="https://fontawesome.com/license">free license</a> while Glyphicons are provided by <a href="https://glyphicons.com/">Glyphicons</a> via <a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3</a>.</span></small></p>
+    <p>MarkBind supports using Font Icons provided by Font Awesome and Glyphicons.</p>
     <div>
-      <h2 id="icons">Icons<a class="fa fa-anchor" href="#icons"></a></h2>
-      <p><small><span class="dimmed">Acknowledgement: Font Awesome icons are provided by <a href="https://fontawesome.com/">Font Awesome</a> under their <a href="https://fontawesome.com/license">free license</a> while Glyphicons are provided by <a href="https://glyphicons.com/">Glyphicons</a> via <a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3</a>.</span></small></p>
-      <p>MarkBind supports using Font Icons provided by Font Awesome and Glyphicons.</p>
-      <div>
-        <box border-left-color="#00B0F0">
-          <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
-            The advantage of font icons over emojis is font icons can be <em>styled</em> to fit your needs. e.g.,</p>
-          <ul>
-            <li>emoji: <span style="color: purple">Don't judge the 📖 by it's cover! 👎</span></li>
-            <li>font icons: <span style="color: purple">Don't judge the <span aria-hidden="true" class="fas fa-book"></span> by it's cover! <span aria-hidden="true" class="fas fa-thumbs-down"></span></span>
-            </li>
-          </ul>
+      <box border-left-color="#00B0F0">
+        <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
+          The advantage of font icons over emojis is font icons can be <em>styled</em> to fit your needs. e.g.,</p>
+        <ul>
+          <li>emoji: <span style="color: purple">Don't judge the 📖 by it's cover! 👎</span></li>
+          <li>font icons: <span style="color: purple">Don't judge the <span aria-hidden="true" class="fas fa-book"></span> by it's cover! <span aria-hidden="true" class="fas fa-thumbs-down"></span></span>
+          </li>
+        </ul>
+      </box>
+    </div>
+    <box type="important">
+      The syntax for icons has changed, and the earlier {<span></span>{ prefix_name }} syntax has been deprecated. <br> Please use the new :prefix-name: syntax instead.
+    </box>
+    <h6 id="using-font-awesome-icons">Using Font Awesome Icons<a class="fa fa-anchor" href="#using-font-awesome-icons"></a></h6>
+    <ol>
+      <li>
+        <p>Decide which icon you want to use from the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">list of available icons</a>.</p>
+      </li>
+      <li>
+        <p>Construct the MarkBind name for the selected icon by adding the <em>type prefix</em>. Note: Font Awesome has three different styles for their icons, each with their own type prefix. Here is an example from each type:</p>
+        <ul>
+          <li><em>Solid</em> (prefix: <code>fas-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <code>fas-file-code</code>)</li>
+          <li><em>Regular</em> (prefix: <code>far-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <code>far-file-code</code>)</li>
+          <li><em>Brands</em> (prefix: <code>fab-</code>): e.g., <span aria-hidden="true" class="fab fa-github-alt"></span> (actual name <code>github-alt</code>, MarkBind name <code>fab-github-alt</code>)</li>
+        </ul>
+      </li>
+      <li>
+        <p>Insert MarkBind name for the icon enclosed within colons to get the icon in your page.<br>
+          <code>Create a **branch**</code><code>:<span></span>fas-code-branch: now!</code> → Create a <strong>branch</strong> <span aria-hidden="true" class="fas fa-code-branch"></span> now!</p>
+      </li>
+    </ol>
+    <h6 id="using-glyphicons">Using Glyphicons<a class="fa fa-anchor" href="#using-glyphicons"></a></h6>
+    <ol>
+      <li>Decide which icon you want to use from <a href="https://getbootstrap.com/docs/3.3/components/#glyphicons">list of provided glyphicons</a>.</li>
+      <li>Insert the name for the icon enclosed within colons to get the icon in your page.<br>
+        <code>Move to the right!</code><code>:<span></span>glyphicon-hand-right:</code> → Move to the right! <span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span></li>
+    </ol>
+    <span id="short" class="d-none">
+<p><code>:<span></span>glyphicon-hand-right:</code> <code>:<span></span>fab-github:</code> <code>:<span></span>fas-home:</code></p>
+    </span>
+    <span id="examples" class="d-none">
+<p><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span> <span class="dimmed"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span>    <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span></span> <span style="color: red"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span>    <span aria-hidden="true" class="fas fa-home"></span></span>
+    </p>
+    </span>
+  </div>
+</panel>
+<panel type="seamless" header="###### **Images**<a class='fa fa-anchor' href='#images'></a>">
+  <div>
+    <h2 id="images">Images<a class="fa fa-anchor" href="#images"></a></h2>
+    <div>
+      <p><span class="dimmed">CODE:</span></p>
+      <div class="indented">
+        <pre><code class="hljs markdown">![](https://markbind.org/images/logo-lightbackground.png)
+</code></pre>
+      </div>
+      <p><span class="dimmed">OUTPUT:</span></p>
+      <div class="indented">
+        <box border-left-color="grey" background-color="white">
+          <p><a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p>
         </box>
       </div>
-      <box type="important">
-        The syntax for icons has changed, and the earlier {<span></span>{ prefix_name }} syntax has been deprecated. <br> Please use the new :prefix-name: syntax instead.
-      </box>
-      <h6 id="using-font-awesome-icons">Using Font Awesome Icons<a class="fa fa-anchor" href="#using-font-awesome-icons"></a></h6>
-      <ol>
-        <li>
-          <p>Decide which icon you want to use from the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">list of available icons</a>.</p>
-        </li>
-        <li>
-          <p>Construct the MarkBind name for the selected icon by adding the <em>type prefix</em>. Note: Font Awesome has three different styles for their icons, each with their own type prefix. Here is an example from each type:</p>
-          <ul>
-            <li><em>Solid</em> (prefix: <code>fas-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <code>fas-file-code</code>)</li>
-            <li><em>Regular</em> (prefix: <code>far-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code>file-code</code>, MarkBind name <code>far-file-code</code>)</li>
-            <li><em>Brands</em> (prefix: <code>fab-</code>): e.g., <span aria-hidden="true" class="fab fa-github-alt"></span> (actual name <code>github-alt</code>, MarkBind name <code>fab-github-alt</code>)</li>
-          </ul>
-        </li>
-        <li>
-          <p>Insert MarkBind name for the icon enclosed within colons to get the icon in your page.<br>
-            <code>Create a **branch**</code><code>:<span></span>fas-code-branch: now!</code> → Create a <strong>branch</strong> <span aria-hidden="true" class="fas fa-code-branch"></span> now!</p>
-        </li>
-      </ol>
-      <h6 id="using-glyphicons">Using Glyphicons<a class="fa fa-anchor" href="#using-glyphicons"></a></h6>
-      <ol>
-        <li>Decide which icon you want to use from <a href="https://getbootstrap.com/docs/3.3/components/#glyphicons">list of provided glyphicons</a>.</li>
-        <li>Insert the name for the icon enclosed within colons to get the icon in your page.<br>
-          <code>Move to the right!</code><code>:<span></span>glyphicon-hand-right:</code> → Move to the right! <span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span></li>
-      </ol>
-      <span id="short" class="d-none">
-<p><code>:<span></span>glyphicon-hand-right:</code> <code>:<span></span>fab-github:</code> <code>:<span></span>fas-home:</code></p>
-      </span>
-      <span id="examples" class="d-none">
-<p><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span> <span class="dimmed"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span>      <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span></span> <span style="color: red"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span>      <span aria-hidden="true" class="fas fa-home"></span></span>
-      </p>
-      </span>
     </div>
-  </panel>
-  <panel type="seamless" header="###### **Images**<a class='fa fa-anchor' href='#images'></a>">
-    <div>
-      <h2 id="images">Images<a class="fa fa-anchor" href="#images"></a></h2>
-      <div>
-        <p><span class="dimmed">CODE:</span></p>
-        <div class="indented">
-          <pre><code class="hljs markdown">![](https://markbind.org/images/logo-lightbackground.png)
-</code></pre>
-        </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <p><a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p>
-          </box>
-        </div>
-      </div>
-      <span id="short" class="d-none">
+    <span id="short" class="d-none">
 ```markdown
 ![alt text here](https://markbind.org/images/logo-lightbackground.png "title here")
 ```
 </span>
-      <span id="examples" class="d-none">
+    <span id="examples" class="d-none">
 <p><a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid" title="title here"></a></p></span></div>
-  </panel>
-  <panel type="seamless" header="###### **Includes**<a class='fa fa-anchor' href='#includes'></a>">
-    <div>
-      <span id="link" class="d-none">
+</panel>
+<panel type="seamless" header="###### **Includes**<a class='fa fa-anchor' href='#includes'></a>">
+  <div>
+    <span id="link" class="d-none">
 <span><a href="/userGuide/reusingContents.html#includes"><em>User Guide → Reusing Contents → Includes</em></a></span></span>
-      <h2 id="includes">Includes<a class="fa fa-anchor" href="#includes"></a></h2>
-      <span id="overview">
+    <h2 id="includes">Includes<a class="fa fa-anchor" href="#includes"></a></h2>
+    <span id="overview">
 <p><strong>MarkBind has a powerful <code>&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
 </p></span>
-      <p><strong>You can use <code>&lt;include&gt;</code> tag to include another markdown or HTML document into the current document.</strong></p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Including text from a <code>tip2.md</code> in another file.</p>
-        <pre><code class="hljs html">Tip 1. ...
+    <p><strong>You can use <code>&lt;include&gt;</code> tag to include another markdown or HTML document into the current document.</strong></p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Including text from a <code>tip2.md</code> in another file.</p>
+      <pre><code class="hljs html">Tip 1. ...
 <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"tips/tip2.md"</span> /&gt;</span>
 Tip 3. ...
 </code></pre>
-      </div>
-      <p><strong>You can <code>&lt;include&gt;</code> a fragment of a file</strong> by specifying the <code>#fragment-id</code> at the end of the <code>src</code> attribute value, provided the fragment is wrapped in a <code>&lt;div&gt;</code>/<code>&lt;span&gt;</code>/<code>&lt;seg&gt;</code>        tag with the matching <code>id</code>.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Including a fragment from a file:</p>
-        <pre><code class="hljs html">Some text
+    </div>
+    <p><strong>You can <code>&lt;include&gt;</code> a fragment of a file</strong> by specifying the <code>#fragment-id</code> at the end of the <code>src</code> attribute value, provided the fragment is wrapped in a <code>&lt;div&gt;</code>/<code>&lt;span&gt;</code>/<code>&lt;seg&gt;</code>      tag with the matching <code>id</code>.</p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Including a fragment from a file:</p>
+      <pre><code class="hljs html">Some text
 <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"docs/tips.md#tip-1"</span> /&gt;</span>
 Some other text
 </code></pre>
-        <p><code>docs/tips.md</code>:</p>
-        <pre><code class="hljs html">...
+      <p><code>docs/tips.md</code>:</p>
+      <pre><code class="hljs html">...
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tip-1"</span> /&gt;</span>
   Tip 1. ...
   ...
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 Tip 2. ...
 </code></pre>
-      </div>
-      <box type="warning">
-        <p>When setting the <code>id</code> of a fragment, be careful not to clash with heading anchor IDs auto-generated by MarkBind. For example, if you have a heading <code>## Some Useful Tips</code>, MarkBind will auto-generate an ID <code>some-useful-tips</code>          for that heading.</p>
-      </box>
+    </div>
+    <box type="warning">
+      <p>When setting the <code>id</code> of a fragment, be careful not to clash with heading anchor IDs auto-generated by MarkBind. For example, if you have a heading <code>## Some Useful Tips</code>, MarkBind will auto-generate an ID <code>some-useful-tips</code>        for that heading.</p>
+    </box>
+    <box border-left-color="#00B0F0">
+      <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> The <code>&lt;include&gt;</code> tag works for any MarBind source file including the <em>font matter</em> section but it may not work in some <em>special</em>        files such as the <code>_markbind/variables.md</code>.
+      </p>
+    </box>
+    <p><strong>Attributes:</strong></p>
+    <ul>
+      <li><strong><code>src</code></strong>: specify the source file path.</li>
+      <li><strong><code>inline</code></strong> (optional): make the included result an inline element. (wrapped in <code>&lt;span&gt;</code> tag). e.g.,
+        <pre><code class="hljs html">The title is <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../docs/summary.md#title"</span> <span class="hljs-attr">inline</span> /&gt;</span> while ...
+</code></pre>
+      </li>
+      <li><strong><code>optional</code></strong> (optional): include the file/fragment only if it exists i.e., there will be no error message if the file/fragment does not exist. e.g.,
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md"</span> <span class="hljs-attr">optional</span> /&gt;</span>
+</code></pre>
+      </li>
+      <li><strong><code>trim</code></strong> (optional): remove leading and trailing whitespace and newlines from the document before including.
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md#epic"</span> <span class="hljs-attr">trim</span> /&gt;</span>
+</code></pre>
+      </li>
+    </ul>
+    <div>
       <box border-left-color="#00B0F0">
-        <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> The <code>&lt;include&gt;</code> tag works for any MarBind source file including the <em>font matter</em> section but it may not work in some <em>special</em>          files such as the <code>_markbind/variables.md</code>.
-        </p>
+        <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
+          The <code>&lt;include&gt;</code> mechanism can be used inside any MarkBind source file (even inside the <em>front matter</em> section) but it will not work inside some <em>special</em> files such as the <code>_markbind/variables.md</code>.</p>
       </box>
-      <p><strong>Attributes:</strong></p>
-      <ul>
-        <li><strong><code>src</code></strong>: specify the source file path.</li>
-        <li><strong><code>inline</code></strong> (optional): make the included result an inline element. (wrapped in <code>&lt;span&gt;</code> tag). e.g.,
-          <pre><code class="hljs html">The title is <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../docs/summary.md#title"</span> <span class="hljs-attr">inline</span> /&gt;</span> while ...
-</code></pre>
-        </li>
-        <li><strong><code>optional</code></strong> (optional): include the file/fragment only if it exists i.e., there will be no error message if the file/fragment does not exist. e.g.,
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md"</span> <span class="hljs-attr">optional</span> /&gt;</span>
-</code></pre>
-        </li>
-        <li><strong><code>trim</code></strong> (optional): remove leading and trailing whitespace and newlines from the document before including.
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md#epic"</span> <span class="hljs-attr">trim</span> /&gt;</span>
-</code></pre>
-        </li>
-      </ul>
-      <div>
-        <box border-left-color="#00B0F0">
-          <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
-            The <code>&lt;include&gt;</code> mechanism can be used inside any MarkBind source file (even inside the <em>front matter</em> section) but it will not work inside some <em>special</em> files such as the <code>_markbind/variables.md</code>.</p>
-        </box>
-      </div>
-      <h5 id="include-inside-an-included-file"><code>&lt;include&gt;</code> Inside an Included File<a class="fa fa-anchor" href="#include-inside-an-included-file"></a></h5>
-      <p><strong>Although the <code>src</code> attribute of an <code>&lt;include&gt;</code> is given <em>relative</em> to the current directory, it is converted to an <em>absolute</em> value <em>before</em> the <tooltip content="i.e., the file containing the `<include>`">host file</tooltip> is included from another file.</strong></p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a MarkBind project with the following file structure.</p>
-        <pre><code class="hljs">c:/mySite/
+    </div>
+    <h5 id="include-inside-an-included-file"><code>&lt;include&gt;</code> Inside an Included File<a class="fa fa-anchor" href="#include-inside-an-included-file"></a></h5>
+    <p><strong>Although the <code>src</code> attribute of an <code>&lt;include&gt;</code> is given <em>relative</em> to the current directory, it is converted to an <em>absolute</em> value <em>before</em> the <tooltip content="i.e., the file containing the `<include>`">host file</tooltip> is included from another file.</strong></p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a MarkBind project with the following file structure.</p>
+      <pre><code class="hljs">c:/mySite/
   ├── bookFiles/
   |      ├── book.md
   |      ├── chapter1.md
@@ -1118,50 +1095,49 @@ Tip 2. ...
   └── reviewFiles/
          └── review.md
 </code></pre>
-        <p>The <code>book.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
+      <p>The <code>book.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1.md"</span> /&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2.md"</span> /&gt;</span></span>
 </code></pre>
-        <p>The <code>review.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section"># My Review</span>
+      <p>The <code>review.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section"># My Review</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../bookFiles/book.md"</span> /&gt;</span></span>
 ...
 </code></pre>
-        <p>The content of the <code>chapter1.md</code> and <code>chapter2.md</code> will be included in the <code>review.md</code> (via <code>&lt;include src=&quot;../bookFiles/book.md&quot; /&gt;</code>) although <code>chapter1.md</code> and <code>chapter2.md</code>          are not in <code>reviewFiles</code> directory. i.e., <code>&lt;include src=&quot;chapter1.md&quot; /&gt;</code> will be interpreted as <code>&lt;include src=&quot;c:/mySite/bookFiles/chapter1.md&quot; /&gt;</code></p>
-      </div>
-      <p>In other words, <strong><code>&lt;include&gt;</code> interprets the reused code relative to the original location of the file, not the location in which it is reused.</strong></p>
-      <hr>
-      <h5 id="specifying-variables-in-an-include">Specifying Variables in an <code>&lt;include&gt;</code><a class="fa fa-anchor" href="#specifying-variables-in-an-include"></a></h5>
-      <p><strong>It is possible to include variables in an <code>&lt;include&gt;</code>.</strong></p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables in an <code>&lt;include&gt;</code>          tag:</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span>&gt;</span>
+      <p>The content of the <code>chapter1.md</code> and <code>chapter2.md</code> will be included in the <code>review.md</code> (via <code>&lt;include src=&quot;../bookFiles/book.md&quot; /&gt;</code>) although <code>chapter1.md</code> and <code>chapter2.md</code>        are not in <code>reviewFiles</code> directory. i.e., <code>&lt;include src=&quot;chapter1.md&quot; /&gt;</code> will be interpreted as <code>&lt;include src=&quot;c:/mySite/bookFiles/chapter1.md&quot; /&gt;</code></p>
+    </div>
+    <p>In other words, <strong><code>&lt;include&gt;</code> interprets the reused code relative to the original location of the file, not the location in which it is reused.</strong></p>
+    <hr>
+    <h5 id="specifying-variables-in-an-include">Specifying Variables in an <code>&lt;include&gt;</code><a class="fa fa-anchor" href="#specifying-variables-in-an-include"></a></h5>
+    <p><strong>It is possible to include variables in an <code>&lt;include&gt;</code>.</strong></p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables in an <code>&lt;include&gt;</code>        tag:</p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"title"</span>&gt;</span>My Title<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
 </code></pre>
-        <p>In <code>article.md</code>:</p>
-        <code>
+      <p>In <code>article.md</code>:</p>
+      <code>
 # {<span></span>{ title }}<br>
 Author: {<span></span>{ author }}
 </code></div>
-      <p>These variables work the same way as variables in <code>_markbind/variables.md</code>, except that they only apply to the included file. They allow the included file to be reused as a template, for different source files using different variable
-        values.</p>
-      <p>You can also specify include variables within the <code>&lt;include&gt;</code> tag itself by adding a <code>var-</code> prefix.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables inline:</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span> <span class="hljs-attr">var-title</span>=<span class="hljs-string">"My Title"</span> <span class="hljs-attr">var-author</span>=<span class="hljs-string">"John Doe"</span> /&gt;</span>
+    <p>These variables work the same way as variables in <code>_markbind/variables.md</code>, except that they only apply to the included file. They allow the included file to be reused as a template, for different source files using different variable values.</p>
+    <p>You can also specify include variables within the <code>&lt;include&gt;</code> tag itself by adding a <code>var-</code> prefix.</p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables inline:</p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span> <span class="hljs-attr">var-title</span>=<span class="hljs-string">"My Title"</span> <span class="hljs-attr">var-author</span>=<span class="hljs-string">"John Doe"</span> /&gt;</span>
 </code></pre>
-      </div>
-      <p>If the same variable is defined in a chain of <code>&lt;include&gt;</code>s (e.g. <code>a.md</code> includes <code>b.md</code> includes <code>c.md</code>...), variables defined in the top-most <code>&lt;include&gt;</code> will take precedence. Global
-        variables (<code>_markbind/variables.md</code>) will take precedence over any <code>&lt;include&gt;</code> variables.</p>
-      <h3 id="using-boilerplate-files">Using Boilerplate Files<a class="fa fa-anchor" href="#using-boilerplate-files"></a></h3>
-      <p><strong>If you find duplicating a <tooltip content="code that needs to stay relative to the directory in which it used"><em>boilerplate code</em></tooltip> fragment in multiple places of your code base, you can use a <code>boilerplate</code> file to avoid such duplication.</strong>        Note that you cannot use a normal <code>&lt;include&gt;</code> in this case because the code included using a normal <code>&lt;include&gt;</code> stays relative to the original location while boilerplate code needs to be interpreted relative to
-        the location it is being used.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a MarkBind project with the following file structure.</p>
-        <pre><code class="hljs">c:/mySite/
+    </div>
+    <p>If the same variable is defined in a chain of <code>&lt;include&gt;</code>s (e.g. <code>a.md</code> includes <code>b.md</code> includes <code>c.md</code>...), variables defined in the top-most <code>&lt;include&gt;</code> will take precedence. Global
+      variables (<code>_markbind/variables.md</code>) will take precedence over any <code>&lt;include&gt;</code> variables.</p>
+    <h3 id="using-boilerplate-files">Using Boilerplate Files<a class="fa fa-anchor" href="#using-boilerplate-files"></a></h3>
+    <p><strong>If you find duplicating a <tooltip content="code that needs to stay relative to the directory in which it used"><em>boilerplate code</em></tooltip> fragment in multiple places of your code base, you can use a <code>boilerplate</code> file to avoid such duplication.</strong>      Note that you cannot use a normal <code>&lt;include&gt;</code> in this case because the code included using a normal <code>&lt;include&gt;</code> stays relative to the original location while boilerplate code needs to be interpreted relative to
+      the location it is being used.</p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a MarkBind project with the following file structure.</p>
+      <pre><code class="hljs">c:/mySite/
   ├── chapter1/
   |      ├── chapter.md
   |      ├── text.md
@@ -1172,35 +1148,35 @@ Author: {<span></span>{ author }}
   |      └── exercises.md
   └── book.md
 </code></pre>
-        <p>The <code>book.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
+      <p>The <code>book.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> /&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> /&gt;</span></span>
 </code></pre>
-        <p>The <code>chapter1/chapter.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
+      <p>The <code>chapter1/chapter.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span>
 <span class="hljs-section">## Exercises</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span>
 </code></pre>
-        <p>The <code>chapter2/chapter.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
+      <p>The <code>chapter2/chapter.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span>
 <span class="hljs-section">## Exercises</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span>
 </code></pre>
-        <p>As you can see, both <code>chapter.md</code> files are exactly the same. If we were to use only one of the <code>chapter.md</code> files and <code>&lt;include&gt;</code> it twice in the <code>book.md</code>, we'll end up with the same chapter
-          content duplicated twice, which is not what we want. In other words, <code>chapter.md</code> contains boilerplate code that needs to be interpreted relative to where it is applied, once relative to <code>chapter1</code> directory and once relative
-          to <code>chapter2</code> directory.</p>
-      </div>
-      <p>To use a code fragment as a boilerplate file,</p>
-      <ol>
-        <li>Put the code in a file inside the <code>_markbind/boilerplates</code> directory.</li>
-        <li><code>&lt;include&gt;</code> the file <em>as if</em> a copy of it exists in any directory you want it to applied, but add the <code>boilerplate</code> attribute to the <code>&lt;include&gt;</code> tag.</li>
-      </ol>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how you can use a boilerplate file to avoid duplicating the <code>chapter.md</code>:</p>
-        <pre><code class="hljs">c:/mySite/
+      <p>As you can see, both <code>chapter.md</code> files are exactly the same. If we were to use only one of the <code>chapter.md</code> files and <code>&lt;include&gt;</code> it twice in the <code>book.md</code>, we'll end up with the same chapter content
+        duplicated twice, which is not what we want. In other words, <code>chapter.md</code> contains boilerplate code that needs to be interpreted relative to where it is applied, once relative to <code>chapter1</code> directory and once relative to
+        <code>chapter2</code> directory.</p>
+    </div>
+    <p>To use a code fragment as a boilerplate file,</p>
+    <ol>
+      <li>Put the code in a file inside the <code>_markbind/boilerplates</code> directory.</li>
+      <li><code>&lt;include&gt;</code> the file <em>as if</em> a copy of it exists in any directory you want it to applied, but add the <code>boilerplate</code> attribute to the <code>&lt;include&gt;</code> tag.</li>
+    </ol>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how you can use a boilerplate file to avoid duplicating the <code>chapter.md</code>:</p>
+      <pre><code class="hljs">c:/mySite/
   ├── _markbind/boilerplates/
   |      └── chapter.md
   ├── chapter1/
@@ -1211,176 +1187,176 @@ Author: {<span></span>{ author }}
   |      └── exercises.md
   └── book.md
 </code></pre>
-        <p>The <code>book.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
+      <p>The <code>book.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span>
 </code></pre>
-        <p>The <code>_markbind/boilerplates/chapter.md</code>:</p>
-        <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
+      <p>The <code>_markbind/boilerplates/chapter.md</code>:</p>
+      <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span>
 <span class="hljs-section">## Exercises</span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span>
 </code></pre>
-        <p>Consider the line <code>&lt;include src=&quot;chapter1/chapter.md&quot; boilerplate /&gt;</code>. Note how you can use <code>src=&quot;chapter1/chapter.md&quot;</code> there is no such file. MarkBind will use the <code>chapter.md</code> file <code>/_markbind/boilerplates/</code>          but interpret it as if the file exist in <code>chapter1</code> directory (i.e., interpret the <code>chapter1.md</code> code relative to the <code>chapter1</code> directory.</p>
-        <p>Similarly, <code>&lt;include src=&quot;chapter2/chapter.md&quot; boilerplate /&gt;</code> interprets the <code>chapter.md</code> relative to the <code>chapter2</code> directory.</p>
-      </div>
-      <p>If you have many boilerplate files, you can organize them into directories inside the <code>_markbind</code> directory. When using such boilerplate files, you need to replace <code>boilerplate</code> attribute with <code>boilerplate=&quot;&lt;path to file relative to _markbind/boilerplates&gt;&quot;</code>.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose the <code>chapter.md</code> is places in a <code>book</code> directory:</p>
-        <pre><code class="hljs">c:/mySite/
+      <p>Consider the line <code>&lt;include src=&quot;chapter1/chapter.md&quot; boilerplate /&gt;</code>. Note how you can use <code>src=&quot;chapter1/chapter.md&quot;</code> there is no such file. MarkBind will use the <code>chapter.md</code> file <code>/_markbind/boilerplates/</code>        but interpret it as if the file exist in <code>chapter1</code> directory (i.e., interpret the <code>chapter1.md</code> code relative to the <code>chapter1</code> directory.</p>
+      <p>Similarly, <code>&lt;include src=&quot;chapter2/chapter.md&quot; boilerplate /&gt;</code> interprets the <code>chapter.md</code> relative to the <code>chapter2</code> directory.</p>
+    </div>
+    <p>If you have many boilerplate files, you can organize them into directories inside the <code>_markbind</code> directory. When using such boilerplate files, you need to replace <code>boilerplate</code> attribute with <code>boilerplate=&quot;&lt;path to file relative to _markbind/boilerplates&gt;&quot;</code>.</p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose the <code>chapter.md</code> is places in a <code>book</code> directory:</p>
+      <pre><code class="hljs">c:/mySite/
   └── _markbind/boilerplates/
          └── book/
                └── chapter.md
 
 </code></pre>
-        <p>It needs to be used as follows:</p>
-        <pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span>
+      <p>It needs to be used as follows:</p>
+      <pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span>
 </code></pre>
-      </div>
-      <span id="short" class="d-none">
-<pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"foo.md#bar"</span> <span class="hljs-attr">boilerplate</span>
-      <span
-        class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span>
-        </span>
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span>&gt;</span>
-        </span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-        </span>
-        <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
-        </span>
-        </code>
-        </pre>
-        </span>
     </div>
-  </panel>
-  <panel type="seamless" header="###### **Keywords**<a class='fa fa-anchor' href='#keywords'></a>">
-    <div>
-      <h2 id="keywords">Keywords<a class="fa fa-anchor" href="#keywords"></a></h2>
-      <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword without
-        rendering it in the page, add <code>d-none</code> as a class.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-        <pre><code class="hljs html">#### Developer Testing
+    <span id="short" class="d-none">
+<pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"foo.md#bar"</span> <span class="hljs-attr">boilerplate</span>
+    <span
+      class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span>
+      </span>
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span>&gt;</span>
+      </span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
+      </span>
+      <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+      </span>
+      </code>
+      </pre>
+      </span>
+  </div>
+</panel>
+<panel type="seamless" header="###### **Keywords**<a class='fa fa-anchor' href='#keywords'></a>">
+  <div>
+    <h2 id="keywords">Keywords<a class="fa fa-anchor" href="#keywords"></a></h2>
+    <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword without
+      rendering it in the page, add <code>d-none</code> as a class.</p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
+      <pre><code class="hljs html">#### Developer Testing
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 
 This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword"</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
 </code></pre>
-        <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
-        <box>
-          <p><big><strong>Developer Testing</strong></big><br></p>
-          <p>This is good for catching <span class="keyword">regressions</span>.
-          </p>
-        </box>
-      </div>
-      <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+      <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
+      <box>
+        <p><big><strong>Developer Testing</strong></big><br></p>
+        <p>This is good for catching <span class="keyword">regressions</span>.
+        </p>
+      </box>
+    </div>
+    <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
+    <div class="indented">
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   keywords: regress, regression testing, regressions
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 ...
 </code></pre>
-      </div>
-      <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      </code>
-      </pre>
-      </span>
     </div>
-  </panel>
-  <panel type="seamless" header="###### **Line Breaks**<a class='fa fa-anchor' href='#line-breaks'></a>">
+    <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    </code>
+    </pre>
+    </span>
+  </div>
+</panel>
+<panel type="seamless" header="###### **Line Breaks**<a class='fa fa-anchor' href='#line-breaks'></a>">
+  <div>
+    <h2 id="line-breaks">Line Breaks<a class="fa fa-anchor" href="#line-breaks"></a></h2>
+    <p>The preferred way to indicate line breaks is to use a <code>&lt;br&gt;</code> tag.</p>
     <div>
-      <h2 id="line-breaks">Line Breaks<a class="fa fa-anchor" href="#line-breaks"></a></h2>
-      <p>The preferred way to indicate line breaks is to use a <code>&lt;br&gt;</code> tag.</p>
-      <div>
-        <p><span class="dimmed">CODE:</span></p>
-        <div class="indented">
-          <pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
+      <p><span class="dimmed">CODE:</span></p>
+      <div class="indented">
+        <pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
 This should be on a new line.
 This will not be in a new line.
-</code></pre>
-        </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <p>This is the second sentence.<br> This should be on a new line. This will not be in a new line.</p>
-          </box>
-        </div>
-      </div>
-      <p><small>Alternate syntax: <a href="https://www.markdownguide.org/basic-syntax#line-breaks">https://www.markdownguide.org/basic-syntax#line-breaks</a></small></p>
-      <span id="short" class="d-none">
-<pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-      </span>
-      This should be on a new line.
-      </code>
-      </pre>
-      </span>
-    </div>
-  </panel>
-  <panel type="seamless" header="###### **Links**<a class='fa fa-anchor' href='#links'></a>">
-    <div>
-      <h2 id="links">Links<a class="fa fa-anchor" href="#links"></a></h2>
-      <p>Basic style:</p>
-      <span id="main-example">
-<div>
-<p><span class="dimmed">CODE:</span></p>
-      <div class="indented">
-        <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
 </code></pre>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
         <box border-left-color="grey" background-color="white">
-          <p>MarkBind home is at <a href="https://markbind.org">here</a>.</p>
+          <p>This is the second sentence.<br> This should be on a new line. This will not be in a new line.</p>
         </box>
       </div>
     </div>
+    <p><small>Alternate syntax: <a href="https://www.markdownguide.org/basic-syntax#line-breaks">https://www.markdownguide.org/basic-syntax#line-breaks</a></small></p>
+    <span id="short" class="d-none">
+<pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
     </span>
-    <p><em>Reference style</em> links (i.e., specify the URL in a separate place):</p>
-    <div>
-      <p><span class="dimmed">CODE:</span></p>
-      <div class="indented">
-        <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
+    This should be on a new line.
+    </code>
+    </pre>
+    </span>
+  </div>
+</panel>
+<panel type="seamless" header="###### **Links**<a class='fa fa-anchor' href='#links'></a>">
+  <div>
+    <h2 id="links">Links<a class="fa fa-anchor" href="#links"></a></h2>
+    <p>Basic style:</p>
+    <span id="main-example">
+<div>
+<p><span class="dimmed">CODE:</span></p>
+    <div class="indented">
+      <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
+</code></pre>
+    </div>
+    <p><span class="dimmed">OUTPUT:</span></p>
+    <div class="indented">
+      <box border-left-color="grey" background-color="white">
+        <p>MarkBind home is at <a href="https://markbind.org">here</a>.</p>
+      </box>
+    </div>
+  </div>
+  </span>
+  <p><em>Reference style</em> links (i.e., specify the URL in a separate place):</p>
+  <div>
+    <p><span class="dimmed">CODE:</span></p>
+    <div class="indented">
+      <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
 
 [<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
 
 </code></pre>
-      </div>
-      <p><span class="dimmed">OUTPUT:</span></p>
-      <div class="indented">
-        <box border-left-color="grey" background-color="white">
-          <p>MarkBind home is at <a href="https://markbind.org">here</a></p>
-        </box>
-      </div>
     </div>
-    <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#links">https://www.markdownguide.org/basic-syntax#links</a></small></p>
-    <h4 id="intra-site-links">Intra-Site Links<a class="fa fa-anchor" href="#intra-site-links"></a></h4>
-    <div id="intraSiteLinks">
-      <p>Links to files of the generated site (e.g., an HTML page or an image file) can be specified either as relative paths or absolute paths.</p>
-      <p>Absolute paths:</p>
-      <div class="indented">
-        Links should start with
-        <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
-          <code>{<span></span>{ baseUrl }}</code> :
-        </p>
-        <ol>
-          <li><code>Click [here](
+    <p><span class="dimmed">OUTPUT:</span></p>
+    <div class="indented">
+      <box border-left-color="grey" background-color="white">
+        <p>MarkBind home is at <a href="https://markbind.org">here</a></p>
+      </box>
+    </div>
+  </div>
+  <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#links">https://www.markdownguide.org/basic-syntax#links</a></small></p>
+  <h4 id="intra-site-links">Intra-Site Links<a class="fa fa-anchor" href="#intra-site-links"></a></h4>
+  <div id="intraSiteLinks">
+    <p>Links to files of the generated site (e.g., an HTML page or an image file) can be specified either as relative paths or absolute paths.</p>
+    <p>Absolute paths:</p>
+    <div class="indented">
+      Links should start with
+      <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
+        <code>{<span></span>{ baseUrl }}</code> :
+      </p>
+      <ol>
+        <li><code>Click [here](
 <code>{<span></span>{ baseUrl }}</code> /userGuide/reusingContents.html).
-            </code>
-          </li>
-          <li><code>![](</code>
-            <code>{<span></span>{ baseUrl }}</code>
-            <code>/images/preview.png)</code></li>
-        </ol>
-      </div>
-      <p>Relative paths:</p>
-      <div class="indented">
-        Links to files can also be specified relative to the file that includes it.
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Assuming that we have the following folder structure:</p>
-        <pre><code class="hljs">c:/course/
+          </code>
+        </li>
+        <li><code>![](</code>
+          <code>{<span></span>{ baseUrl }}</code>
+          <code>/images/preview.png)</code></li>
+      </ol>
+    </div>
+    <p>Relative paths:</p>
+    <div class="indented">
+      Links to files can also be specified relative to the file that includes it.
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Assuming that we have the following folder structure:</p>
+      <pre><code class="hljs">c:/course/
   ├── textbook/
   |      ├── subsite.md
   |      ├── image.png
@@ -1388,25 +1364,25 @@ This will not be in a new line.
   ├── index.md
   └── site.json
 </code></pre>
-        <p>Within <code>textbook/subsite.md</code>, we can refer to the image using:</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
+      <p>Within <code>textbook/subsite.md</code>, we can refer to the image using:</p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
 </code></pre>
-        <p>Within <code>index.md</code>, we can also display the image using</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
+      <p>Within <code>index.md</code>, we can also display the image using</p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
 </code></pre>
-        <p>or by including <code>subsite.md</code>:</p>
-        <pre><code class="hljs">&lt;include src=&quot;textbook/subsite.md&quot; /&gt;
+      <p>or by including <code>subsite.md</code>:</p>
+      <pre><code class="hljs">&lt;include src=&quot;textbook/subsite.md&quot; /&gt;
 </code></pre>
-      </div>
     </div>
-    <span id="short" class="d-none">
+  </div>
+  <span id="short" class="d-none">
 <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>). MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>]. [
 
-    <span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
-    </code>
-    </pre>
-    </span>
-    <span id="examples" class="d-none">
+  <span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
+  </code>
+  </pre>
+  </span>
+  <span id="examples" class="d-none">
 <p>MarkBind home is at <a href="https://markbind.org">here</a>.
 </p></span></div>
 </panel>
@@ -1730,7 +1706,7 @@ Modal content
 
             <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
-            <span class="nav-link temp-dropdown-placeholder">Dropdown</span>
+            <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
             <dropdown text="Dropdown" class="nav-link temp-dropdown">
               <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
             </dropdown>
@@ -1795,17 +1771,11 @@ Modal content
   
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
-  <span class="nav-link temp-dropdown-placeholder">Dropdown</span>
-          <dropdown text="Dropdown" class="nav-link temp-dropdown">
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
-          </dropdown>
-
-          <li slot="right">
-            <a href="https://github.com/x/y" class="nav-link" target="_blank">Fork...</a></li>
-          </navbar>
-          <p></p>
-          </span>
-  </div>
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
+    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+  
+  <li slot="right">
+    <a href="https://github.com/x/y" class="nav-link" target="_blank">Fork...</a></li></navbar><p></p></span></div>
 </panel>
 <panel type="seamless" header="###### **Page Head**<a class='fa fa-anchor' href='#page-head'></a>">
   <div>
@@ -2482,58 +2452,58 @@ This is another paragraph. This is the second sentence.
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
         <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Trigger<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"hover"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Mouseenter<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Trigger<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"hover"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Mouseenter<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Title"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"++emoji++ content :cat:"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Content using slot<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span>
-      This is a long content...
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"++emoji++ content :cat:"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Wrap Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Nice!"</span>&gt;</span>What do you say<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Content using slot<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Emoji title** :rocket:"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span>
+    This is a long content...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Wrap Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Nice!"</span>&gt;</span>What do you say<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
 </code></pre>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
@@ -2588,9 +2558,9 @@ This is another paragraph. This is the second sentence.
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
         <pre><code class="hljs html">More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pop:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
-  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pop:trigger_id"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"This popover is triggered by a trigger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-  This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pop:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
+<span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pop:trigger_id"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"This popover is triggered by a trigger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pop:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
 </code></pre>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
@@ -2705,7 +2675,9 @@ This is another paragraph. This is the second sentence.
       class="hljs-string">"top"</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span>
 
-      description :+1:   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      description :+1:
+
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span>
       </code>
       </pre>
@@ -2713,9 +2685,8 @@ This is another paragraph. This is the second sentence.
       <span id="examples" class="d-none">
 <p>Hover over the <trigger for="pop:context-target">keyword</trigger> to see the popover.</p>
 <popover id="pop:context-target" title="Popover title" placement="top">
-  <div slot="content">
-<p>description 👍</p>
-<p></p></div></popover></span></div>
+<div slot="content">
+<p>description 👍</p></div></popover></span></div>
 </panel>
 <panel type="seamless" header="###### **Questions**<a class='fa fa-anchor' href='#questions'></a>">
   <div>
@@ -3373,15 +3344,22 @@ Cats|yes|100|
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-        <p>You need to specify the tags to include in <code>site.json</code>, under the <code>tags</code> option:</p>
+        <p>You need to specify the tags to include in the <code>pluginsContext</code>, under <code>tags</code>:</p>
         <pre><code class="hljs json">{
   ...
-  <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]
+  <span class="hljs-attr">"plugins"</span> : [
+    <span class="hljs-string">"filterTags"</span>
+  ],
+  <span class="hljs-attr">"pluginsContext"</span> : {
+    <span class="hljs-attr">"filterTags"</span> : {
+      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]
+    }
+  }
 }
 </code></pre>
         <p>All other tagged elements will be filtered out. In this case, only the element with the <code>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
       </div>
-      <p>If the <code>tags</code> option is not specified in <code>site.json</code>, all tagged elements will be rendered.</p>
+      <p>If the <code>filterTags</code> plugin is not enabled in <code>site.json</code>, all tagged elements will be rendered.</p>
       <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code>site.json</code>.</p>
       <div class="indented">
         <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching multiple tags to an element:</p>
@@ -3446,7 +3424,14 @@ Cats|yes|100|
 
 {
   ...
-  <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]
+  <span class="hljs-attr">"plugins"</span> : [
+    <span class="hljs-string">"filterTags"</span>
+  ],
+  <span class="hljs-attr">"pluginsContext"</span> : {
+    <span class="hljs-attr">"filterTags"</span> : {
+      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]
+    }
+  }
 }
 </code></pre>
         <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
@@ -3557,41 +3542,40 @@ Cats|yes|100|
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
         <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
+Trigger
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">header</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span>
-  Trigger
-  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"focus"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Focus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"*Hello* **World**"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Hover me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Free Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">" coupling is the degree of interdependence between software modules; a measure of how closely
-  connected two routines or modules are; the strength of the relationships between modules."</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>coupling<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"focus"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Focus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"*Hello* **World**"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Hover me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Free Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>coupling<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span>
 </code></pre>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
@@ -3621,8 +3605,7 @@ Cats|yes|100|
               <a href="/userGuide/syntax/null">Hover me</a></tooltip>
             <br></p>
           <p><strong>Free Text</strong>:
-            <tooltip content=" coupling is the degree of interdependence between software modules; a measure of how closely
-  connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
+            <tooltip content="coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
           </p>
         </box>
       </div>
@@ -3810,13 +3793,13 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
     <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
     <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
     <div class="indented">
-      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>        Page generated at: Mon, 18 Mar 2019 02:06:47 GMT</p>
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>        Page generated at: Mon, 25 Mar 2019 02:40:41 GMT</p>
     </div>
     <p></p>
     <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
     <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
     <div class="indented">
-      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>        Page generated by: <a href="https://markbind.org/">MarkBind 1.21.0</a></p>
+      <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>        Page generated by: <a href="https://markbind.org/">MarkBind 1.22.0</a></p>
     </div>
     <p></p>
     <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -3883,7 +3866,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
 <div id="flex-div"></div>
 <footer>
   <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.21.0</a> on Mon, 18 Mar 2019 02:06:47 GMT]</small></div>
+    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.22.0</a> on Mon, 25 Mar 2019 02:40:41 GMT]</small></div>
 </footer>
 </div>
 </body>

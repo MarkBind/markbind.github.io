@@ -143,7 +143,8 @@
       "headings": {
         "making-the-site-searchable": "Making the Site Searchable",
         "search-bars": "Search Bars",
-        "keywords": "Keywords | regressions"
+        "keywords": "Keywords | regressions",
+        "including-or-excluding-headings": "Including or Excluding Headings"
       },
       "title": "User Guide: Making the Site Searchable",
       "footer": "footer.md",
@@ -221,11 +222,12 @@
         "baseurl": "baseUrl",
         "faviconpath": "faviconPath",
         "titleprefix": "titlePrefix",
+        "theme": "theme",
         "pages": "pages",
         "externalscripts": "externalScripts",
         "ignore": "ignore",
         "deploy": "deploy",
-        "tags": "tags",
+        "plugins-pluginscontext": "plugins, pluginsContext",
         "headingindexinglevel": "headingIndexingLevel",
         "enablesearch": "enableSearch"
       },
@@ -234,6 +236,34 @@
       "siteNav": "userGuideSections.md",
       "keywords": "site.json",
       "src": "userGuide/siteConfiguration.md",
+      "layout": "default"
+    },
+    {
+      "headings": {
+        "themes": "Themes",
+        "specifying-a-theme": "Specifying a Theme",
+        "supported-themes": "Supported Themes",
+        "bootswatch-cerulean": "bootswatch-cerulean",
+        "bootswatch-cosmo": "bootswatch-cosmo",
+        "bootswatch-flatly": "bootswatch-flatly",
+        "bootswatch-journal": "bootswatch-journal",
+        "bootswatch-litera": "bootswatch-litera",
+        "bootswatch-lumen": "bootswatch-lumen",
+        "bootswatch-lux": "bootswatch-lux",
+        "bootswatch-materia": "bootswatch-materia",
+        "bootswatch-minty": "bootswatch-minty",
+        "bootswatch-pulse": "bootswatch-pulse",
+        "bootswatch-sandstone": "bootswatch-sandstone",
+        "bootswatch-simplex": "bootswatch-simplex",
+        "bootswatch-sketchy": "bootswatch-sketchy",
+        "bootswatch-spacelab": "bootswatch-spacelab",
+        "bootswatch-united": "bootswatch-united",
+        "bootswatch-yeti": "bootswatch-yeti"
+      },
+      "title": "User Guide: Themes",
+      "footer": "footer.md",
+      "siteNav": "userGuideSections.md",
+      "src": "userGuide/themes.md",
       "layout": "default"
     },
     {
