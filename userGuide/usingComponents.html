@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.0.0">
+  <meta name="generator" content="MarkBind 2.1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Components</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
   <div id="app">
     <header>
       <link rel="stylesheet" href="../css/main.css">
-      <navbar type="inverse">
+      <navbar type="dark">
         <a slot="brand" href="../index.html" title="Home" class="navbar-brand"><img src="../images/logo-darkbackground.png" height="20"></a>
         <li><a href="../index.html" class="nav-link">HOME</a></li>
         <li><a href="../userGuide/index.html" class="nav-link">USER GUIDE</a></li>
@@ -736,7 +736,33 @@ Modal content
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"inverse"</span>&gt;</span>
+            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"brand"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Home"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-brand"</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"Dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#navbar"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dropdown</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- For right positioning use slot --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://github.com/MarkBind/markbind"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>Fork...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">navbar</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"dark"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"brand"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Home"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-brand"</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"Dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#navbar"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">dropdown</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- For right positioning use slot --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://github.com/MarkBind/markbind"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>Fork...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">navbar</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"light"</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"brand"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Home"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-brand"</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
@@ -753,7 +779,7 @@ Modal content
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
             <box border-left-color="grey" background-color="white">
-              <navbar type="inverse" class="temp-navbar">
+              <navbar type="primary" class="temp-navbar">
 
                 <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
@@ -763,7 +789,31 @@ Modal content
                 </dropdown>
 
                 <li slot="right">
-                  <a href="https://github.com/MarkBind/markbind" class="nav-link" target="_blank">Fork...</a></li>
+                  <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li>
+              </navbar>
+              <navbar type="dark" class="temp-navbar">
+
+                <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
+
+                <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
+                <dropdown text="Dropdown" class="nav-link temp-dropdown">
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
+                </dropdown>
+
+                <li slot="right">
+                  <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li>
+              </navbar>
+              <navbar type="light" class="temp-navbar">
+
+                <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
+
+                <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
+                <dropdown text="Dropdown" class="nav-link temp-dropdown">
+                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
+                </dropdown>
+
+                <li slot="right">
+                  <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li>
               </navbar>
             </box>
           </div>
@@ -784,13 +834,18 @@ Modal content
               <tr>
                 <td>type</td>
                 <td><code>String</code></td>
-                <td><code>default</code></td>
-                <td>Supports: <code>inverse</code>, <code>default</code>.</td>
+                <td><code>primary</code></td>
+                <td>Supports: <code>primary</code>, <code>dark</code>, <code>light</code>, <code>none</code>.</td>
               </tr>
             </tbody>
           </table>
-        </div><span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"inverse"</span>&gt;</span>
+        </div>
+        <box type="tip">
+          <p>If you wish to further customize your navbar beyond the primary, dark, and light theme colors, specify the <code>type=&quot;none&quot;</code> attribute and <a href="#inserting-custom-classes-into-components">insert your own custom styles</a>            via the
+            <code>add-class</code> attribute.</p>
+        </box>
+        <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"brand"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">title</span>=
         <span class="hljs-string">"Home"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-brand"</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -801,15 +856,15 @@ Modal content
         <span class="hljs-tag">&lt;/<span class="hljs-name">dropdown</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- For right positioning use slot --&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://github.com/x/y"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">class</span>=
-        <span class="hljs-string">"nav-link"</span>&gt;</span>Fork...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://github.com/MarkBind/markbind"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>
+        <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>Fork...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">navbar</span>&gt;</span>
         </code>
         </pre>
         </span>
         <span id="examples" class="d-none">
-<navbar type="inverse" class="temp-navbar">
+<navbar type="primary" class="temp-navbar">
   
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
@@ -817,7 +872,25 @@ Modal content
     <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
-    <a href="https://github.com/x/y" class="nav-link" target="_blank">Fork...</a></li></navbar><p></p></span></div>
+    <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li></navbar>
+<navbar type="dark" class="temp-navbar">
+  
+  <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
+  
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
+    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+  
+  <li slot="right">
+    <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li></navbar>
+<navbar type="light" class="temp-navbar">
+  
+  <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
+  
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
+    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+  
+  <li slot="right">
+    <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li></navbar></span></div>
       <hr>
       <div>
         <h2 id="page-navigation-menus">Page Navigation Menus<a class="fa fa-anchor" href="#page-navigation-menus"></a></h2>
@@ -2355,7 +2428,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.0.0</a> on Mon, 01 Apr 2019 05:18:26 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.1.0</a> on Mon, 01 Apr 2019 16:44:33 GMT]</small></div>
   </footer>
   </div>
 </body>
