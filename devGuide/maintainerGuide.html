@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.0.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBind - Maintainer Guide</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/site-nav.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+
+  <link rel="icon" href="/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <link rel="stylesheet" href="../css/main.css">
+      <navbar type="inverse">
+        <a slot="brand" href="../index.html" title="Home" class="navbar-brand"><img src="../images/logo-darkbackground.png" height="20"></a>
+        <li><a href="../index.html" class="nav-link">HOME</a></li>
+        <li><a href="../userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <li><a href="../showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="../about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="../devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+        <li>
+          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+      <nav id="site-nav" class="navbar navbar-light bg-transparent">
+        <div class="sticky-top spacer-top viewport-height-90 scrollable slim-scroll">
+          <p><span class="indented lead"><strong>Developer Guide</strong></span></p>
+          <ul class="px-3 site-nav-list">
+            <li class="mt-2"><a href="/devGuide/devGuide.html" class="site-nav__a">Developer Guide</a></li>
+            <li class="mt-2"><a href="/devGuide/maintainerGuide.html" class="site-nav__a current">Maintainer Guide</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content-wrapper">
+        <h1 id="pr-merging-workflow">PR Merging Workflow<a class="fa fa-anchor" href="#pr-merging-workflow"></a></h1>
+        <h2 id="approval">Approval<a class="fa fa-anchor" href="#approval"></a></h2>
+        <ul>
+          <li>Once the first approval is given from a developer, assign a version milestone to the PR (this is usually the next version, unless there is a justification for delaying the merging to future versions).
+            <ul>
+              <li><strong>Note:</strong> Should there be a subsequent rejection by other reviewers (or an error is spotted), the version milestone is removed immediately. The version milestone should only be restored once the new approvals come in.</li>
+            </ul>
+          </li>
+          <li>Once the second approval is given from a senior developer (or there are &gt;= 3 approvals given from anyone), the PR can be merged immediately.
+            <ul>
+              <li>If there is no second approval yet, please wait for a day before merging the PR without the second approval.</li>
+              <li><strong>Rationale:</strong> This is to allow other developers the chance to review the PR, and delay the merge if there's any significant problems. Not everyone is available all of the time, so please be patient.</li>
+              <li><strong>Note:</strong> If the PR is too simple (e.g. correcting a simple typo), one approval is sufficient for merging, and this requirement is relaxed.</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="actual-merging">Actual Merging<a class="fa fa-anchor" href="#actual-merging"></a></h2>
+        <ol>
+          <li>
+            <p>Re-run the Travis build for the current PR's <code>continuous-integration/travis-ci/pr</code>.</p>
+            <ul>
+              <li><strong>Rationale:</strong> This is because we do not ask PR authors to rebase their PRs, but the master branch may have since been updated. It is possible for tests to pass on their branch, only to fail when integrating the changes with
+                the master (
+                <strong>Note:</strong> This is possible even if GitHub <em>doesn't</em> complain about any merge conflict!)</li>
+            </ul>
+          </li>
+          <li>
+            <p>Merge the PR. Depending on the PR:</p>
+            <ul>
+              <li>Use &quot;Squash and Merge&quot; if the PR is a simple feature.</li>
+              <li>Use &quot;Create a Merge Commit&quot; if the PR is non-trivial, and the author has tidied up the commit organization so that each commit is a logical change.</li>
+            </ul>
+            <p>a. Regardless of the option chosen above, ensure that your commit title is of the form <code>&lt;PR_TITLE&gt; (#PR_NUMBER)</code>. For example, for PR #745, it is of the form:</p>
+            <p><code>Add built-in support for light themes from bootswatch (#745)</code></p>
+            <p>b. For non-trivial PRs, ensure that there is a sensible commit message accompanied by it. <strong>Rationale:</strong> So that future developers have an idea of what is going on for this PR without having to go back to the GitHub website.</p>
+          </li>
+        </ol>
+        <p>Please follow the <a href="https://oss-generic.github.io/process/docs/FormatsAndConventions.html#commit-message">commit message convention</a>. For example, for PR #745, the commit message is as follows:</p>
+        <pre><code>```
+To use any custom Bootstrap themes, authors must manually copy over the
+theme's .css files to the website's asset folders, and configure the
+layout's head.md to use the .css files.
+
+Let's add built-in support for bootswatch light themes, by providing a
+&quot;theme&quot; option in site.json, so that authors can just directly specify
+the name of the theme in order to use it. For example:
+
+  {        
+    &quot;theme&quot;: &quot;bootswatch-cerulean&quot;
+  }
+
+Dark themes from Bootswatch are not yet supported because they require
+our custom MarkBind components to inherit the Bootstrap styling classes,
+to be done in #782.
+```
+</code></pre>
+        <ol start="3">
+          <li>Ensure that a version milestone is tagged to the PR. <strong>Reason:</strong> We may have missed it during the &quot;Approval&quot; stage, so please add the version milestone if it is missing, so that the drafting of the release notes during
+            the release process will be easier.</li>
+        </ol>
+        <h1 id="doing-a-release">Doing a Release<a class="fa fa-anchor" href="#doing-a-release"></a></h1>
+        <h2 id="building-vue-strap">Building Vue-Strap<a class="fa fa-anchor" href="#building-vue-strap"></a></h2>
+        <ol>
+          <li>Ensure that you are on the root directory on vue-strap, then execute:</li>
+        </ol>
+        <pre><code class="hljs">$ npm run build
+</code></pre>
+        <p>You should see changes in <code>vue.min.js</code>, <code>vue-strap.js.map</code> and <code>vue-strap.min.js</code>.</p>
+        <ul>
+          <li>
+            <p><strong>Note:</strong> Building vue-strap is optional if there's no changes since the last release of MarkBind. If there are no changes to the three files mentioned above, skip to the &quot;Building MarkBind&quot; section.</p>
+          </li>
+          <li>
+            <p><strong>Note:</strong> Do take a glance at the diff for <code>vue.min.js</code> to see if there's any strange changes (e.g. the version of jQuery changes even though no one upgraded it).</p>
+          </li>
+        </ul>
+        <ol start="2">
+          <li>Commit the new changes.</li>
+        </ol>
+        <pre><code class="hljs">$ git commit -m 'Update dist'
+</code></pre>
+        <ol start="3">
+          <li>Tag the new commit with the new version number, whereby <code>XYZ</code> is the incremented number of the previous release.</li>
+        </ol>
+        <pre><code class="hljs">$ git tag v2.0.1-markbind.XYZ
+</code></pre>
+        <ul>
+          <li><strong>Note:</strong> The tag used is a lightweight tag. <em>Don't</em> use an annotated tag.</li>
+        </ul>
+        <ol start="4">
+          <li>Push everything to the main vue-strap repository (replace <code>XYZ</code> with version number).</li>
+        </ol>
+        <pre><code class="hljs">$ git push upstream master
+$ git push upstream v2.0.1-markbind.XYZ
+</code></pre>
+        <h2 id="building-markbind">Building MarkBind<a class="fa fa-anchor" href="#building-markbind"></a></h2>
+        <ol>
+          <li>
+            <p>If we did a new vue-strap release, then:</p>
+            <p>a. Copy <code>vue-strap.min.js</code> from the vue-strap repository to the main asset folder, and to each of the test site's <code>expected/</code> folder.</p>
+          </li>
+        </ol>
+        <pre><code class="hljs"># copy to main asset folder
+$ cp &lt;VUE_STRAP_REPO&gt;/dist/vue-strap.min.js &lt;MARKBIND_REPO&gt;/asset/js/vue-strap.mins.js
+
+# for each test site's expected folder:
+$ cp &lt;VUE_STRAP_REPO&gt;/dist/vue-strap.min.js &lt;MARKBIND_REPO&gt;/test/functional/&lt;TEST_SITE_NAME&gt;/expected/markbind/js/vue-strap.min.js
+</code></pre>
+        <p>b. Commit the new vue-strap assets (replace <code>XYZ</code> with version number).</p>
+        <pre><code class="hljs">$ git commit -m 'Update vue-strap version to v2.0.1-markbind.XYZ'
+</code></pre>
+        <ul>
+          <li><strong>Note:</strong> We uniquely do this for each MarkBind release (rather than spontaneously update the vue-strap files for each affected PR), in order to reduce unnecessary merge conflicts. It also makes it easier for the maintainers to
+            vet the changes.
+          </li>
+        </ul>
+        <ol start="2">
+          <li>Rebuild the test files.</li>
+        </ol>
+        <pre><code class="hljs">$ cd test/functional/
+
+# for each test site
+$ cd &lt;TEST_SITE_NAME&gt;
+$ markbind build
+$ cp _site/* expected/
+$ cd ..
+</code></pre>
+        <p>When rebuilding the expected test files, ensure that <strong>only</strong> the version number is updated. For example, this is correct:</p>
+        <pre><code class="hljs diff">diff --git a/test/functional/test_site/expected/bugs/index.html b/test/functional/test_site/expected/bugs/index.html
+index 779f279..bb3c602 100644
+<span class="hljs-comment">--- a/test/functional/test_site/expected/bugs/index.html</span>
+<span class="hljs-comment">+++ b/test/functional/test_site/expected/bugs/index.html</span>
+<span class="hljs-meta">@@ -4,7 +4,7 @@</span>
+     &lt;meta name="default-head-top"&gt;
+     &lt;meta charset="utf-8"&gt;
+     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+<span class="hljs-deletion">-    &lt;meta name="generator" content="MarkBind 1.20.0"&gt;</span>
+<span class="hljs-addition">+    &lt;meta name="generator" content="MarkBind 1.21.0"&gt;</span>
+     &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+     &lt;title&gt;Open Bugs&lt;/title&gt;
+     &lt;link rel="stylesheet" href="../markbind/css/bootstrap.min.css"&gt;
+</code></pre>
+        <p>However, if there are any extra lines changed, that means that someone screwed up the functional tests, and needs to be fixed accordingly!</p>
+        <p>Only when it is fixed do you proceed with the next step of the release procedure.</p>
+        <ol start="3">
+          <li>Do an <code>npm version</code> to increment the version number. Which to increment (<code>patch</code>, <code>minor</code> or <code>major</code>) depends on what PRs are merged for the new version, which means you must know beforehand about
+            the changes.</li>
+        </ol>
+        <ul>
+          <li>If there are no significant changes, a <code>patch</code> is sufficient:</li>
+        </ul>
+        <pre><code class="hljs">$ npm version patch
+</code></pre>
+        <ul>
+          <li>If there are significant changes (e.g. breaking changes, new release), a <code>minor</code> release is needed:</li>
+        </ul>
+        <p>a. Update the version number inside <code>src/lib/markbind/package-lock.json</code> and <code>src/lib/markbind/package.json</code> manually. This is because <code>npm version</code> will not automatically update the numbers from the outside.</p>
+        <p>b. Do a <code>npm version minor</code> as per normal.</p>
+        <pre><code class="hljs">$ npm version minor
+</code></pre>
+        <ul>
+          <li>We rarely do <code>major</code> releases, but if necessary, the steps are the same as the <code>minor</code> release (just change <code>minor</code> to <code>major</code>).</li>
+        </ul>
+        <ol start="4">
+          <li>Push the new commit and version tag generated by <code>npm</code> (change <code>vA.B.C</code> to the new version's string accordingly).</li>
+        </ol>
+        <pre><code class="hljs">$ git push upstream master
+$ git push upstream vA.B.C
+</code></pre>
+        <ol start="5">
+          <li>Do an <code>npm publish</code>. You should receive a notification by <code>npm</code> that the publish is successful.</li>
+        </ol>
+        <pre><code class="hljs">$ npm publish
+</code></pre>
+        <ol start="6">
+          <li>
+            <p>If you used <code>npm link</code> for your project, ensure that you try the new release on another platform that doesn't use <code>npm link</code>, so that we can be sure the end-users can install and use the new version.</p>
+            <p>a. Just do <code>npm i -g markbind-cli@A.B.C</code> on the different platform and...</p>
+            <p>b. ... play around with the new MarkBind version to ensure that it works.</p>
+          </li>
+          <li>
+            <p>Ensure that the documentation at <a href="http://markbind.org">markbind.org</a> is deployed correctly.</p>
+          </li>
+        </ol>
+        <p>Since #701, the deployment is automated.</p>
+        <p>However, if it doesn't deploy properly for the release, do the following:</p>
+        <pre><code class="hljs">$ cd docs
+$ markbind build
+$ markbind deploy
+</code></pre>
+        <ol start="8">
+          <li>
+            <p>Draft a new release on GitHub.</p>
+            <p>a. Go to the Markbind release page at <a href="https://github.com/MarkBind/markbind/releases">https://github.com/MarkBind/markbind/releases</a>.</p>
+            <p>b. Click &quot;Draft a new release&quot;.</p>
+            <p>c. For the tag version, enter <code>vA.B.C</code>. (The newly released version should be recognized by GitHub, with an &quot;Existing Tag&quot; indicator, otherwise, ensure that you have pushed the version commit and tag in step 4).</p>
+            <p>d. For the release title, leave it blank.</p>
+            <p>e. For the main body, use the following template:</p>
+          </li>
+        </ol>
+        <pre><code class="hljs markdown"><span class="hljs-section"># markbind-cli</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- List out each of the PR for this version in the following format: --&gt;</span></span>
+<span class="xml"><span class="hljs-comment">&lt;!-- #ISSUE_NUMBER ISSUE_TITLE (#PR_NUMBER) --&gt;</span></span>
+
+<span class="hljs-section">### Breaking Changes</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- Any feature that is made obsolete --&gt;</span></span>
+
+<span class="hljs-quote">&gt; Also give a brief explanation note about:</span>
+<span class="hljs-quote">&gt;   - what was the old feature that was made obsolete</span>
+<span class="hljs-quote">&gt;   - any replacement feature (if any), and</span>
+<span class="hljs-quote">&gt;   - how the author should modify his website to migrate from the old feature to the replacement feature (if possible).</span>
+
+<span class="hljs-section">### Features</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- Features enable users (authors/readers) to do something new. --&gt;</span></span>
+
+<span class="hljs-section">### Enhancements</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- Enhances any existing features --&gt;</span></span> 
+
+<span class="hljs-section">### Fixes</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- Fixes correct a programming error/assumption. --&gt;</span></span>
+
+<span class="hljs-section">### Documentation</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- Pure changes to the documentation, such as typo, restructuring, etc --&gt;</span></span>
+
+<span class="hljs-section">### Code Quality</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- DevOps, refactoring, etc. --&gt;</span></span>
+
+<span class="hljs-section">### Dependencies</span>
+
+<span class="xml"><span class="hljs-comment">&lt;!-- Replace `OLD` with the previous version and `NEW` with the current version --&gt;</span></span>
+
+[<span class="hljs-string">MarkBind/vue-strap</span>](<span class="hljs-link">https://github.com/MarkBind/vue-strap</span>): v2.0.1-markbind.OLD → v2.0.1-markbind.NEW
+
+</code></pre>
+        <p>Use the list of PRs merged in the milestone to write the release notes. You may omit any sections that do not have a single PR under it.</p>
+        <p>An example of a release note draft (taken from v1.18.0):</p>
+        <pre><code class="hljs"># markbind-cli
+
+### Breaking Changes
+
+#653 Disable decamelize for anchor ID generation (#667, MarkBind/vue-strap#95)
+
+&gt; Headings with PascalCase wordings now generate a different anchor ID
+in order to be more compatible with anchor IDs generated by Github
+Flavored Markdown.
+&gt;
+&gt; For example, if we have the following heading:
+&gt;
+&gt; ```markdown
+&gt; # MarkBind docs
+&gt; ```
+&gt;
+&gt; Old anchor id:
+&gt;
+&gt; ```
+&gt; mark-bind-docs
+&gt; ```
+&gt;
+&gt; **New** anchor id:
+&gt;
+&gt; ```
+&gt; markbind-docs
+&gt; ```
+&gt;
+
+### Features
+
+#457 Add `deploy -t/--travis` to deploy via Travis (#649)
+#470 Support custom MarkBind plugins (#474)
+#642 Support specifying include variables inline (#681)
+
+### Enhancements
+
+#369 Seamless panels: omit caret if not expandable (MarkBind/vue-strap#96)
+#657 Add temporary styles to prevent FOUC (#664)
+
+### Fixes
+
+#651 Exit MarkBind with non-zero exit code on fatal error (#679)
+
+### Documentation
+
+Restructure user docs on MarkBind syntax (#668)
+Add documentation for badges (#686)
+Fix filename capitalization for syntax documentation (#685)
+
+### Code Quality
+
+test: Add diff printing for easier debugging (#632)
+
+### Dependencies
+
+[MarkBind/vue-strap](https://github.com/MarkBind/vue-strap): v2.0.1-markbind.20 → v2.0.1-markbind.21
+</code></pre>
+        <p>f. Click &quot;Publish release&quot;.</p>
+        <ol start="9">
+          <li>Finally, announce the new release on our Slack channel (replace <code>A.B.C</code> with the new version). Congrats!</li>
+        </ol>
+        <ul>
+          <li>Published: <code>npm i -g markbind-cli@A.B.C</code></li>
+        </ul>
+      </div>
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="sticky-top spacer-top viewport-height-90 scrollable slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#pr-merging-workflow">PR Merging Workflow&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#approval">Approval&#x200E;</a>
+              <a class="nav-link py-1" href="#actual-merging">Actual Merging&#x200E;</a>
+            </nav>
+            <a class="nav-link py-1" href="#doing-a-release">Doing a Release&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#building-vue-strap">Building Vue-Strap&#x200E;</a>
+              <a class="nav-link py-1" href="#building-markbind">Building MarkBind&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.0.0</a> on Mon, 01 Apr 2019 05:18:26 GMT]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = ''
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>

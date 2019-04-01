@@ -1,108 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 1.22.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MarkBind - User Guide: Using Plugins</title>
-    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css" >
-    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css" >
-    <link rel="stylesheet" href="../markbind/css/github.min.css">
-    <link rel="stylesheet" href="../markbind/css/markbind.css">
-    <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-    <link rel="stylesheet" href="../markbind/css/site-nav.css">
-    
-    
-    <link rel="icon" href="/favicon.ico">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.0.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBind - User Guide: Using Plugins</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/site-nav.css">
+
+
+  <link rel="icon" href="/favicon.ico">
 </head>
+
 <body>
-<div id="app">
+  <div id="app">
+    <header>
+      <link rel="stylesheet" href="../css/main.css">
+      <navbar type="inverse">
+        <a slot="brand" href="../index.html" title="Home" class="navbar-brand"><img src="../images/logo-darkbackground.png" height="20"></a>
+        <li><a href="../index.html" class="nav-link">HOME</a></li>
+        <li><a href="../userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <li><a href="../showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="../about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="../devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+        <li>
+          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
     <div id="flex-body">
-  <div id="site-nav">
-    <p><span class="indented lead"><strong>User Guide</strong></span></p>
-    <ul style="list-style-type: none; margin-left:-1em">
-      <li style="margin-top: 10px"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
-      <li style="margin-top:10px"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
-        <ul style="list-style-type: none; margin-left:-1em">
-          <li style="margin-top: 10px"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/usingPlugins.html" class="site-nav__a current">Using Plugins</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
-          <li style="margin-top: 10px"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
-        </ul>
-      </li>
-      <li style="margin-top: 10px"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
-      <li style="margin-top: 10px"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
-      <li style="margin-top: 10px"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-      <li style="margin-top: 10px"><button class="dropdown-btn dropdown-btn-open">References 
+      <nav id="site-nav" class="navbar navbar-light bg-transparent">
+        <div class="sticky-top spacer-top viewport-height-90 scrollable slim-scroll">
+          <p><span class="indented lead"><strong>User Guide</strong></span></p>
+          <ul class="px-3 site-nav-list">
+            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
+            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
+              <ul class="site-nav-list">
+                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
+                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
+                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
+                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
+                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a current">Using Plugins</a></li>
+                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
+                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+              </ul>
+            </li>
+            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
+            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
+            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References 
  <i class="dropdown-btn-icon rotate-icon">
 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-        <div class="dropdown-container dropdown-container-open">
-          <ul style="list-style-type: none; margin-left:-1em">
-            <li style="margin-top: 10px"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
-            <li style="margin-top: 10px"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
-            <li style="margin-top: 10px"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
-            <li style="margin-top: 10px"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
-            <li style="margin-top: 10px"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
-            <li style="margin-top: 10px"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
-            <li style="margin-top: 10px"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
+              <div class="dropdown-container dropdown-container-open">
+                <ul class="site-nav-list">
+                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
+                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
+                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
+                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
+                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
+                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
+                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </div>
-      </li>
-    </ul>
-  </div>
-  <div id="site-nav-btn-wrap">
-    <div id="site-nav-btn">
-      <div class="menu-top-bar"></div>
-      <div class="menu-middle-bar"></div>
-      <div class="menu-bottom-bar"></div>
-    </div>
-  </div>
-  <div id="page-content">
-    <div id="content-wrapper">
-      <div></div>
-      <div>
-        <link rel="stylesheet" href="/css/main.css">
-        <navbar placement="top" type="inverse" class="temp-navbar">
-          <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-          <li><a href="/index.html" class="nav-link">HOME</a></li>
-          <li><a href="/userGuide/index.html" class="nav-link">DOCS</a></li>
-          <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-          <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-          <li>
-            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-          <li slot="right">
-            <form class="navbar-form">
-              <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
-            </form>
-          </li>
-        </navbar>
-      </div>
-      <h1 id="using-plugins">Using Plugins<a class="fa fa-anchor" href="#using-plugins"></a></h1>
-      <p>A plugin is a user-defined extension that can add custom features to MarkBind. MarkBind plugins are <code>js</code> scripts that are loaded and run during the page generation. MarkBind allows plugins to modify a page's content during the page generation
-        process.</p>
-      <tip-box type="warning">
-        <p><strong>WARNING:</strong> Plugins are executable programs that can be written by anyone. This means that they might contain malicious code that may damage your computer.</p>
-        <p>Only run plugins from sources that you trust. Do not run the plugin if the source/origin of the plugin cannot be ascertained.
+      </nav>
+      <div id="content-wrapper">
+        <div></div>
+        <h1 id="using-plugins">Using Plugins<a class="fa fa-anchor" href="#using-plugins"></a></h1>
+        <p>A plugin is a user-defined extension that can add custom features to MarkBind. MarkBind plugins are <code>js</code> scripts that are loaded and run during the page generation. MarkBind allows plugins to modify a page's content during the page
+          generation process.
         </p>
-      </tip-box>
-      <h3 id="adding-plugins">Adding Plugins<a class="fa fa-anchor" href="#adding-plugins"></a></h3>
-      <p>Plugins are stored in the <code>_markbind/plugins</code> folder which is generated on <code>init</code>. To use a plugin, place the <code>js</code> source of the plugin in the <code>_markbind/plugins</code> folder and add the following options to
-        <code>site.json</code>:</p>
-      <ul>
-        <li><code>plugins</code>: An array of plugin names to use.</li>
-        <li><code>pluginsContext</code>: A mapping of plugin names to parameters passed to each individual plugin. It is recommended to use key-value pairs for consistency.</li>
-      </ul>
-      <p>For example:</p>
-      <pre><code class="hljs js">{
+        <tip-box type="warning">
+          <p><strong>WARNING:</strong> Plugins are executable programs that can be written by anyone. This means that they might contain malicious code that may damage your computer.</p>
+          <p>Only run plugins from sources that you trust. Do not run the plugin if the source/origin of the plugin cannot be ascertained.
+          </p>
+        </tip-box>
+        <h3 id="adding-plugins">Adding Plugins<a class="fa fa-anchor" href="#adding-plugins"></a></h3>
+        <p>Plugins are stored in the <code>_markbind/plugins</code> folder which is generated on <code>init</code>. To use a plugin, place the <code>js</code> source of the plugin in the <code>_markbind/plugins</code> folder and add the following options
+          to <code>site.json</code>:</p>
+        <ul>
+          <li><code>plugins</code>: An array of plugin names to use.</li>
+          <li><code>pluginsContext</code>: A mapping of plugin names to parameters passed to each individual plugin. It is recommended to use key-value pairs for consistency.</li>
+        </ul>
+        <p>For example:</p>
+        <pre><code class="hljs js">{
   ...
   <span class="hljs-string">"plugins"</span>: [
     <span class="hljs-string">"plugin1"</span>,
@@ -118,29 +116,29 @@
   }
 }
 </code></pre>
-      <h3 id="writing-plugins">Writing Plugins<a class="fa fa-anchor" href="#writing-plugins"></a></h3>
-      <h4 id="rendering">Rendering<a class="fa fa-anchor" href="#rendering"></a></h4>
-      <p><a href="/images/rendering.png" target="_self"><img src="/images/rendering.png" alt="" class="img-fluid"></a></p>
-      <p>MarkBind provides two entry points for modifying the page, pre-render and post-render. These are controlled by implementing the <code>preRender()</code> and <code>postRender()</code> functions in the plugin:</p>
-      <ul>
-        <li><code>preRender(content, pluginContext, frontMatter)</code>: Called before MarkBind renders the source from Markdown to HTML.
-          <ul>
-            <li><code>content</code>: The raw Markdown of any Markdown file (<code>.md</code>, <code>.mbd</code>, etc.).</li>
-            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-          </ul>
-        </li>
-        <li><code>postRender(content, pluginContext, frontMatter)</code>: Called after the HTML is rendered, before writing it to a file.
-          <ul>
-            <li><code>content</code>: The rendered HTML.</li>
-            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-          </ul>
-        </li>
-      </ul>
-      <p>MarkBind will call these functions with the respective content, and retrieve a string data that is used for the next step of the page generation process.</p>
-      <p>An example of a plugin is shown below. The plugin shows two ways of appending a paragraph of text to a specific <code>div</code> in the Markdown files:</p>
-      <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
+        <h3 id="writing-plugins">Writing Plugins<a class="fa fa-anchor" href="#writing-plugins"></a></h3>
+        <h4 id="rendering">Rendering<a class="fa fa-anchor" href="#rendering"></a></h4>
+        <p><a href="/images/rendering.png" target="_self"><img src="/images/rendering.png" alt="" class="img-fluid"></a></p>
+        <p>MarkBind provides two entry points for modifying the page, pre-render and post-render. These are controlled by implementing the <code>preRender()</code> and <code>postRender()</code> functions in the plugin:</p>
+        <ul>
+          <li><code>preRender(content, pluginContext, frontMatter)</code>: Called before MarkBind renders the source from Markdown to HTML.
+            <ul>
+              <li><code>content</code>: The raw Markdown of any Markdown file (<code>.md</code>, <code>.mbd</code>, etc.).</li>
+              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+            </ul>
+          </li>
+          <li><code>postRender(content, pluginContext, frontMatter)</code>: Called after the HTML is rendered, before writing it to a file.
+            <ul>
+              <li><code>content</code>: The rendered HTML.</li>
+              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>MarkBind will call these functions with the respective content, and retrieve a string data that is used for the next step of the page generation process.</p>
+        <p>An example of a plugin is shown below. The plugin shows two ways of appending a paragraph of text to a specific <code>div</code> in the Markdown files:</p>
+        <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
 
 <span class="hljs-keyword">const</span> cheerio = <span class="hljs-built_in">module</span>.parent.require(<span class="hljs-string">'cheerio'</span>);
 
@@ -154,7 +152,7 @@
   },
 };
 </code></pre>
-      <pre><code class="hljs js"><span class="hljs-comment">// site.json</span>
+        <pre><code class="hljs js"><span class="hljs-comment">// site.json</span>
 
 {
   ...
@@ -169,45 +167,45 @@
   }
 }
 </code></pre>
-      <pre><code class="hljs md">// index.md
+        <pre><code class="hljs md">// index.md
 
 ...
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-div"</span>&gt;</span></span>
 [Pre-render Placeholder]
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
 </code></pre>
-      <h4 id="assets">Assets<a class="fa fa-anchor" href="#assets"></a></h4>
-      <p>Plugins can implement the methods <code>getLinks</code> and <code>getScripts</code> to add additional assets to the page.</p>
-      <ul>
-        <li><code>getLinks(content, pluginContext, frontMatter, utils)</code>: Called to get link elements to be added to the head of the page.
-          <ul>
-            <li><code>content</code>: The rendered HTML.</li>
-            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-            <li><code>utils</code>: Object containing the following utility functions
-              <ul>
-                <li><code>buildStylesheet(href)</code>: Builds a stylesheet link element with the specified <code>href</code>.</li>
-              </ul>
-            </li>
-            <li>Should return an array of string data containing link elements to be added.</li>
-          </ul>
-        </li>
-        <li><code>getScripts(content, pluginContext, frontMatter, utils)</code>: Called to get script elements to be added after the body of the page.
-          <ul>
-            <li><code>content</code>: The rendered HTML.</li>
-            <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-            <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-            <li><code>utils</code>: Object containing the following utility functions
-              <ul>
-                <li><code>buildScript(src)</code>: Builds a script element with the specified <code>src</code>.</li>
-              </ul>
-            </li>
-            <li>Should return an array of string data containing script elements to be added.</li>
-          </ul>
-        </li>
-      </ul>
-      <p>An example of a plugin which adds links and scripts to the page:</p>
-      <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
+        <h4 id="assets">Assets<a class="fa fa-anchor" href="#assets"></a></h4>
+        <p>Plugins can implement the methods <code>getLinks</code> and <code>getScripts</code> to add additional assets to the page.</p>
+        <ul>
+          <li><code>getLinks(content, pluginContext, frontMatter, utils)</code>: Called to get link elements to be added to the head of the page.
+            <ul>
+              <li><code>content</code>: The rendered HTML.</li>
+              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+              <li><code>utils</code>: Object containing the following utility functions
+                <ul>
+                  <li><code>buildStylesheet(href)</code>: Builds a stylesheet link element with the specified <code>href</code>.</li>
+                </ul>
+              </li>
+              <li>Should return an array of string data containing link elements to be added.</li>
+            </ul>
+          </li>
+          <li><code>getScripts(content, pluginContext, frontMatter, utils)</code>: Called to get script elements to be added after the body of the page.
+            <ul>
+              <li><code>content</code>: The rendered HTML.</li>
+              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
+              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
+              <li><code>utils</code>: Object containing the following utility functions
+                <ul>
+                  <li><code>buildScript(src)</code>: Builds a script element with the specified <code>src</code>.</li>
+                </ul>
+              </li>
+              <li>Should return an array of string data containing script elements to be added.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>An example of a plugin which adds links and scripts to the page:</p>
+        <pre><code class="hljs js"><span class="hljs-comment">// myPlugin.js</span>
 
 <span class="hljs-built_in">module</span>.exports = {
   <span class="hljs-attr">getLinks</span>: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter, utils</span>) =&gt;</span> [utils.buildStylesheet(<span class="hljs-string">'STYLESHEET_LINK'</span>)],
@@ -216,28 +214,57 @@
 };
 
 </code></pre>
-      <p>This will add the following link and script elements to the page:</p>
-      <ul>
-        <li><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;STYLESHEET_LINK&quot;&gt;</code></li>
-        <li><code>&lt;script src=&quot;SCRIPT_LINK&quot;&gt;&lt;/script&gt;</code></li>
-        <li><code>&lt;script&gt;alert(&quot;hello&quot;)&lt;/script&gt;</code></li>
-      </ul>
-      <h3 id="built-in-plugins">Built-in plugins<a class="fa fa-anchor" href="#built-in-plugins"></a></h3>
-      <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
-      <div>
-        <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
-        <p>You can use tags to selectively filter HTML elements when building a site.</p>
-        <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching tags to elements:</p>
-          <pre><code class="hljs html"># Print 'Hello world'
+        <p>This will add the following link and script elements to the page:</p>
+        <ul>
+          <li><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;STYLESHEET_LINK&quot;&gt;</code></li>
+          <li><code>&lt;script src=&quot;SCRIPT_LINK&quot;&gt;&lt;/script&gt;</code></li>
+          <li><code>&lt;script&gt;alert(&quot;hello&quot;)&lt;/script&gt;</code></li>
+        </ul>
+        <h3 id="advanced-default-plugins">Advanced: Default plugins<a class="fa fa-anchor" href="#advanced-default-plugins"></a></h3>
+        <p>MarkBind has a set of default plugins that it uses to carry out some of its features. These are enabled by default for every project and should be left alone.</p>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Default Plugin</th>
+                <th>Functionality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>anchors</code></td>
+                <td>Attaches anchor links to the side of headings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Although not advised, you can disable these by passing <code>&quot;off&quot;: true</code> in the <code>pluginsContext</code>.</p>
+        <p>Disabling the <code>anchors</code> plugin:</p>
+        <pre><code class="hljs js">{
+  ...
+  <span class="hljs-string">"pluginsContext"</span>: {
+    <span class="hljs-string">"anchors"</span>: {
+      <span class="hljs-string">"off"</span>: <span class="hljs-literal">true</span>
+    }
+  }
+}
+</code></pre>
+        <h3 id="built-in-plugins">Built-in plugins<a class="fa fa-anchor" href="#built-in-plugins"></a></h3>
+        <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
+        <div>
+          <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
+          <p>You can use tags to selectively filter HTML elements when building a site.</p>
+          <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching tags to elements:</p>
+            <pre><code class="hljs html"># Print 'Hello world'
 
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-          <p>You need to specify the tags to include in the <code>pluginsContext</code>, under <code>tags</code>:</p>
-          <pre><code class="hljs json">{
+            <p>You need to specify the tags to include in the <code>pluginsContext</code>, under <code>tags</code>:</p>
+            <pre><code class="hljs json">{
   ...
   <span class="hljs-attr">"plugins"</span> : [
     <span class="hljs-string">"filterTags"</span>
@@ -249,44 +276,44 @@
   }
 }
 </code></pre>
-          <p>All other tagged elements will be filtered out. In this case, only the element with the <code>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
-        </div>
-        <p>If the <code>filterTags</code> plugin is not enabled in <code>site.json</code>, all tagged elements will be rendered.</p>
-        <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code>site.json</code>.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching multiple tags to an element:</p>
-          <pre><code class="hljs html"># For loops
+            <p>All other tagged elements will be filtered out. In this case, only the element with the <code>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
+          </div>
+          <p>If the <code>filterTags</code> plugin is not enabled in <code>site.json</code>, all tagged elements will be rendered.</p>
+          <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code>site.json</code>.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Attaching multiple tags to an element:</p>
+            <pre><code class="hljs html"># For loops
 
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span>
 </code></pre>
-          <p>As long as the <code>language--java</code> or <code>language--C#</code> tag is specified, the code snippet will be rendered.</p>
-        </div>
-        <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying tags in front matter:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+            <p>As long as the <code>language--java</code> or <code>language--C#</code> tag is specified, the code snippet will be rendered.</p>
+          </div>
+          <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying tags in front matter:</p>
+            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
   tags: ["language--java"]
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-        </div>
-        <span id="short" class="d-none">
+          </div>
+          <span id="short" class="d-none">
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-        </code>
-        </pre>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          </code>
+          </pre>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
   tags: ["language--java"]
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-        </span>
-        <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-        <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
-        <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+          </span>
+          <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
+          <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
+          <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
+            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
   tags: ["language--*"]
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
@@ -295,13 +322,13 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-          <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
-        </div>
-        <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
-        <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
-          <pre><code class="hljs html">index.md
+            <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
+          </div>
+          <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
+          <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Using general tags:</p>
+            <pre><code class="hljs html">index.md
 
 <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: "Hello World"
@@ -312,7 +339,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-          <pre><code class="hljs json">site.json
+            <pre><code class="hljs json">site.json
 
 {
   ...
@@ -326,10 +353,10 @@
   }
 }
 </code></pre>
-          <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
-        </div>
-        <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
-        <span id="short" class="d-none">
+            <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
+          </div>
+          <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
+          <span id="short" class="d-none">
 ```html
 # Print 'Hello world'
 <p tags="language--java">System.out.println("Hello world");</p>
@@ -350,49 +377,49 @@
 }
 ```
 </span></div>
-      <div>
-        <h4 id="algolia-enabling-algolia-docsearch"><code>algolia</code>: Enabling Algolia DocSearch<a class="fa fa-anchor" href="#algolia-enabling-algolia-docsearch"></a></h4>
-        <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
-        <p>To enable it, add <code>algolia</code> to your site's plugins, and supply the required options via the <code>pluginsContext</code>.</p>
-        <div class="table-responsive">
-          <table class="markbind-table table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>apiKey</td>
-                <td><code>String</code></td>
-                <td></td>
-                <td>The API key for your site's Algolia DocSearch setup</td>
-              </tr>
-              <tr>
-                <td>indexName</td>
-                <td><code>String</code></td>
-                <td></td>
-                <td>The index name for your site's Algolia DocSearch setup</td>
-              </tr>
-              <tr>
-                <td>algoliaOptions</td>
-                <td><code>Object</code></td>
-                <td><code>{}</code></td>
-                <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
-              </tr>
-              <tr>
-                <td>debug</td>
-                <td><code>Boolean</code></td>
-                <td><code>false</code></td>
-                <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <pre><code class="hljs js">site.json
+        <div>
+          <h4 id="algolia-enabling-algolia-docsearch"><code>algolia</code>: Enabling Algolia DocSearch<a class="fa fa-anchor" href="#algolia-enabling-algolia-docsearch"></a></h4>
+          <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
+          <p>To enable it, add <code>algolia</code> to your site's plugins, and supply the required options via the <code>pluginsContext</code>.</p>
+          <div class="table-responsive">
+            <table class="markbind-table table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>apiKey</td>
+                  <td><code>String</code></td>
+                  <td></td>
+                  <td>The API key for your site's Algolia DocSearch setup</td>
+                </tr>
+                <tr>
+                  <td>indexName</td>
+                  <td><code>String</code></td>
+                  <td></td>
+                  <td>The index name for your site's Algolia DocSearch setup</td>
+                </tr>
+                <tr>
+                  <td>algoliaOptions</td>
+                  <td><code>Object</code></td>
+                  <td><code>{}</code></td>
+                  <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td><code>Boolean</code></td>
+                  <td><code>false</code></td>
+                  <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code class="hljs js">site.json
 {
   ...
   <span class="hljs-string">"plugins"</span>: [
@@ -408,32 +435,34 @@
   }
 }
 </code></pre>
-        <p>To connect the <code>searchbar</code> component to Algolia DocSearch, add the <code>algolia</code> key.</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+          <p>To connect the <code>searchbar</code> component to Algolia DocSearch, add the <code>algolia</code> key.</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </code></pre>
-        <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
+          <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
 </code></pre>
-      </div>
-      <div class="clearfix">
-        <p><span class="float-left"><b-btn variant="light" href="/userGuide/usingHtmlJavaScriptCss.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using HTML, JavaScript, CSS</span></span>
-          </b-btn>
-          </span>
-        </p>
-        <p><span class="float-right"><b-btn variant="light" href="/userGuide/tweakingThePageStructure.html"><span><span>Tweaking the Page Structure</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
-          </b-btn>
-          </span>
-        </p>
-      </div>
-      <br></div>
+          <box type="warning">
+            <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code>.algolia-no-index</code>              to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
+            <p>The <code>algolia-no-index</code> class is automatically added to content hidden by the built-in VueStrap components. You may also add the <code>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
+          </box>
+        </div>
+        <div class="clearfix">
+          <p><span class="float-left"><b-btn variant="light" href="/userGuide/usingHtmlJavaScriptCss.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using HTML, JavaScript, CSS</span></span>
+            </b-btn>
+            </span>
+          </p>
+          <p><span class="float-right"><b-btn variant="light" href="/userGuide/tweakingThePageStructure.html"><span><span>Tweaking the Page Structure</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
+            </b-btn>
+            </span>
+          </p>
+        </div>
+        <br></div>
+    </div>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.0.0</a> on Mon, 01 Apr 2019 05:18:26 GMT]</small></div>
+    </footer>
   </div>
-</div>
-<div id="flex-div"></div>
-<footer>
-  <div class="text-center">
-    <small>[Generated by <a href="https://markbind.org/">MarkBind 1.22.0</a> on Mon, 25 Mar 2019 02:40:41 GMT]</small></div>
-</footer>
-</div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
 <script src="../markbind/js/vue-strap.min.js"></script>
@@ -441,9 +470,10 @@
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
-    const baseUrl = ''
-    const enableSearch = true
+  const baseUrl = ''
+  const enableSearch = true
 </script>
 <script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+
 </html>
