@@ -69,6 +69,8 @@
         "deploying-to-github-pages-via-travis-ci": "Deploying to GitHub Pages via Travis CI",
         "adding-your-repository-to-travis-ci": "Adding your repository to Travis CI",
         "configuring-your-repository-in-travis-ci": "Configuring your repository in Travis CI",
+        "configuring-travis-ci-to-use-a-specific-markbind-version": "Configuring Travis CI to use a specific MarkBind version",
+        "configuring-travis-ci-to-only-deploy-from-a-specific-repository": "Configuring Travis CI to only deploy from a specific repository",
         "deploying-to-netlify": "Deploying to Netlify",
         "setting-up-netlify-to-use-a-specific-version-of-markbind": "Setting up Netlify to use a specific version of MarkBind"
       },
