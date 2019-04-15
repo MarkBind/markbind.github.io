@@ -171,7 +171,8 @@
         "markbind-in-the-project-workflow": "MarkBind in the Project Workflow",
         "authoring-workflow": "Authoring Workflow",
         "github-project-workflow": "GitHub Project Workflow",
-        "using-markbind-for-project-documentation": "Using MarkBind for Project Documentation"
+        "using-markbind-for-project-documentation": "Using MarkBind for Project Documentation",
+        "converting-existing-project-documentation-wiki": "Converting existing project documentation/wiki"
       },
       "title": "User Guide: MarkBind in the Project Workflow",
       "header": "header.md",
@@ -241,6 +242,7 @@
         "theme": "theme",
         "pages": "pages",
         "externalscripts": "externalScripts",
+        "globaloverride": "globalOverride",
         "ignore": "ignore",
         "deploy": "deploy",
         "plugins-pluginscontext": "plugins, pluginsContext",

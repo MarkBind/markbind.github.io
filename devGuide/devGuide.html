@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.1.1">
+  <meta name="generator" content="MarkBind 2.2.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Developer Guide</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -24,14 +24,14 @@
 <body data-spy="scroll" data-target="#page-nav" data-offset="100">
   <div id="app">
     <header>
-      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark">
-        <a slot="brand" href="../index.html" title="Home" class="navbar-brand"><img src="../images/logo-darkbackground.png" height="20"></a>
-        <li><a href="../index.html" class="nav-link">HOME</a></li>
-        <li><a href="../userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        <li><a href="../showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="../about.html" class="nav-link">ABOUT</a></li>
-        <li><a href="../devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+        <li><a href="/index.html" class="nav-link">HOME</a></li>
+        <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
         <li>
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
@@ -43,7 +43,7 @@
     </header>
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
-        <div class="sticky-top site-nav-spacer viewport-height-90 scrollable slim-scroll">
+        <div class="position-sticky position-top site-nav-spacer viewport-height-90 scrollable slim-scroll">
           <p><span class="lead"><strong>Developer Guide</strong></span></p>
           <ul class="px-0 site-nav-list">
             <li class="mt-2"><a href="/devGuide/devGuide.html" class="site-nav__a current">Developer Guide</a></li>
@@ -148,8 +148,8 @@
         <p>Our test script does the following:</p>
         <ol>
           <li>Lints the code for any code and style errors using ESLint.</li>
-          <li>Builds the test site found in <code>test/test_site/</code>.</li>
-          <li>Compares the HTML files generated with the HTML files in <code>test/test_site/expected/</code>.</li>
+          <li>Builds the test sites whose directory names are listed in <code>test/functional/test_sites</code>.</li>
+          <li>For each test site, compares the HTML files generated with the HTML files in its <code>expected</code> directory.</li>
         </ol>
         <h4 id="running-tests">Running tests<a class="fa fa-anchor" href="#running-tests"></a></h4>
         <p>To execute the tests, simply run:</p>
@@ -157,15 +157,25 @@
         <pre><code class="hljs">$ npm run test
 </code></pre>
         <p>For Windows users:</p>
-        <pre><code class="hljs">$ npm run testwin
+        <pre><code class="hljs">&gt; npm run testwin
 </code></pre>
         <h4 id="updating-tests">Updating tests<a class="fa fa-anchor" href="#updating-tests"></a></h4>
-        <p>When adding new features, updating existing features or fixing bugs, you should update the expected site to reflect the changes.</p>
-        <h5 id="changes-to-existing-features">Changes to existing features<a class="fa fa-anchor" href="#changes-to-existing-features"></a></h5>
-        <p>Simply update the expected HTML files in <code>test/test_site/expected/</code> to reflect the changes.</p>
+        <p>Whether you are adding a new feature, updating existing features or fixing bugs, make sure to update the test sites to reflect the changes.</p>
+        <p>You may use the following script to do this:</p>
+        <p>On Unix:</p>
+        <pre><code class="hljs">$ npm run updatetest
+</code></pre>
+        <p>On Windows:</p>
+        <pre><code class="hljs">&gt; npm run updatetestwin
+</code></pre>
+        <box type="warning">
+          You should always check that the generated output is correct before committing any changes to the test sites.
+        </box>
         <h5 id="new-features">New features<a class="fa fa-anchor" href="#new-features"></a></h5>
-        <p>Add new site content into the <code>test/test_site/</code> folder to demonstrate the new feature. Ensure that the new content is included in the test site so that your feature will be tested when <code>markbind build</code> is run on the test
-          site. Remember to update the expected HTML files in <code>test/test_site/expected/</code>.</p>
+        <p>When adding new features, you should also add new site content into an existing test site or create a new test site to demonstrate the new feature. This is to ensure that your feature can be tested by building that test site.</p>
+        <box type="info">
+          When creating a new test site, the directory name of the new test site should be added to <code>test/functional/test_sites</code>.
+        </box>
         <h3 id="using-eslint">Using ESLint<a class="fa fa-anchor" href="#using-eslint"></a></h3>
         <p>Our projects follow a <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">coding standard</a>. Using a linter will help check and fix some of the code style errors in your code. It will save time for both you
           and your code reviewer. The linting tool we use is <a href="https://eslint.org/">ESLint</a>. Here is a <a href="https://gist.github.com/nicholaschuayunzhi/bfe53dbb5f1a0f02d545d55956f9ab7e">gist</a> with an explanation of the ESLint rules chosen
@@ -189,7 +199,7 @@
         <p>ESLint has <a href="https://eslint.org/docs/user-guide/integrations">integrations with popular editors</a>. They offer features such as &quot;fix errors on save&quot;, which will make developement more convenient.</p>
       </div>
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="sticky-top spacer-top viewport-height-90 scrollable slim-scroll">
+        <div class="position-sticky position-top spacer-top viewport-height-90 scrollable slim-scroll">
 
           <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
             <a class="nav-link py-1" href="#requirement">Requirement&#x200E;</a>
@@ -211,7 +221,6 @@
                 <a class="nav-link py-1" href="#running-tests">Running tests&#x200E;</a>
                 <a class="nav-link py-1" href="#updating-tests">Updating tests&#x200E;</a>
                 <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                  <a class="nav-link py-1" href="#changes-to-existing-features">Changes to existing features&#x200E;</a>
                   <a class="nav-link py-1" href="#new-features">New features&#x200E;</a>
                 </nav>
               </nav>
@@ -229,7 +238,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.1.1</a> on Fri, 05 Apr 2019 09:17:26 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Mon, 15 Apr 2019 01:54:33 GMT]</small></div>
     </footer>
   </div>
 </body>

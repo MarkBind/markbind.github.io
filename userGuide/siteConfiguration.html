@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.1.1">
+  <meta name="generator" content="MarkBind 2.2.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Configuring the Site</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -24,14 +24,14 @@
 <body>
   <div id="app">
     <header>
-      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark">
-        <a slot="brand" href="../index.html" title="Home" class="navbar-brand"><img src="../images/logo-darkbackground.png" height="20"></a>
-        <li><a href="../index.html" class="nav-link">HOME</a></li>
-        <li><a href="../userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        <li><a href="../showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="../about.html" class="nav-link">ABOUT</a></li>
-        <li><a href="../devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+        <li><a href="/index.html" class="nav-link">HOME</a></li>
+        <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
         <li>
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
@@ -43,7 +43,7 @@
     </header>
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
-        <div class="sticky-top site-nav-spacer viewport-height-90 scrollable slim-scroll">
+        <div class="position-sticky position-top site-nav-spacer viewport-height-90 scrollable slim-scroll">
           <p><span class="lead"><strong>User Guide</strong></span></p>
           <ul class="px-0 site-nav-list">
             <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
@@ -100,7 +100,10 @@
       <span class="hljs-attr">"searchable"</span>: <span class="hljs-string">"no"</span>,
       <span class="hljs-attr">"externalScripts"</span>: [
         <span class="hljs-string">"https://cdn.plot.ly/plotly-latest.min.js"</span>
-      ]
+      ],
+      <span class="hljs-attr">"frontmatter"</span>: {
+        <span class="hljs-attr">"header"</span>: <span class="hljs-string">"header.md"</span>
+      }
     },
     {
       <span class="hljs-attr">"glob"</span>: <span class="hljs-string">"**/index.md"</span>
@@ -113,6 +116,9 @@
     <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Site Update."</span>,
     <span class="hljs-attr">"repo"</span>: <span class="hljs-string">"https://github.com/myorg/myrepo.git"</span>,
     <span class="hljs-attr">"branch"</span>: <span class="hljs-string">"gh-pages"</span>
+  },
+  <span class="hljs-attr">"globalOverride"</span>: {
+    <span class="hljs-attr">"footer"</span>: <span class="hljs-string">"my-footer.md"</span>
   },
   <span class="hljs-attr">"ignore"</span>: [
     <span class="hljs-string">"_site/*"</span>,
@@ -159,6 +165,7 @@
           <li><strong><code>layout</code></strong>: The <a href="tweakingThePageStructure.html#page-layouts">layout</a> to be used by the page. Default: <code>default</code>.</li>
           <li><strong><code>searchable</code></strong>: Specifies that the page(s) should be excluded from searching. Default: <code>yes</code>.</li>
           <li><strong><code>externalScripts</code></strong>: An array of external scripts to be referenced on the page. Scripts referenced will be run before the layout script.</li>
+          <li><strong><code>frontMatter</code></strong>: Specifies properties to add to the front matter of a page or glob of pages. Overrides any existing properties if they have the same name, and overrides any front matter properties specified in <code>globalOverride</code>.</li>
         </ul>
         <span id="page-property-overriding">
 <box type="warning">
@@ -198,6 +205,8 @@
       <h4 id="externalscripts"><strong><code>externalScripts</code></strong><a class="fa fa-anchor" href="#externalscripts"></a></h4>
       <p><strong>An array of external scripts to be referenced on all pages.</strong> To reference an external script only on specific pages, <code>externalScripts</code> should be specified in <code>pages</code> instead. Scripts referenced will be run before
         the layout script.</p>
+      <h4 id="globaloverride"><strong><code>globalOverride</code></strong><a class="fa fa-anchor" href="#globaloverride"></a></h4>
+      <p><strong>Globally overrides properties in the front matter of all pages.</strong> Any property included in the global override will automatically be merged with the front matter of every single page, and override them if the property exists.</p>
       <h4 id="ignore"><strong><code>ignore</code></strong><a class="fa fa-anchor" href="#ignore"></a></h4>
       <p><strong>An array of file patterns to be ignored when copying files to the generated site.</strong> By default, MarkBind will copy all the files as assets of the generated site.</p>
       <p>The ignore pattern follows the <a href="https://git-scm.com/docs/gitignore#_pattern_format">glob pattern used in .gitignore</a>. For example, <code>*.md</code> ignores all markdown source files.</p>
@@ -228,7 +237,7 @@
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.1.1</a> on Fri, 05 Apr 2019 09:17:26 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Mon, 15 Apr 2019 01:54:33 GMT]</small></div>
   </footer>
   </div>
 </body>
