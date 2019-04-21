@@ -28,10 +28,12 @@
       <navbar type="dark">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
         <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <div tags="environment--ug">
+          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        </div>
         <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
         <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+
         <li>
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
@@ -85,7 +87,7 @@
         <div></div>
         <div></div>
         <span id="link" class="d-none">
-<span><a href="usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
+<span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
         <h1 id="using-components">Using Components<a class="fa fa-anchor" href="#using-components"></a></h1>
         <span id="overview" class="lead">
 <p><strong>MarkBind provides a number of components</strong> (e.g., expandable panels, tabbed displays, navigation bars, etc.) that you can use to enhance the appearance/behavior of your pages.
@@ -167,8 +169,8 @@ Headings:
             <div class="indented">
               <box border-left-color="grey" background-color="white">
                 <p>Links:
-                  <a href="/userGuide/syntax/null" class="badge badge-primary">Primary</a>
-                  <a href="/userGuide/syntax/null" class="badge badge-pill badge-warning">Warning</a></p>
+                  <a href="#" class="badge badge-primary">Primary</a>
+                  <a href="#" class="badge badge-pill badge-warning">Warning</a></p>
                 <p>Buttons:
                   <button type="button" class="btn btn-primary">
 Difficulty Level <span class="badge badge-light">4</span></button></p>
@@ -409,20 +411,20 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
               <box border-left-color="grey" background-color="white">
                 <div class="temp-dropdown-placeholder">Action</div>
                 <dropdown text="Action" type="primary" class="temp-dropdown">
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+                  <li><a href="#dropdown" class="dropdown-item">Action</a></li>
+                  <li><a href="#dropdown" class="dropdown-item">Another action</a></li>
+                  <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
                   <li role="separator" class="dropdown-divider"></li>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+                  <li><a href="#dropdown" class="dropdown-item">Separated link</a></li>
                 </dropdown>
                 <div class="temp-dropdown-placeholder"></div>
                 <dropdown type="info" class="temp-dropdown">
                   <button slot="before" type="button" class="btn btn-info">Segmented</button>
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li>
+                  <li><a href="#dropdown" class="dropdown-item">...</a></li>
                 </dropdown>
                 <div class="temp-dropdown-placeholder">Right aligned list</div>
                 <dropdown text="Right aligned list" type="primary" menu-align-right="" class="temp-dropdown">
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+                  <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
                 </dropdown>
               </box>
             </div>
@@ -456,21 +458,21 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
                 <div class="btn-group d-flex" role="group">
-                  <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
+                  <a href="#dropdown" class="btn btn-danger w-100" role="button">Left</a>
                   <div class="w-100 temp-dropdown-placeholder"></div>
                   <dropdown class="w-100 temp-dropdown">
                     <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
       Action
       <span class="caret"></span></button>
                     <ul slot="dropdown-menu" class="dropdown-menu">
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+                      <li><a href="#dropdown" class="dropdown-item">Action</a></li>
+                      <li><a href="#dropdown" class="dropdown-item">Another action</a></li>
+                      <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
                       <li role="separator" class="dropdown-divider"></li>
-                      <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+                      <li><a href="#dropdown" class="dropdown-item">Separated link</a></li>
                     </ul>
                   </dropdown>
-                  <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
+                  <a href="#dropdown" class="btn btn-success w-100" role="button">Right</a></div>
               </box>
             </div>
           </div>
@@ -547,33 +549,33 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
           </span>
           <span id="examples" class="d-none">
 <div class="temp-dropdown-placeholder">Action</div><dropdown text="Action" type="primary" class="temp-dropdown">
-  <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-  <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-  <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+  <li><a href="#dropdown" class="dropdown-item">Action</a></li>
+  <li><a href="#dropdown" class="dropdown-item">Another action</a></li>
+  <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
   <li role="separator" class="dropdown-divider"></li>
-  <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li></dropdown>
+  <li><a href="#dropdown" class="dropdown-item">Separated link</a></li></dropdown>
 
 <div class="temp-dropdown-placeholder"></div><dropdown type="info" class="temp-dropdown">
   <button slot="before" type="button" class="btn btn-info">Segmented</button>
-  <li><a href="/userGuide/syntax/null" class="dropdown-item">...</a></li></dropdown>
+  <li><a href="#dropdown" class="dropdown-item">...</a></li></dropdown>
 <p></p>
 
 <div class="btn-group d-flex" role="group">
-  <a href="/userGuide/syntax/null" class="btn btn-danger w-100" role="button">Left</a>
+  <a href="#dropdown" class="btn btn-danger w-100" role="button">Left</a>
   
   <div class="w-100 temp-dropdown-placeholder"></div><dropdown class="w-100 temp-dropdown">
     <button slot="button" type="button" class="btn btn-warning dropdown-toggle w-100">
       Action
       <span class="caret"></span></button>
           <ul slot="dropdown-menu" class="dropdown-menu">
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Action</a></li>
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Another action</a></li>
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Something else here</a></li>
+            <li><a href="#dropdown" class="dropdown-item">Action</a></li>
+            <li><a href="#dropdown" class="dropdown-item">Another action</a></li>
+            <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
             <li role="separator" class="dropdown-divider"></li>
-            <li><a href="/userGuide/syntax/null" class="dropdown-item">Separated link</a></li>
+            <li><a href="#dropdown" class="dropdown-item">Separated link</a></li>
           </ul>
           </dropdown>
-          <a href="/userGuide/syntax/null" class="btn btn-success w-100" role="button">Right</a></div>
+          <a href="#dropdown" class="btn btn-success w-100" role="button">Right</a></div>
         </span>
       </div>
       <hr>
@@ -785,7 +787,7 @@ Modal content
 
                 <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
                 <dropdown text="Dropdown" class="nav-link temp-dropdown">
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
+                  <li><a href="#navbar" class="dropdown-item">Option</a></li>
                 </dropdown>
 
                 <li slot="right">
@@ -797,7 +799,7 @@ Modal content
 
                 <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
                 <dropdown text="Dropdown" class="nav-link temp-dropdown">
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
+                  <li><a href="#navbar" class="dropdown-item">Option</a></li>
                 </dropdown>
 
                 <li slot="right">
@@ -809,7 +811,7 @@ Modal content
 
                 <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
                 <dropdown text="Dropdown" class="nav-link temp-dropdown">
-                  <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li>
+                  <li><a href="#navbar" class="dropdown-item">Option</a></li>
                 </dropdown>
 
                 <li slot="right">
@@ -869,7 +871,7 @@ Modal content
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
   <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+    <li><a href="#navbar" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
     <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li></navbar>
@@ -878,7 +880,7 @@ Modal content
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
   <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+    <li><a href="#navbar" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
     <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li></navbar>
@@ -887,7 +889,7 @@ Modal content
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
   <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown text="Dropdown" class="nav-link temp-dropdown">
-    <li><a href="/userGuide/syntax/null" class="dropdown-item">Option</a></li></dropdown>
+    <li><a href="#navbar" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
     <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link">Fork...</a></li></navbar></span></div>
@@ -1353,7 +1355,7 @@ Modal content
                 <td>src</td>
                 <td><code>string</code></td>
                 <td></td>
-                <td><strong>This must be specified.</strong><br>The URL of the image.</td>
+                <td><strong>This must be specified.</strong><br>The URL of the image.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
               </tr>
               <tr>
                 <td>width</td>
@@ -1861,12 +1863,12 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
       <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
               <div class="dropdown-container">
                 <ul style="list-style-type: none; margin-left:-1em">
-                  <li style="margin-top: 10px"><a class="site-nav__a" href="/userGuide/syntax/null">User Guide</a></li>
-                  <li style="margin-top: 10px"><a class="site-nav__a" href="/userGuide/syntax/null">Dev Guide</a></li>
+                  <li style="margin-top: 10px"><a class="site-nav__a" href="">User Guide</a></li>
+                  <li style="margin-top: 10px"><a class="site-nav__a" href="">Dev Guide</a></li>
                 </ul>
               </div>
             </li>
-            <li style="margin-top:10px"><a class="site-nav__a" href="/userGuide/syntax/null">Search</a>
+            <li style="margin-top:10px"><a class="site-nav__a" href="">Search</a>
               <ul style="list-style-type: none; margin-left:-1em">
                 <li style="margin-top: 10px"><a class="site-nav__a" href="http://www.google.com">Google Search</a></li>
                 <li style="margin-top: 10px"><a class="site-nav__a" href="http://www.youtube.com">YouTube Search</a></li>
@@ -2142,7 +2144,7 @@ Trigger
               </p>
               <p><strong>Markdown</strong>:
                 <tooltip effect="scale" content="*Hello* **World**">
-                  <a href="/userGuide/syntax/null">Hover me</a></tooltip>
+                  <a href="">Hover me</a></tooltip>
                 <br></p>
               <p><strong>Free Text</strong>:
                 <tooltip content="coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
@@ -2428,7 +2430,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Mon, 15 Apr 2019 01:54:33 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Sun, 21 Apr 2019 02:01:10 GMT]</small></div>
   </footer>
   </div>
 </body>
