@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.2.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBind - Developer Guide</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/site-nav.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+
+  <link rel="icon" href="/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <link rel="stylesheet" href="/css/main.css">
+      <navbar type="dark">
+        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+        <li><a href="/index.html" class="nav-link">HOME</a></li>
+        <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+        <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+        <li>
+          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+      <nav id="site-nav" class="navbar navbar-light bg-transparent">
+        <div class="position-sticky position-top site-nav-spacer viewport-height-90 scrollable slim-scroll">
+          <p><span class="lead"><strong>Developer Guide</strong></span></p>
+          <ul class="px-0 site-nav-list">
+            <li class="mt-2"><a href="/devGuide/devGuide.html" class="site-nav__a current">Developer Guide</a></li>
+            <li class="mt-2"><a href="/devGuide/maintainerGuide.html" class="site-nav__a">Maintainer Guide</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content-wrapper">
+        <h2 id="requirement">Requirement<a class="fa fa-anchor" href="#requirement"></a></h2>
+        <p>We expect contributors for MarkBind to have basic knowledge of the following:</p>
+        <ul>
+          <li>JavaScript (ES6)</li>
+          <li>Node.js (LTS or higher) [with npm version of 5.8.0]</li>
+          <li>HTML &amp; CSS</li>
+          <li>Markdown</li>
+          <li>Command-line environment</li>
+        </ul>
+        <h2 id="environment">Environment<a class="fa fa-anchor" href="#environment"></a></h2>
+        <p>The MarkBind project should be developed with Node.js version 8.0 or higher.</p>
+        <p>We recommend you to use WebStorm for a better development experience.</p>
+        <p>Use JavaScript ES6 features if possible for better performance, e.g. Promise instead of callback.</p>
+        <h2 id="project-structure">Project Structure<a class="fa fa-anchor" href="#project-structure"></a></h2>
+        <p>MarkBind project consists of two repos:</p>
+        <ul>
+          <li>
+            <p><a href="https://github.com/MarkBind/markbind">MarkBind</a></p>
+            <ul>
+              <li>
+                <p>The command-line interface (CLI) application that accepts commands from users, and uses the core library to parse and generate web pages resides in the root.</p>
+              </li>
+              <li>
+                <p>The core library that resolves the content include path, and the rendering of Markdown contents resides in the <code>lib/markbind/</code> directory.</p>
+              </li>
+            </ul>
+            <p>Stack used: <em>Node.js</em></p>
+          </li>
+          <li>
+            <p><a href="https://github.com/MarkBind/vue-strap">VueStrap library (forked version modified for MarkBind)</a></p>
+            <ul>
+              <li>The UI components library used in MarkBind project. Users could use it in their contents to create complex and interactive structure.</li>
+            </ul>
+            <p>Stack used: <em>Vue.js</em></p>
+          </li>
+        </ul>
+        <h3 id="markbind-core-library">MarkBind Core Library<a class="fa fa-anchor" href="#markbind-core-library"></a></h3>
+        <p>The core library parses the given Markdown file, processes all the content include, and renders all Markdown into HTML so that it could be displayed in a browser.</p>
+        <p>All the core logic resides inside the <code>lib/parser.js</code> file. It exposes two important APIs: <strong>include</strong> and <strong>render</strong>.</p>
+        <p><em>Include</em> and <em>Render</em> will first parse the given file as a DOM tree, and then recursively visit every node to check if it needs special handling.</p>
+        <p>In the <em>Include</em> stage, it will check if the node will include new contents (for example, if it is an &quot;include&quot; tag (<code>&lt;include /&gt;</code>), and then load the file/content to be included into the current working context.
+          For the new content included, the <em>Include</em> step will be run recursively until all the content to be included are resolved and loaded.</p>
+        <p><em>Render</em> is a similar process to <em>Include</em>, but it will render the content recursively to ensure all Markdown are converted to HTML.</p>
+        <p>MarkBind uses <a href="https://github.com/markdown-it/markdown-it">markdown-it</a> to do the Markdown parsing and rendering. There are also several customized markdown-it plugins used in MarkBind, which are located inside the <code>lib/markdown-it/</code>          directory.</p>
+        <h3 id="markbind-cli">MarkBind CLI<a class="fa fa-anchor" href="#markbind-cli"></a></h3>
+        <p>The CLI application handles the site generation logic. It contains the command handling logic, as well as the Site and Page models.</p>
+        <p>The site generation logic is as follows:</p>
+        <ol>
+          <li>Read the project's <code>site.json</code> file to collect all pages that will be generated.</li>
+          <li>Create a Site model, where the site's root path is where <code>site.json</code> is located. The site model knows all the pages it contains, as well as the static assets. Static assets, such as stylesheets and JavaScript libraries, will be scanned
+            and filtered, and then copied to the generated site folder (<code>_site/</code>).</li>
+          <li>The Site model will create different Page models, and each Page model will generate a HTML page at the designated file location by calling MarkBind core library's <em>include</em> and <em>render</em> APIs.</li>
+        </ol>
+        <p>The generated page is rendered using <a href="https://github.com/mde/ejs">EJS</a> and <a href="https://mozilla.github.io/nunjucks/">nunjucks</a>, and the page template could be found at <code>lib/template/page.ejs</code>.</p>
+        <p>Static assets of MarkBind, such as stylesheets and JavaScript libraries, are located in <code>asset/</code> folder. They will be copied to the generated site and used in the generated pages. For each version update of VueStrap, copy the built
+          library file to overwrite <code>asset/js/vue-strap.min.js</code>.</p>
+        <p>The CLI program is built using <a href="https://github.com/tj/commander.js/">commander.js</a>.</p>
+        <p>The auto deployment library used is <a href="https://github.com/tschaub/gh-pages">gh-pages</a>.</p>
+        <h3 id="vuestrap">VueStrap<a class="fa fa-anchor" href="#vuestrap"></a></h3>
+        <p>The VueStrap library is <a href="getbootstrap.com/components/">Bootstrap</a> components rewritten in <a href="vuejs.org">Vue.js</a>. We forked it from the original repo, and changed it based on our needs for educational websites.</p>
+        <p>You can find more information at the <a href="https://github.com/MarkBind/vue-strap">VueStrap repo</a>.</p>
+        <h2 id="development-process">Development Process<a class="fa fa-anchor" href="#development-process"></a></h2>
+        <h3 id="development">Development<a class="fa fa-anchor" href="#development"></a></h3>
+        <ol>
+          <li>
+            <p>Fork and clone the MarkBind repo.</p>
+          </li>
+          <li>
+            <p>In the folder of your cloned repo, run</p>
+            <pre><code class="hljs">$ npm install
+</code></pre>
+          </li>
+        </ol>
+        <p>to install the project dependencies.</p>
+        <ol start="3">
+          <li>
+            <p>To make sure you are using the cloned CLI program in your own terminal/console, in the cloned CLI repo, run</p>
+            <pre><code class="hljs">$ npm link
+</code></pre>
+          </li>
+        </ol>
+        <p>to bind the local MarkBind CLI program to the cloned development version.</p>
+        <ol start="4">
+          <li>Now you can start making changes.</li>
+        </ol>
+        <h4 id="troubleshooting">Troubleshooting<a class="fa fa-anchor" href="#troubleshooting"></a></h4>
+        <p><strong>Q: When I build a MarkBind website, I get strange errors relating to HTML tags in .md/.mbd files. For example:</strong></p>
+        <pre><code class="hljs">TypeError: Cannot set property 'src' of null
+    at Page.collectFrontMatter (~\markbind\src\Page.js:399:26)
+</code></pre>
+        <p>A: If your npm version is v6.0.0 or higher, there is a change in behaviour on how npm install dependencies (see <a href="https://github.com/MarkBind/markbind/issues/582">https://github.com/MarkBind/markbind/issues/582</a>). To resolve this issue,
+          discard the changes made by npm in <code>package-lock.json</code>, and redo <code>npm install</code>.</p>
+        <h3 id="testing">Testing<a class="fa fa-anchor" href="#testing"></a></h3>
+        <p>Our test script does the following:</p>
+        <ol>
+          <li>Lints the code for any code and style errors using ESLint.</li>
+          <li>Builds the test sites whose directory names are listed in <code>test/functional/test_sites</code>.</li>
+          <li>For each test site, compares the HTML files generated with the HTML files in its <code>expected</code> directory.</li>
+        </ol>
+        <h4 id="running-tests">Running tests<a class="fa fa-anchor" href="#running-tests"></a></h4>
+        <p>To execute the tests, simply run:</p>
+        <p>For Unix:</p>
+        <pre><code class="hljs">$ npm run test
+</code></pre>
+        <p>For Windows users:</p>
+        <pre><code class="hljs">&gt; npm run testwin
+</code></pre>
+        <h4 id="updating-tests">Updating tests<a class="fa fa-anchor" href="#updating-tests"></a></h4>
+        <p>Whether you are adding a new feature, updating existing features or fixing bugs, make sure to update the test sites to reflect the changes.</p>
+        <p>You may use the following script to do this:</p>
+        <p>On Unix:</p>
+        <pre><code class="hljs">$ npm run updatetest
+</code></pre>
+        <p>On Windows:</p>
+        <pre><code class="hljs">&gt; npm run updatetestwin
+</code></pre>
+        <box type="warning">
+          You should always check that the generated output is correct before committing any changes to the test sites.
+        </box>
+        <h5 id="new-features">New features<a class="fa fa-anchor" href="#new-features"></a></h5>
+        <p>When adding new features, you should also add new site content into an existing test site or create a new test site to demonstrate the new feature. This is to ensure that your feature can be tested by building that test site.</p>
+        <box type="info">
+          When creating a new test site, the directory name of the new test site should be added to <code>test/functional/test_sites</code>.
+        </box>
+        <h3 id="using-eslint">Using ESLint<a class="fa fa-anchor" href="#using-eslint"></a></h3>
+        <p>Our projects follow a <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">coding standard</a>. Using a linter will help check and fix some of the code style errors in your code. It will save time for both you
+          and your code reviewer. The linting tool we use is <a href="https://eslint.org/">ESLint</a>. Here is a <a href="https://gist.github.com/nicholaschuayunzhi/bfe53dbb5f1a0f02d545d55956f9ab7e">gist</a> with an explanation of the ESLint rules chosen
+          in markbind-cli.</p>
+        <h4 id="installation">Installation<a class="fa fa-anchor" href="#installation"></a></h4>
+        <p>Install developer dependencies (ESLint, related plugins) in your cloned markbind and markbind-cli repositories.</p>
+        <pre><code class="hljs">$ npm install --only=dev
+</code></pre>
+        <h4 id="lint-your-code">Lint your code<a class="fa fa-anchor" href="#lint-your-code"></a></h4>
+        <p>Before making a commit or pull request, you should lint your code.</p>
+        <p>To lint a specific file, go to the root directory of the cloned repo and run</p>
+        <pre><code class="hljs">$ ./node_modules/.bin/eslint path/to/specificfile.js
+</code></pre>
+        <p>To lint all files, run</p>
+        <pre><code class="hljs">$ ./node_modules/.bin/eslint .
+</code></pre>
+        <p>You can add the <code>--fix</code> flag to correct any fixable style errors.</p>
+        <pre><code class="hljs">$ ./node_modules/.bin/eslint . --fix
+</code></pre>
+        <h4 id="integration-with-editors">Integration with editors<a class="fa fa-anchor" href="#integration-with-editors"></a></h4>
+        <p>ESLint has <a href="https://eslint.org/docs/user-guide/integrations">integrations with popular editors</a>. They offer features such as &quot;fix errors on save&quot;, which will make developement more convenient.</p>
+      </div>
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="position-sticky position-top spacer-top viewport-height-90 scrollable slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#requirement">Requirement&#x200E;</a>
+            <a class="nav-link py-1" href="#environment">Environment&#x200E;</a>
+            <a class="nav-link py-1" href="#project-structure">Project Structure&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#markbind-core-library">MarkBind Core Library&#x200E;</a>
+              <a class="nav-link py-1" href="#markbind-cli">MarkBind CLI&#x200E;</a>
+              <a class="nav-link py-1" href="#vuestrap">VueStrap&#x200E;</a>
+            </nav>
+            <a class="nav-link py-1" href="#development-process">Development Process&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#development">Development&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#troubleshooting">Troubleshooting&#x200E;</a>
+              </nav>
+              <a class="nav-link py-1" href="#testing">Testing&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#running-tests">Running tests&#x200E;</a>
+                <a class="nav-link py-1" href="#updating-tests">Updating tests&#x200E;</a>
+                <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                  <a class="nav-link py-1" href="#new-features">New features&#x200E;</a>
+                </nav>
+              </nav>
+              <a class="nav-link py-1" href="#using-eslint">Using ESLint&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#installation">Installation&#x200E;</a>
+                <a class="nav-link py-1" href="#lint-your-code">Lint your code&#x200E;</a>
+                <a class="nav-link py-1" href="#integration-with-editors">Integration with editors&#x200E;</a>
+              </nav>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Mon, 15 Apr 2019 01:54:33 GMT]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = ''
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>
