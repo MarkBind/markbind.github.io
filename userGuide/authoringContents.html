@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.2.0">
+  <meta name="generator" content="MarkBind 2.3.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Authoring Contents</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -28,10 +28,12 @@
       <navbar type="dark">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
         <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <div tags="environment--ug">
+          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        </div>
+
         <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
         <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
         <li>
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
@@ -86,64 +88,73 @@
         <h1 id="authoring-contents">Authoring Contents<a class="fa fa-anchor" href="#authoring-contents"></a></h1>
         <p><big><strong>Adding Pages</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>It is easy to add files to a MarkBind site as any file inside the <tooltip content="The directory that contains all the project files. It is also the directory in which the `site.json` configuration file is located.">root directory</tooltip> becomes a part of the generated website.</strong></p></span></blockquote>
-        <p><span class="indented">More info in: <span><span><a href="addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
+          <p><span></span></p>
+          <p><strong>It is easy to add files to a MarkBind site as any file inside the <tooltip content="The directory that contains all the project files. It is also the directory in which the `site.json` configuration file is located.">root directory</tooltip> becomes a part of the generated website.</strong></p>
+          <p></p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
           </span>
         </p>
         <p><big><strong>MarkBind Syntax Overview</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>A MarkBind source file may contain a mix of several popular syntax schemes</strong> used in creating web pages. MarkBind source file can be as simple as basic Markdown, and you can use progressively more complicated syntax to create progressively more sophisticated Web pages while optimizing other aspects such as content reuse.
-</p></span></blockquote>
-        <p><span class="indented">More info in: <span><a href="markBindSyntaxOverview.html"><em>User Guide → MarkBind Syntax Overview</em></a></span></span>
+          <p><span></span></p>
+          <p><strong>A MarkBind source file may contain a mix of several popular syntax schemes</strong> used in creating web pages. MarkBind source file can be as simple as basic Markdown, and you can use progressively more complicated syntax to create
+            progressively more sophisticated Web pages while optimizing other aspects such as content reuse.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><a href="/userGuide/markBindSyntaxOverview.html"><em>User Guide → MarkBind Syntax Overview</em></a></span></span>
         </p>
         <p><big><strong>Formatting Contents</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>MarkBind supports a wide collection of Markdown-like basic content formatting syntax</strong> such as text stying, tables, lists, images, links, etc.</p></span></blockquote>
-        <p><span class="indented">More info in: <span><span><a href="formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span>
+          <p><span></span></p>
+          <p><strong>MarkBind supports a wide collection of Markdown-like basic content formatting syntax</strong> such as text stying, tables, lists, images, links, etc.</p>
+          <p></p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span>
           </span>
         </p>
         <p><big><strong>Using Components</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>MarkBind provides a number of components</strong> (e.g., expandable panels, tabbed displays, navigation bars, etc.) that you can use to enhance the appearance/behavior of your pages.
-</p></span></blockquote>
-        <p><span class="indented">More info in: <span><span><a href="usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
+          <p><span></span></p>
+          <p><strong>MarkBind provides a number of components</strong> (e.g., expandable panels, tabbed displays, navigation bars, etc.) that you can use to enhance the appearance/behavior of your pages.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
           </span>
         </p>
         <p><big><strong>Using HTML, JavaScript, CSS</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
-</p></span></blockquote>
-        <p><span class="indented">More info in: <span><span><a href="usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
+          <p><span></span></p>
+          <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
           </span>
         </p>
         <p><big><strong>Tweaking the Page Structure</strong></big></p>
         <blockquote>
           <p><span><strong>MarkBind offers several ways to easily tweak the overall structure of a page</strong>, for example, using headers, footers, scripts, or stylesheets.</span></p>
         </blockquote>
-        <p><span class="indented">More info in: <span><span><a href="tweakingThePageStructure.html"><em>User Guide → Tweaking the Page Structure</em></a></span></span>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/tweakingThePageStructure.html"><em>User Guide → Tweaking the Page Structure</em></a></span></span>
           </span>
         </p>
         <p><big><strong>Reusing Contents</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>MarkBind is highly-optimized for content reuse</strong>. It offers several mechanisms to provide readers with many variations of the content while minimizing duplication at source file level. As a result, instead of creating a one-size-fits-all site, MarkBind can create a site in which readers can chart their own path of reading.
-</p></span></blockquote>
-        <p><span class="indented">More info in: <span><span><a href="reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
+          <p><span></span></p>
+          <p><strong>MarkBind is highly-optimized for content reuse</strong>. It offers several mechanisms to provide readers with many variations of the content while minimizing duplication at source file level. As a result, instead of creating a one-size-fits-all
+            site, MarkBind can create a site in which readers can chart their own path of reading.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
           </span>
         </p>
         <p><big><strong>Making the Site Searchable</strong></big></p>
         <blockquote>
-          <span>
-<p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong>. You can add a <a href="usingComponents.html#search-bar">Search Bar</a> component to your pages <span class="dimmed">(e.g., into the top navigation bar)</span>          to allow readers to search your website for keywords.
+          <p><span></span></p>
+          <p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong>. You can add a <a href="/userGuide/usingComponents.html#search-bar">Search Bar</a> component to your pages <span class="dimmed">(e.g., into the top navigation bar)</span>            to allow readers to search your website for keywords.
           </p>
-          </span>
         </blockquote>
-        <p><span class="indented">More info in: <span><span><a href="makingTheSiteSearchable.html"><em>User Guide → Making the Site Searchable</em></a></span></span>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/makingTheSiteSearchable.html"><em>User Guide → Making the Site Searchable</em></a></span></span>
           </span>
         </p>
         <div class="clearfix">
@@ -160,7 +171,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Mon, 15 Apr 2019 01:54:33 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.3.0</a> on Mon, 22 Apr 2019 01:39:56 GMT]</small></div>
     </footer>
   </div>
 </body>

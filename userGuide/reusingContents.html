@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.2.0">
+  <meta name="generator" content="MarkBind 2.3.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Reusing Contents</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -28,10 +28,12 @@
       <navbar type="dark">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
         <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        <div tags="environment--ug">
+          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        </div>
+
         <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
         <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
         <li>
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
@@ -85,7 +87,7 @@
         <div></div>
         <div></div>
         <span id="link" class="d-none">
-<span><a href="reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
+<span><a href="/userGuide/reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
         <h1 id="reusing-contents">Reusing Contents<a class="fa fa-anchor" href="#reusing-contents"></a></h1>
         <span class="lead" id="overview">
 <p><strong>MarkBind is highly-optimized for content reuse</strong>. It offers several mechanisms to provide readers with many variations of the content while minimizing duplication at source file level. As a result, instead of creating a one-size-fits-all site, MarkBind can create a site in which readers can chart their own path of reading.
@@ -140,10 +142,12 @@
                     <code>{<span></span>{ baseUrl }}</code>
                     <code>/images/preview.png)</code></li>
                 </ol>
+                <box type="important">
+                  To ensure that links in the <code>_markbind/</code> folder work correctly across the entire site, they should be written as absolute paths, prepended with <code><span>{</span>{ baseUrl }}</code>.
+                </box>
               </div>
               <p>Relative paths:</p>
               <div class="indented">
-                Links to files can also be specified relative to the file that includes it.
                 <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Assuming that we have the following folder structure:</p>
                 <pre><code class="hljs">c:/course/
   ├── textbook/
@@ -160,10 +164,11 @@
                 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
 </code></pre>
                 <p>or by including <code>subsite.md</code>:</p>
-                <pre><code class="hljs">&lt;include src=&quot;textbook/subsite.md&quot; /&gt;
+                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/subsite.md"</span> /&gt;</span>
 </code></pre>
                 <box type="important">
-                  To ensure that links in the _markbind/ folder work correctly across the entire site, they should be written as absolute paths, prepended with <span>{</span>{ baseUrl }}.
+                  Relative links to resources (e.g. images, hrefs) should be valid relative to the original, included file. In other words, the links should be accessible when traversing starting from the location of the included file.
+                  <br> In the example above, <code>image.png</code> is in the same directory as <code>subsite.md</code>. When using relative references, the correct path is <code>image.png</code> and not <code>textbook/image.png</code>.
                 </box>
               </div>
             </div>
@@ -171,13 +176,13 @@
           <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
           <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated at: Mon, 15 Apr 2019 01:54:33 GMT</p>
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated at: Mon, 22 Apr 2019 01:39:56 GMT</p>
           </div>
           <p></p>
           <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
           <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated by: <a href="https://markbind.org/">MarkBind 2.2.0</a></p>
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated by: <a href="https://markbind.org/">MarkBind 2.3.0</a></p>
           </div>
           <p></p>
           <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -495,16 +500,16 @@ Optional video:
           </div>
         </div>
         <h4 id="giving-alternative-contents">Giving alternative contents<a class="fa fa-anchor" href="#giving-alternative-contents"></a></h4>
-        <p>You can use a <a href="usingComponents.html#tabs"><em>Tabs</em> component</a> to give alternative versions of content, for example, giving a code snippet in different programming languages.</p>
+        <p>You can use a <a href="/userGuide/usingComponents.html#tabs"><em>Tabs</em> component</a> to give alternative versions of content, for example, giving a code snippet in different programming languages.</p>
         <h4 id="giving-access-to-additional-contents">Giving access to additional contents<a class="fa fa-anchor" href="#giving-access-to-additional-contents"></a></h4>
         <p>You can use following components to give readers an option to access additional content at their discretion.</p>
         <ul>
-          <li><a href="usingComponents.html#tooltip">Tooltips</a>, <a href="usingComponents.html#popover">Popovers</a>, <a href="usingComponents.html#modal">Modals</a></li>
-          <li><a href="usingComponents.html#panel">Expandable Panels</a></li>
+          <li><a href="/userGuide/usingComponents.html#tooltip">Tooltips</a>, <a href="/userGuide/usingComponents.html#popover">Popovers</a>, <a href="/userGuide/usingComponents.html#modal">Modals</a></li>
+          <li><a href="/userGuide/usingComponents.html#panel">Expandable Panels</a></li>
         </ul>
         <h4 id="organizing-contents-in-alternative-ways">Organizing contents in alternative ways<a class="fa fa-anchor" href="#organizing-contents-in-alternative-ways"></a></h4>
-        <p>You can take advantage of <a href="reusingContents.html">MarkBinds feature for content reuse</a>, you can organize content in alternative ways to cater for different readers, without having to duplicate content. For example, you can have different
-          pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p>
+        <p>You can take advantage of <a href="/userGuide/reusingContents.html">MarkBinds feature for content reuse</a>, you can organize content in alternative ways to cater for different readers, without having to duplicate content. For example, you can
+          have different pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p>
         <h4 id="optimizing-the-print-view">Optimizing the Print View<a class="fa fa-anchor" href="#optimizing-the-print-view"></a></h4>
         <p>To <span class="keyword">hide minimized panels in the <em>print view</em></span>, add the following code to a CSS file used in your site.</p>
         <pre><code class="hljs css">@<span class="hljs-keyword">media</span> print {
@@ -534,7 +539,7 @@ Optional video:
 }
 </code></pre>
         <h4 id="creating-slight-variations-of-content">Creating slight variations of content<a class="fa fa-anchor" href="#creating-slight-variations-of-content"></a></h4>
-        <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a>          section for more information.</p>
+        <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="/userGuide/tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a>          section for more information.</p>
         <div class="clearfix">
           <p><span class="float-left"><b-btn variant="light" href="/userGuide/tweakingThePageStructure.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Tweaking the Page Structure</span></span>
             </b-btn>
@@ -582,7 +587,7 @@ Optional video:
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.2.0</a> on Mon, 15 Apr 2019 01:54:33 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.3.0</a> on Mon, 22 Apr 2019 01:39:56 GMT]</small></div>
     </footer>
   </div>
 </body>
