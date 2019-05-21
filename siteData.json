@@ -29,22 +29,16 @@
         "adding-pages": "Adding Pages"
       },
       "title": "User Guide: Adding Pages",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/addingPages.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/addingPages.md"
     },
     {
       "headings": {
         "authoring-contents": "Authoring Contents"
       },
       "title": "User Guide: Authoring Contents",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/authoringContents.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/authoringContents.md"
     },
     {
       "headings": {
@@ -56,11 +50,8 @@
         "serve-command": "serve Command"
       },
       "title": "User Guide: Command Line Interface (CLI)",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/cliCommands.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/cliCommands.md"
     },
     {
       "headings": {
@@ -75,12 +66,9 @@
         "setting-up-netlify-to-use-a-specific-version-of-markbind": "Setting up Netlify to use a specific version of MarkBind"
       },
       "title": "User Guide: Deploying the Site",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
+      "layout": "userGuide",
       "pageNav": "default",
-      "src": "userGuide/deployingTheSite.md",
-      "layout": "default"
+      "src": "userGuide/deployingTheSite.md"
     },
     {
       "headings": {
@@ -110,23 +98,17 @@
         "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding Powerpoint Slides (using the embed url from Powerpoint online)"
       },
       "title": "User Guide: Formatting Contents",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
+      "layout": "userGuide",
       "pageNav": 2,
-      "src": "userGuide/formattingContents.md",
-      "layout": "default"
+      "src": "userGuide/formattingContents.md"
     },
     {
       "headings": {
         "getting-started": "Getting Started"
       },
       "title": "User Guide - Getting Started",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/gettingStarted.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/gettingStarted.md"
     },
     {
       "headings": {
@@ -134,22 +116,16 @@
         "mbd-extension": ".mbd extension"
       },
       "title": "Glossary",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/glossary.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/glossary.md"
     },
     {
       "headings": {
         "getting-started": "Getting Started"
       },
       "title": "User Guide - Getting Started",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/index.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/index.md"
     },
     {
       "headings": {
@@ -159,12 +135,9 @@
         "including-or-excluding-headings": "Including or Excluding Headings"
       },
       "title": "User Guide: Making the Site Searchable",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
+      "layout": "userGuide",
       "pageNav": 2,
-      "src": "userGuide/makingTheSiteSearchable.md",
-      "layout": "default"
+      "src": "userGuide/makingTheSiteSearchable.md"
     },
     {
       "headings": {
@@ -175,11 +148,8 @@
         "converting-existing-project-documentation-wiki": "Converting existing project documentation/wiki"
       },
       "title": "User Guide: MarkBind in the Project Workflow",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/markBindInTheProjectWorkflow.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/markBindInTheProjectWorkflow.md"
     },
     {
       "headings": {
@@ -193,11 +163,8 @@
         "support-for-nunjucks": " Support for Nunjucks"
       },
       "title": "User Guide: MarkBind Syntax Overview ",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/markBindSyntaxOverview.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/markBindSyntaxOverview.md"
     },
     {
       "headings": {
@@ -226,12 +193,9 @@
         "creating-slight-variations-of-content": "Creating slight variations of content"
       },
       "title": "User Guide: Reusing Contents",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
+      "layout": "userGuide",
       "pageNav": 4,
-      "src": "userGuide/reusingContents.md",
-      "layout": "default"
+      "src": "userGuide/reusingContents.md"
     },
     {
       "headings": {
@@ -250,12 +214,9 @@
         "enablesearch": "enableSearch"
       },
       "title": "Configuring the Site",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
+      "layout": "userGuide",
       "keywords": "site.json",
-      "src": "userGuide/siteConfiguration.md",
-      "layout": "default"
+      "src": "userGuide/siteConfiguration.md"
     },
     {
       "headings": {
@@ -280,11 +241,8 @@
         "bootswatch-yeti": "bootswatch-yeti"
       },
       "title": "User Guide: Themes",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/themes.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/themes.md"
     },
     {
       "headings": {
@@ -293,11 +251,8 @@
         "problem-unwanted-starting-space-in-links-and-triggers": "Problem: Unwanted starting space in links and triggers"
       },
       "title": "User Guide: Tips & Tricks",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/tipsAndTricks.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/tipsAndTricks.md"
     },
     {
       "headings": {
@@ -315,12 +270,9 @@
         "hiding-tags": "Hiding Tags"
       },
       "title": "User Guide: Tweaking the Page Structure",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
+      "layout": "userGuide",
       "pageNav": 3,
-      "src": "userGuide/tweakingThePageStructure.md",
-      "layout": "default"
+      "src": "userGuide/tweakingThePageStructure.md"
     },
     {
       "headings": {
@@ -347,12 +299,9 @@
         "inserting-custom-classes-into-components": "Inserting custom classes into components"
       },
       "title": "User Guide: Using Components",
-      "header": "header.md",
-      "footer": "footer.md",
+      "layout": "userGuide",
       "pageNav": "default",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/usingComponents.md",
-      "layout": "default"
+      "src": "userGuide/usingComponents.md"
     },
     {
       "headings": {
@@ -360,11 +309,8 @@
         "apples-bananas-cherries": "Apples Bananas Cherries"
       },
       "title": "User Guide: Using HTML, JavaScript, CSS",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/usingHtmlJavaScriptCss.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/usingHtmlJavaScriptCss.md"
     },
     {
       "headings": {
@@ -381,11 +327,8 @@
         "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch"
       },
       "title": "User Guide: Using Plugins",
-      "header": "header.md",
-      "footer": "footer.md",
-      "siteNav": "userGuideSections.md",
-      "src": "userGuide/usingPlugins.md",
-      "layout": "default"
+      "layout": "userGuide",
+      "src": "userGuide/usingPlugins.md"
     }
   ]
 }
