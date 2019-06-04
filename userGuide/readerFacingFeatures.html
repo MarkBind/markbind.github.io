@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.0">
+  <meta name="generator" content="MarkBind 2.5.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Reader-Facing Features</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -1221,6 +1221,9 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
 <span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"definition"</span>&gt;</span>
     definition
 <span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">dismissible</span>&gt;</span>
+    dismissible info
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
 </code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
@@ -1249,6 +1252,9 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
               </box>
               <box type="definition">
                 definition
+              </box>
+              <box type="info" dismissible="">
+                dismissible info
               </box>
             </box>
           </div>
@@ -1313,6 +1319,12 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                 <td><code>String</code></td>
                 <td><code>null</code></td>
                 <td>Color of the text.</td>
+              </tr>
+              <tr>
+                <td>dismissible</td>
+                <td><code>Boolean</code></td>
+                <td><code>false</code></td>
+                <td>Adds a button to close the box to the top right corner.</td>
               </tr>
               <tr>
                 <td>icon</td>
@@ -2685,7 +2697,7 @@ Modal content
               <popover effect="fade" content="Lorem ipsum dolor sit amet" placement="bottom">
                 <button class="btn btn-secondary">Popover on bottom</button></popover>
               <hr>
-              <h4>Title<a class="fa fa-anchor" href="#undefined"></a></h4>
+              <h4>Title</h4>
               <popover effect="fade" header="" title="Title" content="Lorem ipsum dolor sit amet" placement="top">
                 <button class="btn btn-secondary">Popover on top</button></popover>
               <popover effect="fade" header="" title="Title" content="Lorem ipsum dolor sit amet" placement="left">
@@ -2695,19 +2707,19 @@ Modal content
               <popover effect="fade" header="" title="Title" content="Lorem ipsum dolor sit amet" placement="bottom">
                 <button class="btn btn-secondary">Popover on bottom</button></popover>
               <hr>
-              <h4>Trigger<a class="fa fa-anchor" href="#undefined"></a></h4>
+              <h4>Trigger</h4>
               <p>
                 <popover effect="scale" title="Title" content="Lorem ipsum dolor sit amet" placement="top" trigger="hover">
                   <button class="btn btn-secondary">Mouseenter</button></popover>
                 <popover effect="scale" title="Title" content="Lorem ipsum dolor sit amet" placement="top" trigger="contextmenu">
                   <button class="btn btn-secondary">Contextmenu (right click)</button></popover>
               </p>
-              <h4>Markdown<a class="fa fa-anchor" href="#undefined"></a></h4>
+              <h4>Markdown</h4>
               <p>
                 <popover effect="scale" title="**Emoji title** :rocket:" content="++emoji++ content :cat:">
                   <button class="btn btn-secondary">Hover</button></popover>
               </p>
-              <h4>Content using slot<a class="fa fa-anchor" href="#undefined"></a></h4>
+              <h4>Content using slot</h4>
               <popover effect="scale" title="**Emoji title** :rocket:">
                 <div slot="content">
                   This is a long content...
@@ -2715,7 +2727,7 @@ Modal content
                 <button class="btn btn-secondary">Hover</button></popover>
               <br>
               <br>
-              <h4>Wrap Text<a class="fa fa-anchor" href="#undefined"></a></h4>
+              <h4>Wrap Text</h4>
               <popover header="false" content="Nice!">What do you say</popover>
             </box>
           </div>
@@ -3356,6 +3368,132 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
     </tab></tab-group></tabs></span></div>
     </panel>
   </box>
+  <h5 id="thumbnails">Thumbnails<a class="fa fa-anchor" href="#thumbnails"></a></h5>
+  <box>
+    <div>
+      <p>
+        <thumb circle="" src="https://markbind.org/images/logo-lightbackground.png" size="100"></thumb>
+      </p>
+    </div>
+    <panel type="seamless" header="%%details...%%">
+      <div>
+        <h2 id="thumbnails-2">Thumbnails<a class="fa fa-anchor" href="#thumbnails-2"></a></h2>
+        <p><strong>A <code>thumbnail</code> component allows you to insert thumbnails using text, images, or icons.</strong></p>
+        <div>
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">circle</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../../images/deer.jpg"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">circle</span> <span class="hljs-attr">text</span>=<span class="hljs-string">":book:"</span> <span class="hljs-attr">background</span>=<span class="hljs-string">"#dff5ff"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">circle</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"___CS___"</span> <span class="hljs-attr">background</span>=<span class="hljs-string">"#333"</span> <span class="hljs-attr">font-color</span>=<span class="hljs-string">"white"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">circle</span> <span class="hljs-attr">text</span>=<span class="hljs-string">":fas-book:"</span> <span class="hljs-attr">font-color</span>=<span class="hljs-string">"darkgreen"</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"3px solid darkgreen"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../../images/deer.jpg"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">text</span>=<span class="hljs-string">":book:"</span> <span class="hljs-attr">background</span>=<span class="hljs-string">"#dff5ff"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">text</span>=<span class="hljs-string">"___CS___"</span> <span class="hljs-attr">background</span>=<span class="hljs-string">"#333"</span> <span class="hljs-attr">font-color</span>=<span class="hljs-string">"white"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">text</span>=<span class="hljs-string">":fas-book:"</span> <span class="hljs-attr">font-color</span>=<span class="hljs-string">"darkgreen"</span> <span class="hljs-attr">border</span>=<span class="hljs-string">"3px solid darkgreen"</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+</code></pre>
+          </div>
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <p>
+                <thumbnail circle="" src="/images/deer.jpg" size="100"></thumbnail>
+                <thumbnail circle="" text=":book:" background="#dff5ff" size="100">📖</thumbnail>
+                <thumbnail circle="" text="___CS___" background="#333" font-color="white" size="100"><em><strong>CS</strong></em></thumbnail>
+                <thumbnail circle="" text=":fas-book:" font-color="darkgreen" border="3px solid darkgreen" size="100"><span aria-hidden="true" class="fas fa-book"></span></thumbnail>
+              </p>
+              <p>
+                <thumbnail src="/images/deer.jpg" size="100"></thumbnail>
+                <thumbnail text=":book:" background="#dff5ff" size="100">📖</thumbnail>
+                <thumbnail text="___CS___" background="#333" font-color="white" size="100"><em><strong>CS</strong></em></thumbnail>
+                <thumbnail text=":fas-book:" font-color="darkgreen" border="3px solid darkgreen" size="100"><span aria-hidden="true" class="fas fa-book"></span></thumbnail>
+              </p>
+            </box>
+          </div>
+        </div>
+        <p><strong><strong>Options</strong></strong>
+        </p>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>alt</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td><strong>This must be specified if <code>src</code> is specified</strong><br>The alternative text of the image.</td>
+              </tr>
+              <tr>
+                <td>background</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td>Specifies the background color.<br> Accepts any valid CSS background property</td>
+              </tr>
+              <tr>
+                <td>border</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td>Specifies the border thickness, type, and color.<br> Accepts any valid CSS border property</td>
+              </tr>
+              <tr>
+                <td>circle</td>
+                <td><code>boolean</code></td>
+                <td>false</td>
+                <td>If this option is enabled, the thumbnail will be circle shaped instead of square</td>
+              </tr>
+              <tr>
+                <td>font-color</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td>The color of the text, affects normal text and icons (but not emojis)</td>
+              </tr>
+              <tr>
+                <td>font-size</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td>Text size, defaults to half of <code>size</code>, affects text, icons and emojis</td>
+              </tr>
+              <tr>
+                <td>size</td>
+                <td><code>string</code></td>
+                <td>100</td>
+                <td>The size of the thumbnail in pixels</td>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td>The URL of the image.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td><code>string</code></td>
+                <td></td>
+                <td>The text to use in the thumbnail, <a href="/userGuide/formattingContents#icons">icons</a>, <a href="/userGuide/formattingContents#emoji">emojis</a> and markdown are supported here</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <box type="info">
+          <p>If both <code>text</code> and <code>src</code> are specified, <code>src</code> will take higher priority.
+          </p>
+        </box>
+        <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">thumb</span> <span class="hljs-attr">circle</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://markbind.org/images/logo-lightbackground.png"</span>        <span class="hljs-attr">size</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+        </code>
+        </pre>
+        </span>
+        <span id="examples" class="d-none">
+<thumb circle="" src="https://markbind.org/images/logo-lightbackground.png" size="100"></thumb></span></div>
+    </panel>
+  </box>
   <h5 id="tooltips">Tooltips<a class="fa fa-anchor" href="#tooltips"></a></h5>
   <box>
     <div>
@@ -3547,7 +3685,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.0</a> on Mon, 27 May 2019 04:46:27 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.1</a> on Tue, 04 Jun 2019 07:35:29 GMT]</small></div>
   </footer>
   </div>
 </body>
