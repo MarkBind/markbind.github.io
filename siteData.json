@@ -168,6 +168,16 @@
     },
     {
       "headings": {
+        "plantuml-diagrams": "PlantUML Diagrams",
+        "usage": "Usage",
+        "example": "Example"
+      },
+      "title": "User Guide - PlantUML Diagrams",
+      "layout": "userGuide",
+      "src": "userGuide/puml.md"
+    },
+    {
+      "headings": {
         "reusing-contents": "Reusing Contents",
         "variables": "Variables",
         "global-variables": "Global Variables",

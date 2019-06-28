@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.1">
+  <meta name="generator" content="MarkBind 2.5.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
   <div id="app">
     <header>
       <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark">
+      <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
         <li><a href="/index.html" class="nav-link">HOME</a></li>
         <div tags="environment--ug">
@@ -54,6 +54,7 @@
                 <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
                 <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a current">MarkBind Syntax Overview</a></li>
                 <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
                 <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
                 <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
                 <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
@@ -261,6 +262,42 @@
               </div>
             </div>
           </div>
+          <div>
+            <div>
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
+
+[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
+
+<span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
+belong to the previous footnote.
+
+
+<span class="hljs-strong">**Inline footnotes:**</span>
+Here is an inline note.^[Inlines notes are easier to write, since
+you don't have to pick an identifier and move down to type the
+note.]
+
+</code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <p><strong>Normal footnotes:</strong> Here is a footnote reference,
+                    <trigger for="pop:footnote1"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote1" id="footnoteref1">[1]</a></sup></trigger> and another.
+                    <trigger for="pop:footnote2"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote2" id="footnoteref2">[2]</a></sup></trigger>
+                  </p>
+                  <p><strong>Inline footnotes:</strong> Here is an inline note.
+                    <trigger for="pop:footnote3"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote3" id="footnoteref3">[3]</a></sup></trigger>
+                  </p>
+                </box>
+              </div>
+            </div>
+          </div>
         </panel>
 
         <h4 id="markbind-custom-syntax"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Custom Syntax<a class="fa fa-anchor" href="#markbind-custom-syntax"></a></h4>
@@ -335,11 +372,53 @@
             </span>
           </p>
         </div>
-        <br></div>
+        <br>
+        <hr class="footnotes-sep">
+        <section class="footnotes">
+          <ol class="footnotes-list">
+            <li id="footnote1" class="footnote-item">
+              <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+            </li>
+            <li id="footnote2" class="footnote-item">
+              <p>Here's one with multiple blocks.</p>
+              <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+            </li>
+            <li id="footnote3" class="footnote-item">
+              <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+              </p>
+            </li>
+          </ol>
+          <popover id="pop:footnote1">
+            <div slot="content">
+              <trigger for="pop:footnote1">
+                <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+              </trigger>
+            </div>
+          </popover>
+
+          <popover id="pop:footnote2">
+            <div slot="content">
+              <trigger for="pop:footnote2">
+                <p>Here's one with multiple blocks.</p>
+                <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+              </trigger>
+            </div>
+          </popover>
+
+          <popover id="pop:footnote3">
+            <div slot="content">
+              <trigger for="pop:footnote3">
+                <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+                </p>
+              </trigger>
+            </div>
+          </popover>
+        </section>
+      </div>
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.1</a> on Tue, 04 Jun 2019 07:35:29 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.2</a> on Fri, 28 Jun 2019 05:52:03 GMT]</small></div>
     </footer>
   </div>
 </body>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.1">
+  <meta name="generator" content="MarkBind 2.5.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Components</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
   <div id="app">
     <header>
       <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark">
+      <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
         <li><a href="/index.html" class="nav-link">HOME</a></li>
         <div tags="environment--ug">
@@ -54,6 +54,7 @@
                 <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
                 <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
                 <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
                 <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a current">Using Components</a></li>
                 <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
                 <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
@@ -597,25 +598,40 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <pre><code class="hljs html">More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
-<span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Modal title** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>
-    ...
+            <pre><code class="hljs html">More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
+<span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Modal title** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 <span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
+This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
+
+<span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:centered"</span>&gt;</span>This is a trigger for a centered modal<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
+
+<span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Centered** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:centered"</span> <span class="hljs-attr">center</span>&gt;</span>
+  Centered
+<span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span>
+
 </code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
             <box border-left-color="grey" background-color="white">
               <p>More about
-                <trigger for="modal:trigger_id">trigger</trigger>.
-                <modal title="**Modal title** :rocket:" id="modal:trigger_id">
+                <trigger for="modal:loremipsum">trigger</trigger>.
+                <modal title="**Modal title** :rocket:" id="modal:loremipsum">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </modal>
                 <br> This is the same
-                <trigger for="modal:trigger_id">trigger</trigger> as last one.</p>
+                <trigger for="modal:loremipsum">trigger</trigger> as last one.</p>
+              <p>
+                <trigger for="modal:centered">This is a trigger for a centered modal</trigger>.</p>
+              <modal title="**Centered** :rocket:" id="modal:centered" center="">
+                Centered
+              </modal>
             </box>
           </div>
         </div>
@@ -717,6 +733,12 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
                 <td>Creates a <a href="https://getbootstrap.com/docs/4.0/components/modal/#optional-sizes">small Modal</a>.</td>
               </tr>
               <tr>
+                <td>center</td>
+                <td><code>Boolean</code></td>
+                <td><code>false</code></td>
+                <td>Vertically centers the modal (in addition to the horizontal centering by default).</td>
+              </tr>
+              <tr>
                 <td>backdrop</td>
                 <td><code>Boolean</code></td>
                 <td><code>true</code></td>
@@ -725,17 +747,17 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
             </tbody>
           </table>
         </div><span id="short" class="d-none">
-<pre><code class="hljs html">Click <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>here
+<pre><code class="hljs html">Click <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:unused"</span>&gt;</span>here
         <span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> to open a modal.
-        <span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Modal title"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Modal title"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:unused"</span>&gt;</span>
         Modal content
         <span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span>
         </code>
         </pre>
         </span>
         <span id="examples" class="d-none">
-<p>Hover <trigger large="" for="modal:trigger_id">here</trigger> to open a modal.
-<modal title="Modal title" ok-text="OK" id="modal:trigger_id">
+<p>Hover <trigger large="" for="modal:unused">here</trigger> to open a modal.
+<modal title="Modal title" ok-text="OK" id="modal:unused">
 Modal content
 </modal></p></span></div>
       <hr>
@@ -2510,7 +2532,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
         <br></div>
       <br>
       <div class="clearfix">
-        <p><span class="float-left"><b-btn variant="light" href="/userGuide/formattingContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Formatting Contents</span></span>
+        <p><span class="float-left"><b-btn variant="light" href="/userGuide/puml.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>PlantUML Diagrams</span></span>
           </b-btn>
           </span>
         </p>
@@ -2560,7 +2582,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.1</a> on Tue, 04 Jun 2019 07:35:29 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.2</a> on Fri, 28 Jun 2019 05:52:03 GMT]</small></div>
   </footer>
   </div>
 </body>

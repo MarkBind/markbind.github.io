@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.1">
+  <meta name="generator" content="MarkBind 2.5.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Reader-Facing Features</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
   <div id="app">
     <header>
       <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark">
+      <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
         <li><a href="/index.html" class="nav-link">HOME</a></li>
         <div tags="environment--ug">
@@ -54,6 +54,7 @@
                 <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
                 <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
                 <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
                 <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
                 <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
                 <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
@@ -1658,41 +1659,114 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
 </p></span></div>
     </panel>
   </box>
-  <h5 id="headers">Headers<a class="fa fa-anchor" href="#headers"></a></h5>
+  <h5 id="footnotes">Footnotes<a class="fa fa-anchor" href="#footnotes"></a></h5>
   <box>
     <div>
-      <div class="bg-primary display-4 text-center text-white" style="height: 150px;">
-        Content to be placed at the top of your page.
-      </div>
+      <p>This is not updated</p>
     </div>
     <panel type="seamless" header="%%details...%%">
       <div>
-        <h2 id="headers-2">Headers<a class="fa fa-anchor" href="#headers-2"></a></h2>
-        <p><strong>You can specify a <tooltip content="Content to be placed at the top of a page.">page header</tooltip></strong> above your page contents and
-          <tooltip content="Site Navigation and <br>Page Navigation menus">navigation menus</tooltip> using a header file.</p>
-        <p>You can save multiple header files in the <code>_markbind/headers</code> folder and specify it in the <code>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
+        <span id="main-example-markbind">
+<div>
+<p><span class="dimmed">CODE:</span></p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>
-            <strong><code>_markbind/headers/</code></strong><code>welcomeBanner.md</code>:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-primary display-4 text-center text-white"</span>&gt;</span>
-    Welcome!
-  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
-</code></pre>
-          <p>In the page that you want to include the header:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-  header: welcomeBanner.md
-<span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+          <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
+
+[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
+
+<span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
+belong to the previous footnote.
+
+
+<span class="hljs-strong">**Inline footnotes:**</span>
+Here is an inline note.^[Inlines notes are easier to write, since
+you don't have to pick an identifier and move down to type the
+note.]
+
 </code></pre>
         </div>
-        <p>Notes:</p>
-        <ul>
-          <li>Any inline headers will be removed by MarkBind to ensure compatibility with header files.</li>
-          <li>If a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> is specified, the header file specified in the <code>&lt;frontmatter&gt;</code> will override the header within the Layout.</li>
-          <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code>&lt;include&gt;</code> tags</a> are not supported in headers.</li>
-        </ul>
-        <span id="short" class="d-none">
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <p><strong>Normal footnotes:</strong> Here is a footnote reference,
+              <trigger for="pop:footnote1"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote1" id="footnoteref1">[1]</a></sup></trigger> and another.
+              <trigger for="pop:footnote2"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote2" id="footnoteref2">[2]</a></sup></trigger>
+            </p>
+            <p><strong>Inline footnotes:</strong> Here is an inline note.
+              <trigger for="pop:footnote3"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote3" id="footnoteref3">[3]</a></sup></trigger>
+            </p>
+          </box>
+        </div>
+      </div>
+      </span>
+      <span id="short" class="d-none">
+```html
+**Normal footnotes:**
+Here is a footnote reference,[^1] and another.[^longnote]
+<pre><code class="hljs">&lt;/span&gt;
+&lt;span id=&quot;examples&quot; class=&quot;d-none&quot;&gt;
+This is not updated
+&lt;/span&gt;
+
+&lt;/div&gt;&lt;/div&gt;
+&lt;/panel&gt;
+&lt;/box&gt;
+
+
+  
+
+  
+
+
+##### Headers
+&lt;box&gt;
+&lt;div&gt;&lt;div data-included-from=&quot;/home/travis/build/MarkBind/markbind/docs/userGuide/syntax/headers.mbdf&quot;&gt;
+
+
+  &lt;div class=&quot;bg-primary display-4 text-center text-white&quot; style=&quot;height: 150px;&quot;&gt;
+    Content to be placed at the top of your page.
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;panel type=&quot;seamless&quot; header=&quot;%%details...%%&quot;&gt;
+
+&lt;div&gt;&lt;div data-included-from=&quot;/home/travis/build/MarkBind/markbind/docs/userGuide/syntax/headers.mbdf&quot;&gt;
+
+## Headers
+
+**You can specify a &lt;tooltip content=&quot;Content to be placed at the top of a page.&quot;&gt;page header&lt;/tooltip&gt;** above your page contents and &lt;tooltip content=&quot;Site Navigation and &lt;br&gt;Page Navigation menus&quot;&gt;navigation menus&lt;/tooltip&gt; using a header file.
+
+You can save multiple header files in the `_markbind/headers` folder and specify it in the `&lt;frontmatter&gt;` of the pages in which it should appear.
+
+&lt;div class=&quot;indented&quot;&gt;
+
+&lt;big&gt;&lt;span class=&quot;badge badge-pill badge-light&quot; style=&quot;background-color: #d9d9d9; color: #737373; position:relative; left:-10px&quot;&gt;Example:&lt;/span&gt;&lt;/big&gt;
+**`_markbind/headers/`**`welcomeBanner.md`:
+```html
+&lt;header&gt;
+  &lt;div class=&quot;bg-primary display-4 text-center text-white&quot;&gt;
+    Welcome!
+  &lt;/div&gt;
+&lt;/header&gt;
+
+<p>In the page that you want to include the header:</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+      header: welcomeBanner.md
+      <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+      </code>
+      </pre>
+      </span>
+      <p>Notes:</p>
+      <ul>
+        <li>Any inline headers will be removed by MarkBind to ensure compatibility with header files.</li>
+        <li>If a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> is specified, the header file specified in the <code>&lt;frontmatter&gt;</code> will override the header within the Layout.</li>
+        <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code>&lt;include&gt;</code> tags</a> are not supported in headers.</li>
+      </ul>
+      <span id="short" class="d-none">
 ```html
 <header>
   <div class="bg-primary display-4 text-center text-white" style="height: 200px;">
@@ -1706,18 +1780,60 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
 </frontmatter>
 ```
 </span>
-        <span id="examples" class="d-none">
+      <span id="examples" class="d-none">
   <div class="bg-primary display-4 text-center text-white" style="height: 150px;">
     Content to be placed at the top of your page.
   </div></span></div>
     </panel>
   </box>
+  <hr class="footnotes-sep">
+  <section class="footnotes">
+    <ol class="footnotes-list">
+      <li id="footnote1" class="footnote-item">
+        <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+      </li>
+      <li id="footnote2" class="footnote-item">
+        <p>Here's one with multiple blocks. Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+      </li>
+      <li id="footnote3" class="footnote-item">
+        <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+        </p>
+      </li>
+    </ol>
+    <popover id="pop:footnote1">
+      <div slot="content">
+        <trigger for="pop:footnote1">
+          <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+        </trigger>
+      </div>
+    </popover>
+
+    <popover id="pop:footnote2">
+      <div slot="content">
+        <trigger for="pop:footnote2">
+          <p>Here's one with multiple blocks. Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+        </trigger>
+      </div>
+    </popover>
+
+    <popover id="pop:footnote3">
+      <div slot="content">
+        <trigger for="pop:footnote3">
+          <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+          </p>
+        </trigger>
+      </div>
+    </popover>
+  </section>
+  </div>
+
+
   <h5 id="modals">Modals<a class="fa fa-anchor" href="#modals"></a></h5>
   <box>
     <div>
       <p>Hover
-        <trigger large="" for="modal:trigger_id">here</trigger> to open a modal.
-        <modal title="Modal title" ok-text="OK" id="modal:trigger_id">
+        <trigger large="" for="modal:unused">here</trigger> to open a modal.
+        <modal title="Modal title" ok-text="OK" id="modal:unused">
           Modal content
         </modal>
       </p>
@@ -1729,25 +1845,40 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <pre><code class="hljs html">More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
-<span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Modal title** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>
-    ...
+            <pre><code class="hljs html">More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
+<span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Modal title** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 <span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
+This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.
+
+<span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:centered"</span>&gt;</span>This is a trigger for a centered modal<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.
+
+<span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"**Centered** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:centered"</span> <span class="hljs-attr">center</span>&gt;</span>
+  Centered
+<span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span>
+
 </code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
             <box border-left-color="grey" background-color="white">
               <p>More about
-                <trigger for="modal:trigger_id">trigger</trigger>.
-                <modal title="**Modal title** :rocket:" id="modal:trigger_id">
+                <trigger for="modal:loremipsum">trigger</trigger>.
+                <modal title="**Modal title** :rocket:" id="modal:loremipsum">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                   in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </modal>
                 <br> This is the same
-                <trigger for="modal:trigger_id">trigger</trigger> as last one.</p>
+                <trigger for="modal:loremipsum">trigger</trigger> as last one.</p>
+              <p>
+                <trigger for="modal:centered">This is a trigger for a centered modal</trigger>.</p>
+              <modal title="**Centered** :rocket:" id="modal:centered" center="">
+                Centered
+              </modal>
             </box>
           </div>
         </div>
@@ -1849,6 +1980,12 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
                 <td>Creates a <a href="https://getbootstrap.com/docs/4.0/components/modal/#optional-sizes">small Modal</a>.</td>
               </tr>
               <tr>
+                <td>center</td>
+                <td><code>Boolean</code></td>
+                <td><code>false</code></td>
+                <td>Vertically centers the modal (in addition to the horizontal centering by default).</td>
+              </tr>
+              <tr>
                 <td>backdrop</td>
                 <td><code>Boolean</code></td>
                 <td><code>true</code></td>
@@ -1857,17 +1994,17 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
             </tbody>
           </table>
         </div><span id="short" class="d-none">
-<pre><code class="hljs html">Click <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>here
+<pre><code class="hljs html">Click <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:unused"</span>&gt;</span>here
         <span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> to open a modal.
-        <span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Modal title"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:trigger_id"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Modal title"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:unused"</span>&gt;</span>
         Modal content
         <span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span>
         </code>
         </pre>
         </span>
         <span id="examples" class="d-none">
-<p>Hover <trigger large="" for="modal:trigger_id">here</trigger> to open a modal.
-<modal title="Modal title" ok-text="OK" id="modal:trigger_id">
+<p>Hover <trigger large="" for="modal:unused">here</trigger> to open a modal.
+<modal title="Modal title" ok-text="OK" id="modal:unused">
 Modal content
 </modal></p></span></div>
     </panel>
@@ -3682,10 +3819,9 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
     </panel>
   </box>
   </div>
-  </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.1</a> on Tue, 04 Jun 2019 07:35:29 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.2</a> on Fri, 28 Jun 2019 05:52:03 GMT]</small></div>
   </footer>
   </div>
 </body>
