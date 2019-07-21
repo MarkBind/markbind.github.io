@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.2">
+  <meta name="generator" content="MarkBind 2.5.3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Reader-Facing Features</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -619,6 +619,67 @@ ______________
       <span id="examples" class="d-none">
 <p>MarkBind home is at <a href="https://markbind.org">here</a>.
 </p></span></div>
+    </panel>
+  </box>
+  <h5 id="footnotes">Footnotes<a class="fa fa-anchor" href="#footnotes"></a></h5>
+  <box>
+    <div>
+      <p>1 + 1 = 2
+        <trigger for="pop:footnote1"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote1" id="footnoteref1">[1]</a></sup></trigger>
+      </p>
+    </div>
+    <panel type="seamless" header="%%details...%%">
+      <div>
+        <h2 id="footnotes-2">Footnotes<a class="fa fa-anchor" href="#footnotes-2"></a></h2>
+        <span id="main-example-markbind">
+<div>
+<p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
+
+[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
+
+<span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
+belong to the previous footnote.
+
+
+<span class="hljs-strong">**Inline footnotes:**</span>
+Here is an inline note.^[Inlines notes are easier to write, since
+you don't have to pick an identifier and move down to type the
+note.]
+
+</code></pre>
+        </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <p><strong>Normal footnotes:</strong> Here is a footnote reference,
+              <trigger for="pop:footnote2"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote2" id="footnoteref2">[2]</a></sup></trigger> and another.
+              <trigger for="pop:footnote3"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote3" id="footnoteref3">[3]</a></sup></trigger>
+            </p>
+            <p><strong>Inline footnotes:</strong> Here is an inline note.
+              <trigger for="pop:footnote4"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote4" id="footnoteref4">[4]</a></sup></trigger>
+            </p>
+          </box>
+        </div>
+      </div>
+      </span>
+      <span id="short" class="d-none">
+<pre><code class="hljs html">**Normal footnotes:**
+Here is a footnote reference,[^1] and another.[^longnote]
+
+[^1]: Here is the footnote. Footnotes will appear at the bottom of the page.
+
+[^longnote]: Here's one with multiple blocks.
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+</code></pre></span>
+      <span id="examples" class="d-none">
+1 + 1 = 2 ^[Math]
+</span></div>
     </panel>
   </box>
   <h5 id="images">Images<a class="fa fa-anchor" href="#images"></a></h5>
@@ -1659,114 +1720,41 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
 </p></span></div>
     </panel>
   </box>
-  <h5 id="footnotes">Footnotes<a class="fa fa-anchor" href="#footnotes"></a></h5>
+  <h5 id="headers">Headers<a class="fa fa-anchor" href="#headers"></a></h5>
   <box>
     <div>
-      <p>This is not updated</p>
+      <div class="bg-primary display-4 text-center text-white" style="height: 150px;">
+        Content to be placed at the top of your page.
+      </div>
     </div>
     <panel type="seamless" header="%%details...%%">
       <div>
-        <span id="main-example-markbind">
-<div>
-<p><span class="dimmed">CODE:</span></p>
+        <h2 id="headers-2">Headers<a class="fa fa-anchor" href="#headers-2"></a></h2>
+        <p><strong>You can specify a <tooltip content="Content to be placed at the top of a page.">page header</tooltip></strong> above your page contents and
+          <tooltip content="Site Navigation and <br>Page Navigation menus">navigation menus</tooltip> using a header file.</p>
+        <p>You can save multiple header files in the <code>_markbind/headers</code> folder and specify it in the <code>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
         <div class="indented">
-          <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
-Here is a footnote reference,[^1] and another.[^longnote]
-
-[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
-
-[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
-
-<span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
-belong to the previous footnote.
-
-
-<span class="hljs-strong">**Inline footnotes:**</span>
-Here is an inline note.^[Inlines notes are easier to write, since
-you don't have to pick an identifier and move down to type the
-note.]
-
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>
+            <strong><code>_markbind/headers/</code></strong><code>welcomeBanner.md</code>:</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-primary display-4 text-center text-white"</span>&gt;</span>
+    Welcome!
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</code></pre>
+          <p>In the page that you want to include the header:</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+  header: welcomeBanner.md
+<span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
         </div>
-        <p><span class="dimmed">OUTPUT:</span></p>
-        <div class="indented">
-          <box border-left-color="grey" background-color="white">
-            <p><strong>Normal footnotes:</strong> Here is a footnote reference,
-              <trigger for="pop:footnote1"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote1" id="footnoteref1">[1]</a></sup></trigger> and another.
-              <trigger for="pop:footnote2"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote2" id="footnoteref2">[2]</a></sup></trigger>
-            </p>
-            <p><strong>Inline footnotes:</strong> Here is an inline note.
-              <trigger for="pop:footnote3"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote3" id="footnoteref3">[3]</a></sup></trigger>
-            </p>
-          </box>
-        </div>
-      </div>
-      </span>
-      <span id="short" class="d-none">
-```html
-**Normal footnotes:**
-Here is a footnote reference,[^1] and another.[^longnote]
-<pre><code class="hljs">&lt;/span&gt;
-&lt;span id=&quot;examples&quot; class=&quot;d-none&quot;&gt;
-This is not updated
-&lt;/span&gt;
-
-&lt;/div&gt;&lt;/div&gt;
-&lt;/panel&gt;
-&lt;/box&gt;
-
-
-  
-
-  
-
-
-##### Headers
-&lt;box&gt;
-&lt;div&gt;&lt;div data-included-from=&quot;/home/travis/build/MarkBind/markbind/docs/userGuide/syntax/headers.mbdf&quot;&gt;
-
-
-  &lt;div class=&quot;bg-primary display-4 text-center text-white&quot; style=&quot;height: 150px;&quot;&gt;
-    Content to be placed at the top of your page.
-  &lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;
-
-&lt;panel type=&quot;seamless&quot; header=&quot;%%details...%%&quot;&gt;
-
-&lt;div&gt;&lt;div data-included-from=&quot;/home/travis/build/MarkBind/markbind/docs/userGuide/syntax/headers.mbdf&quot;&gt;
-
-## Headers
-
-**You can specify a &lt;tooltip content=&quot;Content to be placed at the top of a page.&quot;&gt;page header&lt;/tooltip&gt;** above your page contents and &lt;tooltip content=&quot;Site Navigation and &lt;br&gt;Page Navigation menus&quot;&gt;navigation menus&lt;/tooltip&gt; using a header file.
-
-You can save multiple header files in the `_markbind/headers` folder and specify it in the `&lt;frontmatter&gt;` of the pages in which it should appear.
-
-&lt;div class=&quot;indented&quot;&gt;
-
-&lt;big&gt;&lt;span class=&quot;badge badge-pill badge-light&quot; style=&quot;background-color: #d9d9d9; color: #737373; position:relative; left:-10px&quot;&gt;Example:&lt;/span&gt;&lt;/big&gt;
-**`_markbind/headers/`**`welcomeBanner.md`:
-```html
-&lt;header&gt;
-  &lt;div class=&quot;bg-primary display-4 text-center text-white&quot;&gt;
-    Welcome!
-  &lt;/div&gt;
-&lt;/header&gt;
-
-<p>In the page that you want to include the header:</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-      header: welcomeBanner.md
-      <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-      </code>
-      </pre>
-      </span>
-      <p>Notes:</p>
-      <ul>
-        <li>Any inline headers will be removed by MarkBind to ensure compatibility with header files.</li>
-        <li>If a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> is specified, the header file specified in the <code>&lt;frontmatter&gt;</code> will override the header within the Layout.</li>
-        <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code>&lt;include&gt;</code> tags</a> are not supported in headers.</li>
-      </ul>
-      <span id="short" class="d-none">
+        <p>Notes:</p>
+        <ul>
+          <li>Any inline headers will be removed by MarkBind to ensure compatibility with header files.</li>
+          <li>If a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> is specified, the header file specified in the <code>&lt;frontmatter&gt;</code> will override the header within the Layout.</li>
+          <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code>&lt;include&gt;</code> tags</a> are not supported in headers.</li>
+        </ul>
+        <span id="short" class="d-none">
 ```html
 <header>
   <div class="bg-primary display-4 text-center text-white" style="height: 200px;">
@@ -1780,54 +1768,12 @@ You can save multiple header files in the `_markbind/headers` folder and specify
 </frontmatter>
 ```
 </span>
-      <span id="examples" class="d-none">
+        <span id="examples" class="d-none">
   <div class="bg-primary display-4 text-center text-white" style="height: 150px;">
     Content to be placed at the top of your page.
   </div></span></div>
     </panel>
   </box>
-  <hr class="footnotes-sep">
-  <section class="footnotes">
-    <ol class="footnotes-list">
-      <li id="footnote1" class="footnote-item">
-        <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
-      </li>
-      <li id="footnote2" class="footnote-item">
-        <p>Here's one with multiple blocks. Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
-      </li>
-      <li id="footnote3" class="footnote-item">
-        <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
-        </p>
-      </li>
-    </ol>
-    <popover id="pop:footnote1">
-      <div slot="content">
-        <trigger for="pop:footnote1">
-          <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
-        </trigger>
-      </div>
-    </popover>
-
-    <popover id="pop:footnote2">
-      <div slot="content">
-        <trigger for="pop:footnote2">
-          <p>Here's one with multiple blocks. Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
-        </trigger>
-      </div>
-    </popover>
-
-    <popover id="pop:footnote3">
-      <div slot="content">
-        <trigger for="pop:footnote3">
-          <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
-          </p>
-        </trigger>
-      </div>
-    </popover>
-  </section>
-  </div>
-
-
   <h5 id="modals">Modals<a class="fa fa-anchor" href="#modals"></a></h5>
   <box>
     <div>
@@ -3818,10 +3764,55 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
 </p></span></div>
     </panel>
   </box>
+  <hr class="footnotes-sep">
+  <section class="footnotes">
+    <ol class="footnotes-list">
+      <li id="footnote1" class="footnote-item">
+        <p>Math</p>
+      </li>
+      <li id="footnote2" class="footnote-item">
+        <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+      </li>
+      <li id="footnote3" class="footnote-item">
+        <p>Here's one with multiple blocks.</p>
+        <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+      </li>
+      <li id="footnote4" class="footnote-item">
+        <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+        </p>
+      </li>
+    </ol>
+    <popover id="pop:footnote1">
+      <div slot="content">
+        <p>Math</p>
+      </div>
+    </popover>
+
+    <popover id="pop:footnote2">
+      <div slot="content">
+        <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+      </div>
+    </popover>
+
+    <popover id="pop:footnote3">
+      <div slot="content">
+        <p>Here's one with multiple blocks.</p>
+        <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+      </div>
+    </popover>
+
+    <popover id="pop:footnote4">
+      <div slot="content">
+        <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+        </p>
+      </div>
+    </popover>
+  </section>
+  </div>
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.2</a> on Fri, 28 Jun 2019 05:52:03 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.3</a> on Sun, 21 Jul 2019 12:07:36 GMT]</small></div>
   </footer>
   </div>
 </body>

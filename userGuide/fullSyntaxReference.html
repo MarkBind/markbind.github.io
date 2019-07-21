@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.2">
+  <meta name="generator" content="MarkBind 2.5.3">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Full Syntax Reference</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -843,6 +843,7 @@ or the java code `public static void main(String[] args)`{.java}.
     </panel>
     <panel type="seamless" header="###### **Footnotes**<a class='fa fa-anchor' href='#footnotes'></a>">
       <div>
+        <h2 id="footnotes">Footnotes<a class="fa fa-anchor" href="#footnotes"></a></h2>
         <span id="main-example-markbind">
 <div>
 <p><span class="dimmed">CODE:</span></p>
@@ -880,57 +881,55 @@ note.]
       </div>
       </span>
       <span id="short" class="d-none">
-```html
-**Normal footnotes:**
+<pre><code class="hljs html">**Normal footnotes:**
 Here is a footnote reference,[^1] and another.[^longnote]
-<pre><code class="hljs">&lt;/span&gt;
-&lt;span id=&quot;examples&quot; class=&quot;d-none&quot;&gt;
-This is not updated
-&lt;/span&gt;
 
-&lt;/div&gt;&lt;/div&gt;
-&lt;/panel&gt;
+[^1]: Here is the footnote. Footnotes will appear at the bottom of the page.
 
-&lt;panel type=&quot;seamless&quot; header=&quot;###### **Front Matter**&quot;&gt;
-  &lt;div&gt;&lt;div data-included-from=&quot;/home/travis/build/MarkBind/markbind/docs/userGuide/syntax/frontmatter.mbdf&quot;&gt;
-
-## Front Matter
-
-**You can use a _Front Matter_ section to specify page properties such as the title and keywords of the page.** To specify front matter for a page, insert a `&lt;frontmatter&gt;` tag in the following format at the beginning of the page.
-
-```html
-&lt;frontmatter&gt;
+[^longnote]: Here's one with multiple blocks.
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+</code></pre></span>
+      <span id="examples" class="d-none">
+1 + 1 = 2 ^[Math]
+</span></div>
+  </panel>
+  <panel type="seamless" header="###### **Front Matter**<a class='fa fa-anchor' href='#front-matter'></a>">
+    <div>
+      <h2 id="front-matter">Front Matter<a class="fa fa-anchor" href="#front-matter"></a></h2>
+      <p><strong>You can use a <em>Front Matter</em> section to specify page properties such as the title and keywords of the page.</strong> To specify front matter for a page, insert a <code>&lt;frontmatter&gt;</code> tag in the following format at the
+        beginning of the page.</p>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   property1: value1
   property2: value2
-&lt;/frontmatter&gt;
-
-<div class="indented">
-<p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here, we set the page <code>title</code> attribute as <code>Binary Search Tree</code>.</p>
-      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</code></pre>
+      <div class="indented">
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here, we set the page <code>title</code> attribute as <code>Binary Search Tree</code>.</p>
+        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   title: Binary Search Tree
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </code></pre>
-  </div>
-  <p><strong>Page properties:</strong></p>
-  <ul>
-    <li><strong><code>title</code></strong>: The title of the page. Will be used as the <code>&lt;title&gt;</code> attribute of the HTML page generated.</li>
-    <li>Other properties such as <code>keywords</code>, <code>layout</code>, <code>head</code> etc. will be explained in other places of this user guide.</li>
-  </ul>
-  <div>
-    <box type="warning">
-      <p>Note: Page properties that are defined in <code>site.json</code> for a particular page will override those defined in the front matter of the page.
-      </p>
-    </box>
-  </div>
-  <span id="short" class="d-none">
+      </div>
+      <p><strong>Page properties:</strong></p>
+      <ul>
+        <li><strong><code>title</code></strong>: The title of the page. Will be used as the <code>&lt;title&gt;</code> attribute of the HTML page generated.</li>
+        <li>Other properties such as <code>keywords</code>, <code>layout</code>, <code>head</code> etc. will be explained in other places of this user guide.</li>
+      </ul>
+      <div>
+        <box type="warning">
+          <p>Note: Page properties that are defined in <code>site.json</code> for a particular page will override those defined in the front matter of the page.
+          </p>
+        </box>
+      </div>
+      <span id="short" class="d-none">
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-  title: Binary Search Tree pageNav: 2
-  <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-  </code>
-  </pre>
-  </span>
-  </span>
-  </div>
+      title: Binary Search Tree pageNav: 2
+      <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+      </code>
+      </pre>
+      </span>
+    </div>
   </panel>
   <panel type="seamless" header="###### **Headers**<a class='fa fa-anchor' href='#headers'></a>">
     <div>
@@ -4120,13 +4119,13 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
       <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
       <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
       <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated at: Fri, 28 Jun 2019 05:52:03 GMT</p>
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated at: Sun, 21 Jul 2019 12:07:36 GMT</p>
       </div>
       <p></p>
       <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
       <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
       <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated by: <a href="https://markbind.org/">MarkBind 2.5.2</a></p>
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated by: <a href="https://markbind.org/">MarkBind 2.5.3</a></p>
       </div>
       <p></p>
       <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -4194,7 +4193,8 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
         <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
       </li>
       <li id="footnote2" class="footnote-item">
-        <p>Here's one with multiple blocks. Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+        <p>Here's one with multiple blocks.</p>
+        <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
       </li>
       <li id="footnote3" class="footnote-item">
         <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
@@ -4203,26 +4203,21 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
     </ol>
     <popover id="pop:footnote1">
       <div slot="content">
-        <trigger for="pop:footnote1">
-          <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
-        </trigger>
+        <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
       </div>
     </popover>
 
     <popover id="pop:footnote2">
       <div slot="content">
-        <trigger for="pop:footnote2">
-          <p>Here's one with multiple blocks. Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
-        </trigger>
+        <p>Here's one with multiple blocks.</p>
+        <p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
       </div>
     </popover>
 
     <popover id="pop:footnote3">
       <div slot="content">
-        <trigger for="pop:footnote3">
-          <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
-          </p>
-        </trigger>
+        <p>Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.
+        </p>
       </div>
     </popover>
   </section>
@@ -4230,7 +4225,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.2</a> on Fri, 28 Jun 2019 05:52:03 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.3</a> on Sun, 21 Jul 2019 12:07:36 GMT]</small></div>
   </footer>
   </div>
 </body>
