@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.5.3">
+  <meta name="generator" content="MarkBind 2.6.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Plugins</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -259,6 +259,75 @@
         <h3 id="built-in-plugins">Built-in plugins<a class="fa fa-anchor" href="#built-in-plugins"></a></h3>
         <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
         <div>
+          <h4 id="algolia-enabling-algolia-docsearch"><code>algolia</code>: Enabling Algolia DocSearch<a class="fa fa-anchor" href="#algolia-enabling-algolia-docsearch"></a></h4>
+          <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
+          <p>To enable it, add <code>algolia</code> to your site's plugins, and supply the required options via the <code>pluginsContext</code>.</p>
+          <div class="table-responsive">
+            <table class="markbind-table table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>apiKey</td>
+                  <td><code>String</code></td>
+                  <td></td>
+                  <td>The API key for your site's Algolia DocSearch setup</td>
+                </tr>
+                <tr>
+                  <td>indexName</td>
+                  <td><code>String</code></td>
+                  <td></td>
+                  <td>The index name for your site's Algolia DocSearch setup</td>
+                </tr>
+                <tr>
+                  <td>algoliaOptions</td>
+                  <td><code>Object</code></td>
+                  <td><code>{}</code></td>
+                  <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td><code>Boolean</code></td>
+                  <td><code>false</code></td>
+                  <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pre><code class="hljs js">site.json
+{
+  ...
+  <span class="hljs-string">"plugins"</span>: [
+    <span class="hljs-string">"algolia"</span>
+  ],
+  <span class="hljs-string">"pluginsContext"</span>: {
+    <span class="hljs-string">"algolia"</span>: {
+      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span>
+      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span>
+      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
+      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
+    }
+  }
+}
+</code></pre>
+          <p>To connect the <code>searchbar</code> component to Algolia DocSearch, add the <code>algolia</code> key.</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+</code></pre>
+          <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
+          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
+</code></pre>
+          <box type="warning">
+            <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code>.algolia-no-index</code>              to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
+            <p>The <code>algolia-no-index</code> class is automatically added to content hidden by the built-in VueStrap components. You may also add the <code>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
+          </box>
+        </div>
+        <div>
           <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
           <p>You can use tags to selectively filter HTML elements when building a site.</p>
           <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
@@ -385,9 +454,9 @@
 ```
 </span></div>
         <div>
-          <h4 id="algolia-enabling-algolia-docsearch"><code>algolia</code>: Enabling Algolia DocSearch<a class="fa fa-anchor" href="#algolia-enabling-algolia-docsearch"></a></h4>
-          <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
-          <p>To enable it, add <code>algolia</code> to your site's plugins, and supply the required options via the <code>pluginsContext</code>.</p>
+          <h4 id="google-analytics-enhancing-site-with-google-analytics"><code>Google Analytics</code>: Enhancing site with Google Analytics<a class="fa fa-anchor" href="#google-analytics-enhancing-site-with-google-analytics"></a></h4>
+          <p>This plugin allows your web pages to be enhanced with <a href="https://analytics.google.com/analytics/web/#/">google analytics</a> to track, analyse and improve your content.</p>
+          <p>To enable it, add <code>googleAnalytics</code> to your site's plugins, and add the trackingID parameter via the <code>pluginsContext</code>.</p>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
               <thead>
@@ -400,28 +469,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>apiKey</td>
+                  <td>trackingID</td>
                   <td><code>String</code></td>
                   <td></td>
-                  <td>The API key for your site's Algolia DocSearch setup</td>
-                </tr>
-                <tr>
-                  <td>indexName</td>
-                  <td><code>String</code></td>
-                  <td></td>
-                  <td>The index name for your site's Algolia DocSearch setup</td>
-                </tr>
-                <tr>
-                  <td>algoliaOptions</td>
-                  <td><code>Object</code></td>
-                  <td><code>{}</code></td>
-                  <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
-                </tr>
-                <tr>
-                  <td>debug</td>
-                  <td><code>Boolean</code></td>
-                  <td><code>false</code></td>
-                  <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
+                  <td>Tracking ID provided by Google. Follow this <a href="https://support.google.com/analytics/answer/1008080">guide</a> to get your Tracking ID.</td>
                 </tr>
               </tbody>
             </table>
@@ -430,28 +481,15 @@
 {
   ...
   <span class="hljs-string">"plugins"</span>: [
-    <span class="hljs-string">"algolia"</span>
+    <span class="hljs-string">"googleAnalytics"</span>
   ],
   <span class="hljs-string">"pluginsContext"</span>: {
-    <span class="hljs-string">"algolia"</span>: {
-      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span>
-      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span>
-      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
-      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
+    <span class="hljs-string">"googleAnalytics"</span>: {
+      <span class="hljs-string">"trackingID"</span>: <span class="hljs-string">"YOUR-TRACKING-ID"</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span>
     }
   }
 }
 </code></pre>
-          <p>To connect the <code>searchbar</code> component to Algolia DocSearch, add the <code>algolia</code> key.</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</code></pre>
-          <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
-</code></pre>
-          <box type="warning">
-            <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code>.algolia-no-index</code>              to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
-            <p>The <code>algolia-no-index</code> class is automatically added to content hidden by the built-in VueStrap components. You may also add the <code>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
-          </box>
         </div>
         <div class="clearfix">
           <p><span class="float-left"><b-btn variant="light" href="/userGuide/usingHtmlJavaScriptCss.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using HTML, JavaScript, CSS</span></span>
@@ -467,7 +505,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.5.3</a> on Sun, 21 Jul 2019 12:20:37 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.6.0</a> on Sat, 16 Nov 2019 08:55:01 GMT]</small></div>
     </footer>
   </div>
 </body>

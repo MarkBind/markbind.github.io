@@ -188,6 +188,7 @@
         "built-in-variable-markbind": "Built-in Variable: MarkBind",
         "variables-defaults": "Variables: Defaults",
         "page-variables": "Page Variables",
+        "importing-variables": "Importing Variables",
         "variables-tips-and-tricks": "Variables: Tips and Tricks",
         "includes": "Includes",
         "include-inside-an-included-file": "&lt;include&gt; Inside an Included File",
@@ -228,6 +229,15 @@
       "layout": "userGuide",
       "keywords": "site.json",
       "src": "userGuide/siteConfiguration.md"
+    },
+    {
+      "headings": {
+        "templates": "Templates",
+        "supported-templates": "Supported Templates"
+      },
+      "title": "User Guide: Templates",
+      "layout": "userGuide",
+      "src": "userGuide/templates.md"
     },
     {
       "headings": {
@@ -333,10 +343,11 @@
         "assets": "Assets",
         "advanced-default-plugins": "Advanced: Default plugins",
         "built-in-plugins": "Built-in plugins",
+        "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch",
         "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags",
-        "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch"
+        "google-analytics-enhancing-site-with-google-analytics": "Google Analytics: Enhancing site with Google Analytics"
       },
       "title": "User Guide: Using Plugins",
       "layout": "userGuide",

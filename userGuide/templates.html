@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.6.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkBind - User Guide: Adding Pages</title>
+  <title>MarkBind - User Guide: Templates</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
@@ -51,7 +51,7 @@
             <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
             <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
               <ul class="pl-3 site-nav-list">
-                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a current">Adding Pages</a></li>
+                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
                 <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
                 <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
                 <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
@@ -86,52 +86,36 @@
       </nav>
       <div id="content-wrapper">
         <div></div>
-        <div></div>
-        <span id="link" class="d-none">
-<span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
-        <h1 id="adding-pages">Adding Pages<a class="fa fa-anchor" href="#adding-pages"></a></h1>
-        <span class="lead" id="overview">
-<p><strong>It is easy to add files to a MarkBind site as any file inside the <tooltip content="The directory that contains all the project files. It is also the directory in which the `site.json` configuration file is located.">root directory</tooltip> becomes a part of the generated website.</strong></p></span>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If you have a file <code>tutorial/code.txt</code> in your root directory, it will be available
-            as
-            <code>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
+        <h1 id="templates">Templates<a class="fa fa-anchor" href="#templates"></a></h1>
+        <p>MarkBind allows you to start off your new project with different templates.</p>
+        <p>During initialization you can add a flag <code>--template &lt;template-key&gt;</code> to select a different template to initialize with. For example:</p>
+        <pre><code class="hljs">markbind init --template minimal
+</code></pre>
+        <h2 id="supported-templates">Supported Templates<a class="fa fa-anchor" href="#supported-templates"></a></h2>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Template key</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Default</td>
+                <td><code>default</code></td>
+                <td>Default template if <code>--template</code> is unspecified. Filled with Markbind features to guide you to author better content.</td>
+              </tr>
+              <tr>
+                <td>Minimal</td>
+                <td><code>minimal</code></td>
+                <td>Minimalistic template that gets you started quickly</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code>ignore</code> field in the <code>site.config</code> file as explained <a href="/userGuide/siteConfiguration.html#ignore">here</a>.</span></p>
-        <p><strong>More importantly, <code>.md</code> and <code>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>&lt;root&gt;/tutorial/</code><strong><code>setup.md</code></strong> can be transformed
-            into
-            <code>&lt;website-url&gt;/tutorial/</code><strong><code>setup.html</code></strong></p>
-        </div>
-        <p>Here are the steps to add a new page to your site:</p>
-        <ol>
-          <li>Add a <code>.md</code> (or <code>.mbd</code>) file anywhere inside the root directory.</li>
-          <li>Update the <a href="/userGuide/siteConfiguration.html#pages"><code>pages</code> attribute of the <code>site.json</code></a> to cover the new file, if necessary.</li>
-          <li>Use the
-            <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
-        </ol>
-        <modal large="" title="Live Preview" id="modal:addingPages-livePreview">
-          <span>
-<span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
-            <tooltip content="MarkBind file"><code>.mbd</code></tooltip>,
-            <tooltip content="MarkBind fragment"><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
-          <p></p>
-          </span>
-        </modal>
-        <div class="clearfix">
-          <p><span class="float-left"><b-btn variant="light" href="/userGuide/authoringContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span>
-            </b-btn>
-            </span>
-          </p>
-          <p><span class="float-right"><b-btn variant="light" href="/userGuide/markBindSyntaxOverview.html"><span><span>MarkBind Syntax Overview</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
-            </b-btn>
-            </span>
-          </p>
-        </div>
-        <br></div>
+      </div>
     </div>
     <footer>
       <div class="text-center">
