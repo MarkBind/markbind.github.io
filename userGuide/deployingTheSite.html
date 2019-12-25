@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.7.0">
+  <meta name="generator" content="MarkBind 2.8.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Deploying the Site</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -200,7 +200,8 @@
             </span>
           </li>
           <li>Add a <code>.travis.yml</code> file to instruct Travis CI to build and deploy the site when you push to the repository. An example <code>.travis.yml</code> file that can accomplish this is given below:
-            <pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+            <div class="code-block">
+              <pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
 <span class="hljs-attr">node_js:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">'8'</span>
 <span class="hljs-attr">install:</span>
@@ -209,7 +210,10 @@
 <span class="hljs-attr">branches:</span>
 <span class="hljs-attr">  only:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">master</span>
-</code></pre> More information about <code>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
+</code></pre>
+              <div class="code-block-lang"><span>yaml</span></div>
+            </div>
+            More information about <code>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
           <li>Commit <code>.travis.yml</code> to your MarkBind repository and push the changes. Travis CI should begin to build your site.</li>
           <li>Select the MarkBind repository on <a href="https://travis-ci.com/auth">Travis CI</a> and <a href="https://docs.travis-ci.com/user/job-lifecycle/#breaking-the-build">check the build status</a> to see if it is successful.</li>
           <li>Once the build succeeds, your MarkBind site should be online at <code>http://&lt;username|org&gt;.github.io/&lt;repo&gt;</code> e.g., <a href="http://se-edu.github.io/se-book">http://se-edu.github.io/se-book</a>. Travis CI will automatically
@@ -222,25 +226,34 @@
         <p>When Travis CI is set up as explained above, it will use the latest version of MarkBind which may be a later version than the one you use locally.</p>
         <ul>
           <li>If you want Travis CI to use a specific version of MarkBind (eg. <code>v1.6.3</code>), change the <code>install</code> step in the <code>.travis.yml</code> given above to:
-            <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
+            <div class="code-block">
+              <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@1.63</span>
 </code></pre>
+              <div class="code-block-lang"><span>yaml</span></div>
+            </div>
           </li>
           <li>If you want to use the latest minor version automatically until the next major version (as major versions usually contain breaking changes), you can add a <code>^</code> in front of the version number. In the example below, Travis will use the
             latest version of MarkBind but will stop before <code>2.*</code>
-            <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
+            <div class="code-block">
+              <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@^1.63</span>
 </code></pre>
+              <div class="code-block-lang"><span>yaml</span></div>
+            </div>
           </li>
         </ul>
         <h5 id="configuring-travis-ci-to-only-deploy-from-a-specific-repository">Configuring Travis CI to only deploy from a specific repository<a class="fa fa-anchor" href="#configuring-travis-ci-to-only-deploy-from-a-specific-repository"></a></h5>
         <p>When Travis CI is set up as explained above, Travis CI will attempt to deploy the site from any repository it is in, including forks. If you want Travis CI to only deploy from a specific repository (eg. only from your main site repository), you
           can set a <a href="https://docs.travis-ci.com/user/deployment#conditional-releases-with-on"><code>deploy</code> phase with an <code>on</code> condition</a>.</p>
         <p>For example, if you only want Travis CI to deploy the site when it is run from the <code>se-edu/se-book</code> repository, the folllowing <code>deploy</code> phase with the <code>on</code> condition should be added to <code>.travis.yml</code>:</p>
-        <pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span>
+        <div class="code-block">
+          <pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span>
 <span class="hljs-attr">  on:</span>
 <span class="hljs-attr">    repo:</span> <span class="hljs-string">se-edu/se-book</span>
 </code></pre>
+          <div class="code-block-lang"><span>yaml</span></div>
+        </div>
         <p>The <code>repo</code> value can be changed to your specific repository as desired.</p>
         <hr>
         <h2 id="deploying-to-netlify">Deploying to Netlify<a class="fa fa-anchor" href="#deploying-to-netlify"></a></h2>
@@ -345,7 +358,7 @@ to automatically build and deploy your site on their platform every time your Gi
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.7.0</a> on Mon, 09 Dec 2019 03:12:25 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.8.0</a> on Wed, 25 Dec 2019 02:45:50 GMT]</small></div>
     </footer>
   </div>
 </body>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.7.0">
+  <meta name="generator" content="MarkBind 2.8.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -106,10 +106,13 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
+                <div class="code-block">
+                  <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
 ...
 <span class="hljs-section">###### Heading level 6</span>
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -125,8 +128,11 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
+                <div class="code-block">
+                  <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -140,8 +146,11 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
+                <div class="code-block">
+                  <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -170,10 +179,13 @@
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+                  <div class="code-block">
+                    <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </code></pre>
+                    <div class="code-block-lang"><span>xml</span></div>
+                  </div>
                 </box>
               </div>
             </div>
@@ -182,12 +194,15 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
+                <div class="code-block">
+                  <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
    - [ ] Sub item 1.1
    - [x] Sub item 1.2
 <span class="hljs-bullet">- </span>[x] Item 2
 <span class="hljs-bullet">- </span>[ ] Item 3
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -210,8 +225,11 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
+                <div class="code-block">
+                  <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -230,8 +248,11 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
+                <div class="code-block">
+                  <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -245,10 +266,13 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
+                <div class="code-block">
+                  <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
 <span class="hljs-bullet">- </span>( ) Item 2
 <span class="hljs-bullet">- </span>(x) Item 3
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -266,7 +290,8 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
+                <div class="code-block">
+                  <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
 Here is a footnote reference,[^1] and another.[^longnote]
 
 [<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
@@ -283,6 +308,8 @@ you don't have to pick an identifier and move down to type the
 note.]
 
 </code></pre>
+                  <div class="code-block-lang"><span>markdown</span></div>
+                </div>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -412,7 +439,7 @@ note.]
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.7.0</a> on Mon, 09 Dec 2019 03:12:25 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.8.0</a> on Wed, 25 Dec 2019 02:45:50 GMT]</small></div>
     </footer>
   </div>
 </body>

@@ -341,6 +341,7 @@
         "writing-plugins": "Writing Plugins",
         "rendering": "Rendering",
         "assets": "Assets",
+        "live-reload": "Live reload",
         "advanced-default-plugins": "Advanced: Default plugins",
         "built-in-plugins": "Built-in plugins",
         "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch",
