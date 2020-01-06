@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.8.0">
+  <meta name="generator" content="MarkBind 2.9.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Formatting Contents</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -99,13 +99,10 @@
 <div>
 <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <div class="code-block">
-              <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
+            <pre><code class="hljs markdown"><span class="hljs-section">### Heading level 3</span>
 ...
 <span class="hljs-section">###### Heading level 6</span>
 </code></pre>
-              <div class="code-block-lang"><span>markdown</span></div>
-            </div>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
@@ -137,13 +134,10 @@
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <div class="code-block">
-              <pre><code class="hljs markdown">This is the first paragraph.
+            <pre><code class="hljs markdown">This is the first paragraph.
 
 This is another paragraph. This is the second sentence.
 </code></pre>
-              <div class="code-block-lang"><span>markdown</span></div>
-            </div>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
@@ -154,115 +148,98 @@ This is another paragraph. This is the second sentence.
           </div>
         </div>
         <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown">This is the first paragraph.
+<pre><code class="hljs markdown">This is the first paragraph.
 
 This is another paragraph. This is the second sentence.
-</code></pre><div class="code-block-lang"><span>markdown</span></div>
-    </div>
-    </span>
-  </div>
-  <hr>
-  <div>
-    <h2 id="line-breaks">Line Breaks<a class="fa fa-anchor" href="#line-breaks"></a></h2>
-    <p>The preferred way to indicate line breaks is to use a <code>&lt;br&gt;</code> tag.</p>
-    <div>
-      <p><span class="dimmed">CODE:</span></p>
-      <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
+</code></pre></span></div>
+      <hr>
+      <div>
+        <h2 id="line-breaks">Line Breaks<a class="fa fa-anchor" href="#line-breaks"></a></h2>
+        <p>The preferred way to indicate line breaks is to use a <code>&lt;br&gt;</code> tag.</p>
+        <div>
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
 This should be on a new line.
 This will not be in a new line.
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
+          </div>
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <p>This is the second sentence.<br> This should be on a new line. This will not be in a new line.</p>
+            </box>
+          </div>
         </div>
+        <p><small>Alternate syntax: <a href="https://www.markdownguide.org/basic-syntax#line-breaks">https://www.markdownguide.org/basic-syntax#line-breaks</a></small></p>
+        <span id="short" class="d-none">
+<pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        </span>
+        This should be on a new line.
+        </code>
+        </pre>
+        </span>
+      </div>
+      <hr>
+      <div>
+        <h2 id="text-styles">Text Styles<a class="fa fa-anchor" href="#text-styles"></a></h2>
+        <p>Markdown text styles:</p>
+        <span id="main-example-markdown">
+<div>
+<p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
+</code></pre>
+        </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code></p>
+          </box>
+        </div>
+      </div>
+      </span>
+      <p>Additional syntax from GFMD:</p>
+      <div>
+        <p><span class="dimmed">CODE:</span></p>
+        <div class="indented">
+          <pre><code class="hljs markdown">~~Strike through~~
+</code></pre>
+        </div>
+        <p><span class="dimmed">OUTPUT:</span></p>
+        <div class="indented">
+          <box border-left-color="grey" background-color="white">
+            <p><s>Strike through</s></p>
+          </box>
+        </div>
+      </div>
+      <p>Syntax added by MarkBind:</p>
+      <span id="main-example-markbind">
+<div>
+<p><span class="dimmed">CODE:</span></p>
+      <div class="indented">
+        <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
+</code></pre>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
         <box border-left-color="grey" background-color="white">
-          <p>This is the second sentence.<br> This should be on a new line. This will not be in a new line.</p>
+          <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
         </box>
       </div>
     </div>
-    <p><small>Alternate syntax: <a href="https://www.markdownguide.org/basic-syntax#line-breaks">https://www.markdownguide.org/basic-syntax#line-breaks</a></small></p>
-    <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown">This is the second sentence.<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
     </span>
-    This should be on a new line.
-    </code>
-    </pre>
-    <div class="code-block-lang"><span>markdown</span></div>
-  </div>
-  </span>
-  </div>
-  <hr>
-  <div>
-    <h2 id="text-styles">Text Styles<a class="fa fa-anchor" href="#text-styles"></a></h2>
-    <p>Markdown text styles:</p>
-    <span id="main-example-markdown">
-<div>
-<p><span class="dimmed">CODE:</span></p>
-    <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown"><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
-</code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
-    </div>
-    <p><span class="dimmed">OUTPUT:</span></p>
-    <div class="indented">
-      <box border-left-color="grey" background-color="white">
-        <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code></p>
-      </box>
-    </div>
-  </div>
-  </span>
-  <p>Additional syntax from GFMD:</p>
-  <div>
-    <p><span class="dimmed">CODE:</span></p>
-    <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown">~~Strike through~~
-</code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
-    </div>
-    <p><span class="dimmed">OUTPUT:</span></p>
-    <div class="indented">
-      <box border-left-color="grey" background-color="white">
-        <p><s>Strike through</s></p>
-      </box>
-    </div>
-  </div>
-  <p>Syntax added by MarkBind:</p>
-  <span id="main-example-markbind">
-<div>
-<p><span class="dimmed">CODE:</span></p>
-  <div class="indented">
-    <div class="code-block">
-      <pre><code class="hljs markdown"><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%
-</code></pre>
-      <div class="code-block-lang"><span>markdown</span></div>
-    </div>
-  </div>
-  <p><span class="dimmed">OUTPUT:</span></p>
-  <div class="indented">
-    <box border-left-color="grey" background-color="white">
-      <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
-    </box>
-  </div>
-  </div>
-  </span>
-  <p><small>Alternative syntax: <a href="https://www.markdownguide.org/basic-syntax#emphasis">https://www.markdownguide.org/basic-syntax#emphasis</a></small></p>
-  <span id="short" class="d-none">
+    <p><small>Alternative syntax: <a href="https://www.markdownguide.org/basic-syntax#emphasis">https://www.markdownguide.org/basic-syntax#emphasis</a></small></p>
+    <span id="short" class="d-none">
 ```markdown
 **Bold**, _Italic_, ___Bold and Italic___, `Inline Code`
 ~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, %%Dim%%
 ```
 </span>
-  <span id="examples" class="d-none">
+    <span id="examples" class="d-none">
 <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code>
 <s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
-  </span>
+    </span>
   </div>
   <hr>
   <div>
@@ -270,15 +247,12 @@ This will not be in a new line.
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">Normal text
+        <pre><code class="hljs markdown">Normal text
 <span class="hljs-quote">&gt; Blockquote, first paragraph</span>
 <span class="hljs-quote">&gt;
 &gt; Second paragraph</span>
 &gt;&gt; Nested quoteblock
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -298,8 +272,7 @@ This will not be in a new line.
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">Normal text
+        <pre><code class="hljs markdown">Normal text
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span>&gt;</span></span>
 Blockquote, first paragraph
 
@@ -309,8 +282,6 @@ Nested blockquote
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span></span>
 <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span></span>
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -328,15 +299,13 @@ Nested blockquote
     </div>
     <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#blockquotes-1">https://www.markdownguide.org/basic-syntax#blockquotes-1</a></small></p>
     <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown"><span class="hljs-quote">&gt; Blockquote, first paragraph</span>
+<pre><code class="hljs markdown"><span class="hljs-quote">&gt; Blockquote, first paragraph</span>
     <span class="hljs-quote">&gt;
 &gt; Second paragraph</span> &gt;&gt; Nested blockquote
     </code>
     </pre>
-    <div class="code-block-lang"><span>markdown</span></div>
-  </div>
-  </span>
-  <span id="examples" class="d-none">
+    </span>
+    <span id="examples" class="d-none">
 <blockquote>
 <p>Blockquote, first paragraph</p>
 <p>Second paragraph</p>
@@ -351,8 +320,7 @@ Nested blockquote
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown"><span class="hljs-bullet">* </span>Item 1
+        <pre><code class="hljs markdown"><span class="hljs-bullet">* </span>Item 1
   * Sub item 1.1
   * Sub item 1.2<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
 <span class="hljs-code">    Second line</span>
@@ -360,8 +328,6 @@ Nested blockquote
 <span class="hljs-bullet">* </span>Item 2
 <span class="hljs-bullet">* </span>Item 3
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -388,15 +354,12 @@ Nested blockquote
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1
+        <pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1
    1. Sub item 1.1
    1. Sub item 1.2
 <span class="hljs-bullet">1. </span>Item 2
 <span class="hljs-bullet">1. </span>Item 3
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -420,15 +383,12 @@ Nested blockquote
 <div>
 <p><span class="dimmed">CODE:</span></p>
     <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
+      <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>[ ] Item 1
    - [ ] Sub item 1.1
    - [x] Sub item 1.2
 <span class="hljs-bullet">- </span>[x] Item 2
 <span class="hljs-bullet">- </span>[ ] Item 3
 </code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
     </div>
     <p><span class="dimmed">OUTPUT:</span></p>
     <div class="indented">
@@ -452,13 +412,10 @@ Nested blockquote
   <div>
     <p><span class="dimmed">CODE:</span></p>
     <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
+      <pre><code class="hljs markdown"><span class="hljs-bullet">- </span>( ) Item 1
 <span class="hljs-bullet">- </span>( ) Item 2
 <span class="hljs-bullet">- </span>(x) Item 3
 </code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
     </div>
     <p><span class="dimmed">OUTPUT:</span></p>
     <div class="indented">
@@ -473,15 +430,13 @@ Nested blockquote
   </div>
 
   <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1 1. Sub item 1.1 1. Sub item 1.2
+<pre><code class="hljs markdown"><span class="hljs-bullet">1. </span>Item 1 1. Sub item 1.1 1. Sub item 1.2
   <span class="hljs-bullet">* </span>Item 2 * item 2.1
   <span class="hljs-bullet">- </span>[ ] Item 3
   <span class="hljs-bullet">- </span>[x] Item 4
   <span class="hljs-bullet">- </span>( ) Item 5
   </code>
   </pre>
-  <div class="code-block-lang"><span>markdown</span></div>
-  </div>
   </span>
   <span id="examples" class="d-none">
 <ol>
@@ -501,7 +456,7 @@ Nested blockquote
   <hr>
   <div>
     <h2 id="code">Code<a class="fa fa-anchor" href="#code"></a></h2>
-    <p>MarkBind can provide syntax coloring for a code block (aka <em>Fenced Code Blocks</em>). The language of the code block is labelled as well.
+    <p>MarkBind can provide syntax coloring for a code block (aka <em>Fenced Code Blocks</em>).
       <span id="main-example"></span></p>
     <div>
       <p><span class="dimmed">CODE:</span></p>
@@ -516,13 +471,10 @@ Nested blockquote
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
         <box border-left-color="grey" background-color="white">
-          <div class="code-block">
-            <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+          <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </code></pre>
-            <div class="code-block-lang"><span>xml</span></div>
-          </div>
         </box>
       </div>
     </div>
@@ -556,15 +508,13 @@ or the java code `public static void main(String[] args)`{.java}.
 ```
 </span>
     <span id="examples" class="d-none">
-<div class="code-block"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
     </code>
     </pre>
-    <div class="code-block-lang"><span>xml</span></div>
-  </div>
-  <p>Syntax coloring for inline code: <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>    too!</p>
-  </span>
+    <p>Syntax coloring for inline code: <code class="hljs inline xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>      too!</p>
+    </span>
   </div>
   <hr>
   <div>
@@ -573,13 +523,10 @@ or the java code `public static void main(String[] args)`{.java}.
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown"><span class="hljs-section">*****
+        <pre><code class="hljs markdown"><span class="hljs-section">*****
 -----</span>
 <span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-emphasis">___</span>_
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -607,11 +554,8 @@ ______________
 <div>
 <p><span class="dimmed">CODE:</span></p>
     <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
+      <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
 </code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
     </div>
     <p><span class="dimmed">OUTPUT:</span></p>
     <div class="indented">
@@ -625,14 +569,11 @@ ______________
   <div>
     <p><span class="dimmed">CODE:</span></p>
     <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
+      <pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
 
 [<span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
 
 </code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
     </div>
     <p><span class="dimmed">OUTPUT:</span></p>
     <div class="indented">
@@ -677,23 +618,14 @@ ______________
   └── site.json
 </code></pre>
       <p>Within <code>textbook/subsite.md</code>, we can refer to the image using:</p>
-      <div class="code-block">
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
 </code></pre>
-        <div class="code-block-lang"><span>html</span></div>
-      </div>
       <p>Within <code>index.md</code>, we can also display the image using</p>
-      <div class="code-block">
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
 </code></pre>
-        <div class="code-block-lang"><span>html</span></div>
-      </div>
       <p>or by including <code>subsite.md</code>:</p>
-      <div class="code-block">
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/subsite.md"</span> /&gt;</span>
+      <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/subsite.md"</span> /&gt;</span>
 </code></pre>
-        <div class="code-block-lang"><span>html</span></div>
-      </div>
       <box type="important">
         Relative links to resources (e.g. images, hrefs) should be valid relative to the original, included file. In other words, the links should be accessible when traversing starting from the location of the included file.
         <br> In the example above, <code>image.png</code> is in the same directory as <code>subsite.md</code>. When using relative references, the correct path is <code>image.png</code> and not <code>textbook/image.png</code>.
@@ -701,14 +633,11 @@ ______________
     </div>
   </div>
   <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>). MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>].
-  [
+<pre><code class="hljs markdown">MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>). MarkBind home is at [<span class="hljs-string">here</span>][<span class="hljs-symbol">1</span>]. [
 
   <span class="hljs-symbol">1</span>]: <span class="hljs-link">https://markbind.org</span>
   </code>
   </pre>
-  <div class="code-block-lang"><span>markdown</span></div>
-  </div>
   </span>
   <span id="examples" class="d-none">
 <p>MarkBind home is at <a href="https://markbind.org">here</a>.
@@ -720,8 +649,7 @@ ______________
 <div>
 <p><span class="dimmed">CODE:</span></p>
     <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
+      <pre><code class="hljs markdown"><span class="hljs-strong">**Normal footnotes:**</span>
 Here is a footnote reference,[^1] and another.[^longnote]
 
 [<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
@@ -738,8 +666,6 @@ you don't have to pick an identifier and move down to type the
 note.]
 
 </code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
     </div>
     <p><span class="dimmed">OUTPUT:</span></p>
     <div class="indented">
@@ -756,7 +682,7 @@ note.]
   </div>
   </span>
   <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs html">**Normal footnotes:**
+<pre><code class="hljs html">**Normal footnotes:**
 Here is a footnote reference,[^1] and another.[^longnote]
 
 [^1]: Here is the footnote. Footnotes will appear at the bottom of the page.
@@ -764,9 +690,7 @@ Here is a footnote reference,[^1] and another.[^longnote]
 [^longnote]: Here's one with multiple blocks.
     Subsequent paragraphs are indented to show that they
 belong to the previous footnote.
-</code></pre><div class="code-block-lang"><span>html</span></div>
-  </div>
-  </span>
+</code></pre></span>
   <span id="examples" class="d-none">
 1 + 1 = 2 ^[Math]
 </span></div>
@@ -776,11 +700,8 @@ belong to the previous footnote.
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">![](https://markbind.org/images/logo-lightbackground.png)
+        <pre><code class="hljs markdown">![](https://markbind.org/images/logo-lightbackground.png)
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
         <box type="info">
           URLs can be specified as relative references. More info in: <i><a href="#intraSiteLinks">Intra-Site Links</a></i></box>
       </div>
@@ -804,15 +725,12 @@ belong to the previous footnote.
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">Animal | Trainable?| Price | Remarks
+        <pre><code class="hljs markdown">Animal | Trainable?| Price | Remarks
 :----- | :-------: | ----: | ----
 Ants   | no        | 5     |
 Bees   | no        | 20    |
 Cats|yes|100|
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -858,15 +776,13 @@ Cats|yes|100|
     </ul>
     <p><small>More info: <a href="https://www.markdownguide.org/extended-syntax#tables">https://www.markdownguide.org/extended-syntax#tables</a></small></p>
     <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown">Animal | Trainable?| Price | Remarks
+<pre><code class="hljs markdown">Animal | Trainable?| Price | Remarks
 :----- | :-------: | ----: | ----
 Ants   | no        | 5     |
 Bees   | no        | 20    |
 Cats|yes|100|
-</code></pre><div class="code-block-lang"><span>markdown</span></div>
-  </div>
-  </span>
-  <span id="examples" class="d-none">
+</code></pre></span>
+    <span id="examples" class="d-none">
 <div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead>
 <tr>
 <th style="text-align:left">Animal</th>
@@ -896,11 +812,8 @@ Cats|yes|100|
 <div>
 <p><span class="dimmed">CODE:</span></p>
     <div class="indented">
-      <div class="code-block">
-        <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
+      <pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
 </code></pre>
-        <div class="code-block-lang"><span>markdown</span></div>
-      </div>
     </div>
     <p><span class="dimmed">OUTPUT:</span></p>
     <div class="indented">
@@ -915,10 +828,8 @@ Cats|yes|100|
     </p>
   </div>
   <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
-</code></pre><div class="code-block-lang"><span>markdown</span></div>
-  </div>
-  </span>
+<pre><code class="hljs markdown">:+1: :exclamation: :x: :construction:
+</code></pre></span>
   <span id="examples" class="d-none">
 <p>👍 ❗️ ❌ 🚧
 </p></span></div>
@@ -982,13 +893,10 @@ Cats|yes|100|
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>)
+        <pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>)
 @[<span class="hljs-string">youtube</span>](<span class="hljs-link">http://www.youtube.com/watch?v=v40b3ExbM0c</span>)
 @[<span class="hljs-string">youtube</span>](<span class="hljs-link">http://youtu.be/v40b3ExbM0c</span>)
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -1003,11 +911,8 @@ Cats|yes|100|
     <div>
       <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <div class="code-block">
-          <pre><code class="hljs markdown">@[<span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
+        <pre><code class="hljs markdown">@[<span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
 </code></pre>
-          <div class="code-block-lang"><span>markdown</span></div>
-        </div>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
@@ -1018,17 +923,15 @@ Cats|yes|100|
       </div>
     </div>
     <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>) @[
+<pre><code class="hljs markdown">@[<span class="hljs-string">youtube</span>](<span class="hljs-link">v40b3ExbM0c</span>) @[
     <span class="hljs-string">youtube</span>](<span class="hljs-link">http://www.youtube.com/watch?v=v40b3ExbM0c</span>) @[
     <span class="hljs-string">youtube</span>](<span class="hljs-link">http://youtu.be/v40b3ExbM0c</span>) @[
 
     <span class="hljs-string">powerpoint</span>](<span class="hljs-link">https://onedrive.live.com/embed?cid=A5AF047C4CAD67AB&amp;resid=A5AF047C4CAD67AB%212070&amp;authkey=&amp;em=2</span>)
     </code>
     </pre>
-    <div class="code-block-lang"><span>markdown</span></div>
-  </div>
-  </span>
-  <span id="examples" class="d-none">
+    </span>
+    <span id="examples" class="d-none">
 <p>Embedded YouTube video:</p>
 <div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe></div>
 <p>Embedded slide deck:</p>
@@ -1043,14 +946,11 @@ Cats|yes|100|
       <div>
         <p><span class="dimmed">CODE:</span></p>
         <div class="indented">
-          <div class="code-block">
-            <pre><code class="hljs markdown">\* item 1
+          <pre><code class="hljs markdown">\* item 1
 
 <span class="hljs-bullet">* </span>item 1
 
 </code></pre>
-            <div class="code-block-lang"><span>markdown</span></div>
-          </div>
         </div>
         <p><span class="dimmed">OUTPUT:</span></p>
         <div class="indented">
@@ -1140,7 +1040,7 @@ Cats|yes|100|
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.8.0</a> on Wed, 25 Dec 2019 02:45:50 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.9.0</a> on Mon, 06 Jan 2020 07:25:44 GMT]</small></div>
   </footer>
   </div>
 </body>

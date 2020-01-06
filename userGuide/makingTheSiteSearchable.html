@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.8.0">
+  <meta name="generator" content="MarkBind 2.9.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Making the Site Searchable</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -111,22 +111,16 @@
           <div>
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <div class="code-block">
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search (Right-aligned dropdown)"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </code></pre>
-                <div class="code-block-lang"><span>html</span></div>
-              </div>
               <p>To use the searchbar within a navbar, add the following markup to your file. The searchbar can be positioned using the slot attribute for the list. The following markup adds a searchbar to the right side of the navbar with appropriate styling.</p>
-              <div class="code-block">
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
+              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-                <div class="code-block-lang"><span>html</span></div>
-              </div>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
@@ -194,111 +188,94 @@
           <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">User Guide: Using Plugins → Algolia: Enabling Algolia DocSearch</a>.</span>
           </p>
           <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=
-          <span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span>          <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
           </code>
           </pre>
-          <div class="code-block-lang"><span>html</span></div>
-        </div>
-        <div class="code-block">
           <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-          <div class="code-block-lang"><span>html</span></div>
-        </div>
-        </span>
-        <span id="examples" class="d-none">
+          </span>
+          <span id="examples" class="d-none">
 <p><searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar></p></span></div>
-      <div>
-        <h2 id="keywords">Keywords<a class="fa fa-anchor" href="#keywords"></a></h2>
-        <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword
-          without rendering it in the page, add <code>d-none</code> as a class.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-          <div class="code-block">
+        <div>
+          <h2 id="keywords">Keywords<a class="fa fa-anchor" href="#keywords"></a></h2>
+          <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword
+            without rendering it in the page, add <code>d-none</code> as a class.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
             <pre><code class="hljs html">#### Developer Testing
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 
 This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword"</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
 </code></pre>
-            <div class="code-block-lang"><span>html</span></div>
+            <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
+            <box>
+              <p><big><strong>Developer Testing</strong></big><br></p>
+              <p>This is good for catching <span class="keyword">regressions</span>.
+              </p>
+            </box>
           </div>
-          <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
-          <box>
-            <p><big><strong>Developer Testing</strong></big><br></p>
-            <p>This is good for catching <span class="keyword">regressions</span>.
-            </p>
-          </box>
-        </div>
-        <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-          <div class="code-block">
+          <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
             <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
   keywords: regress, regression testing, regressions
 <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 ...
 </code></pre>
-            <div class="code-block-lang"><span>html</span></div>
           </div>
+          <span id="short" class="d-none">
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          </code>
+          </pre>
+          </span>
         </div>
-        <span id="short" class="d-none">
-<div class="code-block"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        </code>
-        </pre>
-        <div class="code-block-lang"><span>html</span></div>
-      </div>
-      </span>
-    </div>
-    <div>
-      <h2 id="including-or-excluding-headings">Including or Excluding Headings<a class="fa fa-anchor" href="#including-or-excluding-headings"></a></h2>
-      <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code>.always-index</code> or <code>.no-index</code> attributes.</p>
-      <p>If you wish to index a specific heading outside the specified <code>headingIndexLevel</code>, you may add the <code>.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code>headingIndexLevel</code>        not to be indexed, you may add the <code>.no-index</code> attribute to the heading.</p>
-      <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-        <div class="code-block">
-          <pre><code class="hljs md"><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span>
+        <div>
+          <h2 id="including-or-excluding-headings">Including or Excluding Headings<a class="fa fa-anchor" href="#including-or-excluding-headings"></a></h2>
+          <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code>.always-index</code> or <code>.no-index</code> attributes.</p>
+          <p>If you wish to index a specific heading outside the specified <code>headingIndexLevel</code>, you may add the <code>.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code>headingIndexLevel</code>            not to be indexed, you may add the <code>.no-index</code> attribute to the heading.</p>
+          <div class="indented">
+            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
+            <pre><code class="hljs md"><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span>
 
 <span class="hljs-section"># Heading inside heading index level that will not be indexed {.no-index}</span>
 </code></pre>
-          <div class="code-block-lang"><span>md</span></div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="clearfix">
-      <p><span class="float-left"><b-btn variant="light" href="/userGuide/reusingContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Reusing Contents</span></span>
-        </b-btn>
-        </span>
-      </p>
-      <p><span class="float-right"><b-btn variant="light" href="/userGuide/deployingTheSite.html"><span><span>Deploying the Site</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
-        </b-btn>
-        </span>
-      </p>
-    </div>
-    <br></div>
-  <nav id="page-nav" class="navbar navbar-light bg-transparent">
-    <div class="border-left-grey nav-inner position-sticky slim-scroll">
+        <div class="clearfix">
+          <p><span class="float-left"><b-btn variant="light" href="/userGuide/reusingContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Reusing Contents</span></span>
+            </b-btn>
+            </span>
+          </p>
+          <p><span class="float-right"><b-btn variant="light" href="/userGuide/deployingTheSite.html"><span><span>Deploying the Site</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
+            </b-btn>
+            </span>
+          </p>
+        </div>
+        <br></div>
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
-      <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-        <a class="nav-link py-1" href="#making-the-site-searchable">Making the Site Searchable&#x200E;</a>
-        <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-          <a class="nav-link py-1" href="#search-bars">Search Bars&#x200E;</a>
-          <a class="nav-link py-1" href="#keywords">Keywords&#x200E;</a>
-          <a class="nav-link py-1" href="#including-or-excluding-headings">Including or Excluding Headings&#x200E;</a>
-        </nav>
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#making-the-site-searchable">Making the Site Searchable&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#search-bars">Search Bars&#x200E;</a>
+              <a class="nav-link py-1" href="#keywords">Keywords&#x200E;</a>
+              <a class="nav-link py-1" href="#including-or-excluding-headings">Including or Excluding Headings&#x200E;</a>
+            </nav>
 
+          </nav>
+        </div>
       </nav>
     </div>
-  </nav>
-  </div>
-  <footer>
-    <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.8.0</a> on Wed, 25 Dec 2019 02:45:50 GMT]</small></div>
-  </footer>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.9.0</a> on Mon, 06 Jan 2020 07:25:44 GMT]</small></div>
+    </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
