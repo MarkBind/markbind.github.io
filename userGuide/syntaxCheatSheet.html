@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.9.0">
+  <meta name="generator" content="MarkBind 2.9.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Syntax Cheat Sheet</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -387,7 +387,61 @@ Nested blockquote
                   </box>
                 </div>
               </div>
-              <p><strong>You can customize the TipBox's appearance.</strong></p>
+              <p><strong>Markbind also supports a light color scheme for boxes</strong></p>
+              <div>
+                <p><span class="dimmed">CODE:</span></p>
+                <div class="indented">
+                  <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">light</span>&gt;</span>
+    info light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">light</span>&gt;</span>
+    warning light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">light</span>&gt;</span>
+    success light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"important"</span> <span class="hljs-attr">light</span>&gt;</span>
+    important light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"wrong"</span> <span class="hljs-attr">light</span>&gt;</span>
+    wrong light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tip"</span> <span class="hljs-attr">light</span>&gt;</span>
+    tip light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"definition"</span> <span class="hljs-attr">light</span>&gt;</span>
+    definition light
+<span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
+</code></pre>
+                </div>
+                <p><span class="dimmed">OUTPUT:</span></p>
+                <div class="indented">
+                  <box border-left-color="grey" background-color="white">
+                    <box type="info" light="">
+                      info light
+                    </box>
+                    <box type="warning" light="">
+                      warning light
+                    </box>
+                    <box type="success" light="">
+                      success light
+                    </box>
+                    <box type="important" light="">
+                      important light
+                    </box>
+                    <box type="wrong" light="">
+                      wrong light
+                    </box>
+                    <box type="tip" light="">
+                      tip light
+                    </box>
+                    <box type="definition" light="">
+                      definition light
+                    </box>
+                  </box>
+                </div>
+              </div>
+              <p><strong>You can customize the Box's appearance.</strong></p>
               <div>
                 <p><span class="dimmed">CODE:</span></p>
                 <div class="indented">
@@ -465,6 +519,12 @@ Nested blockquote
                       <td><code>String</code></td>
                       <td><code>'none'</code></td>
                       <td>Supports: <code>info</code>, <code>warning</code>, <code>success</code>, <code>important</code>, <code>wrong</code>, <code>tip</code>, <code>definition</code>, or empty for default.</td>
+                    </tr>
+                    <tr>
+                      <td>light</td>
+                      <td><code>Boolean</code></td>
+                      <td><code>false</code></td>
+                      <td>Uses a light color scheme for the box.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -4670,13 +4730,13 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
         <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
         <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated at: Mon, 06 Jan 2020 07:25:44 GMT</p>
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated at: Fri, 24 Jan 2020 13:09:12 GMT</p>
         </div>
         <p></p>
         <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
         <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated by: <a href="https://markbind.org/">MarkBind 2.9.0</a></p>
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated by: <a href="https://markbind.org/">MarkBind 2.9.1</a></p>
         </div>
         <p></p>
         <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -4837,7 +4897,7 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.9.0</a> on Mon, 06 Jan 2020 07:25:44 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.9.1</a> on Fri, 24 Jan 2020 13:09:12 GMT]</small></div>
   </footer>
   </div>
 </body>
