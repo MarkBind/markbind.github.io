@@ -44,13 +44,15 @@
       "headings": {
         "markbind-cli": "MarkBind CLI",
         "overview": "Overview",
+        "init-command": "init Command",
+        "serve-command": "serve Command",
         "build-command": "build Command",
         "deploy-command": "deploy Command",
-        "init-command": "init Command",
-        "serve-command": "serve Command"
+        "help-option": "--help Option"
       },
       "title": "User Guide: Command Line Interface (CLI)",
       "layout": "userGuide",
+      "pageNav": "default",
       "src": "userGuide/cliCommands.md"
     },
     {
@@ -191,8 +193,8 @@
         "importing-variables": "Importing Variables",
         "variables-tips-and-tricks": "Variables: Tips and Tricks",
         "includes": "Includes",
-        "include-inside-an-included-file": "&lt;include&gt; Inside an Included File",
-        "specifying-variables-in-an-include": "Specifying Variables in an &lt;include&gt;",
+        "and-lt-include-and-gt-inside-an-included-file": "&lt;include&gt; Inside an Included File",
+        "specifying-variables-in-an-and-lt-include-and-gt": "Specifying Variables in an &lt;include&gt;",
         "using-boilerplate-files": "Using Boilerplate Files",
         "reusing-contents-across-sites": "Reusing Contents Across Sites",
         "creating-content-variations": "Creating Content Variations",
@@ -267,7 +269,7 @@
     },
     {
       "headings": {
-        "tips-and-tricks": "Tips &amp; Tricks",
+        "tips-and-amp-tricks": "Tips &amp; Tricks",
         "tip-escaping-characters": "Tip: Escaping Characters",
         "problem-unwanted-starting-space-in-links-and-triggers": "Problem: Unwanted starting space in links and triggers"
       },
@@ -279,13 +281,15 @@
       "headings": {
         "tweaking-the-page-structure": "Tweaking the Page Structure",
         "front-matter": "Front Matter",
-        "page-head": "Page &lt;head&gt;",
+        "page-and-lt-head-and-gt": "Page &lt;head&gt;",
         "headers": "Headers",
         "footers": "Footers",
         "site-navigation-menus": "Site Navigation Menus",
         "page-navigation-menus": "Page Navigation Menus",
         "page-layouts": "Page Layouts",
         "attaching-event-listeners-in-scripts-js": "Attaching event listeners in scripts.js",
+        "using-expressive-layout-templates": "Using Expressive Layout Templates",
+        "main-content-of-your-page": "Main content of your page",
         "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags"
@@ -299,9 +303,6 @@
       "headings": {
         "using-components": "Using Components",
         "badges": "Badges",
-        "feature-x-beta": "Feature X beta",
-        "feature-y-stable": "Feature Y stable",
-        "feature-y-stable-2": "Feature Y stable",
         "boxes": "Boxes",
         "dropdowns": "Dropdowns",
         "modals": "Modals",
@@ -310,7 +311,6 @@
         "panels": "Panels",
         "pictures": "Pictures",
         "popovers": "Popovers",
-        "undefined": "Wrap Text",
         "questions": "Questions",
         "site-navigation-menus": "Site Navigation Menus",
         "tabs": "Tabs",

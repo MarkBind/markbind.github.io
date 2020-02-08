@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.9.1">
+  <meta name="generator" content="MarkBind 2.10.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Tweaking the Page Structure</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -128,7 +128,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="page-head">Page <code>&lt;head&gt;</code><a class="fa fa-anchor" href="#page-head"></a></h2>
+          <h2 id="page-and-lt-head-and-gt">Page <code>&lt;head&gt;</code><a class="fa fa-anchor" href="#page-and-lt-head-and-gt"></a></h2>
           <p><strong>MarkBind allows you to insert code into the <code>&lt;head&gt;</code> section of the generated HTML page</strong>, for example, to add links to custom JavaScript or CSS files.</p>
           <p>Steps:</p>
           <ol>
@@ -207,8 +207,8 @@
         <hr>
         <div>
           <h2 id="headers">Headers<a class="fa fa-anchor" href="#headers"></a></h2>
-          <p><strong>You can specify a <tooltip content="Content to be placed at the top of a page.">page header</tooltip></strong> above your page contents and
-            <tooltip content="Site Navigation and <br>Page Navigation menus">navigation menus</tooltip> using a header file.</p>
+          <p><strong>You can specify a <tooltip><template slot="_content">Content to be placed at the top of a page.</template>page header</tooltip></strong> above your page contents and
+            <tooltip><template slot="_content">Site Navigation and <br>Page Navigation menus</template>navigation menus</tooltip> using a header file.</p>
           <p>You can save multiple header files in the <code>_markbind/headers</code> folder and specify it in the <code>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>
@@ -252,7 +252,7 @@
         <hr>
         <div>
           <h2 id="footers">Footers<a class="fa fa-anchor" href="#footers"></a></h2>
-          <p><strong>You can specify a <tooltip content="For an example of a page footer, see the bottom of this page.">page footer</tooltip></strong> using a footer file.</p>
+          <p><strong>You can specify a <tooltip><template slot="_content">For an example of a page footer, see the bottom of this page.</template>page footer</tooltip></strong> using a footer file.</p>
           <p>You can save multiple footer files in the <code>_markbind/footers</code> folder and specify it in the <code>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>
@@ -337,12 +337,10 @@
               </li>
             </ul>
           </div>
-          <p>You can <strong>append the <code>:expanded:</code> to a <tooltip content="a menu item with sub menu-items">parent menu item</tooltip> to make it expand by default.</strong> In the example above, <code>* Docs :expanded:</code> will make the menu
-            item
-            <code>Docs</code> expand by default.</p>
+          <p>You can <strong>append the <code>:expanded:</code> to a <tooltip><template slot="_content">a menu item with sub menu-items</template>parent menu item</tooltip> to make it expand by default.</strong> In the example above, <code>* Docs :expanded:</code>            will make the menu item <code>Docs</code> expand by default.</p>
           <p>A parent menu item that is also linked will not be collapsible <span class="dimmed">e.g., the <code>Search</code> menu item in the above example</span>.</p>
           <p>You may have additional HTML and Markdown content in a
-            <tooltip content="the file containing the code for a site navigation menu, e.g., `mySiteNav.md` in the example above">siteNav file</tooltip>, in which case the code for the siteNav should be enclosed in a <code>&lt;navigation&gt;</code> tag. There should only be one <code>&lt;navigation&gt;</code> tag in the file.</p>
+            <tooltip><template slot="_content">the file containing the code for a site navigation menu, e.g., <code>mySiteNav.md</code> in the example above</template>siteNav file</tooltip>, in which case the code for the siteNav should be enclosed in a <code>&lt;navigation&gt;</code>            tag. There should only be one <code>&lt;navigation&gt;</code> tag in the file.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> A siteNav code using a <code>&lt;navigation&gt;</code> tag.</p>
             <box>
@@ -383,8 +381,8 @@
           <p>Steps to add a pageNav:</p>
           <ol>
             <li>Specify your pageNav within the <code>&lt;frontmatter&gt;</code> of a page with
-              <tooltip content="The value `default` will use `headingIndexingLevel` within `site.json`."><code>&quot;default&quot;</code></tooltip> or a
-              <tooltip content="HTML defines six levels of headings, numbered from <br>`1 to 6`."><code>heading level</code></tooltip>.</li>
+              <tooltip><template slot="_content">The value <code>default</code> will use <code>headingIndexingLevel</code> within <code>site.json</code>.</template><code>&quot;default&quot;</code></tooltip> or a
+              <tooltip><template slot="_content">HTML defines six levels of headings, numbered from <br><code>1 to 6</code>.</template><code>heading level</code></tooltip>.</li>
             <li>(Optional) You may also specify a page navigation title within <code>&lt;frontmatter&gt;</code> that will be placed at the top of the page navigation menu.</li>
           </ol>
           <div class="indented">
@@ -409,6 +407,7 @@
 </p></span></div>
         <hr>
         <div>
+          <div></div>
           <h2 id="page-layouts">Page Layouts<a class="fa fa-anchor" href="#page-layouts"></a></h2>
           <p><strong>A <em>layout</em> is a set of page-tweaks that can be applied to a page (or group of pages) in one go.</strong></p>
           <p>A layout consists of the following files:</p>
@@ -417,6 +416,7 @@
             <li>A footer (filename: <code>footer.md</code>)</li>
             <li>Tweaks to the <code>&lt;head&gt;</code> (<code>head.md</code>)</li>
             <li>A site navigation menu (<code>navigation.md</code>)</li>
+            <li>An expressive layout template to embed your content (<code>page.md</code>)</li>
             <li>Custom styles (<code>styles.css</code>)</li>
             <li>Custom scripts (<code>scripts.js</code>)</li>
           </ol>
@@ -429,6 +429,7 @@
                         ├── header.md
                         ├── footer.md
                         ├── head.md
+                        ├── page.md
                         ├── navigation.md
                         ├── styles.css
                         └── scripts.js
@@ -482,6 +483,39 @@
           </code>
           </pre>
           </span>
+          <h4 id="using-expressive-layout-templates">Using Expressive Layout Templates<a class="fa fa-anchor" href="#using-expressive-layout-templates"></a></h4>
+          <p>In the <code>page.md</code> file of your layouts, it should come with the following reserved variable:</p>
+          <box>
+            <p><code>{<span></span>{ MAIN_CONTENT_BODY }}</code></p>
+          </box>
+          <p>which injects the actual page content in every page. This allows you to build layouts in different ways.</p>
+          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Adding statistics formula to the bottom of every page</p>
+          <box>
+            <i>index.md</i>
+            <br><br>
+            <pre><code class="hljs html">#### Main content of your page
+
+Content of your page
+</code></pre>
+          </box>
+          <box>
+            <i>page.md</i>
+            <br><br>
+            <p><code>{<span></span>{ MAIN_CONTENT_BODY }}</code></p>
+            <pre><code class="hljs html">  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span>
+</code></pre>
+          </box>
+          <p>Here's how the above content would appear:</p>
+          <box>
+            <i>index.html</i>
+            <br><br>
+            <h4 id="main-content-of-your-page">Main content of your page<a class="fa fa-anchor" href="#main-content-of-your-page"></a></h4>
+            <p>Content of your page</p>
+            <panel type="primary"><template slot="_header"><p>Statistics Formula for the class</p></template>
+              <img src="/userGuide/syntax/extra/stats.png" width="420px" height="320px"></panel>
+          </box>
         </div>
         <hr>
         <div>
@@ -628,7 +662,7 @@
             <a class="nav-link py-1" href="#tweaking-the-page-structure">Tweaking the Page Structure&#x200E;</a>
             <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
               <a class="nav-link py-1" href="#front-matter">Front Matter&#x200E;</a>
-              <a class="nav-link py-1" href="#page-head">Page &lt;head&gt;&#x200E;</a>
+              <a class="nav-link py-1" href="#page-and-lt-head-and-gt">Page &lt;head&gt;&#x200E;</a>
               <a class="nav-link py-1" href="#headers">Headers&#x200E;</a>
               <a class="nav-link py-1" href="#footers">Footers&#x200E;</a>
               <a class="nav-link py-1" href="#site-navigation-menus">Site Navigation Menus&#x200E;</a>
@@ -642,7 +676,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.9.1</a> on Fri, 24 Jan 2020 13:09:12 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.10.0</a> on Sat, 08 Feb 2020 02:37:44 GMT]</small></div>
     </footer>
   </div>
 </body>
@@ -656,6 +690,7 @@
   const enableSearch = true
 </script>
 <script src="../markbind/js/setup.js"></script>
+
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
 
 </html>

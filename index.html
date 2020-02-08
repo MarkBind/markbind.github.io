@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.9.1">
+  <meta name="generator" content="MarkBind 2.10.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Generate More Dynamic Websites from Markdown Text</title>
   <link rel="stylesheet" href="markbind/css/bootstrap.min.css">
@@ -15,8 +15,6 @@
   <link rel="stylesheet" href="markbind/css/github.min.css">
   <link rel="stylesheet" href="markbind/css/markbind.css">
   <link rel="stylesheet" href="markbind/layouts/default/styles.css">
-
-
 
   <link rel="icon" href="/favicon.ico">
 </head>
@@ -44,11 +42,12 @@
       </navbar>
     </header>
     <div id="flex-body">
+
       <div id="content-wrapper">
         <div tags="environment--ug">
-          <h1 class="display-3"><span><strong>MarkBind</strong></span></h1>
+          <h1 class="display-3" id="markbind"><span><strong>MarkBind</strong></span><a class="fa fa-anchor" href="#markbind"></a></h1>
           <span class="lead">
-<p><big><strong>Generate <tooltip content="as opposed to _one-size-fits-all_ static content"><em>more dynamic</em></tooltip> websites from Markdown text.</strong></big>
+<p><big><strong>Generate <tooltip><template slot="_content">as opposed to <em>one-size-fits-all</em> static content</template><em>more dynamic</em></tooltip> websites from Markdown text.</strong></big>
 Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning websites, online instruction manuals, project documentation etc.</span>.
           </p>
           </span>
@@ -58,7 +57,8 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           <hr>
           <h4 id="simple-syntax-dynamic-content"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Simple syntax. Dynamic content.<a class="fa fa-anchor" href="#simple-syntax-dynamic-content"></a></h4>
           <p>MarkBind source files can be as simple as basic Markdown, but you can also <a href="/userGuide/markBindSyntax.html"><strong>use a mix of several popular syntax schemes</strong></a> (
-            <tooltip content="GitHub Flavored Markdown">GFMD</tooltip>, BootStrap, NunJucks, etc. as well as MarkBind's own custom syntax) to create more dynamic content that you cannot normally get from a typical markdown-to-html site generator.</p>
+            <tooltip><template slot="_content">GitHub Flavored Markdown</template>GFMD</tooltip>, BootStrap, NunJucks, etc. as well as MarkBind's own custom syntax) to create more dynamic content that you cannot normally get from a typical markdown-to-html site
+            generator.</p>
           <p>Here are some simple text-formatting examples:</p>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
@@ -88,7 +88,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
               </tbody>
             </table>
           </div>
-          <panel type="seamless" header="%%More examples of generating static content%%">
+          <panel type="seamless"><template slot="_header"><p><span class="dimmed">More examples of generating static content</span></p></template>
             <p>An example that uses GFMD synatx for task lists:</p>
             <table>
               <tr>
@@ -124,19 +124,17 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           <p>The example paragraph below has the following dynamic elements: a tooltip, a popover, and a modal. Hover/click on the underlined words to see each.</p>
           <box>
             <p>In
-              <tooltip content="Computer Science">CS</tooltip>, a binary tree is a
+              <tooltip><template slot="_content">Computer Science</template>CS</tooltip>, a binary tree is a
               <trigger for="pop:index-tree">tree data structure</trigger> in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>.
               <trigger trigger="click" for="modal:index-primitive">Primitive data types</trigger> on the other hand ...</p>
-            <popover id="pop:index-tree" title="An example tree data structure" placement="top">
-
+            <popover id="pop:index-tree" placement="top"><template slot="header">An example tree data structure</template>
               <div slot="content">
                 <p><a href="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" target="_self"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" alt="" class="img-fluid"></a><br>
                   <span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
                 <p></p>
               </div>
             </popover>
-            <modal large="" title="Some examples of primitive data types" id="modal:index-primitive">
-
+            <modal large="" id="modal:index-primitive"><template slot="_header">Some examples of primitive data types</template>
               <div>
                 <ul>
                   <li>Boolean, true or false.</li>
@@ -152,11 +150,10 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
               </div>
             </modal>
           </box>
-          <panel type="seamless" header="%%More examples of generating dynamic content%%">
-            In the example below, there is an expandable panel that can reveal more content.
+          <panel type="seamless"><template slot="_header"><p><span class="dimmed">More examples of generating dynamic content</span></p></template> In the example below, there is an expandable panel that can reveal more content.
             <box>
               <p>A binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. Primitive data types on the other hand ...</p>
-              <panel header="%%:fas-info-circle: Some example primitive data types%%">
+              <panel><template slot="_header"><p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Some example primitive data types</span></p></template>
                 <div>
                   <ul>
                     <li>Boolean, true or false.</li>
@@ -174,16 +171,16 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
             </box>
             <p>In the example below, there are expandable panels that are nested within each other.</p>
             <box>
-              <panel header=":far-list-alt: Exercises" no-close="">
-                <panel type="danger" header=":exclamation: [Compulsory] Ex 1" no-close="">
+              <panel no-close=""><template slot="_header"><p><span aria-hidden="true" class="far fa-list-alt"></span> Exercises</p></template>
+                <panel type="danger" no-close=""><template slot="_header"><p>❗️ [Compulsory] Ex 1</p></template>
                   <p>Details of exercise 1
                   </p>
                 </panel>
-                <panel type="warning" header="[Recommended] Ex 2" no-close="">
+                <panel type="warning" no-close=""><template slot="_header"><p>[Recommended] Ex 2</p></template>
                   <p>Details of exercise 2
                   </p>
                 </panel>
-                <panel type="success" header="[Optional] Ex 23" no-close="">
+                <panel type="success" no-close=""><template slot="_header"><p>[Optional] Ex 23</p></template>
                   <p>Details of exercise 3
                   </p>
                 </panel>
@@ -210,7 +207,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           <box>
             <p>In CS, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>.
               <trigger trigger="click" for="modal:index-primitive2">Primitive data types</trigger> on the other hand ...</p>
-            <panel type="seamless" header="%%:fas-info-circle: Some example primitive data types%%">
+            <panel type="seamless"><template slot="_header"><p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Some example primitive data types</span></p></template>
               <div>
                 <ul>
                   <li>Boolean, true or false.</li>
@@ -225,8 +222,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
                 <p><span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
               </div>
             </panel>
-            <modal large="" title="Some examples of primitive data types" id="modal:index-primitive2">
-
+            <modal large="" id="modal:index-primitive2"><template slot="_header">Some examples of primitive data types</template>
               <div>
                 <ul>
                   <li>Boolean, true or false.</li>
@@ -251,10 +247,11 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           </p>
         </div>
       </div>
+
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.9.1</a> on Fri, 24 Jan 2020 13:09:12 GMT]</small><br>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.10.0</a> on Sat, 08 Feb 2020 02:37:44 GMT]</small><br>
         <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
     </footer>
   </div>
@@ -269,6 +266,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
   const enableSearch = true
 </script>
 <script src="markbind/js/setup.js"></script>
+
 <script src="markbind/layouts/default/scripts.js"></script>
 
 </html>
