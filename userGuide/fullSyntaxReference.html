@@ -5,18 +5,18 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.10.0">
+  <meta name="generator" content="MarkBind 2.11.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Full Syntax Reference</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
   <link rel="stylesheet" href="../markbind/css/site-nav.css">
-
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -305,9 +305,9 @@ Nested blockquote
 <span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"info"</span> <span class="hljs-attr">dismissible</span>&gt;</span>
     dismissible info
 <span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Tip box header"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"success"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"#### Header :rocket:"</span> <span class="hljs-attr">icon-size</span>=<span class="hljs-string">"2x"</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    <span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Tip box header"</span> <span class="hljs-attr">dismissible</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"warning"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"You can use **markdown** here! :pizza:"</span> <span class="hljs-attr">dismissible</span>&gt;</span>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     <span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">box</span>&gt;</span>
@@ -343,10 +343,10 @@ Nested blockquote
                   <box type="info" dismissible="">
                     dismissible info
                   </box>
-                  <box type="success" header="Tip box header">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    <box type="warning" header="Tip box header" dismissible="">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <box type="success" icon-size="2x"><template slot="_header"><h4 id="header">Header 🚀<a class="fa fa-anchor" href="#header"></a></h4></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <box type="warning" dismissible=""><template slot="_header"><p>You can use <strong>markdown</strong> here! 🍕</p></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </box>
                   </box>
                 </box>
@@ -576,7 +576,7 @@ Nested blockquote
                       <hr style="margin-top:0.2rem; margin-bottom:0"> <small>heading <br> (deprecated)</small></td>
                     <td><code>String</code></td>
                     <td><code>null</code></td>
-                    <td>Plain text of the header on the top right corner.</td>
+                    <td>Markdown text of the box header.</td>
                   </tr>
                   <tr>
                     <td>type</td>
@@ -702,7 +702,8 @@ or the java code `public static void main(String[] args)`{.java}.
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Action"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+                <pre><code class="hljs html"><span class="hljs-comment">&lt;!--Notice how header attribute supports inline MarkDown--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"*Action*"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#dropdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -725,8 +726,8 @@ or the java code `public static void main(String[] args)`{.java}.
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <div class="temp-dropdown-placeholder">Action</div>
-                  <dropdown header="Action" type="primary" class="temp-dropdown">
+                  <div class="temp-dropdown-placeholder">*Action*</div>
+                  <dropdown type="primary" class="temp-dropdown"><template slot="_header"><em>Action</em></template>
                     <li><a href="#dropdown" class="dropdown-item">Action</a></li>
                     <li><a href="#dropdown" class="dropdown-item">Another action</a></li>
                     <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
@@ -739,7 +740,7 @@ or the java code `public static void main(String[] args)`{.java}.
                     <li><a href="#dropdown" class="dropdown-item">...</a></li>
                   </dropdown>
                   <div class="temp-dropdown-placeholder">Right aligned list</div>
-                  <dropdown header="Right aligned list" type="primary" menu-align-right="" class="temp-dropdown">
+                  <dropdown type="primary" menu-align-right="" class="temp-dropdown"><template slot="_header">Right aligned list</template>
                     <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
                   </dropdown>
                 </box>
@@ -822,7 +823,7 @@ or the java code `public static void main(String[] args)`{.java}.
                       <hr style="margin-top:0.2rem; margin-bottom:0"> <small>text <br> (deprecated)</small></td>
                     <td><code>String</code></td>
                     <td><code>''</code></td>
-                    <td>Dropdown button header text.</td>
+                    <td>Dropdown button header text. (Supports inline MarkDown syntax)</td>
                   </tr>
                   <tr>
                     <td>type</td>
@@ -867,7 +868,7 @@ or the java code `public static void main(String[] args)`{.java}.
               </pre>
               </span>
               <span id="examples" class="d-none">
-<div class="temp-dropdown-placeholder">Action</div><dropdown header="Action" type="primary" class="temp-dropdown">
+<div class="temp-dropdown-placeholder">Action</div><dropdown type="primary" class="temp-dropdown"><template slot="_header">Action</template>
   <li><a href="#dropdown" class="dropdown-item">Action</a></li>
   <li><a href="#dropdown" class="dropdown-item">Another action</a></li>
   <li><a href="#dropdown" class="dropdown-item">Something else here</a></li>
@@ -1228,8 +1229,8 @@ ______________
   <panel type="seamless" id="icons"><template slot="_header"><h6 id="icons"><strong>Icons</strong><a class="fa fa-anchor" href="#icons"></a></h6></template>
     <div>
       <h2 id="icons-2">Icons<a class="fa fa-anchor" href="#icons-2"></a></h2>
-      <p><small><span class="dimmed">Acknowledgement: Font Awesome icons are provided by <a href="https://fontawesome.com/">Font Awesome</a> under their <a href="https://fontawesome.com/license">free license</a> while Glyphicons are provided by <a href="https://glyphicons.com/">Glyphicons</a> via <a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3</a>.</span></small></p>
-      <p>MarkBind supports using Font Icons provided by Font Awesome and Glyphicons.</p>
+      <p><small><span class="dimmed">Acknowledgement: Font Awesome icons are provided by <a href="https://fontawesome.com/">Font Awesome</a> under their <a href="https://fontawesome.com/license">free license</a>, Glyphicons are provided by <a href="https://glyphicons.com/">Glyphicons</a> via <a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3</a>, and <a href="https://octicons.github.com">Octicons</a> are copyright of GitHub.</span></small></p>
+      <p>MarkBind supports using Font Icons provided by Font Awesome, Glyphicons and GitHub's Octicons.</p>
       <div>
         <box border-left-color="#00B0F0">
           <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
@@ -1275,6 +1276,12 @@ ______________
 <p><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span> <span class="dimmed"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span>      <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span></span> <span style="color: red"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span>      <span aria-hidden="true" class="fas fa-home"></span></span>
       </p>
       </span>
+      <h6 id="using-octicons">Using Octicons<a class="fa fa-anchor" href="#using-octicons"></a></h6>
+      <ol>
+        <li>Decide which icon you want to use from <a href="https://octicons.github.com">list of available Octicons</a>.</li>
+        <li>Insert the name for the icon enclosed within colons to get the icon in your page.<br>
+          <code>Merge a **pull request** :octicon-git-pull-request:</code> → Merge a <strong>pull request</strong> <svg version="1.1" width="12" height="16" viewbox="0 0 12 16" class="octicon octicon-git-pull-request" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0010 15a1.993 1.993 0 001-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 00-1 3.72v6.56A1.993 1.993 0 002 15a1.993 1.993 0 001-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg></li>
+      </ol>
     </div>
   </panel>
   <panel type="seamless" id="images"><template slot="_header"><h6 id="images"><strong>Images</strong><a class="fa fa-anchor" href="#images"></a></h6></template>
@@ -2046,7 +2053,7 @@ Modal content
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
               <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
-              <dropdown header="Dropdown" class="nav-link temp-dropdown">
+              <dropdown class="nav-link temp-dropdown"><template slot="_header">Dropdown</template>
                 <li><a href="#navbar" class="dropdown-item">Option</a></li>
               </dropdown>
 
@@ -2058,7 +2065,7 @@ Modal content
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
               <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
-              <dropdown header="Dropdown" class="nav-link temp-dropdown">
+              <dropdown class="nav-link temp-dropdown"><template slot="_header">Dropdown</template>
                 <li><a href="#navbar" class="dropdown-item">Option</a></li>
               </dropdown>
 
@@ -2070,7 +2077,7 @@ Modal content
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
 
               <div class="nav-link temp-dropdown-placeholder">Dropdown</div>
-              <dropdown header="Dropdown" class="nav-link temp-dropdown">
+              <dropdown class="nav-link temp-dropdown"><template slot="_header">Dropdown</template>
                 <li><a href="#navbar" class="dropdown-item">Option</a></li>
               </dropdown>
 
@@ -2129,7 +2136,7 @@ Modal content
   
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
-  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown header="Dropdown" class="nav-link temp-dropdown">
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown class="nav-link temp-dropdown"><template slot="_header">Dropdown</template>
     <li><a href="#navbar" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
@@ -2138,7 +2145,7 @@ Modal content
   
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
-  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown header="Dropdown" class="nav-link temp-dropdown">
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown class="nav-link temp-dropdown"><template slot="_header">Dropdown</template>
     <li><a href="#navbar" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
@@ -2147,7 +2154,7 @@ Modal content
   
   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
   
-  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown header="Dropdown" class="nav-link temp-dropdown">
+  <div class="nav-link temp-dropdown-placeholder">Dropdown</div><dropdown class="nav-link temp-dropdown"><template slot="_header">Dropdown</template>
     <li><a href="#navbar" class="dropdown-item">Option</a></li></dropdown>
   
   <li slot="right">
@@ -2927,7 +2934,7 @@ This is another paragraph. This is the second sentence.
             <popover effect="fade" placement="bottom"><template slot="content">Lorem ipsum dolor sit amet</template>
               <button class="btn btn-secondary">Popover on bottom</button></popover>
             <hr>
-            <h4 class="no-index" id="header">Header<a class="fa fa-anchor" href="#header"></a></h4>
+            <h4 class="no-index" id="header-2">Header<a class="fa fa-anchor" href="#header-2"></a></h4>
             <popover effect="fade" placement="top"><template slot="header">Header</template><template slot="content">Lorem ipsum dolor sit amet</template>
               <button class="btn btn-secondary">Popover on top</button></popover>
             <popover effect="fade" placement="left"><template slot="header">Header</template><template slot="content">Lorem ipsum dolor sit amet</template>
@@ -4317,13 +4324,13 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
       <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
       <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
       <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated at: Sat, 08 Feb 2020 02:37:44 GMT</p>
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated at: Sun, 23 Feb 2020 03:19:44 GMT</p>
       </div>
       <p></p>
       <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
       <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
       <div class="indented">
-        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated by: <a href="https://markbind.org/">MarkBind 2.10.0</a></p>
+        <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>          Page generated by: <a href="https://markbind.org/">MarkBind 2.11.0</a></p>
       </div>
       <p></p>
       <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -4480,11 +4487,10 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
     </popover>
   </section>
   </div>
-
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.10.0</a> on Sat, 08 Feb 2020 02:37:44 GMT]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
   </footer>
   </div>
 </body>
@@ -4498,7 +4504,6 @@ This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</spa
   const enableSearch = true
 </script>
 <script src="../markbind/js/setup.js"></script>
-
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
 
 </html>

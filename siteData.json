@@ -2,45 +2,53 @@
   "enableSearch": true,
   "pages": [
     {
-      "headings": {
-        "about-us": "About Us"
-      },
       "title": "About Us",
       "header": "header.md",
       "footer": "footer.md",
       "src": "about.md",
-      "layout": "default"
+      "layout": "default",
+      "headings": {
+        "about-us": "About Us"
+      },
+      "headingKeywords": {}
     },
     {
+      "title": "Showcase",
+      "header": "header.md",
+      "footer": "footer.md",
+      "src": "showcase.md",
+      "layout": "default",
       "headings": {
         "examples-of-markbind-websites": "Examples of MarkBind Websites",
         "course-websites": "Course Websites",
         "online-books": "Online Books",
         "product-websites": "Product Websites"
       },
-      "title": "Showcase",
-      "header": "header.md",
-      "footer": "footer.md",
-      "src": "showcase.md",
-      "layout": "default"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Adding Pages",
+      "layout": "userGuide",
+      "src": "userGuide/addingPages.md",
       "headings": {
         "adding-pages": "Adding Pages"
       },
-      "title": "User Guide: Adding Pages",
-      "layout": "userGuide",
-      "src": "userGuide/addingPages.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Authoring Contents",
+      "layout": "userGuide",
+      "src": "userGuide/authoringContents.md",
       "headings": {
         "authoring-contents": "Authoring Contents"
       },
-      "title": "User Guide: Authoring Contents",
-      "layout": "userGuide",
-      "src": "userGuide/authoringContents.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Command Line Interface (CLI)",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/cliCommands.md",
       "headings": {
         "markbind-cli": "MarkBind CLI",
         "overview": "Overview",
@@ -50,12 +58,13 @@
         "deploy-command": "deploy Command",
         "help-option": "--help Option"
       },
-      "title": "User Guide: Command Line Interface (CLI)",
-      "layout": "userGuide",
-      "pageNav": "default",
-      "src": "userGuide/cliCommands.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Deploying the Site",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/deployingTheSite.md",
       "headings": {
         "deploying-the-site": "Deploying the Site",
         "deploying-to-github-pages": "Deploying to Github Pages",
@@ -67,12 +76,13 @@
         "deploying-to-netlify": "Deploying to Netlify",
         "setting-up-netlify-to-use-a-specific-version-of-markbind": "Setting up Netlify to use a specific version of MarkBind"
       },
-      "title": "User Guide: Deploying the Site",
-      "layout": "userGuide",
-      "pageNav": "default",
-      "src": "userGuide/deployingTheSite.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Formatting Contents",
+      "layout": "userGuide",
+      "pageNav": 2,
+      "src": "userGuide/formattingContents.md",
       "headings": {
         "formatting-contents": "Formatting Contents",
         "headings": "Headings",
@@ -96,53 +106,62 @@
         "icons": "Icons",
         "using-font-awesome-icons": "Using Font Awesome Icons",
         "using-glyphicons": "Using Glyphicons",
+        "using-octicons": "Using Octicons",
         "embeds": "Embeds",
         "embedding-youtube-videos": "Embedding Youtube Videos",
         "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding Powerpoint Slides (using the embed url from Powerpoint online)"
       },
-      "title": "User Guide: Formatting Contents",
-      "layout": "userGuide",
-      "pageNav": 2,
-      "src": "userGuide/formattingContents.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide - Getting Started",
+      "layout": "userGuide",
+      "src": "userGuide/gettingStarted.md",
       "headings": {
         "getting-started": "Getting Started"
       },
-      "title": "User Guide - Getting Started",
-      "layout": "userGuide",
-      "src": "userGuide/gettingStarted.md"
+      "headingKeywords": {}
     },
     {
+      "title": "Glossary",
+      "layout": "userGuide",
+      "src": "userGuide/glossary.md",
       "headings": {
         "live-preview": "Live Preview",
         "mbd-extension": ".mbd extension"
       },
-      "title": "Glossary",
-      "layout": "userGuide",
-      "src": "userGuide/glossary.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide - Getting Started",
+      "layout": "userGuide",
+      "src": "userGuide/index.md",
       "headings": {
         "getting-started": "Getting Started"
       },
-      "title": "User Guide - Getting Started",
-      "layout": "userGuide",
-      "src": "userGuide/index.md"
+      "headingKeywords": {}
     },
     {
-      "headings": {
-        "making-the-site-searchable": "Making the Site Searchable",
-        "search-bars": "Search Bars",
-        "keywords": "Keywords | regressions",
-        "including-or-excluding-headings": "Including or Excluding Headings"
-      },
       "title": "User Guide: Making the Site Searchable",
       "layout": "userGuide",
       "pageNav": 2,
-      "src": "userGuide/makingTheSiteSearchable.md"
+      "src": "userGuide/makingTheSiteSearchable.md",
+      "headings": {
+        "making-the-site-searchable": "Making the Site Searchable",
+        "search-bars": "Search Bars",
+        "keywords": "Keywords",
+        "including-or-excluding-headings": "Including or Excluding Headings"
+      },
+      "headingKeywords": {
+        "keywords": [
+          "regressions"
+        ]
+      }
     },
     {
+      "title": "User Guide: MarkBind in the Project Workflow",
+      "layout": "userGuide",
+      "src": "userGuide/markBindInTheProjectWorkflow.md",
       "headings": {
         "markbind-in-the-project-workflow": "MarkBind in the Project Workflow",
         "authoring-workflow": "Authoring Workflow",
@@ -150,11 +169,12 @@
         "using-markbind-for-project-documentation": "Using MarkBind for Project Documentation",
         "converting-existing-project-documentation-wiki": "Converting existing project documentation/wiki"
       },
-      "title": "User Guide: MarkBind in the Project Workflow",
-      "layout": "userGuide",
-      "src": "userGuide/markBindInTheProjectWorkflow.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: MarkBind Syntax Overview ",
+      "layout": "userGuide",
+      "src": "userGuide/markBindSyntaxOverview.md",
       "headings": {
         "markbind-syntax-overview": "MarkBind Syntax Overview",
         "support-for-markdown": " Support for Markdown",
@@ -165,21 +185,24 @@
         "support-for-vuestrap-and-bootstrap": " Support for VueStrap and BootStrap",
         "support-for-nunjucks": " Support for Nunjucks"
       },
-      "title": "User Guide: MarkBind Syntax Overview ",
-      "layout": "userGuide",
-      "src": "userGuide/markBindSyntaxOverview.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide - PlantUML Diagrams",
+      "layout": "userGuide",
+      "src": "userGuide/puml.md",
       "headings": {
         "plantuml-diagrams": "PlantUML Diagrams",
         "usage": "Usage",
         "example": "Example"
       },
-      "title": "User Guide - PlantUML Diagrams",
-      "layout": "userGuide",
-      "src": "userGuide/puml.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Reusing Contents",
+      "layout": "userGuide",
+      "pageNav": 4,
+      "src": "userGuide/reusingContents.md",
       "headings": {
         "reusing-contents": "Reusing Contents",
         "variables": "Variables",
@@ -202,16 +225,21 @@
         "giving-alternative-contents": "Giving alternative contents",
         "giving-access-to-additional-contents": "Giving access to additional contents",
         "organizing-contents-in-alternative-ways": "Organizing contents in alternative ways",
-        "optimizing-the-print-view": "Optimizing the Print View | hide minimized panels in the print view",
+        "optimizing-the-print-view": "Optimizing the Print View",
         "hiding-some-info-in-the-generated-content": "Hiding some info in the generated content",
         "creating-slight-variations-of-content": "Creating slight variations of content"
       },
-      "title": "User Guide: Reusing Contents",
-      "layout": "userGuide",
-      "pageNav": 4,
-      "src": "userGuide/reusingContents.md"
+      "headingKeywords": {
+        "optimizing-the-print-view": [
+          "hide minimized panels in the print view"
+        ]
+      }
     },
     {
+      "title": "Configuring the Site",
+      "layout": "userGuide",
+      "keywords": "site.json",
+      "src": "userGuide/siteConfiguration.md",
       "headings": {
         "configuring-the-site": "Configuring the Site",
         "baseurl": "baseUrl",
@@ -227,21 +255,22 @@
         "headingindexinglevel": "headingIndexingLevel",
         "enablesearch": "enableSearch"
       },
-      "title": "Configuring the Site",
-      "layout": "userGuide",
-      "keywords": "site.json",
-      "src": "userGuide/siteConfiguration.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Templates",
+      "layout": "userGuide",
+      "src": "userGuide/templates.md",
       "headings": {
         "templates": "Templates",
         "supported-templates": "Supported Templates"
       },
-      "title": "User Guide: Templates",
-      "layout": "userGuide",
-      "src": "userGuide/templates.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Themes",
+      "layout": "userGuide",
+      "src": "userGuide/themes.md",
       "headings": {
         "themes": "Themes",
         "specifying-a-theme": "Specifying a Theme",
@@ -263,21 +292,24 @@
         "bootswatch-united": "bootswatch-united",
         "bootswatch-yeti": "bootswatch-yeti"
       },
-      "title": "User Guide: Themes",
-      "layout": "userGuide",
-      "src": "userGuide/themes.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Tips & Tricks",
+      "layout": "userGuide",
+      "src": "userGuide/tipsAndTricks.md",
       "headings": {
         "tips-and-amp-tricks": "Tips &amp; Tricks",
         "tip-escaping-characters": "Tip: Escaping Characters",
         "problem-unwanted-starting-space-in-links-and-triggers": "Problem: Unwanted starting space in links and triggers"
       },
-      "title": "User Guide: Tips & Tricks",
-      "layout": "userGuide",
-      "src": "userGuide/tipsAndTricks.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Tweaking the Page Structure",
+      "layout": "userGuide",
+      "pageNav": 3,
+      "src": "userGuide/tweakingThePageStructure.md",
       "headings": {
         "tweaking-the-page-structure": "Tweaking the Page Structure",
         "front-matter": "Front Matter",
@@ -294,16 +326,18 @@
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags"
       },
-      "title": "User Guide: Tweaking the Page Structure",
-      "layout": "userGuide",
-      "pageNav": 3,
-      "src": "userGuide/tweakingThePageStructure.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Using Components",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/usingComponents.md",
       "headings": {
         "using-components": "Using Components",
         "badges": "Badges",
         "boxes": "Boxes",
+        "header": "Header 🚀",
         "dropdowns": "Dropdowns",
         "modals": "Modals",
         "navbars": "Navbars",
@@ -320,21 +354,22 @@
         "rich-formatting-in-headings-titles": "Rich formatting in headings/titles",
         "inserting-custom-classes-into-components": "Inserting custom classes into components"
       },
-      "title": "User Guide: Using Components",
-      "layout": "userGuide",
-      "pageNav": "default",
-      "src": "userGuide/usingComponents.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Using HTML, JavaScript, CSS",
+      "layout": "userGuide",
+      "src": "userGuide/usingHtmlJavaScriptCss.md",
       "headings": {
         "using-html-javascript-css": "Using HTML, JavaScript, CSS",
         "apples-bananas-cherries": "Apples Bananas Cherries"
       },
-      "title": "User Guide: Using HTML, JavaScript, CSS",
-      "layout": "userGuide",
-      "src": "userGuide/usingHtmlJavaScriptCss.md"
+      "headingKeywords": {}
     },
     {
+      "title": "User Guide: Using Plugins",
+      "layout": "userGuide",
+      "src": "userGuide/usingPlugins.md",
       "headings": {
         "using-plugins": "Using Plugins",
         "adding-plugins": "Adding Plugins",
@@ -350,9 +385,7 @@
         "hiding-tags": "Hiding Tags",
         "google-analytics-enhancing-site-with-google-analytics": "Google Analytics: Enhancing site with Google Analytics"
       },
-      "title": "User Guide: Using Plugins",
-      "layout": "userGuide",
-      "src": "userGuide/usingPlugins.md"
+      "headingKeywords": {}
     }
   ]
 }
