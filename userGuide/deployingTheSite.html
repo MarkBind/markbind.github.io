@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Deploying the Site</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -116,7 +116,8 @@
         <div id="warning-about-baseUrl">
           <box type="warning">
             <p>If you are deploying to the site to GitHub pages, the <code>baseUrl</code> setting in the <code>site.json</code> should be set to the <code>&quot;/&lt;repositoryName&gt;&quot;</code> for the links in the deployed site to work correctly.<br>
-              <big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If you are using Github Pages to host your deployed website at repo <code>myorg/myproduct</code>              (i.e., the website is published at <code>https://myorg.github.io/myproduct</code>), then your <code>baseUrl</code> should be <code>&quot;/myproduct&quot;</code>.
+              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you are using Github Pages to host your deployed website at repo <code>myorg/myproduct</code> (i.e., the website
+              is published at <code>https://myorg.github.io/myproduct</code>), then your <code>baseUrl</code> should be <code>&quot;/myproduct&quot;</code>.
             </p>
           </box>
         </div>
@@ -131,7 +132,7 @@
               </li>
               <li>
                 <p><strong><code>repo</code></strong> [Optional. Default: the current working project's repo]<br> The repo you want to deploy to.<br> Format: <code>&quot;https://github.com/&lt;org|username&gt;/&lt;repo&gt;.git&quot;</code> (<code>&quot;git@github.com:&lt;org|username&gt;/&lt;repo&gt;.git&quot;</code>                  if you use SSH)<br>
-                  <big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>&quot;https://github.com/myorg/myrepo.git&quot;</code></p>
+                  <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>&quot;https://github.com/myorg/myrepo.git&quot;</code></p>
               </li>
               <li>
                 <p><strong><code>branch</code></strong> [Optional. Default: <code>&quot;gh-pages&quot;</code>]<br> The branch that will be deployed to in the remote repo.</p>
@@ -146,7 +147,7 @@
           </p>
         </box>
         <h3 id="deploying-to-github-pages-via-travis-ci">Deploying to GitHub Pages via Travis CI<a class="fa fa-anchor" href="#deploying-to-github-pages-via-travis-ci"></a></h3>
-        <p><strong>You can setup <a href="https://www.travis-ci.org/"><tooltip><template slot="_content">a platform for Continuous Integration and Delivery (among other things)</template>Travis CI</tooltip></a> to automatically build and deploy your site on GitHub Pages every time your GitHub repo is updated.</strong></p>
+        <p><strong>You can setup <a href="https://www.travis-ci.org/"><span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">a platform for Continuous Integration and Delivery (among other things)</span>Travis CI</span></a> to automatically build and deploy your site on GitHub Pages every time your GitHub repo is updated.</strong></p>
         <h4 id="adding-your-repository-to-travis-ci">Adding your repository to Travis CI<a class="fa fa-anchor" href="#adding-your-repository-to-travis-ci"></a></h4>
         <panel type="info" expanded=""><template slot="_header"><p><span aria-hidden="true" class="fas fa-info-circle"></span> Travis CI Migration</p></template>
           <p>Since May 2018, Travis CI has been <a href="https://docs.travis-ci.com/user/migrate/open-source-on-travis-ci-com/">undergoing migration to <code>travis-ci.com</code></a>, which changes the way you setup repositories on Travis CI.</p>
@@ -200,16 +201,7 @@
             </span>
           </li>
           <li>Add a <code>.travis.yml</code> file to instruct Travis CI to build and deploy the site when you push to the repository. An example <code>.travis.yml</code> file that can accomplish this is given below:
-            <pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
-<span class="hljs-attr">node_js:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">'8'</span>
-<span class="hljs-attr">install:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli</span>
-<span class="hljs-attr">script:</span> <span class="hljs-string">markbind</span> <span class="hljs-string">build</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">markbind</span> <span class="hljs-string">deploy</span> <span class="hljs-bullet">--travis</span>
-<span class="hljs-attr">branches:</span>
-<span class="hljs-attr">  only:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">master</span>
-</code></pre> More information about <code>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
+            <pre><code class="hljs yaml"><span><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span></span><span><span class="hljs-attr">node_js:</span></span><span><span class="hljs-bullet">  -</span> <span class="hljs-string">'8'</span></span><span><span class="hljs-attr">install:</span></span><span><span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli</span></span><span><span class="hljs-attr">script:</span> <span class="hljs-string">markbind</span> <span class="hljs-string">build</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">markbind</span> <span class="hljs-string">deploy</span> <span class="hljs-bullet">--travis</span></span><span><span class="hljs-attr">branches:</span></span><span><span class="hljs-attr">  only:</span></span><span><span class="hljs-bullet">  -</span> <span class="hljs-string">master</span></span></code></pre>More information about <code>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
           <li>Commit <code>.travis.yml</code> to your MarkBind repository and push the changes. Travis CI should begin to build your site.</li>
           <li>Select the MarkBind repository on <a href="https://travis-ci.com/auth">Travis CI</a> and <a href="https://docs.travis-ci.com/user/job-lifecycle/#breaking-the-build">check the build status</a> to see if it is successful.</li>
           <li>Once the build succeeds, your MarkBind site should be online at <code>http://&lt;username|org&gt;.github.io/&lt;repo&gt;</code> e.g., <a href="http://se-edu.github.io/se-book">http://se-edu.github.io/se-book</a>. Travis CI will automatically
@@ -222,29 +214,22 @@
         <p>When Travis CI is set up as explained above, it will use the latest version of MarkBind which may be a later version than the one you use locally.</p>
         <ul>
           <li>If you want Travis CI to use a specific version of MarkBind (eg. <code>v1.6.3</code>), change the <code>install</code> step in the <code>.travis.yml</code> given above to:
-            <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@1.63</span>
-</code></pre>
+            <pre><code class="hljs yaml"><span><span class="hljs-attr">install:</span></span><span><span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@1.63</span></span></code></pre>
           </li>
           <li>If you want to use the latest minor version automatically until the next major version (as major versions usually contain breaking changes), you can add a <code>^</code> in front of the version number. In the example below, Travis will use the
             latest version of MarkBind but will stop before <code>2.*</code>
-            <pre><code class="hljs yaml"><span class="hljs-attr">install:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@^1.63</span>
-</code></pre>
+            <pre><code class="hljs yaml"><span><span class="hljs-attr">install:</span></span><span><span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">markbind-cli@^1.63</span></span></code></pre>
           </li>
         </ul>
         <h5 id="configuring-travis-ci-to-only-deploy-from-a-specific-repository">Configuring Travis CI to only deploy from a specific repository<a class="fa fa-anchor" href="#configuring-travis-ci-to-only-deploy-from-a-specific-repository"></a></h5>
         <p>When Travis CI is set up as explained above, Travis CI will attempt to deploy the site from any repository it is in, including forks. If you want Travis CI to only deploy from a specific repository (eg. only from your main site repository), you
           can set a <a href="https://docs.travis-ci.com/user/deployment#conditional-releases-with-on"><code>deploy</code> phase with an <code>on</code> condition</a>.</p>
         <p>For example, if you only want Travis CI to deploy the site when it is run from the <code>se-edu/se-book</code> repository, the folllowing <code>deploy</code> phase with the <code>on</code> condition should be added to <code>.travis.yml</code>:</p>
-        <pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span>
-<span class="hljs-attr">  on:</span>
-<span class="hljs-attr">    repo:</span> <span class="hljs-string">se-edu/se-book</span>
-</code></pre>
+        <pre><code class="hljs yaml"><span><span class="hljs-attr">deploy:</span></span><span><span class="hljs-attr">  on:</span></span><span><span class="hljs-attr">    repo:</span> <span class="hljs-string">se-edu/se-book</span></span></code></pre>
         <p>The <code>repo</code> value can be changed to your specific repository as desired.</p>
         <hr>
         <h2 id="deploying-to-netlify">Deploying to Netlify<a class="fa fa-anchor" href="#deploying-to-netlify"></a></h2>
-        <p><strong>You can setup <a href="https://www.netlify.com/"><tooltip><template slot="_content">a platform for deploying static webpages (among other things)</template>Netlify</tooltip></a>
+        <p><strong>You can setup <a href="https://www.netlify.com/"><span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">a platform for deploying static webpages (among other things)</span>Netlify</span></a>
 to automatically build and deploy your site on their platform every time your GitHub repo is updated.</strong></p>
         <p>Here are the steps to set up Netlify:</p>
         <ol>
@@ -290,14 +275,11 @@ to automatically build and deploy your site on their platform every time your Gi
             </li>
             <li>
               <p>create/update <code>.gitignore</code> file in the root directory and add:</p>
-              <pre><code class="hljs">node_modules
-</code></pre>
+              <pre><code class="hljs"><span>node_modules</span></code></pre>
             </li>
             <li>
               <p>update <code>ignore</code> in site.json to include</p>
-              <pre><code class="hljs">node_modules/*
-.gitignore
-</code></pre>
+              <pre><code class="hljs"><span>node_modules/*</span><span>.gitignore</span></code></pre>
             </li>
             <li>
               <p>Now, follow the <a href="#deploying-to-netlify">previous instructions for setting up Netlify</a> but with the following difference:<br> In step 5, <mark>Set the <code>Build Command</code> to <code>markbind build --baseUrl</code></mark></p>
@@ -345,7 +327,7 @@ to automatically build and deploy your site on their platform every time your Gi
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
     </footer>
   </div>
 </body>

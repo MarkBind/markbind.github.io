@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Adding Pages</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -90,36 +90,35 @@
 <span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
         <h1 id="adding-pages">Adding Pages<a class="fa fa-anchor" href="#adding-pages"></a></h1>
         <span class="lead" id="overview">
-<p><strong>It is easy to add files to a MarkBind site as any file inside the <tooltip><template slot="_content">The directory that contains all the project files. It is also the directory in which the <code>site.json</code> configuration file is located.</template>root directory</tooltip> becomes a part of the generated website.</strong></p></span>
+<p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">The directory that contains all the project files. It is also the directory in which the <code>site.json</code> configuration file is located.</span>root
+        directory
+        </span> becomes a part of the generated website.</strong>
+        </p>
+        </span>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If you have a file <code>tutorial/code.txt</code> in your root directory, it will be available
-            as
-            <code>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code>tutorial/code.txt</code> in your root directory, it will be available as <code>&lt;website-url&gt;/tutorial/code.txt</code>            in the generated website.</p>
         </div>
         <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code>ignore</code> field in the <code>site.config</code> file as explained <a href="/userGuide/siteConfiguration.html#ignore">here</a>.</span></p>
         <p><strong>More importantly, <code>.md</code> and <code>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>&lt;root&gt;/tutorial/</code><strong><code>setup.md</code></strong> can be transformed
-            into
-            <code>&lt;website-url&gt;/tutorial/</code><strong><code>setup.html</code></strong></p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>&lt;root&gt;/tutorial/</code><strong><code>setup.md</code></strong> can be transformed into <code>&lt;website-url&gt;/tutorial/</code><strong><code>setup.html</code></strong></p>
         </div>
         <p>Here are the steps to add a new page to your site:</p>
         <ol>
           <li>Add a <code>.md</code> (or <code>.mbd</code>) file anywhere inside the root directory.</li>
           <li>Update the <a href="/userGuide/siteConfiguration.html#pages"><code>pages</code> attribute of the <code>site.json</code></a> to cover the new file, if necessary.</li>
-          <li>Use the
-            <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
+          <li>Use the <span trigger="click" for="modal:addingPages-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:addingPages-livePreview'].show()" class="trigger">live preview</span>            to view the generated web page for the new file.</li>
         </ol>
-        <modal large="" id="modal:addingPages-livePreview"><template slot="_header">Live Preview</template>
+        <b-modal id="modal:addingPages-livePreview" ok-only="" size="lg" modal-class="mb-zoom" ref="modal:addingPages-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
 <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
-            <tooltip><template slot="_content">MarkBind file</template><code>.mbd</code></tooltip>,
-            <tooltip><template slot="_content">MarkBind fragment</template><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter"
+              class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>.
+            Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
           <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
           <p></p>
           </span>
-        </modal>
+        </b-modal>
         <div class="clearfix">
           <p><span class="float-left"><b-btn variant="light" href="/userGuide/authoringContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span>
             </b-btn>
@@ -134,7 +133,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
     </footer>
   </div>
 </body>

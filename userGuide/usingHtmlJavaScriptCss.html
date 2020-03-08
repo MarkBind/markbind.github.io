@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using HTML, JavaScript, CSS</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -94,19 +94,9 @@
 </p></span>
         <p><mark>Text within HTML tags are considered plain text unless the text is preceded by a blank line,</mark> in which case the text is parsed as Markdown text.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here is an example of how text within an html tag is parsed as Markdown when preceded by a
-            blank line.
-          </p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an html tag is parsed as Markdown when preceded by a blank line.</p>
           <p>Code:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
-Without preceding blank line: Apples **Bananas** Cherries
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
-
-With preceding blank line: Apples **Bananas** Cherries
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span>Without preceding blank line: Apples **Bananas** Cherries</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span>With preceding blank line: Apples **Bananas** Cherries</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></code></pre>
           <p>Outcome:<br></p>
           <span>
 Without preceding blank line: Apples **Bananas** Cherries
@@ -117,16 +107,9 @@ Without preceding blank line: Apples **Bananas** Cherries
         <p>Alternatively, you can use <code>&lt;markdown&gt;</code> (for <em>block</em> Markdown elements such as headings) or <code>&lt;md&gt;</code> (for <em>inline</em> Markdown elements such as bold/italic text) tags to indicate the text should be treated
           as Markdown.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here is an example of how text within an HTML tag can be treated as Markdown using <code>&lt;markdown&gt;</code>/<code>&lt;md&gt;</code>            tags.</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an HTML tag can be treated as Markdown using <code>&lt;markdown&gt;</code>/<code>&lt;md&gt;</code>            tags.</p>
           <p>Code:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></code></pre>
           <p>Outcome:<br>
             <span>
 <span>Apples <strong>Bananas</strong> Cherries</span></span>
@@ -147,7 +130,7 @@ Without preceding blank line: Apples **Bananas** Cherries
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
     </footer>
   </div>
 </body>

@@ -96,6 +96,13 @@
         "blockquotes": "Blockquotes",
         "lists": "Lists",
         "code": "Code",
+        "fenced-code": "Fenced Code",
+        "syntax-coloring": "Syntax coloring",
+        "line-numbering": "Line numbering",
+        "line-highlighting": "Line highlighting",
+        "heading": "Heading",
+        "inline-code": "Inline Code",
+        "syntax-coloring-2": "Syntax coloring",
         "horizontal-rules": "Horizontal Rules",
         "links": "Links",
         "intra-site-links": "Intra-Site Links",
@@ -253,7 +260,9 @@
         "deploy": "deploy",
         "plugins-pluginscontext": "plugins, pluginsContext",
         "headingindexinglevel": "headingIndexingLevel",
-        "enablesearch": "enableSearch"
+        "enablesearch": "enableSearch",
+        "timezone": "timeZone",
+        "locale": "locale"
       },
       "headingKeywords": {}
     },
@@ -369,6 +378,7 @@
     {
       "title": "User Guide: Using Plugins",
       "layout": "userGuide",
+      "pageNav": "default",
       "src": "userGuide/usingPlugins.md",
       "headings": {
         "using-plugins": "Using Plugins",
@@ -377,9 +387,11 @@
         "rendering": "Rendering",
         "assets": "Assets",
         "live-reload": "Live reload",
+        "special-tags": "Special tags",
         "advanced-default-plugins": "Advanced: Default plugins",
         "built-in-plugins": "Built-in plugins",
         "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch",
+        "codeblockcopybuttons-enabling-code-blocks-to-be-copied": "codeBlockCopyButtons: Enabling code-blocks to be copied",
         "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags",

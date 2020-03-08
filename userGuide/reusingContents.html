@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Reusing Contents</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -104,19 +104,12 @@
           <p><strong>Global variables are to be defined in the <code>_markbind/variables.md</code> file.</strong> Each variable must have an <code>name</code> and the value can be any MarkBind-compliant code fragment. The <code>name</code> should not contain
             <code>-</code> and <code>.</code>. For example, <code>search-option</code> and <code>search.options</code> are not allowed.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how you can define two variables <code>year</code> and <code>options</code>:</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"options"</span>&gt;</span>
-* yes
-* no
-* maybe
-<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can define two variables <code>year</code> and <code>options</code>:</p>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"options"</span>&gt;</span></span><span>* yes</span><span>* no</span><span>* maybe</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span></code></pre>
           </div>
           <p>To include a variable value in your code, give the variable id enclosed in double curly braces.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how you can use the variable <code>year</code>:</p>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can use the variable <code>year</code>:</p>
             <p><code>The year was {<span></span>{ year }}.</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> The year was 2018.</p>
           </div>
           <p><mark>MarkBind variables are <em>global</em></mark>; they are available from anywhere in the code base.</p>
@@ -131,7 +124,7 @@
               <div class="indented">
                 Links should start with
                 <code>{<span></span>{ baseUrl }}</code> (which represents the root directory of the project).
-                <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
+                <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the
                   <code>{<span></span>{ baseUrl }}</code> :
                 </p>
                 <ol>
@@ -149,24 +142,14 @@
               </div>
               <p>Relative paths:</p>
               <div class="indented">
-                <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Assuming that we have the following folder structure:</p>
-                <pre><code class="hljs">c:/course/
-  ├── textbook/
-  |      ├── subsite.md
-  |      ├── image.png
-  |      └── site.json
-  ├── index.md
-  └── site.json
-</code></pre>
+                <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Assuming that we have the following folder structure:</p>
+                <pre><code class="hljs"><span>c:/course/</span><span>  ├── textbook/</span><span>  |      ├── subsite.md</span><span>  |      ├── image.png</span><span>  |      └── site.json</span><span>  ├── index.md</span><span>  └── site.json</span></code></pre>
                 <p>Within <code>textbook/subsite.md</code>, we can refer to the image using:</p>
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
-</code></pre>
+                <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span></span></code></pre>
                 <p>Within <code>index.md</code>, we can also display the image using</p>
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
-</code></pre>
+                <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span></span></code></pre>
                 <p>or by including <code>subsite.md</code>:</p>
-                <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/subsite.md"</span> /&gt;</span>
-</code></pre>
+                <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/subsite.md"</span> /&gt;</span></span></code></pre>
                 <box type="important">
                   Relative links to resources (e.g. images, hrefs) should be valid relative to the original, included file. In other words, the links should be accessible when traversing starting from the location of the included file.
                   <br> In the example above, <code>image.png</code> is in the same directory as <code>subsite.md</code>. When using relative references, the correct path is <code>image.png</code> and not <code>textbook/image.png</code>.
@@ -175,28 +158,29 @@
             </div>
           </panel>
           <h5 id="built-in-variable-timestamp">Built-in Variable: <code>timestamp</code><a class="fa fa-anchor" href="#built-in-variable-timestamp"></a></h5>
-          <p><code>{<span></span>{ timestamp }}</code> is the time stamp (in UTC) that indicates when the page was generated.</p>
+          <p><code>{<span></span>{ timestamp }}</code> is the time stamp that indicates when the page was generated.</p>
+          <p>The default values of <code>&quot;timeZone&quot;</code> and <code>&quot;locale&quot;</code> are <code>&quot;UTC&quot;</code> and <code>&quot;en-GB&quot;</code> respectively. The following example showcases the use of the <code>&quot;Asia/Singapore&quot;</code>            time zone.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated at: Sun, 23 Feb 2020 03:19:44 GMT</p>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated at: Sun, Mar 8, 2020, 12:03:51 PM UTC</p>
           </div>
           <p></p>
           <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
           <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated by: <a href="https://markbind.org/">MarkBind 2.11.0</a></p>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>              Page generated by: <a href="https://markbind.org/">MarkBind 2.12.0</a></p>
           </div>
           <p></p>
           <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
           <p>You can specify a default value for a variable, which is displayed when the variable is not specified in <code>variables.md</code> and by any of the <a href="/userGuide/reusingContents.html#the-include-tag">includes</a> of the page. This is
             done by adding <code>or defaultValue</code> within the curly braces.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If <code>name</code> is not declared in <code>variables.md</code>:<br>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If <code>name</code> is not declared in <code>variables.md</code>:<br>
               <code>My name is {<span></span>{ name or &quot;Anonymous&quot; }}.</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> My name is Anonymous.</p>
           </div>
           <h3 id="page-variables">Page Variables<a class="fa fa-anchor" href="#page-variables"></a></h3>
           <p><strong>You can also declare variables for use within a single page.</strong> These variables work exactly the same as regular variables, except that their values only apply to the page they are declared in. This can be done by using the <code>&lt;variable&gt;</code>            tag.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Declaring page variables:<br></p>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Declaring page variables:<br></p>
             <p><code>&lt;variable name=&quot;full_name&quot;&gt;John Doe&lt;/variable&gt;</code><br>
               <code>My name is {<span></span>{ full_name }}. This is {<span></span>{ full_name }}'s site.</code></p>
           </div>
@@ -204,22 +188,17 @@
             page variables. <em>See also: <a href="/userGuide/reusingContents.html#specifying-variables-in-an-include">Specifying Variables in an <code>&lt;include&gt;</code></a></em>.</p>
           <h3 id="importing-variables">Importing Variables<a class="fa fa-anchor" href="#importing-variables"></a></h3>
           <p><strong>You can access <a href="#page-variables">page variables</a> from another page by importing them.</strong></p>
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Importing specific variables from <code>person.md</code> into <code>coverpage.md</code>:
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Importing specific variables from <code>person.md</code> into <code>coverpage.md</code>:
             <code>person.md</code>:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"address"</span>&gt;</span>123 Sun Avenue<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span>&gt;</span>Mark<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"phone"</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"address"</span>&gt;</span>123 Sun Avenue<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span>&gt;</span>Mark<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"phone"</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span></code></pre>
           <p><code>coverpage.md</code>:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">address</span> <span class="hljs-attr">name</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"person.md"</span>/&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">address</span> <span class="hljs-attr">name</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"person.md"</span>/&gt;</span></span></code></pre>
           <p>will allow you to access the variables as per normal: <code>{<span></span>{address}}</code>, <code>{<span></span>{name}}</code>, <code>{<span></span>{phone}}</code>.</p>
           <hr>
           <p><strong>When importing all variables, you should attach a <em>namespace</em></strong> to the imported variables using an <code>as</code> attributes.</p>
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big>:
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>:
             <code>coverpage.md</code>:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"page.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"details"</span>/&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"page.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"details"</span>/&gt;</span></span></code></pre>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
               <thead>
@@ -246,15 +225,12 @@
           </div>
           <p>This way, <em><strong>all</strong></em> variables in <code>page.md</code> are accessible via <code>{<span></span>{details.&lt;variable_name&gt;}}</code>.</p>
           <p>Note that in this case, <code>details</code> is treated as the variable name and so is subject to the same rules as other variables, such as global variables taking precedence, and multiple imports to the same namespace being impossible:</p>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"title.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"book"</span>/&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"index.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"book"</span>/&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"title.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"book"</span>/&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"index.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"book"</span>/&gt;</span></span></code></pre>
           <p>In this case, all the variables in <code>title.md</code> are not accessible, as they are overwritten with the variables from <code>index.md</code>.</p>
           <box type="important">
             <p>Note that global variables (<code>_markbind/variables.md</code>) and <a href="#page-variables">page variables</a> will take precedence over any imported variables.</p>
             <p>While you can mix the two syntaxes for importing page variables, it may get confusing:</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">address</span> <span class="hljs-attr">name</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"page.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"details"</span>/&gt;</span>
-</code></pre>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">address</span> <span class="hljs-attr">name</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"page.md"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"details"</span>/&gt;</span></span></code></pre>
             <p>This may seem like it will import <em>only</em> <code>address</code> and <code>name</code> from <code>page.md</code> and storing them in the namespace <code>details</code>.</p>
             <p>However, this is a combination of <em>both</em> syntaxes above, and thus this will allow you to:</p>
             <ul>
@@ -265,7 +241,7 @@
           <h3 id="variables-tips-and-tricks">Variables: Tips and Tricks<a class="fa fa-anchor" href="#variables-tips-and-tricks"></a></h3>
           <p><strong>Variables can refer to other variables</strong> that are declared earlier, including built-in variables.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> This variable uses a built-in variable:<br>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> This variable uses a built-in variable:<br>
               <code>&lt;variable name=&quot;time&quot;&gt;</code><code>{<span></span>{ timestamp }}</code><code>&lt;/variable&gt;</code></p>
             <p>Here, the second variable will be assigned the contents of the first variable.<br>
               <code>&lt;variable name=&quot;first&quot;&gt;</code><code>This is the first variable.</code><code>&lt;/variable&gt;</code><br>
@@ -276,7 +252,7 @@
           </div>
           <p>Note that if the variable being referenced contains HTML tags, MarkBind may escape the tags and render it literally.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If we declare the variables as follows,<br></p>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If we declare the variables as follows,<br></p>
             <p><code>&lt;variable name=&quot;note&quot;&gt;</code><code>&lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt;</code><code>&lt;/variable&gt;</code><br>
               <code>&lt;variable name=&quot;note_2&quot;&gt;</code><code>{<span></span>{ note }}</code><code>&lt;/variable&gt;</code><br>
               <code>&lt;variable name=&quot;const_note&quot;&gt;</code><code>{<span></span>{ note_2 }} This is a constant.</code><code>&lt;/variable&gt;</code></p>
@@ -285,7 +261,7 @@
           </div>
           <p>You must use the <code>safe</code> filter when using such variables:</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> If we use the safe filter for the second variable:<br></p>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If we use the safe filter for the second variable:<br></p>
             <p><code>&lt;variable name=&quot;note&quot;&gt;</code><code>&lt;span style=&quot;color: blue&quot;&gt;Note: &lt;/span&gt;</code><code>&lt;/variable&gt;</code><br>
               <code>&lt;variable name=&quot;note_2&quot;&gt;</code><code>{<span></span>{ note | safe }}</code><code>&lt;/variable&gt;</code><br>
               <code>&lt;variable name=&quot;const_note&quot;&gt;</code><code>{<span></span>{ note_2 }} This is a constant.</code><code>&lt;/variable&gt;</code></p>
@@ -294,7 +270,8 @@
           <span id="short" class="d-none">
 <p>Global variables:</p>
 <p><code>_markbind/variables.md</code>:</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"year"</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          </span>
           </code>
           </pre>
           <p><code>The year was {<span></span>{ year }}.</code></p>
@@ -313,27 +290,15 @@
 </p></span>
           <p><strong>You can use <code>&lt;include&gt;</code> tag to include another markdown or HTML document into the current document.</strong></p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Including text from a <code>tip2.md</code> in another file.</p>
-            <pre><code class="hljs html">Tip 1. ...
-<span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"tips/tip2.md"</span> /&gt;</span>
-Tip 3. ...
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Including text from a <code>tip2.md</code> in another file.</p>
+            <pre><code class="hljs html"><span>Tip 1. ...</span><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"tips/tip2.md"</span> /&gt;</span></span><span>Tip 3. ...</span></code></pre>
           </div>
           <p><strong>You can <code>&lt;include&gt;</code> a fragment of a file</strong> by specifying the <code>#fragment-id</code> at the end of the <code>src</code> attribute value, provided the fragment is wrapped in a <code>&lt;div&gt;</code>/<code>&lt;span&gt;</code>/<code>&lt;seg&gt;</code>            tag with the matching <code>id</code>.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Including a fragment from a file:</p>
-            <pre><code class="hljs html">Some text
-<span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"docs/tips.md#tip-1"</span> /&gt;</span>
-Some other text
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Including a fragment from a file:</p>
+            <pre><code class="hljs html"><span>Some text</span><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"docs/tips.md#tip-1"</span> /&gt;</span></span><span>Some other text</span></code></pre>
             <p><code>docs/tips.md</code>:</p>
-            <pre><code class="hljs html">...
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tip-1"</span> /&gt;</span>
-  Tip 1. ...
-  ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-Tip 2. ...
-</code></pre>
+            <pre><code class="hljs html"><span>...</span><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tip-1"</span> /&gt;</span></span><span>  Tip 1. ...</span><span>  ...</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span>Tip 2. ...</span></code></pre>
           </div>
           <box type="warning">
             <p>When setting the <code>id</code> of a fragment, be careful not to clash with heading anchor IDs auto-generated by MarkBind. For example, if you have a heading <code>## Some Useful Tips</code>, MarkBind will auto-generate an ID <code>some-useful-tips</code>              for that heading.</p>
@@ -346,16 +311,13 @@ Tip 2. ...
           <ul>
             <li><strong><code>src</code></strong>: specify the source file path.</li>
             <li><strong><code>inline</code></strong> (optional): make the included result an inline element. (wrapped in <code>&lt;span&gt;</code> tag). e.g.,
-              <pre><code class="hljs html">The title is <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../docs/summary.md#title"</span> <span class="hljs-attr">inline</span> /&gt;</span> while ...
-</code></pre>
+              <pre><code class="hljs html"><span>The title is <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../docs/summary.md#title"</span> <span class="hljs-attr">inline</span> /&gt;</span> while ...</span></code></pre>
             </li>
             <li><strong><code>optional</code></strong> (optional): include the file/fragment only if it exists i.e., there will be no error message if the file/fragment does not exist. e.g.,
-              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md"</span> <span class="hljs-attr">optional</span> /&gt;</span>
-</code></pre>
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md"</span> <span class="hljs-attr">optional</span> /&gt;</span></span></code></pre>
             </li>
             <li><strong><code>trim</code></strong> (optional): remove leading and trailing whitespace and newlines from the document before including.
-              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md#epic"</span> <span class="hljs-attr">trim</span> /&gt;</span>
-</code></pre>
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"UserStories.md#epic"</span> <span class="hljs-attr">trim</span> /&gt;</span></span></code></pre>
             </li>
           </ul>
           <div>
@@ -365,27 +327,14 @@ Tip 2. ...
             </box>
           </div>
           <h5 id="and-lt-include-and-gt-inside-an-included-file"><code>&lt;include&gt;</code> Inside an Included File<a class="fa fa-anchor" href="#and-lt-include-and-gt-inside-an-included-file"></a></h5>
-          <p><strong>Although the <code>src</code> attribute of an <code>&lt;include&gt;</code> is given <em>relative</em> to the current directory, it is converted to an <em>absolute</em> value <em>before</em> the <tooltip><template slot="_content">i.e., the file containing the <code>&lt;include&gt;</code></template>host file</tooltip> is included from another file.</strong></p>
+          <p><strong>Although the <code>src</code> attribute of an <code>&lt;include&gt;</code> is given <em>relative</em> to the current directory, it is converted to an <em>absolute</em> value <em>before</em> the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">i.e., the file containing the <code>&lt;include&gt;</code></span>host file</span> is included from another file.</strong></p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a MarkBind project with the following file structure.</p>
-            <pre><code class="hljs">c:/mySite/
-  ├── bookFiles/
-  |      ├── book.md
-  |      ├── chapter1.md
-  |      └── chapter2.md
-  └── reviewFiles/
-         └── review.md
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a MarkBind project with the following file structure.</p>
+            <pre><code class="hljs"><span>c:/mySite/</span><span>  ├── bookFiles/</span><span>  |      ├── book.md</span><span>  |      ├── chapter1.md</span><span>  |      └── chapter2.md</span><span>  └── reviewFiles/</span><span>         └── review.md</span></code></pre>
             <p>The <code>book.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1.md"</span> /&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2.md"</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section"># My Book</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1.md"</span> /&gt;</span></span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2.md"</span> /&gt;</span></span></span></code></pre>
             <p>The <code>review.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section"># My Review</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../bookFiles/book.md"</span> /&gt;</span></span>
-...
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section"># My Review</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../bookFiles/book.md"</span> /&gt;</span></span></span><span>...</span></code></pre>
             <p>The content of the <code>chapter1.md</code> and <code>chapter2.md</code> will be included in the <code>review.md</code> (via <code>&lt;include src=&quot;../bookFiles/book.md&quot; /&gt;</code>) although <code>chapter1.md</code> and <code>chapter2.md</code>              are not in <code>reviewFiles</code> directory. i.e., <code>&lt;include src=&quot;chapter1.md&quot; /&gt;</code> will be interpreted as <code>&lt;include src=&quot;c:/mySite/bookFiles/chapter1.md&quot; /&gt;</code></p>
           </div>
           <p>In other words, <strong><code>&lt;include&gt;</code> interprets the reused code relative to the original location of the file, not the location in which it is reused.</strong></p>
@@ -393,12 +342,8 @@ Tip 2. ...
           <h5 id="specifying-variables-in-an-and-lt-include-and-gt">Specifying Variables in an <code>&lt;include&gt;</code><a class="fa fa-anchor" href="#specifying-variables-in-an-and-lt-include-and-gt"></a></h5>
           <p><strong>It is possible to include variables in an <code>&lt;include&gt;</code>.</strong></p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables in an <code>&lt;include&gt;</code>              tag:</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"title"</span>&gt;</span>My Title<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying <code>title</code> and <code>author</code> variables in an <code>&lt;include&gt;</code> tag:</p>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"title"</span>&gt;</span>My Title<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span></span></code></pre>
             <p>In <code>article.md</code>:</p>
             <code>
 # {<span></span>{ title }}<br>
@@ -408,45 +353,23 @@ Author: {<span></span>{ author }}
             values.</p>
           <p>You can also specify include variables within the <code>&lt;include&gt;</code> tag itself by adding a <code>var-</code> prefix.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Specifying <code>title</code> and <code>author</code> variables inline:</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span> <span class="hljs-attr">var-title</span>=<span class="hljs-string">"My Title"</span> <span class="hljs-attr">var-author</span>=<span class="hljs-string">"John Doe"</span> /&gt;</span>
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying <code>title</code> and <code>author</code> variables inline:</p>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"article.md"</span> <span class="hljs-attr">var-title</span>=<span class="hljs-string">"My Title"</span> <span class="hljs-attr">var-author</span>=<span class="hljs-string">"John Doe"</span> /&gt;</span></span></code></pre>
           </div>
           <p>If the same variable is defined in a chain of <code>&lt;include&gt;</code>s (e.g. <code>a.md</code> includes <code>b.md</code> includes <code>c.md</code>...), variables defined in the top-most <code>&lt;include&gt;</code> will take precedence.
             Global variables (<code>_markbind/variables.md</code>) will take precedence over any <code>&lt;include&gt;</code> variables.</p>
           <h3 id="using-boilerplate-files">Using Boilerplate Files<a class="fa fa-anchor" href="#using-boilerplate-files"></a></h3>
-          <p><strong>If you find duplicating a <tooltip><template slot="_content">code that needs to stay relative to the directory in which it used</template><em>boilerplate code</em></tooltip> fragment in multiple places of your code base, you can use a <code>boilerplate</code> file to avoid such duplication.</strong>            Note that you cannot use a normal <code>&lt;include&gt;</code> in this case because the code included using a normal <code>&lt;include&gt;</code> stays relative to the original location while boilerplate code needs to be interpreted relative
+          <p><strong>If you find duplicating a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">code that needs to stay relative to the directory in which it used</span><em>boilerplate code</em></span> fragment in multiple places of your code base, you can use a <code>boilerplate</code> file to avoid such duplication.</strong>            Note that you cannot use a normal <code>&lt;include&gt;</code> in this case because the code included using a normal <code>&lt;include&gt;</code> stays relative to the original location while boilerplate code needs to be interpreted relative
             to the location it is being used.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a MarkBind project with the following file structure.</p>
-            <pre><code class="hljs">c:/mySite/
-  ├── chapter1/
-  |      ├── chapter.md
-  |      ├── text.md
-  |      └── exercises.md
-  ├── chapter2/
-  |      ├── chapter.md
-  |      ├── text.md
-  |      └── exercises.md
-  └── book.md
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a MarkBind project with the following file structure.</p>
+            <pre><code class="hljs"><span>c:/mySite/</span><span>  ├── chapter1/</span><span>  |      ├── chapter.md</span><span>  |      ├── text.md</span><span>  |      └── exercises.md</span><span>  ├── chapter2/</span><span>  |      ├── chapter.md</span><span>  |      ├── text.md</span><span>  |      └── exercises.md</span><span>  └── book.md</span></code></pre>
             <p>The <code>book.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> /&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section"># My Book</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> /&gt;</span></span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> /&gt;</span></span></span></code></pre>
             <p>The <code>chapter1/chapter.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span>
-<span class="hljs-section">## Exercises</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section">## Text</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span></span><span><span class="hljs-section">## Exercises</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span></span></code></pre>
             <p>The <code>chapter2/chapter.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span>
-<span class="hljs-section">## Exercises</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section">## Text</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span></span><span><span class="hljs-section">## Exercises</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span></span></code></pre>
             <p>As you can see, both <code>chapter.md</code> files are exactly the same. If we were to use only one of the <code>chapter.md</code> files and <code>&lt;include&gt;</code> it twice in the <code>book.md</code>, we'll end up with the same chapter
               content duplicated twice, which is not what we want. In other words, <code>chapter.md</code> contains boilerplate code that needs to be interpreted relative to where it is applied, once relative to <code>chapter1</code> directory and once
               relative to
@@ -458,55 +381,31 @@ Author: {<span></span>{ author }}
             <li><code>&lt;include&gt;</code> the file <em>as if</em> a copy of it exists in any directory you want it to applied, but add the <code>boilerplate</code> attribute to the <code>&lt;include&gt;</code> tag.</li>
           </ol>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Here's how you can use a boilerplate file to avoid duplicating the <code>chapter.md</code>:</p>
-            <pre><code class="hljs">c:/mySite/
-  ├── _markbind/boilerplates/
-  |      └── chapter.md
-  ├── chapter1/
-  |      ├── text.md
-  |      └── exercises.md
-  ├── chapter2/
-  |      ├── text.md
-  |      └── exercises.md
-  └── book.md
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can use a boilerplate file to avoid duplicating the <code>chapter.md</code>:</p>
+            <pre><code class="hljs"><span>c:/mySite/</span><span>  ├── _markbind/boilerplates/</span><span>  |      └── chapter.md</span><span>  ├── chapter1/</span><span>  |      ├── text.md</span><span>  |      └── exercises.md</span><span>  ├── chapter2/</span><span>  |      ├── text.md</span><span>  |      └── exercises.md</span><span>  └── book.md</span></code></pre>
             <p>The <code>book.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section"># My Book</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section"># My Book</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span></span></code></pre>
             <p>The <code>_markbind/boilerplates/chapter.md</code>:</p>
-            <pre><code class="hljs markdown"><span class="hljs-section">## Text</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span>
-<span class="hljs-section">## Exercises</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="hljs-section">## Text</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"text.md"</span> /&gt;</span></span></span><span><span class="hljs-section">## Exercises</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"exercises.md"</span> /&gt;</span></span></span></code></pre>
             <p>Consider the line <code>&lt;include src=&quot;chapter1/chapter.md&quot; boilerplate /&gt;</code>. Note how you can use <code>src=&quot;chapter1/chapter.md&quot;</code> there is no such file. MarkBind will use the <code>chapter.md</code> file
               <code>/_markbind/boilerplates/</code> but interpret it as if the file exist in <code>chapter1</code> directory (i.e., interpret the <code>chapter1.md</code> code relative to the <code>chapter1</code> directory.</p>
             <p>Similarly, <code>&lt;include src=&quot;chapter2/chapter.md&quot; boilerplate /&gt;</code> interprets the <code>chapter.md</code> relative to the <code>chapter2</code> directory.</p>
           </div>
           <p>If you have many boilerplate files, you can organize them into directories inside the <code>_markbind</code> directory. When using such boilerplate files, you need to replace <code>boilerplate</code> attribute with <code>boilerplate=&quot;&lt;path to file relative to _markbind/boilerplates&gt;&quot;</code>.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose the <code>chapter.md</code> is places in a <code>book</code> directory:</p>
-            <pre><code class="hljs">c:/mySite/
-  └── _markbind/boilerplates/
-         └── book/
-               └── chapter.md
-
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose the <code>chapter.md</code> is places in a <code>book</code> directory:</p>
+            <pre><code class="hljs"><span>c:/mySite/</span><span>  └── _markbind/boilerplates/</span><span>         └── book/</span><span>               └── chapter.md</span><span>&#x200B;</span></code></pre>
             <p>It needs to be used as follows:</p>
-            <pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span>
-</code></pre>
+            <pre><code class="hljs markdown"><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter2/chapter.md"</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">"book/chapter.md"</span> /&gt;</span></span></span></code></pre>
           </div>
           <span id="short" class="d-none">
-<pre><code class="hljs markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"foo.md#bar"</span> <span class="hljs-attr">boilerplate</span>
-          <span class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span>
+<pre><code class="hljs markdown"><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"foo.md#bar"</span> <span class="hljs-attr">boilerplate</span>          <span class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span>
           </span>
-          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span>&gt;</span>
+          </span><span>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"x"</span>&gt;</span>
           </span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
           </span>
-          <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+          </span><span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+          </span>
           </span>
           </code>
           </pre>
@@ -517,21 +416,11 @@ Author: {<span></span>{ author }}
         <p><strong>MarkBind supports reusing across sites.</strong> It allows you to include the pages you want from a <em>sub-site</em> in another <em>main-site</em> without having to change anything in the source files of the <em>sub-site</em> as long
           as the sub-site source files are inside the directory of the <em>main site</em>.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big> Suppose you have a site <code>textbook</code> and you want to include some pages from it in
-            another site <code>course</code>. Given below is how you can locate the sub-site <code>textbook</code> inside the root directory of the main-site <code>course</code> so that files from <code>textbook</code> can be reused in the <code>course</code>            site.</p>
-          <pre><code class="hljs">c:/course/
-  ├── textbook/
-  |      ├── index.md
-  |      ├── overview.md
-  |      └── site.json
-  ├── index.md
-  ├── reading.md
-  └── site.json
-</code></pre>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a site <code>textbook</code> and you want to include some pages from it in another site <code>course</code>.
+            Given below is how you can locate the sub-site <code>textbook</code> inside the root directory of the main-site <code>course</code> so that files from <code>textbook</code> can be reused in the <code>course</code> site.</p>
+          <pre><code class="hljs"><span>c:/course/</span><span>  ├── textbook/</span><span>  |      ├── index.md</span><span>  |      ├── overview.md</span><span>  |      └── site.json</span><span>  ├── index.md</span><span>  ├── reading.md</span><span>  └── site.json</span></code></pre>
           <p><code>reading.md</code> (note how it reuses content from the sub-site <code>textbook</code>):</p>
-          <pre><code class="hljs markdown"><span class="hljs-section"># Week 1 Reading:</span>
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/overview.md"</span> /&gt;</span></span>
-</code></pre>
+          <pre><code class="hljs markdown"><span><span class="hljs-section"># Week 1 Reading:</span></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/overview.md"</span> /&gt;</span></span></span></code></pre>
         </div>
         <div>
           <box border-left-color="#00B0F0">
@@ -546,14 +435,7 @@ Author: {<span></span>{ author }}
         <p>When the readers can remove an item from a page, they can create their own version of the page by removing items they don't want to see. This is especially useful when printing a page.</p>
         <p>To make an element closeable, use <code>v-closeable</code>.</p>
         <div class="indented">
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-closeable</span>&gt;</span>
-
-Optional video:
-
-@[youtube](v40b3ExbM0c)
-
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-closeable</span>&gt;</span></span><span>&#x200B;</span><span>Optional video:</span><span>&#x200B;</span><span>@[youtube](v40b3ExbM0c)</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
           <p>This is how the content will appear. Note how you can hover over the content to access the ❌ button that can collapse the content.</p>
           <div v-closeable="">
             <p>Optional video:</p>
@@ -573,32 +455,14 @@ Optional video:
           have different pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p>
         <h4 id="optimizing-the-print-view">Optimizing the Print View<a class="fa fa-anchor" href="#optimizing-the-print-view"></a></h4>
         <p>To <span class="keyword">hide minimized panels in the <em>print view</em></span>, add the following code to a CSS file used in your site.</p>
-        <pre><code class="hljs css">@<span class="hljs-keyword">media</span> print {
-    <span class="hljs-selector-class">.card-container</span> &gt; <span class="hljs-selector-class">.morph</span> {
-        <span class="hljs-attribute">display</span>: none;
-    }
-}
-</code></pre>
+        <pre><code class="hljs css"><span>@<span class="hljs-keyword">media</span> print {</span><span>    <span class="hljs-selector-class">.card-container</span> &gt; <span class="hljs-selector-class">.morph</span> {</span><span>        <span class="hljs-attribute">display</span>: none;</span><span>    }</span><span>}</span></code></pre>
         <h4 id="hiding-some-info-in-the-generated-content">Hiding some info in the generated content<a class="fa fa-anchor" href="#hiding-some-info-in-the-generated-content"></a></h4>
         <p>To permanently hide a fragment from the reader:</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-none"</span>&gt;</span>
-  content to hide ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">add-class</span>=<span class="hljs-string">"d-none"</span>&gt;</span>
-  content to hide ...
-<span class="hljs-tag">&lt;<span class="hljs-name">panel</span>&gt;</span>
-</code></pre>
+        <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-none"</span>&gt;</span></span><span>  content to hide ...</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"..."</span> <span class="hljs-attr">add-class</span>=<span class="hljs-string">"d-none"</span>&gt;</span></span><span>  content to hide ...</span><span><span class="hljs-tag">&lt;<span class="hljs-name">panel</span>&gt;</span></span></code></pre>
         <p>To hide a fragment in one specific page, 'mark' the elements using a <code>class</code>:</p>
-        <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"extra"</span>&gt;</span>
-  content to hide ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</code></pre>
+        <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"extra"</span>&gt;</span></span><span>  content to hide ...</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></code></pre>
         <p>Then, in a page-specific CSS file,</p>
-        <pre><code class="hljs css"><span class="hljs-selector-class">.extra</span> {
-  <span class="hljs-attribute">display</span>: none; <span class="hljs-comment">/* 'block' or 'inline-block' if you want it to show */</span>
-}
-</code></pre>
+        <pre><code class="hljs css"><span><span class="hljs-selector-class">.extra</span> {</span><span>  <span class="hljs-attribute">display</span>: none; <span class="hljs-comment">/* 'block' or 'inline-block' if you want it to show */</span></span><span>}</span></code></pre>
         <h4 id="creating-slight-variations-of-content">Creating slight variations of content<a class="fa fa-anchor" href="#creating-slight-variations-of-content"></a></h4>
         <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="/userGuide/tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a>          section for more information.</p>
         <div class="clearfix">
@@ -649,7 +513,7 @@ Optional video:
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
     </footer>
   </div>
 </body>

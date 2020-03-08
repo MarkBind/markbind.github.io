@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Making the Site Searchable</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -111,16 +111,9 @@
           <div>
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search (Right-aligned dropdown)"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</code></pre>
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search (Right-aligned dropdown)"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span></span></code></pre>
               <p>To use the searchbar within a navbar, add the following markup to your file. The searchbar can be positioned using the slot attribute for the list. The following markup adds a searchbar to the right side of the navbar with appropriate styling.</p>
-              <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</code></pre>
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
@@ -188,15 +181,11 @@
           <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">User Guide: Using Plugins → Algolia: Enabling Algolia DocSearch</a>.</span>
           </p>
           <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span>          <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+<pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span>          <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+          </span>
           </code>
           </pre>
-          <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span></code></pre>
           </span>
           <span id="examples" class="d-none">
 <p><searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar></p></span></div>
@@ -205,13 +194,8 @@
           <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword
             without rendering it in the page, add <code>d-none</code> as a class.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-            <pre><code class="hljs html">#### Developer Testing
-<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-
-This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword"</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
+            <pre><code class="hljs html"><span>#### Developer Testing</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span>This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword"</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.</span></code></pre>
             <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
             <box>
               <p><big><strong>Developer Testing</strong></big><br></p>
@@ -221,15 +205,12 @@ This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">spa
           </div>
           <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code>keywords</code> attribute inside the <code>&lt;frontmatter&gt;</code> of that page.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-  keywords: regress, regression testing, regressions
-<span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-...
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  keywords: regress, regression testing, regressions</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>...</span></code></pre>
           </div>
           <span id="short" class="d-none">
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          </span>
           </code>
           </pre>
           </span>
@@ -239,16 +220,10 @@ This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">spa
           <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code>.always-index</code> or <code>.no-index</code> classes.</p>
           <p>If you wish to index a specific heading outside the specified <code>headingIndexLevel</code>, you may add the <code>.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code>headingIndexLevel</code>            not to be indexed, you may add the <code>.no-index</code> attribute to the heading.</p>
           <div class="indented">
-            <p><big><span class="badge badge-pill badge-light" style="background-color: #d9d9d9; color: #737373; position:relative; left:-10px">Example:</span></big></p>
-            <pre><code class="hljs md"><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span>
-
-<span class="hljs-section"># Heading inside heading index level that will not be indexed {.no-index}</span>
-</code></pre>
+            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
+            <pre><code class="hljs md"><span><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span></span><span>&#x200B;</span><span><span class="hljs-section"># Heading inside heading index level that will not be indexed {.no-index}</span></span></code></pre>
             <p>Equivalently,</p>
-            <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"always-index"</span>&gt;</span> Heading outside heading index level that will be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span> Heading inside heading index level that will not be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-</code></pre>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"always-index"</span>&gt;</span> Heading outside heading index level that will be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span> Heading inside heading index level that will not be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span></code></pre>
           </div>
         </div>
         <div class="clearfix">
@@ -279,7 +254,7 @@ This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">spa
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
     </footer>
   </div>
 </body>

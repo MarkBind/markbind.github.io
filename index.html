@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Generate More Dynamic Websites from Markdown Text</title>
   <link rel="stylesheet" href="markbind/css/bootstrap.min.css">
@@ -46,8 +46,10 @@
         <div tags="environment--ug">
           <h1 class="display-3" id="markbind"><span><strong>MarkBind</strong></span><a class="fa fa-anchor" href="#markbind"></a></h1>
           <span class="lead">
-<p><big><strong>Generate <tooltip><template slot="_content">as opposed to <em>one-size-fits-all</em> static content</template><em>more dynamic</em></tooltip> websites from Markdown text.</strong></big>
-Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning websites, online instruction manuals, project documentation etc.</span>.
+<p><big><strong>Generate <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">as opposed to <em>one-size-fits-all</em> static content</span><em>more dynamic</em></span>
+          websites from Markdown text.</strong>
+          </big>
+          Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning websites, online instruction manuals, project documentation etc.</span>.
           </p>
           </span>
           <p>
@@ -55,9 +57,9 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           </p>
           <hr>
           <h4 id="simple-syntax-dynamic-content"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Simple syntax. Dynamic content.<a class="fa fa-anchor" href="#simple-syntax-dynamic-content"></a></h4>
-          <p>MarkBind source files can be as simple as basic Markdown, but you can also <a href="/userGuide/markBindSyntaxOverview.html"><strong>use a mix of several popular syntax schemes</strong></a> (
-            <tooltip><template slot="_content">GitHub Flavored Markdown</template>GFMD</tooltip>, BootStrap, NunJucks, etc. as well as MarkBind's own custom syntax) to create more dynamic content that you cannot normally get from a typical markdown-to-html site
-            generator.</p>
+          <p>MarkBind source files can be as simple as basic Markdown, but you can also <a href="/userGuide/markBindSyntaxOverview.html"><strong>use a mix of several popular syntax schemes</strong></a> (<span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter"
+              class="trigger"><span data-mb-html-for="_content">GitHub Flavored Markdown</span>GFMD</span>, BootStrap, NunJucks, etc. as well as MarkBind's own custom syntax) to create more dynamic content that you cannot normally get from a typical markdown-to-html
+            site generator.</p>
           <p>Here are some simple text-formatting examples:</p>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
@@ -93,13 +95,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
               <tr>
 
                 <td>
-                  <pre><code class="hljs markdown"><span class="hljs-strong">**Things to do:**</span>
-
-<span class="hljs-bullet">- </span>[x] Finish my changes
-<span class="hljs-bullet">- </span>[ ] Push my commits to GitHub
-<span class="hljs-bullet">- </span>[ ] Open a pull request
-
-</code></pre>
+                  <pre><code class="hljs markdown"><span><span class="hljs-strong">**Things to do:**</span></span><span>&#x200B;</span><span><span class="hljs-bullet">- </span>[x] Finish my changes</span><span><span class="hljs-bullet">- </span>[ ] Push my commits to GitHub</span><span><span class="hljs-bullet">- </span>[ ] Open a pull request</span><span>&#x200B;</span></code></pre>
                   <p></p>
                 </td>
 
@@ -122,18 +118,18 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           <p></p>
           <p>The example paragraph below has the following dynamic elements: a tooltip, a popover, and a modal. Hover/click on the underlined words to see each.</p>
           <box>
-            <p>In
-              <tooltip><template slot="_content">Computer Science</template>CS</tooltip>, a binary tree is a
-              <trigger for="pop:index-tree">tree data structure</trigger> in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>.
-              <trigger trigger="click" for="modal:index-primitive">Primitive data types</trigger> on the other hand ...</p>
-            <popover id="pop:index-tree" placement="top"><template slot="header">An example tree data structure</template>
-              <div slot="content">
-                <p><a href="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" target="_self"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" alt="" class="img-fluid"></a><br>
-                  <span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
-                <p></p>
-              </div>
-            </popover>
-            <modal large="" id="modal:index-primitive"><template slot="_header">Some examples of primitive data types</template>
+            <p>In <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Computer Science</span>CS</span>, a binary tree is a <span for="pop:index-tree" v-b-popover.hover.top.html="popoverGenerator"
+                v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:index-tree'].show()" class="trigger">tree data structure</span> in which each node has at most two children, which are referred to as the <em>left child</em> and
+              the
+              <em>right child</em>. <span trigger="click" for="modal:index-primitive" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:index-primitive'].show()" class="trigger">Primitive data types</span>              on the other hand ...</p>
+            <span id="pop:index-tree" placement="top" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger"><span data-mb-html-for="header">An example tree data structure</span>
+            <div data-mb-html-for="content">
+              <p><a href="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" target="_self"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" alt="" class="img-fluid"></a><br>
+                <span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
+              <p></p>
+            </div>
+            </span>
+            <b-modal id="modal:index-primitive" ok-only="" size="lg" modal-class="mb-zoom" ref="modal:index-primitive"><template slot="modal-title">Some examples of primitive data types</template>
               <div>
                 <ul>
                   <li>Boolean, true or false.</li>
@@ -147,7 +143,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
                 </ul>
                 <p><span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
               </div>
-            </modal>
+            </b-modal>
           </box>
           <panel type="seamless"><template slot="_header"><p><span class="dimmed">More examples of generating dynamic content</span></p></template> In the example below, there is an expandable panel that can reveal more content.
             <box>
@@ -204,8 +200,8 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
           <p>For example, MarkBind has a powerful <code>include</code> mechanism that allows content fragments (i.e., a file or part of a file) to be reused at multiple places in the website. In the example below, both the modal and the expandable panel
             reuse the same content originating from a <em>single</em> source file.</p>
           <box>
-            <p>In CS, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>.
-              <trigger trigger="click" for="modal:index-primitive2">Primitive data types</trigger> on the other hand ...</p>
+            <p>In CS, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>. <span trigger="click" for="modal:index-primitive2" v-b-popover.click.top.html="popoverGenerator"
+                v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:index-primitive2'].show()" class="trigger">Primitive data types</span> on the other hand ...</p>
             <panel type="seamless"><template slot="_header"><p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Some example primitive data types</span></p></template>
               <div>
                 <ul>
@@ -221,7 +217,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
                 <p><span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
               </div>
             </panel>
-            <modal large="" id="modal:index-primitive2"><template slot="_header">Some examples of primitive data types</template>
+            <b-modal id="modal:index-primitive2" ok-only="" size="lg" modal-class="mb-zoom" ref="modal:index-primitive2"><template slot="modal-title">Some examples of primitive data types</template>
               <div>
                 <ul>
                   <li>Boolean, true or false.</li>
@@ -235,7 +231,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
                 </ul>
                 <p><span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
               </div>
-            </modal>
+            </b-modal>
           </box>
           <hr>
           <h4 id="easy-to-set-up-modify-deploy-integrate"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Easy to set up, modify, deploy, integrate.<a class="fa fa-anchor" href="#easy-to-set-up-modify-deploy-integrate"></a></h4>
@@ -249,7 +245,7 @@ Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning 
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small><br>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small><br>
         <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
     </footer>
   </div>

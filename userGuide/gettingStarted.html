@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.11.0">
+  <meta name="generator" content="MarkBind 2.12.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide - Getting Started</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -95,26 +95,15 @@
         </div>
         <p><big><strong>1. Install MarkBind</strong></big></p>
         <p>Run the following command to install MarkBind.</p>
-        <pre><code class="hljs">$ npm install -g markbind-cli
-</code></pre>
+        <pre><code class="no-line-numbers hljs"><span>$ npm install -g markbind-cli</span></code></pre>
         <p>Next, run the command <code>markbind</code>. If MarkBind has been installed correctly, you should see the MarkBind ascii logo followed by a summary of MarkBind commands as the output.</p>
-        <pre><code class="hljs">$ markbind
-  __  __                  _      ____    _               _
- |  \/  |   __ _   _ __  | | __ | __ )  (_)  _ __     __| |
- | |\/| |  / _` | | '__| | |/ / |  _ \  | | | '_ \   / _` |
- | |  | | | (_| | | |    |   &lt;  | |_) | | | | | | | | (_| |
- |_|  |_|  \__,_| |_|    |_|\_\ |____/  |_| |_| |_|  \__,_|
-
- v1.x.y
-Usage: ...
-</code></pre>
+        <pre><code class="no-line-numbers hljs"><span>$ markbind</span><span>  __  __                  _      ____    _               _</span><span> |  \/  |   __ _   _ __  | | __ | __ )  (_)  _ __     __| |</span><span> | |\/| |  / _` | | '__| | |/ / |  _ \  | | | '_ \   / _` |</span><span> | |  | | | (_| | | |    |   &lt;  | |_) | | | | | | | | (_| |</span><span> |_|  |_|  \__,_| |_|    |_|\_\ |____/  |_| |_| |_|  \__,_|</span><span>&#x200B;</span><span> v1.x.y</span><span>Usage: ...</span></code></pre>
         <p><big><strong>2. Initialize a new Project (or Start with an existing Project)</strong></big></p>
         <tabs>
 
           <tab><template slot="_header">Initializing a new project</template>
             <p>Navigate into an empty directory and run the following command to initialize a skeletal MarkBind site in that directory. It will create several new files in the directory e.g., <code>index.md</code>, <code>site.json</code>.</p>
-            <pre><code class="hljs">$ markbind init
-</code></pre>
+            <pre><code class="no-line-numbers hljs"><span>$ markbind init</span></code></pre>
             <div>
               <box border-left-color="#00B0F0">
                 <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
@@ -124,8 +113,9 @@ Usage: ...
           </tab>
 
           <tab><template slot="_header">Starting with an existing project</template>
-            <p>Navigate to the project
-              <tooltip><template slot="_content">The directory that contains all the project files. It is also the directory in which the <code>site.json</code> configuration file is located.</template>root directory</tooltip>.</p>
+            <p>Navigate to the project <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">The directory that contains all the project files. It is also the directory in which the <code>site.json</code> configuration file is located.</span>root
+              directory
+              </span>.</p>
           </tab>
           <tab><template slot="_header">Starting with different templates</template>
             <p>By default, you will initialize Markbind with a feature filled <a href="https://markbind-init-typical.netlify.com/">template</a>. By adding a flag <code>--template &lt;template-name&gt;</code> you can select a different template to initialize
@@ -133,20 +123,19 @@ Usage: ...
           </tab>
         </tabs>
         <p><big><strong>3. Preview the site</strong></big></p>
-        <p>Run the following command in the same directory. It will generate a website from your source files, start a web server, and open a
-          <trigger trigger="click" for="modal:quickStart-livePreview">live preview</trigger> of your site in your default Browser.</p>
-        <modal large="" id="modal:quickStart-livePreview"><template slot="_header">Live Preview</template>
+        <p>Run the following command in the same directory. It will generate a website from your source files, start a web server, and open a <span trigger="click" for="modal:quickStart-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter"
+            v-on:click="$refs['modal:quickStart-livePreview'].show()" class="trigger">live preview</span> of your site in your default Browser.</p>
+        <b-modal id="modal:quickStart-livePreview" ok-only="" size="lg" modal-class="mb-zoom" ref="modal:quickStart-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
 <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>,
-            <tooltip><template slot="_content">MarkBind file</template><code>.mbd</code></tooltip>,
-            <tooltip><template slot="_content">MarkBind fragment</template><code>.mbdf</code></tooltip>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter"
+              class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>.
+            Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
           <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
           <p></p>
           </span>
-        </modal>
-        <pre><code class="hljs">$ markbind serve
-</code></pre>
+        </b-modal>
+        <pre><code class="no-line-numbers hljs"><span>$ markbind serve</span></code></pre>
         <p>Do some changes to the <code>index.md</code> and save the file. The live preview in the Browser should update automatically to reflect your changes.</p>
         <p>To stop the web server, go to the console running the <code>serve</code> command and press <kbd>CTRL</kbd> + <kbd>C</kbd> (or the equivalent in your OS).</p>
         <p><big><strong>4. Next steps</strong></big></p>
@@ -164,7 +153,7 @@ Usage: ...
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.11.0</a> on Sun, 23 Feb 2020 03:19:44 GMT]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
     </footer>
   </div>
 </body>
