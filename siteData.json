@@ -101,6 +101,7 @@
         "line-numbering": "Line numbering",
         "line-highlighting": "Line highlighting",
         "heading": "Heading",
+        "using-multiple-features": "Using multiple features",
         "inline-code": "Inline Code",
         "syntax-coloring-2": "Syntax coloring",
         "horizontal-rules": "Horizontal Rules",
@@ -221,6 +222,7 @@
         "variables-defaults": "Variables: Defaults",
         "page-variables": "Page Variables",
         "importing-variables": "Importing Variables",
+        "defining-variables-with-json": "Defining variables with JSON",
         "variables-tips-and-tricks": "Variables: Tips and Tricks",
         "includes": "Includes",
         "and-lt-include-and-gt-inside-an-included-file": "&lt;include&gt; Inside an Included File",
@@ -317,7 +319,7 @@
     {
       "title": "User Guide: Tweaking the Page Structure",
       "layout": "userGuide",
-      "pageNav": 3,
+      "pageNav": 2,
       "src": "userGuide/tweakingThePageStructure.md",
       "headings": {
         "tweaking-the-page-structure": "Tweaking the Page Structure",
@@ -331,7 +333,8 @@
         "attaching-event-listeners-in-scripts-js": "Attaching event listeners in scripts.js",
         "using-expressive-layout-templates": "Using Expressive Layout Templates",
         "main-content-of-your-page": "Main content of your page",
-        "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
+        "tags": "Tags",
+        "toggling-alternative-contents-in-a-page": "Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags"
       },
@@ -346,7 +349,6 @@
         "using-components": "Using Components",
         "badges": "Badges",
         "boxes": "Boxes",
-        "header": "Header 🚀",
         "dropdowns": "Dropdowns",
         "modals": "Modals",
         "navbars": "Navbars",
@@ -392,7 +394,8 @@
         "built-in-plugins": "Built-in plugins",
         "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch",
         "codeblockcopybuttons-enabling-code-blocks-to-be-copied": "codeBlockCopyButtons: Enabling code-blocks to be copied",
-        "filtertags-toggling-alternative-contents-in-a-page": "filterTags: Toggling alternative contents in a page",
+        "tags": "Tags",
+        "toggling-alternative-contents-in-a-page": "Toggling alternative contents in a page",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags",
         "google-analytics-enhancing-site-with-google-analytics": "Google Analytics: Enhancing site with Google Analytics"

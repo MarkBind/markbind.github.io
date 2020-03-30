@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.12.0">
+  <meta name="generator" content="MarkBind 2.13.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Plugins</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -295,8 +295,9 @@
           </p>
         </div>
         <div>
-          <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
+          <h2 id="tags">Tags<a class="fa fa-anchor" href="#tags"></a></h2>
           <p>You can use tags to selectively filter HTML elements when building a site.</p>
+          <h3 id="toggling-alternative-contents-in-a-page">Toggling alternative contents in a page<a class="fa fa-anchor" href="#toggling-alternative-contents-in-a-page"></a></h3>
           <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
@@ -326,19 +327,29 @@
           <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span></code></pre>
           </span>
           <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-          <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
+          <h3 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h3>
           <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
             <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--*"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
             <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
           </div>
-          <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
+          <h3 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h3>
           <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html"><span>index.md</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
-            <pre><code class="hljs json"><span>site.json</span><span>&#x200B;</span><span>{</span><span>  ...</span><span>  <span class="hljs-attr">"plugins"</span> : [</span><span>    <span class="hljs-string">"filterTags"</span></span><span>  ],</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {</span><span>    <span class="hljs-attr">"filterTags"</span> : {</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]</span><span>    }</span><span>  }</span><span>}</span></code></pre>
+            <div class="code-block">
+              <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
+              <div class="code-block-content">
+                <pre><code heading="index.md" class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
+              </div>
+            </div>
+            <div class="code-block">
+              <div class="code-block-heading"><span>site.json</span></div>
+              <div class="code-block-content">
+                <pre><code heading="site.json" class="hljs json"><span>{</span><span>  ...</span><span>  <span class="hljs-attr">"plugins"</span> : [</span><span>    <span class="hljs-string">"filterTags"</span></span><span>  ],</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {</span><span>    <span class="hljs-attr">"filterTags"</span> : {</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]</span><span>    }</span><span>  }</span><span>}</span></code></pre>
+              </div>
+            </div>
             <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
           </div>
           <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
@@ -419,10 +430,17 @@
               <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
                 <a class="nav-link py-1" href="#algolia-enabling-algolia-docsearch">algolia: Enabling Algolia DocSearch&#x200E;</a>
                 <a class="nav-link py-1" href="#codeblockcopybuttons-enabling-code-blocks-to-be-copied">codeBlockCopyButtons: Enabling code-blocks to be copied&#x200E;</a>
-                <a class="nav-link py-1" href="#filtertags-toggling-alternative-contents-in-a-page">filterTags: Toggling alternative contents in a page&#x200E;</a>
+              </nav>
+            </nav>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#tags">Tags&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#toggling-alternative-contents-in-a-page">Toggling alternative contents in a page&#x200E;</a>
                 <a class="nav-link py-1" href="#advanced-tagging-tips">Advanced Tagging Tips&#x200E;</a>
                 <a class="nav-link py-1" href="#hiding-tags">Hiding Tags&#x200E;</a>
-                <a class="nav-link py-1" href="#google-analytics-enhancing-site-with-google-analytics">Google Analytics: Enhancing site with Google Analytics&#x200E;</a>
+                <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                  <a class="nav-link py-1" href="#google-analytics-enhancing-site-with-google-analytics">Google Analytics: Enhancing site with Google Analytics&#x200E;</a>
+                </nav>
               </nav>
             </nav>
 
@@ -432,7 +450,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.0</a> on Mon, Mar 30, 2020, 12:40:39 AM UTC]</small></div>
     </footer>
   </div>
 </body>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.12.0">
+  <meta name="generator" content="MarkBind 2.13.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Tweaking the Page Structure</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -131,17 +131,7 @@
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you want to insert the code below into the <code>&lt;head&gt;</code> of a page, and you have saved the code as
               <strong><code>_markbind/head/</code></strong><code>myCustomLinks.md</code>:</p>
-            <box>
-              <p><code>&lt;script src=&quot;</code>
-                <code>{<span></span>{ baseUrl }}</code>
-                <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-                <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-                <code>{<span></span>{ baseUrl }}</code>
-                <code>/css/main.css&quot;&gt;</code><br>
-                <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-                <code>{<span></span>{ baseUrl }}</code>
-                <code>/css/extra.css&quot;&gt;</code></p>
-            </box>
+            <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span></span></code></pre>
             <p>To specify that you want to insert <code>myCustomLinks.md</code> into the <code>&lt;head&gt;</code> of <code>myPage.html</code>, update the front matter of the <code>myPage.md</code> as follows:</p>
             <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  head: myCustomLinks.md</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>...</span></code></pre>
           </div>
@@ -149,19 +139,7 @@
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can force the line <code>&lt;script ... &gt; ... &lt;/script&gt;</code> to be inserted at the top of the
               <code>&lt;head&gt;</code> section.</p>
-            <box>
-              <p><strong><code>&lt;head-top&gt;</code></strong><br>
-                <code>&lt;script src=&quot;</code>
-                <code>{<span></span>{ baseUrl }}</code>
-                <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-                <strong><code>&lt;/head-top&gt;</code></strong><br>
-                <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-                <code>{<span></span>{ baseUrl }}</code>
-                <code>/css/main.css&quot;&gt;</code><br>
-                <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-                <code>{<span></span>{ baseUrl }}</code>
-                <code>/css/extra.css&quot;&gt;</code></p>
-            </box>
+            <pre><code class="no-line-numbers hljs html"><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span></span></code></pre>
           </div>
           <p><strong>Multiple head files can be included</strong> within a page by providing a comma separated list. They will be added to the <code>&lt;head&gt;</code> in the order in which they are listed.
             <strong>You may specify raw <code>.js</code> or <code>.css</code> files</strong> as your head file if you wish to do so.</p>
@@ -171,19 +149,14 @@
           </div>
           <span id="short" class="d-none">
 <p><code>_markbind/head/myCustomLinks.md</code>:</p>
-<box>
-<p><strong><code>&lt;head-top&gt;</code></strong><br>
-  <code>&lt;script src=&quot;</code>
-<code>{<span></span>{ baseUrl }}</code>
-          <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-          <strong><code>&lt;/head-top&gt;</code></strong><br>
-          <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-          <code>{<span></span>{ baseUrl }}</code>
-          <code>/css/main.css&quot;&gt;</code><br>
-          <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-          <code>{<span></span>{ baseUrl }}</code>
-          <code>/css/extra.css&quot;&gt;</code></p>
-          </box>
+<pre><code class="no-line-numbers hljs html"><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span>
+          </span><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"``/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+          </span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span>
+          </span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/main.css"</span>&gt;</span>
+          </span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/extra.css"</span>&gt;</span>
+          </span>
+          </code>
+          </pre>
           <pre><code class="hljs html"><span> <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>   head: myCustomLinks.md</span><span> <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span></code></pre>
           </span>
           <p>If you wish to use a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> but exclude its head file, specify <code>head: none</code> in the <code>&lt;frontmatter&gt;</code> of the page.</p>
@@ -306,17 +279,7 @@
             </span>, in which case the code for the siteNav should be enclosed in a <code>&lt;navigation&gt;</code> tag. There should only be one <code>&lt;navigation&gt;</code> tag in the file.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> A siteNav code using a <code>&lt;navigation&gt;</code> tag.</p>
-            <box>
-              <code>
-# Site Map<br>
-<strong><<span></span>navigation></strong><br>
-* [:house: Home]({<span></span>{ baseUrl }}/index.html)<br>
-* Docs<br>
-&nbsp;&nbsp;* [User Guide]({<span></span>{ baseUrl }}/ug.html)<br>
-&nbsp;&nbsp;* [Dev Guide]({<span></span>{ baseUrl }}/dg.html)<br>
-* [Search]({<span></span>{ baseUrl }}/search.html)<br>
-<strong><<span></span>/navigation></strong><br>
-</code></box>
+            <pre><code class="no-line-numbers hljs"><span># Site Map</span><span>&lt;navigation&gt;</span><span>* [:house: Home](/index.html)</span><span>* Docs</span><span>  * [User Guide](/ug.html)</span><span>  * [Dev Guide](/dg.html)</span><span>* [Search](/search.html)</span><span>&lt;/navigation&gt;</span></code></pre>
           </div>
           <p>More than one siteNav file can be in <code>_markbind/navigation/</code> directory but a page may not have more than one siteNav.</p>
           <p>A siteNav has a fixed width of 300 pixels for its contents. A siteNav is <a href="https://www.w3schools.com/html/html_responsive.asp"><em>responsive</em></a> in that it will collapse to a menu button when the screen width is smaller than 992
@@ -324,12 +287,8 @@
           <p>There is no limit to the number of nesting levels or the number of items in the menu, but note that any content exceeding a height of 1000 pixels will be cut off.</p>
           <p>If you wish to use a Layout but exclude its navigation file, specify <code>siteNav: none</code> in the <code>&lt;frontmatter&gt;</code> of the page.</p>
           <span id="short" class="d-none">
-<code>
-# Site Map<br>
-<strong><<span></span>navigation></strong><br> * [:house: Home]({<span></span>{ baseUrl }}/index.html)<br> * Docs :expanded:<br> &nbsp;&nbsp;* [User Guide]({<span></span>{ baseUrl }}/ug.html)<br> &nbsp;&nbsp;* [Dev Guide]({<span></span>{ baseUrl
-          }}/dg.html)<br> * [Search]({<span></span>{ baseUrl }}/search.html)<br>
-          <strong><<span></span>/navigation></strong><br>
-          </code>
+<pre><code class="no-line-numbers hljs"><span># Site Map</span><span>&lt;navigation&gt;</span><span>* [:house: Home](/index.html)</span><span>* Docs :expanded:</span><span>  * [User Guide](/ug.html)</span><span>  * [Dev Guide](/dg.html)</span><span>* [Search](/search.html)</span><span>&lt;/navigation&gt;</span></code>
+          </pre>
           <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  siteNav: mySiteNav.md</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>...</span></code></pre>
           </span>
           <span id="examples" class="d-none">
@@ -362,6 +321,7 @@
 </p></span></div>
         <hr>
         <div>
+
           <div></div>
           <h2 id="page-layouts">Page Layouts<a class="fa fa-anchor" href="#page-layouts"></a></h2>
           <p><strong>A <em>layout</em> is a set of page-tweaks that can be applied to a page (or group of pages) in one go.</strong></p>
@@ -417,17 +377,18 @@
           </box>
           <p>which injects the actual page content in every page. This allows you to build layouts in different ways.</p>
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Adding statistics formula to the bottom of every page</p>
-          <box>
-            <i>index.md</i>
-            <br><br>
-            <pre><code class="hljs html"><span>#### Main content of your page</span><span>&#x200B;</span><span>Content of your page</span></code></pre>
-          </box>
-          <box>
-            <i>page.md</i>
-            <br><br>
-            <p><code>{<span></span>{ MAIN_CONTENT_BODY }}</code></p>
-            <pre><code class="hljs html"><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span></span></code></pre>
-          </box>
+          <div class="code-block">
+            <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
+            <div class="code-block-content">
+              <pre><code heading="index.md" class="hljs html"><span>#### Main content of your page</span><span>&#x200B;</span><span>Content of your page</span></code></pre>
+            </div>
+          </div>
+          <div class="code-block">
+            <div class="code-block-heading inline-markdown-heading"><span><a href="http://page.md">page.md</a></span></div>
+            <div class="code-block-content">
+              <pre><code heading="page.md" class="hljs html"><span>  </span><span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>{<span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span>{ MAIN_CONTENT_BODY }}<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span></span><span>&#x200B;</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span></span></code></pre>
+            </div>
+          </div>
           <p>Here's how the above content would appear:</p>
           <box>
             <i>index.html</i>
@@ -440,8 +401,9 @@
         </div>
         <hr>
         <div>
-          <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
+          <h2 id="tags">Tags<a class="fa fa-anchor" href="#tags"></a></h2>
           <p>You can use tags to selectively filter HTML elements when building a site.</p>
+          <h3 id="toggling-alternative-contents-in-a-page">Toggling alternative contents in a page<a class="fa fa-anchor" href="#toggling-alternative-contents-in-a-page"></a></h3>
           <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
@@ -471,19 +433,29 @@
           <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span></code></pre>
           </span>
           <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-          <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
+          <h3 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h3>
           <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
             <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--*"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
             <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
           </div>
-          <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
+          <h3 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h3>
           <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html"><span>index.md</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
-            <pre><code class="hljs json"><span>site.json</span><span>&#x200B;</span><span>{</span><span>  ...</span><span>  <span class="hljs-attr">"plugins"</span> : [</span><span>    <span class="hljs-string">"filterTags"</span></span><span>  ],</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {</span><span>    <span class="hljs-attr">"filterTags"</span> : {</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]</span><span>    }</span><span>  }</span><span>}</span></code></pre>
+            <div class="code-block">
+              <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
+              <div class="code-block-content">
+                <pre><code heading="index.md" class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
+              </div>
+            </div>
+            <div class="code-block">
+              <div class="code-block-heading"><span>site.json</span></div>
+              <div class="code-block-content">
+                <pre><code heading="site.json" class="hljs json"><span>{</span><span>  ...</span><span>  <span class="hljs-attr">"plugins"</span> : [</span><span>    <span class="hljs-string">"filterTags"</span></span><span>  ],</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {</span><span>    <span class="hljs-attr">"filterTags"</span> : {</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]</span><span>    }</span><span>  }</span><span>}</span></code></pre>
+              </div>
+            </div>
             <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
           </div>
           <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
@@ -532,6 +504,7 @@
               <a class="nav-link py-1" href="#site-navigation-menus">Site Navigation Menus&#x200E;</a>
               <a class="nav-link py-1" href="#page-navigation-menus">Page Navigation Menus&#x200E;</a>
               <a class="nav-link py-1" href="#page-layouts">Page Layouts&#x200E;</a>
+              <a class="nav-link py-1" href="#tags">Tags&#x200E;</a>
             </nav>
 
           </nav>
@@ -540,7 +513,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.0</a> on Mon, Mar 30, 2020, 12:40:39 AM UTC]</small></div>
     </footer>
   </div>
 </body>

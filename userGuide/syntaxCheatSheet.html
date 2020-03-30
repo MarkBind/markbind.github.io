@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.12.0">
+  <meta name="generator" content="MarkBind 2.13.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Syntax Cheat Sheet</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -286,8 +286,8 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                     <box type="info" dismissible="">
                       dismissible info
                     </box>
-                    <box type="success" icon-size="2x"><template slot="_header"><h4 id="header">Header 🚀<a class="fa fa-anchor" href="#header"></a></h4></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <box type="success" icon-size="2x"><template slot="_header"><h4 class="no-index" id="header">Header 🚀<a class="fa fa-anchor" href="#header"></a></h4></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                       <box type="warning" dismissible=""><template slot="_header"><p>You can use <strong>markdown</strong> here! 🍕</p></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                       </box>
@@ -376,7 +376,7 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                     <box background-color="white" border-color="grey" border-left-color="blue">
                       default, styled as empty box with blue left border
                     </box>
-                    <box type="info"><template slot="_icon">🚀</template> info, with rocket icon
+                    <box type="info"><template slot="icon">🚀</template> info, with rocket icon
                     </box>
                   </box>
                 </div>
@@ -412,13 +412,13 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                 <p><span class="dimmed">OUTPUT:</span></p>
                 <div class="indented">
                   <box border-left-color="grey" background-color="white">
-                    <box type="warning"><template slot="_icon"><span aria-hidden="true" class="fas fa-camera"></span></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    <box type="warning"><template slot="icon"><span aria-hidden="true" class="fas fa-camera"></span></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </box>
-                    <box type="warning" icon-size="2x"><template slot="_icon"><span aria-hidden="true" class="fas fa-camera"></span></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    <box type="warning" icon-size="2x"><template slot="icon"><span aria-hidden="true" class="fas fa-camera"></span></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </box>
-                    <box type="warning" icon-size="3x"><template slot="_icon"><span aria-hidden="true" class="fas fa-camera"></span></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    <box type="warning" icon-size="3x"><template slot="icon"><span aria-hidden="true" class="fas fa-camera"></span></template> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </box>
                   </box>
@@ -614,7 +614,7 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
               </div>
 
               <h5 id="line-numbering">Line numbering<a class="fa fa-anchor" href="#line-numbering"></a></h5>
-              <p>Line numbers are automatically provided by default. To hide line numbers, add the class <code>no-line-numbers</code> to the code block as below</p>
+              <p>Line numbers are provided by default. To hide line numbers, add the class <code>no-line-numbers</code> to the code block as below</p>
               <div>
                 <p><span class="dimmed">CODE:</span></p>
                 <div class="indented">
@@ -624,6 +624,19 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                 <div class="indented">
                   <box border-left-color="grey" background-color="white">
                     <pre><code class="no-line-numbers hljs xml"><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span></code></pre>
+                  </box>
+                </div>
+              </div>
+              <p>You can have your line numbers start with a value other than <code>1</code> with the <code>start-from</code> attribute.</p>
+              <div>
+                <p><span class="dimmed">CODE:</span></p>
+                <div class="indented">
+                  <pre><code class="no-line-numbers hljs"><span>```js {start-from=6}</span><span>function add(a, b) {</span><span>    return a + b;</span><span>}</span><span>```</span></code></pre>
+                </div>
+                <p><span class="dimmed">OUTPUT:</span></p>
+                <div class="indented">
+                  <box border-left-color="grey" background-color="white">
+                    <pre><code style="counter-reset: line 5;" class="hljs js"><span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>{</span><span>    <span class="hljs-keyword">return</span> a + b;</span><span>}</span></code></pre>
                   </box>
                 </div>
               </div>
@@ -637,7 +650,7 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                 <p><span class="dimmed">OUTPUT:</span></p>
                 <div class="indented">
                   <box border-left-color="grey" background-color="white">
-                    <pre><code highlight-lines="2,4,6-8" class="hljs java"><span><span class="hljs-keyword">import</span> java.util.List;</span><span class="highlighted">&#x200B;</span><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inventory</span> </span>{</span><span class="highlighted">    <span class="hljs-keyword">private</span> List&lt;Item&gt; items;</span><span>&#x200B;</span><span class="highlighted">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getItemCount</span><span class="hljs-params">()</span></span>{</span><span class="highlighted">        <span class="hljs-keyword">return</span> items.size();</span><span class="highlighted">    }</span><span>&#x200B;</span><span>    <span class="hljs-comment">//...</span></span><span>}</span></code></pre>
+                    <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> java.util.List;</span><span class="highlighted">&#x200B;</span><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inventory</span> </span>{</span><span class="highlighted">    <span class="hljs-keyword">private</span> List&lt;Item&gt; items;</span><span>&#x200B;</span><span class="highlighted">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getItemCount</span><span class="hljs-params">()</span></span>{</span><span class="highlighted">        <span class="hljs-keyword">return</span> items.size();</span><span class="highlighted">    }</span><span>&#x200B;</span><span>    <span class="hljs-comment">//...</span></span><span>}</span></code></pre>
                   </box>
                 </div>
               </div>
@@ -655,6 +668,43 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
                       <div class="code-block-heading"><span>Heading title</span></div>
                       <div class="code-block-content">
                         <pre><code heading="Heading title" class="hljs xml"><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span></code></pre>
+                      </div>
+                    </div>
+                  </box>
+                </div>
+              </div>
+              <p>Headings support inline Markdown, except for <code>Inline Code</code> and <span class="dimmed">Dim</span> text styles.</p>
+              <div>
+                <p><span class="dimmed">CODE:</span></p>
+                <div class="indented">
+                  <pre><code class="no-line-numbers hljs"><span>```{heading=&quot;**Bold**, _Italic_, ___Bold and Italic___, ~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, :+1: :exclamation: :x: :construction:&lt;br&gt;We support page breaks&quot;}</span><span>&lt;foo&gt;&lt;/foo&gt;</span><span>```</span></code></pre>
+                </div>
+                <p><span class="dimmed">OUTPUT:</span></p>
+                <div class="indented">
+                  <box border-left-color="grey" background-color="white">
+                    <div class="code-block">
+                      <div class="code-block-heading inline-markdown-heading"><span><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, 👍 ❗️ ❌ 🚧<br>We support page breaks</span></div>
+                      <div class="code-block-content">
+                        <pre><code heading="**Bold**, _Italic_, ___Bold and Italic___, ~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, :+1: :exclamation: :x: :construction:&lt;br&gt;We support page breaks" class="hljs"><span>&lt;foo&gt;&lt;/foo&gt;</span></code></pre>
+                      </div>
+                    </div>
+                  </box>
+                </div>
+              </div>
+              <h5 id="using-multiple-features">Using multiple features<a class="fa fa-anchor" href="#using-multiple-features"></a></h5>
+              <p>You can also use multiple features together, as shown below.</p>
+              <div>
+                <p><span class="dimmed">CODE:</span></p>
+                <div class="indented">
+                  <pre><code class="no-line-numbers hljs"><span>```xml {highlight-lines=&quot;2&quot; heading=&quot;Heading title&quot;}</span><span>&lt;foo&gt;</span><span>  &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;</span><span>&lt;/foo&gt;</span><span>```</span></code></pre>
+                </div>
+                <p><span class="dimmed">OUTPUT:</span></p>
+                <div class="indented">
+                  <box border-left-color="grey" background-color="white">
+                    <div class="code-block">
+                      <div class="code-block-heading"><span>Heading title</span></div>
+                      <div class="code-block-content">
+                        <pre><code heading="Heading title" class="hljs xml"><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span><span class="highlighted">  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span></code></pre>
                       </div>
                     </div>
                   </box>
@@ -1033,6 +1083,11 @@ Difficulty Level <span class="badge badge-light">4</span></button></p>
           </div>
         </div>
         </span>
+        <box type="warning">
+          <p>Normal footnotes won't work when used inside the attributes of markbind components!
+            <br> For example, it won't work in the <code>header</code> attribute of <a href="/userGuide/usingComponents.html#panels">panels</a>.
+          </p>
+        </box>
         <span id="short" class="d-none">
 <pre><code class="hljs html"><span>**Normal footnotes:**</span><span>Here is a footnote reference,[^1] and another.[^longnote]</span><span>&#x200B;</span><span>[^1]: Here is the footnote. Footnotes will appear at the bottom of the page.</span><span>&#x200B;</span><span>[^longnote]: Here's one with multiple blocks.</span><span>    Subsequent paragraphs are indented to show that they</span><span>belong to the previous footnote.</span></code>
         </pre>
@@ -1744,20 +1799,25 @@ Author: {<span></span>{ author }}
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <pre><code class="hljs html"><span>More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.</span><span><span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Modal header** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span></span><span>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</span><span>  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span>  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span><span>  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><span>This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:centered"</span>&gt;</span>This is a trigger for a centered modal<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Centered** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:centered"</span> <span class="hljs-attr">center</span>&gt;</span></span><span>  Centered</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span></span><span>&#x200B;</span></code></pre>
+            <pre><code class="hljs html"><span>More about <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.</span><span><span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Modal header** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span></span><span>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</span><span>  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span>  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span><span>  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><span>This is the same <span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:loremipsum"</span>&gt;</span>trigger<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span> as last one.</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:centered"</span>&gt;</span>This is a trigger for a centered modal<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Centered** :rocket:"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:centered"</span> <span class="hljs-attr">center</span>&gt;</span></span><span>  Centered</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">trigger</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"modal:ok-text"</span>&gt;</span>This is a trigger for a modal with a custom OK button<span class="hljs-tag">&lt;/<span class="hljs-name">trigger</span>&gt;</span>.</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">modal</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"OK button visible!"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal:ok-text"</span> <span class="hljs-attr">ok-text</span>=<span class="hljs-string">"Custom OK"</span>&gt;</span></span><span>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</span><span>  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span>  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span><span>  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">modal</span>&gt;</span></span><span>&#x200B;</span></code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
             <box border-left-color="grey" background-color="white">
               <p>More about <span for="modal:loremipsum" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['modal:loremipsum'].show()" class="trigger">trigger</span>.
-                <b-modal id="modal:loremipsum" ok-only="" size="" modal-class="mb-zoom" ref="modal:loremipsum"><template slot="modal-title"><strong>Modal header</strong> 🚀</template> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                <b-modal id="modal:loremipsum" hide-footer="" size="" modal-class="mb-zoom" ref="modal:loremipsum"><template slot="modal-title"><strong>Modal header</strong> 🚀</template> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
                   qui officia deserunt mollit anim id est laborum.
                 </b-modal>
                 <br> This is the same <span for="modal:loremipsum" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['modal:loremipsum'].show()" class="trigger">trigger</span> as last
                 one.</p>
               <p><span for="modal:centered" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['modal:centered'].show()" class="trigger">This is a trigger for a centered modal</span>.</p>
-              <b-modal id="modal:centered" centered="" ok-only="" size="" modal-class="mb-zoom" ref="modal:centered"><template slot="modal-title"><strong>Centered</strong> 🚀</template> Centered
+              <b-modal id="modal:centered" centered="" hide-footer="" size="" modal-class="mb-zoom" ref="modal:centered"><template slot="modal-title"><strong>Centered</strong> 🚀</template> Centered
+              </b-modal>
+              <p><span for="modal:ok-text" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['modal:ok-text'].show()" class="trigger">This is a trigger for a modal with a custom OK button</span>.</p>
+              <b-modal id="modal:ok-text" ok-title="Custom OK" ok-only="" size="" modal-class="mb-zoom" ref="modal:ok-text"><template slot="modal-title">OK button visible!</template> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
               </b-modal>
             </box>
           </div>
@@ -1965,8 +2025,12 @@ Author: {<span></span>{ author }}
           </table>
         </div>
         <box type="tip">
-          <p>If you wish to further customize your navbar beyond the primary, dark, and light theme colors, specify the <code>type=&quot;none&quot;</code> attribute and <a href="#inserting-custom-classes-into-components">insert your own custom styles</a>            via the <code>add-class</code> attribute.</p>
+          <p>If you wish to further customize your navbar beyond the primary, dark, and light theme colors, specify the <code>type=&quot;none&quot;</code> attribute and <a href="#inserting-custom-classes-into-components">insert your own custom styles</a>            or
+            <span trigger="click" for="modal:built-in-bg" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:built-in-bg'].show()" class="trigger-click">use built-in background styles</span>            via the <code>add-class</code> attribute.</p>
         </box>
+        <b-modal id="modal:built-in-bg" hide-footer="" size="" modal-class="mb-zoom" ref="modal:built-in-bg"><template slot="modal-title">Built-in background styles</template>
+          <span>For instance, Bootstrap supports <code>.bg-danger</code>, <code>bg-info</code>, <code>bg-primary</code>, <code>bg-success</code>, <code>bg-warning</code> as background colors.</span>
+          <span>In <code>{your-site}/_markbind/headers/header.md</code>, you can change <code>&lt;navbar type=&quot;dark/primary/light&quot;&gt;</code> to <code>&lt;navbar type=&quot;none&quot; add-class=&quot;bg-warning/danger/info/primary/success&quot;&gt;</code> to apply Bootstrap background styles.</span></b-modal>
         <span id="short" class="d-none">
 <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
         </span><span>  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"brand"</span> <span class="hljs-attr">href</span>=
@@ -2018,19 +2082,7 @@ Author: {<span></span>{ author }}
       <span><strong>Page Head</strong></span>
       <div>
         <p><code>_markbind/head/myCustomLinks.md</code>:</p>
-        <box>
-          <p><strong><code>&lt;head-top&gt;</code></strong><br>
-            <code>&lt;script src=&quot;</code>
-            <code>{<span></span>{ baseUrl }}</code>
-            <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-            <strong><code>&lt;/head-top&gt;</code></strong><br>
-            <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-            <code>{<span></span>{ baseUrl }}</code>
-            <code>/css/main.css&quot;&gt;</code><br>
-            <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-            <code>{<span></span>{ baseUrl }}</code>
-            <code>/css/extra.css&quot;&gt;</code></p>
-        </box>
+        <pre><code class="no-line-numbers hljs html"><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"``/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/main.css"</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/extra.css"</span>&gt;</span></span></code></pre>
         <pre><code class="hljs html"><span> <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>   head: myCustomLinks.md</span><span> <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span></code></pre>
       </div>
     </div>
@@ -2045,17 +2097,7 @@ Author: {<span></span>{ author }}
         </ol>
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you want to insert the code below into the <code>&lt;head&gt;</code> of a page, and you have saved the code as <strong><code>_markbind/head/</code></strong><code>myCustomLinks.md</code>:</p>
-          <box>
-            <p><code>&lt;script src=&quot;</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-              <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/css/main.css&quot;&gt;</code><br>
-              <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/css/extra.css&quot;&gt;</code></p>
-          </box>
+          <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span></span></code></pre>
           <p>To specify that you want to insert <code>myCustomLinks.md</code> into the <code>&lt;head&gt;</code> of <code>myPage.html</code>, update the front matter of the <code>myPage.md</code> as follows:</p>
           <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  head: myCustomLinks.md</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>...</span></code></pre>
         </div>
@@ -2063,19 +2105,7 @@ Author: {<span></span>{ author }}
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can force the line <code>&lt;script ... &gt; ... &lt;/script&gt;</code> to be inserted at the top of the
             <code>&lt;head&gt;</code> section.</p>
-          <box>
-            <p><strong><code>&lt;head-top&gt;</code></strong><br>
-              <code>&lt;script src=&quot;</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-              <strong><code>&lt;/head-top&gt;</code></strong><br>
-              <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/css/main.css&quot;&gt;</code><br>
-              <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-              <code>{<span></span>{ baseUrl }}</code>
-              <code>/css/extra.css&quot;&gt;</code></p>
-          </box>
+          <pre><code class="no-line-numbers hljs html"><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span></span></code></pre>
         </div>
         <p><strong>Multiple head files can be included</strong> within a page by providing a comma separated list. They will be added to the <code>&lt;head&gt;</code> in the order in which they are listed.
           <strong>You may specify raw <code>.js</code> or <code>.css</code> files</strong> as your head file if you wish to do so.</p>
@@ -2085,19 +2115,14 @@ Author: {<span></span>{ author }}
         </div>
         <span id="short" class="d-none">
 <p><code>_markbind/head/myCustomLinks.md</code>:</p>
-<box>
-<p><strong><code>&lt;head-top&gt;</code></strong><br>
-  <code>&lt;script src=&quot;</code>
-<code>{<span></span>{ baseUrl }}</code>
-        <code>/js/myCustomScript.js&quot;&gt;&lt;/script&gt;</code><br>
-        <strong><code>&lt;/head-top&gt;</code></strong><br>
-        <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-        <code>{<span></span>{ baseUrl }}</code>
-        <code>/css/main.css&quot;&gt;</code><br>
-        <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;</code>
-        <code>{<span></span>{ baseUrl }}</code>
-        <code>/css/extra.css&quot;&gt;</code></p>
-        </box>
+<pre><code class="no-line-numbers hljs html"><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span>
+        </span><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"``/js/myCustomScript.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        </span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span>
+        </span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/main.css"</span>&gt;</span>
+        </span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/extra.css"</span>&gt;</span>
+        </span>
+        </code>
+        </pre>
         <pre><code class="hljs html"><span> <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>   head: myCustomLinks.md</span><span> <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span></code></pre>
         </span>
         <p>If you wish to use a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> but exclude its head file, specify <code>head: none</code> in the <code>&lt;frontmatter&gt;</code> of the page.</p>
@@ -2113,6 +2138,7 @@ Author: {<span></span>{ author }}
     </div>
     <div class="indented">
       <div>
+
         <div></div>
         <h2 id="page-layouts">Page Layouts<a class="fa fa-anchor" href="#page-layouts"></a></h2>
         <p><strong>A <em>layout</em> is a set of page-tweaks that can be applied to a page (or group of pages) in one go.</strong></p>
@@ -2168,17 +2194,18 @@ Author: {<span></span>{ author }}
         </box>
         <p>which injects the actual page content in every page. This allows you to build layouts in different ways.</p>
         <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Adding statistics formula to the bottom of every page</p>
-        <box>
-          <i>index.md</i>
-          <br><br>
-          <pre><code class="hljs html"><span>#### Main content of your page</span><span>&#x200B;</span><span>Content of your page</span></code></pre>
-        </box>
-        <box>
-          <i>page.md</i>
-          <br><br>
-          <p><code>{<span></span>{ MAIN_CONTENT_BODY }}</code></p>
-          <pre><code class="hljs html"><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span></span></code></pre>
-        </box>
+        <div class="code-block">
+          <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
+          <div class="code-block-content">
+            <pre><code heading="index.md" class="hljs html"><span>#### Main content of your page</span><span>&#x200B;</span><span>Content of your page</span></code></pre>
+          </div>
+        </div>
+        <div class="code-block">
+          <div class="code-block-heading inline-markdown-heading"><span><a href="http://page.md">page.md</a></span></div>
+          <div class="code-block-content">
+            <pre><code heading="page.md" class="hljs html"><span>  </span><span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>{<span class="hljs-tag">&lt;<span class="hljs-name">span</span>/&gt;</span>{ MAIN_CONTENT_BODY }}<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span></span><span>&#x200B;</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span></span></code></pre>
+          </div>
+        </div>
         <p>Here's how the above content would appear:</p>
         <box>
           <i>index.html</i>
@@ -2338,7 +2365,7 @@ Author: {<span></span>{ author }}
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
             <box border-left-color="grey" background-color="white">
-              <panel type="seamless"><template slot="_header"><p><strong>Bold text</strong> 🚀 <img src="https://markbind.org/images/logo-lightbackground.png" alt="" height="20"></p></template> ...
+              <panel type="seamless"><template slot="_header"><p><strong>Bold text</strong> 🚀 <a href="https://markbind.org/images/logo-lightbackground.png" target="_self"><img src="https://markbind.org/images/logo-lightbackground.png" alt="" class="img-fluid"></a></p></template>                ...
               </panel>
             </box>
           </div>
@@ -2663,7 +2690,7 @@ Author: {<span></span>{ author }}
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Header<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Trigger<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"hover"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Mouseenter<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Emoji header** :rocket:"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"++emoji++ content :cat:"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Content using slot<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Emoji header** :rocket:"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span></span><span>    This is a long content...</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Wrap Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Nice!"</span>&gt;</span>What do you say<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span></code></pre>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Header<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"fade"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Trigger<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"hover"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Mouseenter<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Header"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Emoji header** :rocket:"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"++emoji++ content :cat:"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Content using slot<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"**Emoji header** :rocket:"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"content"</span>&gt;</span></span><span>    This is a long content...</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span>Wrap Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">popover</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Nice!"</span>&gt;</span>What do you say<span class="hljs-tag">&lt;/<span class="hljs-name">popover</span>&gt;</span></span></code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
@@ -3095,16 +3122,7 @@ Author: {<span></span>{ author }}
     <div slot="header">
       <span><strong>Site Navigation Menus</strong></span>
       <div>
-        <code>
-# Site Map<br>
-<strong><<span></span>navigation></strong><br>
-* [:house: Home]({<span></span>{ baseUrl }}/index.html)<br>
-* Docs :expanded:<br>
-&nbsp;&nbsp;* [User Guide]({<span></span>{ baseUrl }}/ug.html)<br>
-&nbsp;&nbsp;* [Dev Guide]({<span></span>{ baseUrl }}/dg.html)<br>
-* [Search]({<span></span>{ baseUrl }}/search.html)<br>
-<strong><<span></span>/navigation></strong><br>
-</code>
+        <pre><code class="no-line-numbers hljs"><span># Site Map</span><span>&lt;navigation&gt;</span><span>* [:house: Home](/index.html)</span><span>* Docs :expanded:</span><span>  * [User Guide](/ug.html)</span><span>  * [Dev Guide](/dg.html)</span><span>* [Search](/search.html)</span><span>&lt;/navigation&gt;</span></code></pre>
         <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  siteNav: mySiteNav.md</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>...</span></code></pre>
       </div>
     </div>
@@ -3154,17 +3172,7 @@ Author: {<span></span>{ author }}
           </span>, in which case the code for the siteNav should be enclosed in a <code>&lt;navigation&gt;</code> tag. There should only be one <code>&lt;navigation&gt;</code> tag in the file.</p>
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> A siteNav code using a <code>&lt;navigation&gt;</code> tag.</p>
-          <box>
-            <code>
-# Site Map<br>
-<strong><<span></span>navigation></strong><br>
-* [:house: Home]({<span></span>{ baseUrl }}/index.html)<br>
-* Docs<br>
-&nbsp;&nbsp;* [User Guide]({<span></span>{ baseUrl }}/ug.html)<br>
-&nbsp;&nbsp;* [Dev Guide]({<span></span>{ baseUrl }}/dg.html)<br>
-* [Search]({<span></span>{ baseUrl }}/search.html)<br>
-<strong><<span></span>/navigation></strong><br>
-</code></box>
+          <pre><code class="no-line-numbers hljs"><span># Site Map</span><span>&lt;navigation&gt;</span><span>* [:house: Home](/index.html)</span><span>* Docs</span><span>  * [User Guide](/ug.html)</span><span>  * [Dev Guide](/dg.html)</span><span>* [Search](/search.html)</span><span>&lt;/navigation&gt;</span></code></pre>
         </div>
         <p>More than one siteNav file can be in <code>_markbind/navigation/</code> directory but a page may not have more than one siteNav.</p>
         <p>A siteNav has a fixed width of 300 pixels for its contents. A siteNav is <a href="https://www.w3schools.com/html/html_responsive.asp"><em>responsive</em></a> in that it will collapse to a menu button when the screen width is smaller than 992 pixels.
@@ -3172,13 +3180,8 @@ Author: {<span></span>{ author }}
         <p>There is no limit to the number of nesting levels or the number of items in the menu, but note that any content exceeding a height of 1000 pixels will be cut off.</p>
         <p>If you wish to use a Layout but exclude its navigation file, specify <code>siteNav: none</code> in the <code>&lt;frontmatter&gt;</code> of the page.</p>
         <span id="short" class="d-none">
-<code>
-# Site Map<br>
-<strong><<span></span>navigation></strong><br> * [:house: Home]({<span></span>{ baseUrl }}/index.html)<br> * Docs :expanded:<br> &nbsp;&nbsp;* [User Guide]({<span></span>{ baseUrl }}/ug.html)<br> &nbsp;&nbsp;* [Dev Guide]({<span></span>{ baseUrl
-        }}/dg.html)
-        <br> * [Search]({<span></span>{ baseUrl }}/search.html)<br>
-        <strong><<span></span>/navigation></strong><br>
-        </code>
+<pre><code class="no-line-numbers hljs"><span># Site Map</span><span>&lt;navigation&gt;</span><span>* [:house: Home](/index.html)</span><span>* Docs :expanded:</span><span>  * [User Guide](/ug.html)</span><span>  * [Dev Guide](/dg.html)</span><span>* [Search](/search.html)</span><span>&lt;/navigation&gt;</span></code>
+        </pre>
         <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  siteNav: mySiteNav.md</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>...</span></code></pre>
         </span>
         <span id="examples" class="d-none">
@@ -3430,8 +3433,9 @@ Author: {<span></span>{ author }}
     <div class="indented">
       <div>
         <div>
-          <h4 id="filtertags-toggling-alternative-contents-in-a-page"><code>filterTags</code>: Toggling alternative contents in a page<a class="fa fa-anchor" href="#filtertags-toggling-alternative-contents-in-a-page"></a></h4>
+          <h2 id="tags">Tags<a class="fa fa-anchor" href="#tags"></a></h2>
           <p>You can use tags to selectively filter HTML elements when building a site.</p>
+          <h3 id="toggling-alternative-contents-in-a-page">Toggling alternative contents in a page<a class="fa fa-anchor" href="#toggling-alternative-contents-in-a-page"></a></h3>
           <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
@@ -3461,19 +3465,29 @@ Author: {<span></span>{ author }}
           <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span></code></pre>
           </span>
           <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-          <h4 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h4>
+          <h3 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips"></a></h3>
           <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
             <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--*"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
             <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
           </div>
-          <h4 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h4>
+          <h3 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags"></a></h3>
           <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html"><span>index.md</span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
-            <pre><code class="hljs json"><span>site.json</span><span>&#x200B;</span><span>{</span><span>  ...</span><span>  <span class="hljs-attr">"plugins"</span> : [</span><span>    <span class="hljs-string">"filterTags"</span></span><span>  ],</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {</span><span>    <span class="hljs-attr">"filterTags"</span> : {</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]</span><span>    }</span><span>  }</span><span>}</span></code></pre>
+            <div class="code-block">
+              <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
+              <div class="code-block-content">
+                <pre><code heading="index.md" class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span></span><span>  title: "Hello World"</span><span>  tags: ["language--java"]</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></code></pre>
+              </div>
+            </div>
+            <div class="code-block">
+              <div class="code-block-heading"><span>site.json</span></div>
+              <div class="code-block-content">
+                <pre><code heading="site.json" class="hljs json"><span>{</span><span>  ...</span><span>  <span class="hljs-attr">"plugins"</span> : [</span><span>    <span class="hljs-string">"filterTags"</span></span><span>  ],</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {</span><span>    <span class="hljs-attr">"filterTags"</span> : {</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]</span><span>    }</span><span>  }</span><span>}</span></code></pre>
+              </div>
+            </div>
             <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
           </div>
           <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
@@ -3515,7 +3529,7 @@ Author: {<span></span>{ author }}
     <div slot="header">
       <span><strong>Text Styles</strong></span>
       <div>
-        <pre><code class="hljs markdown"><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span></span><span>~~Strike through~~, <span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%</span></code></pre>
+        <pre><code class="hljs markdown"><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span></span><span>~~Strike through~~, <span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~</span></code></pre>
       </div>
     </div>
     <div class="indented">
@@ -3554,12 +3568,12 @@ Author: {<span></span>{ author }}
 <div>
 <p><span class="dimmed">CODE:</span></p>
       <div class="indented">
-        <pre><code class="hljs markdown"><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%</span></code></pre>
+        <pre><code class="hljs markdown"><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~</span></code></pre>
       </div>
       <p><span class="dimmed">OUTPUT:</span></p>
       <div class="indented">
         <box border-left-color="grey" background-color="white">
-          <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
+          <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span>, Super<sup>script</sup>, Sub<sub>script</sub></p>
         </box>
       </div>
     </div>
@@ -3568,12 +3582,12 @@ Author: {<span></span>{ author }}
     <span id="short" class="d-none">
 ```markdown
 **Bold**, _Italic_, ___Bold and Italic___, `Inline Code`
-~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, %%Dim%%
+~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~
 ```
 </span>
     <span id="examples" class="d-none">
 <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code>Inline Code</code>
-<s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span></p>
+<s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span>, Super<sup>script</sup>, Sub<sub>script</sub></p>
     </span>
     </div>
     </div>
@@ -3709,7 +3723,7 @@ Author: {<span></span>{ author }}
         <div>
           <p><span class="dimmed">CODE:</span></p>
           <div class="indented">
-            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span></span><span>Trigger</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"contextmenu"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Contextmenu (right click)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"focus"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Focus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"*Hello* **World**"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Hover me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Free Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>coupling<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span></code></pre>
+            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"left"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"right"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"bottom"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Popover on bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span> /&gt;</span></span><span>Trigger</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"click"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-secondary"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"Lorem ipsum dolor sit amet"</span> <span class="hljs-attr">placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">trigger</span>=<span class="hljs-string">"focus"</span>&gt;</span></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Focus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Markdown<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">effect</span>=<span class="hljs-string">"scale"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"*Hello* **World**"</span>&gt;</span></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>Hover me<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Free Text<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">tooltip</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"coupling is the degree of interdependence between software modules; a measure of how closely connected two routines or modules are; the strength of the relationships between modules."</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>coupling<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tooltip</span>&gt;</span></span></code></pre>
           </div>
           <p><span class="dimmed">OUTPUT:</span></p>
           <div class="indented">
@@ -3724,7 +3738,7 @@ Author: {<span></span>{ author }}
               <button class="btn btn-secondary">Popover on bottom</button></span>
               <hr> Trigger
               <p>
-                <span effect="scale" placement="top" trigger="click" data-mb-component-type="tooltip" v-b-tooltip.click.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Lorem ipsum dolor sit amet</span>
+                <span effect="scale" placement="top" trigger="click" data-mb-component-type="tooltip" v-b-tooltip.click.top.html="tooltipInnerContentGetter" class="trigger-click"><span data-mb-html-for="_content">Lorem ipsum dolor sit amet</span>
                 <button class="btn btn-secondary">Click</button></span>
                 <br>
                 <br>
@@ -3925,13 +3939,13 @@ Author: {<span></span>{ author }}
         <p><code>{<span></span>{ timestamp }}</code> is the time stamp that indicates when the page was generated.</p>
         <p>The default values of <code>&quot;timeZone&quot;</code> and <code>&quot;locale&quot;</code> are <code>&quot;UTC&quot;</code> and <code>&quot;en-GB&quot;</code> respectively. The following example showcases the use of the <code>&quot;Asia/Singapore&quot;</code>          time zone.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated at: Sun, Mar 8, 2020, 12:03:51 PM UTC</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>Page generated at: {<span></span>{ timestamp }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated at: Mon, Mar 30, 2020, 12:40:39 AM UTC</p>
         </div>
         <p></p>
         <h5 id="built-in-variable-markbind">Built-in Variable: <code>MarkBind</code><a class="fa fa-anchor" href="#built-in-variable-markbind"></a></h5>
         <p><code>{<span></span>{MarkBind}}</code> represents a code snippet that specifies the MarkBind version in use and is linked to the MarkBind website.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated by: <a href="https://markbind.org/">MarkBind 2.12.0</a></p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>Page generated by: {<span></span>{ MarkBind }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span>            Page generated by: <a href="https://markbind.org/">MarkBind 2.13.0</a></p>
         </div>
         <p></p>
         <h5 id="variables-defaults">Variables: Defaults<a class="fa fa-anchor" href="#variables-defaults"></a></h5>
@@ -4002,6 +4016,14 @@ Author: {<span></span>{ author }}
             <li>access <code>address</code>, <code>name</code>, and <code>phone</code> with <code>{<span></span>{details.address}}</code>, <code>{<span></span>{details.<span></span>name}}</code>, and <code>{<span></span>{details.phone}}</code></li>
           </ul>
         </box>
+        <h3 id="defining-variables-with-json">Defining variables with JSON<a class="fa fa-anchor" href="#defining-variables-with-json"></a></h3>
+        <p>You could also have your variables defined in a JSON file to define multiple variables in a more concise manner.</p>
+        <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
+          <code>variables.md</code>:</p>
+        <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"variables.json"</span> /&gt;</span></span></code></pre>
+        <p><code>variables.json</code>:</p>
+        <pre><code class="hljs json"><span>{</span><span>  <span class="hljs-attr">"variable1"</span>: <span class="hljs-string">"This is the first variable"</span>,</span><span>  <span class="hljs-attr">"variable2"</span>: <span class="hljs-string">"This is the second variable"</span></span><span>}</span></code></pre>
+        <p>Variables defined in JSON file will be scoped according to where it is being referenced.</p>
         <h3 id="variables-tips-and-tricks">Variables: Tips and Tricks<a class="fa fa-anchor" href="#variables-tips-and-tricks"></a></h3>
         <p><strong>Variables can refer to other variables</strong> that are declared earlier, including built-in variables.</p>
         <div class="indented">
@@ -4031,6 +4053,13 @@ Author: {<span></span>{ author }}
             <code>&lt;variable name=&quot;const_note&quot;&gt;</code><code>{<span></span>{ note_2 }} This is a constant.</code><code>&lt;/variable&gt;</code></p>
           <p><code>{<span></span>{ const_note }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> <span style="color: blue">Note: </span> This is a constant.</p>
         </div>
+        <p>When defining variables with incomplete HTML fragments, we can define variables as a separate JSON file.</p>
+        <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> variables containing HTML fragments:<br></p>
+        <p><code>index.md</code>:</p>
+        <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">from</span>=<span class="hljs-string">"variableFileName.json"</span> /&gt;</span></span></code></pre>
+        <p><code>variableFileName.json</code>:</p>
+        <pre><code class="hljs json"><span>{</span><span>  <span class="hljs-attr">"back_fragment"</span>: <span class="hljs-string">"Back&lt;/div&gt;"</span>,</span><span>  <span class="hljs-attr">"front_fragment"</span>: <span class="hljs-string">"&lt;div&gt;Front"</span></span><span>}</span></code></pre>
+        <p><code>{<span></span>{ front_fragment }}</code> and <code>{<span></span>{ back_fragment }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> Front and Back</p>
         <span id="short" class="d-none">
 <p>Global variables:</p>
 <p><code>_markbind/variables.md</code>:</p>
@@ -4085,7 +4114,7 @@ Author: {<span></span>{ author }}
   </div>
   <footer>
     <div class="text-center">
-      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Sun, Mar 8, 2020, 12:03:51 PM UTC]</small></div>
+      <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.0</a> on Mon, Mar 30, 2020, 12:40:39 AM UTC]</small></div>
   </footer>
   </div>
 </body>
