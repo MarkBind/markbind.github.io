@@ -117,7 +117,13 @@
         "using-octicons": "Using Octicons",
         "embeds": "Embeds",
         "embedding-youtube-videos": "Embedding Youtube Videos",
-        "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding Powerpoint Slides (using the embed url from Powerpoint online)"
+        "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding Powerpoint Slides (using the embed url from Powerpoint online)",
+        "dates": "Dates",
+        "using-variables": "Using variables",
+        "custom-formatting": "Custom formatting",
+        "adding-days": "Adding days",
+        "page-variables": "Page variables",
+        "advanced-formatting": "Advanced Formatting"
       },
       "headingKeywords": {}
     },
@@ -141,12 +147,10 @@
       "headingKeywords": {}
     },
     {
-      "title": "User Guide - Getting Started",
-      "layout": "userGuide",
       "src": "userGuide/index.md",
-      "headings": {
-        "getting-started": "Getting Started"
-      },
+      "title": "",
+      "layout": "default",
+      "headings": {},
       "headingKeywords": {}
     },
     {
@@ -225,8 +229,8 @@
         "defining-variables-with-json": "Defining variables with JSON",
         "variables-tips-and-tricks": "Variables: Tips and Tricks",
         "includes": "Includes",
-        "and-lt-include-and-gt-inside-an-included-file": "&lt;include&gt; Inside an Included File",
-        "specifying-variables-in-an-and-lt-include-and-gt": "Specifying Variables in an &lt;include&gt;",
+        "include-inside-an-included-file": "&lt;include&gt; Inside an Included File",
+        "specifying-variables-in-an-include": "Specifying Variables in an &lt;include&gt;",
         "using-boilerplate-files": "Using Boilerplate Files",
         "reusing-contents-across-sites": "Reusing Contents Across Sites",
         "creating-content-variations": "Creating Content Variations",
@@ -263,6 +267,7 @@
         "plugins-pluginscontext": "plugins, pluginsContext",
         "headingindexinglevel": "headingIndexingLevel",
         "enablesearch": "enableSearch",
+        "disablehtmlbeautify": "disableHtmlBeautify",
         "timezone": "timeZone",
         "locale": "locale"
       },
@@ -324,7 +329,7 @@
       "headings": {
         "tweaking-the-page-structure": "Tweaking the Page Structure",
         "front-matter": "Front Matter",
-        "page-and-lt-head-and-gt": "Page &lt;head&gt;",
+        "page-head": "Page &lt;head&gt;",
         "headers": "Headers",
         "footers": "Footers",
         "site-navigation-menus": "Site Navigation Menus",
@@ -349,6 +354,7 @@
         "using-components": "Using Components",
         "badges": "Badges",
         "boxes": "Boxes",
+        "header": "Header 🚀",
         "dropdowns": "Dropdowns",
         "modals": "Modals",
         "navbars": "Navbars",

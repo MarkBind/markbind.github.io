@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.13.1">
+  <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using HTML, JavaScript, CSS</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
   <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="icon" href="/favicon.ico">
@@ -65,9 +66,9 @@
             <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
             <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
             <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References 
- <i class="dropdown-btn-icon rotate-icon">
-<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
+                <i class="dropdown-btn-icon rotate-icon">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
               <div class="dropdown-container dropdown-container-open">
                 <ul class="pl-3 site-nav-list">
                   <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
@@ -83,54 +84,61 @@
           </ul>
         </div>
       </nav>
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
-<span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
-        <h1 id="using-html-javascript-css">Using HTML, JavaScript, CSS<a class="fa fa-anchor" href="#using-html-javascript-css"></a></h1>
+          <span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
+        <h1 id="using-html-javascript-css">Using HTML, JavaScript, CSS<a class="fa fa-anchor" href="#using-html-javascript-css" onclick="event.stopPropagation()"></a></h1>
         <span id="overview" class="lead">
-<p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
-</p></span>
+          <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
+          </p>
+        </span>
         <p><mark>Text within HTML tags are considered plain text unless the text is preceded by a blank line,</mark> in which case the text is parsed as Markdown text.</p>
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an html tag is parsed as Markdown when preceded by a blank line.</p>
           <p>Code:</p>
-          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span>Without preceding blank line: Apples **Bananas** Cherries</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span>With preceding blank line: Apples **Bananas** Cherries</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span>Without preceding blank line: Apples **Bananas** Cherries<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span>With preceding blank line: Apples **Bananas** Cherries<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
           <p>Outcome:<br></p>
           <span>
-Without preceding blank line: Apples **Bananas** Cherries
-</span>
+            Without preceding blank line: Apples **Bananas** Cherries
+          </span>
           <span>
-<p>With preceding blank line: Apples <strong>Bananas</strong> Cherries
-</p></span></div>
-        <p>Alternatively, you can use <code>&lt;markdown&gt;</code> (for <em>block</em> Markdown elements such as headings) or <code>&lt;md&gt;</code> (for <em>inline</em> Markdown elements such as bold/italic text) tags to indicate the text should be treated
-          as Markdown.</p>
+            <p>With preceding blank line: Apples <strong>Bananas</strong> Cherries
+            </p>
+          </span>
+        </div>
+        <p>Alternatively, you can use <code>&lt;markdown&gt;</code> (for <em>block</em> Markdown elements such as headings) or <code>&lt;md&gt;</code> (for <em>inline</em> Markdown elements such as bold/italic text) tags to indicate the text should be treated as Markdown.</p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an HTML tag can be treated as Markdown using <code>&lt;markdown&gt;</code>/<code>&lt;md&gt;</code>            tags.</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an HTML tag can be treated as Markdown using <code>&lt;markdown&gt;</code>/<code>&lt;md&gt;</code> tags.</p>
           <p>Code:</p>
-          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><span>&#x200B;</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span></span><span><span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span></code></pre>
+          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
           <p>Outcome:<br>
             <span>
-<span>Apples <strong>Bananas</strong> Cherries</span></span>
-          </p>
+              <span>Apples <strong>Bananas</strong> Cherries</span></span></p>
           <span>
-<div><h5 id="apples-bananas-cherries">Apples <strong>Bananas</strong> Cherries<a class="fa fa-anchor" href="#apples-bananas-cherries"></a></h5></div></span></div>
-        <div class="clearfix">
-          <p><span class="float-left"><b-btn variant="light" href="/userGuide/usingComponents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Components</span></span>
-            </b-btn>
-            </span>
-          </p>
-          <p><span class="float-right"><b-btn variant="light" href="/userGuide/usingPlugins.html"><span><span>Using Plugins</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
-            </b-btn>
-            </span>
-          </p>
+            <div>
+              <h5 id="apples-bananas-cherries">Apples <strong>Bananas</strong> Cherries<a class="fa fa-anchor" href="#apples-bananas-cherries" onclick="event.stopPropagation()"></a></h5>
+            </div>
+          </span>
         </div>
-        <br></div>
+        <div class="clearfix">
+          <p><span class="float-left">
+              <b-btn variant="light" href="/userGuide/usingComponents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Components</span></span></b-btn>
+            </span></p>
+          <p><span class="float-right">
+              <b-btn variant="light" href="/userGuide/usingPlugins.html"><span><span>Using Plugins</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
+            </span></p>
+        </div>
+        <br>
+      </div>
+
+
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.1</a> on Mon, Mar 30, 2020, 2:34:18 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
     </footer>
   </div>
 </body>

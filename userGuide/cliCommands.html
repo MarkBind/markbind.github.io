@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.13.1">
+  <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Command Line Interface (CLI)</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
   <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="stylesheet" href="../markbind/css/page-nav.css">
@@ -66,9 +67,9 @@
             <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
             <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
             <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References 
- <i class="dropdown-btn-icon rotate-icon">
-<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
+                <i class="dropdown-btn-icon rotate-icon">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
               <div class="dropdown-container dropdown-container-open">
                 <ul class="pl-3 site-nav-list">
                   <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a current">CLI Commands</a></li>
@@ -84,26 +85,31 @@
           </ul>
         </div>
       </nav>
+
       <div id="content-wrapper">
-        <h1 id="markbind-cli">MarkBind CLI<a class="fa fa-anchor" href="#markbind-cli"></a></h1>
-        <h3 id="overview">Overview<a class="fa fa-anchor" href="#overview"></a></h3>
+        <h1 id="markbind-cli">MarkBind CLI<a class="fa fa-anchor" href="#markbind-cli" onclick="event.stopPropagation()"></a></h1>
+        <h3 id="overview">Overview<a class="fa fa-anchor" href="#overview" onclick="event.stopPropagation()"></a></h3>
         <p>An overview of MarkBind's Command Line Interface (CLI) can be referenced with <code>markbind --help</code>:</p>
-        <pre><code class="hljs"><span>$ markbind --help</span><span>Usage: markbind &lt;command&gt;</span><span> </span><span> Options:</span><span>   -V, --version                      output the version number</span><span>   -h, --help                         output usage information</span><span> </span><span> Commands:</span><span>   init|i [options] [root]            init a markbind website project</span><span>   serve|s [options] [root]           build then serve a website from a directory</span><span>   build|b [options] [root] [output]  build a website</span><span>   deploy|d [options]                 deploy the site to the repo's Github pages</span></code></pre>
+        <pre><code class="hljs"><span>$ markbind --help<br></span><span>Usage: markbind &lt;command&gt;<br></span><span> <br></span><span> Options:<br></span><span>   -V, --version                      output the version number<br></span><span>   -h, --help                         output usage information<br></span><span> <br></span><span> Commands:<br></span><span>   init|i [options] [root]            init a markbind website project<br></span><span>   serve|s [options] [root]           build then serve a website from a directory<br></span><span>   build|b [options] [root] [output]  build a website<br></span><span>   deploy|d [options]                 deploy the site to the repo's Github pages<br></span></code></pre>
         <hr>
-        <h3 id="init-command"><code>init</code> Command<a class="fa fa-anchor" href="#init-command"></a></h3>
+        <h3 id="init-command"><code>init</code> Command<a class="fa fa-anchor" href="#init-command" onclick="event.stopPropagation()"></a></h3>
         <br>
         <p><strong>Format:</strong> <code>markbind init [options] [root]</code></p>
         <p><strong>Alias:</strong> <code>markbind i</code></p>
         <p><strong>Description:</strong> Initializes a directory into a MarkBind site by creating a skeleton structure for the website which includes a <code>index.md</code> and a <code>site.json</code>.</p>
         <p><strong>Arguments:</strong></p>
         <ul>
-          <li><code>[root]</code><br> Root directory. Default is the current directory.<br>
+          <li><code>[root]</code><br>
+            Root directory. Default is the current directory.<br>
             <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>./myWebsite</code></li>
         </ul>
-        <panel type="minimal"><template slot="_header"><p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p></template>
+        <panel type="minimal"><template slot="_header">
+            <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
+          </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
-            <li><code>-c</code>, <code>--convert</code><br> Convert an existing GitHub wiki or <code>docs</code> folder into a MarkBind website. See <a href="/userGuide/markBindInTheProjectWorkflow.html#converting-existing-project-documentation-wiki">Converting an existing Github project</a>              for more information.</li>
+            <li><code>-c</code>, <code>--convert</code><br>
+              Convert an existing GitHub wiki or <code>docs</code> folder into a MarkBind website. See <a href="/userGuide/markBindInTheProjectWorkflow.html#converting-existing-project-documentation-wiki">Converting an existing Github project</a> for more information.</li>
           </ul>
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px;">Examples</span></big></p>
           <ul>
@@ -113,7 +119,7 @@
           </ul>
         </panel>
         <hr>
-        <h3 id="serve-command"><code>serve</code> Command<a class="fa fa-anchor" href="#serve-command"></a></h3>
+        <h3 id="serve-command"><code>serve</code> Command<a class="fa fa-anchor" href="#serve-command" onclick="event.stopPropagation()"></a></h3>
         <br>
         <p><strong>Format:</strong> <code>markbind serve [options] [root]</code></p>
         <p><strong>Alias:</strong> <code>markbind s</code></p>
@@ -121,27 +127,28 @@
         <ol>
           <li>Builds the site and puts the generated files in a directory named <code>_site</code>.</li>
           <li>Starts a web server instance locally and makes the site available at <code>http://127.0.0.1:8080</code>.</li>
-          <li>Opens a <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span>            of the website.</li>
+          <li>Opens a <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> of the website.</li>
         </ol>
         <b-modal id="modal:cliCommands-livePreview" hide-footer="" size="lg" modal-class="mb-zoom" ref="modal:cliCommands-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
-<span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter"
-              class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>.
-            Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
-          <p></p>
-          </span>
-        </b-modal>
+            <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
+            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
+            <p></p>
+          </span></b-modal>
         <p><strong>Arguments:</strong></p>
         <ul>
-          <li><code>[root]</code><br> Root directory. The default is the directory where this command was executed.<br>
+          <li><code>[root]</code><br>
+            Root directory. The default is the directory where this command was executed.<br>
             <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>./myWebsite</code></li>
         </ul>
-        <panel type="minimal"><template slot="_header"><p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p></template>
+        <panel type="minimal"><template slot="_header">
+            <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
+          </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
-            <li><code>-o &lt;file&gt;</code>, <code>--one-page &lt;file&gt;</code><br> Serves only a single page from your website <strong>initially</strong>. If <code>&lt;file&gt;</code> is not specified, it defaults to <code>index.md/mbf/mbdf</code>.<br>
+            <li><code>-o &lt;file&gt;</code>, <code>--one-page &lt;file&gt;</code><br>
+              Serves only a single page from your website <strong>initially</strong>. If <code>&lt;file&gt;</code> is not specified, it defaults to <code>index.md/mbf/mbdf</code>.<br>
               <ul>
                 <li>Thereafter, when changes to source files have been made, only the page being viewed will be rebuilt if it was affected.<br></li>
                 <li>Navigating to a new page will build the new page, if it has not been built before, or there were some changes to source files that affected it before navigating to it.<br></li>
@@ -149,26 +156,30 @@
               </ul>
             </li>
           </ul>
-          <box type="info" light="" style="width: calc(100% - 50px); position: relative; left: 40px;"><template slot="_header"><p>Caveats</p></template>
+          <box type="info" light="" style="width: calc(100% - 50px); position: relative; left: 40px;"><template slot="_header">
+              <p>Caveats</p>
+            </template>
             <p>Essentially, this optional feature is very useful when writing content, more so if your build times are starting to slow down!</p>
-            <p>The caveat is that not building all pages during the initial process, or not rebuilding all affected pages when a file changes, will cause your search results for these pages to be empty or outdated, until you navigate to them to trigger a
-              rebuild.
+            <p>The caveat is that not building all pages during the initial process, or not rebuilding all affected pages when a file changes, will cause your search results for these pages to be empty or outdated, until you navigate to them to trigger a rebuild.
             </p>
           </box>
           <ul>
             <li>
-              <p><code>-s &lt;file&gt;</code>, <code>--site-config &lt;file&gt;</code><br> Specify the site config file (default: <code>site.json</code>)<br>
+              <p><code>-s &lt;file&gt;</code>, <code>--site-config &lt;file&gt;</code><br>
+                Specify the site config file (default: <code>site.json</code>)<br>
                 <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>-s otherSite.json</code></p>
             </li>
             <li>
-              <p><code>-n</code>, <code>--no-open</code><br> Don't open a live preview in the browser automatically.</p>
+              <p><code>-n</code>, <code>--no-open</code><br>
+                Don't open a live preview in the browser automatically.</p>
             </li>
             <li>
-              <p><code>-f</code>, <code>--force-reload</code><br> Force live reload to process all files in the site, instead of just the relevant files. This option is useful when you are modifying a file that is not a file type monitored by the <span trigger="click"
-                  for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> feature.</p>
+              <p><code>-f</code>, <code>--force-reload</code><br>
+                Force live reload to process all files in the site, instead of just the relevant files. This option is useful when you are modifying a file that is not a file type monitored by the <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> feature.</p>
             </li>
             <li>
-              <p><code>-p &lt;port&gt;</code>, <code>--port &lt;port&gt;</code><br> Serve the website in the specified port.</p>
+              <p><code>-p &lt;port&gt;</code>, <code>--port &lt;port&gt;</code><br>
+                Serve the website in the specified port.</p>
             </li>
           </ul>
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px;">Examples</span></big></p>
@@ -179,7 +190,7 @@
           </ul>
         </panel>
         <hr>
-        <h3 id="build-command"><code>build</code> Command<a class="fa fa-anchor" href="#build-command"></a></h3>
+        <h3 id="build-command"><code>build</code> Command<a class="fa fa-anchor" href="#build-command" onclick="event.stopPropagation()"></a></h3>
         <br>
         <p><strong>Format:</strong> <code>markbind build [options] [root] [output]</code></p>
         <p><strong>Alias:</strong> <code>markbind b</code></p>
@@ -187,23 +198,29 @@
         <p><strong>Arguments:</strong></p>
         <ul>
           <li>
-            <p><code>[output]</code><br> Put the generated files in the specified directory<br>
+            <p><code>[output]</code><br>
+              Put the generated files in the specified directory<br>
               <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>../myOutDir</code></p>
           </li>
           <li>
-            <p><code>[root] [output]</code><br> Read source files from the <code>[root]</code> directory and put the generated files in the specified <code>[output]</code> directory<br>
+            <p><code>[root] [output]</code><br>
+              Read source files from the <code>[root]</code> directory and put the generated files in the specified <code>[output]</code> directory<br>
               <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>./myWebsite ../myOutDir</code></p>
           </li>
         </ul>
-        <panel type="minimal"><template slot="_header"><p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p></template>
+        <panel type="minimal"><template slot="_header">
+            <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
+          </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
             <li>
-              <p><code>--baseUrl &lt;base&gt;</code><br> Override the <code>baseUrl</code> property (read from the <code>site.json</code>) with the give <code>&lt;base&gt;</code> value.<br>
+              <p><code>--baseUrl &lt;base&gt;</code><br>
+                Override the <code>baseUrl</code> property (read from the <code>site.json</code>) with the give <code>&lt;base&gt;</code> value.<br>
                 <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>--baseUrl staging</code></p>
             </li>
             <li>
-              <p><code>-s &lt;file&gt;</code>, <code>--site-config &lt;file&gt;</code><br> Specify the site config file (default: <code>site.json</code>)<br>
+              <p><code>-s &lt;file&gt;</code>, <code>--site-config &lt;file&gt;</code><br>
+                Specify the site config file (default: <code>site.json</code>)<br>
                 <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>-s otherSite.json</code></p>
             </li>
           </ul>
@@ -215,22 +232,24 @@
           </ul>
         </panel>
         <hr>
-        <h3 id="deploy-command"><code>deploy</code> Command<a class="fa fa-anchor" href="#deploy-command"></a></h3>
+        <h3 id="deploy-command"><code>deploy</code> Command<a class="fa fa-anchor" href="#deploy-command" onclick="event.stopPropagation()"></a></h3>
         <br>
         <p><strong>Format:</strong> <code>markbind deploy [options]</code></p>
         <p><strong>Alias:</strong> <code>markbind d</code></p>
         <p><strong>Description:</strong> Deploys the site to the repo's Github pages by pushing everything in the generated site (default dir: <code>_site</code>) to the <code>gh-pages</code> branch of the current git working directory's remote repo.</p>
-        <panel type="minimal"><template slot="_header"><p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p></template>
+        <panel type="minimal"><template slot="_header">
+            <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
+          </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
-            <li><code>-t &lt;githubTokenName&gt;</code>, <code>--travis &lt;githubTokenName&gt;</code><br> Deploy the site in Travis CI using the GitHub personal access token stored in <code>&lt;githubTokenName&gt;</code>. (default: <code>GITHUB_TOKEN</code>)<br>
+            <li><code>-t &lt;githubTokenName&gt;</code>, <code>--travis &lt;githubTokenName&gt;</code><br>
+              Deploy the site in Travis CI using the GitHub personal access token stored in <code>&lt;githubTokenName&gt;</code>. (default: <code>GITHUB_TOKEN</code>)<br>
               <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>-t PA_TOKEN</code></li>
           </ul>
-          <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related: <a href="/userGuide/deployingTheSite.html">User Guide: Deploying the Website</a>.</span>
-          </p>
+          <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related: <a href="/userGuide/deployingTheSite.html">User Guide: Deploying the Website</a>.</span></p>
         </panel>
         <hr>
-        <h3 id="help-option"><code>--help</code> Option<a class="fa fa-anchor" href="#help-option"></a></h3>
+        <h3 id="help-option"><code>--help</code> Option<a class="fa fa-anchor" href="#help-option" onclick="event.stopPropagation()"></a></h3>
         <br>
         <p><strong>Format:</strong> <code>markbind [command] --help</code></p>
         <p><strong>Alias:</strong> <code>markbind [command] -h</code></p>
@@ -241,6 +260,8 @@
           <li><code>markbind serve --help</code> : Prints a detailed usage guide for the <code>serve</code> command.</li>
         </ul>
       </div>
+
+
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -261,7 +282,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.1</a> on Mon, Mar 30, 2020, 2:34:18 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
     </footer>
   </div>
 </body>

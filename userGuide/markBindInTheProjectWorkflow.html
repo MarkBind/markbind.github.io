@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.13.1">
+  <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind in the Project Workflow</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
   <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="icon" href="/favicon.ico">
@@ -65,9 +66,9 @@
             <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
             <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a current">MarkBind in the Project Workflow</a></li>
             <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References 
- <i class="dropdown-btn-icon rotate-icon">
-<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
+                <i class="dropdown-btn-icon rotate-icon">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
               <div class="dropdown-container dropdown-container-open">
                 <ul class="pl-3 site-nav-list">
                   <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
@@ -83,36 +84,34 @@
           </ul>
         </div>
       </nav>
+
       <div id="content-wrapper">
         <div></div>
-        <h1 id="markbind-in-the-project-workflow">MarkBind in the Project Workflow<a class="fa fa-anchor" href="#markbind-in-the-project-workflow"></a></h1>
+        <h1 id="markbind-in-the-project-workflow">MarkBind in the Project Workflow<a class="fa fa-anchor" href="#markbind-in-the-project-workflow" onclick="event.stopPropagation()"></a></h1>
         <span class="lead">
-<p>As <strong>MarkBind is especially optimized as a project documentation tool</strong>, it integrates well with the workflow of software project.
-</p></span>
-        <h4 id="authoring-workflow">Authoring Workflow<a class="fa fa-anchor" href="#authoring-workflow"></a></h4>
-        <p>While most IDEs provide previews for Markdown files, unless your MarkBind files are using basic Markdown syntax only, you are recommended to launch a <a href="/userGuide/userGuide/glossary.html#live-preview">live preview</a> and check the rendering
-          of the page as you modify the source file.</p>
-        <h4 id="github-project-workflow">GitHub Project Workflow<a class="fa fa-anchor" href="#github-project-workflow"></a></h4>
-        <p>If you use GitHub for your project, you can <a href="/userGuide/deployingTheSite.html#deploying-to-github-pages">deploy your site to GitHub pages</a> easily. You can even set up Travis to automatically deploy your site to GitHub pages whenever
-          a branch in your repo is updated.</p>
+          <p>As <strong>MarkBind is especially optimized as a project documentation tool</strong>, it integrates well with the workflow of software project.
+          </p>
+        </span>
+        <h4 id="authoring-workflow">Authoring Workflow<a class="fa fa-anchor" href="#authoring-workflow" onclick="event.stopPropagation()"></a></h4>
+        <p>While most IDEs provide previews for Markdown files, unless your MarkBind files are using basic Markdown syntax only, you are recommended to launch a <a href="/userGuide/userGuide/glossary.html#live-preview">live preview</a> and check the rendering of the page as you modify the source file.</p>
+        <h4 id="github-project-workflow">GitHub Project Workflow<a class="fa fa-anchor" href="#github-project-workflow" onclick="event.stopPropagation()"></a></h4>
+        <p>If you use GitHub for your project, you can <a href="/userGuide/deployingTheSite.html#deploying-to-github-pages">deploy your site to GitHub pages</a> easily. You can even set up Travis to automatically deploy your site to GitHub pages whenever a branch in your repo is updated.</p>
         <p>If you are using GitHub Pull Requests as part of your workflow, you can <a href="/userGuide/deployingTheSite.html#deploying-to-netlify">set up Netlify to show a preview of the site generated from the MarkBind code in the PR</a>.</p>
-        <h4 id="using-markbind-for-project-documentation">Using MarkBind for Project Documentation<a class="fa fa-anchor" href="#using-markbind-for-project-documentation"></a></h4>
+        <h4 id="using-markbind-for-project-documentation">Using MarkBind for Project Documentation<a class="fa fa-anchor" href="#using-markbind-for-project-documentation" onclick="event.stopPropagation()"></a></h4>
         <p>Here is a example workflow for using MarkBind for both developer documentation and user documentation in a GitHub project:</p>
         <div class="indented">
           <p>Suppose the main development of the project is done in the <code>master</code> branch while product releases are done using the <code>release</code> branch.</p>
           <p>You can keep the user docs in a separate directory (say <code>user-docs</code>) and set up a MarkBind project in that folder. When there is a new release, you can deploy the user-docs site to GitHub Pages for users to read.</p>
-          <p>Similarly, you can keep the dev docs in a separate directory (sey <code>dev-docs</code>) and set up Netlify to deploy the site when there is an update to the <code>master</code> branch; that way, developers can see the latest version of dev-docs
-            via the Netlify site.</p>
+          <p>Similarly, you can keep the dev docs in a separate directory (sey <code>dev-docs</code>) and set up Netlify to deploy the site when there is an update to the <code>master</code> branch; that way, developers can see the latest version of dev-docs via the Netlify site.</p>
         </div>
-        <h4 id="converting-existing-project-documentation-wiki">Converting existing project documentation/wiki<a class="fa fa-anchor" href="#converting-existing-project-documentation-wiki"></a></h4>
+        <h4 id="converting-existing-project-documentation-wiki">Converting existing project documentation/wiki<a class="fa fa-anchor" href="#converting-existing-project-documentation-wiki" onclick="event.stopPropagation()"></a></h4>
         <p>MarkBind supports the automatic conversion of an existing GitHub wiki or <code>docs</code> folder containing Markdown files.</p>
         <p>A MarkBind conversion involves the following:</p>
         <ul>
           <li>Adding a Home page: If your project already has a <code>README.md</code> or <code>Home.md</code>, the content will be copied over to <code>index.md</code>. Otherwise, a default home page will be added.</li>
           <li>Adding an About Us page: If your project already has <code>about.md</code>, this will be used as the About page. Otherwise, a default About page will be added.</li>
           <li>Adding a top navigation bar.</li>
-          <li>Adding a site navigation menu: If your project has a valid <code>_Sidebar.md</code> file, it will be used as the <a href="https://markbind.org/userGuide/tweakingThePageStructure.html#site-navigation-menus">site navigation menu</a>. Otherwise,
-            the menu will be built from your project's directory structure and contain links to all addressable pages.</li>
+          <li>Adding a site navigation menu: If your project has a valid <code>_Sidebar.md</code> file, it will be used as the <a href="https://markbind.org/userGuide/tweakingThePageStructure.html#site-navigation-menus">site navigation menu</a>. Otherwise, the menu will be built from your project's directory structure and contain links to all addressable pages.</li>
           <li>Adding a custom footer: If your project has a valid <code>_Footer.md</code> file, it will be used as the website footer. Otherwise, a default footer will be added.</li>
         </ul>
         <box type="warning">
@@ -128,20 +127,21 @@
           You only need to run the conversion once. Once you have converted your project, you can proceed to edit it as a normal MarkBind project.
         </box>
         <div class="clearfix">
-          <p><span class="float-left"><b-btn variant="light" href="/userGuide/deployingTheSite.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Deploying the Site</span></span>
-            </b-btn>
-            </span>
-          </p>
-          <p><span class="float-right"><b-btn variant="light" href="/userGuide/themes.html"><span><span>Themes</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span>
-            </b-btn>
-            </span>
-          </p>
+          <p><span class="float-left">
+              <b-btn variant="light" href="/userGuide/deployingTheSite.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Deploying the Site</span></span></b-btn>
+            </span></p>
+          <p><span class="float-right">
+              <b-btn variant="light" href="/userGuide/themes.html"><span><span>Themes</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
+            </span></p>
         </div>
-        <br></div>
+        <br>
+      </div>
+
+
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.1</a> on Mon, Mar 30, 2020, 2:34:18 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
     </footer>
   </div>
 </body>

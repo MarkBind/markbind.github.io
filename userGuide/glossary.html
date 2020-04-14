@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.13.1">
+  <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Glossary</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
   <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="icon" href="/favicon.ico">
@@ -65,9 +66,9 @@
             <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
             <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
             <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References 
- <i class="dropdown-btn-icon rotate-icon">
-<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
+                <i class="dropdown-btn-icon rotate-icon">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
               <div class="dropdown-container dropdown-container-open">
                 <ul class="pl-3 site-nav-list">
                   <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
@@ -83,26 +84,27 @@
           </ul>
         </div>
       </nav>
+
       <div id="content-wrapper">
-        <h4 id="live-preview">Live Preview<a class="fa fa-anchor" href="#live-preview"></a></h4>
+        <h4 id="live-preview">Live Preview<a class="fa fa-anchor" href="#live-preview" onclick="event.stopPropagation()"></a></h4>
         <span id="live-preview">
-<span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-        <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter"
-            class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>.
-          Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-        <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
+          <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
+          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
         </span>
-        <h4 id="mbd-extension"><code>.mbd</code> extension<a class="fa fa-anchor" href="#mbd-extension"></a></h4>
+        <h4 id="mbd-extension"><code>.mbd</code> extension<a class="fa fa-anchor" href="#mbd-extension" onclick="event.stopPropagation()"></a></h4>
         <span id="mbd-extension">
-<span><strong><code>.mbd</code> extension indicates a MarkBind source file</strong>.</span>
-        <p>MarkBind is able to take Markdown files (<code>.md</code>) and HTML files (<code>.html</code>) as source files too.
-        </p>
+          <span><strong><code>.mbd</code> extension indicates a MarkBind source file</strong>.</span>
+          <p>MarkBind is able to take Markdown files (<code>.md</code>) and HTML files (<code>.html</code>) as source files too.
+          </p>
         </span>
       </div>
+
+
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.13.1</a> on Mon, Mar 30, 2020, 2:34:18 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
     </footer>
   </div>
 </body>
