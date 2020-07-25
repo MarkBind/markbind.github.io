@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBind - User Guide - PlantUML Diagrams</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
+  <link rel="stylesheet" href="../markbind/css/site-nav.css">
+  <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <link rel="stylesheet" href="/css/main.css">
+      <navbar type="dark" class="temp-navbar">
+        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+        <li><a href="/index.html" class="nav-link">HOME</a></li>
+        <div tags="environment--ug">
+          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        </div>
+
+        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+        <li>
+          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+      <nav id="site-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-right-grey nav-inner position-sticky slim-scroll">
+          <p><span class="lead"><strong>User Guide</strong></span></p>
+          <ul class="px-0 site-nav-list">
+            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
+            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
+              <ul class="pl-3 site-nav-list">
+                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
+                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
+                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a current">Inserting PlantUML Diagrams</a></li>
+                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
+                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
+                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
+                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
+                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
+                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+              </ul>
+            </li>
+            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
+            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
+            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
+                <i class="dropdown-btn-icon rotate-icon">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
+              <div class="dropdown-container dropdown-container-open">
+                <ul class="pl-3 site-nav-list">
+                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
+                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
+                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
+                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
+                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
+                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
+                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="content-wrapper">
+        <div></div>
+        <h1 id="plantuml-diagrams">PlantUML Diagrams<a class="fa fa-anchor" href="#plantuml-diagrams" onclick="event.stopPropagation()"></a></h1>
+        <span id="overview" class="lead">
+          <p><strong>MarkBind offers integration with PlantUML in your pages,</strong> allowing you design and write UML diagrams (and <a href="http://plantuml.com/">more</a>) using PlantUML syntax, which is then compiled and served as images.
+          </p>
+        </span>
+        <box type="warning">
+          <p><strong><a href="https://www.java.com/en/download/">Java</a> and
+              <a href="https://www.graphviz.org/download/">Graphviz</a>
+              must be installed to use this feature</strong></p>
+          <ul>
+            <li>Java 8 or later (required to run the PlantUML JAR executable)</li>
+            <li>Graphviz v2.38 or later (required to generate <em>all</em> diagrams)</li>
+          </ul>
+        </box>
+        <h2 id="usage">Usage<a class="fa fa-anchor" href="#usage" onclick="event.stopPropagation()"></a></h2>
+        <p>A PlantUML diagram file (.puml) can be inserted into a Markbind page using a <code>&lt;puml&gt;</code> tag. The <code>&lt;puml&gt;</code> tag supports
+          the same attributes as the <code>&lt;pic&gt;</code> tag, listed below:</p>
+        <p><strong><strong>Options</strong></strong></p>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>alt</td>
+                <td><code>string</code></td>
+                <td><strong>This must be specified.</strong><br>The alternative text of the diagram.</td>
+              </tr>
+              <tr>
+                <td>height</td>
+                <td><code>string</code></td>
+                <td>The height of the diagram in pixels.</td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td><code>string</code></td>
+                <td>The name of the output file.</td>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td><code>string</code></td>
+                <td>The URL of the diagram if your PUML input is in another file.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td><code>string</code></td>
+                <td>The width of the diagram in pixels.<br>If both width and height are specified, width takes priority over height. It is to maintain the diagram's aspect ratio.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="example">Example<a class="fa fa-anchor" href="#example" onclick="event.stopPropagation()"></a></h3>
+        <p>You could have your PUML be written in a separate file or inline.</p>
+        <div>
+          <p><span class="dimmed">CODE:</span></p>
+          <div class="indented">
+            <p><em>Markbind page separate file</em>:</p>
+            <pre><code class="hljs"><span>&lt;puml src=&quot;diagrams/sequence.puml&quot; width=300 /&gt;<br></span></code></pre>
+            <p><em>diagrams/sequence.puml</em>:</p>
+            <pre><code class="hljs"><span>@startuml<br></span><span>alice -&gt; bob ++ : hello<br></span><span>bob -&gt; bob ++ : self call<br></span><span>bob -&gt; bib ++  #005500 : hello<br></span><span>bob -&gt; george ** : create<br></span><span>return done<br></span><span>return rc<br></span><span>bob -&gt; george !! : delete<br></span><span>return success<br></span><span>@enduml<br></span></code></pre>
+            <p><em>Markbind page inline</em>:</p>
+            <pre><code class="hljs"><span>&lt;puml width=300&gt;<br></span><span>@startuml<br></span><span>alice -&gt; bob ++ : hello<br></span><span>bob -&gt; bob ++ : self call<br></span><span>bob -&gt; bib ++  #005500 : hello<br></span><span>bob -&gt; george ** : create<br></span><span>return done<br></span><span>return rc<br></span><span>bob -&gt; george !! : delete<br></span><span>return success<br></span><span>@enduml<br></span><span>&lt;/puml&gt;<br></span></code></pre>
+          </div>
+          <p><span class="dimmed">OUTPUT:</span></p>
+          <div class="indented">
+            <box border-left-color="grey" background-color="white">
+              <p>
+                <pic src="/userGuide/diagrams/sequence.png" width="300"></pic>
+              </p>
+            </box>
+          </div>
+        </div>
+        <box type="info">
+          <p>The full PlantUML syntax reference can be found at <a href="http://plantuml.com/guide">plantuml.com/guide</a></p>
+        </box>
+        <panel><template slot="_header">
+            <p>More examples</p>
+          </template>
+          <h3 id="sequence-diagram">Sequence Diagram<a class="fa fa-anchor" href="#sequence-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/sequence.png"></pic>
+          </p>
+          <h3 id="use-case-diagram">Use Case Diagram<a class="fa fa-anchor" href="#use-case-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/usecase.png"></pic>
+          </p>
+          <h3 id="class-diagram">Class Diagram<a class="fa fa-anchor" href="#class-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/class.png"></pic>
+          </p>
+          <h3 id="activity-diagram">Activity Diagram<a class="fa fa-anchor" href="#activity-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/activity.png"></pic>
+          </p>
+          <h3 id="component-diagram">Component Diagram<a class="fa fa-anchor" href="#component-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/component.png"></pic>
+          </p>
+          <h3 id="state-diagram">State Diagram<a class="fa fa-anchor" href="#state-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/state.png"></pic>
+          </p>
+          <h3 id="object-diagram">Object Diagram<a class="fa fa-anchor" href="#object-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/object.png"></pic>
+          </p>
+          <h3 id="gantt-diagram">Gantt Diagram<a class="fa fa-anchor" href="#gantt-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/gantt.png"></pic>
+          </p>
+          <h3 id="entity-relation-diagram">Entity Relation Diagram<a class="fa fa-anchor" href="#entity-relation-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/entityrelation.png"></pic>
+          </p>
+          <h3 id="ditaa-diagram">Ditaa Diagram<a class="fa fa-anchor" href="#ditaa-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/ditaa.png"></pic>
+          </p>
+          <h3 id="archimate-diagram">Archimate Diagram<a class="fa fa-anchor" href="#archimate-diagram" onclick="event.stopPropagation()"></a></h3>
+          <p>
+            <pic src="/userGuide/diagrams/archimate.png"></pic>
+          </p>
+        </panel>
+        <div class="clearfix">
+          <p><span class="float-left">
+              <b-btn variant="light" href="/userGuide/formattingContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Formatting Contents</span></span></b-btn>
+            </span></p>
+          <p><span class="float-right">
+              <b-btn variant="light" href="/userGuide/usingComponents.html"><span><span>Using Components</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
+            </span></p>
+        </div>
+        <br>
+      </div>
+
+
+    </div>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 25 Jul 2020, 16:42:21 UTC]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = ''
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/userGuide/scripts.js"></script>
+
+</html>
