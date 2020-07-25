@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.15.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkBind - User Guide: Using HTML, JavaScript, CSS</title>
+  <title>MarkBind - User Guide: Working with Sites</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
@@ -72,7 +72,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="current">Using HTML, JavaScript, CSS</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
@@ -88,7 +88,7 @@
                   <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
               <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html" class="current">Overview</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
@@ -144,50 +144,55 @@
 
       <div id="content-wrapper">
         <div></div>
-        <div></div>
-        <span id="link" class="d-none">
-          <span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span>
-        <h1 id="using-html-javascript-css">Using HTML, JavaScript, CSS<span id="using-html-javascript-css" class="anchor"></span><a class="fa fa-anchor" href="#using-html-javascript-css" onclick="event.stopPropagation()"></a></h1>
-        <span id="overview" class="lead">
-          <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
+        <h1 id="working-with-sites">Working with Sites<span id="working-with-sites" class="anchor"></span><a class="fa fa-anchor" href="#working-with-sites" onclick="event.stopPropagation()"></a></h1>
+        <p><big><strong>Setting Site Properties</strong></big></p>
+        <blockquote>
+          <p><span></span></p>
+          <p>Setting site-wide properties of a MarkBind site is done by updating the <code v-pre>site.json</code> file found and the project root. For example, it can be used to set the deploy destination, themes to apply, plugins to use etc.
           </p>
-        </span>
-        <p></p>
-        <p><mark>Text within HTML tags are considered plain text unless the text is preceded by a blank line,</mark> in which case the text is parsed as Markdown text.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an html tag is parsed as Markdown when preceded by a blank line.</p>
-          <p>Code:</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span>Without preceding blank line: Apples **Bananas** Cherries<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span>With preceding blank line: Apples **Bananas** Cherries<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
-          <p>Outcome:<br></p>
-          <span>
-            Without preceding blank line: Apples **Bananas** Cherries
-          </span>
-          <span>
-            <p>With preceding blank line: Apples <strong>Bananas</strong> Cherries
-            </p>
-          </span>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/settingSiteProperties.html"><em>User Guide → Setting Site Properties</em></a></span></span></span></p>
+        <p><big><strong>Using Plugins</strong></big></p>
+        <blockquote>
+          <p><span></span></p>
+          <p>A plugin is an extension that adds additional features to MarkBind. Some non-essential MarkBind functionalities are provided as plugins so that you can enable/disable/configure them as necessary. MarkBind also supports adding external plugins (written by you or other third parties).
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/usingPlugins.html"><em>User Guide → Using Plugins</em></a></span></span></span></p>
+        <p><big><strong>Making the site searchable</strong></big></p>
+        <blockquote>
+          <p><span></span></p>
+          <p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong> with the option to use third-party search services as well.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/makingTheSiteSearchable.html"><em>User Guide → Making the Site Searchable</em></a></span></span></span></p>
+        <p><big><strong>Applying Themes</strong></big></p>
+        <blockquote>
+          <p><span></span></p>
+          <p><strong>MarkBind supports the ability to style your website with a variety of themes.</strong></p>
           <p></p>
-        </div>
-        <p>Alternatively, you can use <code v-pre>&lt;markdown&gt;</code> (for <em>block</em> Markdown elements such as headings) or <code v-pre>&lt;md&gt;</code> (for <em>inline</em> Markdown elements such as bold/italic text) tags to indicate the text should be treated as Markdown.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an HTML tag can be treated as Markdown using <code v-pre>&lt;markdown&gt;</code>/<code v-pre>&lt;md&gt;</code> tags.</p>
-          <p>Code:</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
-          <p>Outcome:<br>
-            <span>
-              <span>Apples <strong>Bananas</strong> Cherries</span></span></p>
-          <span>
-            <div>
-              <h5 id="apples-bananas-cherries">Apples <strong>Bananas</strong> Cherries<span id="apples-bananas-cherries" class="anchor"></span><a class="fa fa-anchor" href="#apples-bananas-cherries" onclick="event.stopPropagation()"></a></h5>
-            </div>
-          </span>
-        </div>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/themes.html"><em>User Guide → Themes</em></a></span></span></span></p>
+        <p><big><strong>Deploying the Site</strong></big></p>
+        <blockquote>
+          <p><span></span></p>
+          <p><strong>A site generated by MarkBind can be deployed by simply uploading the generated files to any Web server.</strong> In addition, MarkBind provides several convenient deployment options.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/deployingTheSite.html"><em>User Guide → Deploying the Site</em></a></span></span></span></p>
+        <p><big><strong>MarkBind in the Project Workflow</strong></big></p>
+        <blockquote>
+          <p><span></span></p>
+          <p>As <strong>MarkBind is especially optimized as a project documentation tool</strong>, it integrates well with the workflow of software project.
+          </p>
+        </blockquote>
+        <p><span class="indented">More info in: <span><span><a href="/userGuide/markBindInTheProjectWorkflow.html"><em>User Guide → MarkBind in the Project Workflow</em></a></span></span></span></p>
         <div class="clearfix">
           <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/usingComponents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Components</span></span></b-btn>
+              <b-btn variant="light" href="/userGuide/reusingContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Reusing Contents</span></span></b-btn>
             </span></p>
           <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/usingPlugins.html"><span><span>Using Plugins</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
+              <b-btn variant="light" href="/userGuide/settingSiteProperties.html"><span><span>Setting Site Properties</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
             </span></p>
         </div>
         <br>

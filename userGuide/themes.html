@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Themes</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 
 <body>
   <div id="app">
-    <header>
+    <header fixed>
       <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
@@ -38,7 +38,7 @@
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -46,40 +46,97 @@
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
         <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span class="lead"><strong>User Guide</strong></span></p>
-          <ul class="px-0 site-nav-list">
-            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
-            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
-              <ul class="pl-3 site-nav-list">
-                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
-                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
-                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
-                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
-                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
-                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
-                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
-                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
+          <ul class="site-nav-list site-nav-list-root">
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                </li>
               </ul>
             </li>
-            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
-            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
-            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a current">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
-                <i class="dropdown-btn-icon rotate-icon">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-              <div class="dropdown-container dropdown-container-open">
-                <ul class="pl-3 site-nav-list">
-                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
-                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
-                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
-                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
-                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
-                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
-                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
-                </ul>
-              </div>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html" class="current">Applying Themes</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -87,21 +144,24 @@
 
       <div id="content-wrapper">
         <div></div>
-        <h1 id="themes">Themes<a class="fa fa-anchor" href="#themes" onclick="event.stopPropagation()"></a></h1>
-        <span class="lead">
+        <div></div>
+        <span id="link" class="d-none">
+          <span><a href="/userGuide/themes.html"><em>User Guide → Themes</em></a></span></span>
+        <h1 id="themes">Themes<span id="themes" class="anchor"></span><a class="fa fa-anchor" href="#themes" onclick="event.stopPropagation()"></a></h1>
+        <span class="lead" id="overview">
           <p><strong>MarkBind supports the ability to style your website with a variety of themes.</strong></p>
         </span>
-        <h4 id="specifying-a-theme">Specifying a Theme<a class="fa fa-anchor" href="#specifying-a-theme" onclick="event.stopPropagation()"></a></h4>
-        <p>You can specify a theme for your site by using the <a href="/userGuide/siteConfiguration.html#theme"><code>theme</code> property of the <code>site.json</code></a>. For example, to apply the Cerulean theme, add <code>&quot;theme&quot;: &quot;bootswatch-cerulean&quot;</code> to your <code>site.json</code>.</p>
-        <p>If no <code>theme</code> property is specified, your site will be styled with default Bootstrap theme.</p>
-        <h4 id="supported-themes">Supported Themes<a class="fa fa-anchor" href="#supported-themes" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="specifying-a-theme">Specifying a Theme<span id="specifying-a-theme" class="anchor"></span><a class="fa fa-anchor" href="#specifying-a-theme" onclick="event.stopPropagation()"></a></h4>
+        <p>You can specify a theme for your site by using the <a href="/userGuide/siteJsonFile.html#theme"><code v-pre>theme</code> property of the <code v-pre>site.json</code></a>. For example, to apply the Cerulean theme, add <code v-pre>&quot;theme&quot;: &quot;bootswatch-cerulean&quot;</code> to your <code v-pre>site.json</code>.</p>
+        <p>If no <code v-pre>theme</code> property is specified, your site will be styled with default Bootstrap theme.</p>
+        <h4 id="supported-themes">Supported Themes<span id="supported-themes" class="anchor"></span><a class="fa fa-anchor" href="#supported-themes" onclick="event.stopPropagation()"></a></h4>
         <p>Currently, MarkBind supports all light themes from <a href="https://bootswatch.com/">Bootswatch</a>. Visit each of the theme pages below to see how different visual components are styled.</p>
         <div class="container-fluid">
           <div class="row">
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-cerulean"><code>bootswatch-cerulean</code><a class="fa fa-anchor" href="#bootswatch-cerulean" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-cerulean"><code v-pre>bootswatch-cerulean</code><span id="bootswatch-cerulean" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-cerulean" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/cerulean/"><img src="/images/bootswatch/cerulean.png"></a>
               </box>
@@ -109,7 +169,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-cosmo"><code>bootswatch-cosmo</code><a class="fa fa-anchor" href="#bootswatch-cosmo" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-cosmo"><code v-pre>bootswatch-cosmo</code><span id="bootswatch-cosmo" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-cosmo" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/cosmo/"><img src="/images/bootswatch/cosmo.png"></a>
               </box>
@@ -117,7 +177,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-flatly"><code>bootswatch-flatly</code><a class="fa fa-anchor" href="#bootswatch-flatly" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-flatly"><code v-pre>bootswatch-flatly</code><span id="bootswatch-flatly" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-flatly" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/flatly/"><img src="/images/bootswatch/flatly.png"></a>
               </box>
@@ -125,7 +185,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-journal"><code>bootswatch-journal</code><a class="fa fa-anchor" href="#bootswatch-journal" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-journal"><code v-pre>bootswatch-journal</code><span id="bootswatch-journal" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-journal" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/journal/"><img src="/images/bootswatch/journal.png"></a>
               </box>
@@ -133,7 +193,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-litera"><code>bootswatch-litera</code><a class="fa fa-anchor" href="#bootswatch-litera" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-litera"><code v-pre>bootswatch-litera</code><span id="bootswatch-litera" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-litera" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/litera/"><img src="/images/bootswatch/litera.png"></a>
               </box>
@@ -141,7 +201,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-lumen"><code>bootswatch-lumen</code><a class="fa fa-anchor" href="#bootswatch-lumen" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-lumen"><code v-pre>bootswatch-lumen</code><span id="bootswatch-lumen" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-lumen" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/lumen/"><img src="/images/bootswatch/lumen.png"></a>
               </box>
@@ -149,7 +209,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-lux"><code>bootswatch-lux</code><a class="fa fa-anchor" href="#bootswatch-lux" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-lux"><code v-pre>bootswatch-lux</code><span id="bootswatch-lux" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-lux" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/lux/"><img src="/images/bootswatch/lux.png"></a>
               </box>
@@ -157,7 +217,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-materia"><code>bootswatch-materia</code><a class="fa fa-anchor" href="#bootswatch-materia" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-materia"><code v-pre>bootswatch-materia</code><span id="bootswatch-materia" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-materia" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/materia/"><img src="/images/bootswatch/materia.png"></a>
               </box>
@@ -165,7 +225,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-minty"><code>bootswatch-minty</code><a class="fa fa-anchor" href="#bootswatch-minty" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-minty"><code v-pre>bootswatch-minty</code><span id="bootswatch-minty" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-minty" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/minty/"><img src="/images/bootswatch/minty.png"></a>
               </box>
@@ -173,7 +233,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-pulse"><code>bootswatch-pulse</code><a class="fa fa-anchor" href="#bootswatch-pulse" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-pulse"><code v-pre>bootswatch-pulse</code><span id="bootswatch-pulse" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-pulse" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/pulse/"><img src="/images/bootswatch/pulse.png"></a>
               </box>
@@ -181,7 +241,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-sandstone"><code>bootswatch-sandstone</code><a class="fa fa-anchor" href="#bootswatch-sandstone" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-sandstone"><code v-pre>bootswatch-sandstone</code><span id="bootswatch-sandstone" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-sandstone" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/sandstone/"><img src="/images/bootswatch/sandstone.png"></a>
               </box>
@@ -189,7 +249,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-simplex"><code>bootswatch-simplex</code><a class="fa fa-anchor" href="#bootswatch-simplex" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-simplex"><code v-pre>bootswatch-simplex</code><span id="bootswatch-simplex" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-simplex" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/simplex/"><img src="/images/bootswatch/simplex.png"></a>
               </box>
@@ -197,7 +257,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-sketchy"><code>bootswatch-sketchy</code><a class="fa fa-anchor" href="#bootswatch-sketchy" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-sketchy"><code v-pre>bootswatch-sketchy</code><span id="bootswatch-sketchy" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-sketchy" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/sketchy/"><img src="/images/bootswatch/sketchy.png"></a>
               </box>
@@ -205,7 +265,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-spacelab"><code>bootswatch-spacelab</code><a class="fa fa-anchor" href="#bootswatch-spacelab" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-spacelab"><code v-pre>bootswatch-spacelab</code><span id="bootswatch-spacelab" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-spacelab" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/spacelab/"><img src="/images/bootswatch/spacelab.png"></a>
               </box>
@@ -213,7 +273,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-united"><code>bootswatch-united</code><a class="fa fa-anchor" href="#bootswatch-united" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-united"><code v-pre>bootswatch-united</code><span id="bootswatch-united" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-united" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/united/"><img src="/images/bootswatch/united.png"></a>
               </box>
@@ -221,7 +281,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-yeti"><code>bootswatch-yeti</code><a class="fa fa-anchor" href="#bootswatch-yeti" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-yeti"><code v-pre>bootswatch-yeti</code><span id="bootswatch-yeti" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-yeti" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/yeti/"><img src="/images/bootswatch/yeti.png"></a>
               </box>
@@ -230,7 +290,10 @@
         </div>
         <div class="clearfix">
           <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/markBindInTheProjectWorkflow.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>MarkBind in the Project Workflow</span></span></b-btn>
+              <b-btn variant="light" href="/userGuide/makingTheSiteSearchable.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Making the Site Searchable</span></span></b-btn>
+            </span></p>
+          <p><span class="float-right">
+              <b-btn variant="light" href="/userGuide/deployingTheSite.html"><span><span>Deploying the Site</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
             </span></p>
         </div>
         <br>
@@ -240,12 +303,12 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.0</a> on Sat, 25 Jul 2020, 14:52:01 UTC]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>

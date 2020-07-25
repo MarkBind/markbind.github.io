@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Command Line Interface (CLI)</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
 
 <body data-spy="scroll" data-target="#page-nav" data-offset="100">
   <div id="app">
-    <header>
+    <header fixed>
       <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
@@ -39,7 +39,7 @@
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -47,165 +47,224 @@
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
         <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span class="lead"><strong>User Guide</strong></span></p>
-          <ul class="px-0 site-nav-list">
-            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
-            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
-              <ul class="pl-3 site-nav-list">
-                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
-                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
-                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
-                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
-                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
-                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
-                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
-                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
+          <ul class="site-nav-list site-nav-list-root">
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                </li>
               </ul>
             </li>
-            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
-            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
-            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
-                <i class="dropdown-btn-icon rotate-icon">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-              <div class="dropdown-container dropdown-container-open">
-                <ul class="pl-3 site-nav-list">
-                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a current">CLI Commands</a></li>
-                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
-                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
-                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
-                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
-                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
-                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
-                </ul>
-              </div>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html" class="current">CLI Commands</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
       </nav>
 
       <div id="content-wrapper">
-        <h1 id="markbind-cli">MarkBind CLI<a class="fa fa-anchor" href="#markbind-cli" onclick="event.stopPropagation()"></a></h1>
-        <h3 id="overview">Overview<a class="fa fa-anchor" href="#overview" onclick="event.stopPropagation()"></a></h3>
-        <p>An overview of MarkBind's Command Line Interface (CLI) can be referenced with <code>markbind --help</code>:</p>
-        <pre><code class="hljs"><span>$ markbind --help<br></span><span>Usage: markbind &lt;command&gt;<br></span><span> <br></span><span> Options:<br></span><span>   -V, --version                      output the version number<br></span><span>   -h, --help                         output usage information<br></span><span> <br></span><span> Commands:<br></span><span>   init|i [options] [root]            init a markbind website project<br></span><span>   serve|s [options] [root]           build then serve a website from a directory<br></span><span>   build|b [options] [root] [output]  build a website<br></span><span>   deploy|d [options]                 deploy the site to the repo's Github pages<br></span></code></pre>
+        <h1 id="markbind-cli">MarkBind CLI<span id="markbind-cli" class="anchor"></span><a class="fa fa-anchor" href="#markbind-cli" onclick="event.stopPropagation()"></a></h1>
+        <h3 id="overview">Overview<span id="overview" class="anchor"></span><a class="fa fa-anchor" href="#overview" onclick="event.stopPropagation()"></a></h3>
+        <p>An overview of MarkBind's Command Line Interface (CLI) can be referenced with <code v-pre>markbind --help</code>:</p>
+        <pre><code class="hljs" v-pre><span>$ markbind --help<br></span><span>Usage: markbind &lt;command&gt;<br></span><span> <br></span><span> Options:<br></span><span>   -V, --version                      output the version number<br></span><span>   -h, --help                         output usage information<br></span><span> <br></span><span> Commands:<br></span><span>   init|i [options] [root]            init a markbind website project<br></span><span>   serve|s [options] [root]           build then serve a website from a directory<br></span><span>   build|b [options] [root] [output]  build a website<br></span><span>   deploy|d [options]                 deploy the site to the repo's Github pages<br></span></code></pre>
         <hr>
-        <h3 id="init-command"><code>init</code> Command<a class="fa fa-anchor" href="#init-command" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="init-command"><code v-pre>init</code> Command<span id="init-command" class="anchor"></span><a class="fa fa-anchor" href="#init-command" onclick="event.stopPropagation()"></a></h3>
         <br>
-        <p><strong>Format:</strong> <code>markbind init [options] [root]</code></p>
-        <p><strong>Alias:</strong> <code>markbind i</code></p>
-        <p><strong>Description:</strong> Initializes a directory into a MarkBind site by creating a skeleton structure for the website which includes a <code>index.md</code> and a <code>site.json</code>.</p>
+        <p><strong>Format:</strong> <code v-pre>markbind init [options] [root]</code></p>
+        <p><strong>Alias:</strong> <code v-pre>markbind i</code></p>
+        <p><strong>Description:</strong> Initializes a directory into a MarkBind site by creating a skeleton structure for the website which includes a <code v-pre>index.md</code> and a <code v-pre>site.json</code>.</p>
         <p><strong>Arguments:</strong></p>
         <ul>
-          <li><code>[root]</code><br>
+          <li><code v-pre>[root]</code><br>
             Root directory. Default is the current directory.<br>
-            <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>./myWebsite</code></li>
+            <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>./myWebsite</code></li>
         </ul>
         <panel type="minimal"><template slot="_header">
             <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
-            <li><code>-c</code>, <code>--convert</code><br>
-              Convert an existing GitHub wiki or <code>docs</code> folder into a MarkBind website. See <a href="/userGuide/markBindInTheProjectWorkflow.html#converting-existing-project-documentation-wiki">Converting an existing Github project</a> for more information.</li>
+            <li><code v-pre>-c</code>, <code v-pre>--convert</code><br>
+              Convert an existing GitHub wiki or <code v-pre>docs</code> folder into a MarkBind website. See <a href="/userGuide/markBindInTheProjectWorkflow.html#converting-existing-project-documentation-wiki">Converting an existing Github project</a> for more information.</li>
           </ul>
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px;">Examples</span></big></p>
           <ul>
-            <li><code>markbind init</code> : Initializes the site in the current working directory.</li>
-            <li><code>markbind init ./myWebsite</code> : Initializes the site in <code>./myWebsite</code> directory.</li>
-            <li><code>markbind init --convert</code> : Converts the Github wiki or <code>docs</code> folder in the current working directory into a MarkBind website.</li>
+            <li><code v-pre>markbind init</code> : Initializes the site in the current working directory.</li>
+            <li><code v-pre>markbind init ./myWebsite</code> : Initializes the site in <code v-pre>./myWebsite</code> directory.</li>
+            <li><code v-pre>markbind init --convert</code> : Converts the Github wiki or <code v-pre>docs</code> folder in the current working directory into a MarkBind website.</li>
           </ul>
         </panel>
         <hr>
-        <h3 id="serve-command"><code>serve</code> Command<a class="fa fa-anchor" href="#serve-command" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="serve-command"><code v-pre>serve</code> Command<span id="serve-command" class="anchor"></span><a class="fa fa-anchor" href="#serve-command" onclick="event.stopPropagation()"></a></h3>
         <br>
-        <p><strong>Format:</strong> <code>markbind serve [options] [root]</code></p>
-        <p><strong>Alias:</strong> <code>markbind s</code></p>
+        <p><strong>Format:</strong> <code v-pre>markbind serve [options] [root]</code></p>
+        <p><strong>Alias:</strong> <code v-pre>markbind s</code></p>
         <p><strong>Description:</strong> Does the following steps:</p>
         <ol>
-          <li>Builds the site and puts the generated files in a directory named <code>_site</code>.</li>
-          <li>Starts a web server instance locally and makes the site available at <code>http://127.0.0.1:8080</code>.</li>
+          <li>Builds the site and puts the generated files in a directory named <code v-pre>_site</code>.</li>
+          <li>Starts a web server instance locally and makes the site available at <code v-pre>http://127.0.0.1:8080</code>.</li>
           <li>Opens a <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> of the website.</li>
         </ol>
-        <b-modal id="modal:cliCommands-livePreview" hide-footer="" size="lg" modal-class="mb-zoom" ref="modal:cliCommands-livePreview"><template slot="modal-title">Live Preview</template>
+        <b-modal id="modal:cliCommands-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:cliCommands-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
             <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
+            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
             <p></p>
           </span></b-modal>
+        <p></p>
         <p><strong>Arguments:</strong></p>
         <ul>
-          <li><code>[root]</code><br>
+          <li><code v-pre>[root]</code><br>
             Root directory. The default is the directory where this command was executed.<br>
-            <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>./myWebsite</code></li>
+            <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>./myWebsite</code></li>
         </ul>
         <panel type="minimal"><template slot="_header">
             <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
-            <li><code>-o &lt;file&gt;</code>, <code>--one-page &lt;file&gt;</code><br>
-              Serves only a single page from your website <strong>initially</strong>. If <code>&lt;file&gt;</code> is not specified, it defaults to <code>index.md/mbf/mbdf</code>.<br>
+            <li><code v-pre>-o &lt;file&gt;</code>, <code v-pre>--one-page &lt;file&gt;</code><br>
+              Serves only a single page from your website <strong>initially</strong>. If <code v-pre>&lt;file&gt;</code> is not specified, it defaults to <code v-pre>index.md/mbf/mbdf</code>.<br>
               <ul>
                 <li>Thereafter, when changes to source files have been made, only the page being viewed will be rebuilt if it was affected.<br></li>
                 <li>Navigating to a new page will build the new page, if it has not been built before, or there were some changes to source files that affected it before navigating to it.<br></li>
-                <li><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>--one-page guide/index.md</code></li>
+                <li><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>--one-page guide/index.md</code></li>
               </ul>
             </li>
           </ul>
-          <box type="info" light="" style="width: calc(100% - 50px); position: relative; left: 40px;"><template slot="_header">
+          <box type="info" light style="width: calc(100% - 50px); position: relative; left: 40px;"><template slot="_header">
               <p>Caveats</p>
             </template>
             <p>Essentially, this optional feature is very useful when writing content, more so if your build times are starting to slow down!</p>
             <p>The caveat is that not building all pages during the initial process, or not rebuilding all affected pages when a file changes, will cause your search results for these pages to be empty or outdated, until you navigate to them to trigger a rebuild.
             </p>
           </box>
+          <p></p>
           <ul>
             <li>
-              <p><code>-s &lt;file&gt;</code>, <code>--site-config &lt;file&gt;</code><br>
-                Specify the site config file (default: <code>site.json</code>)<br>
-                <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>-s otherSite.json</code></p>
+              <p><code v-pre>-s &lt;file&gt;</code>, <code v-pre>--site-config &lt;file&gt;</code><br>
+                Specify the site config file (default: <code v-pre>site.json</code>)<br>
+                <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>-s otherSite.json</code></p>
             </li>
             <li>
-              <p><code>-n</code>, <code>--no-open</code><br>
+              <p><code v-pre>-n</code>, <code v-pre>--no-open</code><br>
                 Don't open a live preview in the browser automatically.</p>
             </li>
             <li>
-              <p><code>-f</code>, <code>--force-reload</code><br>
+              <p><code v-pre>-f</code>, <code v-pre>--force-reload</code><br>
                 Force live reload to process all files in the site, instead of just the relevant files. This option is useful when you are modifying a file that is not a file type monitored by the <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> feature.</p>
             </li>
             <li>
-              <p><code>-p &lt;port&gt;</code>, <code>--port &lt;port&gt;</code><br>
+              <p><code v-pre>-p &lt;port&gt;</code>, <code v-pre>--port &lt;port&gt;</code><br>
                 Serve the website in the specified port.</p>
             </li>
           </ul>
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px;">Examples</span></big></p>
           <ul>
-            <li><code>markbind serve</code></li>
-            <li><code>markbind serve ./myWebsite</code></li>
-            <li><code>markbind serve -p 8888 -s otherSite.json</code></li>
+            <li><code v-pre>markbind serve</code></li>
+            <li><code v-pre>markbind serve ./myWebsite</code></li>
+            <li><code v-pre>markbind serve -p 8888 -s otherSite.json</code></li>
           </ul>
         </panel>
         <hr>
-        <h3 id="build-command"><code>build</code> Command<a class="fa fa-anchor" href="#build-command" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="build-command"><code v-pre>build</code> Command<span id="build-command" class="anchor"></span><a class="fa fa-anchor" href="#build-command" onclick="event.stopPropagation()"></a></h3>
         <br>
-        <p><strong>Format:</strong> <code>markbind build [options] [root] [output]</code></p>
-        <p><strong>Alias:</strong> <code>markbind b</code></p>
-        <p><strong>Description:</strong> Generates the site to the directory named <code>_site</code> in the current directory.</p>
+        <p><strong>Format:</strong> <code v-pre>markbind build [options] [root] [output]</code></p>
+        <p><strong>Alias:</strong> <code v-pre>markbind b</code></p>
+        <p><strong>Description:</strong> Generates the site to the directory named <code v-pre>_site</code> in the current directory.</p>
         <p><strong>Arguments:</strong></p>
         <ul>
           <li>
-            <p><code>[output]</code><br>
+            <p><code v-pre>[output]</code><br>
               Put the generated files in the specified directory<br>
-              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>../myOutDir</code></p>
+              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>../myOutDir</code></p>
           </li>
           <li>
-            <p><code>[root] [output]</code><br>
-              Read source files from the <code>[root]</code> directory and put the generated files in the specified <code>[output]</code> directory<br>
-              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>./myWebsite ../myOutDir</code></p>
+            <p><code v-pre>[root] [output]</code><br>
+              Read source files from the <code v-pre>[root]</code> directory and put the generated files in the specified <code v-pre>[output]</code> directory<br>
+              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>./myWebsite ../myOutDir</code></p>
           </li>
         </ul>
         <panel type="minimal"><template slot="_header">
@@ -214,50 +273,50 @@
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
             <li>
-              <p><code>--baseUrl &lt;base&gt;</code><br>
-                Override the <code>baseUrl</code> property (read from the <code>site.json</code>) with the give <code>&lt;base&gt;</code> value.<br>
-                <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>--baseUrl staging</code></p>
+              <p><code v-pre>--baseUrl &lt;base&gt;</code><br>
+                Override the <code v-pre>baseUrl</code> property (read from the <code v-pre>site.json</code>) with the give <code v-pre>&lt;base&gt;</code> value.<br>
+                <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>--baseUrl staging</code></p>
             </li>
             <li>
-              <p><code>-s &lt;file&gt;</code>, <code>--site-config &lt;file&gt;</code><br>
-                Specify the site config file (default: <code>site.json</code>)<br>
-                <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>-s otherSite.json</code></p>
+              <p><code v-pre>-s &lt;file&gt;</code>, <code v-pre>--site-config &lt;file&gt;</code><br>
+                Specify the site config file (default: <code v-pre>site.json</code>)<br>
+                <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>-s otherSite.json</code></p>
             </li>
           </ul>
           <p><strong><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px;">Examples</span></big></strong></p>
           <ul>
-            <li><code>markbind build</code></li>
-            <li><code>markbind build ./myWebsite ./myOutDir</code></li>
-            <li><code>markbind build ./stagingDir --baseUrl staging</code></li>
+            <li><code v-pre>markbind build</code></li>
+            <li><code v-pre>markbind build ./myWebsite ./myOutDir</code></li>
+            <li><code v-pre>markbind build ./stagingDir --baseUrl staging</code></li>
           </ul>
         </panel>
         <hr>
-        <h3 id="deploy-command"><code>deploy</code> Command<a class="fa fa-anchor" href="#deploy-command" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="deploy-command"><code v-pre>deploy</code> Command<span id="deploy-command" class="anchor"></span><a class="fa fa-anchor" href="#deploy-command" onclick="event.stopPropagation()"></a></h3>
         <br>
-        <p><strong>Format:</strong> <code>markbind deploy [options]</code></p>
-        <p><strong>Alias:</strong> <code>markbind d</code></p>
-        <p><strong>Description:</strong> Deploys the site to the repo's Github pages by pushing everything in the generated site (default dir: <code>_site</code>) to the <code>gh-pages</code> branch of the current git working directory's remote repo.</p>
+        <p><strong>Format:</strong> <code v-pre>markbind deploy [options]</code></p>
+        <p><strong>Alias:</strong> <code v-pre>markbind d</code></p>
+        <p><strong>Description:</strong> Deploys the site to the repo's Github pages by pushing everything in the generated site (default dir: <code v-pre>_site</code>) to the <code v-pre>gh-pages</code> branch of the current git working directory's remote repo.</p>
         <panel type="minimal"><template slot="_header">
             <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           </template>
           <p><strong>Options</strong> <span aria-hidden="true" class="fas fa-cogs"></span></p>
           <ul>
-            <li><code>-t &lt;githubTokenName&gt;</code>, <code>--travis &lt;githubTokenName&gt;</code><br>
-              Deploy the site in Travis CI using the GitHub personal access token stored in <code>&lt;githubTokenName&gt;</code>. (default: <code>GITHUB_TOKEN</code>)<br>
-              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>-t PA_TOKEN</code></li>
+            <li><code v-pre>-t &lt;githubTokenName&gt;</code>, <code v-pre>--travis &lt;githubTokenName&gt;</code><br>
+              Deploy the site in Travis CI using the GitHub personal access token stored in <code v-pre>&lt;githubTokenName&gt;</code>. (default: <code v-pre>GITHUB_TOKEN</code>)<br>
+              <big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>-t PA_TOKEN</code></li>
           </ul>
           <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related: <a href="/userGuide/deployingTheSite.html">User Guide: Deploying the Website</a>.</span></p>
         </panel>
         <hr>
-        <h3 id="help-option"><code>--help</code> Option<a class="fa fa-anchor" href="#help-option" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="help-option"><code v-pre>--help</code> Option<span id="help-option" class="anchor"></span><a class="fa fa-anchor" href="#help-option" onclick="event.stopPropagation()"></a></h3>
         <br>
-        <p><strong>Format:</strong> <code>markbind [command] --help</code></p>
-        <p><strong>Alias:</strong> <code>markbind [command] -h</code></p>
-        <p><strong>Description:</strong> Prints a summary of MarkBind commands or a detailed usage guide for the given <code>command</code>.</p>
+        <p><strong>Format:</strong> <code v-pre>markbind [command] --help</code></p>
+        <p><strong>Alias:</strong> <code v-pre>markbind [command] -h</code></p>
+        <p><strong>Description:</strong> Prints a summary of MarkBind commands or a detailed usage guide for the given <code v-pre>command</code>.</p>
         <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px;">Examples</span></big></p>
         <ul>
-          <li><code>markbind --help</code> : Prints a summary of MarkBind commands.</li>
-          <li><code>markbind serve --help</code> : Prints a detailed usage guide for the <code>serve</code> command.</li>
+          <li><code v-pre>markbind --help</code> : Prints a summary of MarkBind commands.</li>
+          <li><code v-pre>markbind serve --help</code> : Prints a detailed usage guide for the <code v-pre>serve</code> command.</li>
         </ul>
       </div>
 
@@ -282,12 +341,12 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.0</a> on Sat, 25 Jul 2020, 14:52:01 UTC]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>

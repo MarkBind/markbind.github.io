@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Tips & Tricks</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 
 <body>
   <div id="app">
-    <header>
+    <header fixed>
       <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
@@ -38,7 +38,7 @@
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -46,40 +46,97 @@
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
         <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span class="lead"><strong>User Guide</strong></span></p>
-          <ul class="px-0 site-nav-list">
-            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
-            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
-              <ul class="pl-3 site-nav-list">
-                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
-                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
-                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
-                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
-                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
-                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
-                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
-                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
+          <ul class="site-nav-list site-nav-list-root">
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                </li>
               </ul>
             </li>
-            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
-            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
-            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
-                <i class="dropdown-btn-icon rotate-icon">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-              <div class="dropdown-container dropdown-container-open">
-                <ul class="pl-3 site-nav-list">
-                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
-                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
-                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
-                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
-                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
-                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a current">Tips & Tricks</a></li>
-                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
-                </ul>
-              </div>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html" class="current">Tips &amp; Tricks</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -87,11 +144,12 @@
 
       <div id="content-wrapper">
         <div></div>
-        <h1 id="tips-and-amp-tricks">Tips &amp; Tricks<a class="fa fa-anchor" href="#tips-and-amp-tricks" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="tips-and-amp-tricks">Tips &amp; Tricks<span id="tips-and-amp-tricks" class="anchor"></span><a class="fa fa-anchor" href="#tips-and-amp-tricks" onclick="event.stopPropagation()"></a></h1>
         <span id="escapingCharacters">
-          <h5 id="tip-escaping-characters">Tip: Escaping Characters<a class="fa fa-anchor" href="#tip-escaping-characters" onclick="event.stopPropagation()"></a></h5>
-          <p>For Markdown syntax: To display a literal character that are normally used for Markdown formatting, add a backslash (<code>\</code>) in front of the character.</p>
+          <h5 id="escaping-characters"><span aria-hidden="true" class="fas fa-lightbulb"></span> Escaping Characters<span id="escaping-characters" class="anchor"></span><a class="fa fa-anchor" href="#escaping-characters" onclick="event.stopPropagation()"></a></h5>
+          <p>For Markdown syntax: To display a literal character that are normally used for Markdown formatting, add a backslash (<code v-pre>\</code>) in front of the character.</p>
           <div>
+
 
 
 
@@ -99,7 +157,7 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown"><span>\* item 1<br></span><span><br></span><span><span class="hljs-bullet">* </span>item 1<br></span></code></pre>
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span>\* item 1<br></span><span><br></span><span><span class="hljs-bullet">* </span>item 1<br></span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
@@ -113,25 +171,35 @@
           </div>
         </span>
         <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#escaping-characters">https://www.markdownguide.org/basic-syntax#escaping-characters</a></small></p>
-        <h5 id="problem-unwanted-starting-space-in-links-and-triggers">Problem: Unwanted starting space in links and triggers<a class="fa fa-anchor" href="#problem-unwanted-starting-space-in-links-and-triggers" onclick="event.stopPropagation()"></a></h5>
+        <h5 id="using-raw-endraw-to-display-content"><span aria-hidden="true" class="fas fa-lightbulb"></span> Using {% raw %}{% endraw %} to display <code v-pre>{{ content }}</code><span id="using-raw-endraw-to-display-content" class="anchor"></span><a class="fa fa-anchor" href="#using-raw-endraw-to-display-content" onclick="event.stopPropagation()"></a></h5>
+        <p>To display the raw variable interpolation syntax using <code v-pre>{% raw %}{% endraw %}</code>, you would also need to add
+          the <code v-pre>v-pre</code> attribute using markdown-it-attrs or as a html attribute.</p>
+        <box type="info">
+          <p>This isn't necessary for <code v-pre>&lt;code&gt;</code> elements, markdown code fences and inline code though, which markbind automatically
+            adds <code v-pre>v-pre</code> for.</p>
+          <p>However, this does not change the need for <code v-pre>{% raw %}{% endraw %}</code>. Meaning, you can still use variables within your code!
+          </p>
+        </box>
+        <p></p>
+        <h5 id="unwanted-starting-space-in-links-and-triggers"><span aria-hidden="true" class="fas fa-info"></span> Unwanted starting space in links and triggers<span id="unwanted-starting-space-in-links-and-triggers" class="anchor"></span><a class="fa fa-anchor" href="#unwanted-starting-space-in-links-and-triggers" onclick="event.stopPropagation()"></a></h5>
         <p>When you use links or triggers, you may encounter a situation where an unwanted space is being generated by MarkBind:</p>
         <ul>
           <li>
             <p>Code:<br></p>
-            <pre><code class="hljs"><span>The<br></span><span>[[link](https://example.com)].<br></span></code></pre>
+            <pre><code class="hljs" v-pre><span>The<br></span><span>[[link](https://example.com)].<br></span></code></pre>
           </li>
           <li>
             <p>Expected output:
-              <code>The [<a href="https://example.com">link</a>].</code></p>
+              <code v-pre>The [<a href="https://example.com">link</a>].</code></p>
           </li>
           <li>
             <p>Actual output (notice the additional space in front of the link):
-              <code>The [ <a href="https://example.com">link</a>].</code></p>
+              <code v-pre>The [ <a href="https://example.com">link</a>].</code></p>
           </li>
           <li>
             <p>Solution:
-              Wrap the link or trigger around with <code>&lt;md&gt;</code> tags.</p>
-            <pre><code class="hljs"><span>The<br></span><span>&lt;md&gt;[[link](https://example.com)]&lt;/md&gt;.<br></span></code></pre>
+              Wrap the link or trigger around with <code v-pre>&lt;md&gt;</code> tags.</p>
+            <pre><code class="hljs" v-pre><span>The<br></span><span>&lt;md&gt;[[link](https://example.com)]&lt;/md&gt;.<br></span></code></pre>
           </li>
         </ul>
       </div>
@@ -140,12 +208,12 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, Apr 14, 2020, 5:34:34 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.0</a> on Sat, 25 Jul 2020, 14:52:01 UTC]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>
