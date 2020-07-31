@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Adding Pages</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 
 <body>
   <div id="app">
-    <header>
+    <header fixed>
       <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
@@ -38,7 +38,7 @@
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -46,40 +46,97 @@
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
         <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span class="lead"><strong>User Guide</strong></span></p>
-          <ul class="px-0 site-nav-list">
-            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
-            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
-              <ul class="pl-3 site-nav-list">
-                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a current">Adding Pages</a></li>
-                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
-                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
-                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
-                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
-                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
-                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
-                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
+          <ul class="site-nav-list site-nav-list-root">
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html" class="current">Adding Pages</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                </li>
               </ul>
             </li>
-            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
-            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
-            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
-                <i class="dropdown-btn-icon rotate-icon">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-              <div class="dropdown-container dropdown-container-open">
-                <ul class="pl-3 site-nav-list">
-                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
-                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
-                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
-                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
-                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
-                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
-                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
-                </ul>
-              </div>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -90,31 +147,32 @@
         <div></div>
         <span id="link" class="d-none">
           <span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
-        <h1 id="adding-pages">Adding Pages<a class="fa fa-anchor" href="#adding-pages" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="adding-pages">Adding Pages<span id="adding-pages" class="anchor"></span><a class="fa fa-anchor" href="#adding-pages" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
-          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">The directory that contains all the project files. It is also the directory in which the <code>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
+          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">The directory that contains all the project files. It is also the directory in which the <code v-pre>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
         </span>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code>tutorial/code.txt</code> in your root directory, it will be available as <code>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code v-pre>tutorial/code.txt</code> in your root directory, it will be available as <code v-pre>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
         </div>
-        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code>ignore</code> field in the <code>site.config</code> file as explained <a href="/userGuide/siteConfiguration.html#ignore">here</a>.</span></p>
-        <p><strong>More importantly, <code>.md</code> and <code>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
+        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code v-pre>ignore</code> field in the <code v-pre>site.config</code> file as explained <a href="/userGuide/siteJsonFile.html#ignore">here</a>.</span></p>
+        <p><strong>More importantly, <code v-pre>.md</code> and <code v-pre>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code>&lt;root&gt;/tutorial/</code><strong><code>setup.md</code></strong> can be transformed into <code>&lt;website-url&gt;/tutorial/</code><strong><code>setup.html</code></strong></p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>&lt;root&gt;/tutorial/</code><strong><code v-pre>setup.md</code></strong> can be transformed into <code v-pre>&lt;website-url&gt;/tutorial/</code><strong><code v-pre>setup.html</code></strong></p>
         </div>
         <p>Here are the steps to add a new page to your site:</p>
         <ol>
-          <li>Add a <code>.md</code> (or <code>.mbd</code>) file anywhere inside the root directory.</li>
-          <li>Update the <a href="/userGuide/siteConfiguration.html#pages"><code>pages</code> attribute of the <code>site.json</code></a> to cover the new file, if necessary.</li>
+          <li>Add a <code v-pre>.md</code> (or <code v-pre>.mbd</code>) file anywhere inside the root directory.</li>
+          <li>Update the <a href="/userGuide/siteJsonFile.html#pages"><code v-pre>pages</code> attribute of the <code v-pre>site.json</code></a> to cover the new file, if necessary.</li>
           <li>Use the <span trigger="click" for="modal:addingPages-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:addingPages-livePreview'].show()" class="trigger-click">live preview</span> to view the generated web page for the new file.</li>
         </ol>
-        <b-modal id="modal:addingPages-livePreview" hide-footer="" size="lg" modal-class="mb-zoom" ref="modal:addingPages-livePreview"><template slot="modal-title">Live Preview</template>
+        <b-modal id="modal:addingPages-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:addingPages-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
             <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code>css</code>, <code>.html</code>, <code>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code>.mbdf</code></span>. Changes to <code>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code>serve</code> command</a> to launch a live preview.</p>
+            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
             <p></p>
           </span></b-modal>
+        <p></p>
         <div class="clearfix">
           <p><span class="float-left">
               <b-btn variant="light" href="/userGuide/authoringContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span></b-btn>
@@ -130,12 +188,12 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 25 Jul 2020, 16:42:21 UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>

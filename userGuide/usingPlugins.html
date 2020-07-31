@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Plugins</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
 
 <body data-spy="scroll" data-target="#page-nav" data-offset="100">
   <div id="app">
-    <header>
+    <header fixed>
       <link rel="stylesheet" href="/css/main.css">
       <navbar type="dark" class="temp-navbar">
         <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
@@ -39,7 +39,7 @@
           <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -47,40 +47,97 @@
     <div id="flex-body">
       <nav id="site-nav" class="navbar navbar-light bg-transparent">
         <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span class="lead"><strong>User Guide</strong></span></p>
-          <ul class="px-0 site-nav-list">
-            <li class="mt-2"><a href="/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
-            <li class="mt-2"><a href="/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
-              <ul class="pl-3 site-nav-list">
-                <li class="mt-2"><a href="/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
-                <li class="mt-2"><a href="/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
-                <li class="mt-2"><a href="/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
-                <li class="mt-2"><a href="/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
-                <li class="mt-2"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
-                <li class="mt-2"><a href="/userGuide/usingPlugins.html" class="site-nav__a current">Using Plugins</a></li>
-                <li class="mt-2"><a href="/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
-                <li class="mt-2"><a href="/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
-                <li class="mt-2"><a href="/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
+          <ul class="site-nav-list site-nav-list-root">
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                </li>
               </ul>
             </li>
-            <li class="mt-2"><a href="/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
-            <li class="mt-2"><a href="/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
-            <li class="mt-2"><a href="/userGuide/themes.html" class="site-nav__a">Themes</a></li>
-            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References
-                <i class="dropdown-btn-icon rotate-icon">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
-              <div class="dropdown-container dropdown-container-open">
-                <ul class="pl-3 site-nav-list">
-                  <li class="mt-2"><a href="/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
-                  <li class="mt-2"><a href="/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
-                  <li class="mt-2"><a href="/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
-                  <li class="mt-2"><a href="/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
-                  <li class="mt-2"><a href="/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
-                  <li class="mt-2"><a href="/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
-                  <li class="mt-2"><a href="/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
-                </ul>
-              </div>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html" class="current">Using Plugins</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -88,166 +145,32 @@
 
       <div id="content-wrapper">
         <div></div>
-        <h1 id="using-plugins">Using Plugins<a class="fa fa-anchor" href="#using-plugins" onclick="event.stopPropagation()"></a></h1>
-        <p>A plugin is a user-defined extension that can add custom features to MarkBind. MarkBind plugins are <code>js</code> scripts that are loaded and run during the page generation. MarkBind allows plugins to modify a page's content during the page generation process.</p>
-        <tip-box type="warning">
-          <p><strong>WARNING:</strong> Plugins are executable programs that can be written by anyone. This means that they might contain malicious code that may damage your computer.</p>
-          <p>Only run plugins from sources that you trust. Do not run the plugin if the source/origin of the plugin cannot be ascertained.
+        <div></div>
+        <span id="link" class="d-none">
+          <span><a href="/userGuide/usingPlugins.html"><em>User Guide → Using Plugins</em></a></span></span>
+        <h1 id="using-plugins">Using Plugins<span id="using-plugins" class="anchor"></span><a class="fa fa-anchor" href="#using-plugins" onclick="event.stopPropagation()"></a></h1>
+        <div class="lead" id="overview">
+          <p>A plugin is an extension that adds additional features to MarkBind. Some non-essential MarkBind functionalities are provided as plugins so that you can enable/disable/configure them as necessary. MarkBind also supports adding external plugins (written by you or other third parties).</p>
+        </div>
+        <box type="info">
+          <p>MarkBind's philosophy is to <em>bake-in</em> all necessary functionality into MarkBind itself rather than expect users to go hunting for suitable plugins. Hence, we do not anticipate MarkBind users to rely heavily on such external plugins.
           </p>
-        </tip-box>
-        <h3 id="adding-plugins">Adding Plugins<a class="fa fa-anchor" href="#adding-plugins" onclick="event.stopPropagation()"></a></h3>
-        <p>Plugins are stored in the <code>_markbind/plugins</code> folder which is generated on <code>init</code>. To use a plugin, place the <code>js</code> source of the plugin in the <code>_markbind/plugins</code> folder and add the following options to <code>site.json</code>:</p>
+        </box>
+        <p></p>
+        <h2 id="managing-plugins">Managing Plugins<span id="managing-plugins" class="anchor"></span><a class="fa fa-anchor" href="#managing-plugins" onclick="event.stopPropagation()"></a></h2>
+        <p>Plugins are managed via the following two properties in the <code v-pre>site.json</code>.</p>
         <ul>
-          <li><code>plugins</code>: An array of plugin names to use.</li>
-          <li><code>pluginsContext</code>: A mapping of plugin names to parameters passed to each individual plugin. It is recommended to use key-value pairs for consistency.</li>
+          <li><code v-pre>plugins</code>: An array of plugin names to use.</li>
+          <li><code v-pre>pluginsContext</code>: Parameters passed to each plugin, specified as key-value pairs.</li>
         </ul>
         <p>For example:</p>
-        <pre><code class="hljs js"><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"plugin1"</span>,<br></span><span>    <span class="hljs-string">"plugin2"</span>,<br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"plugin1"</span>: {<br></span><span>    	<span class="hljs-string">"input"</span>: <span class="hljs-string">"Input for Plugin 1"</span><br></span><span>    },<br></span><span>    <span class="hljs-string">"plugin2"</span>: {<br></span><span>    	<span class="hljs-string">"data"</span>: <span class="hljs-string">"Data for Plugin 2"</span><br></span><span>    },<br></span><span>  }<br></span><span>}<br></span></code></pre>
-        <h3 id="writing-plugins">Writing Plugins<a class="fa fa-anchor" href="#writing-plugins" onclick="event.stopPropagation()"></a></h3>
-        <h4 id="rendering">Rendering<a class="fa fa-anchor" href="#rendering" onclick="event.stopPropagation()"></a></h4>
-        <p><a href="/images/rendering.png" target="_self"><img src="/images/rendering.png" alt="" class="img-fluid"></a></p>
-        <p>MarkBind provides two entry points for modifying the page, pre-render and post-render. These are controlled by implementing the <code>preRender()</code> and <code>postRender()</code> functions in the plugin:</p>
-        <ul>
-          <li><code>preRender(content, pluginContext, frontMatter)</code>: Called before MarkBind renders the source from Markdown to HTML.
-            <ul>
-              <li><code>content</code>: The raw Markdown of any Markdown file (<code>.md</code>, <code>.mbd</code>, etc.).</li>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-            </ul>
-          </li>
-          <li><code>postRender(content, pluginContext, frontMatter)</code>: Called after the HTML is rendered, before writing it to a file.
-            <ul>
-              <li><code>content</code>: The rendered HTML.</li>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-            </ul>
-          </li>
-        </ul>
-        <p>MarkBind will call these functions with the respective content, and retrieve a string data that is used for the next step of the page generation process.</p>
-        <p>An example of a plugin is shown below. The plugin shows two ways of appending a paragraph of text to a specific <code>div</code> in the Markdown files:</p>
-        <pre><code class="hljs js"><span><span class="hljs-comment">// myPlugin.js</span><br></span><span><br></span><span><span class="hljs-keyword">const</span> cheerio = <span class="hljs-built_in">module</span>.parent.require(<span class="hljs-string">'cheerio'</span>);<br></span><span><br></span><span><span class="hljs-built_in">module</span>.exports = {<br></span><span>  preRender: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter</span>) =&gt;</span> content.replace(<span class="hljs-string">'[Pre-render Placeholder]'</span>, <span class="hljs-string">`<span class="hljs-subst">${pluginContext.pre}</span>`</span>),<br></span><span>  postRender: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter</span>) =&gt;</span> {<br></span><span>    <span class="hljs-keyword">const</span> $ = cheerio.load(content, { <span class="hljs-attr">xmlMode</span>: <span class="hljs-literal">false</span> });<br></span><span>    <span class="hljs-comment">// Modify the page...</span><br></span><span>    $(<span class="hljs-string">'#my-div'</span>).append(pluginContext.post);<br></span><span>    <span class="hljs-keyword">return</span> $.html();<br></span><span>  },<br></span><span>};<br></span></code></pre>
-        <pre><code class="hljs js"><span><span class="hljs-comment">// site.json</span><br></span><span><br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"myPlugin"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"myPlugin"</span>: {<br></span><span>      <span class="hljs-string">"pre"</span>: <span class="hljs-string">"&lt;p&gt;Hello&lt;/p&gt;"</span>,<br></span><span>      <span class="hljs-string">"post"</span>: <span class="hljs-string">"&lt;p&gt;Goodbye&lt;/p&gt;"</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
-        <pre><code class="hljs md"><span>// index.md<br></span><span><br></span><span>...<br></span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"my-div"</span>&gt;</span></span><br></span><span>[Pre-render Placeholder]<br></span><span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></span></code></pre>
-        <h4 id="assets">Assets<a class="fa fa-anchor" href="#assets" onclick="event.stopPropagation()"></a></h4>
-        <p>Plugins can implement the methods <code>getLinks</code> and <code>getScripts</code> to add additional assets to the page.</p>
-        <ul>
-          <li><code>getLinks(content, pluginContext, frontMatter, utils)</code>: Called to get link elements to be added to the head of the page.
-            <ul>
-              <li><code>content</code>: The rendered HTML.</li>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-              <li><code>utils</code>: Object containing the following utility functions
-                <ul>
-                  <li><code>buildStylesheet(href)</code>: Builds a stylesheet link element with the specified <code>href</code>.</li>
-                </ul>
-              </li>
-              <li>Should return an array of strings containing link elements to be added.</li>
-            </ul>
-          </li>
-          <li><code>getScripts(content, pluginContext, frontMatter, utils)</code>: Called to get script elements to be added after the body of the page.
-            <ul>
-              <li><code>content</code>: The rendered HTML.</li>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-              <li><code>utils</code>: Object containing the following utility functions
-                <ul>
-                  <li><code>buildScript(src)</code>: Builds a script element with the specified <code>src</code>.</li>
-                </ul>
-              </li>
-              <li>Should return an array of strings containing script elements to be added.</li>
-            </ul>
-          </li>
-        </ul>
-        <box type="success"><template slot="_header">
-            <p>Local assets</p>
-          </template>
-          <span>
-            You can set an absolute or relative file path as the <code>src</code> or <code>href</code> attribute in your <code>&lt;script&gt;</code> or <code>&lt;link&gt;</code> tags.
-            MarkBind will copy these assets into the output directory and change the <code>src</code> or <code>href</code> attributes automatically!
-          </span></box>
-        <p>An example of a plugin which adds links and scripts to the page:</p>
-        <pre><code class="hljs js"><span><span class="hljs-comment">// myPlugin.js</span><br></span><span><br></span><span><span class="hljs-built_in">module</span>.exports = {<br></span><span>  getLinks: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter, utils</span>) =&gt;</span> [utils.buildStylesheet(<span class="hljs-string">'STYLESHEET_LINK'</span>)],<br></span><span>  getScripts: <span class="hljs-function">(<span class="hljs-params">content, pluginContext, frontMatter, utils</span>) =&gt;</span> <br></span><span>    [utils.buildScript(<span class="hljs-string">'SCRIPT_LINK'</span>), <span class="hljs-string">'&lt;script&gt;alert("hello")&lt;/script&gt;'</span>],<br></span><span>};<br></span><span><br></span></code></pre>
-        <p>This will add the following link and script elements to the page:</p>
-        <ul>
-          <li><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;STYLESHEET_LINK&quot;&gt;</code></li>
-          <li><code>&lt;script src=&quot;SCRIPT_LINK&quot;&gt;&lt;/script&gt;</code></li>
-          <li><code>&lt;script&gt;alert(&quot;hello&quot;)&lt;/script&gt;</code></li>
-        </ul>
-        <h4 id="live-reload">Live reload<a class="fa fa-anchor" href="#live-reload" onclick="event.stopPropagation()"></a></h4>
-        <p>By default, MarkBind treats <code>.html</code>, <code>.md</code>, <code>.mbd</code>, and <code>.mbdf</code> as source files, and will rebuild any
-          pages changed when serving the page.</p>
-        <p>During the <code>preRender</code> and <code>postRender</code> stages however, plugins may do custom processing using some other
-          source file types, as parsed from the raw Markdown, typically requiring rebuilding the site.</p>
-        <p>Hence, to add custom source files to watch, you can implement the <code>getSources()</code> method.</p>
-        <p><code>getSources(content, pluginContext, frontMatter)</code>: Called <em>before</em> a Markdown file's <code>preRender</code> function is called.</p>
-        <ul>
-          <li><code>content</code>: The raw Markdown of the current Markdown file (<code>.md</code>, <code>.mbd</code>, etc.).</li>
-          <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-          <li><code>frontMatter</code>: The frontMatter of the page being processed, in case any frontMatter data is required.</li>
-        </ul>
-        <p>It should return an object, consisting of <em>at least one of the following fields</em>:</p>
-        <ul>
-          <li><code>tagMap</code>: An array consisting of <code>['tag name', 'source attribute name']</code> key value pairs.
-            <ul>
-              <li>MarkBind will automatically search for matching tags with the source attributes, and watch them.</li>
-              <li>For relative file paths, <em>if the tag is part of some included content</em> ( eg. <code>&lt;include /&gt;</code> tags ), it will be resolved against the included page. Otherwise, it is resolved against the page being processed.</li>
-            </ul>
-          </li>
-          <li><code>sources</code>: An array of source file paths to watch, where relative file paths are resolved only against the page being processed.</li>
-          <li>You can also directly return an array of source file paths to watch. ( ie. the <code>sources</code> field ) <em><strong>(deprecated)</strong></em></li>
-        </ul>
-        <p>Example usage of <code>getSources</code> from the PlantUML plugin, which allows insertion of PlantUML diagrams using <code>&lt;puml src=&quot;...&quot; &gt;</code> tags.
-          This allows files specified by the <code>src</code> attributes of <code>&lt;puml&gt;</code> tags to be watched:</p>
-        <pre><code class="hljs js"><span>{<br></span><span>  ...<br></span><span>  getSources: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> ({<br></span><span>    tagMap: [[<span class="hljs-string">'puml'</span>, <span class="hljs-string">'src'</span>]],<br></span><span>  })<br></span><span>}<br></span></code></pre>
-        <h4 id="special-tags">Special tags<a class="fa fa-anchor" href="#special-tags" onclick="event.stopPropagation()"></a></h4>
-        <p>By default, content in html tags are parsed as html and markdown.</p>
-        <p>However, you might want to create a plugin that has certain special tags containing conflicting syntax
-          you do not wish to be parsed as html or markdown.</p>
-        <p>You can implement the <code>getSpecialTags</code> method to blacklist the content in these special tags from parsing,
-          removing such potential conflicts.</p>
-        <ul>
-          <li><code>getSpecialTags(pluginContext)</code>: Called during initial site generation to blacklist special tags.
-            <ul>
-              <li><code>pluginContext</code>: User provided parameters for the plugin. This can be specified in the <code>site.json</code>.</li>
-              <li>Should return an array of string tag names to be blacklisted, with each tag name being at least 2 characters long.</li>
-            </ul>
-          </li>
-        </ul>
-        <box type="important">
-          Note however, that variable interpolation syntax <code>{<span>{</span> variable_name <span>}</span>}</code> will act as per normal.
-          Meaning, the user would still be able to use variables in your special tags!
-        </box>
-        <h3 id="advanced-default-plugins">Advanced: Default plugins<a class="fa fa-anchor" href="#advanced-default-plugins" onclick="event.stopPropagation()"></a></h3>
-        <p>MarkBind has a set of default plugins that it uses to carry out some of its features. These are enabled by default for every project and should be left alone.</p>
-        <div class="table-responsive">
-          <table class="markbind-table table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Default Plugin</th>
-                <th>Functionality</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>anchors</code></td>
-                <td>Attaches anchor links to the side of headings.</td>
-              </tr>
-              <tr>
-                <td><code>shorthandSyntax</code></td>
-                <td>Allows for certain syntax shorthands.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Although not advised, you can disable these by passing <code>&quot;off&quot;: true</code> in the <code>pluginsContext</code>.</p>
-        <p>Disabling the <code>anchors</code> plugin:</p>
-        <pre><code class="hljs js"><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"anchors"</span>: {<br></span><span>      <span class="hljs-string">"off"</span>: <span class="hljs-literal">true</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
-        <h3 id="built-in-plugins">Built-in plugins<a class="fa fa-anchor" href="#built-in-plugins" onclick="event.stopPropagation()"></a></h3>
+        <pre><code class="hljs js" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"plugin1"</span>,<br></span><span>    <span class="hljs-string">"plugin2"</span>,<br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"plugin1"</span>: {<br></span><span>      <span class="hljs-string">"input"</span>: <span class="hljs-string">"Input for Plugin 1"</span><br></span><span>    },<br></span><span>    <span class="hljs-string">"plugin2"</span>: {<br></span><span>      <span class="hljs-string">"data"</span>: <span class="hljs-string">"Data for Plugin 2"</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+        <h2 id="using-built-in-plugins">Using Built-in Plugins<span id="using-built-in-plugins" class="anchor"></span><a class="fa fa-anchor" href="#using-built-in-plugins" onclick="event.stopPropagation()"></a></h2>
         <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
         <div>
-          <h4 id="algolia-enabling-algolia-docsearch"><code>algolia</code>: Enabling Algolia DocSearch<a class="fa fa-anchor" href="#algolia-enabling-algolia-docsearch" onclick="event.stopPropagation()"></a></h4>
+          <h3 id="plugin-algolia">Plugin: Algolia<span id="plugin-algolia" class="anchor"></span><a class="fa fa-anchor" href="#plugin-algolia" onclick="event.stopPropagation()"></a></h3>
           <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
-          <p>To enable it, add <code>algolia</code> to your site's plugins, and supply the required options via the <code>pluginsContext</code>.</p>
+          <p>To enable it, add <code v-pre>algolia</code> to your site's plugins, and supply the required options via the <code v-pre>pluginsContext</code>.</p>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
               <thead>
@@ -261,105 +184,105 @@
               <tbody>
                 <tr>
                   <td>apiKey</td>
-                  <td><code>String</code></td>
+                  <td><code v-pre>String</code></td>
                   <td></td>
                   <td>The API key for your site's Algolia DocSearch setup</td>
                 </tr>
                 <tr>
                   <td>indexName</td>
-                  <td><code>String</code></td>
+                  <td><code v-pre>String</code></td>
                   <td></td>
                   <td>The index name for your site's Algolia DocSearch setup</td>
                 </tr>
                 <tr>
                   <td>algoliaOptions</td>
-                  <td><code>Object</code></td>
-                  <td><code>{}</code></td>
+                  <td><code v-pre>Object</code></td>
+                  <td><code v-pre>{}</code></td>
                   <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
                 </tr>
                 <tr>
                   <td>debug</td>
-                  <td><code>Boolean</code></td>
-                  <td><code>false</code></td>
+                  <td><code v-pre>Boolean</code></td>
+                  <td><code v-pre>false</code></td>
                   <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <pre><code class="hljs js"><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"algolia"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"algolia"</span>: {<br></span><span>      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span><br></span><span>      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span><br></span><span>      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span><br></span><span>      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
-          <p>To connect the <code>searchbar</code> component to Algolia DocSearch, add the <code>algolia</code> key.</p>
-          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span><br></span></code></pre>
-          <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-          <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span><br></span></code></pre>
+          <pre><code class="hljs js" v-pre><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"algolia"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"algolia"</span>: {<br></span><span>      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span><br></span><span>      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span><br></span><span>      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span><br></span><span>      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+          <p>To connect the <code v-pre>searchbar</code> component to Algolia DocSearch, add the <code v-pre>algolia</code> key.</p>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span><br></span></code></pre>
+          <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span><br></span></code></pre>
           <box type="warning">
-            <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
-            <p>The <code>algolia-no-index</code> class is automatically added to content hidden by the built-in VueStrap components. You may also add the <code>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
+            <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
+            <p>The <code v-pre>algolia-no-index</code> class is automatically added to content hidden by MarkBind's Vue components. You may also add the <code v-pre>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
           </box>
         </div>
         <div>
-          <h4 id="codeblockcopybuttons-enabling-code-blocks-to-be-copied"><code>codeBlockCopyButtons</code>: Enabling code-blocks to be copied<a class="fa fa-anchor" href="#codeblockcopybuttons-enabling-code-blocks-to-be-copied" onclick="event.stopPropagation()"></a></h4>
-          <p>This plugin allows you to copy code in code-blocks on a button-click.</p>
-          <p>To enable it, simply add <code>codeBlockCopyButtons</code> to your site's plugins.</p>
-          <pre><code class="hljs js"><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"codeBlockCopyButtons"</span><br></span><span>  ],<br></span><span>}<br></span></code></pre>
-          <p>This is what it'll look like once added -</p>
+          <h3 id="plugin-codeblockcopybuttons">Plugin: <code v-pre>codeBlockCopyButtons</code><span id="plugin-codeblockcopybuttons" class="anchor"></span><a class="fa fa-anchor" href="#plugin-codeblockcopybuttons" onclick="event.stopPropagation()"></a></h3>
+          <p>This plugin adds a 'copy' button to fenced code blocks so that readers can copy the code easily.</p>
+          <p>To enable it, simply add <code v-pre>codeBlockCopyButtons</code> to your site's plugins.</p>
+          <pre><code class="hljs js" v-pre><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"codeBlockCopyButtons"</span><br></span><span>  ],<br></span><span>}<br></span></code></pre>
+          <p>This is what it'll look like once added</p>
           <p>
             <pic src="/images/copyCode.png" width="750" alt="copyCode"></pic>
           </p>
         </div>
         <div>
-          <h2 id="tags">Tags<a class="fa fa-anchor" href="#tags" onclick="event.stopPropagation()"></a></h2>
-          <p>You can use tags to selectively filter HTML elements when building a site.</p>
-          <h3 id="toggling-alternative-contents-in-a-page">Toggling alternative contents in a page<a class="fa fa-anchor" href="#toggling-alternative-contents-in-a-page" onclick="event.stopPropagation()"></a></h3>
-          <p>Tags are specified by the <code>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code>site.json</code> files will be rendered.</p>
+          <h3 id="plugin-tags">Plugin: Tags<span id="plugin-tags" class="anchor"></span><a class="fa fa-anchor" href="#plugin-tags" onclick="event.stopPropagation()"></a></h3>
+          <p>With this plugin you can use tags to selectively filter content when building a site.</p>
+          <h4 id="toggling-alternative-contents">Toggling alternative contents<span id="toggling-alternative-contents" class="anchor"></span><a class="fa fa-anchor" href="#toggling-alternative-contents" onclick="event.stopPropagation()"></a></h4>
+          <p>Tags are specified by the <code v-pre>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code v-pre>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
-            <pre><code class="hljs html"><span># Print 'Hello world'<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
-            <p>You need to specify the tags to include in the <code>pluginsContext</code>, under <code>tags</code>:</p>
-            <pre><code class="hljs json"><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
-            <p>All other tagged elements will be filtered out. In this case, only the element with the <code>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
+            <pre><code class="hljs html" v-pre><span># Print 'Hello world'<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <p>You need to specify the tags to include in the <code v-pre>pluginsContext</code>, under <code v-pre>tags</code>:</p>
+            <pre><code class="hljs json" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+            <p>All other tagged elements will be filtered out. In this case, only the element with the <code v-pre>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
           </div>
-          <p>If the <code>filterTags</code> plugin is not enabled in <code>site.json</code>, all tagged elements will be rendered.</p>
-          <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code>site.json</code>.</p>
+          <p>If the <code v-pre>filterTags</code> plugin is not enabled in <code v-pre>site.json</code>, all tagged elements will be rendered.</p>
+          <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code v-pre>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code v-pre>site.json</code>.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching multiple tags to an element:</p>
-            <pre><code class="hljs html"><span># For loops<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span><br></span></code></pre>
-            <p>As long as the <code>language--java</code> or <code>language--C#</code> tag is specified, the code snippet will be rendered.</p>
+            <pre><code class="hljs html" v-pre><span># For loops<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span><br></span></code></pre>
+            <p>As long as the <code v-pre>language--java</code> or <code v-pre>language--C#</code> tag is specified, the code snippet will be rendered.</p>
           </div>
           <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying tags in front matter:</p>
-            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
           </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
-            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
-          <p>Tags in <code>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-          <h3 id="advanced-tagging-tips">Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips" onclick="event.stopPropagation()"></a></h3>
-          <p>You can use a <code>*</code> in a tag name to match elements more generally. A <code>*</code> in a tag will match any number of characters at its position.</p>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
+          <p>Tags in <code v-pre>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
+          <h4 id="advanced-tagging-tips">Advanced Tagging Tips<span id="advanced-tagging-tips" class="anchor"></span><a class="fa fa-anchor" href="#advanced-tagging-tips" onclick="event.stopPropagation()"></a></h4>
+          <p>You can use a <code v-pre>*</code> in a tag name to match elements more generally. A <code v-pre>*</code> in a tag will match any number of characters at its position.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--*"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
-            <p>All 3 <code>&lt;p&gt;</code>s will be shown.</p>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--*"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <p>All 3 <code v-pre>&lt;p&gt;</code>s will be shown.</p>
           </div>
-          <h3 id="hiding-tags">Hiding Tags<a class="fa fa-anchor" href="#hiding-tags" onclick="event.stopPropagation()"></a></h3>
-          <p>Using <code>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
+          <h4 id="hiding-tags">Hiding Tags<span id="hiding-tags" class="anchor"></span><a class="fa fa-anchor" href="#hiding-tags" onclick="event.stopPropagation()"></a></h4>
+          <p>Using <code v-pre>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
             <div class="code-block">
               <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
               <div class="code-block-content">
-                <pre><code heading="index.md" class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+                <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
               </div>
             </div>
             <div class="code-block">
               <div class="code-block-heading"><span>site.json</span></div>
               <div class="code-block-content">
-                <pre><code heading="site.json" class="hljs json"><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+                <pre><code heading="site.json" class="hljs json" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
               </div>
             </div>
-            <p><code>language--java</code> is overridden by <code>-language--*</code>, so only <code>language--C#</code> is shown.</p>
+            <p><code v-pre>language--java</code> is overridden by <code v-pre>-language--*</code>, so only <code v-pre>language--C#</code> is shown.</p>
           </div>
-          <p>This only works because tags are processed left to right, so all <code>language--*</code> tags are hidden before <code>language--C#</code>. Tags in <code>site.json</code> are processed after tags in <code>&lt;frontmatter&gt;</code>.</p>
+          <p>This only works because tags are processed left to right, so all <code v-pre>language--*</code> tags are hidden before <code v-pre>language--C#</code>. Tags in <code v-pre>site.json</code> are processed after tags in <code v-pre>&lt;frontmatter&gt;</code>.</p>
           <span id="short" class="d-none">
             ```html
             # Print 'Hello world'
@@ -383,9 +306,9 @@
           </span>
         </div>
         <div>
-          <h4 id="google-analytics-enhancing-site-with-google-analytics"><code>Google Analytics</code>: Enhancing site with Google Analytics<a class="fa fa-anchor" href="#google-analytics-enhancing-site-with-google-analytics" onclick="event.stopPropagation()"></a></h4>
-          <p>This plugin allows your web pages to be enhanced with <a href="https://analytics.google.com/analytics/web/#/">google analytics</a> to track, analyse and improve your content.</p>
-          <p>To enable it, add <code>googleAnalytics</code> to your site's plugins, and add the trackingID parameter via the <code>pluginsContext</code>.</p>
+          <h3 id="plugin-googleanalytics">Plugin: GoogleAnalytics<span id="plugin-googleanalytics" class="anchor"></span><a class="fa fa-anchor" href="#plugin-googleanalytics" onclick="event.stopPropagation()"></a></h3>
+          <p>This plugin allows your web pages to be captured by <a href="https://analytics.google.com/analytics/web/#/">google analytics</a>.</p>
+          <p>To enable it, add <code v-pre>googleAnalytics</code> to your site's plugins, and add the <code v-pre>trackingID</code> parameter via the <code v-pre>pluginsContext</code>.</p>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
               <thead>
@@ -399,21 +322,32 @@
               <tbody>
                 <tr>
                   <td>trackingID</td>
-                  <td><code>String</code></td>
+                  <td><code v-pre>String</code></td>
                   <td></td>
                   <td>Tracking ID provided by Google. Follow this <a href="https://support.google.com/analytics/answer/1008080">guide</a> to get your Tracking ID.</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <pre><code class="hljs js"><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"googleAnalytics"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"googleAnalytics"</span>: {<br></span><span>      <span class="hljs-string">"trackingID"</span>: <span class="hljs-string">"YOUR-TRACKING-ID"</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+          <pre><code class="hljs js" v-pre><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"googleAnalytics"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"googleAnalytics"</span>: {<br></span><span>      <span class="hljs-string">"trackingID"</span>: <span class="hljs-string">"YOUR-TRACKING-ID"</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
         </div>
+        <h2 id="using-external-plugins">Using External Plugins<span id="using-external-plugins" class="anchor"></span><a class="fa fa-anchor" href="#using-external-plugins" onclick="event.stopPropagation()"></a></h2>
+        <h3 id="adding-external-plugins">Adding External Plugins<span id="adding-external-plugins" class="anchor"></span><a class="fa fa-anchor" href="#adding-external-plugins" onclick="event.stopPropagation()"></a></h3>
+        <tip-box type="warning">
+          <p><strong>WARNING:</strong> Plugins are executable programs that can be written by anyone. This means that they might contain malicious code that may damage your computer.</p>
+          <p>Only run plugins from sources that you trust. Do not run the plugin if the source/origin of the plugin cannot be ascertained.
+          </p>
+        </tip-box>
+        <p></p>
+        <p>Plugins come as <code v-pre>.js</code> files. To install an external plugin, simply put it in the <code v-pre>_markbind/plugins</code> folder. To use the plugin, update the <code v-pre>site.json</code> file the same way you did for built-in plugins.</p>
+        <h2 id="writing-plugins">Writing Plugins<span id="writing-plugins" class="anchor"></span><a class="fa fa-anchor" href="#writing-plugins" onclick="event.stopPropagation()"></a></h2>
+        <p>You may also write your own plugins! Refer <a href="/devdocs/devGuide/writingPlugins.html">here</a> for the available interfaces to do so.</p>
         <div class="clearfix">
           <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/usingHtmlJavaScriptCss.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using HTML, JavaScript, CSS</span></span></b-btn>
+              <b-btn variant="light" href="/userGuide/settingSiteProperties.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Setting Site Properties</span></span></b-btn>
             </span></p>
           <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/tweakingThePageStructure.html"><span><span>Tweaking the Page Structure</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
+              <b-btn variant="light" href="/userGuide/makingTheSiteSearchable.html"><span><span>Making the Site Searchable</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
             </span></p>
         </div>
         <br>
@@ -426,31 +360,24 @@
           <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
             <a class="nav-link py-1" href="#using-plugins">Using Plugins&#x200E;</a>
             <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#adding-plugins">Adding Plugins&#x200E;</a>
-              <a class="nav-link py-1" href="#writing-plugins">Writing Plugins&#x200E;</a>
+              <a class="nav-link py-1" href="#managing-plugins">Managing Plugins&#x200E;</a>
+              <a class="nav-link py-1" href="#using-built-in-plugins">Using Built-in Plugins&#x200E;</a>
               <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#rendering">Rendering&#x200E;</a>
-                <a class="nav-link py-1" href="#assets">Assets&#x200E;</a>
-                <a class="nav-link py-1" href="#live-reload">Live reload&#x200E;</a>
-                <a class="nav-link py-1" href="#special-tags">Special tags&#x200E;</a>
-              </nav>
-              <a class="nav-link py-1" href="#advanced-default-plugins">Advanced: Default plugins&#x200E;</a>
-              <a class="nav-link py-1" href="#built-in-plugins">Built-in plugins&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#algolia-enabling-algolia-docsearch">algolia: Enabling Algolia DocSearch&#x200E;</a>
-                <a class="nav-link py-1" href="#codeblockcopybuttons-enabling-code-blocks-to-be-copied">codeBlockCopyButtons: Enabling code-blocks to be copied&#x200E;</a>
-              </nav>
-            </nav>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#tags">Tags&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#toggling-alternative-contents-in-a-page">Toggling alternative contents in a page&#x200E;</a>
-                <a class="nav-link py-1" href="#advanced-tagging-tips">Advanced Tagging Tips&#x200E;</a>
-                <a class="nav-link py-1" href="#hiding-tags">Hiding Tags&#x200E;</a>
+                <a class="nav-link py-1" href="#plugin-algolia">Plugin: Algolia&#x200E;</a>
+                <a class="nav-link py-1" href="#plugin-codeblockcopybuttons">Plugin: codeBlockCopyButtons&#x200E;</a>
+                <a class="nav-link py-1" href="#plugin-tags">Plugin: Tags&#x200E;</a>
                 <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                  <a class="nav-link py-1" href="#google-analytics-enhancing-site-with-google-analytics">Google Analytics: Enhancing site with Google Analytics&#x200E;</a>
+                  <a class="nav-link py-1" href="#toggling-alternative-contents">Toggling alternative contents&#x200E;</a>
+                  <a class="nav-link py-1" href="#advanced-tagging-tips">Advanced Tagging Tips&#x200E;</a>
+                  <a class="nav-link py-1" href="#hiding-tags">Hiding Tags&#x200E;</a>
                 </nav>
+                <a class="nav-link py-1" href="#plugin-googleanalytics">Plugin: GoogleAnalytics&#x200E;</a>
               </nav>
+              <a class="nav-link py-1" href="#using-external-plugins">Using External Plugins&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#adding-external-plugins">Adding External Plugins&#x200E;</a>
+              </nav>
+              <a class="nav-link py-1" href="#writing-plugins">Writing Plugins&#x200E;</a>
             </nav>
 
           </nav>
@@ -459,12 +386,12 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 25 Jul 2020, 16:42:21 UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>

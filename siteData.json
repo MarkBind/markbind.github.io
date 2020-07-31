@@ -22,7 +22,7 @@
         "examples-of-markbind-websites": "Examples of MarkBind Websites",
         "course-websites": "Course Websites",
         "online-books": "Online Books",
-        "product-websites": "Product Websites"
+        "product-project-websites": "Product/Project Websites"
       },
       "headingKeywords": {}
     },
@@ -109,6 +109,8 @@
         "intra-site-links": "Intra-Site Links",
         "footnotes": "Footnotes",
         "images": "Images",
+        "classes-attributes-and-amp-identifiers": "Classes, Attributes &amp; Identifiers",
+        "heading-2": "heading",
         "tables": "Tables",
         "emoji": "Emoji",
         "icons": "Icons",
@@ -162,10 +164,13 @@
         "making-the-site-searchable": "Making the Site Searchable",
         "search-bars": "Search Bars",
         "keywords": "Keywords",
-        "including-or-excluding-headings": "Including or Excluding Headings"
+        "including-or-excluding-headings": "Including or Excluding Headings",
+        "using-external-search-services": "Using External Search Services"
       },
       "headingKeywords": {
         "keywords": [
+          "regress",
+          "regression testing",
           "regressions"
         ]
       }
@@ -194,19 +199,8 @@
         "markbind-extensions-to-markdown": " MarkBind Extensions to Markdown",
         "markbind-custom-syntax": " MarkBind Custom Syntax",
         "support-for-html-javascript-css": " Support for HTML, JavaScript, CSS",
-        "support-for-vuestrap-and-bootstrap": " Support for VueStrap and BootStrap",
+        "markbind-vue-components-and-bootstrap": " MarkBind Vue components and BootStrap",
         "support-for-nunjucks": " Support for Nunjucks"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "title": "User Guide - PlantUML Diagrams",
-      "layout": "userGuide",
-      "src": "userGuide/puml.md",
-      "headings": {
-        "plantuml-diagrams": "PlantUML Diagrams",
-        "usage": "Usage",
-        "example": "Example"
       },
       "headingKeywords": {}
     },
@@ -219,15 +213,14 @@
         "reusing-contents": "Reusing Contents",
         "variables": "Variables",
         "global-variables": "Global Variables",
+        "default-values-for-variables": "Default values for variables",
         "built-in-global-variables": "Built-in Global Variables",
-        "built-in-variable-baseurl": "Built-in Variable: baseUrl",
-        "built-in-variable-timestamp": "Built-in Variable: timestamp",
-        "built-in-variable-markbind": "Built-in Variable: MarkBind",
-        "variables-defaults": "Variables: Defaults",
         "page-variables": "Page Variables",
         "importing-variables": "Importing Variables",
         "defining-variables-with-json": "Defining variables with JSON",
-        "variables-tips-and-tricks": "Variables: Tips and Tricks",
+        "tips-and-tricks-for-variables": "Tips and Tricks for variables",
+        "referring-to-other-variables-in-variables": "Referring to other variables in variables",
+        "variables-can-contain-malformed-html": "Variables can contain malformed html",
         "includes": "Includes",
         "include-inside-an-included-file": "&lt;include&gt; Inside an Included File",
         "specifying-variables-in-an-include": "Specifying Variables in an &lt;include&gt;",
@@ -249,12 +242,21 @@
       }
     },
     {
-      "title": "Configuring the Site",
+      "title": "User Guide: Setting Site Properties",
+      "layout": "userGuide",
+      "src": "userGuide/settingSiteProperties.md",
+      "headings": {
+        "setting-site-properties": "Setting Site Properties"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "site.json File",
       "layout": "userGuide",
       "keywords": "site.json",
-      "src": "userGuide/siteConfiguration.md",
+      "src": "userGuide/siteJsonFile.md",
       "headings": {
-        "configuring-the-site": "Configuring the Site",
+        "site-json-file": "site.json File",
         "baseurl": "baseUrl",
         "faviconpath": "faviconPath",
         "titleprefix": "titlePrefix",
@@ -316,8 +318,9 @@
       "src": "userGuide/tipsAndTricks.md",
       "headings": {
         "tips-and-amp-tricks": "Tips &amp; Tricks",
-        "tip-escaping-characters": "Tip: Escaping Characters",
-        "problem-unwanted-starting-space-in-links-and-triggers": "Problem: Unwanted starting space in links and triggers"
+        "escaping-characters": " Escaping Characters",
+        "using-raw-endraw-to-display-content": " Using {% raw %}{% endraw %} to display {{ content }}",
+        "unwanted-starting-space-in-links-and-triggers": " Unwanted starting space in links and triggers"
       },
       "headingKeywords": {}
     },
@@ -333,13 +336,15 @@
         "headers": "Headers",
         "footers": "Footers",
         "site-navigation-menus": "Site Navigation Menus",
+        "expanding-menu-items-by-default": "Expanding menu items by default",
+        "additional-content-in-site-navs": "Additional content in site navs",
         "page-navigation-menus": "Page Navigation Menus",
         "page-layouts": "Page Layouts",
         "attaching-event-listeners-in-scripts-js": "Attaching event listeners in scripts.js",
         "using-expressive-layout-templates": "Using Expressive Layout Templates",
         "main-content-of-your-page": "Main content of your page",
-        "tags": "Tags",
-        "toggling-alternative-contents-in-a-page": "Toggling alternative contents in a page",
+        "plugin-tags": "Plugin: Tags",
+        "toggling-alternative-contents": "Toggling alternative contents",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags"
       },
@@ -348,13 +353,16 @@
     {
       "title": "User Guide: Using Components",
       "layout": "userGuide",
-      "pageNav": "default",
+      "pageNav": 3,
       "src": "userGuide/usingComponents.md",
       "headings": {
         "using-components": "Using Components",
         "badges": "Badges",
         "boxes": "Boxes",
         "header": "Header 🚀",
+        "header-markdown": "Header markdown 🚀",
+        "header-markdown-2": "Header markdown 🚀",
+        "diagrams": "Diagrams",
         "dropdowns": "Dropdowns",
         "modals": "Modals",
         "navbars": "Navbars",
@@ -362,13 +370,23 @@
         "panels": "Panels",
         "pictures": "Pictures",
         "popovers": "Popovers",
-        "questions": "Questions",
+        "questions-and-quizzes": "Questions and Quizzes",
+        "introduction": "Introduction",
+        "mcq-and-checkbox-questions": "MCQ and Checkbox Questions",
+        "which-of-the-following-is-true": "Which of the following is true?",
+        "text-questions": "Text Questions",
+        "quizzes": "Quizzes",
+        "which-of-the-following-is-true-2": "Which of the following is true?",
+        "which-of-the-following-is-true-3": "Which of the following is true?",
+        "search-bars": "Search Bars",
         "site-navigation-menus": "Site Navigation Menus",
+        "expanding-menu-items-by-default": "Expanding menu items by default",
+        "additional-content-in-site-navs": "Additional content in site navs",
         "tabs": "Tabs",
         "thumbnails": "Thumbnails",
         "tooltips": "Tooltips",
         "advanced-tips-and-tricks": "Advanced Tips and Tricks",
-        "rich-formatting-in-headings-titles": "Rich formatting in headings/titles",
+        "richer-formatting-of-attributes-using-slots": "Richer formatting of attributes using slots",
         "inserting-custom-classes-into-components": "Inserting custom classes into components"
       },
       "headingKeywords": {}
@@ -390,21 +408,27 @@
       "src": "userGuide/usingPlugins.md",
       "headings": {
         "using-plugins": "Using Plugins",
-        "adding-plugins": "Adding Plugins",
-        "writing-plugins": "Writing Plugins",
-        "rendering": "Rendering",
-        "assets": "Assets",
-        "live-reload": "Live reload",
-        "special-tags": "Special tags",
-        "advanced-default-plugins": "Advanced: Default plugins",
-        "built-in-plugins": "Built-in plugins",
-        "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch",
-        "codeblockcopybuttons-enabling-code-blocks-to-be-copied": "codeBlockCopyButtons: Enabling code-blocks to be copied",
-        "tags": "Tags",
-        "toggling-alternative-contents-in-a-page": "Toggling alternative contents in a page",
+        "managing-plugins": "Managing Plugins",
+        "using-built-in-plugins": "Using Built-in Plugins",
+        "plugin-algolia": "Plugin: Algolia",
+        "plugin-codeblockcopybuttons": "Plugin: codeBlockCopyButtons",
+        "plugin-tags": "Plugin: Tags",
+        "toggling-alternative-contents": "Toggling alternative contents",
         "advanced-tagging-tips": "Advanced Tagging Tips",
         "hiding-tags": "Hiding Tags",
-        "google-analytics-enhancing-site-with-google-analytics": "Google Analytics: Enhancing site with Google Analytics"
+        "plugin-googleanalytics": "Plugin: GoogleAnalytics",
+        "using-external-plugins": "Using External Plugins",
+        "adding-external-plugins": "Adding External Plugins",
+        "writing-plugins": "Writing Plugins"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Working with Sites",
+      "layout": "userGuide",
+      "src": "userGuide/workingWithSites.md",
+      "headings": {
+        "working-with-sites": "Working with Sites"
       },
       "headingKeywords": {}
     }
