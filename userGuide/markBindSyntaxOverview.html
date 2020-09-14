@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,10 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -174,7 +177,10 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-section">### Heading level 3</span><br></span><span>...<br></span><span><span class="hljs-section">###### Heading level 6</span><br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-section">### Heading level 3</span>
+</span><span>...
+</span><span><span class="hljs-section">###### Heading level 6</span>
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -196,7 +202,8 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span><br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -216,7 +223,8 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span>MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).<br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span>MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -243,12 +251,20 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml</span><br></span><span><span class="hljs-code">&lt;foo&gt;</span><br></span><span><span class="hljs-code">  &lt;bar type="name"&gt;goo&lt;/bar&gt;</span><br></span><span><span class="hljs-code">&lt;/foo&gt;</span><br></span><span><span class="hljs-code">```</span><br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml</span>
+</span><span><span class="hljs-code">&lt;foo&gt;</span>
+</span><span><span class="hljs-code">  &lt;bar type="name"&gt;goo&lt;/bar&gt;</span>
+</span><span><span class="hljs-code">&lt;/foo&gt;</span>
+</span><span><span class="hljs-code">```</span>
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <pre><code class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span><br></span></code></pre>
+                  <pre><code class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
+</span></code></pre>
                 </box>
               </div>
             </div>
@@ -263,7 +279,12 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>[ ] Item 1<br></span><span><span class="hljs-bullet">   - </span>[ ] Sub item 1.1<br></span><span><span class="hljs-bullet">   - </span>[x] Sub item 1.2<br></span><span><span class="hljs-bullet">- </span>[x] Item 2<br></span><span><span class="hljs-bullet">- </span>[ ] Item 3<br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>[ ] Item 1
+</span><span><span class="hljs-bullet">   - </span>[ ] Sub item 1.1
+</span><span><span class="hljs-bullet">   - </span>[x] Sub item 1.2
+</span><span><span class="hljs-bullet">- </span>[x] Item 2
+</span><span><span class="hljs-bullet">- </span>[ ] Item 3
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -292,7 +313,8 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span>:+1: :exclamation: :x: :construction:<br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span>:+1: :exclamation: :x: :construction:
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -319,7 +341,8 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~<br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -339,7 +362,10 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>( ) Item 1<br></span><span><span class="hljs-bullet">- </span>( ) Item 2<br></span><span><span class="hljs-bullet">- </span>(x) Item 3<br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>( ) Item 1
+</span><span><span class="hljs-bullet">- </span>( ) Item 2
+</span><span><span class="hljs-bullet">- </span>(x) Item 3
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
@@ -363,15 +389,32 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Normal footnotes:**</span><br></span><span>Here is a footnote reference,[^1] and another.[^longnote]<br></span><span><br></span><span>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span><br></span><span><br></span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span><br></span><span><br></span><span><span class="hljs-code">    Subsequent paragraphs are indented to show that they</span><br></span><span>belong to the previous footnote.<br></span><span><br></span><span><br></span><span><span class="hljs-strong">**Inline footnotes:**</span><br></span><span>Here is an inline note.^[Inlines notes are easier to write, since<br></span><span>you don't have to pick an identifier and move down to type the<br></span><span>note.]<br></span></code></pre>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Normal footnotes:**</span>
+</span><span>Here is a footnote reference,[^1] and another.[^longnote]
+</span><span>
+</span><span>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
+</span><span>
+</span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
+</span><span>
+</span><span><span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
+</span><span>belong to the previous footnote.
+</span><span>
+</span><span>
+</span><span><span class="hljs-strong">**Inline footnotes:**</span>
+</span><span>Here is an inline note.^[Inlines notes are easier to write, since
+</span><span>you don't have to pick an identifier and move down to type the
+</span><span>note.]
+</span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
                   <p><strong>Normal footnotes:</strong>
-                    Here is a footnote reference,<span for="pop:footnote1" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:footnote1'].show()" class="trigger"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote1" id="footnoteref1">[1]</a></sup></span> and another.<span for="pop:footnote2" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:footnote2'].show()" class="trigger"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote2" id="footnoteref2">[2]</a></sup></span></p>
+                    Here is a footnote reference,<trigger for="pop:footnote1"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#fn1" id="fnref1">[1]</a></sup></trigger> and another.<trigger for="pop:footnote2"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#fn2" id="fnref2">[2]</a></sup></trigger>
+                  </p>
                   <p><strong>Inline footnotes:</strong>
-                    Here is an inline note.<span for="pop:footnote3" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:footnote3'].show()" class="trigger"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#footnote3" id="footnoteref3">[3]</a></sup></span></p>
+                    Here is an inline note.<trigger for="pop:footnote3"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#fn3" id="fnref3">[3]</a></sup></trigger>
+                  </p>
                 </box>
               </div>
             </div>
@@ -428,7 +471,12 @@
 
         <h4 id="support-for-nunjucks"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Nunjucks<span id="support-for-nunjucks" class="anchor"></span><a class="fa fa-anchor" href="#support-for-nunjucks" onclick="event.stopPropagation()"></a></h4>
         <p><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> is a JavaScript based templating tool. Here is a simple example:</p>
-        <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br></span><span>{% for item in [1, 2, 3, 4] %}<br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item {{ item }}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br></span><span>{% endfor %}<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></span></code></pre>
+        <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+</span><span>{% for item in [1, 2, 3, 4] %}
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item {{ item }}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>{% endfor %}
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</span></code></pre>
         <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
         <box>
           <ul>
@@ -440,47 +488,44 @@
         </box>
         <p>As MarkBind uses Nunjucks behind the scene, <strong>MarkBind is generally compatible with Nunjucks</strong>, which means you can use Nunjucks templating in your source files. Note that <mark>the code is processed for Nunjucks syntax before the rest of the MarkBind syntax are processed</mark>.</p>
         <div class="clearfix">
-          <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/addingPages.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Adding Pages</span></span></b-btn>
-            </span></p>
-          <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/formattingContents.html"><span><span>Formatting Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
-            </span></p>
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/addingPages.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Adding Pages</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/formattingContents.html"><span><span>Formatting Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
         </div>
         <br>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
         <hr class="footnotes-sep">
         <section class="footnotes">
           <ol class="footnotes-list">
-            <li id="footnote1" class="footnote-item">
+            <li id="fn1" class="footnote-item">
               <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
             </li>
-            <li id="footnote2" class="footnote-item">
+            <li id="fn2" class="footnote-item">
               <p>Here's one with multiple blocks.</p>
               <p>Subsequent paragraphs are indented to show that they
                 belong to the previous footnote.</p>
             </li>
-            <li id="footnote3" class="footnote-item">
+            <li id="fn3" class="footnote-item">
               <p>Inlines notes are easier to write, since
                 you don't have to pick an identifier and move down to type the
                 note.</p>
             </li>
           </ol>
-          <span id="pop:footnote1" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger">
-            <div data-mb-html-for="content">
+          <span id="pop:footnote1" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGetters" class="trigger">
+            <div data-mb-slot-name="content">
               <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
             </div>
           </span>
 
-          <span id="pop:footnote2" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger">
-            <div data-mb-html-for="content">
+          <span id="pop:footnote2" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGetters" class="trigger">
+            <div data-mb-slot-name="content">
               <p>Here's one with multiple blocks.</p>
               <p>Subsequent paragraphs are indented to show that they
                 belong to the previous footnote.</p>
             </div>
           </span>
 
-          <span id="pop:footnote3" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger">
-            <div data-mb-html-for="content">
+          <span id="pop:footnote3" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGetters" class="trigger">
+            <div data-mb-slot-name="content">
               <p>Inlines notes are easier to write, since
                 you don't have to pick an identifier and move down to type the
                 note.</p>
@@ -495,20 +540,18 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

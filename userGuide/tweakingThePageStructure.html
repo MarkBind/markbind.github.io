@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Tweaking the Page Structure</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -153,10 +155,17 @@
         <div>
           <h2 id="front-matter">Front Matter<span id="front-matter" class="anchor"></span><a class="fa fa-anchor" href="#front-matter" onclick="event.stopPropagation()"></a></h2>
           <p><strong>You can use a <em>Front Matter</em> section to specify page properties such as the title and keywords of the page.</strong> To specify front matter for a page, insert a <code v-pre>&lt;frontmatter&gt;</code> tag in the following format at the beginning of the page.</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  property1: value1<br></span><span>  property2: value2<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  property1: value1
+</span><span>  property2: value2
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here, we set the page <code v-pre>title</code> attribute as <code v-pre>Binary Search Tree</code>.</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: Binary Search Tree<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: Binary Search Tree
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </div>
           <box type="warning" seamless>
             <p>Should you need more expressive formatting, or encounter any issues when formatting the frontmatter, note that the frontmatter follows the <a href="https://yaml.org/refcard.html">yaml</a> spec.
@@ -176,7 +185,11 @@
             <p></p>
           </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: Binary Search Tree<br></span><span>  pageNav: 2<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: Binary Search Tree
+</span><span>  pageNav: 2
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></span>
         </div>
         <hr>
         <div>
@@ -189,43 +202,78 @@
           </ol>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you want to insert the code below into the <code v-pre>&lt;head&gt;</code> of a page, and you have saved the code as <strong><code v-pre>_markbind/head/</code></strong><code v-pre>myCustomLinks.md</code>:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span><br></span></code></pre>
+            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span>
+</span></code></pre>
             <p>To specify that you want to insert <code v-pre>myCustomLinks.md</code> into the <code v-pre>&lt;head&gt;</code> of <code v-pre>myPage.html</code>, update the front matter of the <code v-pre>myPage.md</code> as follows:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  head: myCustomLinks.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>...<br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  head: myCustomLinks.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>...
+</span></code></pre>
           </div>
           <p><strong>All content is inserted at the bottom of the <code v-pre>&lt;head&gt;</code> tag by default.</strong> You can use the optional <code v-pre>&lt;head-top&gt;</code> tag to specify content that should be inserted at the top of the <code v-pre>&lt;head&gt;</code> tag instead.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can force the line <code v-pre>&lt;script ... &gt; ... &lt;/script&gt;</code> to be inserted at the top of the <code v-pre>&lt;head&gt;</code> section.</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span><br></span></code></pre>
+            <pre><code class="no-line-numbers hljs html" v-pre><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/myCustomScript.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/main.css"</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/css/extra.css"</span>&gt;</span>
+</span></code></pre>
           </div>
           <p><strong>Multiple head files can be included</strong> within a page by providing a comma separated list. They will be added to the <code v-pre>&lt;head&gt;</code> in the order in which they are listed.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  head: customStyles.md, extraScripts.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  head: customStyles.md, extraScripts.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </div>
           <span id="short" class="d-none">
             <p><code v-pre>_markbind/head/myCustomLinks.md</code>:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"``/js/myCustomScript.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/main.css"</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/extra.css"</span>&gt;</span><br></span></code></pre>
-            <pre><code class="hljs html" v-pre><span> <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>   head: myCustomLinks.md<br></span><span> <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="no-line-numbers hljs html" v-pre><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"``/js/myCustomScript.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/main.css"</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"``/css/extra.css"</span>&gt;</span>
+</span></code></pre>
+            <pre><code class="hljs html" v-pre><span> <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>   head: myCustomLinks.md
+</span><span> <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </span>
           <p>If you wish to use a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> but exclude its head file, specify <code v-pre>head: none</code> in the <code v-pre>&lt;frontmatter&gt;</code> of the page.</p>
         </div>
         <hr>
         <div>
           <h2 id="headers">Headers<span id="headers" class="anchor"></span><a class="fa fa-anchor" href="#headers" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can specify a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Content to be placed at the top of a page.</span>page header</span></strong> above your page contents and <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Site Navigation and <br>Page Navigation menus</span>navigation menus</span> using a header file.</p>
+          <p><strong>You can specify a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Content to be placed at the top of a page.</span>page header</span></strong> above your page contents and <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Site Navigation and <br>Page Navigation menus</span>navigation menus</span> using a header file.</p>
           <p>You can save multiple header files in the <code v-pre>_markbind/headers</code> folder and specify it in the <code v-pre>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
               <strong><code v-pre>_markbind/headers/</code></strong><code v-pre>welcomeBanner.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-primary display-4 text-center text-white"</span>&gt;</span><br></span><span>    Welcome!<br></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"bg-primary display-4 text-center text-white"</span>&gt;</span>
+</span><span>    Welcome!
+</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</span></code></pre>
             <p>In the page that you want to include the header:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  header: welcomeBanner.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  header: welcomeBanner.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </div>
           <p>You can fix the header to be always on the top by add <code v-pre>fixed</code> attribute to the <code v-pre>&lt;header&gt;</code> tag of your header file:</p>
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
             <strong><code v-pre>_markbind/headers/</code></strong><code v-pre>header.md</code>:</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">fixed</span>&gt;</span><br></span><span>    <span class="hljs-comment">&lt;!--Normal header stuff goes here--&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br></span><span><br></span></code></pre>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">fixed</span>&gt;</span>
+</span><span>    <span class="hljs-comment">&lt;!--Normal header stuff goes here--&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</span><span>
+</span></code></pre>
           <p>Notes:</p>
           <ul>
             <li>Any inline headers will be removed by MarkBind to ensure compatibility with header files.</li>
@@ -256,14 +304,20 @@
         <hr>
         <div>
           <h2 id="footers">Footers<span id="footers" class="anchor"></span><a class="fa fa-anchor" href="#footers" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can specify a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">For an example of a page footer, see the bottom of this page.</span>page footer</span></strong> using a footer file.</p>
+          <p><strong>You can specify a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">For an example of a page footer, see the bottom of this page.</span>page footer</span></strong> using a footer file.</p>
           <p>You can save multiple footer files in the <code v-pre>_markbind/footers</code> folder and specify it in the <code v-pre>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
               <strong><code v-pre>_markbind/footers/</code></strong><code v-pre>commonFooter.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><br></span><span>  This page is not updated anymore!<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+</span><span>  This page is not updated anymore!
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</span></code></pre>
             <p>In the page that you want to include the footer:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  footer: commonFooter.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  footer: commonFooter.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </div>
           <p>Notes:</p>
           <ul>
@@ -301,9 +355,22 @@
           </ol>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example siteNav code saved in <strong><code v-pre>_markbind/navigation/</code></strong><code v-pre>mySiteNav.md</code> file:</p>
-            <pre><code class="no-line-numbers hljs" v-pre><span>* [:house: Home](/index.html)<br></span><span>* ---<br></span><span>* Docs<br></span><span>  * [User Guide](/ug.html)<br></span><span>  * [Dev Guide](/dg.html)<br></span><span>* [Search](/search.html)<br></span><span>  * [Google Search](https://www.google.com/)<br></span><span>  * [YouTube Search](https://www.youtube.com/)<br></span><span>* [Contact](/contact.html)<br></span></code></pre>
+            <pre><code class="no-line-numbers hljs" v-pre><span>* [:house: Home](/index.html)
+</span><span>* ---
+</span><span>* Docs
+</span><span>  * [User Guide](/ug.html)
+</span><span>  * [Dev Guide](/dg.html)
+</span><span>* [Search](/search.html)
+</span><span>  * [Google Search](https://www.google.com/)
+</span><span>  * [YouTube Search](https://www.youtube.com/)
+</span><span>* [Contact](/contact.html)
+</span></code></pre>
             <p>Here's how another page can make use of the above siteNav:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  siteNav: mySiteNav.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>...<br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  siteNav: mySiteNav.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>...
+</span></code></pre>
             <p>And here's how the above siteNav would appear:</p>
             <div style="width:300px;" class="mb-3">
               <ul class="site-nav-list site-nav-list-root">
@@ -347,23 +414,47 @@
             <p>A siteNav has a fixed width of <code v-pre>300</code> pixels for its contents. A siteNav is <a href="https://www.w3schools.com/html/html_responsive.asp"><em>responsive</em></a> in that it will collapse to a menu button when the screen width is smaller than <code v-pre>992</code> pixels. It will then be completely hidden when the screen size is smaller than <code v-pre>576</code> pixels.</p>
             <p>If you wish to use a Layout but exclude its navigation file, specify <code v-pre>siteNav: none</code> in the <code v-pre>&lt;frontmatter&gt;</code> of the page.</p>
             <h4 id="expanding-menu-items-by-default">Expanding menu items by default<span id="expanding-menu-items-by-default" class="anchor"></span><a class="fa fa-anchor" href="#expanding-menu-items-by-default" onclick="event.stopPropagation()"></a></h4>
-            <p>You can <strong>append the <code v-pre>:expanded:</code> to a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">a menu item with sub menu-items</span>parent menu item</span> to make it expand by default.</strong> In the example above, <code v-pre>* Docs :expanded:</code> will make the menu item <code v-pre>Docs</code> expand by default.</p>
+            <p>You can <strong>append the <code v-pre>:expanded:</code> to a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">a menu item with sub menu-items</span>parent menu item</span> to make it expand by default.</strong> In the example above, <code v-pre>* Docs :expanded:</code> will make the menu item <code v-pre>Docs</code> expand by default.</p>
             <p>A parent menu item that is also linked will not be collapsible <span class="dimmed">e.g., the <code v-pre>Search</code> menu item in the above example</span>.</p>
             <h4 id="additional-content-in-site-navs">Additional content in site navs<span id="additional-content-in-site-navs" class="anchor"></span><a class="fa fa-anchor" href="#additional-content-in-site-navs" onclick="event.stopPropagation()"></a></h4>
-            <p>You may have additional HTML and Markdown content in a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">the file containing the code for a site navigation menu, e.g., <code v-pre>mySiteNav.md</code> in the example above</span>siteNav file</span>, in which case the code for the siteNav should be enclosed in a <code v-pre>&lt;navigation&gt;</code> tag. There should only be one <code v-pre>&lt;navigation&gt;</code> tag in the file.</p>
+            <p>You may have additional HTML and Markdown content in a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">the file containing the code for a site navigation menu, e.g., <code v-pre>mySiteNav.md</code> in the example above</span>siteNav file</span>, in which case the code for the siteNav should be enclosed in a <code v-pre>&lt;navigation&gt;</code> tag. There should only be one <code v-pre>&lt;navigation&gt;</code> tag in the file.</p>
             <div class="indented">
               <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> To include a heading for the site nav,</p>
-              <pre><code class="no-line-numbers hljs" v-pre><span># Site Map<br></span><span><br></span><span>&lt;navigation&gt;<br></span><span>* [:house: Home](/index.html)<br></span><span>* ---<br></span><span>* Docs<br></span><span>...<br></span><span>&lt;/navigation&gt;<br></span></code></pre>
+              <pre><code class="no-line-numbers hljs" v-pre><span># Site Map
+</span><span>
+</span><span>&lt;navigation&gt;
+</span><span>* [:house: Home](/index.html)
+</span><span>* ---
+</span><span>* Docs
+</span><span>...
+</span><span>&lt;/navigation&gt;
+</span></code></pre>
             </div>
             <p>You can also include additional content between navigation items, such as <a href="/userGuide/readerfacingfeatures.html#horizontal-rules">horizontal dividers.</a>
               Just be sure to include it as a list item as well!</p>
             <div class="indented">
               <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Inserting a horizontal divider:</p>
-              <pre><code class="hljs" v-pre><span>* [:house: Home](/index.html)<br></span><span>* ---<br></span><span>* Docs<br></span><span>...<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>* [:house: Home](/index.html)
+</span><span>* ---
+</span><span>* Docs
+</span><span>...
+</span></code></pre>
             </div>
             <span id="short" class="d-none">
-              <pre><code class="no-line-numbers hljs" v-pre><span># Site Map<br></span><span>&lt;navigation&gt;<br></span><span>* [:house: Home](/index.html)<br></span><span>* Docs :expanded:<br></span><span>  * [User Guide](/ug.html)<br></span><span>  * [Dev Guide](/dg.html)<br></span><span>* [Search](/search.html)<br></span><span>&lt;/navigation&gt;<br></span></code></pre>
-              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  siteNav: mySiteNav.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>...<br></span></code></pre></span>
+              <pre><code class="no-line-numbers hljs" v-pre><span># Site Map
+</span><span>&lt;navigation&gt;
+</span><span>* [:house: Home](/index.html)
+</span><span>* Docs :expanded:
+</span><span>  * [User Guide](/ug.html)
+</span><span>  * [Dev Guide](/dg.html)
+</span><span>* [Search](/search.html)
+</span><span>&lt;/navigation&gt;
+</span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  siteNav: mySiteNav.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>...
+</span></code></pre></span>
             <span id="examples" class="d-none">
               <p>You can see an example of a Page Navigation Bar <mark>on the left side</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.</p>
             </span>
@@ -375,18 +466,26 @@
           <p><strong>A <em>Page Navigation Menu</em> (<mark><em>pageNav</em> for short</mark>) is a fixed menu on the <mark>right edge</mark> of your page contents</strong>. You can use a pageNav to show a list of the current page's headings.</p>
           <p>Steps to add a pageNav:</p>
           <ol>
-            <li>Specify your pageNav within the <code v-pre>&lt;frontmatter&gt;</code> of a page with <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">The value <code v-pre>default</code> will use <code v-pre>headingIndexingLevel</code> within <code v-pre>site.json</code>.</span><code v-pre>&quot;default&quot;</code></span> or a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">HTML defines six levels of headings, numbered from <br><code v-pre>1 to 6</code>.</span><code v-pre>heading level</code></span>.</li>
+            <li>Specify your pageNav within the <code v-pre>&lt;frontmatter&gt;</code> of a page with <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The value <code v-pre>default</code> will use <code v-pre>headingIndexingLevel</code> within <code v-pre>site.json</code>.</span><code v-pre>&quot;default&quot;</code></span> or a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">HTML defines six levels of headings, numbered from <br><code v-pre>1 to 6</code>.</span><code v-pre>heading level</code></span>.</li>
             <li>(Optional) You may also specify a page navigation title within <code v-pre>&lt;frontmatter&gt;</code> that will be placed at the top of the page navigation menu.</li>
           </ol>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
               In the page that you want to have page navigation:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  pageNav: 2<br></span><span>  pageNavTitle: "Chapters of This Page"<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  pageNav: 2
+</span><span>  pageNavTitle: "Chapters of This Page"
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
             <p>The example above will create a page navigation containing only heading levels of <code v-pre>1 and 2</code>.</p>
           </div>
           <p>A pageNav has a fixed width of 300 pixels for its contents. It is <a href="https://www.w3schools.com/html/html_responsive.asp"><em>responsive</em></a> by design and will be completely hidden when the screen size is smaller than 1300 pixels.</p>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  pageNav: 2<br></span><span>  pageNavTitle: "Chapters of This Page"<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  pageNav: 2
+</span><span>  pageNavTitle: "Chapters of This Page"
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></span>
           <span id="examples" class="d-none">
             <p>You can see an example of a Page Navigation Bar <mark>on the right side</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.
             </p>
@@ -411,30 +510,47 @@
           <p>To apply the layout, specify it as an attribute named <code v-pre>layout</code> in the <code v-pre>&lt;frontmatter&gt;</code> of each page, or in the <code v-pre>site.json</code>.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a layout named <code v-pre>chapterLayout</code>.</p>
-            <pre><code class="hljs" v-pre><span>&lt;root&gt;/_markbind/layouts/<br></span><span>                  └── chapterLayout/<br></span><span>                        ├── header.md<br></span><span>                        ├── footer.md<br></span><span>                        ├── head.md<br></span><span>                        ├── page.md<br></span><span>                        ├── navigation.md<br></span><span>                        ├── styles.css<br></span><span>                        └── scripts.js<br></span></code></pre>
+            <pre><code class="hljs" v-pre><span>&lt;root&gt;/_markbind/layouts/
+</span><span>                  └── chapterLayout/
+</span><span>                        ├── header.md
+</span><span>                        ├── footer.md
+</span><span>                        ├── head.md
+</span><span>                        ├── page.md
+</span><span>                        ├── navigation.md
+</span><span>                        ├── styles.css
+</span><span>                        └── scripts.js
+</span></code></pre>
             <p>You can apply it to the <code v-pre>chapter.md</code> by setting its <code v-pre>&lt;frontmatter&gt;</code> as follows:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  layout: chapterLayout<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>...<br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  layout: chapterLayout
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>...
+</span></code></pre>
             <p>You can apply it to all <code v-pre>chapter.md</code> files by adding this entry to the <code v-pre>site.json</code>.</p>
-            <pre><code class="hljs json" v-pre><span>{<br></span><span>  <span class="hljs-attr">"glob"</span>: <span class="hljs-string">"**/chapter.md"</span>,<br></span><span>  <span class="hljs-attr">"layout"</span>: <span class="hljs-string">"chapterLayout"</span><br></span><span>}<br></span></code></pre>
+            <pre><code class="hljs json" v-pre><span>{
+</span><span>  <span class="hljs-attr">"glob"</span>: <span class="hljs-string">"**/chapter.md"</span>,
+</span><span>  <span class="hljs-attr">"layout"</span>: <span class="hljs-string">"chapterLayout"</span>
+</span><span>}
+</span></code></pre>
           </div>
           <p>The layout specified in the <code v-pre>site.json</code> overrides the one specified in the <code v-pre>&lt;frontmatter&gt;</code>.</p>
           <p>Any files specified in <code v-pre>&lt;frontmatter&gt;</code> overrides the corresponding file in the layout applied.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose a file has the following:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  layout: chapterLayout<br></span><span>  head: myHead.md<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>...<br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  layout: chapterLayout
+</span><span>  head: myHead.md
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>...
+</span></code></pre>
             <p>In this case <code v-pre>myHead.md</code> will override the <code v-pre>chapterLayout/head.md</code>.</p>
           </div>
           <p><strong>The layout named <code v-pre>default</code> (if any) is automatically applied to every single page.</strong> When you <code v-pre>init</code> a MarkBind site, MarkBind also generates an empty <code v-pre>default</code> layout.</p>
-          <h4 id="attaching-event-listeners-in-scripts-js">Attaching event listeners in <code v-pre>scripts.js</code><span id="attaching-event-listeners-in-scripts-js" class="anchor"></span><a class="fa fa-anchor" href="#attaching-event-listeners-in-scripts-js" onclick="event.stopPropagation()"></a></h4>
-          <p>You can include custom JavaScript in <code v-pre>scripts.js</code>. <mark>However, DOM manipulations such as attaching event listeners may be overridden after MarkBind setup.</mark> To ensure that such changes take effect, include your code in a function that is passed to <code v-pre>afterSetup()</code> in <code v-pre>scripts.js</code>. Functions passed to <code v-pre>afterSetup()</code> will then be called after MarkBind setup is complete.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose a page has the following:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"alert"</span>&gt;</span>Click here!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
-            <p>To show a JavaScript alert when <code class="hljs inline html" v-pre><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"alert"</span>&gt;</span></code> is clicked, we attach an event listener to it in a function passed to <code v-pre>afterSetup()</code> in <code v-pre>scripts.js</code>:</p>
-            <pre><code class="hljs js" v-pre><span>afterSetup(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<br></span><span>  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"alert"</span>).addEventListener(<span class="hljs-string">"click"</span>,  () =&gt; {<br></span><span>    <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"You have just clicked the span!"</span>);<br></span><span>  });<br></span><span>});<br></span></code></pre>
-          </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  layout: chapterLayout<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  layout: chapterLayout
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></span>
           <h4 id="using-expressive-layout-templates">Using Expressive Layout Templates<span id="using-expressive-layout-templates" class="anchor"></span><a class="fa fa-anchor" href="#using-expressive-layout-templates" onclick="event.stopPropagation()"></a></h4>
           <p>In the <code v-pre>page.md</code> file of your layouts, it should come with the following reserved variable:</p>
           <box>
@@ -446,13 +562,20 @@
           <div class="code-block">
             <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
             <div class="code-block-content">
-              <pre><code heading="index.md" class="hljs html" v-pre><span>#### Main content of your page<br></span><span><br></span><span>Content of your page<br></span></code></pre>
+              <pre><code heading="index.md" class="hljs html" v-pre><span>#### Main content of your page
+</span><span>
+</span><span>Content of your page
+</span></code></pre>
             </div>
           </div>
           <div class="code-block">
             <div class="code-block-heading inline-markdown-heading"><span><a href="http://page.md">page.md</a></span></div>
             <div class="code-block-content">
-              <pre><code heading="page.md" class="hljs html" v-pre><span>  {{ MAIN_CONTENT_BODY }}<br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span><br></span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span><br></span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span><br></span></code></pre>
+              <pre><code heading="page.md" class="hljs html" v-pre><span>  {{ MAIN_CONTENT_BODY }}
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">"Statistics Formula for the class"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"path_to_your_formula.png"</span> /&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span>
+</span></code></pre>
             </div>
           </div>
           <p>Here's how the above content would appear:</p>
@@ -475,32 +598,69 @@
           <p>Tags are specified by the <code v-pre>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code v-pre>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
-            <pre><code class="hljs html" v-pre><span># Print 'Hello world'<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span># Print 'Hello world'
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
             <p>You need to specify the tags to include in the <code v-pre>pluginsContext</code>, under <code v-pre>tags</code>:</p>
-            <pre><code class="hljs json" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+            <pre><code class="hljs json" v-pre><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-attr">"plugins"</span> : [
+</span><span>    <span class="hljs-string">"filterTags"</span>
+</span><span>  ],
+</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {
+</span><span>    <span class="hljs-attr">"filterTags"</span> : {
+</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
             <p>All other tagged elements will be filtered out. In this case, only the element with the <code v-pre>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
           </div>
           <p>If the <code v-pre>filterTags</code> plugin is not enabled in <code v-pre>site.json</code>, all tagged elements will be rendered.</p>
           <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code v-pre>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code v-pre>site.json</code>.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching multiple tags to an element:</p>
-            <pre><code class="hljs html" v-pre><span># For loops<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span># For loops
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span>
+</span></code></pre>
             <p>As long as the <code v-pre>language--java</code> or <code v-pre>language--C#</code> tag is specified, the code snippet will be rendered.</p>
           </div>
           <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying tags in front matter:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--java"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--java"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></span>
           <p>Tags in <code v-pre>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
           <h4 id="advanced-tagging-tips">Advanced Tagging Tips<span id="advanced-tagging-tips" class="anchor"></span><a class="fa fa-anchor" href="#advanced-tagging-tips" onclick="event.stopPropagation()"></a></h4>
           <p>You can use a <code v-pre>*</code> in a tag name to match elements more generally. A <code v-pre>*</code> in a tag will match any number of characters at its position.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--*"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--*"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
             <p>All 3 <code v-pre>&lt;p&gt;</code>s will be shown.</p>
           </div>
           <h4 id="hiding-tags">Hiding Tags<span id="hiding-tags" class="anchor"></span><a class="fa fa-anchor" href="#hiding-tags" onclick="event.stopPropagation()"></a></h4>
@@ -510,13 +670,32 @@
             <div class="code-block">
               <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
               <div class="code-block-content">
-                <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+                <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--java"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
               </div>
             </div>
             <div class="code-block">
               <div class="code-block-heading"><span>site.json</span></div>
               <div class="code-block-content">
-                <pre><code heading="site.json" class="hljs json" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+                <pre><code heading="site.json" class="hljs json" v-pre><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-attr">"plugins"</span> : [
+</span><span>    <span class="hljs-string">"filterTags"</span>
+</span><span>  ],
+</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {
+</span><span>    <span class="hljs-attr">"filterTags"</span> : {
+</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
               </div>
             </div>
             <p><code v-pre>language--java</code> is overridden by <code v-pre>-language--*</code>, so only <code v-pre>language--C#</code> is shown.</p>
@@ -545,14 +724,11 @@
           </span>
         </div>
         <div class="clearfix">
-          <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/usingPlugins.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Plugins</span></span></b-btn>
-            </span></p>
-          <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/reusingContents.html"><span><span>Reusing Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
-            </span></p>
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/usingPlugins.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Plugins</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/reusingContents.html"><span><span>Reusing Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
         </div>
         <br>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
@@ -577,20 +753,18 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

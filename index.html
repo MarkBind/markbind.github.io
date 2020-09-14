@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Generate More Dynamic Websites from Markdown Text</title>
   <link rel="stylesheet" href="markbind/css/bootstrap.min.css">
@@ -14,7 +14,11 @@
   <link rel="stylesheet" href="markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="markbind/css/octicons.css">
   <link rel="stylesheet" href="markbind/css/github.min.css">
-  <link rel="stylesheet" href="markbind/css/markbind.css">
+  <link rel="stylesheet" href="markbind/css/markbind.min.css">
+  <script src="markbind/js/polyfill.min.js"></script>
+  <script src="markbind/js/vue.min.js"></script>
+  <script src="markbind/js/markbind.min.js"></script>
+  <script src="markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="markbind/layouts/default/styles.css">
   <link rel="icon" href="/favicon.ico">
@@ -48,17 +52,15 @@
         <div tags="environment--ug">
           <h1 class="display-3" id="markbind"><span><strong>MarkBind</strong></span><span id="markbind" class="anchor"></span><a class="fa fa-anchor" href="#markbind" onclick="event.stopPropagation()"></a></h1>
           <span class="lead">
-            <p><big><strong>Generate <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">as opposed to <em>one-size-fits-all</em> static content</span><em>more dynamic</em></span> websites from Markdown text.</strong></big>
+            <p><big><strong>Generate <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">as opposed to <em>one-size-fits-all</em> static content</span><em>more dynamic</em></span> websites from Markdown text.</strong></big>
               Optimized for creating text-heavy websites <span class="dimmed">e.g., eLearning websites, online instruction manuals, project documentation etc.</span>.
             </p>
           </span>
           <p></p>
-          <p>
-            <b-btn variant="primary" href="userGuide/">Get Started</b-btn>
-          </p>
+          <p><a class="btn btn-primary" href="/userGuide">Get Started</a></p>
           <hr>
           <h4 id="simple-syntax-dynamic-content"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Simple syntax. Dynamic content.<span id="simple-syntax-dynamic-content" class="anchor"></span><a class="fa fa-anchor" href="#simple-syntax-dynamic-content" onclick="event.stopPropagation()"></a></h4>
-          <p>MarkBind source files can be as simple as basic Markdown, but you can also <a href="/userGuide/markBindSyntaxOverview.html"><strong>use a mix of several popular syntax schemes</strong></a> (<span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">GitHub Flavored Markdown</span>GFMD</span>, BootStrap, NunJucks, etc. as well as MarkBind's own custom syntax) to create more dynamic content that you cannot normally get from a typical markdown-to-html site generator.</p>
+          <p>MarkBind source files can be as simple as basic Markdown, but you can also <a href="/userGuide/markBindSyntaxOverview.html"><strong>use a mix of several popular syntax schemes</strong></a> (<span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">GitHub Flavored Markdown</span>GFMD</span>, BootStrap, NunJucks, etc. as well as MarkBind's own custom syntax) to create more dynamic content that you cannot normally get from a typical markdown-to-html site generator.</p>
           <p>Here are some simple text-formatting examples:</p>
           <div class="table-responsive">
             <table class="markbind-table table table-bordered table-striped">
@@ -95,7 +97,13 @@
             <table>
               <tr>
                   <td>
-                  <pre><code class="hljs markdown" v-pre><span><span class="hljs-strong">**Things to do:**</span><br></span><span><br></span><span><span class="hljs-bullet">- </span>[x] Finish my changes<br></span><span><span class="hljs-bullet">- </span>[ ] Push my commits to GitHub<br></span><span><span class="hljs-bullet">- </span>[ ] Open a pull request<br></span><span><br></span></code></pre>
+                  <pre><code class="hljs markdown" v-pre><span><span class="hljs-strong">**Things to do:**</span>
+</span><span>
+</span><span><span class="hljs-bullet">- </span>[x] Finish my changes
+</span><span><span class="hljs-bullet">- </span>[ ] Push my commits to GitHub
+</span><span><span class="hljs-bullet">- </span>[ ] Open a pull request
+</span><span>
+</span></code></pre>
                   <p></p>
                 </td>
                   <td> → </td>
@@ -114,13 +122,49 @@
                 <p></p>
               </tr>
             </table>
+            <p>An example that uses KaTeX to generate math equations:</p>
+            <table>
+              <tr>
+                  <td>
+                  <pre><code class="hljs markdown" v-pre><span>Euler's Identity \(e^{i\pi}+1=0\) is a beautiful formula.
+</span></code></pre>
+                  <p></p>
+                </td>
+                  <td> → </td>
+                  <td><br>
+                  <tip-box>
+                    <p></p>
+                    <p>Euler's Identity <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML">
+                              <semantics>
+                                <mrow>
+                                  <msup>
+                                    <mi>e</mi>
+                                    <mrow>
+                                      <mi>i</mi>
+                                      <mi>π</mi>
+                                    </mrow>
+                                  </msup>
+                                  <mo>+</mo>
+                                  <mn>1</mn>
+                                  <mo>=</mo>
+                                  <mn>0</mn>
+                                </mrow>
+                                <annotation encoding="application/x-tex" v-pre="true">e^{i\pi}+1=0</annotation>
+                              </semantics>
+                            </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.907994em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></eq> is a beautiful formula.</p>
+                    <p></p>
+                  </tip-box>
+                </td>
+                <p></p>
+              </tr>
+            </table>
           </panel>
           <p></p>
           <p>The example paragraph below has the following dynamic elements: a tooltip, a popover, and a modal. Hover/click on the underlined words to see each.</p>
           <box>
-            <p>In <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Computer Science</span>CS</span>, a binary tree is a <span for="pop:index-tree" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:index-tree'].show()" class="trigger">tree data structure</span> in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>. <span trigger="click" for="modal:index-primitive" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:index-primitive'].show()" class="trigger-click">Primitive data types</span> on the other hand ...</p>
-            <span id="pop:index-tree" placement="top" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger"><span data-mb-html-for="header">An example tree data structure</span>
-              <div data-mb-html-for="content">
+            <p>In <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Computer Science</span>CS</span>, a binary tree is a <trigger for="pop:index-tree">tree data structure</trigger> in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>. <trigger trigger="click" for="modal:index-primitive">Primitive data types</trigger> on the other hand ...</p>
+            <span id="pop:index-tree" placement="top" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGetters" class="trigger"><span data-mb-slot-name="header">An example tree data structure</span>
+              <div data-mb-slot-name="content">
                 <p><a href="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" target="_self"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg" alt class="img-fluid"></a><br>
                   <span class="dimmed"><sub>[source:wikipedia]</sub></span></p>
               </div>
@@ -209,7 +253,7 @@
           <p>A MarkBind website can be a <em>buffet</em> of content, as opposed to a <em>set menu</em>: a site can have optional contents that the reader can access at her discretion, and the same content can be organized in multiple ways so that the reader can choose the one that fits the need. To <em>cater</em> (pun intended) for creating such buffet style websites, MarkBind has <strong><a href="/userGuide/reusingContents.html">reuse mechanisms</a> for presenting the same content in multiple ways without duplicating the source file</strong>.</p>
           <p>For example, MarkBind has a powerful <code v-pre>include</code> mechanism that allows content fragments (i.e., a file or part of a file) to be reused at multiple places in the website. In the example below, both the modal and the expandable panel reuse the same content originating from a <em>single</em> source file.</p>
           <box>
-            <p>In CS, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>. <span trigger="click" for="modal:index-primitive2" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:index-primitive2'].show()" class="trigger-click">Primitive data types</span> on the other hand ...</p>
+            <p>In CS, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the <em>left child</em> and the <em>right child</em>. <trigger trigger="click" for="modal:index-primitive2">Primitive data types</trigger> on the other hand ...</p>
             <panel type="seamless"><template slot="_header">
                 <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Some example primitive data types</span></p>
               </template>
@@ -247,31 +291,29 @@
           <h4 id="easy-to-set-up-modify-deploy-integrate"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Easy to set up, modify, deploy, integrate.<span id="easy-to-set-up-modify-deploy-integrate" class="anchor"></span><a class="fa fa-anchor" href="#easy-to-set-up-modify-deploy-integrate" onclick="event.stopPropagation()"></a></h4>
           <p>Installing MarkBind takes just one command. Creating a new MarkBind site too takes just one command. With MarkBind's <em>live preview</em> feature, you can see how your site will look like as you modify the source file. <a href="/userGuide/deployingTheSite.html">Deploying the site to a server</a> can be as simple as one command too.</p>
           <p>As MarkBind is also optimized for project documentation, it can easily <a href="/userGuide/markBindInTheProjectWorkflow.html">integrate with the workflow of a software project</a>.</p>
-          <p>
-            <b-btn variant="primary" href="userGuide/">Get Started</b-btn>
-          </p>
+          <p><a class="btn btn-primary" href="/userGuide">Get Started</a></p>
         </div>
+
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small><br>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small><br>
         <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
     </footer>
   </div>
 </body>
-<script src="markbind/js/vue.min.js"></script>
-<script src="markbind/js/components.min.js"></script>
 <script src="markbind/js/bootstrap-utility.min.js"></script>
-<script src="markbind/js/polyfill.min.js"></script>
-<script src="markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="markbind/js/setup.js"></script>
 <script src="markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

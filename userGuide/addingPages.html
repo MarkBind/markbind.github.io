@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Adding Pages</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,10 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -149,7 +152,7 @@
           <span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
         <h1 id="adding-pages">Adding Pages<span id="adding-pages" class="anchor"></span><a class="fa fa-anchor" href="#adding-pages" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
-          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">The directory that contains all the project files. It is also the directory in which the <code v-pre>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
+          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code v-pre>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
         </span>
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code v-pre>tutorial/code.txt</code> in your root directory, it will be available as <code v-pre>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
@@ -163,45 +166,40 @@
         <ol>
           <li>Add a <code v-pre>.md</code> (or <code v-pre>.mbd</code>) file anywhere inside the root directory.</li>
           <li>Update the <a href="/userGuide/siteJsonFile.html#pages"><code v-pre>pages</code> attribute of the <code v-pre>site.json</code></a> to cover the new file, if necessary.</li>
-          <li>Use the <span trigger="click" for="modal:addingPages-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:addingPages-livePreview'].show()" class="trigger-click">live preview</span> to view the generated web page for the new file.</li>
+          <li>Use the <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
         </ol>
         <b-modal id="modal:addingPages-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:addingPages-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
             <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
             <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
             <p></p>
           </span></b-modal>
         <p></p>
         <div class="clearfix">
-          <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/authoringContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span></b-btn>
-            </span></p>
-          <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/markBindSyntaxOverview.html"><span><span>MarkBind Syntax Overview</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
-            </span></p>
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/authoringContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/markBindSyntaxOverview.html"><span><span>MarkBind Syntax Overview</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
         </div>
         <br>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

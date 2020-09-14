@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Plugins</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -164,7 +166,22 @@
           <li><code v-pre>pluginsContext</code>: Parameters passed to each plugin, specified as key-value pairs.</li>
         </ul>
         <p>For example:</p>
-        <pre><code class="hljs js" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"plugin1"</span>,<br></span><span>    <span class="hljs-string">"plugin2"</span>,<br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"plugin1"</span>: {<br></span><span>      <span class="hljs-string">"input"</span>: <span class="hljs-string">"Input for Plugin 1"</span><br></span><span>    },<br></span><span>    <span class="hljs-string">"plugin2"</span>: {<br></span><span>      <span class="hljs-string">"data"</span>: <span class="hljs-string">"Data for Plugin 2"</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+        <pre><code class="hljs js" v-pre><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-string">"plugins"</span>: [
+</span><span>    <span class="hljs-string">"plugin1"</span>,
+</span><span>    <span class="hljs-string">"plugin2"</span>,
+</span><span>  ],
+</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
+</span><span>    <span class="hljs-string">"plugin1"</span>: {
+</span><span>      <span class="hljs-string">"input"</span>: <span class="hljs-string">"Input for Plugin 1"</span>
+</span><span>    },
+</span><span>    <span class="hljs-string">"plugin2"</span>: {
+</span><span>      <span class="hljs-string">"data"</span>: <span class="hljs-string">"Data for Plugin 2"</span>
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
         <h2 id="using-built-in-plugins">Using Built-in Plugins<span id="using-built-in-plugins" class="anchor"></span><a class="fa fa-anchor" href="#using-built-in-plugins" onclick="event.stopPropagation()"></a></h2>
         <p>MarkBind has a set of built-in plugins that can be used immediately without installation.</p>
         <div>
@@ -209,11 +226,28 @@
               </tbody>
             </table>
           </div>
-          <pre><code class="hljs js" v-pre><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"algolia"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"algolia"</span>: {<br></span><span>      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span><br></span><span>      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span><br></span><span>      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span><br></span><span>      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+          <pre><code class="hljs js" v-pre><span>site.json
+</span><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-string">"plugins"</span>: [
+</span><span>    <span class="hljs-string">"algolia"</span>
+</span><span>  ],
+</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
+</span><span>    <span class="hljs-string">"algolia"</span>: {
+</span><span>      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span>
+</span><span>      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span>
+</span><span>      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
+</span><span>      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
           <p>To connect the <code v-pre>searchbar</code> component to Algolia DocSearch, add the <code v-pre>algolia</code> key.</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span><br></span></code></pre>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+</span></code></pre>
           <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span><br></span></code></pre>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
+</span></code></pre>
           <box type="warning">
             <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
             <p>The <code v-pre>algolia-no-index</code> class is automatically added to content hidden by MarkBind's Vue components. You may also add the <code v-pre>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
@@ -223,7 +257,14 @@
           <h3 id="plugin-codeblockcopybuttons">Plugin: <code v-pre>codeBlockCopyButtons</code><span id="plugin-codeblockcopybuttons" class="anchor"></span><a class="fa fa-anchor" href="#plugin-codeblockcopybuttons" onclick="event.stopPropagation()"></a></h3>
           <p>This plugin adds a 'copy' button to fenced code blocks so that readers can copy the code easily.</p>
           <p>To enable it, simply add <code v-pre>codeBlockCopyButtons</code> to your site's plugins.</p>
-          <pre><code class="hljs js" v-pre><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"codeBlockCopyButtons"</span><br></span><span>  ],<br></span><span>}<br></span></code></pre>
+          <pre><code class="hljs js" v-pre><span>site.json
+</span><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-string">"plugins"</span>: [
+</span><span>    <span class="hljs-string">"codeBlockCopyButtons"</span>
+</span><span>  ],
+</span><span>}
+</span></code></pre>
           <p>This is what it'll look like once added</p>
           <p>
             <pic src="/images/copyCode.png" width="750" alt="copyCode"></pic>
@@ -236,32 +277,69 @@
           <p>Tags are specified by the <code v-pre>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code v-pre>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
-            <pre><code class="hljs html" v-pre><span># Print 'Hello world'<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span># Print 'Hello world'
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
             <p>You need to specify the tags to include in the <code v-pre>pluginsContext</code>, under <code v-pre>tags</code>:</p>
-            <pre><code class="hljs json" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+            <pre><code class="hljs json" v-pre><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-attr">"plugins"</span> : [
+</span><span>    <span class="hljs-string">"filterTags"</span>
+</span><span>  ],
+</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {
+</span><span>    <span class="hljs-attr">"filterTags"</span> : {
+</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
             <p>All other tagged elements will be filtered out. In this case, only the element with the <code v-pre>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
           </div>
           <p>If the <code v-pre>filterTags</code> plugin is not enabled in <code v-pre>site.json</code>, all tagged elements will be rendered.</p>
           <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code v-pre>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code v-pre>site.json</code>.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching multiple tags to an element:</p>
-            <pre><code class="hljs html" v-pre><span># For loops<br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span># For loops
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span>
+</span></code></pre>
             <p>As long as the <code v-pre>language--java</code> or <code v-pre>language--C#</code> tag is specified, the code snippet will be rendered.</p>
           </div>
           <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying tags in front matter:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--java"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre>
           </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span></code></pre></span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--java"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></span>
           <p>Tags in <code v-pre>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
           <h4 id="advanced-tagging-tips">Advanced Tagging Tips<span id="advanced-tagging-tips" class="anchor"></span><a class="fa fa-anchor" href="#advanced-tagging-tips" onclick="event.stopPropagation()"></a></h4>
           <p>You can use a <code v-pre>*</code> in a tag name to match elements more generally. A <code v-pre>*</code> in a tag will match any number of characters at its position.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--*"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--*"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
             <p>All 3 <code v-pre>&lt;p&gt;</code>s will be shown.</p>
           </div>
           <h4 id="hiding-tags">Hiding Tags<span id="hiding-tags" class="anchor"></span><a class="fa fa-anchor" href="#hiding-tags" onclick="event.stopPropagation()"></a></h4>
@@ -271,13 +349,32 @@
             <div class="code-block">
               <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div>
               <div class="code-block-content">
-                <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span>  title: "Hello World"<br></span><span>  tags: ["language--java"]<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+                <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>  title: "Hello World"
+</span><span>  tags: ["language--java"]
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre>
               </div>
             </div>
             <div class="code-block">
               <div class="code-block-heading"><span>site.json</span></div>
               <div class="code-block-content">
-                <pre><code heading="site.json" class="hljs json" v-pre><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-attr">"plugins"</span> : [<br></span><span>    <span class="hljs-string">"filterTags"</span><br></span><span>  ],<br></span><span>  <span class="hljs-attr">"pluginsContext"</span> : {<br></span><span>    <span class="hljs-attr">"filterTags"</span> : {<br></span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]<br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+                <pre><code heading="site.json" class="hljs json" v-pre><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-attr">"plugins"</span> : [
+</span><span>    <span class="hljs-string">"filterTags"</span>
+</span><span>  ],
+</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {
+</span><span>    <span class="hljs-attr">"filterTags"</span> : {
+</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
               </div>
             </div>
             <p><code v-pre>language--java</code> is overridden by <code v-pre>-language--*</code>, so only <code v-pre>language--C#</code> is shown.</p>
@@ -329,7 +426,19 @@
               </tbody>
             </table>
           </div>
-          <pre><code class="hljs js" v-pre><span>site.json<br></span><span>{<br></span><span>  ...<br></span><span>  <span class="hljs-string">"plugins"</span>: [<br></span><span>    <span class="hljs-string">"googleAnalytics"</span><br></span><span>  ],<br></span><span>  <span class="hljs-string">"pluginsContext"</span>: {<br></span><span>    <span class="hljs-string">"googleAnalytics"</span>: {<br></span><span>      <span class="hljs-string">"trackingID"</span>: <span class="hljs-string">"YOUR-TRACKING-ID"</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span><br></span><span>    }<br></span><span>  }<br></span><span>}<br></span></code></pre>
+          <pre><code class="hljs js" v-pre><span>site.json
+</span><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-string">"plugins"</span>: [
+</span><span>    <span class="hljs-string">"googleAnalytics"</span>
+</span><span>  ],
+</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
+</span><span>    <span class="hljs-string">"googleAnalytics"</span>: {
+</span><span>      <span class="hljs-string">"trackingID"</span>: <span class="hljs-string">"YOUR-TRACKING-ID"</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span>
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre>
         </div>
         <h2 id="using-external-plugins">Using External Plugins<span id="using-external-plugins" class="anchor"></span><a class="fa fa-anchor" href="#using-external-plugins" onclick="event.stopPropagation()"></a></h2>
         <h3 id="adding-external-plugins">Adding External Plugins<span id="adding-external-plugins" class="anchor"></span><a class="fa fa-anchor" href="#adding-external-plugins" onclick="event.stopPropagation()"></a></h3>
@@ -343,14 +452,11 @@
         <h2 id="writing-plugins">Writing Plugins<span id="writing-plugins" class="anchor"></span><a class="fa fa-anchor" href="#writing-plugins" onclick="event.stopPropagation()"></a></h2>
         <p>You may also write your own plugins! Refer <a href="/devdocs/devGuide/writingPlugins.html">here</a> for the available interfaces to do so.</p>
         <div class="clearfix">
-          <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/settingSiteProperties.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Setting Site Properties</span></span></b-btn>
-            </span></p>
-          <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/makingTheSiteSearchable.html"><span><span>Making the Site Searchable</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
-            </span></p>
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/settingSiteProperties.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Setting Site Properties</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/makingTheSiteSearchable.html"><span><span>Making the Site Searchable</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
         </div>
         <br>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
@@ -386,20 +492,18 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

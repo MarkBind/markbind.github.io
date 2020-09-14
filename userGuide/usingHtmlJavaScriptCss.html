@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using HTML, JavaScript, CSS</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,10 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -157,7 +160,15 @@
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an html tag is parsed as Markdown when preceded by a blank line.</p>
           <p>Code:</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span>Without preceding blank line: Apples **Bananas** Cherries<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span>With preceding blank line: Apples **Bananas** Cherries<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+</span><span>Without preceding blank line: Apples **Bananas** Cherries
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+</span><span>
+</span><span>With preceding blank line: Apples **Bananas** Cherries
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span></code></pre>
           <p>Outcome:<br></p>
           <span>
             Without preceding blank line: Apples **Bananas** Cherries
@@ -172,7 +183,14 @@
         <div class="indented">
           <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example of how text within an HTML tag can be treated as Markdown using <code v-pre>&lt;markdown&gt;</code>/<code v-pre>&lt;md&gt;</code> tags.</p>
           <p>Code:</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span><span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></span></code></pre>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">markdown</span>&gt;</span>##### Apples **Bananas** Cherries<span class="hljs-tag">&lt;/<span class="hljs-name">markdown</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span></code></pre>
           <p>Outcome:<br>
             <span>
               <span>Apples <strong>Bananas</strong> Cherries</span></span></p>
@@ -183,34 +201,29 @@
           </span>
         </div>
         <div class="clearfix">
-          <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/usingComponents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Components</span></span></b-btn>
-            </span></p>
-          <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/usingPlugins.html"><span><span>Using Plugins</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
-            </span></p>
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/usingComponents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Components</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/usingPlugins.html"><span><span>Using Plugins</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
         </div>
         <br>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

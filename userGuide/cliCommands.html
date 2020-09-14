@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Command Line Interface (CLI)</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -147,7 +149,19 @@
         <h1 id="markbind-cli">MarkBind CLI<span id="markbind-cli" class="anchor"></span><a class="fa fa-anchor" href="#markbind-cli" onclick="event.stopPropagation()"></a></h1>
         <h3 id="overview">Overview<span id="overview" class="anchor"></span><a class="fa fa-anchor" href="#overview" onclick="event.stopPropagation()"></a></h3>
         <p>An overview of MarkBind's Command Line Interface (CLI) can be referenced with <code v-pre>markbind --help</code>:</p>
-        <pre><code class="hljs" v-pre><span>$ markbind --help<br></span><span>Usage: markbind &lt;command&gt;<br></span><span> <br></span><span> Options:<br></span><span>   -V, --version                      output the version number<br></span><span>   -h, --help                         output usage information<br></span><span> <br></span><span> Commands:<br></span><span>   init|i [options] [root]            init a markbind website project<br></span><span>   serve|s [options] [root]           build then serve a website from a directory<br></span><span>   build|b [options] [root] [output]  build a website<br></span><span>   deploy|d [options]                 deploy the site to the repo's Github pages<br></span></code></pre>
+        <pre><code class="hljs" v-pre><span>$ markbind --help
+</span><span>Usage: markbind &lt;command&gt;
+</span><span> 
+</span><span> Options:
+</span><span>   -V, --version                      output the version number
+</span><span>   -h, --help                         output usage information
+</span><span> 
+</span><span> Commands:
+</span><span>   init|i [options] [root]            init a markbind website project
+</span><span>   serve|s [options] [root]           build then serve a website from a directory
+</span><span>   build|b [options] [root] [output]  build a website
+</span><span>   deploy|d [options]                 deploy the site to the repo's Github pages
+</span></code></pre>
         <hr>
         <h3 id="init-command"><code v-pre>init</code> Command<span id="init-command" class="anchor"></span><a class="fa fa-anchor" href="#init-command" onclick="event.stopPropagation()"></a></h3>
         <br>
@@ -184,12 +198,12 @@
         <ol>
           <li>Builds the site and puts the generated files in a directory named <code v-pre>_site</code>.</li>
           <li>Starts a web server instance locally and makes the site available at <code v-pre>http://127.0.0.1:8080</code>.</li>
-          <li>Opens a <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> of the website.</li>
+          <li>Opens a <trigger trigger="click" for="modal:cliCommands-livePreview">live preview</trigger> of the website.</li>
         </ol>
         <b-modal id="modal:cliCommands-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:cliCommands-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
             <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
+            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
             <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
             <p></p>
           </span></b-modal>
@@ -234,7 +248,7 @@
             </li>
             <li>
               <p><code v-pre>-f</code>, <code v-pre>--force-reload</code><br>
-                Force live reload to process all files in the site, instead of just the relevant files. This option is useful when you are modifying a file that is not a file type monitored by the <span trigger="click" for="modal:cliCommands-livePreview" v-b-popover.click.top.html="popoverGenerator" v-b-tooltip.click.top.html="tooltipContentGetter" v-on:click="$refs['modal:cliCommands-livePreview'].show()" class="trigger-click">live preview</span> feature.</p>
+                Force live reload to process all files in the site, instead of just the relevant files. This option is useful when you are modifying a file that is not a file type monitored by the <trigger trigger="click" for="modal:cliCommands-livePreview">live preview</trigger> feature.</p>
             </li>
             <li>
               <p><code v-pre>-p &lt;port&gt;</code>, <code v-pre>--port &lt;port&gt;</code><br>
@@ -318,6 +332,7 @@
           <li><code v-pre>markbind --help</code> : Prints a summary of MarkBind commands.</li>
           <li><code v-pre>markbind serve --help</code> : Prints a detailed usage guide for the <code v-pre>serve</code> command.</li>
         </ul>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
@@ -341,20 +356,18 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

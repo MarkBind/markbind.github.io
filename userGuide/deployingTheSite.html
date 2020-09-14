@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.16.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Deploying the Site</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
   <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="stylesheet" href="../markbind/css/site-nav.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/favicon.ico">
 </head>
 
@@ -216,7 +218,7 @@
         </box>
         <p></p>
         <h3 id="deploying-to-github-pages-via-travis-ci">Deploying to GitHub Pages via Travis CI<span id="deploying-to-github-pages-via-travis-ci" class="anchor"></span><a class="fa fa-anchor" href="#deploying-to-github-pages-via-travis-ci" onclick="event.stopPropagation()"></a></h3>
-        <p><strong>You can setup <a href="https://www.travis-ci.org/"><span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">a platform for Continuous Integration and Delivery (among other things)</span>Travis CI</span></a> to automatically build and deploy your site on GitHub Pages every time your GitHub repo is updated.</strong></p>
+        <p><strong>You can setup <a href="https://www.travis-ci.org/"><span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">a platform for Continuous Integration and Delivery (among other things)</span>Travis CI</span></a> to automatically build and deploy your site on GitHub Pages every time your GitHub repo is updated.</strong></p>
         <h4 id="adding-your-repository-to-travis-ci">Adding your repository to Travis CI<span id="adding-your-repository-to-travis-ci" class="anchor"></span><a class="fa fa-anchor" href="#adding-your-repository-to-travis-ci" onclick="event.stopPropagation()"></a></h4>
         <panel type="info" expanded><template slot="_header">
             <p><span aria-hidden="true" class="fas fa-info-circle"></span> Travis CI Migration</p>
@@ -266,7 +268,16 @@
               <box background-color="white" border-color="#cccccc"><span><a href="/images/travisGithubToken.png" target="_self"><img src="/images/travisGithubToken.png" alt class="img-fluid"></a></span></box>
             </span></li>
           <li>Add a <code v-pre>.travis.yml</code> file to instruct Travis CI to build and deploy the site when you push to the repository. An example <code v-pre>.travis.yml</code> file that can accomplish this is given below:
-            <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span><br></span><span><span class="hljs-attr">node_js:</span><br></span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">'8'</span><br></span><span><span class="hljs-attr">install:</span><br></span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-string">-g</span> <span class="hljs-string">markbind-cli</span><br></span><span><span class="hljs-attr">script:</span> <span class="hljs-string">markbind</span> <span class="hljs-string">build</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">markbind</span> <span class="hljs-string">deploy</span> <span class="hljs-string">--travis</span><br></span><span><span class="hljs-attr">branches:</span><br></span><span>  <span class="hljs-attr">only:</span><br></span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">master</span><br></span></code></pre>More information about <code v-pre>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
+            <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+</span><span><span class="hljs-attr">node_js:</span>
+</span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">'8'</span>
+</span><span><span class="hljs-attr">install:</span>
+</span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-string">-g</span> <span class="hljs-string">markbind-cli</span>
+</span><span><span class="hljs-attr">script:</span> <span class="hljs-string">markbind</span> <span class="hljs-string">build</span> <span class="hljs-string">&amp;&amp;</span> <span class="hljs-string">markbind</span> <span class="hljs-string">deploy</span> <span class="hljs-string">--travis</span>
+</span><span><span class="hljs-attr">branches:</span>
+</span><span>  <span class="hljs-attr">only:</span>
+</span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">master</span>
+</span></code></pre>More information about <code v-pre>.travis.yml</code> can be found in the <a href="https://docs.travis-ci.com/">Travis CI documentation</a>.</li>
           <li>Commit <code v-pre>.travis.yml</code> to your MarkBind repository and push the changes. Travis CI should begin to build your site.</li>
           <li>Select the MarkBind repository on <a href="https://travis-ci.com/auth">Travis CI</a> and <a href="https://docs.travis-ci.com/user/job-lifecycle/#breaking-the-build">check the build status</a> to see if it is successful.</li>
           <li>Once the build succeeds, your MarkBind site should be online at <code v-pre>http://&lt;username|org&gt;.github.io/&lt;repo&gt;</code> e.g., <a href="http://se-edu.github.io/se-book">http://se-edu.github.io/se-book</a>. Travis CI will automatically build and deploy changes to your site as you push new changes to the repository after a few seconds.<br>
@@ -276,20 +287,27 @@
         <p>When Travis CI is set up as explained above, it will use the latest version of MarkBind which may be a later version than the one you use locally.</p>
         <ul>
           <li>If you want Travis CI to use a specific version of MarkBind (eg. <code v-pre>v1.6.3</code>), change the <code v-pre>install</code> step in the <code v-pre>.travis.yml</code> given above to:
-            <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">install:</span><br></span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-string">-g</span> <span class="hljs-string">markbind-cli@1.63</span><br></span></code></pre>
+            <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">install:</span>
+</span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-string">-g</span> <span class="hljs-string">markbind-cli@1.63</span>
+</span></code></pre>
           </li>
           <li>If you want to use the latest minor version automatically until the next major version (as major versions usually contain breaking changes), you can add a <code v-pre>^</code> in front of the version number. In the example below, Travis will use the latest version of MarkBind but will stop before <code v-pre>2.*</code>
-            <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">install:</span><br></span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-string">-g</span> <span class="hljs-string">markbind-cli@^1.63</span><br></span></code></pre>
+            <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">install:</span>
+</span><span>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">i</span> <span class="hljs-string">-g</span> <span class="hljs-string">markbind-cli@^1.63</span>
+</span></code></pre>
           </li>
         </ul>
         <h5 id="configuring-travis-ci-to-only-deploy-from-a-specific-repository">Configuring Travis CI to only deploy from a specific repository<span id="configuring-travis-ci-to-only-deploy-from-a-specific-repository" class="anchor"></span><a class="fa fa-anchor" href="#configuring-travis-ci-to-only-deploy-from-a-specific-repository" onclick="event.stopPropagation()"></a></h5>
         <p>When Travis CI is set up as explained above, Travis CI will attempt to deploy the site from any repository it is in, including forks. If you want Travis CI to only deploy from a specific repository (eg. only from your main site repository), you can set a <a href="https://docs.travis-ci.com/user/deployment#conditional-releases-with-on"><code v-pre>deploy</code> phase with an <code v-pre>on</code> condition</a>.</p>
         <p>For example, if you only want Travis CI to deploy the site when it is run from the <code v-pre>se-edu/se-book</code> repository, the folllowing <code v-pre>deploy</code> phase with the <code v-pre>on</code> condition should be added to <code v-pre>.travis.yml</code>:</p>
-        <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">deploy:</span><br></span><span>  <span class="hljs-attr">on:</span><br></span><span>    <span class="hljs-attr">repo:</span> <span class="hljs-string">se-edu/se-book</span><br></span></code></pre>
+        <pre><code class="hljs yaml" v-pre><span><span class="hljs-attr">deploy:</span>
+</span><span>  <span class="hljs-attr">on:</span>
+</span><span>    <span class="hljs-attr">repo:</span> <span class="hljs-string">se-edu/se-book</span>
+</span></code></pre>
         <p>The <code v-pre>repo</code> value can be changed to your specific repository as desired.</p>
         <hr>
         <h2 id="deploying-to-netlify">Deploying to Netlify<span id="deploying-to-netlify" class="anchor"></span><a class="fa fa-anchor" href="#deploying-to-netlify" onclick="event.stopPropagation()"></a></h2>
-        <p><strong>You can setup <a href="https://www.netlify.com/"><span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">a platform for deploying static webpages (among other things)</span>Netlify</span></a>
+        <p><strong>You can setup <a href="https://www.netlify.com/"><span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">a platform for deploying static webpages (among other things)</span>Netlify</span></a>
             to automatically build and deploy your site on their platform every time your GitHub repo is updated.</strong></p>
         <p>Here are the steps to set up Netlify:</p>
         <ol>
@@ -334,11 +352,14 @@
             </li>
             <li>
               <p>create/update <code v-pre>.gitignore</code> file in the root directory and add:</p>
-              <pre><code class="hljs" v-pre><span>node_modules<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>node_modules
+</span></code></pre>
             </li>
             <li>
               <p>update <code v-pre>ignore</code> in site.json to include</p>
-              <pre><code class="hljs" v-pre><span>node_modules/*<br></span><span>.gitignore<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>node_modules/*
+</span><span>.gitignore
+</span></code></pre>
             </li>
             <li>
               <p>Now, follow the <a href="#deploying-to-netlify">previous instructions for setting up Netlify</a> but with the following difference:<br>
@@ -347,14 +368,11 @@
           </ol>
         </box>
         <div class="clearfix">
-          <p><span class="float-left">
-              <b-btn variant="light" href="/userGuide/themes.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Themes</span></span></b-btn>
-            </span></p>
-          <p><span class="float-right">
-              <b-btn variant="light" href="/userGuide/markBindInTheProjectWorkflow.html"><span><span>MarkBind in the Project Workflow</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></b-btn>
-            </span></p>
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/themes.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Themes</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/markBindInTheProjectWorkflow.html"><span><span>MarkBind in the Project Workflow</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
         </div>
         <br>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
 
 
@@ -388,20 +406,18 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Jul 31, 2020, 4:39:35 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = ''
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>
