@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind in the Project Workflow</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,38 +145,39 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
           <span><a href="/userGuide/markBindInTheProjectWorkflow.html"><em>User Guide → MarkBind in the Project Workflow</em></a></span></span>
-        <h1 id="markbind-in-the-project-workflow">MarkBind in the Project Workflow<span id="markbind-in-the-project-workflow" class="anchor"></span><a class="fa fa-anchor" href="#markbind-in-the-project-workflow" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="markbind-in-the-project-workflow"><span id="markbind-in-the-project-workflow" class="anchor"></span>MarkBind in the Project Workflow<a class="fa fa-anchor" href="#markbind-in-the-project-workflow" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
           <p>As <strong>MarkBind is especially optimized as a project documentation tool</strong>, it integrates well with the workflow of software project.
           </p>
         </span>
         <p></p>
-        <h4 id="authoring-workflow">Authoring Workflow<span id="authoring-workflow" class="anchor"></span><a class="fa fa-anchor" href="#authoring-workflow" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="authoring-workflow"><span id="authoring-workflow" class="anchor"></span>Authoring Workflow<a class="fa fa-anchor" href="#authoring-workflow" onclick="event.stopPropagation()"></a></h4>
         <p>While most IDEs provide previews for Markdown files, unless your MarkBind files are using basic Markdown syntax only, you are recommended to launch a <a href="/userGuide/glossary.html#live-preview">live preview</a> and check the rendering of the page as you modify the source file.</p>
-        <h4 id="github-project-workflow">GitHub Project Workflow<span id="github-project-workflow" class="anchor"></span><a class="fa fa-anchor" href="#github-project-workflow" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="github-project-workflow"><span id="github-project-workflow" class="anchor"></span>GitHub Project Workflow<a class="fa fa-anchor" href="#github-project-workflow" onclick="event.stopPropagation()"></a></h4>
         <p>If you use GitHub for your project, you can <a href="/userGuide/deployingTheSite.html#deploying-to-github-pages">deploy your site to GitHub pages</a> easily. You can even set up Travis to automatically deploy your site to GitHub pages whenever a branch in your repo is updated.</p>
         <p>If you are using GitHub Pull Requests as part of your workflow, you can <a href="/userGuide/deployingTheSite.html#deploying-to-netlify">set up Netlify to show a preview of the site generated from the MarkBind code in the PR</a>.</p>
-        <h4 id="using-markbind-for-project-documentation">Using MarkBind for Project Documentation<span id="using-markbind-for-project-documentation" class="anchor"></span><a class="fa fa-anchor" href="#using-markbind-for-project-documentation" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="using-markbind-for-project-documentation"><span id="using-markbind-for-project-documentation" class="anchor"></span>Using MarkBind for Project Documentation<a class="fa fa-anchor" href="#using-markbind-for-project-documentation" onclick="event.stopPropagation()"></a></h4>
         <p>Here is a example workflow for using MarkBind for both developer documentation and user documentation in a GitHub project:</p>
         <div class="indented">
-          <p>Suppose the main development of the project is done in the <code v-pre>master</code> branch while product releases are done using the <code v-pre>release</code> branch.</p>
-          <p>You can keep the user docs in a separate directory (say <code v-pre>user-docs</code>) and set up a MarkBind project in that folder. When there is a new release, you can deploy the user-docs site to GitHub Pages for users to read.</p>
-          <p>Similarly, you can keep the dev docs in a separate directory (sey <code v-pre>dev-docs</code>) and set up Netlify to deploy the site when there is an update to the <code v-pre>master</code> branch; that way, developers can see the latest version of dev-docs via the Netlify site.</p>
+          <p>Suppose the main development of the project is done in the <code class="hljs inline no-lang" v-pre>master</code> branch while product releases are done using the <code class="hljs inline no-lang" v-pre>release</code> branch.</p>
+          <p>You can keep the user docs in a separate directory (say <code class="hljs inline no-lang" v-pre>user-docs</code>) and set up a MarkBind project in that folder. When there is a new release, you can deploy the user-docs site to GitHub Pages for users to read.</p>
+          <p>Similarly, you can keep the dev docs in a separate directory (sey <code class="hljs inline no-lang" v-pre>dev-docs</code>) and set up Netlify to deploy the site when there is an update to the <code class="hljs inline no-lang" v-pre>master</code> branch; that way, developers can see the latest version of dev-docs via the Netlify site.</p>
         </div>
-        <h4 id="converting-existing-project-documentation-wiki">Converting existing project documentation/wiki<span id="converting-existing-project-documentation-wiki" class="anchor"></span><a class="fa fa-anchor" href="#converting-existing-project-documentation-wiki" onclick="event.stopPropagation()"></a></h4>
-        <p>MarkBind supports the automatic conversion of an existing GitHub wiki or <code v-pre>docs</code> folder containing Markdown files.</p>
+        <h4 id="converting-existing-project-documentation-wiki"><span id="converting-existing-project-documentation-wiki" class="anchor"></span>Converting existing project documentation/wiki<a class="fa fa-anchor" href="#converting-existing-project-documentation-wiki" onclick="event.stopPropagation()"></a></h4>
+        <p>MarkBind supports the automatic conversion of an existing GitHub wiki or <code class="hljs inline no-lang" v-pre>docs</code> folder containing Markdown files.</p>
         <p>A MarkBind conversion involves the following:</p>
         <ul>
-          <li>Adding a Home page: If your project already has a <code v-pre>README.md</code> or <code v-pre>Home.md</code>, the content will be copied over to <code v-pre>index.md</code>. Otherwise, a default home page will be added.</li>
-          <li>Adding an About Us page: If your project already has <code v-pre>about.md</code>, this will be used as the About page. Otherwise, a default About page will be added.</li>
+          <li>Adding a Home page: If your project already has a <code class="hljs inline no-lang" v-pre>README.md</code> or <code class="hljs inline no-lang" v-pre>Home.md</code>, the content will be copied over to <code class="hljs inline no-lang" v-pre>index.md</code>. Otherwise, a default home page will be added.</li>
+          <li>Adding an About Us page: If your project already has <code class="hljs inline no-lang" v-pre>about.md</code>, this will be used as the About page. Otherwise, a default About page will be added.</li>
           <li>Adding a top navigation bar.</li>
-          <li>Adding a site navigation menu: If your project has a valid <code v-pre>_Sidebar.md</code> file, it will be used as the <a href="https://markbind.org/userGuide/tweakingThePageStructure.html#site-navigation-menus">site navigation menu</a>. Otherwise, the menu will be built from your project's directory structure and contain links to all addressable pages.</li>
-          <li>Adding a custom footer: If your project has a valid <code v-pre>_Footer.md</code> file, it will be used as the website footer. Otherwise, a default footer will be added.</li>
+          <li>Adding a site navigation menu: If your project has a valid <code class="hljs inline no-lang" v-pre>_Sidebar.md</code> file, it will be used as the <a href="https://markbind.org/userGuide/tweakingThePageStructure.html#site-navigation-menus">site navigation menu</a>. Otherwise, the menu will be built from your project's directory structure and contain links to all addressable pages.</li>
+          <li>Adding a custom footer: If your project has a valid <code class="hljs inline no-lang" v-pre>_Footer.md</code> file, it will be used as the website footer. Otherwise, a default footer will be added.</li>
         </ul>
         <box type="warning">
           Conversion might not work if your project files have existing Nunjucks syntax.
@@ -184,8 +185,8 @@
         <p>To convert your existing project, follow these steps:</p>
         <ol>
           <li>Navigate into the project directory.</li>
-          <li>Run <code v-pre>markbind init --convert</code> to convert the project.</li>
-          <li>You can now preview the website using <code v-pre>markbind serve</code> to view your newly converted MarkBind website.</li>
+          <li>Run <code class="hljs inline no-lang" v-pre>markbind init --convert</code> to convert the project.</li>
+          <li>You can now preview the website using <code class="hljs inline no-lang" v-pre>markbind serve</code> to view your newly converted MarkBind website.</li>
         </ol>
         <box type="info">
           You only need to run the conversion once. Once you have converted your project, you can proceed to edit it as a normal MarkBind project.
@@ -196,12 +197,10 @@
         <br>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

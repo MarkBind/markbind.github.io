@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - Glossary</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,28 +145,35 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
-        <h4 id="live-preview">Live Preview<span id="live-preview" class="anchor"></span><a class="fa fa-anchor" href="#live-preview" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="live-preview"><span id="live-preview" class="anchor"></span>Live Preview <span style="font-size: 0.8em;"><span aria-hidden="true" class="fas fa-sync"></span></span><a class="fa fa-anchor" href="#live-preview" onclick="event.stopPropagation()"></a></h4>
         <span id="live-preview">
-          <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
+          <p><strong><em>Live preview</em></strong> is:</p>
+          <ul>
+            <li>
+              <p>Regeneration of affected content upon any change to <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content"><code class="hljs inline no-lang" v-pre>.md</code>, <code class="hljs inline no-lang" v-pre>.mbd</code>, <code class="hljs inline no-lang" v-pre>.mbdf</code>, <code class="hljs inline no-lang" v-pre>.njk</code> files ... anything your content depends on!</span>source files</span>, then reloading the updated site in the Browser.</p>
+            </li>
+            <li>
+              <p>Copying <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">files that don't affect page generation (eg. images), but are used in the site</span>assets</span> to the site output folder.</p>
+            </li>
+          </ul>
+          <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code class="hljs inline no-lang" v-pre>serve</code> command</a> to launch a live preview.</p>
         </span>
-        <h4 id="mbd-extension"><code v-pre>.mbd</code> extension<span id="mbd-extension" class="anchor"></span><a class="fa fa-anchor" href="#mbd-extension" onclick="event.stopPropagation()"></a></h4>
+        <br>
+        <h4 id="mbd-extension"><span id="mbd-extension" class="anchor"></span><code class="hljs inline no-lang" v-pre>.mbd</code> extension<a class="fa fa-anchor" href="#mbd-extension" onclick="event.stopPropagation()"></a></h4>
         <span id="mbd-extension">
-          <span><strong><code v-pre>.mbd</code> extension indicates a MarkBind source file</strong>.</span>
-          <p>MarkBind is able to take Markdown files (<code v-pre>.md</code>) and HTML files (<code v-pre>.html</code>) as source files too.
+          <span><strong><code class="hljs inline no-lang" v-pre>.mbd</code> extension indicates a MarkBind source file</strong>.</span>
+          <p>MarkBind is able to take Markdown files (<code class="hljs inline no-lang" v-pre>.md</code>) and HTML files (<code class="hljs inline no-lang" v-pre>.html</code>) as source files too.
           </p>
         </span>
         <p></p>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

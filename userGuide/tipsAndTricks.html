@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Tips & Tricks</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html" class="current">Tips &amp; Tricks</a></div>
@@ -145,12 +145,13 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
-        <h1 id="tips-and-amp-tricks">Tips &amp; Tricks<span id="tips-and-amp-tricks" class="anchor"></span><a class="fa fa-anchor" href="#tips-and-amp-tricks" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="tips-and-amp-tricks"><span id="tips-and-amp-tricks" class="anchor"></span>Tips &amp; Tricks<a class="fa fa-anchor" href="#tips-and-amp-tricks" onclick="event.stopPropagation()"></a></h1>
         <span id="escapingCharacters">
-          <h5 id="escaping-characters"><span aria-hidden="true" class="fas fa-lightbulb"></span> Escaping Characters<span id="escaping-characters" class="anchor"></span><a class="fa fa-anchor" href="#escaping-characters" onclick="event.stopPropagation()"></a></h5>
-          <p>For Markdown syntax: To display a literal character that are normally used for Markdown formatting, add a backslash (<code v-pre>\</code>) in front of the character.</p>
+          <h5 id="escaping-characters"><span id="escaping-characters" class="anchor"></span><span aria-hidden="true" class="fas fa-lightbulb"></span> Escaping Characters<a class="fa fa-anchor" href="#escaping-characters" onclick="event.stopPropagation()"></a></h5>
+          <p>For Markdown syntax: To display a literal character that are normally used for Markdown formatting, add a backslash (<code class="hljs inline no-lang" v-pre>\</code>) in front of the character.</p>
           <div>
 
 
@@ -177,17 +178,17 @@
           </div>
         </span>
         <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#escaping-characters">https://www.markdownguide.org/basic-syntax#escaping-characters</a></small></p>
-        <h5 id="using-raw-endraw-to-display-content"><span aria-hidden="true" class="fas fa-lightbulb"></span> Using {% raw %}{% endraw %} to display <code v-pre>{{ content }}</code><span id="using-raw-endraw-to-display-content" class="anchor"></span><a class="fa fa-anchor" href="#using-raw-endraw-to-display-content" onclick="event.stopPropagation()"></a></h5>
-        <p>To display the raw variable interpolation syntax using <code v-pre>{% raw %}{% endraw %}</code>, you would also need to add
-          the <code v-pre>v-pre</code> attribute using markdown-it-attrs or as a html attribute.</p>
+        <h5 id="using-raw-endraw-to-display-content"><span id="using-raw-endraw-to-display-content" class="anchor"></span><span aria-hidden="true" class="fas fa-lightbulb"></span> Using {% raw %}{% endraw %} to display <code class="hljs inline no-lang" v-pre>{{ content }}</code><a class="fa fa-anchor" href="#using-raw-endraw-to-display-content" onclick="event.stopPropagation()"></a></h5>
+        <p>To display the raw variable interpolation syntax using <code class="hljs inline no-lang" v-pre>{% raw %}{% endraw %}</code>, you would also need to add
+          the <code class="hljs inline no-lang" v-pre>v-pre</code> attribute using markdown-it-attrs or as a html attribute.</p>
         <box type="info">
-          <p>This isn't necessary for <code v-pre>&lt;code&gt;</code> elements, markdown code fences and inline code though, which markbind automatically
-            adds <code v-pre>v-pre</code> for.</p>
-          <p>However, this does not change the need for <code v-pre>{% raw %}{% endraw %}</code>. Meaning, you can still use variables within your code!
+          <p>This isn't necessary for <code class="hljs inline no-lang" v-pre>&lt;code&gt;</code> elements, markdown code fences and inline code though, which markbind automatically
+            adds <code class="hljs inline no-lang" v-pre>v-pre</code> for.</p>
+          <p>However, this does not change the need for <code class="hljs inline no-lang" v-pre>{% raw %}{% endraw %}</code>. Meaning, you can still use variables within your code!
           </p>
         </box>
         <p></p>
-        <h5 id="unwanted-starting-space-in-links-and-triggers"><span aria-hidden="true" class="fas fa-info"></span> Unwanted starting space in links and triggers<span id="unwanted-starting-space-in-links-and-triggers" class="anchor"></span><a class="fa fa-anchor" href="#unwanted-starting-space-in-links-and-triggers" onclick="event.stopPropagation()"></a></h5>
+        <h5 id="unwanted-starting-space-in-links-and-triggers"><span id="unwanted-starting-space-in-links-and-triggers" class="anchor"></span><span aria-hidden="true" class="fas fa-info"></span> Unwanted starting space in links and triggers<a class="fa fa-anchor" href="#unwanted-starting-space-in-links-and-triggers" onclick="event.stopPropagation()"></a></h5>
         <p>When you use links or triggers, you may encounter a situation where an unwanted space is being generated by MarkBind:</p>
         <ul>
           <li>
@@ -206,7 +207,7 @@
           </li>
           <li>
             <p>Solution:
-              Wrap the link or trigger around with <code v-pre>&lt;md&gt;</code> tags.</p>
+              Wrap the link or trigger around with <code class="hljs inline no-lang" v-pre>&lt;md&gt;</code> tags.</p>
             <pre><code class="hljs" v-pre><span>The
 </span><span>&lt;md&gt;[[link](https://example.com)]&lt;/md&gt;.
 </span></code></pre>
@@ -214,12 +215,10 @@
         </ul>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

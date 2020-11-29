@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Adding Pages</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,34 +145,42 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
           <span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
-        <h1 id="adding-pages">Adding Pages<span id="adding-pages" class="anchor"></span><a class="fa fa-anchor" href="#adding-pages" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="adding-pages"><span id="adding-pages" class="anchor"></span>Adding Pages<a class="fa fa-anchor" href="#adding-pages" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
-          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code v-pre>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
+          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code class="hljs inline no-lang" v-pre>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
         </span>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code v-pre>tutorial/code.txt</code> in your root directory, it will be available as <code v-pre>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code class="hljs inline no-lang" v-pre>tutorial/code.txt</code> in your root directory, it will be available as <code class="hljs inline no-lang" v-pre>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
         </div>
-        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code v-pre>ignore</code> field in the <code v-pre>site.config</code> file as explained <a href="/userGuide/siteJsonFile.html#ignore">here</a>.</span></p>
-        <p><strong>More importantly, <code v-pre>.md</code> and <code v-pre>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
+        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code class="hljs inline no-lang" v-pre>ignore</code> field in the <code class="hljs inline no-lang" v-pre>site.config</code> file as explained <a href="/userGuide/siteJsonFile.html#ignore">here</a>.</span></p>
+        <p><strong>More importantly, <code class="hljs inline no-lang" v-pre>.md</code> and <code class="hljs inline no-lang" v-pre>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
         <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code v-pre>&lt;root&gt;/tutorial/</code><strong><code v-pre>setup.md</code></strong> can be transformed into <code v-pre>&lt;website-url&gt;/tutorial/</code><strong><code v-pre>setup.html</code></strong></p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code class="hljs inline no-lang" v-pre>&lt;root&gt;/tutorial/</code><strong><code class="hljs inline no-lang" v-pre>setup.md</code></strong> can be transformed into <code class="hljs inline no-lang" v-pre>&lt;website-url&gt;/tutorial/</code><strong><code class="hljs inline no-lang" v-pre>setup.html</code></strong></p>
         </div>
         <p>Here are the steps to add a new page to your site:</p>
         <ol>
-          <li>Add a <code v-pre>.md</code> (or <code v-pre>.mbd</code>) file anywhere inside the root directory.</li>
-          <li>Update the <a href="/userGuide/siteJsonFile.html#pages"><code v-pre>pages</code> attribute of the <code v-pre>site.json</code></a> to cover the new file, if necessary.</li>
+          <li>Add a <code class="hljs inline no-lang" v-pre>.md</code> (or <code class="hljs inline no-lang" v-pre>.mbd</code>) file anywhere inside the root directory.</li>
+          <li>Update the <a href="/userGuide/siteJsonFile.html#pages"><code class="hljs inline no-lang" v-pre>pages</code> attribute of the <code class="hljs inline no-lang" v-pre>site.json</code></a> to cover the new file, if necessary.</li>
           <li>Use the <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
         </ol>
         <b-modal id="modal:addingPages-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:addingPages-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
-            <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
+            <p><strong><em>Live preview</em></strong> is:</p>
+            <ul>
+              <li>
+                <p>Regeneration of affected content upon any change to <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content"><code class="hljs inline no-lang" v-pre>.md</code>, <code class="hljs inline no-lang" v-pre>.mbd</code>, <code class="hljs inline no-lang" v-pre>.mbdf</code>, <code class="hljs inline no-lang" v-pre>.njk</code> files ... anything your content depends on!</span>source files</span>, then reloading the updated site in the Browser.</p>
+              </li>
+              <li>
+                <p>Copying <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">files that don't affect page generation (eg. images), but are used in the site</span>assets</span> to the site output folder.</p>
+              </li>
+            </ul>
+            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code class="hljs inline no-lang" v-pre>serve</code> command</a> to launch a live preview.</p>
             <p></p>
           </span></b-modal>
         <p></p>
@@ -183,12 +191,10 @@
         <br>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

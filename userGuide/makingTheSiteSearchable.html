@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Making the Site Searchable</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,26 +145,27 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
           <span><a href="/userGuide/makingTheSiteSearchable.html"><em>User Guide → Making the Site Searchable</em></a></span></span>
-        <h1 id="making-the-site-searchable">Making the Site Searchable<span id="making-the-site-searchable" class="anchor"></span><a class="fa fa-anchor" href="#making-the-site-searchable" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="making-the-site-searchable"><span id="making-the-site-searchable" class="anchor"></span>Making the Site Searchable<a class="fa fa-anchor" href="#making-the-site-searchable" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
           <p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong> with the option to use third-party search services as well.
           </p>
         </span>
         <p></p>
-        <p><strong>All markdown and html headings of levels 1-3 are captured in the search index</strong> by default. You can change this setting using the <a href="/userGuide/siteJsonFile.html#headingindexinglevel"><code v-pre>headingIndexLevel</code> property of the <code v-pre>site.json</code></a>.</p>
+        <p><strong>All markdown and html headings of levels 1-3 are captured in the search index</strong> by default. You can change this setting using the <a href="/userGuide/siteJsonFile.html#headingindexinglevel"><code class="hljs inline no-lang" v-pre>headingIndexLevel</code> property of the <code class="hljs inline no-lang" v-pre>site.json</code></a>.</p>
         <box type="warning">
-          <p>If you do not wish to use MarkBind's searchbar (e.g. you have an external service provider), it may be helpful to include the option <code v-pre>enableSearch: false</code> in your <code v-pre>site.json</code>. This stops MarkBind from indexing search headings and speeds up building.
+          <p>If you do not wish to use MarkBind's searchbar (e.g. you have an external service provider), it may be helpful to include the option <code class="hljs inline no-lang" v-pre>enableSearch: false</code> in your <code class="hljs inline no-lang" v-pre>site.json</code>. This stops MarkBind from indexing search headings and speeds up building.
           </p>
         </box>
         <p></p>
-        <h2 id="search-bars">Search Bars<span id="search-bars" class="anchor"></span><a class="fa fa-anchor" href="#search-bars" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="search-bars"><span id="search-bars" class="anchor"></span>Search Bars<a class="fa fa-anchor" href="#search-bars" onclick="event.stopPropagation()"></a></h2>
         <p>You can add a search bar component to your website to allow users to search the site.</p>
-        <panel type="seamless" minimized><template slot="_header">
+        <panel type="seamless" minimized><template slot="header">
             <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Using components → <strong>Search bars</strong></p>
           </template>
           <div>
@@ -207,39 +208,39 @@
                 <tbody>
                   <tr>
                     <td>algolia</td>
-                    <td><code v-pre>Boolean</code></td>
-                    <td><code v-pre>false</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>false</code></td>
                     <td>Whether the searchbar should be connected to <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">Algolia DocSearch</a>.</td>
                   </tr>
                   <tr>
                     <td>data</td>
-                    <td><code v-pre>Array</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>Array</code></td>
                     <td></td>
-                    <td>The local data source for suggestions. Expected to be a primitive array. To use MarkBind's search functionality, set this value to <code v-pre>&quot;searchData&quot;</code>.</td>
+                    <td>The local data source for suggestions. Expected to be a primitive array. To use MarkBind's search functionality, set this value to <code class="hljs inline no-lang" v-pre>&quot;searchData&quot;</code>.</td>
                   </tr>
                   <tr>
                     <td>menu-align-right</td>
-                    <td><code v-pre>Boolean</code></td>
-                    <td><code v-pre>false</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>false</code></td>
                     <td>Whether the search bar's dropdown list will be right-aligned.</td>
                   </tr>
                   <tr>
                     <td>on-hit</td>
-                    <td><code v-pre>Function</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>Function</code></td>
                     <td></td>
-                    <td>A callback function when you click or hit return on an item. To use MarkBind's search functionality, set this value to <code v-pre>&quot;searchCallback&quot;</code>.</td>
+                    <td>A callback function when you click or hit return on an item. To use MarkBind's search functionality, set this value to <code class="hljs inline no-lang" v-pre>&quot;searchCallback&quot;</code>.</td>
                   </tr>
                   <tr>
                     <td>placeholder</td>
-                    <td><code v-pre>String</code></td>
-                    <td><code v-pre>''</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>String</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>''</code></td>
                     <td>The placeholder text shown when no keywords are entered in the search bar.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <box type="warning">
-              <p>Note: If you are using MarkBind's search functionality, then <code v-pre>enableSearch</code> <strong>must be set to <code v-pre>true</code> in <code v-pre>site.json</code></strong>.</p>
+              <p>Note: If you are using MarkBind's search functionality, then <code class="hljs inline no-lang" v-pre>enableSearch</code> <strong>must be set to <code class="hljs inline no-lang" v-pre>true</code> in <code class="hljs inline no-lang" v-pre>site.json</code></strong>.</p>
               <p>See: <a href="/userGuide/siteJsonFile.html#enable-search">User Guide: Site Configuration → enableSearch</a>.</p>
             </box>
             <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a>.</span></p>
@@ -248,10 +249,10 @@
         </panel>
         <p></p>
         <div>
-          <h2 id="keywords">Keywords<span id="keywords" class="anchor"></span><a class="fa fa-anchor" href="#keywords" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="keywords"><span id="keywords" class="anchor"></span>Keywords<a class="fa fa-anchor" href="#keywords" onclick="event.stopPropagation()"></a></h2>
           <p><span class="keyword d-none">regress</span>
             <span class="keyword d-none">regression testing</span></p>
-          <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code v-pre>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword without rendering it in the page, add <code v-pre>d-none</code> as a class.</p>
+          <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code class="hljs inline no-lang" v-pre>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword without rendering it in the page, add <code class="hljs inline no-lang" v-pre>d-none</code> as a class.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
             <pre><code class="hljs html" v-pre><span>#### Developer Testing
@@ -268,7 +269,7 @@
             </box>
             <p></p>
           </div>
-          <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code v-pre>keywords</code> attribute inside the <code v-pre>&lt;frontmatter&gt;</code> of that page.</p>
+          <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code class="hljs inline no-lang" v-pre>keywords</code> attribute inside the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of that page.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
@@ -282,9 +283,9 @@
 </span></code></pre></span>
         </div>
         <div>
-          <h2 id="including-or-excluding-headings">Including or Excluding Headings<span id="including-or-excluding-headings" class="anchor"></span><a class="fa fa-anchor" href="#including-or-excluding-headings" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code v-pre>.always-index</code> or <code v-pre>.no-index</code> classes.</p>
-          <p>If you wish to index a specific heading outside the specified <code v-pre>headingIndexLevel</code>, you may add the <code v-pre>.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code v-pre>headingIndexLevel</code> not to be indexed, you may add the <code v-pre>.no-index</code> attribute to the heading.</p>
+          <h2 id="including-or-excluding-headings"><span id="including-or-excluding-headings" class="anchor"></span>Including or Excluding Headings<a class="fa fa-anchor" href="#including-or-excluding-headings" onclick="event.stopPropagation()"></a></h2>
+          <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code class="hljs inline no-lang" v-pre>.always-index</code> or <code class="hljs inline no-lang" v-pre>.no-index</code> classes.</p>
+          <p>If you wish to index a specific heading outside the specified <code class="hljs inline no-lang" v-pre>headingIndexLevel</code>, you may add the <code class="hljs inline no-lang" v-pre>.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code class="hljs inline no-lang" v-pre>headingIndexLevel</code> not to be indexed, you may add the <code class="hljs inline no-lang" v-pre>.no-index</code> attribute to the heading.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
             <pre><code class="hljs md" v-pre><span><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span>
@@ -298,15 +299,15 @@
 </span></code></pre>
           </div>
         </div>
-        <h2 id="using-external-search-services">Using External Search Services<span id="using-external-search-services" class="anchor"></span><a class="fa fa-anchor" href="#using-external-search-services" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="using-external-search-services"><span id="using-external-search-services" class="anchor"></span>Using External Search Services<a class="fa fa-anchor" href="#using-external-search-services" onclick="event.stopPropagation()"></a></h2>
         <p>MarkBind sites can use Algolia Doc Search services easily via the Algolia plugin. Unlike the built-in search, Algolia provides full-text search. See the panel below for more info.</p>
-        <panel type="seamless" minimized><template slot="_header">
+        <panel type="seamless" minimized><template slot="header">
             <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Using plugins → <strong>Algolia</strong></p>
           </template>
           <div>
-            <h3 id="plugin-algolia">Plugin: Algolia<span id="plugin-algolia" class="anchor"></span><a class="fa fa-anchor" href="#plugin-algolia" onclick="event.stopPropagation()"></a></h3>
+            <h3 id="plugin-algolia"><span id="plugin-algolia" class="anchor"></span>Plugin: Algolia<a class="fa fa-anchor" href="#plugin-algolia" onclick="event.stopPropagation()"></a></h3>
             <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
-            <p>To enable it, add <code v-pre>algolia</code> to your site's plugins, and supply the required options via the <code v-pre>pluginsContext</code>.</p>
+            <p>To enable it, add <code class="hljs inline no-lang" v-pre>algolia</code> to your site's plugins, and supply the required options via the <code class="hljs inline no-lang" v-pre>pluginsContext</code>.</p>
             <div class="table-responsive">
               <table class="markbind-table table table-bordered table-striped">
                 <thead>
@@ -320,26 +321,26 @@
                 <tbody>
                   <tr>
                     <td>apiKey</td>
-                    <td><code v-pre>String</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>String</code></td>
                     <td></td>
                     <td>The API key for your site's Algolia DocSearch setup</td>
                   </tr>
                   <tr>
                     <td>indexName</td>
-                    <td><code v-pre>String</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>String</code></td>
                     <td></td>
                     <td>The index name for your site's Algolia DocSearch setup</td>
                   </tr>
                   <tr>
                     <td>algoliaOptions</td>
-                    <td><code v-pre>Object</code></td>
-                    <td><code v-pre>{}</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>Object</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>{}</code></td>
                     <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
                   </tr>
                   <tr>
                     <td>debug</td>
-                    <td><code v-pre>Boolean</code></td>
-                    <td><code v-pre>false</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
+                    <td><code class="hljs inline no-lang" v-pre>false</code></td>
                     <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
                   </tr>
                 </tbody>
@@ -361,15 +362,15 @@
 </span><span>  }
 </span><span>}
 </span></code></pre>
-            <p>To connect the <code v-pre>searchbar</code> component to Algolia DocSearch, add the <code v-pre>algolia</code> key.</p>
+            <p>To connect the <code class="hljs inline no-lang" v-pre>searchbar</code> component to Algolia DocSearch, add the <code class="hljs inline no-lang" v-pre>algolia</code> key.</p>
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </span></code></pre>
-            <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
+            <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code class="hljs inline no-lang" v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
 </span></code></pre>
             <box type="warning">
-              <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
-              <p>The <code v-pre>algolia-no-index</code> class is automatically added to content hidden by MarkBind's Vue components. You may also add the <code v-pre>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
+              <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code class="hljs inline no-lang" v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code class="hljs inline no-lang" v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
+              <p>The <code class="hljs inline no-lang" v-pre>algolia-no-index</code> class is automatically added to content hidden by MarkBind's Vue components. You may also add the <code class="hljs inline no-lang" v-pre>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
             </box>
           </div>
         </panel>
@@ -380,8 +381,6 @@
         <br>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -400,7 +399,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

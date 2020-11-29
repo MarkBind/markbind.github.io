@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Themes</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,26 +145,39 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
           <span><a href="/userGuide/themes.html"><em>User Guide → Themes</em></a></span></span>
-        <h1 id="themes">Themes<span id="themes" class="anchor"></span><a class="fa fa-anchor" href="#themes" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="themes"><span id="themes" class="anchor"></span>Themes<a class="fa fa-anchor" href="#themes" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
-          <p><strong>MarkBind supports the ability to style your website with a variety of themes.</strong></p>
+          <p><strong>MarkBind supports the ability to style your website with a variety of bootstrap themes.</strong></p>
         </span>
-        <h4 id="specifying-a-theme">Specifying a Theme<span id="specifying-a-theme" class="anchor"></span><a class="fa fa-anchor" href="#specifying-a-theme" onclick="event.stopPropagation()"></a></h4>
-        <p>You can specify a theme for your site by using the <a href="/userGuide/siteJsonFile.html#theme"><code v-pre>theme</code> property of the <code v-pre>site.json</code></a>. For example, to apply the Cerulean theme, add <code v-pre>&quot;theme&quot;: &quot;bootswatch-cerulean&quot;</code> to your <code v-pre>site.json</code>.</p>
-        <p>If no <code v-pre>theme</code> property is specified, your site will be styled with default Bootstrap theme.</p>
-        <h4 id="supported-themes">Supported Themes<span id="supported-themes" class="anchor"></span><a class="fa fa-anchor" href="#supported-themes" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="specifying-a-theme"><span id="specifying-a-theme" class="anchor"></span>Specifying a Theme<a class="fa fa-anchor" href="#specifying-a-theme" onclick="event.stopPropagation()"></a></h4>
+        <p>You can specify a theme for your site by using the <a href="/userGuide/siteJsonFile.html#style"><code class="hljs inline no-lang" v-pre>style.bootstrapTheme</code> property</a> of your <code class="hljs inline no-lang" v-pre>site.json</code> configuration file.</p>
+        <p>For example, to apply the Cerulean theme, add the following configuration:</p>
+        <div class="code-block">
+          <div class="code-block-heading"><span>site.json</span></div>
+          <div class="code-block-content">
+            <pre><code heading="site.json" class="hljs json" v-pre><span>{
+</span><span>  <span class="hljs-attr">"style"</span>: {
+</span><span>    <span class="hljs-attr">"bootstrapTheme"</span>: <span class="hljs-string">"bootswatch-cerulean"</span>
+</span><span>  }
+</span><span>}
+</span></code></pre>
+          </div>
+        </div>
+        <p>If no such property is specified, your site will be styled with default Bootstrap theme.</p>
+        <h4 id="supported-themes"><span id="supported-themes" class="anchor"></span>Supported Themes<a class="fa fa-anchor" href="#supported-themes" onclick="event.stopPropagation()"></a></h4>
         <p>Currently, MarkBind supports all light themes from <a href="https://bootswatch.com/">Bootswatch</a>. Visit each of the theme pages below to see how different visual components are styled.</p>
         <div class="container-fluid">
           <div class="row">
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-cerulean"><code v-pre>bootswatch-cerulean</code><span id="bootswatch-cerulean" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-cerulean" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-cerulean"><span id="bootswatch-cerulean" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-cerulean</code><a class="fa fa-anchor" href="#bootswatch-cerulean" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/cerulean/"><img src="/images/bootswatch/cerulean.png"></a>
               </box>
@@ -172,7 +185,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-cosmo"><code v-pre>bootswatch-cosmo</code><span id="bootswatch-cosmo" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-cosmo" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-cosmo"><span id="bootswatch-cosmo" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-cosmo</code><a class="fa fa-anchor" href="#bootswatch-cosmo" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/cosmo/"><img src="/images/bootswatch/cosmo.png"></a>
               </box>
@@ -180,7 +193,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-flatly"><code v-pre>bootswatch-flatly</code><span id="bootswatch-flatly" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-flatly" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-flatly"><span id="bootswatch-flatly" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-flatly</code><a class="fa fa-anchor" href="#bootswatch-flatly" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/flatly/"><img src="/images/bootswatch/flatly.png"></a>
               </box>
@@ -188,7 +201,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-journal"><code v-pre>bootswatch-journal</code><span id="bootswatch-journal" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-journal" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-journal"><span id="bootswatch-journal" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-journal</code><a class="fa fa-anchor" href="#bootswatch-journal" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/journal/"><img src="/images/bootswatch/journal.png"></a>
               </box>
@@ -196,7 +209,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-litera"><code v-pre>bootswatch-litera</code><span id="bootswatch-litera" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-litera" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-litera"><span id="bootswatch-litera" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-litera</code><a class="fa fa-anchor" href="#bootswatch-litera" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/litera/"><img src="/images/bootswatch/litera.png"></a>
               </box>
@@ -204,7 +217,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-lumen"><code v-pre>bootswatch-lumen</code><span id="bootswatch-lumen" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-lumen" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-lumen"><span id="bootswatch-lumen" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-lumen</code><a class="fa fa-anchor" href="#bootswatch-lumen" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/lumen/"><img src="/images/bootswatch/lumen.png"></a>
               </box>
@@ -212,7 +225,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-lux"><code v-pre>bootswatch-lux</code><span id="bootswatch-lux" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-lux" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-lux"><span id="bootswatch-lux" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-lux</code><a class="fa fa-anchor" href="#bootswatch-lux" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/lux/"><img src="/images/bootswatch/lux.png"></a>
               </box>
@@ -220,7 +233,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-materia"><code v-pre>bootswatch-materia</code><span id="bootswatch-materia" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-materia" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-materia"><span id="bootswatch-materia" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-materia</code><a class="fa fa-anchor" href="#bootswatch-materia" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/materia/"><img src="/images/bootswatch/materia.png"></a>
               </box>
@@ -228,7 +241,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-minty"><code v-pre>bootswatch-minty</code><span id="bootswatch-minty" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-minty" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-minty"><span id="bootswatch-minty" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-minty</code><a class="fa fa-anchor" href="#bootswatch-minty" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/minty/"><img src="/images/bootswatch/minty.png"></a>
               </box>
@@ -236,7 +249,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-pulse"><code v-pre>bootswatch-pulse</code><span id="bootswatch-pulse" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-pulse" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-pulse"><span id="bootswatch-pulse" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-pulse</code><a class="fa fa-anchor" href="#bootswatch-pulse" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/pulse/"><img src="/images/bootswatch/pulse.png"></a>
               </box>
@@ -244,7 +257,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-sandstone"><code v-pre>bootswatch-sandstone</code><span id="bootswatch-sandstone" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-sandstone" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-sandstone"><span id="bootswatch-sandstone" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-sandstone</code><a class="fa fa-anchor" href="#bootswatch-sandstone" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/sandstone/"><img src="/images/bootswatch/sandstone.png"></a>
               </box>
@@ -252,7 +265,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-simplex"><code v-pre>bootswatch-simplex</code><span id="bootswatch-simplex" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-simplex" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-simplex"><span id="bootswatch-simplex" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-simplex</code><a class="fa fa-anchor" href="#bootswatch-simplex" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/simplex/"><img src="/images/bootswatch/simplex.png"></a>
               </box>
@@ -260,7 +273,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-sketchy"><code v-pre>bootswatch-sketchy</code><span id="bootswatch-sketchy" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-sketchy" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-sketchy"><span id="bootswatch-sketchy" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-sketchy</code><a class="fa fa-anchor" href="#bootswatch-sketchy" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/sketchy/"><img src="/images/bootswatch/sketchy.png"></a>
               </box>
@@ -268,7 +281,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-spacelab"><code v-pre>bootswatch-spacelab</code><span id="bootswatch-spacelab" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-spacelab" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-spacelab"><span id="bootswatch-spacelab" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-spacelab</code><a class="fa fa-anchor" href="#bootswatch-spacelab" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/spacelab/"><img src="/images/bootswatch/spacelab.png"></a>
               </box>
@@ -276,7 +289,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-united"><code v-pre>bootswatch-united</code><span id="bootswatch-united" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-united" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-united"><span id="bootswatch-united" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-united</code><a class="fa fa-anchor" href="#bootswatch-united" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/united/"><img src="/images/bootswatch/united.png"></a>
               </box>
@@ -284,7 +297,7 @@
             <div class="theme-card col-sm-6 col-xl-4">
               <box>
                 <div>
-                  <h6 id="bootswatch-yeti"><code v-pre>bootswatch-yeti</code><span id="bootswatch-yeti" class="anchor"></span><a class="fa fa-anchor" href="#bootswatch-yeti" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="bootswatch-yeti"><span id="bootswatch-yeti" class="anchor"></span><code class="hljs inline no-lang" v-pre>bootswatch-yeti</code><a class="fa fa-anchor" href="#bootswatch-yeti" onclick="event.stopPropagation()"></a></h6>
                 </div>
                 <a href="https://bootswatch.com/yeti/"><img src="/images/bootswatch/yeti.png"></a>
               </box>
@@ -298,12 +311,10 @@
         <br>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

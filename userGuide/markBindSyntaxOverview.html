@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,13 +145,14 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
           [_User Guide → MarkBind Syntax Overview_](markBindSyntaxOverview.html)
         </span>
-        <h1 id="markbind-syntax-overview">MarkBind Syntax Overview<span id="markbind-syntax-overview" class="anchor"></span><a class="fa fa-anchor" href="#markbind-syntax-overview" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="markbind-syntax-overview"><span id="markbind-syntax-overview" class="anchor"></span>MarkBind Syntax Overview<a class="fa fa-anchor" href="#markbind-syntax-overview" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
           <p><strong>A MarkBind source file may contain a mix of several popular syntax schemes</strong> used in creating web pages. MarkBind source file can be as simple as basic Markdown, and you can use progressively more complicated syntax to create progressively more sophisticated Web pages while optimizing other aspects such as content reuse.
           </p>
@@ -162,9 +163,9 @@
           <p><span aria-hidden="true" class="fas fa-info-circle"></span> Exact usage of various MarkBind syntax is described in separate sections such as <span><span><a href="/userGuide/formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span></p>
         </box>
         <p></p>
-        <h4 id="support-for-markdown"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Markdown<span id="support-for-markdown" class="anchor"></span><a class="fa fa-anchor" href="#support-for-markdown" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="support-for-markdown"><span id="support-for-markdown" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Markdown<a class="fa fa-anchor" href="#support-for-markdown" onclick="event.stopPropagation()"></a></h4>
         <p>MarkBind supports all basic Markdown syntax.</p>
-        <panel type="seamless"><template slot="_header">
+        <panel type="seamless"><template slot="header">
             <p>Some examples ...</p>
           </template>
           <div>
@@ -185,9 +186,9 @@
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <h3 id="heading-level-3">Heading level 3<span id="heading-level-3" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-3" onclick="event.stopPropagation()"></a></h3>
+                  <h3 id="heading-level-3"><span id="heading-level-3" class="anchor"></span>Heading level 3<a class="fa fa-anchor" href="#heading-level-3" onclick="event.stopPropagation()"></a></h3>
                   <p>...</p>
-                  <h6 id="heading-level-6">Heading level 6<span id="heading-level-6" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-6" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="heading-level-6"><span id="heading-level-6" class="anchor"></span>Heading level 6<a class="fa fa-anchor" href="#heading-level-6" onclick="event.stopPropagation()"></a></h6>
                 </box>
               </div>
             </div>
@@ -208,7 +209,7 @@
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code v-pre>Inline Code</code></p>
+                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code class="hljs inline no-lang" v-pre>Inline Code</code></p>
                 </box>
               </div>
             </div>
@@ -236,9 +237,9 @@
           </div>
         </panel>
 
-        <h4 id="support-for-gfmd"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for GFMD<span id="support-for-gfmd" class="anchor"></span><a class="fa fa-anchor" href="#support-for-gfmd" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="support-for-gfmd"><span id="support-for-gfmd" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for GFMD<a class="fa fa-anchor" href="#support-for-gfmd" onclick="event.stopPropagation()"></a></h4>
         <p>MarkBind supports additional Markdown features provided by Github-Flavored Markdown (GFMD).</p>
-        <panel type="seamless"><template slot="_header">
+        <panel type="seamless"><template slot="header">
             <p>Some examples ...</p>
           </template>
           <div>
@@ -326,9 +327,9 @@
           </div>
         </panel>
 
-        <h4 id="markbind-extensions-to-markdown"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Extensions to Markdown<span id="markbind-extensions-to-markdown" class="anchor"></span><a class="fa fa-anchor" href="#markbind-extensions-to-markdown" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="markbind-extensions-to-markdown"><span id="markbind-extensions-to-markdown" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Extensions to Markdown<a class="fa fa-anchor" href="#markbind-extensions-to-markdown" onclick="event.stopPropagation()"></a></h4>
         <p>MarkBind adds several Markdown-like features on top of GFMD.</p>
-        <panel type="seamless"><template slot="_header">
+        <panel type="seamless"><template slot="header">
             <p>Some examples ...</p>
           </template>
           <div>
@@ -421,7 +422,7 @@
           </div>
         </panel>
 
-        <h4 id="markbind-custom-syntax"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Custom Syntax<span id="markbind-custom-syntax" class="anchor"></span><a class="fa fa-anchor" href="#markbind-custom-syntax" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="markbind-custom-syntax"><span id="markbind-custom-syntax" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Custom Syntax<a class="fa fa-anchor" href="#markbind-custom-syntax" onclick="event.stopPropagation()"></a></h4>
         <p>Given below are some examples of custom syntax added by MarkBind.</p>
         <blockquote>
           <span>
@@ -435,7 +436,7 @@
         <br>
         <blockquote>
           <span>
-            <p><strong>MarkBind has a powerful <code v-pre>&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
+            <p><strong>MarkBind has a powerful <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
             </p>
           </span>
           <p></p>
@@ -454,7 +455,7 @@
           More info: <span><span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span></div>
         <br>
 
-        <h4 id="support-for-html-javascript-css"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for HTML, JavaScript, CSS<span id="support-for-html-javascript-css" class="anchor"></span><a class="fa fa-anchor" href="#support-for-html-javascript-css" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="support-for-html-javascript-css"><span id="support-for-html-javascript-css" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for HTML, JavaScript, CSS<a class="fa fa-anchor" href="#support-for-html-javascript-css" onclick="event.stopPropagation()"></a></h4>
         <blockquote>
           <span>
             <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
@@ -466,10 +467,10 @@
           More info: <span><span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span></div>
         <br>
 
-        <h4 id="markbind-vue-components-and-bootstrap"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Vue components and BootStrap<span id="markbind-vue-components-and-bootstrap" class="anchor"></span><a class="fa fa-anchor" href="#markbind-vue-components-and-bootstrap" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="markbind-vue-components-and-bootstrap"><span id="markbind-vue-components-and-bootstrap" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Vue components and BootStrap<a class="fa fa-anchor" href="#markbind-vue-components-and-bootstrap" onclick="event.stopPropagation()"></a></h4>
         <p>MarkBind has several core Vue.js components built on the popular <a href="https://getbootstrap.com/docs/4.2/getting-started/introduction/">BootStrap</a> framework. Much of Bootstrap's features are supported in and out of these components as well.</p>
 
-        <h4 id="support-for-nunjucks"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Nunjucks<span id="support-for-nunjucks" class="anchor"></span><a class="fa fa-anchor" href="#support-for-nunjucks" onclick="event.stopPropagation()"></a></h4>
+        <h4 id="support-for-nunjucks"><span id="support-for-nunjucks" class="anchor"></span><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Nunjucks<a class="fa fa-anchor" href="#support-for-nunjucks" onclick="event.stopPropagation()"></a></h4>
         <p><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> is a JavaScript based templating tool. Here is a simple example:</p>
         <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
 </span><span>{% for item in [1, 2, 3, 4] %}
@@ -535,12 +536,10 @@
       </div>
 
 
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

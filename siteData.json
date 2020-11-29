@@ -82,6 +82,7 @@
         "blockquotes": "Blockquotes",
         "lists": "Lists",
         "code": "Code",
+        "themes": "Themes",
         "fenced-code": "Fenced Code",
         "syntax-coloring": "Syntax coloring",
         "line-numbering": "Line numbering",
@@ -128,7 +129,7 @@
       "src": "userGuide/glossary.md",
       "title": "Glossary",
       "headings": {
-        "live-preview": "Live Preview",
+        "live-preview": "Live Preview ",
         "mbd-extension": ".mbd extension"
       },
       "headingKeywords": {}
@@ -188,6 +189,7 @@
       "src": "userGuide/reusingContents.md",
       "title": "User Guide: Reusing Contents",
       "headings": {
+        "old-syntax-deprecated": "Old syntax (deprecated)",
         "reusing-contents": "Reusing Contents",
         "variables": "Variables",
         "global-variables": "Global Variables",
@@ -195,7 +197,7 @@
         "built-in-global-variables": "Built-in Global Variables",
         "page-variables": "Page Variables",
         "importing-variables": "Importing Variables",
-        "defining-variables-with-json": "Defining variables with JSON",
+        "importing-variables-from-other-external-file-formats": "Importing variables from other external file formats",
         "tips-and-tricks-for-variables": "Tips and Tricks for variables",
         "referring-to-other-variables-in-variables": "Referring to other variables in variables",
         "variables-can-contain-malformed-html": "Variables can contain malformed html",
@@ -235,7 +237,7 @@
         "baseurl": "baseUrl",
         "faviconpath": "faviconPath",
         "titleprefix": "titlePrefix",
-        "theme": "theme",
+        "style": "style",
         "pages": "pages",
         "pagesexclude": "pagesExclude",
         "externalscripts": "externalScripts",

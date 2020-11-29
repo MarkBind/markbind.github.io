@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Formatting Contents</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,18 +145,19 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
         <div></div>
         <span id="link" class="d-none">
           <span><a href="/userGuide/formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span>
-        <h1 id="formatting-contents">Formatting Contents<span id="formatting-contents" class="anchor"></span><a class="fa fa-anchor" href="#formatting-contents" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="formatting-contents"><span id="formatting-contents" class="anchor"></span>Formatting Contents<a class="fa fa-anchor" href="#formatting-contents" onclick="event.stopPropagation()"></a></h1>
         <span class="lead" id="overview">
           <p><strong>MarkBind supports a wide collection of Markdown-like basic content formatting syntax</strong> such as text styling, tables, lists, images, links, etc.</p>
         </span>
         <div>
-          <h2 id="headings">Headings<span id="headings" class="anchor"></span><a class="fa fa-anchor" href="#headings" onclick="event.stopPropagation()"></a></h2>
-          <p>You can prepend the heading text with 1-6 <code v-pre>#</code> characters to indicate headings of levels 1-6.</p>
+          <h2 id="headings"><span id="headings" class="anchor"></span>Headings<a class="fa fa-anchor" href="#headings" onclick="event.stopPropagation()"></a></h2>
+          <p>You can prepend the heading text with 1-6 <code class="hljs inline no-lang" v-pre>#</code> characters to indicate headings of levels 1-6.</p>
           <span id="main-example">
             <div>
 
@@ -175,15 +176,15 @@
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <h3 id="heading-level-3">Heading level 3<span id="heading-level-3" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-3" onclick="event.stopPropagation()"></a></h3>
+                  <h3 id="heading-level-3"><span id="heading-level-3" class="anchor"></span>Heading level 3<a class="fa fa-anchor" href="#heading-level-3" onclick="event.stopPropagation()"></a></h3>
                   <p>...</p>
-                  <h6 id="heading-level-6">Heading level 6<span id="heading-level-6" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-6" onclick="event.stopPropagation()"></a></h6>
+                  <h6 id="heading-level-6"><span id="heading-level-6" class="anchor"></span>Heading level 6<a class="fa fa-anchor" href="#heading-level-6" onclick="event.stopPropagation()"></a></h6>
                 </box>
               </div>
             </div>
           </span>
           <p><span aria-hidden="true" class="fas fa-info-circle"></span> <strong>MarkBind auto-generates anchors for all headings.</strong><br>
-            If the heading text is <code v-pre>Foo Bar (Goo)</code>, the ID of the generated anchor will be <code v-pre>foo-bar-goo</code> (all lower case, special characters ommitted, joined by <code v-pre>-</code>).</p>
+            If the heading text is <code class="hljs inline no-lang" v-pre>Foo Bar (Goo)</code>, the ID of the generated anchor will be <code class="hljs inline no-lang" v-pre>foo-bar-goo</code> (all lower case, special characters ommitted, joined by <code class="hljs inline no-lang" v-pre>-</code>).</p>
           <p><small>Alternative syntax, more info: <a href="https://www.markdownguide.org/basic-syntax#headings">https://www.markdownguide.org/basic-syntax#headings</a></small></p>
           <span id="short" class="d-none">
             ```markdown
@@ -193,14 +194,14 @@
             ```
           </span>
           <span id="examples" class="d-none">
-            <h3 id="heading-level-3-2">Heading level 3<span id="heading-level-3-2" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-3-2" onclick="event.stopPropagation()"></a></h3>
+            <h3 id="heading-level-3-2"><span id="heading-level-3-2" class="anchor"></span>Heading level 3<a class="fa fa-anchor" href="#heading-level-3-2" onclick="event.stopPropagation()"></a></h3>
             <p>...</p>
-            <h6 id="heading-level-6-2">Heading level 6<span id="heading-level-6-2" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-6-2" onclick="event.stopPropagation()"></a></h6>
+            <h6 id="heading-level-6-2"><span id="heading-level-6-2" class="anchor"></span>Heading level 6<a class="fa fa-anchor" href="#heading-level-6-2" onclick="event.stopPropagation()"></a></h6>
           </span>
         </div>
         <hr>
         <div>
-          <h2 id="paragraphs">Paragraphs<span id="paragraphs" class="anchor"></span><a class="fa fa-anchor" href="#paragraphs" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="paragraphs"><span id="paragraphs" class="anchor"></span>Paragraphs<a class="fa fa-anchor" href="#paragraphs" onclick="event.stopPropagation()"></a></h2>
           <p>Use one or more empty lines to separate paragraphs.</p>
           <div>
 
@@ -232,8 +233,8 @@
         </div>
         <hr>
         <div>
-          <h2 id="line-breaks">Line Breaks<span id="line-breaks" class="anchor"></span><a class="fa fa-anchor" href="#line-breaks" onclick="event.stopPropagation()"></a></h2>
-          <p>The preferred way to indicate line breaks is to use a <code v-pre>&lt;br&gt;</code> tag.</p>
+          <h2 id="line-breaks"><span id="line-breaks" class="anchor"></span>Line Breaks<a class="fa fa-anchor" href="#line-breaks" onclick="event.stopPropagation()"></a></h2>
+          <p>The preferred way to indicate line breaks is to use a <code class="hljs inline no-lang" v-pre>&lt;br&gt;</code> tag.</p>
           <div>
 
 
@@ -260,7 +261,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="text-styles">Text Styles<span id="text-styles" class="anchor"></span><a class="fa fa-anchor" href="#text-styles" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="text-styles"><span id="text-styles" class="anchor"></span>Text Styles<a class="fa fa-anchor" href="#text-styles" onclick="event.stopPropagation()"></a></h2>
           <p>Markdown text styles:</p>
           <span id="main-example-markdown">
             <div>
@@ -278,7 +279,7 @@
               <p><span class="dimmed">OUTPUT:</span></p>
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
-                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code v-pre>Inline Code</code></p>
+                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code class="hljs inline no-lang" v-pre>Inline Code</code></p>
                 </box>
               </div>
             </div>
@@ -333,14 +334,14 @@
             ```
           </span>
           <span id="examples" class="d-none">
-            <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code v-pre>Inline Code</code>
+            <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code class="hljs inline no-lang" v-pre>Inline Code</code>
               <s>Strike through</s>, <strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span>, Super<sup>script</sup>, Sub<sub>script</sub></p>
           </span>
           <p></p>
         </div>
         <hr>
         <div>
-          <h2 id="blockquotes">Blockquotes<span id="blockquotes" class="anchor"></span><a class="fa fa-anchor" href="#blockquotes" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="blockquotes"><span id="blockquotes" class="anchor"></span>Blockquotes<a class="fa fa-anchor" href="#blockquotes" onclick="event.stopPropagation()"></a></h2>
           <div>
 
 
@@ -371,7 +372,7 @@
               </box>
             </div>
           </div>
-          <p>Alternatively, you can use <code v-pre>&lt;blockquote&gt;</code> tags:</p>
+          <p>Alternatively, you can use <code class="hljs inline no-lang" v-pre>&lt;blockquote&gt;</code> tags:</p>
           <div>
 
 
@@ -427,7 +428,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="lists">Lists<span id="lists" class="anchor"></span><a class="fa fa-anchor" href="#lists" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="lists"><span id="lists" class="anchor"></span>Lists<a class="fa fa-anchor" href="#lists" onclick="event.stopPropagation()"></a></h2>
           <p><strong><strong>Unordered lists:</strong></strong></p>
           <div>
 
@@ -636,8 +637,11 @@
         </div>
         <hr>
         <div>
-          <h2 id="code">Code<span id="code" class="anchor"></span><a class="fa fa-anchor" href="#code" onclick="event.stopPropagation()"></a></h2>
-          <h4 id="fenced-code">Fenced Code<span id="fenced-code" class="anchor"></span><a class="fa fa-anchor" href="#fenced-code" onclick="event.stopPropagation()"></a></h4>
+          <h2 id="code"><span id="code" class="anchor"></span>Code<a class="fa fa-anchor" href="#code" onclick="event.stopPropagation()"></a></h2>
+          <h4 id="themes"><span id="themes" class="anchor"></span>Themes<a class="fa fa-anchor" href="#themes" onclick="event.stopPropagation()"></a></h4>
+          <p>MarkBind can present formatted code blocks, be it fenced or inline, with either <strong>light</strong> or <strong>dark</strong> themes. The default is dark.</p>
+          <p>Refer <a href="/userGuide/siteJsonFile.html#style">here</a> for configuring MarkBind to use a specific theme for the code blocks.</p>
+          <h4 id="fenced-code"><span id="fenced-code" class="anchor"></span>Fenced Code<a class="fa fa-anchor" href="#fenced-code" onclick="event.stopPropagation()"></a></h4>
           <p>MarkBind provides several features, some of which are added on top of the existing functionality of Markdown's <em>fenced code blocks</em>.</p>
           <p><small>More info: <a href="https://www.markdownguide.org/extended-syntax#fenced-code-blocks">https://www.markdownguide.org/extended-syntax#fenced-code-blocks</a></small></p>
           <p>Features:</p>
@@ -647,7 +651,7 @@
             <li>Line highlighting</li>
             <li>Code block headers</li>
           </ul>
-          <h5 id="syntax-coloring">Syntax coloring<span id="syntax-coloring" class="anchor"></span><a class="fa fa-anchor" href="#syntax-coloring" onclick="event.stopPropagation()"></a></h5>
+          <h5 id="syntax-coloring"><span id="syntax-coloring" class="anchor"></span>Syntax coloring<a class="fa fa-anchor" href="#syntax-coloring" onclick="event.stopPropagation()"></a></h5>
           <p>To enable syntax coloring, specify a language next to the backticks before the fenced code block.
             <span id="main-example"></span></p>
           <div>
@@ -677,8 +681,8 @@
             </div>
           </div>
 
-          <h5 id="line-numbering">Line numbering<span id="line-numbering" class="anchor"></span><a class="fa fa-anchor" href="#line-numbering" onclick="event.stopPropagation()"></a></h5>
-          <p>Line numbers are provided by default. To hide line numbers, add the class <code v-pre>no-line-numbers</code> to the code block as below</p>
+          <h5 id="line-numbering"><span id="line-numbering" class="anchor"></span>Line numbering<a class="fa fa-anchor" href="#line-numbering" onclick="event.stopPropagation()"></a></h5>
+          <p>Line numbers are provided by default. To hide line numbers, add the class <code class="hljs inline no-lang" v-pre>no-line-numbers</code> to the code block as below</p>
           <div>
 
 
@@ -705,7 +709,7 @@
               </box>
             </div>
           </div>
-          <p>You can have your line numbers start with a value other than <code v-pre>1</code> with the <code v-pre>start-from</code> attribute.</p>
+          <p>You can have your line numbers start with a value other than <code class="hljs inline no-lang" v-pre>1</code> with the <code class="hljs inline no-lang" v-pre>start-from</code> attribute.</p>
           <div>
 
 
@@ -732,8 +736,16 @@
               </box>
             </div>
           </div>
-          <h5 id="line-highlighting">Line highlighting<span id="line-highlighting" class="anchor"></span><a class="fa fa-anchor" href="#line-highlighting" onclick="event.stopPropagation()"></a></h5>
-          <p>To highlight lines, add the attribute <code v-pre>highlight-lines</code> with the line numbers as value, as shown below. You can specify ranges or individual line numbers.</p>
+          <h5 id="line-highlighting"><span id="line-highlighting" class="anchor"></span>Line highlighting<a class="fa fa-anchor" href="#line-highlighting" onclick="event.stopPropagation()"></a></h5>
+          <p>To highlight lines, add the attribute <code class="hljs inline no-lang" v-pre>highlight-lines</code> as shown below.</p>
+          <p>You can specify highlighting in many different ways, depending on how you want it to be. There are two main variants:</p>
+          <p><strong>Text-only highlighting</strong></p>
+          <p>To highlight only the text portion of the line, you can just use the line numbers as is.</p>
+          <p>For ranges of lines, join the two line numbers with a dash sign (<code class="hljs inline no-lang" v-pre>-</code>).</p>
+          <p><strong>Whole-line highlighting</strong></p>
+          <p>If you wish to highlight a full line (including whitespaces) or ranges of it, you can leverage MarkBind's own <em>line-slice</em> syntax. Line-slices are in the form of <code class="hljs inline no-lang" v-pre>lineNumber[:]</code>, e.g. <code class="hljs inline no-lang" v-pre>2[:]</code>.</p>
+          <p>This variant's format is very similar to the previous, but instead use line-slices rather than line numbers.</p>
+          <p>For ranges, you only need to use line-slices on either ends.</p>
           <div>
 
 
@@ -743,7 +755,7 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>java {highlight-lines="2,4,6-8"}
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>java {highlight-lines="1,3[:],6-8,10[:]-12"}
 </span><span>import java.util.List;
 </span><span>
 </span><span>public class Inventory {
@@ -751,6 +763,10 @@
 </span><span>
 </span><span><span class="hljs-code">    public int getItemCount(){</span>
 </span><span><span class="hljs-code">        return items.size();</span>
+</span><span><span class="hljs-code">    }</span>
+</span><span><span class="hljs-code">    </span>
+</span><span><span class="hljs-code">    public bool isEmpty() {</span>
+</span><span><span class="hljs-code">        return items.isEmpty();</span>
 </span><span><span class="hljs-code">    }</span>
 </span><span>
 </span><span><span class="hljs-code">    //...</span>
@@ -761,13 +777,17 @@
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <pre><code class="hljs java" v-pre><span><span class="hljs-keyword">import</span> java.util.List;
-</span><span class="highlighted">
-</span><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inventory</span> </span>{
-</span><span class="highlighted">    <span class="hljs-keyword">private</span> List&lt;Item&gt; items;
+                <pre><code class="hljs java" v-pre><span><span class="highlighted"><span class="hljs-keyword">import</span> java.util.List;</span>
 </span><span>
-</span><span class="highlighted">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getItemCount</span><span class="hljs-params">()</span></span>{
-</span><span class="highlighted">        <span class="hljs-keyword">return</span> items.size();
+</span><span class="highlighted"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Inventory</span> </span>{
+</span><span>    <span class="hljs-keyword">private</span> List&lt;Item&gt; items;
+</span><span>
+</span><span>    <span class="highlighted"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getItemCount</span><span class="hljs-params">()</span></span>{</span>
+</span><span>        <span class="highlighted"><span class="hljs-keyword">return</span> items.size();</span>
+</span><span>    <span class="highlighted">}</span>
+</span><span>    
+</span><span class="highlighted">    <span class="hljs-function"><span class="hljs-keyword">public</span> bool <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+</span><span class="highlighted">        <span class="hljs-keyword">return</span> items.isEmpty();
 </span><span class="highlighted">    }
 </span><span>
 </span><span>    <span class="hljs-comment">//...</span>
@@ -776,8 +796,8 @@
               </box>
             </div>
           </div>
-          <h5 id="heading">Heading<span id="heading" class="anchor"></span><a class="fa fa-anchor" href="#heading" onclick="event.stopPropagation()"></a></h5>
-          <p>To add a heading, add the attribute <code v-pre>heading</code> with the heading text as the value, as shown below.</p>
+          <h5 id="heading"><span id="heading" class="anchor"></span>Heading<a class="fa fa-anchor" href="#heading" onclick="event.stopPropagation()"></a></h5>
+          <p>To add a heading, add the attribute <code class="hljs inline no-lang" v-pre>heading</code> with the heading text as the value, as shown below.</p>
           <div>
 
 
@@ -809,7 +829,7 @@
               </box>
             </div>
           </div>
-          <p>Headings support inline Markdown, except for <code v-pre>Inline Code</code> and <span class="dimmed">Dim</span> text styles.</p>
+          <p>Headings support inline Markdown, except for <code class="hljs inline no-lang" v-pre>Inline Code</code> and <span class="dimmed">Dim</span> text styles.</p>
           <div>
 
 
@@ -837,7 +857,7 @@
               </box>
             </div>
           </div>
-          <h5 id="using-multiple-features">Using multiple features<span id="using-multiple-features" class="anchor"></span><a class="fa fa-anchor" href="#using-multiple-features" onclick="event.stopPropagation()"></a></h5>
+          <h5 id="using-multiple-features"><span id="using-multiple-features" class="anchor"></span>Using multiple features<a class="fa fa-anchor" href="#using-multiple-features" onclick="event.stopPropagation()"></a></h5>
           <p>You can also use multiple features together, as shown below.</p>
           <div>
 
@@ -862,7 +882,7 @@
                   <div class="code-block-heading"><span>Heading title</span></div>
                   <div class="code-block-content">
                     <pre><code heading="Heading title" class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span class="highlighted">  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span>  <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
                   </div>
@@ -870,8 +890,8 @@
               </box>
             </div>
           </div>
-          <h4 id="inline-code">Inline Code<span id="inline-code" class="anchor"></span><a class="fa fa-anchor" href="#inline-code" onclick="event.stopPropagation()"></a></h4>
-          <h5 id="syntax-coloring-2">Syntax coloring<span id="syntax-coloring-2" class="anchor"></span><a class="fa fa-anchor" href="#syntax-coloring-2" onclick="event.stopPropagation()"></a></h5>
+          <h4 id="inline-code"><span id="inline-code" class="anchor"></span>Inline Code<a class="fa fa-anchor" href="#inline-code" onclick="event.stopPropagation()"></a></h4>
+          <h5 id="syntax-coloring-2"><span id="syntax-coloring-2" class="anchor"></span>Syntax coloring<a class="fa fa-anchor" href="#syntax-coloring-2" onclick="event.stopPropagation()"></a></h5>
           <p>MarkBind can apply syntax-coloring on inline code too.</p>
           <div>
 
@@ -916,8 +936,8 @@
         </div>
         <hr>
         <div>
-          <h2 id="horizontal-rules">Horizontal Rules<span id="horizontal-rules" class="anchor"></span><a class="fa fa-anchor" href="#horizontal-rules" onclick="event.stopPropagation()"></a></h2>
-          <p>Use three or more asterisks (<code v-pre>***</code>), dashes (<code v-pre>---</code>), or underscores (<code v-pre>___</code>) to indicate a horizontal line.</p>
+          <h2 id="horizontal-rules"><span id="horizontal-rules" class="anchor"></span>Horizontal Rules<a class="fa fa-anchor" href="#horizontal-rules" onclick="event.stopPropagation()"></a></h2>
+          <p>Use three or more asterisks (<code class="hljs inline no-lang" v-pre>***</code>), dashes (<code class="hljs inline no-lang" v-pre>---</code>), or underscores (<code class="hljs inline no-lang" v-pre>___</code>) to indicate a horizontal line.</p>
           <div>
 
 
@@ -953,7 +973,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="links">Links<span id="links" class="anchor"></span><a class="fa fa-anchor" href="#links" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="links"><span id="links" class="anchor"></span>Links<a class="fa fa-anchor" href="#links" onclick="event.stopPropagation()"></a></h2>
           <p>Basic style:</p>
           <span id="main-example">
             <div>
@@ -999,19 +1019,30 @@
             </div>
           </div>
           <p><small>More info: <a href="https://www.markdownguide.org/basic-syntax#links">https://www.markdownguide.org/basic-syntax#links</a></small></p>
-          <h4 id="intra-site-links">Intra-Site Links<span id="intra-site-links" class="anchor"></span><a class="fa fa-anchor" href="#intra-site-links" onclick="event.stopPropagation()"></a></h4>
+          <h4 id="intra-site-links"><span id="intra-site-links" class="anchor"></span>Intra-Site Links<a class="fa fa-anchor" href="#intra-site-links" onclick="event.stopPropagation()"></a></h4>
           <div id="intraSiteLinks">
             <p>Links to files of the generated site (e.g., an HTML page or an image file) can be specified either as relative paths or absolute paths.</p>
+            <p><strong><strong>Auto-conversion of extension</strong></strong></p>
+            <div class="indented">
+              <p>You may link to markdown files using its original extension (<strong>.md</strong>) as it will automatically be converted to a html extension (<strong>.html</strong>) when the site is generated.</p>
+              <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
+                <code class="hljs inline no-lang" v-pre>Click [here](index.md)</code> --- <em>auto-conversion</em> ---&gt; <code class="hljs inline no-lang" v-pre>Click [here](index.html)</code></p>
+              <box type="warning">
+                <p>If you wish to disable the auto-conversion, you may use the <code class="hljs inline no-lang" v-pre>no-convert</code> attribute in your link.</p>
+                <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
+                  <code class="hljs inline no-lang" v-pre>Click [here](index.md) {.no-convert}</code></p>
+              </box>
+            </div>
             <p><strong><strong>Absolute paths</strong></strong></p>
             <div class="indented">
-              <p>Links should start with <code v-pre>{{ baseUrl }}</code> (which represents the root directory of the site).</p>
-              <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the <code v-pre>{{ baseUrl }}</code>:</p>
+              <p>Links should start with <code class="hljs inline no-lang" v-pre>{{ baseUrl }}</code> (which represents the root directory of the site).</p>
+              <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how to specify a link to (1) a page, and (2) an image, using the <code class="hljs inline no-lang" v-pre>{{ baseUrl }}</code>:</p>
               <ol>
-                <li><code v-pre>Click [here]({{ baseUrl }}/userGuide/reusingContents.html).</code></li>
-                <li><code v-pre>![]({{ baseUrl }}/images/preview.png)</code></li>
+                <li><code class="hljs inline no-lang" v-pre>Click [here]({{ baseUrl }}/userGuide/reusingContents.html).</code></li>
+                <li><code class="hljs inline no-lang" v-pre>![]({{ baseUrl }}/images/preview.png)</code></li>
               </ol>
               <box type="important">
-                <p>To ensure that links in the <code v-pre>_markbind/</code> folder work correctly across the entire site, they should be written as absolute paths, prepended with <code v-pre>{{ baseUrl }}</code>.
+                <p>To ensure that links in the <code v-pre>_markbind/</code> folder work correctly across the entire site, they should be written as absolute paths, prepended with <code class="hljs inline no-lang" v-pre>{{ baseUrl }}</code>.
                 </p>
               </box>
               <p></p>
@@ -1027,19 +1058,19 @@
 </span><span>  ├── index.md
 </span><span>  └── site.json
 </span></code></pre>
-              <p>Within <code v-pre>textbook/subsite.md</code>, we can refer to the image using:</p>
+              <p>Within <code class="hljs inline no-lang" v-pre>textbook/subsite.md</code>, we can refer to the image using:</p>
               <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
 </span><span><span class="hljs-comment">&lt;!-- or --&gt;</span>
 </span><span>![](image.png)
 </span></code></pre>
-              <p>Within <code v-pre>index.md</code>, we can also display the image using</p>
+              <p>Within <code class="hljs inline no-lang" v-pre>index.md</code>, we can also display the image using</p>
               <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
 </span><span><span class="hljs-comment">&lt;!-- or --&gt;</span>
 </span><span>![](textbook/image.png)
 </span></code></pre>
               <box type="warning">
                 <p>Relative links to resources (e.g. images, hrefs) should be valid <strong>relative to the file where the link is defined</strong>.</p>
-                <p>In the example above, <code v-pre>image.png</code> is in the same directory as <code v-pre>subsite.md</code>. Thus, the correct path is <code v-pre>image.png</code> and not <code v-pre>textbook/image.png</code>.
+                <p>In the example above, <code class="hljs inline no-lang" v-pre>image.png</code> is in the same directory as <code class="hljs inline no-lang" v-pre>subsite.md</code>. Thus, the correct path is <code class="hljs inline no-lang" v-pre>image.png</code> and not <code class="hljs inline no-lang" v-pre>textbook/image.png</code>.
                 </p>
               </box>
               <p></p>
@@ -1060,7 +1091,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="footnotes">Footnotes<span id="footnotes" class="anchor"></span><a class="fa fa-anchor" href="#footnotes" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="footnotes"><span id="footnotes" class="anchor"></span>Footnotes<a class="fa fa-anchor" href="#footnotes" onclick="event.stopPropagation()"></a></h2>
           <span id="main-example-markbind">
             <div>
 
@@ -1104,7 +1135,7 @@
           <box type="warning">
             <p>Normal footnotes won't work when used inside the attributes of markbind components!
               <br>
-              For example, it won't work in the <code v-pre>header</code> attribute of <a href="/userGuide/usingComponents.html#panels">panels</a>.
+              For example, it won't work in the <code class="hljs inline no-lang" v-pre>header</code> attribute of <a href="/userGuide/usingComponents.html#panels">panels</a>.
             </p>
           </box>
           <p></p>
@@ -1124,7 +1155,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="images">Images<span id="images" class="anchor"></span><a class="fa fa-anchor" href="#images" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="images"><span id="images" class="anchor"></span>Images<a class="fa fa-anchor" href="#images" onclick="event.stopPropagation()"></a></h2>
           <div>
 
 
@@ -1158,10 +1189,10 @@
         </div>
         <hr>
         <div>
-          <h2 id="classes-attributes-and-amp-identifiers">Classes, Attributes &amp; Identifiers<span id="classes-attributes-and-amp-identifiers" class="anchor"></span><a class="fa fa-anchor" href="#classes-attributes-and-amp-identifiers" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="classes-attributes-and-amp-identifiers"><span id="classes-attributes-and-amp-identifiers" class="anchor"></span>Classes, Attributes &amp; Identifiers<a class="fa fa-anchor" href="#classes-attributes-and-amp-identifiers" onclick="event.stopPropagation()"></a></h2>
           <p>Most markdown syntax above this section supports adding classes, attributes and identifiers
             using <a href="https://pandoc.org/MANUAL.html">pandoc</a> syntax without the need for a wrapper html element.</p>
-          <p>The syntax is <code v-pre>{.class-name attribute=&quot;value&quot; attribute=value #id}</code>, which is placed at different locations depending
+          <p>The syntax is <code class="hljs inline no-lang" v-pre>{.class-name attribute=&quot;value&quot; attribute=value #id}</code>, which is placed at different locations depending
             on the type of markdown.</p>
           <div>
 
@@ -1189,14 +1220,14 @@
               <box border-left-color="grey" background-color="white">
                 <p class="text-success" id="attribute-example">Apply classes, attributes, identifiers to block level markdown (eg. paragraphs, headings)
                   by leaving a space before '{'</p>
-                <h4 class="text-info" id="heading-2">heading<span id="heading-2" class="anchor"></span><a class="fa fa-anchor" href="#heading-2" onclick="event.stopPropagation()"></a></h4>
+                <h4 class="text-info" id="heading-2"><span id="heading-2" class="anchor"></span>heading<a class="fa fa-anchor" href="#heading-2" onclick="event.stopPropagation()"></a></h4>
                 <hr class="border-danger">
                 <p>Apply the same to inline markdown (eg. bold text) by
                   omitting the <strong class="text-primary bg-light" header="attributes example">space</strong></p>
               </box>
             </div>
           </div>
-          <p class="mb-4">Some other types of markdown have <strong>different placements</strong> of the curly group <code v-pre>{...}</code>.</p>
+          <p class="mb-4">Some other types of markdown have <strong>different placements</strong> of the curly group <code class="hljs inline no-lang" v-pre>{...}</code>.</p>
           <p><strong><strong>Unordered and Ordered lists</strong></strong></p>
           <div>
 
@@ -1261,7 +1292,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="tables">Tables<span id="tables" class="anchor"></span><a class="fa fa-anchor" href="#tables" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="tables"><span id="tables" class="anchor"></span>Tables<a class="fa fa-anchor" href="#tables" onclick="event.stopPropagation()"></a></h2>
           <div>
 
 
@@ -1317,7 +1348,7 @@
             </div>
           </div>
           <ul>
-            <li>Colons (<code v-pre>:</code>) in the 2nd line are optional and they indicates whether to left/center/right-align the values in that column.</li>
+            <li>Colons (<code class="hljs inline no-lang" v-pre>:</code>) in the 2nd line are optional and they indicates whether to left/center/right-align the values in that column.</li>
             <li>There is no need to align pipe symbols to be on a vertical line; it's just for aesthetic purposes only.</li>
           </ul>
           <p><small>More info: <a href="https://www.markdownguide.org/extended-syntax#tables">https://www.markdownguide.org/extended-syntax#tables</a></small></p>
@@ -1365,7 +1396,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="emoji">Emoji<span id="emoji" class="anchor"></span><a class="fa fa-anchor" href="#emoji" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="emoji"><span id="emoji" class="anchor"></span>Emoji<a class="fa fa-anchor" href="#emoji" onclick="event.stopPropagation()"></a></h2>
           <span id="main-example">
             <div>
 
@@ -1388,7 +1419,7 @@
             </div>
           </span>
           <div class="indented">
-            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> <a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md">the list of supported emoji</a>.</span></p>
+            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> <a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.html">the list of supported emoji</a>.</span></p>
           </div>
           <span id="short" class="d-none">
             <pre><code class="hljs markdown" v-pre><span>:+1: :exclamation: :x: :construction:
@@ -1401,7 +1432,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="icons">Icons<span id="icons" class="anchor"></span><a class="fa fa-anchor" href="#icons" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="icons"><span id="icons" class="anchor"></span>Icons<a class="fa fa-anchor" href="#icons" onclick="event.stopPropagation()"></a></h2>
           <p><small><span class="dimmed">Acknowledgement: Font Awesome icons are provided by <a href="https://fontawesome.com/">Font Awesome</a> under their <a href="https://fontawesome.com/license">free license</a>, Glyphicons are provided by <a href="https://glyphicons.com/">Glyphicons</a> via <a href="https://getbootstrap.com/docs/3.3/">Bootstrap 3</a>, and <a href="https://octicons.github.com">Octicons</a> are copyright of GitHub.</span></small></p>
           <p>MarkBind supports using Font Icons provided by Font Awesome, Glyphicons and GitHub's Octicons.</p>
           <div>
@@ -1415,12 +1446,12 @@
             </box>
           </div>
           <box type="important">
-            <p>The syntax for icons has changed, and the earlier <code v-pre>{{ prefix_name }}</code> syntax has been deprecated. <br>
-              Please use the new <code v-pre>:prefix-name:</code> syntax instead.
+            <p>The syntax for icons has changed, and the earlier <code class="hljs inline no-lang" v-pre>{{ prefix_name }}</code> syntax has been deprecated. <br>
+              Please use the new <code class="hljs inline no-lang" v-pre>:prefix-name:</code> syntax instead.
             </p>
           </box>
           <p></p>
-          <h6 id="using-font-awesome-icons">Using Font Awesome Icons<span id="using-font-awesome-icons" class="anchor"></span><a class="fa fa-anchor" href="#using-font-awesome-icons" onclick="event.stopPropagation()"></a></h6>
+          <h6 id="using-font-awesome-icons"><span id="using-font-awesome-icons" class="anchor"></span>Using Font Awesome Icons<a class="fa fa-anchor" href="#using-font-awesome-icons" onclick="event.stopPropagation()"></a></h6>
           <ol>
             <li>
               <p>Decide which icon you want to use from the <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">list of available icons</a>.</p>
@@ -1429,21 +1460,21 @@
               <p>Construct the MarkBind name for the selected icon by adding the <em>type prefix</em>.
                 Note: Font Awesome has three different styles for their icons, each with their own type prefix. Here is an example from each type:</p>
               <ul>
-                <li><em>Solid</em> (prefix: <code v-pre>fas-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code v-pre>file-code</code>, MarkBind name <code v-pre>fas-file-code</code>)</li>
-                <li><em>Regular</em> (prefix: <code v-pre>far-</code>) e.g., <span aria-hidden="true" class="far fa-file-code"></span> (actual name <code v-pre>file-code</code>, MarkBind name <code v-pre>far-file-code</code>)</li>
-                <li><em>Brands</em> (prefix: <code v-pre>fab-</code>): e.g., <span aria-hidden="true" class="fab fa-github-alt"></span> (actual name <code v-pre>github-alt</code>, MarkBind name <code v-pre>fab-github-alt</code>)</li>
+                <li><em>Solid</em> (prefix: <code class="hljs inline no-lang" v-pre>fas-</code>) e.g., <span aria-hidden="true" class="fas fa-file-code"></span> (actual name <code class="hljs inline no-lang" v-pre>file-code</code>, MarkBind name <code class="hljs inline no-lang" v-pre>fas-file-code</code>)</li>
+                <li><em>Regular</em> (prefix: <code class="hljs inline no-lang" v-pre>far-</code>) e.g., <span aria-hidden="true" class="far fa-file-code"></span> (actual name <code class="hljs inline no-lang" v-pre>file-code</code>, MarkBind name <code class="hljs inline no-lang" v-pre>far-file-code</code>)</li>
+                <li><em>Brands</em> (prefix: <code class="hljs inline no-lang" v-pre>fab-</code>): e.g., <span aria-hidden="true" class="fab fa-github-alt"></span> (actual name <code class="hljs inline no-lang" v-pre>github-alt</code>, MarkBind name <code class="hljs inline no-lang" v-pre>fab-github-alt</code>)</li>
               </ul>
             </li>
             <li>
               <p>Insert MarkBind name for the icon enclosed within colons to get the icon in your page.<br>
-                <code v-pre>Create a **branch**</code><code v-pre>:<span></span>fas-code-branch: now!</code> → Create a <strong>branch</strong> <span aria-hidden="true" class="fas fa-code-branch"></span> now!</p>
+                <code class="hljs inline no-lang" v-pre>Create a **branch**</code><code v-pre>:<span></span>fas-code-branch: now!</code> → Create a <strong>branch</strong> <span aria-hidden="true" class="fas fa-code-branch"></span> now!</p>
             </li>
           </ol>
-          <h6 id="using-glyphicons">Using Glyphicons<span id="using-glyphicons" class="anchor"></span><a class="fa fa-anchor" href="#using-glyphicons" onclick="event.stopPropagation()"></a></h6>
+          <h6 id="using-glyphicons"><span id="using-glyphicons" class="anchor"></span>Using Glyphicons<a class="fa fa-anchor" href="#using-glyphicons" onclick="event.stopPropagation()"></a></h6>
           <ol>
             <li>Decide which icon you want to use from <a href="https://getbootstrap.com/docs/3.3/components/#glyphicons">list of provided glyphicons</a>.</li>
             <li>Insert the name for the icon enclosed within colons to get the icon in your page.<br>
-              <code v-pre>Move to the right!</code><code v-pre>:<span></span>glyphicon-hand-right:</code> → Move to the right! <span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span></li>
+              <code class="hljs inline no-lang" v-pre>Move to the right!</code><code v-pre>:<span></span>glyphicon-hand-right:</code> → Move to the right! <span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span></li>
           </ol>
           <span id="short" class="d-none">
             <p><code v-pre>:<span></span>glyphicon-hand-right:</code> <code v-pre>:<span></span>fab-github:</code> <code v-pre>:<span></span>fas-home:</code></p>
@@ -1452,21 +1483,21 @@
             <p><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span> <span class="dimmed"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span></span> <span style="color: red"><span aria-hidden="true" class="glyphicon glyphicon-hand-right"></span> <span aria-hidden="true" class="fab fa-github"></span> <span aria-hidden="true" class="fas fa-home"></span></span></p>
           </span>
           <p></p>
-          <h6 id="using-octicons">Using Octicons<span id="using-octicons" class="anchor"></span><a class="fa fa-anchor" href="#using-octicons" onclick="event.stopPropagation()"></a></h6>
+          <h6 id="using-octicons"><span id="using-octicons" class="anchor"></span>Using Octicons<a class="fa fa-anchor" href="#using-octicons" onclick="event.stopPropagation()"></a></h6>
           <ol>
             <li>Decide which icon you want to use from <a href="https://octicons.github.com">list of available Octicons</a>.</li>
             <li>Insert the name for the icon enclosed within colons to get the icon in your page.<br>
-              <code v-pre>Merge a **pull request** :octicon-git-pull-request:</code> → Merge a <strong>pull request</strong> <svg version="1.1" width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-git-pull-request" aria-hidden="true">
+              <code class="hljs inline no-lang" v-pre>Merge a **pull request** :octicon-git-pull-request:</code> → Merge a <strong>pull request</strong> <svg version="1.1" width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-git-pull-request" aria-hidden="true">
                 <path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0010 15a1.993 1.993 0 001-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 00-1 3.72v6.56A1.993 1.993 0 002 15a1.993 1.993 0 001-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z" /></svg></li>
-            <li>You may also append <code v-pre>~class-name</code> to the end of the octicon name to add <code v-pre>class=&quot;class-name&quot;</code> property to your Octicon (e.g. <code v-pre>:octicon-git-pull-request~icon-large-red:</code> will generate an Octicon of class <em>icon-large-red</em>). You may then add corresponding CSS to <code v-pre>{root}/_markbind/layouts/{layout-name}/styles.css</code> to customize the style of your Octicon.</li>
-            <li>If your background is dark, you may use <code v-pre>:octiconlight-*:</code> to render the icon as white.</li>
+            <li>You may also append <code class="hljs inline no-lang" v-pre>~class-name</code> to the end of the octicon name to add <code class="hljs inline no-lang" v-pre>class=&quot;class-name&quot;</code> property to your Octicon (e.g. <code class="hljs inline no-lang" v-pre>:octicon-git-pull-request~icon-large-red:</code> will generate an Octicon of class <em>icon-large-red</em>). You may then add corresponding CSS to <code class="hljs inline no-lang" v-pre>{root}/_markbind/layouts/{layout-name}/styles.css</code> to customize the style of your Octicon.</li>
+            <li>If your background is dark, you may use <code class="hljs inline no-lang" v-pre>:octiconlight-*:</code> to render the icon as white.</li>
           </ol>
         </div>
         <hr>
         <div>
-          <h2 id="embeds">Embeds<span id="embeds" class="anchor"></span><a class="fa fa-anchor" href="#embeds" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="embeds"><span id="embeds" class="anchor"></span>Embeds<a class="fa fa-anchor" href="#embeds" onclick="event.stopPropagation()"></a></h2>
           <p><strong>There are easy ways to embed media content such as YouTube videos and PowerPoint slides</strong>.</p>
-          <h6 id="embedding-youtube-videos">Embedding Youtube Videos<span id="embedding-youtube-videos" class="anchor"></span><a class="fa fa-anchor" href="#embedding-youtube-videos" onclick="event.stopPropagation()"></a></h6>
+          <h6 id="embedding-youtube-videos"><span id="embedding-youtube-videos" class="anchor"></span>Embedding Youtube Videos<a class="fa fa-anchor" href="#embedding-youtube-videos" onclick="event.stopPropagation()"></a></h6>
           <p>Here are three ways of embedding YouTube videos and one example of how it will look in the page.</p>
 
           <div>
@@ -1485,7 +1516,7 @@
             </div>
           </div>
           <p>More media blocks, embedding services and additional options can be found in <a href="https://github.com/rotorz/markdown-it-block-embed">Markdown-it documentation</a>.</p>
-          <h6 id="embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online">Embedding Powerpoint Slides (using the embed url from Powerpoint online)<span id="embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online" class="anchor"></span><a class="fa fa-anchor" href="#embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online" onclick="event.stopPropagation()"></a></h6>
+          <h6 id="embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online"><span id="embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online" class="anchor"></span>Embedding Powerpoint Slides (using the embed url from Powerpoint online)<a class="fa fa-anchor" href="#embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online" onclick="event.stopPropagation()"></a></h6>
           <p>Here is an example of embedding a PowerPoint slide deck:</p>
           <div>
 
@@ -1522,7 +1553,7 @@
         </div>
         <hr>
         <div>
-          <h2 id="dates">Dates<span id="dates" class="anchor"></span><a class="fa fa-anchor" href="#dates" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="dates"><span id="dates" class="anchor"></span>Dates<a class="fa fa-anchor" href="#dates" onclick="event.stopPropagation()"></a></h2>
           <p><strong>Markbind supports date formatting and simple calculations</strong> as a Nunjucks <a href="https://mozilla.github.io/nunjucks/templating.html#filters">filter</a>.</p>
           <p><strong>Syntax:</strong> <code v-pre>{<a></a>{ baseDate | date(format, daysToAdd) }}</code></p>
           <span id="main-example">
@@ -1532,32 +1563,32 @@
           </span>
           <p></p>
           <box type="info">
-            <p>The baseDate follows the format: <code v-pre>YYYY-MM-DD</code></p>
-            <p>The default output format is <code v-pre>&quot;ddd D MMM&quot;</code> e.g. Fri 6 Mar
+            <p>The baseDate follows the format: <code class="hljs inline no-lang" v-pre>YYYY-MM-DD</code></p>
+            <p>The default output format is <code class="hljs inline no-lang" v-pre>&quot;ddd D MMM&quot;</code> e.g. Fri 6 Mar
             </p>
           </box>
           <p></p>
-          <h3 id="using-variables">Using variables<span id="using-variables" class="anchor"></span><a class="fa fa-anchor" href="#using-variables" onclick="event.stopPropagation()"></a></h3>
+          <h3 id="using-variables"><span id="using-variables" class="anchor"></span>Using variables<a class="fa fa-anchor" href="#using-variables" onclick="event.stopPropagation()"></a></h3>
           <p><code v-pre>{<a></a>% set base1 = &quot;2020-01-01&quot; %}</code> <br>
             <code v-pre>{<a></a>% set format1 = &quot;DD MM YYYY&quot; %}</code> <br>
             <code v-pre>{<a></a>% set format2 = &quot;ddd Do MMM (DD/MM/YYYY)&quot; %}</code></p>
           <p><code v-pre>{<a></a>{ base1 | date }}</code> <span aria-hidden="true" class="glyphicon glyphicon-arrow-right"></span> Wed 1 Jan<br></p>
-          <h4 id="custom-formatting">Custom formatting<span id="custom-formatting" class="anchor"></span><a class="fa fa-anchor" href="#custom-formatting" onclick="event.stopPropagation()"></a></h4>
+          <h4 id="custom-formatting"><span id="custom-formatting" class="anchor"></span>Custom formatting<a class="fa fa-anchor" href="#custom-formatting" onclick="event.stopPropagation()"></a></h4>
           <p><code v-pre>{<a></a>{ base1 | date(format1) }}</code> <span aria-hidden="true" class="glyphicon glyphicon-arrow-right"></span> 01 01 2020<br></p>
-          <h4 id="adding-days">Adding days<span id="adding-days" class="anchor"></span><a class="fa fa-anchor" href="#adding-days" onclick="event.stopPropagation()"></a></h4>
+          <h4 id="adding-days"><span id="adding-days" class="anchor"></span>Adding days<a class="fa fa-anchor" href="#adding-days" onclick="event.stopPropagation()"></a></h4>
           <p><code v-pre>{<a></a>{ base1 | date(format2, 0) }}</code> <span aria-hidden="true" class="glyphicon glyphicon-arrow-right"></span> Wed 1st Jan (01/01/2020)<br>
             <code v-pre>{<a></a>{ base1 | date(format2, 10) }}</code> <span aria-hidden="true" class="glyphicon glyphicon-arrow-right"></span> Sat 11th Jan (11/01/2020)<br></p>
-          <h4 id="page-variables">Page variables<span id="page-variables" class="anchor"></span><a class="fa fa-anchor" href="#page-variables" onclick="event.stopPropagation()"></a></h4>
+          <h4 id="page-variables"><span id="page-variables" class="anchor"></span>Page variables<a class="fa fa-anchor" href="#page-variables" onclick="event.stopPropagation()"></a></h4>
           <p>Dates can be supplied using <a href="/userGuide/reusingContents.html#variables">page variables</a> for convenience.</p>
-          <p>Inside <code v-pre>variables.md</code> or referencing page:</p>
+          <p>Inside <code class="hljs inline no-lang" v-pre>variables.md</code> or referencing page:</p>
           <pre><code class="hljs" v-pre><span>&lt;variable name=&quot;date_pagevar&quot;&gt;2020-03-06&lt;/variable&gt;
 </span></code></pre>
           <div></div>
           <p><code v-pre>{<a></a>{ date_pagevar | date(format2) }}</code> <span aria-hidden="true" class="glyphicon glyphicon-arrow-right"></span> Fri 6th Mar (06/03/2020) <br></p>
-          <h3 id="advanced-formatting">Advanced Formatting<span id="advanced-formatting" class="anchor"></span><a class="fa fa-anchor" href="#advanced-formatting" onclick="event.stopPropagation()"></a></h3>
+          <h3 id="advanced-formatting"><span id="advanced-formatting" class="anchor"></span>Advanced Formatting<a class="fa fa-anchor" href="#advanced-formatting" onclick="event.stopPropagation()"></a></h3>
           <p>The output date can be formatted to suit your needs by specifying a format string as an argument to the date filter.</p>
-          <p>Default format: <code v-pre>&quot;ddd D MMM&quot;</code> e.g. Fri 6 Mar</p>
-          <panel><template slot="_header">
+          <p>Default format: <code class="hljs inline no-lang" v-pre>&quot;ddd D MMM&quot;</code> e.g. Fri 6 Mar</p>
+          <panel><template slot="header">
               <p><strong>Brief reference</strong></p>
             </template>
             <div class="table-responsive">
@@ -1620,10 +1651,10 @@
                     <code v-pre>{<a></a>% set base1 = &quot;2019-08-12&quot; %}</code><br>
                     <code v-pre>{<a></a>% set format1 = &quot;DD MM YYYY&quot; %}</code><br>
                     <code v-pre>{<a></a>% set format2 = &quot;ddd Do MM&quot; %}</code><br>
-                    <code v-pre>{<a></a>{ base1 | date }}</code> <code v-pre>&lt;!-- Mon 12 Aug --&gt;</code><br>
-                    <code v-pre>{<a></a>{ base1 | date(format1) }}</code> <code v-pre>&lt;!-- 12 08 2019 --&gt;</code><br>
-                    <code v-pre>{<a></a>{ base1 | date(format1, 10) }}</code> <code v-pre>&lt;!-- 22 08 2019 --&gt;</code><br>
-                    <code v-pre>{<a></a>{ base1 | date(format2, 10) }}</code> <code v-pre>&lt;!-- Thu 22/08 --&gt;</code><br></span></box>
+                    <code v-pre>{<a></a>{ base1 | date }}</code> <code class="hljs inline no-lang" v-pre>&lt;!-- Mon 12 Aug --&gt;</code><br>
+                    <code v-pre>{<a></a>{ base1 | date(format1) }}</code> <code class="hljs inline no-lang" v-pre>&lt;!-- 12 08 2019 --&gt;</code><br>
+                    <code v-pre>{<a></a>{ base1 | date(format1, 10) }}</code> <code class="hljs inline no-lang" v-pre>&lt;!-- 22 08 2019 --&gt;</code><br>
+                    <code v-pre>{<a></a>{ base1 | date(format2, 10) }}</code> <code class="hljs inline no-lang" v-pre>&lt;!-- Thu 22/08 --&gt;</code><br></span></box>
               </p>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -1639,7 +1670,7 @@
           <span id="short" class="d-none">
             <p>
               <box><span>
-                  <code v-pre>{<a></a>{ &quot;2019-08-12&quot; | date(&quot;DD.MM.YYYY&quot;, 10) }}</code> <code v-pre>&lt;!-- 22.08.2019 --&gt;</code><br></span></box>
+                  <code v-pre>{<a></a>{ &quot;2019-08-12&quot; | date(&quot;DD.MM.YYYY&quot;, 10) }}</code> <code class="hljs inline no-lang" v-pre>&lt;!-- 22.08.2019 --&gt;</code><br></span></box>
             </p>
             <p>22.08.2019
             </p>
@@ -1648,11 +1679,11 @@
         </div>
         <hr>
         <div>
-          <h2 id="math-formulae">Math Formulae<span id="math-formulae" class="anchor"></span><a class="fa fa-anchor" href="#math-formulae" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="math-formulae"><span id="math-formulae" class="anchor"></span>Math Formulae<a class="fa fa-anchor" href="#math-formulae" onclick="event.stopPropagation()"></a></h2>
           <p>Markbind supports typesetting TeX math equations. <a href="https://katex.org">KaTeX</a> is used as a fast math renderer.</p>
-          <p>Insert <strong>inline</strong> equations by enclosing them in round brackets <code v-pre>\( ... \)</code>.</p>
-          <p>Insert <strong>display</strong> equations by enclosing them in square brackets <code v-pre>\[ ... \]</code>.</p>
-          <p>Insert numbered <strong>display</strong> equations by enclosing the equation square brackets and the equation number in curly brackets <code v-pre>\[ ... \] (1)</code>.</p>
+          <p>Insert <strong>inline</strong> equations by enclosing them in round brackets <code class="hljs inline no-lang" v-pre>\( ... \)</code>.</p>
+          <p>Insert <strong>display</strong> equations by enclosing them in square brackets <code class="hljs inline no-lang" v-pre>\[ ... \]</code>.</p>
+          <p>Insert numbered <strong>display</strong> equations by enclosing the equation square brackets and the equation number in curly brackets <code class="hljs inline no-lang" v-pre>\[ ... \] (1)</code>.</p>
           <div>
 
 
@@ -1738,7 +1769,7 @@
             </div>
           </div>
           <box type="important">
-            <p>If your equation requires special Nunjucks tags like <code v-pre>{{</code> or <code v-pre>}}</code>,use a
+            <p>If your equation requires special Nunjucks tags like <code class="hljs inline no-lang" v-pre>{{</code> or <code class="hljs inline no-lang" v-pre>}}</code>,use a
               <a href="https://markbind.org/userGuide/tipsAndTricks.html#using-raw-endraw-to-display-content">raw-endraw block</a>:</p>
             <pre><code class="hljs markdown" v-pre><span>{% raw %}\(e^{{\frac{1}{3}} + 1}\){% endraw %}
 </span></code></pre>
@@ -1820,12 +1851,12 @@
         </div>
         <hr>
         <p><strong><strong>Relevant Tips &amp; Tricks</strong></strong></p>
-        <panel><template slot="_header">
+        <panel><template slot="header">
             <p>Escaping Characters</p>
           </template>
           <div>
-            <h5 id="escaping-characters"><span aria-hidden="true" class="fas fa-lightbulb"></span> Escaping Characters<span id="escaping-characters" class="anchor"></span><a class="fa fa-anchor" href="#escaping-characters" onclick="event.stopPropagation()"></a></h5>
-            <p>For Markdown syntax: To display a literal character that are normally used for Markdown formatting, add a backslash (<code v-pre>\</code>) in front of the character.</p>
+            <h5 id="escaping-characters"><span id="escaping-characters" class="anchor"></span><span aria-hidden="true" class="fas fa-lightbulb"></span> Escaping Characters<a class="fa fa-anchor" href="#escaping-characters" onclick="event.stopPropagation()"></a></h5>
+            <p>For Markdown syntax: To display a literal character that are normally used for Markdown formatting, add a backslash (<code class="hljs inline no-lang" v-pre>\</code>) in front of the character.</p>
             <div>
 
 
@@ -1900,8 +1931,6 @@
       </div>
 
 
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -1934,7 +1963,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>

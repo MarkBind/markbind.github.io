@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide - Getting Started</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="../markbind/css/markbind.min.css">
   <script src="../markbind/js/polyfill.min.js"></script>
   <script src="../markbind/js/vue.min.js"></script>
@@ -131,7 +131,7 @@
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                 </li>
                 <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                 </li>
                 <li>
                   <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
@@ -145,9 +145,10 @@
         </div>
       </nav>
 
+
       <div id="content-wrapper">
         <div></div>
-        <h1 id="getting-started">Getting Started<span id="getting-started" class="anchor"></span><a class="fa fa-anchor" href="#getting-started" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="getting-started"><span id="getting-started" class="anchor"></span>Getting Started<a class="fa fa-anchor" href="#getting-started" onclick="event.stopPropagation()"></a></h1>
         <p><big><strong>Prerequisites</strong></big></p>
         <div class="indented">
           <p><span class="dimmed"><span aria-hidden="true" class="far fa-check-square"></span></span> a basic knowledge of <a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> and <a href="https://www.w3schools.com/html/">HTML</a> syntax<br>
@@ -159,7 +160,7 @@
         <p>Run the following command to install MarkBind.</p>
         <pre><code class="no-line-numbers hljs" v-pre><span>$ npm install -g markbind-cli
 </span></code></pre>
-        <p>Next, run the command <code v-pre>markbind</code>. If MarkBind has been installed correctly, you should see the MarkBind ascii logo followed by a summary of MarkBind commands as the output.</p>
+        <p>Next, run the command <code class="hljs inline no-lang" v-pre>markbind</code>. If MarkBind has been installed correctly, you should see the MarkBind ascii logo followed by a summary of MarkBind commands as the output.</p>
         <pre><code class="no-line-numbers hljs" v-pre><span>$ markbind
 </span><span>  __  __                  _      ____    _               _
 </span><span> |  \/  |   __ _   _ __  | | __ | __ )  (_)  _ __     __| |
@@ -173,41 +174,48 @@
         <p><big><strong>2. Initialize a new Project (or Start with an existing Project)</strong></big></p>
         <tabs>
             <tab><template slot="_header">Initializing a new project</template>
-            <p>Navigate into an empty directory and run the following command to initialize a skeletal MarkBind site in that directory. It will create several new files in the directory e.g., <code v-pre>index.md</code>, <code v-pre>site.json</code>.</p>
+            <p>Navigate into an empty directory and run the following command to initialize a skeletal MarkBind site in that directory. It will create several new files in the directory e.g., <code class="hljs inline no-lang" v-pre>index.md</code>, <code class="hljs inline no-lang" v-pre>site.json</code>.</p>
             <pre><code class="no-line-numbers hljs" v-pre><span>$ markbind init
 </span></code></pre>
             <div>
               <box border-left-color="#00B0F0">
                 <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
-                  You can add the <code v-pre>--help</code> flag to any command to show the help screen. <br>
-                  e.g., <code v-pre>markbind init --help</code></p>
+                  You can add the <code class="hljs inline no-lang" v-pre>--help</code> flag to any command to show the help screen. <br>
+                  e.g., <code class="hljs inline no-lang" v-pre>markbind init --help</code></p>
               </box>
             </div>
             <div>
               <box border-left-color="#00B0F0">
                 <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
-                  The <code v-pre>init</code> command populates the project with the <a href="https://markbind-init-typical.netlify.com/">default project template</a>. Refer to <a href="/userGuide/templates.html">templates</a> section to learn how to use a different template.</p>
+                  The <code class="hljs inline no-lang" v-pre>init</code> command populates the project with the <a href="https://markbind-init-typical.netlify.com/">default project template</a>. Refer to <a href="/userGuide/templates.html">templates</a> section to learn how to use a different template.</p>
               </box>
             </div>
           </tab>
             <tab><template slot="_header">Starting with an existing project</template>
-            <p>Navigate to the project <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code v-pre>site.json</code> configuration file is located.</span>root directory</span>.</p>
+            <p>Navigate to the project <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code class="hljs inline no-lang" v-pre>site.json</code> configuration file is located.</span>root directory</span>.</p>
           </tab>
         </tabs>
         <p><big><strong>3. Preview the site</strong></big></p>
         <p>Run the following command in the same directory. It will generate a website from your source files, start a web server, and open a <trigger trigger="click" for="modal:quickStart-livePreview">live preview</trigger> of your site in your default Browser.</p>
         <b-modal id="modal:quickStart-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:quickStart-livePreview"><template slot="modal-title">Live Preview</template>
           <span>
-            <span><strong><em>Live preview</em> is the regenerating the site upon any change to source files and reloading the updated site in the Browser</strong>.</span>
-            <p><span aria-hidden="true" class="fas fa-info-circle"></span> Live preview works for the following file types only: <code v-pre>css</code>, <code v-pre>.html</code>, <code v-pre>.md</code>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind file</span><code v-pre>.mbd</code></span>, <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">MarkBind fragment</span><code v-pre>.mbdf</code></span>. Changes to <code v-pre>css</code> might may not be visible in the site until you do a manual refresh of the page.</p>
-            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code v-pre>serve</code> command</a> to launch a live preview.</p>
+            <p><strong><em>Live preview</em></strong> is:</p>
+            <ul>
+              <li>
+                <p>Regeneration of affected content upon any change to <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content"><code class="hljs inline no-lang" v-pre>.md</code>, <code class="hljs inline no-lang" v-pre>.mbd</code>, <code class="hljs inline no-lang" v-pre>.mbdf</code>, <code class="hljs inline no-lang" v-pre>.njk</code> files ... anything your content depends on!</span>source files</span>, then reloading the updated site in the Browser.</p>
+              </li>
+              <li>
+                <p>Copying <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">files that don't affect page generation (eg. images), but are used in the site</span>assets</span> to the site output folder.</p>
+              </li>
+            </ul>
+            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code class="hljs inline no-lang" v-pre>serve</code> command</a> to launch a live preview.</p>
             <p></p>
           </span></b-modal>
         <p></p>
         <pre><code class="no-line-numbers hljs" v-pre><span>$ markbind serve
 </span></code></pre>
-        <p>Do some changes to the <code v-pre>index.md</code> and save the file. The live preview in the Browser should update automatically to reflect your changes.</p>
-        <p>To stop the web server, go to the console running the <code v-pre>serve</code> command and press <kbd>CTRL</kbd> + <kbd>C</kbd> (or the equivalent in your OS).</p>
+        <p>Do some changes to the <code class="hljs inline no-lang" v-pre>index.md</code> and save the file. The live preview in the Browser should update automatically to reflect your changes.</p>
+        <p>To stop the web server, go to the console running the <code class="hljs inline no-lang" v-pre>serve</code> command and press <kbd>CTRL</kbd> + <kbd>C</kbd> (or the equivalent in your OS).</p>
         <p><big><strong>4. Next steps</strong></big></p>
         <ol>
           <li><strong>Update the content of your site</strong>. More info can be found in the <a href="/userGuide/authoringContents.html"><em>User Guide: Authoring Contents</em></a> section</li>
@@ -219,12 +227,10 @@
         <br>
         <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Mon, Sep 14, 2020, 12:13:46 PM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
     </footer>
   </div>
 </body>
