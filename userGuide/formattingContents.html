@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.0">
+  <meta name="generator" content="MarkBind 2.17.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Formatting Contents</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -273,7 +273,7 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">__<span class="hljs-emphasis">_Bold and Italic<span class="hljs-strong">__<span class="hljs-emphasis">_, `Inline Code`</span></span></span></span>
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -315,7 +315,7 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****</span>Super Bold<span class="hljs-strong">****</span>, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -439,13 +439,13 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">* </span>Item 1
-</span><span><span class="hljs-bullet">  * </span>Sub item 1.1
-</span><span><span class="hljs-bullet">  * </span>Sub item 1.2<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">*</span> Item 1
+</span><span><span class="hljs-bullet">  *</span> Sub item 1.1
+</span><span><span class="hljs-bullet">  *</span> Sub item 1.2<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>
 </span><span><span class="hljs-code">    Second line</span>
-</span><span><span class="hljs-bullet">    * </span>Sub item 1.2.1
-</span><span><span class="hljs-bullet">* </span>Item 2
-</span><span><span class="hljs-bullet">* </span>Item 3
+</span><span><span class="hljs-code">    * Sub item 1.2.1</span>
+</span><span><span class="hljs-code">* Item 2</span>
+</span><span><span class="hljs-code">* Item 3</span>
 </span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -479,11 +479,11 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">1. </span>Item 1
-</span><span><span class="hljs-bullet">   1. </span>Sub item 1.1
-</span><span><span class="hljs-bullet">   1. </span>Sub item 1.2
-</span><span><span class="hljs-bullet">1. </span>Item 2
-</span><span><span class="hljs-bullet">1. </span>Item 3
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">1.</span> Item 1
+</span><span><span class="hljs-bullet">   1.</span> Sub item 1.1
+</span><span><span class="hljs-bullet">   1.</span> Sub item 1.2
+</span><span><span class="hljs-bullet">1.</span> Item 2
+</span><span><span class="hljs-bullet">1.</span> Item 3
 </span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -517,10 +517,10 @@
 
                   <p><span class="dimmed">CODE:</span></p>
                   <div class="indented">
-                    <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">10. </span>Item 1
-</span><span><span class="hljs-bullet">   1. </span>Sub item 1.1
-</span><span><span class="hljs-bullet">   1. </span>Sub item 1.2
-</span><span><span class="hljs-bullet">1. </span>Item 2
+                    <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">10.</span> Item 1
+</span><span><span class="hljs-bullet">   1.</span> Sub item 1.1
+</span><span><span class="hljs-bullet">   1.</span> Sub item 1.2
+</span><span><span class="hljs-bullet">1.</span> Item 2
 </span></code></pre>
                   </div>
                   <p><span class="dimmed">OUTPUT:</span></p>
@@ -549,11 +549,11 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>[ ] Item 1
-</span><span><span class="hljs-bullet">   - </span>[ ] Sub item 1.1
-</span><span><span class="hljs-bullet">   - </span>[x] Sub item 1.2
-</span><span><span class="hljs-bullet">- </span>[x] Item 2
-</span><span><span class="hljs-bullet">- </span>[ ] Item 3
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">-</span> [ ] Item 1
+</span><span><span class="hljs-bullet">   -</span> [ ] Sub item 1.1
+</span><span><span class="hljs-bullet">   -</span> [x] Sub item 1.2
+</span><span><span class="hljs-bullet">-</span> [x] Item 2
+</span><span><span class="hljs-bullet">-</span> [ ] Item 3
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -584,9 +584,9 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>( ) Item 1
-</span><span><span class="hljs-bullet">- </span>( ) Item 2
-</span><span><span class="hljs-bullet">- </span>(x) Item 3
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">-</span> ( ) Item 1
+</span><span><span class="hljs-bullet">-</span> ( ) Item 2
+</span><span><span class="hljs-bullet">-</span> (x) Item 3
 </span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -602,14 +602,14 @@
           </div>
 
           <span id="short" class="d-none">
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1. </span>Item 1
-</span><span><span class="hljs-bullet">   1. </span>Sub item 1.1
-</span><span><span class="hljs-bullet">   1. </span>Sub item 1.2
-</span><span><span class="hljs-bullet">* </span>Item 2
-</span><span><span class="hljs-bullet">  * </span>item 2.1
-</span><span><span class="hljs-bullet">- </span>[ ] Item 3
-</span><span><span class="hljs-bullet">- </span>[x] Item 4
-</span><span><span class="hljs-bullet">- </span>( ) Item 5
+            <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1.</span> Item 1
+</span><span><span class="hljs-bullet">   1.</span> Sub item 1.1
+</span><span><span class="hljs-bullet">   1.</span> Sub item 1.2
+</span><span><span class="hljs-bullet">*</span> Item 2
+</span><span><span class="hljs-bullet">  *</span> item 2.1
+</span><span><span class="hljs-bullet">-</span> [ ] Item 3
+</span><span><span class="hljs-bullet">-</span> [x] Item 4
+</span><span><span class="hljs-bullet">-</span> ( ) Item 5
 </span></code></pre></span>
           <span id="examples" class="d-none">
             <ol>
@@ -665,7 +665,7 @@
             <div class="indented">
               <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml</span>
 </span><span><span class="hljs-code">&lt;foo&gt;</span>
-</span><span><span class="hljs-code">  &lt;bar type="name"&gt;goo&lt;/bar&gt;</span>
+</span><span><span class="hljs-code">  &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;</span>
 </span><span><span class="hljs-code">&lt;/foo&gt;</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
@@ -674,7 +674,7 @@
             <div class="indented">
               <box border-left-color="grey" background-color="white">
                 <pre><code class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
               </box>
@@ -692,10 +692,10 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>xml {.no-line-numbers}
-</span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span>
-</span><span>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span></span>goo<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span>
-</span><span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span>
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml {.no-line-numbers}</span>
+</span><span><span class="hljs-code">&lt;foo&gt;</span>
+</span><span><span class="hljs-code">  &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;</span>
+</span><span><span class="hljs-code">&lt;/foo&gt;</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
             </div>
@@ -703,7 +703,7 @@
             <div class="indented">
               <box border-left-color="grey" background-color="white">
                 <pre><code class="no-line-numbers hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
               </box>
@@ -719,10 +719,10 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>js {start-from=6}
-</span><span>function add(a, b) {
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```js {start-from=6}</span>
+</span><span><span class="hljs-code">function add(a, b) {</span>
 </span><span><span class="hljs-code">    return a + b;</span>
-</span><span>}
+</span><span><span class="hljs-code">}</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
             </div>
@@ -755,12 +755,12 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>java {highlight-lines="1,3[:],6-8,10[:]-12"}
-</span><span>import java.util.List;
-</span><span>
-</span><span>public class Inventory {
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```java {highlight-lines=&quot;1,3[:],6-8,10[:]-12&quot;}</span>
+</span><span><span class="hljs-code">import java.util.List;</span>
+</span><span><span class="hljs-code"></span>
+</span><span><span class="hljs-code">public class Inventory {</span>
 </span><span><span class="hljs-code">    private List&lt;Item&gt; items;</span>
-</span><span>
+</span><span><span class="hljs-code"></span>
 </span><span><span class="hljs-code">    public int getItemCount(){</span>
 </span><span><span class="hljs-code">        return items.size();</span>
 </span><span><span class="hljs-code">    }</span>
@@ -768,9 +768,9 @@
 </span><span><span class="hljs-code">    public bool isEmpty() {</span>
 </span><span><span class="hljs-code">        return items.isEmpty();</span>
 </span><span><span class="hljs-code">    }</span>
-</span><span>
+</span><span><span class="hljs-code"></span>
 </span><span><span class="hljs-code">    //...</span>
-</span><span>}
+</span><span><span class="hljs-code">}</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
             </div>
@@ -807,10 +807,10 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>xml {heading="Heading title"}
-</span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span>
-</span><span>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span></span>goo<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span>
-</span><span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span>
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml {heading=&quot;Heading title&quot;}</span>
+</span><span><span class="hljs-code">&lt;foo&gt;</span>
+</span><span><span class="hljs-code">  &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;</span>
+</span><span><span class="hljs-code">&lt;/foo&gt;</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
             </div>
@@ -821,7 +821,7 @@
                   <div class="code-block-heading"><span>Heading title</span></div>
                   <div class="code-block-content">
                     <pre><code heading="Heading title" class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
                   </div>
@@ -839,8 +839,8 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>{heading="<span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, ~~Strike through~~, <span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, :+1: :exclamation: :x: :construction:<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span>We support page breaks"}
-</span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span>
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```{heading=&quot;**Bold**, _Italic_, ___Bold and Italic___, ~~Strike through~~, ****Super Bold****, ++Underline++, ==Highlight==, :+1: :exclamation: :x: :construction:&lt;br&gt;We support page breaks&quot;}</span>
+</span><span><span class="hljs-code">&lt;foo&gt;&lt;/foo&gt;</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
             </div>
@@ -868,10 +868,10 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```</span>xml {highlight-lines="2" heading="Heading title"}
-</span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span></span>
-</span><span>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span></span>goo<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span>
-</span><span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span></span>
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml {highlight-lines=&quot;2&quot; heading=&quot;Heading title&quot;}</span>
+</span><span><span class="hljs-code">&lt;foo&gt;</span>
+</span><span><span class="hljs-code">  &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;</span>
+</span><span><span class="hljs-code">&lt;/foo&gt;</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
             </div>
@@ -882,7 +882,7 @@
                   <div class="code-block-heading"><span>Heading title</span></div>
                   <div class="code-block-content">
                     <pre><code heading="Heading title" class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span>  <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span>
+</span><span>  <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
                   </div>
@@ -909,7 +909,7 @@
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <p>Consider the xml code <code class="hljs inline xml" v-pre><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>,<br>
+                <p>Consider the xml code <code class="hljs inline xml" v-pre><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code>,<br>
                   or the java code <code class="hljs inline java" v-pre><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span></code>.</p>
               </box>
             </div>
@@ -928,10 +928,10 @@
           </span>
           <span id="examples" class="d-none">
             <pre><code class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
-            <p>Syntax coloring for inline code: <code class="hljs inline xml" v-pre><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code> too!</p>
+            <p>Syntax coloring for inline code: <code class="hljs inline xml" v-pre><span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span></code> too!</p>
           </span>
         </div>
         <hr>
@@ -947,9 +947,9 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">*****</span>
-</span><span>-----
-</span><span><span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-emphasis">___</span>_
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****</span><span class="hljs-emphasis">*</span>
+</span><span><span class="hljs-emphasis">-----</span>
+</span><span><span class="hljs-emphasis"><span class="hljs-strong">____</span><span class="hljs-strong">____</span><span class="hljs-strong">____</span><span class="hljs-strong">__</span></span>
 </span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -1059,12 +1059,12 @@
 </span><span>  └── site.json
 </span></code></pre>
               <p>Within <code class="hljs inline no-lang" v-pre>textbook/subsite.md</code>, we can refer to the image using:</p>
-              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> /&gt;</span>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;image.png&quot;</span> /&gt;</span>
 </span><span><span class="hljs-comment">&lt;!-- or --&gt;</span>
 </span><span>![](image.png)
 </span></code></pre>
               <p>Within <code class="hljs inline no-lang" v-pre>index.md</code>, we can also display the image using</p>
-              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"textbook/image.png"</span> /&gt;</span>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;textbook/image.png&quot;</span> /&gt;</span>
 </span><span><span class="hljs-comment">&lt;!-- or --&gt;</span>
 </span><span>![](textbook/image.png)
 </span></code></pre>
@@ -1107,16 +1107,16 @@
 </span><span>
 </span><span>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
 </span><span>
-</span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
+</span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here&#x27;s one with multiple blocks.</span>
 </span><span>
 </span><span><span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
-</span><span>belong to the previous footnote.
-</span><span>
-</span><span>
-</span><span><span class="hljs-strong">**Inline footnotes:**</span>
-</span><span>Here is an inline note.^[Inlines notes are easier to write, since
-</span><span>you don't have to pick an identifier and move down to type the
-</span><span>note.]
+</span><span><span class="hljs-code">belong to the previous footnote.</span>
+</span><span><span class="hljs-code"></span>
+</span><span><span class="hljs-code"></span>
+</span><span><span class="hljs-code">**Inline footnotes:**</span>
+</span><span><span class="hljs-code">Here is an inline note.^[Inlines notes are easier to write, since</span>
+</span><span><span class="hljs-code">you don&#x27;t have to pick an identifier and move down to type the</span>
+</span><span><span class="hljs-code">note.]</span>
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -1145,7 +1145,7 @@
 </span><span>
 </span><span>[^1]: Here is the footnote. Footnotes will appear at the bottom of the page.
 </span><span>
-</span><span>[^longnote]: Here's one with multiple blocks.
+</span><span>[^longnote]: Here&#x27;s one with multiple blocks.
 </span><span>    Subsequent paragraphs are indented to show that they
 </span><span>belong to the previous footnote.
 </span></code></pre></span>
@@ -1204,15 +1204,15 @@
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
               <pre><code class="no-line-numbers hljs markdown" v-pre><span>Apply classes, attributes, identifiers to block level markdown (eg. paragraphs, headings)
-</span><span>by leaving a space before '{' {.text-success #attribute-example}
+</span><span>by leaving a space before &#x27;{&#x27; {.text-success #attribute-example}
 </span><span>
 </span><span><span class="hljs-section">#### heading {.text-info}</span>
 </span><span>
 </span><span>--- {.border-danger}
 </span><span>
 </span><span>Apply the same to inline markdown (eg. bold text) by
-</span><span>omitting the <span class="hljs-strong">**space**</span>{.text-primary .bg-light header="attributes example"}
-</span><span><span class="xml"><span class="hljs-comment">&lt;!-- Use inspect element on the **space** word below to see the "header" attribute! --&gt;</span></span>
+</span><span>omitting the <span class="hljs-strong">**space**</span>{.text-primary .bg-light header=&quot;attributes example&quot;}
+</span><span>&lt;!-- Use inspect element on the <span class="hljs-strong">**space**</span> word below to see the &quot;header&quot; attribute! --&gt;
 </span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -1238,10 +1238,10 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">* </span>Apply to the list item itself like so {.text-success #list-item-id}
-</span><span><span class="hljs-bullet">  * </span>Curly groups after newlines apply to the closest nested list {.text-danger}
+              <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">*</span> Apply to the list item itself like so {.text-success #list-item-id}
+</span><span><span class="hljs-bullet">  *</span> Curly groups after newlines apply to the closest nested list {.text-danger}
 </span><span>{.bg-light}
-</span><span><span class="hljs-bullet">* </span>Curly groups two lines after the last line apply to the top most list
+</span><span><span class="hljs-bullet">*</span> Curly groups two lines after the last line apply to the top most list
 </span><span>
 </span><span>{.alert-info}
 </span></code></pre>
@@ -1699,7 +1699,7 @@
 </span><span>
 </span><span>\[\frac{2x}{3} + \frac{2y}{3} = 8\] (2)
 </span><span>
-</span><span>Euler's equation \( e^{i\pi}+1=0 \) is a beautiful equation.
+</span><span>Euler&#x27;s equation \( e^{i\pi}+1=0 \) is a beautiful equation.
 </span></code></pre>
             </div>
             <p><span class="dimmed">OUTPUT:</span></p>
@@ -1783,7 +1783,7 @@
 </span><span>
 </span><span>\[\frac{2x}{3} + \frac{2y}{3} = 8\] (2)
 </span><span>
-</span><span>Euler's equation \( e^{i\pi}+1=0 \) is a beautiful equation.
+</span><span>Euler&#x27;s equation \( e^{i\pi}+1=0 \) is a beautiful equation.
 </span><span>
 </span></code></pre></span>
           <span id="examples" class="d-none">
@@ -1866,9 +1866,9 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span>\* item 1
-</span><span>
-</span><span><span class="hljs-bullet">* </span>item 1
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span>\<span class="hljs-emphasis">* item 1</span>
+</span><span><span class="hljs-emphasis"></span>
+</span><span><span class="hljs-emphasis">*</span> item 1
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -1963,7 +1963,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.1</a> on Sat, Dec 12, 2020, 5:02:51 AM UTC]</small></div>
     </footer>
   </div>
 </body>

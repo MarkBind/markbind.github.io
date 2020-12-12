@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.0">
+  <meta name="generator" content="MarkBind 2.17.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Using Plugins</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -169,16 +169,16 @@
         <p>For example:</p>
         <pre><code class="hljs js" v-pre><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-string">"plugins"</span>: [
-</span><span>    <span class="hljs-string">"plugin1"</span>,
-</span><span>    <span class="hljs-string">"plugin2"</span>,
+</span><span>  <span class="hljs-string">&quot;plugins&quot;</span>: [
+</span><span>    <span class="hljs-string">&quot;plugin1&quot;</span>,
+</span><span>    <span class="hljs-string">&quot;plugin2&quot;</span>,
 </span><span>  ],
-</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
-</span><span>    <span class="hljs-string">"plugin1"</span>: {
-</span><span>      <span class="hljs-string">"input"</span>: <span class="hljs-string">"Input for Plugin 1"</span>
+</span><span>  <span class="hljs-string">&quot;pluginsContext&quot;</span>: {
+</span><span>    <span class="hljs-string">&quot;plugin1&quot;</span>: {
+</span><span>      <span class="hljs-string">&quot;input&quot;</span>: <span class="hljs-string">&quot;Input for Plugin 1&quot;</span>
 </span><span>    },
-</span><span>    <span class="hljs-string">"plugin2"</span>: {
-</span><span>      <span class="hljs-string">"data"</span>: <span class="hljs-string">"Data for Plugin 2"</span>
+</span><span>    <span class="hljs-string">&quot;plugin2&quot;</span>: {
+</span><span>      <span class="hljs-string">&quot;data&quot;</span>: <span class="hljs-string">&quot;Data for Plugin 2&quot;</span>
 </span><span>    }
 </span><span>  }
 </span><span>}
@@ -230,24 +230,24 @@
           <pre><code class="hljs js" v-pre><span>site.json
 </span><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-string">"plugins"</span>: [
-</span><span>    <span class="hljs-string">"algolia"</span>
+</span><span>  <span class="hljs-string">&quot;plugins&quot;</span>: [
+</span><span>    <span class="hljs-string">&quot;algolia&quot;</span>
 </span><span>  ],
-</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
-</span><span>    <span class="hljs-string">"algolia"</span>: {
-</span><span>      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span>
-</span><span>      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span>
-</span><span>      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
-</span><span>      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
+</span><span>  <span class="hljs-string">&quot;pluginsContext&quot;</span>: {
+</span><span>    <span class="hljs-string">&quot;algolia&quot;</span>: {
+</span><span>      <span class="hljs-string">&quot;apiKey&quot;</span>: <span class="hljs-string">&quot;25626fae796133dc1e734c6bcaaeac3c&quot;</span>, <span class="hljs-comment">// replace with your site&#x27;s api key</span>
+</span><span>      <span class="hljs-string">&quot;indexName&quot;</span>: <span class="hljs-string">&quot;docsearch&quot;</span>, <span class="hljs-comment">// replace with your site&#x27;s index name</span>
+</span><span>      <span class="hljs-string">&quot;algoliaOptions&quot;</span>: { <span class="hljs-string">&quot;hitsPerPage&quot;</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
+</span><span>      <span class="hljs-string">&quot;debug&quot;</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
 </span><span>    }
 </span><span>  }
 </span><span>}
 </span></code></pre>
           <p>To connect the <code class="hljs inline no-lang" v-pre>searchbar</code> component to Algolia DocSearch, add the <code class="hljs inline no-lang" v-pre>algolia</code> key.</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </span></code></pre>
           <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code class="hljs inline no-lang" v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
+          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;algolia-search-input&quot;</span>&gt;</span>
 </span></code></pre>
           <box type="warning">
             <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code class="hljs inline no-lang" v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code class="hljs inline no-lang" v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
@@ -261,8 +261,8 @@
           <pre><code class="hljs js" v-pre><span>site.json
 </span><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-string">"plugins"</span>: [
-</span><span>    <span class="hljs-string">"codeBlockCopyButtons"</span>
+</span><span>  <span class="hljs-string">&quot;plugins&quot;</span>: [
+</span><span>    <span class="hljs-string">&quot;codeBlockCopyButtons&quot;</span>
 </span><span>  ],
 </span><span>}
 </span></code></pre>
@@ -278,21 +278,21 @@
           <p>Tags are specified by the <code class="hljs inline no-lang" v-pre>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code class="hljs inline no-lang" v-pre>site.json</code> files will be rendered.</p>
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
-            <pre><code class="hljs html" v-pre><span># Print 'Hello world'
+            <pre><code class="hljs html" v-pre><span># Print &#x27;Hello world&#x27;
 </span><span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span></code></pre>
             <p>You need to specify the tags to include in the <code class="hljs inline no-lang" v-pre>pluginsContext</code>, under <code class="hljs inline no-lang" v-pre>tags</code>:</p>
             <pre><code class="hljs json" v-pre><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-attr">"plugins"</span> : [
-</span><span>    <span class="hljs-string">"filterTags"</span>
+</span><span>  <span class="hljs-attr">&quot;plugins&quot;</span> : [
+</span><span>    <span class="hljs-string">&quot;filterTags&quot;</span>
 </span><span>  ],
-</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {
-</span><span>    <span class="hljs-attr">"filterTags"</span> : {
-</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"language--java"</span>]
+</span><span>  <span class="hljs-attr">&quot;pluginsContext&quot;</span> : {
+</span><span>    <span class="hljs-attr">&quot;filterTags&quot;</span> : {
+</span><span>      <span class="hljs-attr">&quot;tags&quot;</span>: [<span class="hljs-string">&quot;language--java&quot;</span>]
 </span><span>    }
 </span><span>  }
 </span><span>}
@@ -305,7 +305,7 @@
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching multiple tags to an element:</p>
             <pre><code class="hljs html" v-pre><span># For loops
 </span><span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java language--C#"</span>&gt;</span>for (int i = 0; i <span class="hljs-tag">&lt; <span class="hljs-attr">5</span>; <span class="hljs-attr">i</span>++) { <span class="hljs-attr">...</span> }&lt;/<span class="hljs-attr">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java language--C#&quot;</span>&gt;</span>for (int i = 0; i &lt; 5; i++) { ... }<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span></code></pre>
             <p>As long as the <code class="hljs inline no-lang" v-pre>language--java</code> or <code class="hljs inline no-lang" v-pre>language--C#</code> tag is specified, the code snippet will be rendered.</p>
           </div>
@@ -313,18 +313,18 @@
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying tags in front matter:</p>
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  title: "Hello World"
-</span><span>  tags: ["language--java"]
+</span><span>  title: &quot;Hello World&quot;
+</span><span>  tags: [&quot;language--java&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </span></code></pre>
           </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java advanced"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C# basic"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java advanced&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C# basic&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span></code></pre>
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  title: "Hello World"
-</span><span>  tags: ["language--java"]
+</span><span>  title: &quot;Hello World&quot;
+</span><span>  tags: [&quot;language--java&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </span></code></pre></span>
           <p>Tags in <code class="hljs inline no-lang" v-pre>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
@@ -333,13 +333,13 @@
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  title: "Hello World"
-</span><span>  tags: ["language--*"]
+</span><span>  title: &quot;Hello World&quot;
+</span><span>  tags: [&quot;language--*&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span></code></pre>
             <p>All 3 <code class="hljs inline no-lang" v-pre>&lt;p&gt;</code>s will be shown.</p>
           </div>
@@ -351,13 +351,13 @@
               <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.html">index.md</a></span></div>
               <div class="code-block-content">
                 <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  title: "Hello World"
-</span><span>  tags: ["language--java"]
+</span><span>  title: &quot;Hello World&quot;
+</span><span>  tags: [&quot;language--java&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--java"</span>&gt;</span>System.out.println("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--C#"</span>&gt;</span>Console.WriteLine("Hello world");<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">"language--python"</span>&gt;</span>print("Hello world")<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span></code></pre>
               </div>
             </div>
@@ -366,12 +366,12 @@
               <div class="code-block-content">
                 <pre><code heading="site.json" class="hljs json" v-pre><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-attr">"plugins"</span> : [
-</span><span>    <span class="hljs-string">"filterTags"</span>
+</span><span>  <span class="hljs-attr">&quot;plugins&quot;</span> : [
+</span><span>    <span class="hljs-string">&quot;filterTags&quot;</span>
 </span><span>  ],
-</span><span>  <span class="hljs-attr">"pluginsContext"</span> : {
-</span><span>    <span class="hljs-attr">"filterTags"</span> : {
-</span><span>      <span class="hljs-attr">"tags"</span>: [<span class="hljs-string">"-language--*"</span>, <span class="hljs-string">"language--C#"</span>]
+</span><span>  <span class="hljs-attr">&quot;pluginsContext&quot;</span> : {
+</span><span>    <span class="hljs-attr">&quot;filterTags&quot;</span> : {
+</span><span>      <span class="hljs-attr">&quot;tags&quot;</span>: [<span class="hljs-string">&quot;-language--*&quot;</span>, <span class="hljs-string">&quot;language--C#&quot;</span>]
 </span><span>    }
 </span><span>  }
 </span><span>}
@@ -430,12 +430,12 @@
           <pre><code class="hljs js" v-pre><span>site.json
 </span><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-string">"plugins"</span>: [
-</span><span>    <span class="hljs-string">"googleAnalytics"</span>
+</span><span>  <span class="hljs-string">&quot;plugins&quot;</span>: [
+</span><span>    <span class="hljs-string">&quot;googleAnalytics&quot;</span>
 </span><span>  ],
-</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
-</span><span>    <span class="hljs-string">"googleAnalytics"</span>: {
-</span><span>      <span class="hljs-string">"trackingID"</span>: <span class="hljs-string">"YOUR-TRACKING-ID"</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span>
+</span><span>  <span class="hljs-string">&quot;pluginsContext&quot;</span>: {
+</span><span>    <span class="hljs-string">&quot;googleAnalytics&quot;</span>: {
+</span><span>      <span class="hljs-string">&quot;trackingID&quot;</span>: <span class="hljs-string">&quot;YOUR-TRACKING-ID&quot;</span>, <span class="hljs-comment">// replace with your google analytics tracking id.</span>
 </span><span>    }
 </span><span>  }
 </span><span>}
@@ -491,7 +491,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.1</a> on Sat, Dec 12, 2020, 5:02:51 AM UTC]</small></div>
     </footer>
   </div>
 </body>

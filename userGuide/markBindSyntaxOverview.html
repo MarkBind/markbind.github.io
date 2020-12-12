@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.0">
+  <meta name="generator" content="MarkBind 2.17.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -203,7 +203,7 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span>
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">__<span class="hljs-emphasis">_Bold and Italic<span class="hljs-strong">__<span class="hljs-emphasis">_, `Inline Code`</span></span></span></span>
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -254,7 +254,7 @@
               <div class="indented">
                 <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml</span>
 </span><span><span class="hljs-code">&lt;foo&gt;</span>
-</span><span><span class="hljs-code">  &lt;bar type="name"&gt;goo&lt;/bar&gt;</span>
+</span><span><span class="hljs-code">  &lt;bar type=&quot;name&quot;&gt;goo&lt;/bar&gt;</span>
 </span><span><span class="hljs-code">&lt;/foo&gt;</span>
 </span><span><span class="hljs-code">```</span>
 </span></code></pre>
@@ -263,7 +263,7 @@
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
                   <pre><code class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
 </span></code></pre>
                 </box>
@@ -280,11 +280,11 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>[ ] Item 1
-</span><span><span class="hljs-bullet">   - </span>[ ] Sub item 1.1
-</span><span><span class="hljs-bullet">   - </span>[x] Sub item 1.2
-</span><span><span class="hljs-bullet">- </span>[x] Item 2
-</span><span><span class="hljs-bullet">- </span>[ ] Item 3
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">-</span> [ ] Item 1
+</span><span><span class="hljs-bullet">   -</span> [ ] Sub item 1.1
+</span><span><span class="hljs-bullet">   -</span> [x] Sub item 1.2
+</span><span><span class="hljs-bullet">-</span> [x] Item 2
+</span><span><span class="hljs-bullet">-</span> [ ] Item 3
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -342,7 +342,7 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****</span>Super Bold<span class="hljs-strong">****</span>, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -363,9 +363,9 @@
 
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>( ) Item 1
-</span><span><span class="hljs-bullet">- </span>( ) Item 2
-</span><span><span class="hljs-bullet">- </span>(x) Item 3
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">-</span> ( ) Item 1
+</span><span><span class="hljs-bullet">-</span> ( ) Item 2
+</span><span><span class="hljs-bullet">-</span> (x) Item 3
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -395,16 +395,16 @@
 </span><span>
 </span><span>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span>
 </span><span>
-</span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span>
+</span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here&#x27;s one with multiple blocks.</span>
 </span><span>
 </span><span><span class="hljs-code">    Subsequent paragraphs are indented to show that they</span>
-</span><span>belong to the previous footnote.
-</span><span>
-</span><span>
-</span><span><span class="hljs-strong">**Inline footnotes:**</span>
-</span><span>Here is an inline note.^[Inlines notes are easier to write, since
-</span><span>you don't have to pick an identifier and move down to type the
-</span><span>note.]
+</span><span><span class="hljs-code">belong to the previous footnote.</span>
+</span><span><span class="hljs-code"></span>
+</span><span><span class="hljs-code"></span>
+</span><span><span class="hljs-code">**Inline footnotes:**</span>
+</span><span><span class="hljs-code">Here is an inline note.^[Inlines notes are easier to write, since</span>
+</span><span><span class="hljs-code">you don&#x27;t have to pick an identifier and move down to type the</span>
+</span><span><span class="hljs-code">note.]</span>
 </span></code></pre>
               </div>
               <p><span class="dimmed">OUTPUT:</span></p>
@@ -539,7 +539,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.1</a> on Sat, Dec 12, 2020, 5:02:51 AM UTC]</small></div>
     </footer>
   </div>
 </body>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.0">
+  <meta name="generator" content="MarkBind 2.17.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - User Guide: Making the Site Searchable</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -172,13 +172,13 @@
             <div>
               <p><span class="dimmed">CODE:</span></p>
               <div class="indented">
-                <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search (Right-aligned dropdown)"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+                <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search (Right-aligned dropdown)&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </span></code></pre>
                 <p>To use the searchbar within a navbar, add the following markup to your file. The searchbar can be positioned using the slot attribute for the list. The following markup adds a searchbar to the right side of the navbar with appropriate styling.</p>
-                <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"right"</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-form"</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">"searchData"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">"searchCallback"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+                <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-form&quot;</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </span></code></pre>
@@ -256,10 +256,10 @@
           <div class="indented">
             <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
             <pre><code class="hljs html" v-pre><span>#### Developer Testing
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </span><span>
-</span><span>This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword"</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
+</span><span>This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword&quot;</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
 </span></code></pre>
             <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
             <box>
@@ -279,7 +279,7 @@
 </span></code></pre>
           </div>
           <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"keyword d-none"</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </span></code></pre></span>
         </div>
         <div>
@@ -293,9 +293,9 @@
 </span><span><span class="hljs-section"># Heading inside heading index level that will not be indexed {.no-index}</span>
 </span></code></pre>
             <p>Equivalently,</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"always-index"</span>&gt;</span> Heading outside heading index level that will be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;always-index&quot;</span>&gt;</span> Heading outside heading index level that will be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
 </span><span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"no-index"</span>&gt;</span> Heading inside heading index level that will not be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;no-index&quot;</span>&gt;</span> Heading inside heading index level that will not be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </span></code></pre>
           </div>
         </div>
@@ -349,24 +349,24 @@
             <pre><code class="hljs js" v-pre><span>site.json
 </span><span>{
 </span><span>  ...
-</span><span>  <span class="hljs-string">"plugins"</span>: [
-</span><span>    <span class="hljs-string">"algolia"</span>
+</span><span>  <span class="hljs-string">&quot;plugins&quot;</span>: [
+</span><span>    <span class="hljs-string">&quot;algolia&quot;</span>
 </span><span>  ],
-</span><span>  <span class="hljs-string">"pluginsContext"</span>: {
-</span><span>    <span class="hljs-string">"algolia"</span>: {
-</span><span>      <span class="hljs-string">"apiKey"</span>: <span class="hljs-string">"25626fae796133dc1e734c6bcaaeac3c"</span>, <span class="hljs-comment">// replace with your site's api key</span>
-</span><span>      <span class="hljs-string">"indexName"</span>: <span class="hljs-string">"docsearch"</span>, <span class="hljs-comment">// replace with your site's index name</span>
-</span><span>      <span class="hljs-string">"algoliaOptions"</span>: { <span class="hljs-string">"hitsPerPage"</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
-</span><span>      <span class="hljs-string">"debug"</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
+</span><span>  <span class="hljs-string">&quot;pluginsContext&quot;</span>: {
+</span><span>    <span class="hljs-string">&quot;algolia&quot;</span>: {
+</span><span>      <span class="hljs-string">&quot;apiKey&quot;</span>: <span class="hljs-string">&quot;25626fae796133dc1e734c6bcaaeac3c&quot;</span>, <span class="hljs-comment">// replace with your site&#x27;s api key</span>
+</span><span>      <span class="hljs-string">&quot;indexName&quot;</span>: <span class="hljs-string">&quot;docsearch&quot;</span>, <span class="hljs-comment">// replace with your site&#x27;s index name</span>
+</span><span>      <span class="hljs-string">&quot;algoliaOptions&quot;</span>: { <span class="hljs-string">&quot;hitsPerPage&quot;</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
+</span><span>      <span class="hljs-string">&quot;debug&quot;</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
 </span><span>    }
 </span><span>  }
 </span><span>}
 </span></code></pre>
             <p>To connect the <code class="hljs inline no-lang" v-pre>searchbar</code> component to Algolia DocSearch, add the <code class="hljs inline no-lang" v-pre>algolia</code> key.</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Search"</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
 </span></code></pre>
             <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code class="hljs inline no-lang" v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"algolia-search-input"</span>&gt;</span>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;algolia-search-input&quot;</span>&gt;</span>
 </span></code></pre>
             <box type="warning">
               <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code class="hljs inline no-lang" v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code class="hljs inline no-lang" v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
@@ -399,7 +399,7 @@
     </div>
     <footer>
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Nov 29, 2020, 12:58:47 AM UTC]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.1</a> on Sat, Dec 12, 2020, 5:02:51 AM UTC]</small></div>
     </footer>
   </div>
 </body>
