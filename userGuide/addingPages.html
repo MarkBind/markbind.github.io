@@ -1,211 +1,31 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.18.1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkBind - User Guide: Adding Pages</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="icon" href="/favicon.ico">
-</head>
-
-<body>
-  <div id="app">
-    <header fixed>
-      <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark" class="temp-navbar">
-        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-        <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <div tags="environment--ug">
-          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        </div>
-
-        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li>
-          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-      <nav id="site-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
-          <ul class="site-nav-list site-nav-list-root">
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html" class="current">Adding Pages</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-
-      <div id="content-wrapper">
-        <div></div>
-        <div></div>
-        <span id="link" class="d-none">
-          <span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span>
-        <h1 id="adding-pages"><span id="adding-pages" class="anchor"></span>Adding Pages<a class="fa fa-anchor" href="#adding-pages" onclick="event.stopPropagation()"></a></h1>
-        <span class="lead" id="overview">
-          <p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code class="hljs inline no-lang" v-pre>site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p>
-        </span>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> If you have a file <code class="hljs inline no-lang" v-pre>tutorial/code.txt</code> in your root directory, it will be available as <code class="hljs inline no-lang" v-pre>&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p>
-        </div>
-        <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code class="hljs inline no-lang" v-pre>ignore</code> field in the <code class="hljs inline no-lang" v-pre>site.config</code> file as explained <a href="/userGuide/siteJsonFile.html#ignore">here</a>.</span></p>
-        <p><strong>More importantly, <code class="hljs inline no-lang" v-pre>.md</code> and <code class="hljs inline no-lang" v-pre>.mbd</code> files can be transformed into html pages with matching names.</strong></p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code class="hljs inline no-lang" v-pre>&lt;root&gt;/tutorial/</code><strong><code class="hljs inline no-lang" v-pre>setup.md</code></strong> can be transformed into <code class="hljs inline no-lang" v-pre>&lt;website-url&gt;/tutorial/</code><strong><code class="hljs inline no-lang" v-pre>setup.html</code></strong></p>
-        </div>
-        <p>Here are the steps to add a new page to your site:</p>
-        <ol>
-          <li>Add a <code class="hljs inline no-lang" v-pre>.md</code> (or <code class="hljs inline no-lang" v-pre>.mbd</code>) file anywhere inside the root directory.</li>
-          <li>Update the <a href="/userGuide/siteJsonFile.html#pages"><code class="hljs inline no-lang" v-pre>pages</code> attribute of the <code class="hljs inline no-lang" v-pre>site.json</code></a> to cover the new file, if necessary.</li>
-          <li>Use the <trigger trigger="click" for="modal:addingPages-livePreview">live preview</trigger> to view the generated web page for the new file.</li>
-        </ol>
-        <b-modal id="modal:addingPages-livePreview" hide-footer size="lg" modal-class="mb-zoom" ref="modal:addingPages-livePreview"><template slot="modal-title">Live Preview</template>
-          <span>
-            <p><strong><em>Live preview</em></strong> is:</p>
-            <ul>
-              <li>
-                <p>Regeneration of affected content upon any change to <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content"><code class="hljs inline no-lang" v-pre>.md</code>, <code class="hljs inline no-lang" v-pre>.mbd</code>, <code class="hljs inline no-lang" v-pre>.mbdf</code>, <code class="hljs inline no-lang" v-pre>.njk</code> files ... anything your content depends on!</span>source files</span>, then reloading the updated site in the Browser.</p>
-              </li>
-              <li>
-                <p>Copying <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">files that don't affect page generation (eg. images), but are used in the site</span>assets</span> to the site output folder.</p>
-              </li>
-            </ul>
-            <p>Use <a href="/userGuide/cliCommands.html#serve-command">the <code class="hljs inline no-lang" v-pre>serve</code> command</a> to launch a live preview.</p>
-            <p></p>
-          </span></b-modal>
-        <p></p>
-        <div class="clearfix">
-          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/authoringContents.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span></a></span></p>
-          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/markBindSyntaxOverview.html"><span><span>MarkBind Syntax Overview</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
-        </div>
-        <br>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-    </div>
-    <footer>
-      <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.18.1</a> on Fri, Mar 19, 2021, 2:24:17 PM UTC]</small></div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkBind - User Guide: Adding Pages</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="addingPages.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.ico"></head>
 <script>
   const baseUrl = ''
+</script>
+<body >
+<div id="app" data-server-rendered="true"><div><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="/index.html" title="Home" class="navbar-brand" data-v-15113a2f><img src="/images/logo-darkbackground.png" height="20" data-v-15113a2f></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a highlight-on="exact" href="/index.html" class="nav-link" data-v-15113a2f>HOME</a></li> <div tags="environment--ug" data-v-15113a2f><li data-v-15113a2f><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link" data-v-15113a2f>USER GUIDE</a></li></div> <li data-v-15113a2f><a highlight-on="exact" href="/showcase.html" class="nav-link" data-v-15113a2f>SHOWCASE</a></li> <li data-v-15113a2f><a highlight-on="exact" href="/about.html" class="nav-link" data-v-15113a2f>ABOUT</a></li> <li data-v-15113a2f><a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header></div> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>User Guide</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/userGuide/gettingStarted.html" data-v-e8c82f88><strong data-v-e8c82f88>Getting Started</strong></a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Authoring Contents</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/authoringContents.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/addingPages.html" data-v-e8c82f88>Adding Pages</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindSyntaxOverview.html" data-v-e8c82f88>MarkBind Syntax Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/formattingContents.html" data-v-e8c82f88>Formatting Contents</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingComponents.html" data-v-e8c82f88>Using Components</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingHtmlJavaScriptCss.html" data-v-e8c82f88>Using HTML, JavaScript, CSS</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tweakingThePageStructure.html" data-v-e8c82f88>Tweaking the Page Structure</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/reusingContents.html" data-v-e8c82f88>Reusing Contents</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Working with sites</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/workingWithSites.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/settingSiteProperties.html" data-v-e8c82f88>Setting Site Properties</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingPlugins.html" data-v-e8c82f88>Using Plugins</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/makingTheSiteSearchable.html" data-v-e8c82f88>Making the Site Searchable</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/themes.html" data-v-e8c82f88>Applying Themes</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/deployingTheSite.html" data-v-e8c82f88>Deploying the Site</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindInTheProjectWorkflow.html" data-v-e8c82f88>MarkBind in the Project Workflow</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>References</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/cliCommands.html" data-v-e8c82f88>CLI Commands</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/readerFacingFeatures.html" data-v-e8c82f88>Reader-Facing Features</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/fullSyntaxReference.html" data-v-e8c82f88>Full Syntax Reference</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/syntaxCheatSheet.html" data-v-e8c82f88>Syntax Cheat Sheet</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/siteJsonFile.html" data-v-e8c82f88><code class="hljs inline no-lang" data-v-e8c82f88>site.json</code> File</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tipsAndTricks.html" data-v-e8c82f88>Tips &amp; Tricks</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/glossary.html" data-v-e8c82f88>Glossary</a></div></li></ul></li> <!----></ul></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><p><span id="title" class="d-none">Adding Pages</span></p> <span id="link" class="d-none"><span><a href="/userGuide/addingPages.html"><em>User Guide → Adding Pages</em></a></span></span> <h1 id="adding-pages"><span id="adding-pages" class="anchor"></span>Adding Pages<a href="#adding-pages" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <span id="overview" class="lead"><p><strong>It is easy to add files to a MarkBind site as any file inside the <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">The directory that contains all the project files. It is also the directory in which the <code class="hljs inline no-lang">site.json</code> configuration file is located.</span>root directory</span> becomes a part of the generated website.</strong></p></span> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> If you have a file <code class="hljs inline no-lang">tutorial/code.txt</code> in your root directory, it will be available as <code class="hljs inline no-lang">&lt;website-url&gt;/tutorial/code.txt</code> in the generated website.</p></div> <p><span class="dimmed">You can specify which files to be omitted from the site by using the <code class="hljs inline no-lang">ignore</code> field in the <code class="hljs inline no-lang">site.config</code> file as explained <a href="/userGuide/siteJsonFile.html#ignore">here</a>.</span></p> <p><strong>More importantly, <code class="hljs inline no-lang">.md</code> and <code class="hljs inline no-lang">.mbd</code> files can be transformed into html pages with matching names.</strong></p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> <code class="hljs inline no-lang">&lt;root&gt;/tutorial/</code><strong><code class="hljs inline no-lang">setup.md</code></strong> can be transformed into <code class="hljs inline no-lang">&lt;website-url&gt;/tutorial/</code><strong><code class="hljs inline no-lang">setup.html</code></strong></p></div> <p>Here are the steps to add a new page to your site:</p> <ol><li>Add a <code class="hljs inline no-lang">.md</code> (or <code class="hljs inline no-lang">.mbd</code>) file anywhere inside the root directory.</li> <li>Update the <a href="/userGuide/siteJsonFile.html#pages"><code class="hljs inline no-lang">pages</code> attribute of the <code class="hljs inline no-lang">site.json</code></a> to cover the new file, if necessary.</li> <li>Use the <span tabindex="0" class="trigger-click"><!----> live preview</span> to view the generated web page for the new file.</li></ol> <!----> <div class="clearfix"><p><span class="float-left"><a href="/userGuide/authoringContents.html" class="btn btn-light"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Authoring Contents</span></span></a></span></p> <p><span class="float-right"><a href="/userGuide/markBindSyntaxOverview.html" class="btn btn-light"><span><span>MarkBind Syntax Overview</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p></div> <br> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88></div> <!----></nav></div> <div><footer><div class="text-center"><small>[Generated by <a href="https://markbind.org/">MarkBind 3.0.0</a> on Sun, 6 Jun 2021, 4:04:19 UTC]</small><br> <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div></footer></div></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script>
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/userGuide/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

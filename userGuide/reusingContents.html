@@ -1,319 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.18.1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkBind - User Guide: Reusing Contents</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="icon" href="/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header fixed>
-      <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark" class="temp-navbar">
-        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-        <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <div tags="environment--ug">
-          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        </div>
-
-        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li>
-          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-      <nav id="site-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
-          <ul class="site-nav-list site-nav-list-root">
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html" class="current">Reusing Contents</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-
-      <div id="content-wrapper">
-        <div></div>
-        <div></div>
-        <span id="link" class="d-none">
-          <span><a href="/userGuide/reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span>
-        <h1 id="reusing-contents"><span id="reusing-contents" class="anchor"></span>Reusing Contents<a class="fa fa-anchor" href="#reusing-contents" onclick="event.stopPropagation()"></a></h1>
-        <span class="lead" id="overview">
-          <p><strong>MarkBind is highly-optimized for content reuse</strong>. It offers several mechanisms to provide readers with many variations of the content while minimizing duplication at source file level. As a result, instead of creating a one-size-fits-all site, MarkBind can create a site in which readers can chart their own path of reading.
-          </p>
-        </span>
-        <p></p>
-        <div>
-          <span id="link" class="d-none">
-            <span><a href="/userGuide/reusingContents.html#variables"><em>User Guide → Reusing Contents → Variables</em></a></span></span>
-          <h2 id="variables"><span id="variables" class="anchor"></span>Variables<a class="fa fa-anchor" href="#variables" onclick="event.stopPropagation()"></a></h2>
-          <span id="overview">
-            <p><strong>MarkBind variables are ideal for reusing small bits of code</strong> in multiple places; you can define a variable to represent the code bit in question and reuse it anywhere in the site by referring the variable instead of duplicating the code bit.
-            </p>
-          </span>
-          <p></p>
-          <h3 id="global-variables"><span id="global-variables" class="anchor"></span>Global Variables<a class="fa fa-anchor" href="#global-variables" onclick="event.stopPropagation()"></a></h3>
-          <p><strong>Global variables are to be defined in the <code class="hljs inline no-lang" v-pre>_markbind/variables.md</code> file.</strong> Each variable must have an <code class="hljs inline no-lang" v-pre>name</code> and the value can be any MarkBind-compliant code fragment. The <code class="hljs inline no-lang" v-pre>name</code> should not contain <code class="hljs inline no-lang" v-pre>-</code> and <code class="hljs inline no-lang" v-pre>.</code>. For example, <code class="hljs inline no-lang" v-pre>search-option</code> and <code class="hljs inline no-lang" v-pre>search.options</code> are not allowed.</p>
-          <p>The variables declared here are available from anywhere in the code base.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can define two variables <code class="hljs inline no-lang" v-pre>year</code> and <code class="hljs inline no-lang" v-pre>options</code>:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;year&quot;</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkBind - User Guide: Reusing Contents</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="reusingContents.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.ico"></head>
+<script>
+  const baseUrl = ''
+</script>
+<body  data-spy="scroll" data-target="#mb-page-nav" data-offset="100" >
+<div id="app" data-server-rendered="true"><div><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="/index.html" title="Home" class="navbar-brand" data-v-15113a2f><img src="/images/logo-darkbackground.png" height="20" data-v-15113a2f></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a highlight-on="exact" href="/index.html" class="nav-link" data-v-15113a2f>HOME</a></li> <div tags="environment--ug" data-v-15113a2f><li data-v-15113a2f><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link" data-v-15113a2f>USER GUIDE</a></li></div> <li data-v-15113a2f><a highlight-on="exact" href="/showcase.html" class="nav-link" data-v-15113a2f>SHOWCASE</a></li> <li data-v-15113a2f><a highlight-on="exact" href="/about.html" class="nav-link" data-v-15113a2f>ABOUT</a></li> <li data-v-15113a2f><a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header></div> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>User Guide</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/userGuide/gettingStarted.html" data-v-e8c82f88><strong data-v-e8c82f88>Getting Started</strong></a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Authoring Contents</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/authoringContents.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/addingPages.html" data-v-e8c82f88>Adding Pages</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindSyntaxOverview.html" data-v-e8c82f88>MarkBind Syntax Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/formattingContents.html" data-v-e8c82f88>Formatting Contents</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingComponents.html" data-v-e8c82f88>Using Components</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingHtmlJavaScriptCss.html" data-v-e8c82f88>Using HTML, JavaScript, CSS</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tweakingThePageStructure.html" data-v-e8c82f88>Tweaking the Page Structure</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/reusingContents.html" data-v-e8c82f88>Reusing Contents</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Working with sites</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/workingWithSites.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/settingSiteProperties.html" data-v-e8c82f88>Setting Site Properties</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingPlugins.html" data-v-e8c82f88>Using Plugins</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/makingTheSiteSearchable.html" data-v-e8c82f88>Making the Site Searchable</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/themes.html" data-v-e8c82f88>Applying Themes</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/deployingTheSite.html" data-v-e8c82f88>Deploying the Site</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindInTheProjectWorkflow.html" data-v-e8c82f88>MarkBind in the Project Workflow</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>References</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/cliCommands.html" data-v-e8c82f88>CLI Commands</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/readerFacingFeatures.html" data-v-e8c82f88>Reader-Facing Features</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/fullSyntaxReference.html" data-v-e8c82f88>Full Syntax Reference</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/syntaxCheatSheet.html" data-v-e8c82f88>Syntax Cheat Sheet</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/siteJsonFile.html" data-v-e8c82f88><code class="hljs inline no-lang" data-v-e8c82f88>site.json</code> File</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tipsAndTricks.html" data-v-e8c82f88>Tips &amp; Tricks</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/glossary.html" data-v-e8c82f88>Glossary</a></div></li></ul></li> <!----></ul></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><p><span id="title" class="d-none">Reusing Contents</span></p> <span id="link" class="d-none"><span><a href="/userGuide/reusingContents.html"><em>User Guide → Reusing Contents</em></a></span></span> <h1 id="reusing-contents"><span id="reusing-contents" class="anchor"></span>Reusing Contents<a href="#reusing-contents" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <span id="overview" class="lead"><p><strong>MarkBind is highly-optimized for content reuse</strong>. It offers several mechanisms to provide readers with many variations of the content while minimizing duplication at source file level. As a result, instead of creating a one-size-fits-all site, MarkBind can create a site in which readers can chart their own path of reading.
+</p></span><p></p> <div><span id="link" class="d-none"><span><a href="/userGuide/reusingContents.html#variables"><em>User Guide → Reusing Contents → Variables</em></a></span></span> <h2 id="variables"><span id="variables" class="anchor"></span>Variables<a href="#variables" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <span id="overview"><p><strong>Nunjucks <a href="https://mozilla.github.io/nunjucks/templating.html#set">variables</a> are ideal for reusing small bits of code</strong> in multiple places; you can define a variable to represent the code bit in question and reuse it anywhere in the site by referring to the variable instead of duplicating the code bit.
+</p></span><p></p> <p>MarkBind does not aim to alter the already robust variable features of nunjucks, but provides several extensions to it.</p> <h3 id="global-variables"><span id="global-variables" class="anchor"></span>Global Variables<a href="#global-variables" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Global variables are to be defined in the <code class="hljs inline no-lang">_markbind/variables.md</code> file.</strong> Each variable must have an <code class="hljs inline no-lang">name</code> and the value can be any MarkBind-compliant code fragment. The <code class="hljs inline no-lang">name</code> should not contain <code class="hljs inline no-lang">-</code> and <code class="hljs inline no-lang">.</code>. For example, <code class="hljs inline no-lang">search-option</code> and <code class="hljs inline no-lang">search.options</code> are not allowed.</p> <p>The variables declared here are available from anywhere in the code base.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Here's how you can define two variables <code class="hljs inline no-lang">year</code> and <code class="hljs inline no-lang">options</code>:</p> <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;year&quot;</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;options&quot;</span>&gt;</span>
 </span><span>* yes
 </span><span>* no
 </span><span>* maybe
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <p>To include a variable value in your code, give the variable id enclosed in double curly braces.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code class="hljs inline no-lang" v-pre>The year was {{ year }}.</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> The year was 2018.</p>
-          </div>
-          <h4 id="default-values-for-variables"><span id="default-values-for-variables" class="anchor"></span>Default values for variables<a class="fa fa-anchor" href="#default-values-for-variables" onclick="event.stopPropagation()"></a></h4>
-          <p>You can also specify a default value for a variable, which is displayed when the variable is not specified in <code class="hljs inline no-lang" v-pre>variables.md</code> and by any of the <a href="/userGuide/reusingContents.html#the-include-tag">includes</a> of the page. This is done by adding <code class="hljs inline no-lang" v-pre>or defaultValue</code> within the curly braces.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> <code class="hljs inline no-lang" v-pre>My name is {{ name or &quot;Anonymous&quot; }}.</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> My name is Anonymous.</p>
-          </div>
-          <h4 id="built-in-global-variables"><span id="built-in-global-variables" class="anchor"></span>Built-in Global Variables<a class="fa fa-anchor" href="#built-in-global-variables" onclick="event.stopPropagation()"></a></h4>
-          <p>MarkBind also provides a number of built-in variables.</p>
-          <div class="table-responsive">
-            <table class="markbind-table table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Variable</th>
-                  <th>Notes</th>
-                  <th><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></th>
-                  <th>Output</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code class="hljs inline no-lang" v-pre>baseUrl</code></td>
-                  <td>Represents the root directory of the site on the server, as configured in your <a href="/userGuide/siteJsonFile.html#baseurl">site configuration</a> file. <br> Used for specifying <a href="/userGuide/formattingContents.html#intra-site-links">intra-site links</a>.</td>
-                  <td>If <code class="hljs inline no-lang" v-pre>baseUrl</code> is specified as <code class="hljs inline no-lang" v-pre>userGuide/</code>:<br><br> <code class="hljs inline no-lang" v-pre>&lt;img src=&quot;{{baseUrl}}/images/logo.png&quot; /&gt;</code></td>
-                  <td><code class="hljs inline no-lang" v-pre>&lt;img src=&quot;userGuide/images/logo.png&quot; /&gt;</code></td>
-                </tr>
-                <tr>
-                  <td><code class="hljs inline no-lang" v-pre>timestamp</code></td>
-                  <td>The time stamp that indicates when the page was generated. <br><br> The <a href="/userGuide/siteJsonFile.html#timezone">default</a> values of <code class="hljs inline no-lang" v-pre>&quot;timeZone&quot;</code> and <code class="hljs inline no-lang" v-pre>&quot;locale&quot;</code> are <code class="hljs inline no-lang" v-pre>&quot;UTC&quot;</code> and <code class="hljs inline no-lang" v-pre>&quot;en-GB&quot;</code> respectively.</td>
-                  <td>The following example showcases the use of the <code class="hljs inline no-lang" v-pre>&quot;Asia/Singapore&quot;</code> time zone.<br><br> <code class="hljs inline no-lang" v-pre>Page generated at: {{timestamp}}</code></td>
-                  <td><code class="hljs inline no-lang" v-pre>Page generated at: Fri, Mar 19, 2021, 2:24:17 PM UTC</code></td>
-                </tr>
-                <tr>
-                  <td><code class="hljs inline no-lang" v-pre>MarkBind</code></td>
-                  <td>The MarkBind version in use, linked to the MarkBind website.</td>
-                  <td><code class="hljs inline no-lang" v-pre>Page generated by: {{MarkBind}}</code></td>
-                  <td><code class="hljs inline no-lang" v-pre>Page generated by:</code> <a href="https://markbind.org/">MarkBind 2.18.1</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h3 id="page-variables"><span id="page-variables" class="anchor"></span>Page Variables<a class="fa fa-anchor" href="#page-variables" onclick="event.stopPropagation()"></a></h3>
-          <p><strong>You can also declare variables for use within a single page.</strong> These variables work exactly the same as regular variables, except that their values only apply to the page they are declared in. This can be done by using the <code class="hljs inline no-lang" v-pre>&lt;variable&gt;</code> tag.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Declaring page variables: <code class="hljs inline no-lang" v-pre>&lt;variable name=&quot;full_name&quot;&gt;John Doe&lt;/variable&gt;</code><br></p>
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using page variables: <code class="hljs inline no-lang" v-pre>My name is {{ full_name }}. This is {{ full_name }}'s site.</code></p>
-          </div>
-          <box type="warning">
-            <p>These variables will not be applied to <a href="/userGuide/reusingContents.html#the-include-tag"><code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> files</a>. Additionally, global variables (<code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>) will take precedence over any page variables. <em>See also: <a href="/userGuide/reusingContents.html#specifying-variables-in-an-include">Specifying Variables in an <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code></a></em>.
-            </p>
-          </box>
-          <p></p>
-          <h3 id="importing-variables"><span id="importing-variables" class="anchor"></span>Importing Variables<a class="fa fa-anchor" href="#importing-variables" onclick="event.stopPropagation()"></a></h3>
-          <p><strong>You can access <a href="#page-variables">page variables</a> from another page by importing them.</strong></p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Importing specific variables from <code class="hljs inline no-lang" v-pre>person.md</code> into <code class="hljs inline no-lang" v-pre>coverpage.md</code>:</p>
-            <p>In <code class="hljs inline no-lang" v-pre>person.md</code>,</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;address&quot;</span>&gt;</span>123 Sun Avenue<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>Mark<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;phone&quot;</span>&gt;</span>123456789<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span></code></pre>
-            <p>and in <code class="hljs inline no-lang" v-pre>coverpage.md</code>,</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">address</span> <span class="hljs-attr">name</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;person.md&quot;</span>/&gt;</span>
-</span></code></pre>
-            <p>will allow you to access the variables as per normal: <code class="hljs inline no-lang" v-pre>{{address}}</code>, <code class="hljs inline no-lang" v-pre>{{name}}</code>, <code class="hljs inline no-lang" v-pre>{{phone}}</code>.</p>
-          </div>
-          <p><strong>When importing all variables, you should attach a <em>namespace</em></strong> to the imported variables using an <code class="hljs inline no-lang" v-pre>as</code> attributes.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Importing all variables with namespaces:</p>
-            <p>In <code class="hljs inline no-lang" v-pre>coverpage.md</code>,</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;page.md&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;details&quot;</span>/&gt;</span>
-</span></code></pre>
-            <div class="table-responsive">
-              <table class="markbind-table table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th style="text-align:left">Detail</th>
-                    <th style="text-align:left">How to access</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="text-align:left">address</td>
-                    <td style="text-align:left"><code class="hljs inline no-lang" v-pre>{{details.address}}</code></td>
-                  </tr>
-                  <tr>
-                    <td style="text-align:left">name</td>
-                    <td style="text-align:left"><code class="hljs inline no-lang" v-pre>{{details.name}}</code></td>
-                  </tr>
-                  <tr>
-                    <td style="text-align:left">phone</td>
-                    <td style="text-align:left"><code class="hljs inline no-lang" v-pre>{{details.phone}}</code></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p>This way, <em><strong>all</strong></em> variables in <code class="hljs inline no-lang" v-pre>page.md</code> are accessible via <code class="hljs inline no-lang" v-pre>{{details.&lt;variable_name&gt;}}</code>.</p>
-          </div>
-          <box type="warning"><template slot="_header">
-              <p>Mixing namespaces with variable names</p>
-            </template>
-            <p>You can also mix the two syntaxes for importing page variables, though it is not recommended:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">address</span> <span class="hljs-attr">name</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;page.md&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;details&quot;</span>/&gt;</span>
-</span></code></pre>
-            <p>This may seem like it will import <em>only</em> <code class="hljs inline no-lang" v-pre>address</code> and <code class="hljs inline no-lang" v-pre>name</code> from <code class="hljs inline no-lang" v-pre>page.md</code> and storing them in the namespace <code class="hljs inline no-lang" v-pre>details</code>.</p>
-            <p>However, this is a combination of <em>both</em> syntaxes above, and thus this will allow you to:</p>
-            <ul>
-              <li>access <code class="hljs inline no-lang" v-pre>address</code> and <code class="hljs inline no-lang" v-pre>name</code> (but NOT <code class="hljs inline no-lang" v-pre>phone</code>) with <code class="hljs inline no-lang" v-pre>{{address}}</code> and <code class="hljs inline no-lang" v-pre>{{name}}</code></li>
-              <li>access <code class="hljs inline no-lang" v-pre>address</code>, <code class="hljs inline no-lang" v-pre>name</code>, and <code class="hljs inline no-lang" v-pre>phone</code> with <code class="hljs inline no-lang" v-pre>{{details.address}}</code>, <code class="hljs inline no-lang" v-pre>{{details.name}}</code>, and <code class="hljs inline no-lang" v-pre>{{details.phone}}</code></li>
-            </ul>
-          </box>
-          <box type="important"><template slot="_header">
-              <p>Precedence of imported variables</p>
-            </template>
-            <p>Note that global variables (<code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>) and <a href="#page-variables">page variables</a> will take precedence over any imported variables.</p>
-            <p>This also applies for namespaces <span aria-hidden="true" class="fas fa-arrow-right"></span> for instance, in the earlier example, <code class="hljs inline no-lang" v-pre>details</code> is treated as the variable name and is subject to the same rules as other variables, such as global variables taking precedence, and later declarations overriding previous ones:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;title.md&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;book&quot;</span>/&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;index.md&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;book&quot;</span>/&gt;</span>
-</span></code></pre>
-            <p>In this case, all the variables in <code class="hljs inline no-lang" v-pre>title.md</code> are not accessible, as they are overwritten with the variables from <code class="hljs inline no-lang" v-pre>index.md</code>.</p>
-          </box>
-          <h4 id="importing-variables-from-other-external-file-formats"><span id="importing-variables-from-other-external-file-formats" class="anchor"></span>Importing variables from other external file formats<a class="fa fa-anchor" href="#importing-variables-from-other-external-file-formats" onclick="event.stopPropagation()"></a></h4>
-          <p>You can also source variables from external files using MarkBind's <code class="hljs inline no-lang" v-pre>{% ext varName = &quot;filepathToFile&quot; %}</code> Nunjucks extension.
-            This is useful if you have external datasets you want to display in your site!</p>
-          <p>To do so, assign a root variable name (<code class="hljs inline no-lang" v-pre>varName</code>) to the file path from the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">similar to how you assign filepaths for other Nunjucks tags</span>root directory of the site</span>. You may then access the file's variables using dot <code class="hljs inline no-lang" v-pre>varName.xx</code> or array <code class="hljs inline no-lang" v-pre>varName[i]</code> syntax, depending on the file's contents.</p>
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
-          <p><span class="dimmed">CODE:</span></p>
-          <div class="indented">
-            <div class="code-block">
-              <div class="code-block-heading"><span>Displaying a student scoreboard stored as JSON</span></div>
-              <div class="code-block-content">
-                <pre><code heading="Displaying a student scoreboard stored as JSON" class="hljs html" v-pre><span>{% ext studentScoreboard = &quot;userGuide/syntax/extra/scoreboard.json&quot; %}
+</span></code></pre></div> <p>To include a variable value in your code, give the variable id enclosed in Nunjucks' double curly braces syntax.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> <code class="hljs inline no-lang">The year was {{ year }}.</code> <span aria-hidden="true" class="fas fa-arrow-right"></span> The year was 2018.</p></div> <div class="alert box-container alert-warning" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Global variables (<code class="hljs inline no-lang" data-v-7d17494f>_markbind/variables.md</code>) will take precedence over any variables set via Nunjucks' tags (e.g. <code class="hljs inline no-lang" data-v-7d17494f>{% set %}</code>).</p></div> <!----></div></div></div> <h4 id="built-in-global-variables"><span id="built-in-global-variables" class="anchor"></span>Built-in Global Variables<a href="#built-in-global-variables" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>MarkBind also provides a number of built-in variables.</p> <div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th>Variable</th> <th>Notes</th> <th><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big></th> <th>Output</th></tr></thead> <tbody><tr><td><code class="hljs inline no-lang">baseUrl</code></td> <td>Represents the root directory of the site on the server, as configured in your <a href="/userGuide/siteJsonFile.html#baseurl">site configuration</a> file. <br> Used for specifying <a href="/userGuide/formattingContents.html#intra-site-links">intra-site links</a>.</td> <td>If <code class="hljs inline no-lang">baseUrl</code> is specified as <code class="hljs inline no-lang">userGuide/</code>:<br><br> <code class="hljs inline no-lang">&lt;img src=&quot;{{baseUrl}}/images/logo.png&quot; /&gt;</code></td> <td><code class="hljs inline no-lang">&lt;img src=&quot;userGuide/images/logo.png&quot; /&gt;</code></td></tr> <tr><td><code class="hljs inline no-lang">timestamp</code></td> <td>The time stamp that indicates when the page was generated. <br><br> The <a href="/userGuide/siteJsonFile.html#timezone">default</a> values of <code class="hljs inline no-lang">&quot;timeZone&quot;</code> and <code class="hljs inline no-lang">&quot;locale&quot;</code> are <code class="hljs inline no-lang">&quot;UTC&quot;</code> and <code class="hljs inline no-lang">&quot;en-GB&quot;</code> respectively.</td> <td>The following example showcases the use of the <code class="hljs inline no-lang">&quot;Asia/Singapore&quot;</code> time zone.<br><br> <code class="hljs inline no-lang">Page generated at: {{timestamp}}</code></td> <td><code class="hljs inline no-lang">Page generated at: Sun, 6 Jun 2021, 4:04:19 UTC</code></td></tr> <tr><td><code class="hljs inline no-lang">MarkBind</code></td> <td>The MarkBind version in use, linked to the MarkBind website.</td> <td><code class="hljs inline no-lang">Page generated by: {{MarkBind}}</code></td> <td><code class="hljs inline no-lang">Page generated by:</code> <a href="https://markbind.org/">MarkBind 3.0.0</a></td></tr></tbody></table></div><h3 id="importing-variables-from-other-external-file-formats"><span id="importing-variables-from-other-external-file-formats" class="anchor"></span>Importing variables from other external file formats<a href="#importing-variables-from-other-external-file-formats" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>You can also source variables from external files using MarkBind's <code class="hljs inline no-lang">{% ext varName = &quot;filepathToFile&quot; %}</code> Nunjucks extension.
+This is useful if you have external datasets you want to display in your site!</p> <p>To do so, assign a root variable name (<code class="hljs inline no-lang">varName</code>) to the file path from the <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">similar to how you assign filepaths for other Nunjucks tags</span>root directory of the site</span>. You may then access the file's variables using dot <code class="hljs inline no-lang">varName.xx</code> or array <code class="hljs inline no-lang">varName[i]</code> syntax, depending on the file's contents.</p> <div class="printable-tabs" data-v-3b6be04c><ul role="tablist" class="nav nav-tabs d-print-none nav-tabs" data-v-3b6be04c></ul> <div class="tab-content" data-v-3b6be04c><div role="tabpanel" class="tab-pane active printable-tab-pane d-print-block hide" style="display:none;"><div class="nav-tabs printable-tab-header d-none d-print-flex"><div class="nav-link active">Importing from JSON files</div></div>  <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big></p> <p><span class="dimmed">CODE:</span></p> <div class="indented"><div class="code-block"><div class="code-block-heading"><span>Displaying a student scoreboard stored as JSON</span></div><div class="code-block-content"><pre><code heading="Displaying a student scoreboard stored as JSON" class="hljs html"><span>{% ext studentScoreboard = &quot;userGuide/syntax/extra/scoreboard.json&quot; %}
 </span><span>
 </span><span>Student Number | Score | Rank
 </span><span>:----- | :-------: | ----
@@ -322,280 +42,53 @@
 </span><span>{% endfor %}
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Last updated at {{ studentScoreboard.lastUpdated }}<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
-</span></code></pre>
-              </div>
-            </div>
-            <panel type="minimal"><template slot="header">
-                <p>Json file used in example</p>
-              </template>
-              <div class="code-block">
-                <div class="code-block-heading"><span>Json File</span></div>
-                <div class="code-block-content">
-                  <pre><code heading="Json File" class="hljs json" v-pre><span>{
-</span><span>  <span class="hljs-attr">&quot;lastUpdated&quot;</span>: <span class="hljs-string">&quot;21 November, 2020&quot;</span>,
-</span><span>  <span class="hljs-attr">&quot;students&quot;</span>: [
-</span><span>    {
-</span><span>      <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-string">&quot;A1234567X&quot;</span>,
-</span><span>      <span class="hljs-attr">&quot;score&quot;</span>: <span class="hljs-number">87</span>,
-</span><span>      <span class="hljs-attr">&quot;rank&quot;</span>: <span class="hljs-number">1</span>
-</span><span>    },
-</span><span>    {
-</span><span>      <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-string">&quot;A1234123U&quot;</span>,
-</span><span>      <span class="hljs-attr">&quot;score&quot;</span>: <span class="hljs-number">60</span>,
-</span><span>      <span class="hljs-attr">&quot;rank&quot;</span>: <span class="hljs-number">3</span>
-</span><span>    },
-</span><span>    {
-</span><span>      <span class="hljs-attr">&quot;number&quot;</span>: <span class="hljs-string">&quot;A9876543L&quot;</span>,
-</span><span>      <span class="hljs-attr">&quot;score&quot;</span>: <span class="hljs-number">76</span>,
-</span><span>      <span class="hljs-attr">&quot;rank&quot;</span>: <span class="hljs-number">2</span>
-</span><span>    }
-</span><span>  ]
-</span><span>}
-</span></code></pre>
-                </div>
-              </div>
-            </panel>
-            <br>
-          </div>
-          <p><span class="dimmed">OUTPUT:</span></p>
-          <div class="indented">
-            <box border-left-color="grey" background-color="white">
-              <div class="table-responsive">
-                <table class="markbind-table table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th style="text-align:left">Student Number</th>
-                      <th style="text-align:center">Score</th>
-                      <th>Rank</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td style="text-align:left">A1234567X</td>
-                      <td style="text-align:center">87 / 100</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <td style="text-align:left">A1234123U</td>
-                      <td style="text-align:center">60 / 100</td>
-                      <td>3</td>
-                    </tr>
-                    <tr>
-                      <td style="text-align:left">A9876543L</td>
-                      <td style="text-align:center">76 / 100</td>
-                      <td>2</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p><small>Last updated at 21 November, 2020</small></p>
-            </box>
-            <p></p>
-          </div>
-          <box type="info" seamless>
-            <p>Only <code class="hljs inline no-lang" v-pre>.json</code> files are supported for now.
-            </p>
-          </box>
-          <p></p>
-          <panel type="seamless" id="old-syntax-deprecated"><template slot="header">
-              <h5 id="old-syntax-deprecated"><span id="old-syntax-deprecated" class="anchor"></span>Old syntax (deprecated)<a class="fa fa-anchor" href="#old-syntax-deprecated" onclick="event.stopPropagation()"></a></h5>
-            </template>
-            <p>You could also have your variables defined in a JSON file to define multiple variables in a more concise manner.</p>
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              globally scoped variables <code class="hljs inline no-lang" v-pre>variables.md</code>:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;PATH_TO_VARIABLE.json&quot;</span> /&gt;</span>
-</span></code></pre>
-            <p><code class="hljs inline no-lang" v-pre>variables.json</code>:</p>
-            <pre><code class="no-line-numbers hljs json" v-pre><span>{
-</span><span>  <span class="hljs-attr">&quot;variable1&quot;</span>: <span class="hljs-string">&quot;This is the first variable&quot;</span>,
-</span><span>  <span class="hljs-attr">&quot;variable2&quot;</span>: <span class="hljs-string">&quot;This is the second variable&quot;</span>
-</span><span>}
-</span></code></pre>
-            <p>Variables defined in a <code class="hljs inline no-lang" v-pre>.json</code> file will be scoped according to where it is being referenced. Json variables referenced in <code class="hljs inline no-lang" v-pre>variables.md</code>
-              would be globally scoped like other global variables in that file.</p>
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              locally scoped variables in <code class="hljs inline no-lang" v-pre>index.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;PATH_TO_VARIABLE.json&quot;</span> /&gt;</span>
-</span></code></pre>
-            <p>In this case, json variables referenced within <code class="hljs inline no-lang" v-pre>index.md</code> would be a page variable accessible within the page <code class="hljs inline no-lang" v-pre>index.md</code>.</p>
-          </panel>
-          <h3 id="tips-and-tricks-for-variables"><span id="tips-and-tricks-for-variables" class="anchor"></span>Tips and Tricks for variables<a class="fa fa-anchor" href="#tips-and-tricks-for-variables" onclick="event.stopPropagation()"></a></h3>
-          <br>
-          <box type="success" seamless><template slot="_header">
-              <h5 id="referring-to-other-variables-in-variables"><span id="referring-to-other-variables-in-variables" class="anchor"></span>Referring to other variables in variables<a class="fa fa-anchor" href="#referring-to-other-variables-in-variables" onclick="event.stopPropagation()"></a></h5>
-            </template>
-            <p>This variable uses a built-in variable:<br>
-              <code class="hljs inline no-lang" v-pre>&lt;variable name=&quot;time&quot;&gt;{{ timestamp }}&lt;/variable&gt;</code></p>
-            <p>Here, the second variable will be assigned the contents of the first variable.<br>
-              <code class="hljs inline no-lang" v-pre>&lt;variable name=&quot;first&quot;&gt;This is the first variable.&lt;/variable&gt;</code><br>
-              <code class="hljs inline no-lang" v-pre>&lt;variable name=&quot;second&quot;&gt;{{ first }}&lt;/variable&gt;</code><br></p>
-            <p>This will not work, as the <code class="hljs inline no-lang" v-pre>fourth</code> variable is declared <em>below</em> the line that refers to it.<br>
-              <code class="hljs inline no-lang" v-pre>&lt;variable name=&quot;third&quot;&gt;{{ fourth }}&lt;/variable&gt;</code> ❌<br>
-              <code class="hljs inline no-lang" v-pre>&lt;variable name=&quot;fourth&quot;&gt;This is the fourth variable.&lt;/variable&gt;</code></p>
-          </box>
-          <br>
-          <box type="success" seamless><template slot="_header">
-              <h5 id="variables-can-contain-malformed-html"><span id="variables-can-contain-malformed-html" class="anchor"></span>Variables can contain malformed html<a class="fa fa-anchor" href="#variables-can-contain-malformed-html" onclick="event.stopPropagation()"></a></h5>
-            </template>
-            <p>MarkBind uses a patched version of the excellent <a href="https://github.com/fb55/htmlparser2">htmlparser2</a> that allows <code class="hljs inline no-lang" v-pre>&lt;variable&gt;</code> tags
-              to contain any content - even incomplete or malformed html!</p>
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> You can use this to build html from incomplete html code snippets:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;front_center&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: center;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;front_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;text-align: right;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;back&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-</span></code></pre>
-            <p>And to use it:</p>
-            <div></div>
-            <div></div>
-            <div></div>
-            <p class="my-2"><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              <code class="hljs inline no-lang" v-pre>{{ front_center | safe }} centered {{ back | safe }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <div style="text-align: center;"> centered </div>
-              </box>
-            </div>
-            <p class="my-2"><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              <code class="hljs inline no-lang" v-pre>{{ front_right | safe }} right aligned {{ back | safe }}</code> <span aria-hidden="true" class="fas fa-arrow-right"></span></p>
-            <div class="indented">
-              <box border-left-color="grey" background-color="white">
-                <div style="text-align: right;"> right aligned </div>
-              </box>
-            </div>
-            <box type="warning">
-              <p>Remember to also use the <code class="hljs inline no-lang" v-pre>safe</code> nunjucks filter when rendering your variables as raw html!
-              </p>
-            </box>
-          </box>
-          <p></p>
-          <span id="short" class="d-none">
-            <p>Global variables:</p>
-            <p><code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;year&quot;</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</span></code></pre>
-            <p><code class="hljs inline no-lang" v-pre>The year was {{ year }}.</code></p>
-            <p>Page variables:<br>
-              <code class="hljs inline html" v-pre><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;full_name&quot;</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></code></p>
-            <p><code class="hljs inline no-lang" v-pre>The name was {{ full_name }}.</code></p>
-          </span>
-        </div>
-        <hr>
-        <div>
-          <span id="link" class="d-none">
-            <span><a href="/userGuide/reusingContents.html#includes"><em>User Guide → Reusing Contents → Includes</em></a></span></span>
-          <h2 id="includes"><span id="includes" class="anchor"></span>Includes<a class="fa fa-anchor" href="#includes" onclick="event.stopPropagation()"></a></h2>
-          <span id="overview">
-            <p><strong>MarkBind has a powerful <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
-            </p>
-          </span>
-          <p></p>
-          <p><strong>You can use <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tag to include another markdown or HTML document into the current document.</strong></p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Including text from a <code class="hljs inline no-lang" v-pre>tip2.md</code> in another file.</p>
-            <pre><code class="hljs html" v-pre><span>Tip 1. ...
+</span></code></pre></div></div><div class="card-container" data-v-e932f598><div class="card card-flex" data-v-e932f598><div class="header-wrapper header-toggle" data-v-e932f598><span class="card-title" data-v-e932f598 data-v-e932f598><span class="card-title-inline" data-v-e932f598><p>Json file used in example</p></span> <span aria-hidden="true" class="minimal-button glyphicon glyphicon-menu-down minimal-menu-down" data-v-e932f598></span></span> <div class="button-wrapper" data-v-e932f598><button type="button" class="minimal-button" data-v-e932f598><span aria-hidden="true" class="glyphicon glyphicon-remove minimal-close-button" data-v-e932f598></span></button> <button type="button" class="minimal-button" style="display:none;" data-v-e932f598><span aria-hidden="true" class="glyphicon glyphicon-new-window minimal-popup-button" data-v-e932f598></span></button> <button type="button" class="minimal-button" style="display:none;" data-v-e932f598><span aria-hidden="true" class="glyphicon glyphicon-menu-up minimal-menu-up" data-v-e932f598></span></button></div></div> <div class="card-collapse" data-v-e932f598><!----></div></div></div> <br></div> <p><span class="dimmed">OUTPUT:</span></p> <div class="indented"><div class="alert box-container alert-default" style="background-color:white;border-color:white;border-left:5px solid grey;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><div class="table-responsive" data-v-7d17494f><table class="markbind-table table table-bordered table-striped" data-v-7d17494f><thead data-v-7d17494f><tr data-v-7d17494f><th style="text-align:left;" data-v-7d17494f>Student Number</th> <th style="text-align:center;" data-v-7d17494f>Score</th> <th data-v-7d17494f>Rank</th></tr></thead> <tbody data-v-7d17494f><tr data-v-7d17494f><td style="text-align:left;" data-v-7d17494f>A1234567X</td> <td style="text-align:center;" data-v-7d17494f>87 / 100</td> <td data-v-7d17494f>1</td></tr> <tr data-v-7d17494f><td style="text-align:left;" data-v-7d17494f>A1234123U</td> <td style="text-align:center;" data-v-7d17494f>60 / 100</td> <td data-v-7d17494f>3</td></tr> <tr data-v-7d17494f><td style="text-align:left;" data-v-7d17494f>A9876543L</td> <td style="text-align:center;" data-v-7d17494f>76 / 100</td> <td data-v-7d17494f>2</td></tr></tbody></table></div><p data-v-7d17494f><small data-v-7d17494f>Last updated at 21 November, 2020</small></p></div> <!----></div></div></div></div> <hr></div> <div role="tabpanel" class="tab-pane active printable-tab-pane d-print-block hide" style="display:none;"><div class="nav-tabs printable-tab-header d-none d-print-flex"><div class="nav-link active">Importing from CSV files</div></div>  <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big></p> <p><span class="dimmed">CODE:</span></p> <div class="indented"><div class="code-block"><div class="code-block-heading"><span>Displaying a student scoreboard stored as CSV</span></div><div class="code-block-content"><pre><code heading="Displaying a student scoreboard stored as CSV" class="hljs html"><span>{% ext studentScoreboard = &quot;userGuide/syntax/extra/scoreboard.csv&quot; %}
+</span><span>
+</span><span>Student Number | Score | Rank
+</span><span>:----- | :-------: | ----
+</span><span>{% for student in studentScoreboard -%}
+</span><span>{{ student.number }} | {{ student.score }} | {{ student.rank }}
+</span><span>{% endfor %}
+</span></code></pre></div></div><div class="card-container" data-v-e932f598><div class="card card-flex" data-v-e932f598><div class="header-wrapper header-toggle" data-v-e932f598><span class="card-title" data-v-e932f598 data-v-e932f598><span class="card-title-inline" data-v-e932f598><p>CSV file used in example</p></span> <span aria-hidden="true" class="minimal-button glyphicon glyphicon-menu-down minimal-menu-down" data-v-e932f598></span></span> <div class="button-wrapper" data-v-e932f598><button type="button" class="minimal-button" data-v-e932f598><span aria-hidden="true" class="glyphicon glyphicon-remove minimal-close-button" data-v-e932f598></span></button> <button type="button" class="minimal-button" style="display:none;" data-v-e932f598><span aria-hidden="true" class="glyphicon glyphicon-new-window minimal-popup-button" data-v-e932f598></span></button> <button type="button" class="minimal-button" style="display:none;" data-v-e932f598><span aria-hidden="true" class="glyphicon glyphicon-menu-up minimal-menu-up" data-v-e932f598></span></button></div></div> <div class="card-collapse" data-v-e932f598><!----></div></div></div> <br> <div class="alert box-container alert-default" style="border-left:5px solid #00B0F0;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span style="color:#00B0F0;" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> If you do not want to have a header row, you can specify it by appending a <code class="hljs inline no-lang" data-v-7d17494f>noHeader</code> option at the end of the variable declaration. In this example, it should be  <code class="hljs inline no-lang" data-v-7d17494f>{% ext studentScoreboard = &quot;userGuide/syntax/extra/scoreboard.csv&quot;, noHeader %}</code> . Elements have to be accessed using the <code class="hljs inline no-lang" data-v-7d17494f>[]</code> operator (i.e. using <code class="hljs inline no-lang" data-v-7d17494f>student[0]</code> to access student number instead of <code class="hljs inline no-lang" data-v-7d17494f>student.number</code>).</p></div> <!----></div></div></div></div> <p><span class="dimmed">OUTPUT:</span></p> <div class="indented"><div class="alert box-container alert-default" style="background-color:white;border-color:white;border-left:5px solid grey;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><div class="table-responsive" data-v-7d17494f><table class="markbind-table table table-bordered table-striped" data-v-7d17494f><thead data-v-7d17494f><tr data-v-7d17494f><th style="text-align:left;" data-v-7d17494f>Student Number</th> <th style="text-align:center;" data-v-7d17494f>Score</th> <th data-v-7d17494f>Rank</th></tr></thead> <tbody data-v-7d17494f><tr data-v-7d17494f><td style="text-align:left;" data-v-7d17494f>A1234567X</td> <td style="text-align:center;" data-v-7d17494f>87 / 100</td> <td data-v-7d17494f>1</td></tr> <tr data-v-7d17494f><td style="text-align:left;" data-v-7d17494f>A1234123U</td> <td style="text-align:center;" data-v-7d17494f>60 / 100</td> <td data-v-7d17494f>3</td></tr> <tr data-v-7d17494f><td style="text-align:left;" data-v-7d17494f>A9876543L</td> <td style="text-align:center;" data-v-7d17494f>76 / 100</td> <td data-v-7d17494f>2</td></tr></tbody></table></div></div> <!----></div></div></div></div> <hr></div></div></div> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Only <code class="hljs inline no-lang" data-v-7d17494f>.json</code> and <code class="hljs inline no-lang" data-v-7d17494f>.csv</code> files are supported for now.</p></div> <!----></div></div></div> <span id="short" class="d-none"><p>Global variables:</p> <p><code class="hljs inline no-lang">_markbind/variables.md</code>:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;year&quot;</span>&gt;</span>2018<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span></code></pre><p><code class="hljs inline no-lang">The year was {{ year }}.</code></p></span></div> <hr> <div><span id="link" class="d-none"><span><a href="/userGuide/reusingContents.html#includes"><em>User Guide → Reusing Contents → Includes</em></a></span></span> <h2 id="includes"><span id="includes" class="anchor"></span>Includes<a href="#includes" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <span id="overview"><p><strong>MarkBind has a powerful <code class="hljs inline no-lang">&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
+</p></span><p></p> <p><strong>You can use <code class="hljs inline no-lang">&lt;include&gt;</code> tag to include another markdown or HTML document into the current document.</strong></p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Including text from a <code class="hljs inline no-lang">tip2.md</code> in another file.</p> <pre><code class="hljs html"><span>Tip 1. ...
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;tips/tip2.md&quot;</span> /&gt;</span>
 </span><span>Tip 3. ...
-</span></code></pre>
-          </div>
-          <p><strong>You can <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> a fragment of a file</strong> by specifying the <code class="hljs inline no-lang" v-pre>#fragment-id</code> at the end of the <code class="hljs inline no-lang" v-pre>src</code> attribute value, provided the fragment is wrapped in a <code class="hljs inline no-lang" v-pre>&lt;div&gt;</code>/<code class="hljs inline no-lang" v-pre>&lt;span&gt;</code>/<code class="hljs inline no-lang" v-pre>&lt;seg&gt;</code> tag with the matching <code class="hljs inline no-lang" v-pre>id</code>.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Including a fragment from a file:</p>
-            <pre><code class="hljs html" v-pre><span>Some text
+</span></code></pre></div> <p><strong>You can <code class="hljs inline no-lang">&lt;include&gt;</code> a fragment of a file</strong> by specifying the <code class="hljs inline no-lang">#fragment-id</code> at the end of the <code class="hljs inline no-lang">src</code> attribute value, provided the fragment is wrapped in a <code class="hljs inline no-lang">&lt;div&gt;</code>/<code class="hljs inline no-lang">&lt;span&gt;</code>/<code class="hljs inline no-lang">&lt;seg&gt;</code> tag with the matching <code class="hljs inline no-lang">id</code>.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Including a fragment from a file:</p> <pre><code class="hljs html"><span>Some text
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;docs/tips.md#tip-1&quot;</span> /&gt;</span>
 </span><span>Some other text
-</span></code></pre>
-            <p><code class="hljs inline no-lang" v-pre>docs/tips.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span>...
+</span></code></pre><p><code class="hljs inline no-lang">docs/tips.md</code>:</p> <pre><code class="hljs html"><span>...
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tip-1&quot;</span> /&gt;</span>
 </span><span>  Tip 1. ...
 </span><span>  ...
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span><span>Tip 2. ...
-</span></code></pre>
-          </div>
-          <box type="warning">
-            <p>When setting the <code class="hljs inline no-lang" v-pre>id</code> of a fragment, be careful not to clash with heading anchor IDs auto-generated by MarkBind. For example, if you have a heading <code class="hljs inline no-lang" v-pre>## Some Useful Tips</code>, MarkBind will auto-generate an ID <code class="hljs inline no-lang" v-pre>some-useful-tips</code> for that heading.</p>
-          </box>
-          <box border-left-color="#00B0F0">
-            <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> The <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tag works for any MarBind source file including the <em>font matter</em> section but it may not work in some <em>special</em> files such as the <code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>.
-            </p>
-          </box>
-          <p></p>
-          <p><strong>Attributes:</strong></p>
-          <ul>
-            <li><strong><code class="hljs inline no-lang" v-pre>src</code></strong>: specify the source file path.</li>
-            <li><strong><code class="hljs inline no-lang" v-pre>inline</code></strong> (optional): make the included result an inline element. (wrapped in <code class="hljs inline no-lang" v-pre>&lt;span&gt;</code> tag). e.g.,
-              <pre><code class="hljs html" v-pre><span>The title is <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../docs/summary.md#title&quot;</span> <span class="hljs-attr">inline</span> /&gt;</span> while ...
-</span></code></pre>
-            </li>
-            <li><strong><code class="hljs inline no-lang" v-pre>optional</code></strong> (optional): include the file/fragment only if it exists i.e., there will be no error message if the file/fragment does not exist. e.g.,
-              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;UserStories.md&quot;</span> <span class="hljs-attr">optional</span> /&gt;</span>
-</span></code></pre>
-            </li>
-            <li><strong><code class="hljs inline no-lang" v-pre>trim</code></strong> (optional): remove leading and trailing whitespace and newlines from the document before including.
-              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;UserStories.md#epic&quot;</span> <span class="hljs-attr">trim</span> /&gt;</span>
-</span></code></pre>
-            </li>
-          </ul>
-          <div>
-            <box border-left-color="#00B0F0">
-              <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
-                The <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> mechanism can be used inside any MarkBind source file (even inside the <em>front matter</em> section) but it will not work inside some <em>special</em> files such as the <code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>.</p>
-            </box>
-          </div>
-          <h5 id="include-inside-an-included-file"><span id="include-inside-an-included-file" class="anchor"></span><code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> Inside an Included File<a class="fa fa-anchor" href="#include-inside-an-included-file" onclick="event.stopPropagation()"></a></h5>
-          <p><strong>Although the <code class="hljs inline no-lang" v-pre>src</code> attribute of an <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> is given <em>relative</em> to the current directory, it is converted to an <em>absolute</em> value <em>before</em> the <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">i.e., the file containing the <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code></span>host file</span> is included from another file.</strong></p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a MarkBind project with the following file structure.</p>
-            <pre><code class="hljs" v-pre><span>c:/mySite/
+</span></code></pre></div> <div class="alert box-container alert-warning" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>When setting the <code class="hljs inline no-lang" data-v-7d17494f>id</code> of a fragment, be careful not to clash with heading anchor IDs auto-generated by MarkBind. For example, if you have a heading <code class="hljs inline no-lang" data-v-7d17494f>## Some Useful Tips</code>, MarkBind will auto-generate an ID <code class="hljs inline no-lang" data-v-7d17494f>some-useful-tips</code> for that heading.</p></div> <!----></div></div></div> <div class="alert box-container alert-default" style="border-left:5px solid #00B0F0;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span style="color:#00B0F0;" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> The <code class="hljs inline no-lang" data-v-7d17494f>&lt;include&gt;</code> tag works for any MarBind source file including the <em data-v-7d17494f>font matter</em> section but it may not work in some <em data-v-7d17494f>special</em> files such as the <code class="hljs inline no-lang" data-v-7d17494f>_markbind/variables.md</code>.</p></div> <!----></div></div></div> <p><strong>Attributes:</strong></p> <ul><li><strong><code class="hljs inline no-lang">src</code></strong>: specify the source file path.</li> <li><strong><code class="hljs inline no-lang">inline</code></strong> (optional): make the included result an inline element. (wrapped in <code class="hljs inline no-lang">&lt;span&gt;</code> tag). e.g.,<pre><code class="hljs html"><span>The title is <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../docs/summary.md#title&quot;</span> <span class="hljs-attr">inline</span> /&gt;</span> while ...
+</span></code></pre></li> <li><strong><code class="hljs inline no-lang">optional</code></strong> (optional): include the file/fragment only if it exists i.e., there will be no error message if the file/fragment does not exist. e.g.,<pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;UserStories.md&quot;</span> <span class="hljs-attr">optional</span> /&gt;</span>
+</span></code></pre></li> <li><strong><code class="hljs inline no-lang">trim</code></strong> (optional): remove leading and trailing whitespace and newlines from the document before including.<pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;UserStories.md#epic&quot;</span> <span class="hljs-attr">trim</span> /&gt;</span>
+</span></code></pre></li> <li><strong><code class="hljs inline no-lang">omitFrontmatter</code></strong> (optional): omit the front matter of the file/fragment from being included (if any).<pre><code class="hljs"><span>
+</span></code></pre></li></ul> <div><div class="alert box-container alert-default" style="border-left:5px solid #00B0F0;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span style="color:#00B0F0;" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span>
+The <code class="hljs inline no-lang" data-v-7d17494f>&lt;include&gt;</code> mechanism can be used inside any MarkBind source file (even inside the <em data-v-7d17494f>front matter</em> section) but it will not work inside some <em data-v-7d17494f>special</em> files such as the <code class="hljs inline no-lang" data-v-7d17494f>_markbind/variables.md</code>.</p></div> <!----></div></div></div></div> <h5 id="include-inside-an-included-file"><span id="include-inside-an-included-file" class="anchor"></span><code class="hljs inline no-lang">&lt;include&gt;</code> Inside an Included File<a href="#include-inside-an-included-file" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h5> <p><strong>Although the <code class="hljs inline no-lang">src</code> attribute of an <code class="hljs inline no-lang">&lt;include&gt;</code> is given <em>relative</em> to the current directory, it is converted to an <em>absolute</em> value <em>before</em> the <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">i.e., the file containing the <code class="hljs inline no-lang">&lt;include&gt;</code></span>host file</span> is included from another file.</strong></p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Suppose you have a MarkBind project with the following file structure.</p> <pre><code class="no-line-numbers hljs"><span>C:/mySite/
 </span><span>  ├── bookFiles/
 </span><span>  |      ├── book.md
 </span><span>  |      ├── chapter1.md
 </span><span>  |      └── chapter2.md
 </span><span>  └── reviewFiles/
 </span><span>         └── review.md
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>book.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># My Book</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">book.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section"># My Book</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter1.md&quot;</span> /&gt;</span></span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter2.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>review.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># My Review</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">review.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section"># My Review</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../bookFiles/book.md&quot;</span> /&gt;</span></span>
 </span><span>...
-</span></code></pre>
-            <p>The content of the <code class="hljs inline no-lang" v-pre>chapter1.md</code> and <code class="hljs inline no-lang" v-pre>chapter2.md</code> will be included in the <code class="hljs inline no-lang" v-pre>review.md</code> (via <code class="hljs inline no-lang" v-pre>&lt;include src=&quot;../bookFiles/book.md&quot; /&gt;</code>) although <code class="hljs inline no-lang" v-pre>chapter1.md</code> and <code class="hljs inline no-lang" v-pre>chapter2.md</code> are not in <code class="hljs inline no-lang" v-pre>reviewFiles</code> directory. i.e., <code class="hljs inline no-lang" v-pre>&lt;include src=&quot;chapter1.md&quot; /&gt;</code> will be interpreted as <code class="hljs inline no-lang" v-pre>&lt;include src=&quot;c:/mySite/bookFiles/chapter1.md&quot; /&gt;</code></p>
-          </div>
-          <p>In other words, <strong><code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> interprets the reused code relative to the original location of the file, not the location in which it is reused.</strong></p>
-          <hr>
-          <h5 id="specifying-variables-in-an-include"><span id="specifying-variables-in-an-include" class="anchor"></span>Specifying Variables in an <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code><a class="fa fa-anchor" href="#specifying-variables-in-an-include" onclick="event.stopPropagation()"></a></h5>
-          <p><strong>It is possible to include variables in an <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code>.</strong></p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying <code class="hljs inline no-lang" v-pre>title</code> and <code class="hljs inline no-lang" v-pre>author</code> variables in an <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tag:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;article.md&quot;</span>&gt;</span>
+</span></code></pre><p>The content of the <code class="hljs inline no-lang">chapter1.md</code> and <code class="hljs inline no-lang">chapter2.md</code> will be included in the <code class="hljs inline no-lang">review.md</code> (via <code class="hljs inline no-lang">&lt;include src=&quot;../bookFiles/book.md&quot; /&gt;</code>) although <code class="hljs inline no-lang">chapter1.md</code> and <code class="hljs inline no-lang">chapter2.md</code> are not in <code class="hljs inline no-lang">reviewFiles</code> directory. i.e., <code class="hljs inline no-lang">&lt;include src=&quot;chapter1.md&quot; /&gt;</code> will be interpreted as <code class="hljs inline no-lang">&lt;include src=&quot;c:/mySite/bookFiles/chapter1.md&quot; /&gt;</code></p></div> <p>In other words, <strong><code class="hljs inline no-lang">&lt;include&gt;</code> interprets the reused code relative to the original location of the file, not the location in which it is reused.</strong></p> <hr> <h5 id="specifying-variables-in-an-include"><span id="specifying-variables-in-an-include" class="anchor"></span>Specifying Variables in an <code class="hljs inline no-lang">&lt;include&gt;</code><a href="#specifying-variables-in-an-include" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h5> <p><strong>It is possible to include variables in an <code class="hljs inline no-lang">&lt;include&gt;</code>.</strong></p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Specifying <code class="hljs inline no-lang">title</code> and <code class="hljs inline no-lang">author</code> variables in an <code class="hljs inline no-lang">&lt;include&gt;</code> tag:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;article.md&quot;</span>&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>My Title<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;author&quot;</span>&gt;</span>John Doe<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
-</span></code></pre>
-            <p>In <code class="hljs inline no-lang" v-pre>article.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span># {{ title }}<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+</span></code></pre><p>In <code class="hljs inline no-lang">article.md</code>:</p> <pre><code class="hljs html"><span># {{ title }}<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
 </span><span>Author: {{ author }}
-</span></code></pre>
-          </div>
-          <p>These variables work the same way as variables in <code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>, except that they only apply to the included file. They allow the included file to be reused as a template, for different source files using different variable values.</p>
-          <p>You can also specify include variables within the <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tag itself by adding a <code class="hljs inline no-lang" v-pre>var-</code> prefix.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying <code class="hljs inline no-lang" v-pre>title</code> and <code class="hljs inline no-lang" v-pre>author</code> variables inline:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;article.md&quot;</span> <span class="hljs-attr">var-title</span>=<span class="hljs-string">&quot;My Title&quot;</span> <span class="hljs-attr">var-author</span>=<span class="hljs-string">&quot;John Doe&quot;</span> /&gt;</span>
-</span></code></pre>
-          </div>
-          <p>If the same variable is defined in a chain of <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code>s (e.g. <code class="hljs inline no-lang" v-pre>a.md</code> includes <code class="hljs inline no-lang" v-pre>b.md</code> includes <code class="hljs inline no-lang" v-pre>c.md</code>...), variables defined in the top-most <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> will take precedence. Global variables (<code class="hljs inline no-lang" v-pre>_markbind/variables.md</code>) will take precedence over any <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> variables.</p>
-          <h3 id="using-boilerplate-files"><span id="using-boilerplate-files" class="anchor"></span>Using Boilerplate Files<a class="fa fa-anchor" href="#using-boilerplate-files" onclick="event.stopPropagation()"></a></h3>
-          <p><strong>If you find duplicating a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">code that needs to stay relative to the directory in which it used</span><em>boilerplate code</em></span> fragment in multiple places of your code base, you can use a <code class="hljs inline no-lang" v-pre>boilerplate</code> file to avoid such duplication.</strong> Note that you cannot use a normal <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> in this case because the code included using a normal <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> stays relative to the original location while boilerplate code needs to be interpreted relative to the location it is being used.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a MarkBind project with the following file structure.</p>
-            <pre><code class="hljs" v-pre><span>c:/mySite/
+</span></code></pre></div> <p>These variables work the same way as variables in <code class="hljs inline no-lang">_markbind/variables.md</code>, except that they only apply to the included file. They allow the included file to be reused as a template, for different source files using different variable values.</p> <p>You can also specify include variables within the <code class="hljs inline no-lang">&lt;include&gt;</code> tag itself by adding a <code class="hljs inline no-lang">var-</code> prefix.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Specifying <code class="hljs inline no-lang">title</code> and <code class="hljs inline no-lang">author</code> variables inline:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;article.md&quot;</span> <span class="hljs-attr">var-title</span>=<span class="hljs-string">&quot;My Title&quot;</span> <span class="hljs-attr">var-author</span>=<span class="hljs-string">&quot;John Doe&quot;</span> /&gt;</span>
+</span></code></pre></div> <p>If the same variable is defined in a chain of <code class="hljs inline no-lang">&lt;include&gt;</code>s (e.g. <code class="hljs inline no-lang">a.md</code> includes <code class="hljs inline no-lang">b.md</code> includes <code class="hljs inline no-lang">c.md</code>...), variables defined in the top-most <code class="hljs inline no-lang">&lt;include&gt;</code> will take precedence. Global variables (<code class="hljs inline no-lang">_markbind/variables.md</code>) will take precedence over any <code class="hljs inline no-lang">&lt;include&gt;</code> variables.</p> <h3 id="using-boilerplate-files"><span id="using-boilerplate-files" class="anchor"></span>Using Boilerplate Files<a href="#using-boilerplate-files" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>If you find duplicating a <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">code that needs to stay relative to the directory in which it used</span><em>boilerplate code</em></span> fragment in multiple places of your code base, you can use a <code class="hljs inline no-lang">boilerplate</code> file to avoid such duplication.</strong> Note that you cannot use a normal <code class="hljs inline no-lang">&lt;include&gt;</code> in this case because the code included using a normal <code class="hljs inline no-lang">&lt;include&gt;</code> stays relative to the original location while boilerplate code needs to be interpreted relative to the location it is being used.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Suppose you have a MarkBind project with the following file structure.</p> <pre><code class="no-line-numbers hljs"><span>C:/mySite/
 </span><span>  ├── chapter1/
 </span><span>  |      ├── chapter.md
 </span><span>  |      ├── text.md
@@ -605,34 +98,18 @@
 </span><span>  |      ├── text.md
 </span><span>  |      └── exercises.md
 </span><span>  └── book.md
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>book.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># My Book</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">book.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section"># My Book</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter1/chapter.md&quot;</span> /&gt;</span></span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter2/chapter.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>chapter1/chapter.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Text</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">chapter1/chapter.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section">## Text</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;text.md&quot;</span> /&gt;</span></span>
 </span><span><span class="hljs-section">## Exercises</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;exercises.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>chapter2/chapter.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Text</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">chapter2/chapter.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section">## Text</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;text.md&quot;</span> /&gt;</span></span>
 </span><span><span class="hljs-section">## Exercises</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;exercises.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-            <p>As you can see, both <code class="hljs inline no-lang" v-pre>chapter.md</code> files are exactly the same. If we were to use only one of the <code class="hljs inline no-lang" v-pre>chapter.md</code> files and <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> it twice in the <code class="hljs inline no-lang" v-pre>book.md</code>, we'll end up with the same chapter content duplicated twice, which is not what we want. In other words, <code class="hljs inline no-lang" v-pre>chapter.md</code> contains boilerplate code that needs to be interpreted relative to where it is applied, once relative to <code class="hljs inline no-lang" v-pre>chapter1</code> directory and once relative to <code class="hljs inline no-lang" v-pre>chapter2</code> directory.</p>
-          </div>
-          <p>To use a code fragment as a boilerplate file,</p>
-          <ol>
-            <li>Put the code in a file inside the <code class="hljs inline no-lang" v-pre>_markbind/boilerplates</code> directory.</li>
-            <li><code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> the file <em>as if</em> a copy of it exists in any directory you want it to applied, but add the <code class="hljs inline no-lang" v-pre>boilerplate</code> attribute to the <code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tag.</li>
-          </ol>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can use a boilerplate file to avoid duplicating the <code class="hljs inline no-lang" v-pre>chapter.md</code>:</p>
-            <pre><code class="hljs" v-pre><span>c:/mySite/
+</span></code></pre><p>As you can see, both <code class="hljs inline no-lang">chapter.md</code> files are exactly the same. If we were to use only one of the <code class="hljs inline no-lang">chapter.md</code> files and <code class="hljs inline no-lang">&lt;include&gt;</code> it twice in the <code class="hljs inline no-lang">book.md</code>, we'll end up with the same chapter content duplicated twice, which is not what we want. In other words, <code class="hljs inline no-lang">chapter.md</code> contains boilerplate code that needs to be interpreted relative to where it is applied, once relative to <code class="hljs inline no-lang">chapter1</code> directory and once relative to <code class="hljs inline no-lang">chapter2</code> directory.</p></div> <p>To use a code fragment as a boilerplate file,</p> <ol><li>Put the code in a file inside the <code class="hljs inline no-lang">_markbind/boilerplates</code> directory.</li> <li><code class="hljs inline no-lang">&lt;include&gt;</code> the file <em>as if</em> a copy of it exists in any directory you want it to applied, but add the <code class="hljs inline no-lang">boilerplate</code> attribute to the <code class="hljs inline no-lang">&lt;include&gt;</code> tag.</li></ol> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Here's how you can use a boilerplate file to avoid duplicating the <code class="hljs inline no-lang">chapter.md</code>:</p> <pre><code class="no-line-numbers hljs"><span>C:/mySite/
 </span><span>  ├── _markbind/boilerplates/
 </span><span>  |      └── chapter.md
 </span><span>  ├── chapter1/
@@ -642,47 +119,24 @@
 </span><span>  |      ├── text.md
 </span><span>  |      └── exercises.md
 </span><span>  └── book.md
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>book.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># My Book</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">book.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section"># My Book</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter1/chapter.md&quot;</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter2/chapter.md&quot;</span> <span class="hljs-attr">boilerplate</span> /&gt;</span></span>
-</span></code></pre>
-            <p>The <code class="hljs inline no-lang" v-pre>_markbind/boilerplates/chapter.md</code>:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Text</span>
+</span></code></pre><p>The <code class="hljs inline no-lang">_markbind/boilerplates/chapter.md</code>:</p> <pre><code class="hljs markdown"><span><span class="hljs-section">## Text</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;text.md&quot;</span> /&gt;</span></span>
 </span><span><span class="hljs-section">## Exercises</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;exercises.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-            <p>Consider the line <code class="hljs inline no-lang" v-pre>&lt;include src=&quot;chapter1/chapter.md&quot; boilerplate /&gt;</code>. Note how you can use <code class="hljs inline no-lang" v-pre>src=&quot;chapter1/chapter.md&quot;</code> there is no such file. MarkBind will use the <code class="hljs inline no-lang" v-pre>chapter.md</code> file <code class="hljs inline no-lang" v-pre>/_markbind/boilerplates/</code> but interpret it as if the file exist in <code class="hljs inline no-lang" v-pre>chapter1</code> directory (i.e., interpret the <code class="hljs inline no-lang" v-pre>chapter1.md</code> code relative to the <code class="hljs inline no-lang" v-pre>chapter1</code> directory.</p>
-            <p>Similarly, <code class="hljs inline no-lang" v-pre>&lt;include src=&quot;chapter2/chapter.md&quot; boilerplate /&gt;</code> interprets the <code class="hljs inline no-lang" v-pre>chapter.md</code> relative to the <code class="hljs inline no-lang" v-pre>chapter2</code> directory.</p>
-          </div>
-          <p>If you have many boilerplate files, you can organize them into directories inside the <code class="hljs inline no-lang" v-pre>_markbind</code> directory. When using such boilerplate files, you need to replace <code class="hljs inline no-lang" v-pre>boilerplate</code> attribute with <code class="hljs inline no-lang" v-pre>boilerplate=&quot;&lt;path to file relative to _markbind/boilerplates&gt;&quot;</code>.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose the <code class="hljs inline no-lang" v-pre>chapter.md</code> is places in a <code class="hljs inline no-lang" v-pre>book</code> directory:</p>
-            <pre><code class="hljs" v-pre><span>c:/mySite/
+</span></code></pre><p>Consider the line <code class="hljs inline no-lang">&lt;include src=&quot;chapter1/chapter.md&quot; boilerplate /&gt;</code>. Note how you can use <code class="hljs inline no-lang">src=&quot;chapter1/chapter.md&quot;</code> there is no such file. MarkBind will use the <code class="hljs inline no-lang">chapter.md</code> file <code class="hljs inline no-lang">/_markbind/boilerplates/</code> but interpret it as if the file exist in <code class="hljs inline no-lang">chapter1</code> directory (i.e., interpret the <code class="hljs inline no-lang">chapter1.md</code> code relative to the <code class="hljs inline no-lang">chapter1</code> directory.</p> <p>Similarly, <code class="hljs inline no-lang">&lt;include src=&quot;chapter2/chapter.md&quot; boilerplate /&gt;</code> interprets the <code class="hljs inline no-lang">chapter.md</code> relative to the <code class="hljs inline no-lang">chapter2</code> directory.</p></div> <p>If you have many boilerplate files, you can organize them into directories inside the <code class="hljs inline no-lang">_markbind</code> directory. When using such boilerplate files, you need to replace <code class="hljs inline no-lang">boilerplate</code> attribute with <code class="hljs inline no-lang">boilerplate=&quot;&lt;path to file relative to _markbind/boilerplates&gt;&quot;</code>.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Suppose the <code class="hljs inline no-lang">chapter.md</code> is places in a <code class="hljs inline no-lang">book</code> directory:</p> <pre><code class="no-line-numbers hljs"><span>C:/mySite/
 </span><span>  └── _markbind/boilerplates/
 </span><span>         └── book/
 </span><span>               └── chapter.md
 </span><span>
-</span></code></pre>
-            <p>It needs to be used as follows:</p>
-            <pre><code class="hljs markdown" v-pre><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter1/chapter.md&quot;</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">&quot;book/chapter.md&quot;</span> /&gt;</span></span>
+</span></code></pre><p>It needs to be used as follows:</p> <pre><code class="hljs markdown"><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter1/chapter.md&quot;</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">&quot;book/chapter.md&quot;</span> /&gt;</span></span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;chapter2/chapter.md&quot;</span> <span class="hljs-attr">boilerplate</span>=<span class="hljs-string">&quot;book/chapter.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-          </div>
-          <span id="short" class="d-none">
-            <pre><code class="hljs markdown" v-pre><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;foo.md#bar&quot;</span> <span class="hljs-attr">boilerplate</span> <span class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span></span>
+</span></code></pre></div> <span id="short" class="d-none"><pre><code class="hljs markdown"><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;foo.md#bar&quot;</span> <span class="hljs-attr">boilerplate</span> <span class="hljs-attr">inline</span> <span class="hljs-attr">trim</span>&gt;</span></span>
 </span><span>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;x&quot;</span>&gt;</span></span>5<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span></span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span></span>
-</span></code></pre></span>
-        </div>
-        <hr>
-        <h2 id="reusing-contents-across-sites"><span id="reusing-contents-across-sites" class="anchor"></span>Reusing Contents Across Sites<a class="fa fa-anchor" href="#reusing-contents-across-sites" onclick="event.stopPropagation()"></a></h2>
-        <p><strong>MarkBind supports reusing across sites.</strong> It allows you to include the pages you want from a <em>sub-site</em> in another <em>main-site</em> without having to change anything in the source files of the <em>sub-site</em> as long as the sub-site source files are inside the directory of the <em>main site</em>.</p>
-        <div class="indented">
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a site <code class="hljs inline no-lang" v-pre>textbook</code> and you want to include some pages from it in another site <code class="hljs inline no-lang" v-pre>course</code>. Given below is how you can locate the sub-site <code class="hljs inline no-lang" v-pre>textbook</code> inside the root directory of the main-site <code class="hljs inline no-lang" v-pre>course</code> so that files from <code class="hljs inline no-lang" v-pre>textbook</code> can be reused in the <code class="hljs inline no-lang" v-pre>course</code> site.</p>
-          <pre><code class="hljs" v-pre><span>c:/course/
+</span></code></pre></span></div> <hr> <h2 id="reusing-contents-across-sites"><span id="reusing-contents-across-sites" class="anchor"></span>Reusing Contents Across Sites<a href="#reusing-contents-across-sites" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p><strong>MarkBind supports reusing across sites.</strong> It allows you to include the pages you want from a <em>sub-site</em> in another <em>main-site</em> without having to change anything in the source files of the <em>sub-site</em> as long as the sub-site source files are inside the directory of the <em>main site</em>.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Suppose you have a site <code class="hljs inline no-lang">textbook</code> and you want to include some pages from it in another site <code class="hljs inline no-lang">course</code>. Given below is how you can locate the sub-site <code class="hljs inline no-lang">textbook</code> inside the root directory of the main-site <code class="hljs inline no-lang">course</code> so that files from <code class="hljs inline no-lang">textbook</code> can be reused in the <code class="hljs inline no-lang">course</code> site.</p> <pre><code class="no-line-numbers hljs"><span>C:/course/
 </span><span>  ├── textbook/
 </span><span>  |      ├── index.md
 </span><span>  |      ├── overview.md
@@ -690,141 +144,37 @@
 </span><span>  ├── index.md
 </span><span>  ├── reading.md
 </span><span>  └── site.json
-</span></code></pre>
-          <p><code class="hljs inline no-lang" v-pre>reading.md</code> (note how it reuses content from the sub-site <code class="hljs inline no-lang" v-pre>textbook</code>):</p>
-          <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># Week 1 Reading:</span>
+</span></code></pre><p><code class="hljs inline no-lang">reading.md</code> (note how it reuses content from the sub-site <code class="hljs inline no-lang">textbook</code>):</p> <pre><code class="hljs markdown"><span><span class="hljs-section"># Week 1 Reading:</span>
 </span><span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;textbook/overview.md&quot;</span> /&gt;</span></span>
-</span></code></pre>
-        </div>
-        <div>
-          <box border-left-color="#00B0F0">
-            <p><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-lightbulb"></span></span>
-              If you are using Git for version control, you can set up the sub-site repository as a <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git sub-module</a> of the main site repository.</p>
-          </box>
-        </div>
-        <hr>
-        <h2 id="creating-content-variations"><span id="creating-content-variations" class="anchor"></span>Creating Content Variations<a class="fa fa-anchor" href="#creating-content-variations" onclick="event.stopPropagation()"></a></h2>
-        <p><strong>MarkBind can create sites that give more control to the reader.</strong> Given below are some mechanisms authors can use to create variations of content that gives more control to the reader in charting their own path through the content.</p>
-        <h4 id="allowing-users-to-remove-some-contents"><span id="allowing-users-to-remove-some-contents" class="anchor"></span>Allowing users to remove some contents<a class="fa fa-anchor" href="#allowing-users-to-remove-some-contents" onclick="event.stopPropagation()"></a></h4>
-        <p>When the readers can remove an item from a page, they can create their own version of the page by removing items they don't want to see. This is especially useful when printing a page.</p>
-        <p>To make an element closeable, use <code class="hljs inline no-lang" v-pre>v-closeable</code>.</p>
-        <div class="indented">
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-closeable</span>&gt;</span>
+</span></code></pre></div> <div><div class="alert box-container alert-default" style="border-left:5px solid #00B0F0;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span style="color:#00B0F0;" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span>
+If you are using Git for version control, you can set up the sub-site repository as a <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" data-v-7d17494f>Git sub-module</a> of the main site repository.</p></div> <!----></div></div></div></div> <hr> <h2 id="creating-content-variations"><span id="creating-content-variations" class="anchor"></span>Creating Content Variations<a href="#creating-content-variations" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p><strong>MarkBind can create sites that give more control to the reader.</strong> Given below are some mechanisms authors can use to create variations of content that gives more control to the reader in charting their own path through the content.</p> <h4 id="allowing-users-to-remove-some-contents"><span id="allowing-users-to-remove-some-contents" class="anchor"></span>Allowing users to remove some contents<a href="#allowing-users-to-remove-some-contents" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>When the readers can remove an item from a page, they can create their own version of the page by removing items they don't want to see. This is especially useful when printing a page.</p> <p>To make an element closeable, use <code class="hljs inline no-lang">v-closeable</code>.</p> <div class="indented"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-closeable</span>&gt;</span>
 </span><span>
 </span><span>Optional video:
 </span><span>
 </span><span>@[youtube](v40b3ExbM0c)
 </span><span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span></code></pre>
-          <p>This is how the content will appear. Note how you can hover over the content to access the ❌ button that can collapse the content.</p>
-          <div v-closeable>
-            <p>Optional video:</p>
-            <div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
-          </div>
-        </div>
-        <h4 id="giving-alternative-contents"><span id="giving-alternative-contents" class="anchor"></span>Giving alternative contents<a class="fa fa-anchor" href="#giving-alternative-contents" onclick="event.stopPropagation()"></a></h4>
-        <p>You can use a <a href="/userGuide/usingComponents.html#tabs"><em>Tabs</em> component</a> to give alternative versions of content, for example, giving a code snippet in different programming languages.</p>
-        <h4 id="giving-access-to-additional-contents"><span id="giving-access-to-additional-contents" class="anchor"></span>Giving access to additional contents<a class="fa fa-anchor" href="#giving-access-to-additional-contents" onclick="event.stopPropagation()"></a></h4>
-        <p>You can use following components to give readers an option to access additional content at their discretion.</p>
-        <ul>
-          <li><a href="/userGuide/usingComponents.html#tooltip">Tooltips</a>, <a href="/userGuide/usingComponents.html#popover">Popovers</a>, <a href="/userGuide/usingComponents.html#modal">Modals</a></li>
-          <li><a href="/userGuide/usingComponents.html#panel">Expandable Panels</a></li>
-        </ul>
-        <h4 id="organizing-contents-in-alternative-ways"><span id="organizing-contents-in-alternative-ways" class="anchor"></span>Organizing contents in alternative ways<a class="fa fa-anchor" href="#organizing-contents-in-alternative-ways" onclick="event.stopPropagation()"></a></h4>
-        <p>You can take advantage of <a href="/userGuide/reusingContents.html">MarkBinds feature for content reuse</a>, you can organize content in alternative ways to cater for different readers, without having to duplicate content. For example, you can have different pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p>
-        <h4 id="optimizing-the-print-view"><span id="optimizing-the-print-view" class="anchor"></span>Optimizing the Print View<a class="fa fa-anchor" href="#optimizing-the-print-view" onclick="event.stopPropagation()"></a></h4>
-        <p>To <span class="keyword">hide minimized panels in the <em>print view</em></span>, add the following code to a CSS file used in your site.</p>
-        <pre><code class="hljs css" v-pre><span><span class="hljs-keyword">@media</span> print {
+</span></code></pre><p>This is how the content will appear. Note how you can hover over the content to access the ❌ button that can collapse the content.</p> <div><p>Optional video:</p> <div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/v40b3ExbM0c" frameborder="0" width="640" height="390" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="allowfullscreen"></iframe></div></div></div> <h4 id="giving-alternative-contents"><span id="giving-alternative-contents" class="anchor"></span>Giving alternative contents<a href="#giving-alternative-contents" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>You can use a <a href="/userGuide/usingComponents.html#tabs"><em>Tabs</em> component</a> to give alternative versions of content, for example, giving a code snippet in different programming languages.</p> <h4 id="giving-access-to-additional-contents"><span id="giving-access-to-additional-contents" class="anchor"></span>Giving access to additional contents<a href="#giving-access-to-additional-contents" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>You can use following components to give readers an option to access additional content at their discretion.</p> <ul><li><a href="/userGuide/usingComponents.html#tooltip">Tooltips</a>, <a href="/userGuide/usingComponents.html#popover">Popovers</a>, <a href="/userGuide/usingComponents.html#modal">Modals</a></li> <li><a href="/userGuide/usingComponents.html#panel">Expandable Panels</a></li></ul> <h4 id="organizing-contents-in-alternative-ways"><span id="organizing-contents-in-alternative-ways" class="anchor"></span>Organizing contents in alternative ways<a href="#organizing-contents-in-alternative-ways" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>You can take advantage of <a href="/userGuide/reusingContents.html">MarkBinds feature for content reuse</a>, you can organize content in alternative ways to cater for different readers, without having to duplicate content. For example, you can have different pages that organizes the same information alphabetically, chronologically, by difficulty, group information by topic, etc.</p> <h4 id="optimizing-the-print-view"><span id="optimizing-the-print-view" class="anchor"></span>Optimizing the Print View<a href="#optimizing-the-print-view" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>To <span class="keyword">hide minimized panels in the <em>print view</em></span>, add the following code to a CSS file used in your site.</p> <pre><code class="hljs css"><span><span class="hljs-keyword">@media</span> print {
 </span><span>    <span class="hljs-selector-class">.card-container</span> &gt; <span class="hljs-selector-class">.morph</span> {
 </span><span>        <span class="hljs-attribute">display</span>: none;
 </span><span>    }
 </span><span>}
-</span></code></pre>
-        <h4 id="hiding-some-info-in-the-generated-content"><span id="hiding-some-info-in-the-generated-content" class="anchor"></span>Hiding some info in the generated content<a class="fa fa-anchor" href="#hiding-some-info-in-the-generated-content" onclick="event.stopPropagation()"></a></h4>
-        <p>To permanently hide a fragment from the reader:</p>
-        <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-none&quot;</span>&gt;</span>
+</span></code></pre><h4 id="hiding-some-info-in-the-generated-content"><span id="hiding-some-info-in-the-generated-content" class="anchor"></span>Hiding some info in the generated content<a href="#hiding-some-info-in-the-generated-content" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>To permanently hide a fragment from the reader:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-none&quot;</span>&gt;</span>
 </span><span>  content to hide ...
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;...&quot;</span> <span class="hljs-attr">add-class</span>=<span class="hljs-string">&quot;d-none&quot;</span>&gt;</span>
 </span><span>  content to hide ...
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">panel</span>&gt;</span>
-</span></code></pre>
-        <p>To hide a fragment in one specific page, 'mark' the elements using a <code class="hljs inline no-lang" v-pre>class</code>:</p>
-        <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;extra&quot;</span>&gt;</span>
+</span></code></pre><p>To hide a fragment in one specific page, 'mark' the elements using a <code class="hljs inline no-lang">class</code>:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;extra&quot;</span>&gt;</span>
 </span><span>  content to hide ...
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</span></code></pre>
-        <p>Then, in a page-specific CSS file,</p>
-        <pre><code class="hljs css" v-pre><span><span class="hljs-selector-class">.extra</span> {
-</span><span>  <span class="hljs-attribute">display</span>: none; <span class="hljs-comment">/* &#x27;block&#x27; or &#x27;inline-block&#x27; if you want it to show */</span>
+</span></code></pre><p>Then, in a page-specific CSS file,</p> <pre><code class="hljs css"><span><span class="hljs-selector-class">.extra</span> {
+</span><span>  <span class="hljs-attribute">display</span>: none; <span class="hljs-comment">/* 'block' or 'inline-block' if you want it to show */</span>
 </span><span>}
-</span></code></pre>
-        <h4 id="creating-slight-variations-of-content"><span id="creating-slight-variations-of-content" class="anchor"></span>Creating slight variations of content<a class="fa fa-anchor" href="#creating-slight-variations-of-content" onclick="event.stopPropagation()"></a></h4>
-        <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="/userGuide/tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a> section for more information.</p>
-        <div class="clearfix">
-          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/tweakingThePageStructure.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Tweaking the Page Structure</span></span></a></span></p>
-          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/workingWithSites.html"><span><span>Working with Sites</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
-        </div>
-        <br>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#reusing-contents">Reusing Contents&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#variables">Variables&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#global-variables">Global Variables&#x200E;</a>
-                <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                  <a class="nav-link py-1" href="#default-values-for-variables">Default values for variables&#x200E;</a>
-                  <a class="nav-link py-1" href="#built-in-global-variables">Built-in Global Variables&#x200E;</a>
-                </nav>
-                <a class="nav-link py-1" href="#page-variables">Page Variables&#x200E;</a>
-                <a class="nav-link py-1" href="#importing-variables">Importing Variables&#x200E;</a>
-                <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                  <a class="nav-link py-1" href="#importing-variables-from-other-external-file-formats">Importing variables from other external file formats&#x200E;</a>
-                </nav>
-                <a class="nav-link py-1" href="#tips-and-tricks-for-variables">Tips and Tricks for variables&#x200E;</a>
-              </nav>
-              <a class="nav-link py-1" href="#includes">Includes&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#using-boilerplate-files">Using Boilerplate Files&#x200E;</a>
-              </nav>
-              <a class="nav-link py-1" href="#reusing-contents-across-sites">Reusing Contents Across Sites&#x200E;</a>
-              <a class="nav-link py-1" href="#creating-content-variations">Creating Content Variations&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#allowing-users-to-remove-some-contents">Allowing users to remove some contents&#x200E;</a>
-                <a class="nav-link py-1" href="#giving-alternative-contents">Giving alternative contents&#x200E;</a>
-                <a class="nav-link py-1" href="#giving-access-to-additional-contents">Giving access to additional contents&#x200E;</a>
-                <a class="nav-link py-1" href="#organizing-contents-in-alternative-ways">Organizing contents in alternative ways&#x200E;</a>
-                <a class="nav-link py-1" href="#optimizing-the-print-view">Optimizing the Print View&#x200E;</a>
-                <a class="nav-link py-1" href="#hiding-some-info-in-the-generated-content">Hiding some info in the generated content&#x200E;</a>
-                <a class="nav-link py-1" href="#creating-slight-variations-of-content">Creating slight variations of content&#x200E;</a>
-              </nav>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-      <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.18.1</a> on Fri, Mar 19, 2021, 2:24:17 PM UTC]</small></div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+</span></code></pre><h4 id="creating-slight-variations-of-content"><span id="creating-slight-variations-of-content" class="anchor"></span>Creating slight variations of content<a href="#creating-slight-variations-of-content" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Tags are a good way to create multiple variations of a page within the same source file, such as to filter content for creating multiple different versions of the same page. See <a href="/userGuide/tweakingThePageStructure.html#tags"><em>User Guide: Tweaking the Page Structure → Tags</em></a> section for more information.</p> <div class="clearfix"><p><span class="float-left"><a href="/userGuide/tweakingThePageStructure.html" class="btn btn-light"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Tweaking the Page Structure</span></span></a></span></p> <p><span class="float-right"><a href="/userGuide/workingWithSites.html" class="btn btn-light"><span><span>Working with Sites</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p></div> <br> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a href="#reusing-contents" class="nav-link py-1" data-v-e8c82f88>Reusing Contents‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#variables" class="nav-link py-1" data-v-e8c82f88>Variables‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#global-variables" class="nav-link py-1" data-v-e8c82f88>Global Variables‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#built-in-global-variables" class="nav-link py-1" data-v-e8c82f88>Built-in Global Variables‎</a></nav> <a href="#importing-variables-from-other-external-file-formats" class="nav-link py-1" data-v-e8c82f88>Importing variables from other external file formats‎</a></nav> <a href="#includes" class="nav-link py-1" data-v-e8c82f88>Includes‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#using-boilerplate-files" class="nav-link py-1" data-v-e8c82f88>Using Boilerplate Files‎</a></nav> <a href="#reusing-contents-across-sites" class="nav-link py-1" data-v-e8c82f88>Reusing Contents Across Sites‎</a> <a href="#creating-content-variations" class="nav-link py-1" data-v-e8c82f88>Creating Content Variations‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#allowing-users-to-remove-some-contents" class="nav-link py-1" data-v-e8c82f88>Allowing users to remove some contents‎</a> <a href="#giving-alternative-contents" class="nav-link py-1" data-v-e8c82f88>Giving alternative contents‎</a> <a href="#giving-access-to-additional-contents" class="nav-link py-1" data-v-e8c82f88>Giving access to additional contents‎</a> <a href="#organizing-contents-in-alternative-ways" class="nav-link py-1" data-v-e8c82f88>Organizing contents in alternative ways‎</a> <a href="#optimizing-the-print-view" class="nav-link py-1" data-v-e8c82f88>Optimizing the Print View‎</a> <a href="#hiding-some-info-in-the-generated-content" class="nav-link py-1" data-v-e8c82f88>Hiding some info in the generated content‎</a> <a href="#creating-slight-variations-of-content" class="nav-link py-1" data-v-e8c82f88>Creating slight variations of content‎</a></nav></nav> <!----></nav></div> <!----></nav></div> <div><footer><div class="text-center"><small>[Generated by <a href="https://markbind.org/">MarkBind 3.0.0</a> on Sun, 6 Jun 2021, 4:04:19 UTC]</small><br> <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div></footer></div></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = ''
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/userGuide/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

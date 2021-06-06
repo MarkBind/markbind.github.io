@@ -1,416 +1,48 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.18.1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkBind - User Guide: Making the Site Searchable</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="icon" href="/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header fixed>
-      <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark" class="temp-navbar">
-        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-        <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <div tags="environment--ug">
-          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        </div>
-
-        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li>
-          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-      <nav id="site-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
-          <ul class="site-nav-list site-nav-list-root">
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html" class="current">Making the Site Searchable</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-
-      <div id="content-wrapper">
-        <div></div>
-        <div></div>
-        <span id="link" class="d-none">
-          <span><a href="/userGuide/makingTheSiteSearchable.html"><em>User Guide → Making the Site Searchable</em></a></span></span>
-        <h1 id="making-the-site-searchable"><span id="making-the-site-searchable" class="anchor"></span>Making the Site Searchable<a class="fa fa-anchor" href="#making-the-site-searchable" onclick="event.stopPropagation()"></a></h1>
-        <span class="lead" id="overview">
-          <p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong> with the option to use third-party search services as well.
-          </p>
-        </span>
-        <p></p>
-        <p><strong>All markdown and html headings of levels 1-3 are captured in the search index</strong> by default. You can change this setting using the <a href="/userGuide/siteJsonFile.html#headingindexinglevel"><code class="hljs inline no-lang" v-pre>headingIndexLevel</code> property of the <code class="hljs inline no-lang" v-pre>site.json</code></a>.</p>
-        <box type="warning">
-          <p>If you do not wish to use MarkBind's searchbar (e.g. you have an external service provider), it may be helpful to include the option <code class="hljs inline no-lang" v-pre>enableSearch: false</code> in your <code class="hljs inline no-lang" v-pre>site.json</code>. This stops MarkBind from indexing search headings and speeds up building.
-          </p>
-        </box>
-        <p></p>
-        <h2 id="search-bars"><span id="search-bars" class="anchor"></span>Search Bars<a class="fa fa-anchor" href="#search-bars" onclick="event.stopPropagation()"></a></h2>
-        <p>You can add a search bar component to your website to allow users to search the site.</p>
-        <panel type="seamless" minimized><template slot="header">
-            <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Using components → <strong>Search bars</strong></p>
-          </template>
-          <div>
-            <div>
-              <p><span class="dimmed">CODE:</span></p>
-              <div class="indented">
-                <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search (Right-aligned dropdown)&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</span></code></pre>
-                <p>To use the searchbar within a navbar, add the following markup to your file. The searchbar can be positioned using the slot attribute for the list. The following markup adds a searchbar to the right side of the navbar with appropriate styling.</p>
-                <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-form&quot;</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</span></code></pre>
-              </div>
-              <p><span class="dimmed">OUTPUT:</span></p>
-              <div class="indented">
-                <box border-left-color="grey" background-color="white">
-                  <p>Enter a search term (eg. 'search bar') to see the search result dropdown.
-                    <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback"></searchbar>
-                    <br>
-                    <searchbar :data="searchData" placeholder="Search (Right-aligned dropdown)" :on-hit="searchCallback" menu-align-right></searchbar>
-                  </p>
-                </box>
-              </div>
-            </div>
-            <p><strong><strong>Options</strong></strong></p>
-            <div class="table-responsive">
-              <table class="markbind-table table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>algolia</td>
-                    <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
-                    <td><code class="hljs inline no-lang" v-pre>false</code></td>
-                    <td>Whether the searchbar should be connected to <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">Algolia DocSearch</a>.</td>
-                  </tr>
-                  <tr>
-                    <td>data</td>
-                    <td><code class="hljs inline no-lang" v-pre>Array</code></td>
-                    <td></td>
-                    <td>The local data source for suggestions. Expected to be a primitive array. To use MarkBind's search functionality, set this value to <code class="hljs inline no-lang" v-pre>&quot;searchData&quot;</code>.</td>
-                  </tr>
-                  <tr>
-                    <td>menu-align-right</td>
-                    <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
-                    <td><code class="hljs inline no-lang" v-pre>false</code></td>
-                    <td>Whether the search bar's dropdown list will be right-aligned.</td>
-                  </tr>
-                  <tr>
-                    <td>on-hit</td>
-                    <td><code class="hljs inline no-lang" v-pre>Function</code></td>
-                    <td></td>
-                    <td>A callback function when you click or hit return on an item. To use MarkBind's search functionality, set this value to <code class="hljs inline no-lang" v-pre>&quot;searchCallback&quot;</code>.</td>
-                  </tr>
-                  <tr>
-                    <td>placeholder</td>
-                    <td><code class="hljs inline no-lang" v-pre>String</code></td>
-                    <td><code class="hljs inline no-lang" v-pre>''</code></td>
-                    <td>The placeholder text shown when no keywords are entered in the search bar.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <box type="warning">
-              <p>Note: If you are using MarkBind's search functionality, then <code class="hljs inline no-lang" v-pre>enableSearch</code> <strong>must be set to <code class="hljs inline no-lang" v-pre>true</code> in <code class="hljs inline no-lang" v-pre>site.json</code></strong>.</p>
-              <p>See: <a href="/userGuide/siteJsonFile.html#enable-search">User Guide: Site Configuration → enableSearch</a>.</p>
-            </box>
-            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a>.</span></p>
-            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">User Guide: Using Plugins → Algolia: Enabling Algolia DocSearch</a>.</span></p>
-          </div>
-        </panel>
-        <p></p>
-        <div>
-          <h2 id="keywords"><span id="keywords" class="anchor"></span>Keywords<a class="fa fa-anchor" href="#keywords" onclick="event.stopPropagation()"></a></h2>
-          <p><span class="keyword d-none">regress</span>
-            <span class="keyword d-none">regression testing</span></p>
-          <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code class="hljs inline no-lang" v-pre>keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword without rendering it in the page, add <code class="hljs inline no-lang" v-pre>d-none</code> as a class.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
-            <pre><code class="hljs html" v-pre><span>#### Developer Testing
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkBind - User Guide: Making the Site Searchable</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="makingTheSiteSearchable.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.ico"></head>
+<script>
+  const baseUrl = ''
+</script>
+<body  data-spy="scroll" data-target="#mb-page-nav" data-offset="100" >
+<div id="app" data-server-rendered="true"><div><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="/index.html" title="Home" class="navbar-brand" data-v-15113a2f><img src="/images/logo-darkbackground.png" height="20" data-v-15113a2f></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a highlight-on="exact" href="/index.html" class="nav-link" data-v-15113a2f>HOME</a></li> <div tags="environment--ug" data-v-15113a2f><li data-v-15113a2f><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link" data-v-15113a2f>USER GUIDE</a></li></div> <li data-v-15113a2f><a highlight-on="exact" href="/showcase.html" class="nav-link" data-v-15113a2f>SHOWCASE</a></li> <li data-v-15113a2f><a highlight-on="exact" href="/about.html" class="nav-link" data-v-15113a2f>ABOUT</a></li> <li data-v-15113a2f><a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header></div> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>User Guide</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/userGuide/gettingStarted.html" data-v-e8c82f88><strong data-v-e8c82f88>Getting Started</strong></a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Authoring Contents</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/authoringContents.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/addingPages.html" data-v-e8c82f88>Adding Pages</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindSyntaxOverview.html" data-v-e8c82f88>MarkBind Syntax Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/formattingContents.html" data-v-e8c82f88>Formatting Contents</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingComponents.html" data-v-e8c82f88>Using Components</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingHtmlJavaScriptCss.html" data-v-e8c82f88>Using HTML, JavaScript, CSS</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tweakingThePageStructure.html" data-v-e8c82f88>Tweaking the Page Structure</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/reusingContents.html" data-v-e8c82f88>Reusing Contents</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Working with sites</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/workingWithSites.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/settingSiteProperties.html" data-v-e8c82f88>Setting Site Properties</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingPlugins.html" data-v-e8c82f88>Using Plugins</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/makingTheSiteSearchable.html" data-v-e8c82f88>Making the Site Searchable</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/themes.html" data-v-e8c82f88>Applying Themes</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/deployingTheSite.html" data-v-e8c82f88>Deploying the Site</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindInTheProjectWorkflow.html" data-v-e8c82f88>MarkBind in the Project Workflow</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>References</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/cliCommands.html" data-v-e8c82f88>CLI Commands</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/readerFacingFeatures.html" data-v-e8c82f88>Reader-Facing Features</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/fullSyntaxReference.html" data-v-e8c82f88>Full Syntax Reference</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/syntaxCheatSheet.html" data-v-e8c82f88>Syntax Cheat Sheet</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/siteJsonFile.html" data-v-e8c82f88><code class="hljs inline no-lang" data-v-e8c82f88>site.json</code> File</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tipsAndTricks.html" data-v-e8c82f88>Tips &amp; Tricks</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/glossary.html" data-v-e8c82f88>Glossary</a></div></li></ul></li> <!----></ul></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><p><span id="title" class="d-none">Making the Site Searchable</span></p> <span id="link" class="d-none"><span><a href="/userGuide/makingTheSiteSearchable.html"><em>User Guide → Making the Site Searchable</em></a></span></span> <h1 id="making-the-site-searchable"><span id="making-the-site-searchable" class="anchor"></span>Making the Site Searchable<a href="#making-the-site-searchable" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <span id="overview" class="lead"><p><strong>MarkBind comes with with an in-built <em>site search</em> facility</strong> with the option to use third-party search services as well.
+</p></span><p></p> <p><strong>All markdown and html headings of levels 1-3 are captured in the search index</strong> by default. You can change this setting using the <a href="/userGuide/siteJsonFile.html#headingindexinglevel"><code class="hljs inline no-lang">headingIndexLevel</code> property of the <code class="hljs inline no-lang">site.json</code></a>.</p> <div class="alert box-container alert-warning" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>If you do not wish to use MarkBind's searchbar (e.g. you have an external service provider), it may be helpful to include the option <code class="hljs inline no-lang" data-v-7d17494f>enableSearch: false</code> in your <code class="hljs inline no-lang" data-v-7d17494f>site.json</code>. This stops MarkBind from indexing search headings and speeds up building.</p></div> <!----></div></div></div> <h2 id="search-bars"><span id="search-bars" class="anchor"></span>Search Bars<a href="#search-bars" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>You can add a search bar component to your website to allow users to search the site.</p> <span minimized="" class="card-container" data-v-5681bde8><span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary card-title" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-log-in" data-v-5681bde8></span></span> Using components → **Search bars**</button></span></span> <p></p> <div><h2 id="keywords"><span id="keywords" class="anchor"></span>Keywords<a href="#keywords" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p><span class="keyword d-none">regress</span> <span class="keyword d-none">regression testing</span></p> <p><strong>You can also specify additional keywords to be indexed under a heading</strong> by tagging the words with the <code class="hljs inline no-lang">keyword</code> class. Those keywords will be linked to the heading immediately above it. If you want to index a keyword without rendering it in the page, add <code class="hljs inline no-lang">d-none</code> as a class.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big></p> <pre><code class="hljs html"><span>#### Developer Testing
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regression testing<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </span><span>
 </span><span>This is good for catching <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword&quot;</span>&gt;</span>regressions<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
-</span></code></pre>
-            <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
-            <box>
-              <p><big><strong>Developer Testing</strong></big><br></p>
-              <p>This is good for catching <span class="keyword">regressions</span>.
-              </p>
-            </box>
-            <p></p>
-          </div>
-          <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code class="hljs inline no-lang" v-pre>keywords</code> attribute inside the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of that page.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre><p><span aria-hidden="true" class="fas fa-arrow-down"></span></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><big data-v-7d17494f><strong data-v-7d17494f>Developer Testing</strong></big><br data-v-7d17494f></p> <p data-v-7d17494f>This is good for catching <span class="keyword" data-v-7d17494f>regressions</span>.</p></div> <!----></div></div></div></div> <p><strong>You can also set additional keywords to be indexed for an entire page</strong> using the <code class="hljs inline no-lang">keywords</code> attribute inside the <code class="hljs inline no-lang">&lt;frontmatter&gt;</code> of that page.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big></p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  keywords: regress, regression testing, regressions
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>...
-</span></code></pre>
-          </div>
-          <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-</span></code></pre></span>
-        </div>
-        <div>
-          <h2 id="including-or-excluding-headings"><span id="including-or-excluding-headings" class="anchor"></span>Including or Excluding Headings<a class="fa fa-anchor" href="#including-or-excluding-headings" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code class="hljs inline no-lang" v-pre>.always-index</code> or <code class="hljs inline no-lang" v-pre>.no-index</code> classes.</p>
-          <p>If you wish to index a specific heading outside the specified <code class="hljs inline no-lang" v-pre>headingIndexLevel</code>, you may add the <code class="hljs inline no-lang" v-pre>.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code class="hljs inline no-lang" v-pre>headingIndexLevel</code> not to be indexed, you may add the <code class="hljs inline no-lang" v-pre>.no-index</code> attribute to the heading.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
-            <pre><code class="hljs md" v-pre><span><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span>
+</span></code></pre></div> <span id="short" class="d-none"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;keyword d-none&quot;</span>&gt;</span>regress<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</span></code></pre></span></div> <div><h2 id="including-or-excluding-headings"><span id="including-or-excluding-headings" class="anchor"></span>Including or Excluding Headings<a href="#including-or-excluding-headings" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p><strong>You can specify headings which are to be included or excluded from the index built by MarkBind's built-in search feature</strong> using the <code class="hljs inline no-lang">.always-index</code> or <code class="hljs inline no-lang">.no-index</code> classes.</p> <p>If you wish to index a specific heading outside the specified <code class="hljs inline no-lang">headingIndexLevel</code>, you may add the <code class="hljs inline no-lang">.always-index</code> attribute to the heading. Similarly, if you wish for a specific heading inside the specified <code class="hljs inline no-lang">headingIndexLevel</code> not to be indexed, you may add the <code class="hljs inline no-lang">.no-index</code> attribute to the heading.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big></p> <pre><code class="hljs md"><span><span class="hljs-section">###### Heading outside heading index level that will be indexed {.always-index}</span>
 </span><span>
 </span><span><span class="hljs-section"># Heading inside heading index level that will not be indexed {.no-index}</span>
-</span></code></pre>
-            <p>Equivalently,</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;always-index&quot;</span>&gt;</span> Heading outside heading index level that will be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+</span></code></pre><p>Equivalently,</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;always-index&quot;</span>&gt;</span> Heading outside heading index level that will be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;no-index&quot;</span>&gt;</span> Heading inside heading index level that will not be indexed <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-</span></code></pre>
-          </div>
-        </div>
-        <h2 id="using-external-search-services"><span id="using-external-search-services" class="anchor"></span>Using External Search Services<a class="fa fa-anchor" href="#using-external-search-services" onclick="event.stopPropagation()"></a></h2>
-        <p>MarkBind sites can use Algolia Doc Search services easily via the Algolia plugin. Unlike the built-in search, Algolia provides full-text search. See the panel below for more info.</p>
-        <panel type="seamless" minimized><template slot="header">
-            <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Using plugins → <strong>Algolia</strong></p>
-          </template>
-          <div>
-            <h3 id="plugin-algolia"><span id="plugin-algolia" class="anchor"></span>Plugin: Algolia<a class="fa fa-anchor" href="#plugin-algolia" onclick="event.stopPropagation()"></a></h3>
-            <p>This plugin allows you to use <a href="https://community.algolia.com/docsearch/">Algolia DocSearch</a> for your site.</p>
-            <p>To enable it, add <code class="hljs inline no-lang" v-pre>algolia</code> to your site's plugins, and supply the required options via the <code class="hljs inline no-lang" v-pre>pluginsContext</code>.</p>
-            <div class="table-responsive">
-              <table class="markbind-table table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>apiKey</td>
-                    <td><code class="hljs inline no-lang" v-pre>String</code></td>
-                    <td></td>
-                    <td>The API key for your site's Algolia DocSearch setup</td>
-                  </tr>
-                  <tr>
-                    <td>indexName</td>
-                    <td><code class="hljs inline no-lang" v-pre>String</code></td>
-                    <td></td>
-                    <td>The index name for your site's Algolia DocSearch setup</td>
-                  </tr>
-                  <tr>
-                    <td>algoliaOptions</td>
-                    <td><code class="hljs inline no-lang" v-pre>Object</code></td>
-                    <td><code class="hljs inline no-lang" v-pre>{}</code></td>
-                    <td>A JSON object specifying <a href="https://community.algolia.com/docsearch/behavior.html#algoliaoptions">additional options for DocSearch</a></td>
-                  </tr>
-                  <tr>
-                    <td>debug</td>
-                    <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
-                    <td><code class="hljs inline no-lang" v-pre>false</code></td>
-                    <td>Whether to turn on debug mode to allow inspection of CSS styles for the dropdown</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <pre><code class="hljs js" v-pre><span>site.json
-</span><span>{
-</span><span>  ...
-</span><span>  <span class="hljs-string">&quot;plugins&quot;</span>: [
-</span><span>    <span class="hljs-string">&quot;algolia&quot;</span>
-</span><span>  ],
-</span><span>  <span class="hljs-string">&quot;pluginsContext&quot;</span>: {
-</span><span>    <span class="hljs-string">&quot;algolia&quot;</span>: {
-</span><span>      <span class="hljs-string">&quot;apiKey&quot;</span>: <span class="hljs-string">&quot;25626fae796133dc1e734c6bcaaeac3c&quot;</span>, <span class="hljs-comment">// replace with your site&#x27;s api key</span>
-</span><span>      <span class="hljs-string">&quot;indexName&quot;</span>: <span class="hljs-string">&quot;docsearch&quot;</span>, <span class="hljs-comment">// replace with your site&#x27;s index name</span>
-</span><span>      <span class="hljs-string">&quot;algoliaOptions&quot;</span>: { <span class="hljs-string">&quot;hitsPerPage&quot;</span>: <span class="hljs-number">10</span> }, <span class="hljs-comment">// optional</span>
-</span><span>      <span class="hljs-string">&quot;debug&quot;</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// optional</span>
-</span><span>    }
-</span><span>  }
-</span><span>}
-</span></code></pre>
-            <p>To connect the <code class="hljs inline no-lang" v-pre>searchbar</code> component to Algolia DocSearch, add the <code class="hljs inline no-lang" v-pre>algolia</code> key.</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">algolia</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
-</span></code></pre>
-            <p>Alternatively, if you are using a custom search bar, you can assign the input field the id <code class="hljs inline no-lang" v-pre>algolia-search-input</code> to connect it to Algolia DocSearch.</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;algolia-search-input&quot;</span>&gt;</span>
-</span></code></pre>
-            <box type="warning">
-              <p>By default, Algolia DocSearch indexes all content on the page, including content in components that are hidden to the user during the initial render (e.g. Panels). To exclude these content from being indexed, you can add <code class="hljs inline no-lang" v-pre>.algolia-no-index</code> to the <a href="https://community.algolia.com/docsearch/config-file.html#selectors_exclude-optional"><code class="hljs inline no-lang" v-pre>selectors_exclude</code></a> attribute in your DocSearch configuration.</p>
-              <p>The <code class="hljs inline no-lang" v-pre>algolia-no-index</code> class is automatically added to content hidden by MarkBind's Vue components. You may also add the <code class="hljs inline no-lang" v-pre>algolia-no-index</code> class to content that you do not want to be indexed by Algolia DocSearch.</p>
-            </box>
-          </div>
-        </panel>
-        <div class="clearfix">
-          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/usingPlugins.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Plugins</span></span></a></span></p>
-          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/themes.html"><span><span>Themes</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
-        </div>
-        <br>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#making-the-site-searchable">Making the Site Searchable&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#search-bars">Search Bars&#x200E;</a>
-              <a class="nav-link py-1" href="#keywords">Keywords&#x200E;</a>
-              <a class="nav-link py-1" href="#including-or-excluding-headings">Including or Excluding Headings&#x200E;</a>
-              <a class="nav-link py-1" href="#using-external-search-services">Using External Search Services&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-      <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.18.1</a> on Fri, Mar 19, 2021, 2:24:17 PM UTC]</small></div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+</span></code></pre></div></div> <h2 id="using-external-search-services"><span id="using-external-search-services" class="anchor"></span>Using External Search Services<a href="#using-external-search-services" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>MarkBind sites can use Algolia Doc Search services easily via the Algolia plugin. Unlike the built-in search, Algolia provides full-text search. See the panel below for more info.</p> <span minimized="" class="card-container" data-v-5681bde8><span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary card-title" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-log-in" data-v-5681bde8></span></span> Using plugins → **Algolia**</button></span></span> <div class="clearfix"><p><span class="float-left"><a href="/userGuide/usingPlugins.html" class="btn btn-light"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Plugins</span></span></a></span></p> <p><span class="float-right"><a href="/userGuide/themes.html" class="btn btn-light"><span><span>Themes</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p></div> <br> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a href="#making-the-site-searchable" class="nav-link py-1" data-v-e8c82f88>Making the Site Searchable‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#search-bars" class="nav-link py-1" data-v-e8c82f88>Search Bars‎</a> <a href="#keywords" class="nav-link py-1" data-v-e8c82f88>Keywords‎</a> <a href="#including-or-excluding-headings" class="nav-link py-1" data-v-e8c82f88>Including or Excluding Headings‎</a> <a href="#using-external-search-services" class="nav-link py-1" data-v-e8c82f88>Using External Search Services‎</a></nav> <!----></nav></div> <!----></nav></div> <div><footer><div class="text-center"><small>[Generated by <a href="https://markbind.org/">MarkBind 3.0.0</a> on Sun, 6 Jun 2021, 4:04:19 UTC]</small><br> <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div></footer></div></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = ''
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/userGuide/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

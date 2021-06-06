@@ -1,612 +1,133 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.18.1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MarkBind - User Guide: Tweaking the Page Structure</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
-  <link rel="icon" href="/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header fixed>
-      <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark" class="temp-navbar">
-        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-        <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <div tags="environment--ug">
-          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        </div>
-
-        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li>
-          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-      <nav id="site-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-right-grey nav-inner position-sticky slim-scroll">
-          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
-          <ul class="site-nav-list site-nav-list-root">
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html" class="current">Tweaking the Page Structure</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
-                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
-                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
-              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
-                </li>
-                <li>
-                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-
-      <div id="content-wrapper">
-        <div></div>
-        <div></div>
-        <span id="link" class="d-none">
-          <span><a href="/userGuide/tweakingThePageStructure.html"><em>User Guide → Tweaking the Page Structure</em></a></span></span>
-        <h1 id="tweaking-the-page-structure"><span id="tweaking-the-page-structure" class="anchor"></span>Tweaking the Page Structure<a class="fa fa-anchor" href="#tweaking-the-page-structure" onclick="event.stopPropagation()"></a></h1>
-        <p><span class="lead" id="overview"><strong>MarkBind offers several ways to easily tweak the overall structure of a page</strong>, for example, using headers, footers, scripts, or stylesheets.</span></p>
-        <div>
-          <h2 id="front-matter"><span id="front-matter" class="anchor"></span>Front Matter<a class="fa fa-anchor" href="#front-matter" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can use a <em>Front Matter</em> section to specify page properties such as the title and keywords of the page.</strong> To specify front matter for a page, insert a <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> tag in the following format at the beginning of the page.</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkBind - User Guide: Tweaking the Page Structure</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="tweakingThePageStructure.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.ico"></head>
+<script>
+  const baseUrl = ''
+</script>
+<body  data-spy="scroll" data-target="#mb-page-nav" data-offset="100" >
+<div id="app" data-server-rendered="true"><div><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="/index.html" title="Home" class="navbar-brand" data-v-15113a2f><img src="/images/logo-darkbackground.png" height="20" data-v-15113a2f></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a highlight-on="exact" href="/index.html" class="nav-link" data-v-15113a2f>HOME</a></li> <div tags="environment--ug" data-v-15113a2f><li data-v-15113a2f><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link" data-v-15113a2f>USER GUIDE</a></li></div> <li data-v-15113a2f><a highlight-on="exact" href="/showcase.html" class="nav-link" data-v-15113a2f>SHOWCASE</a></li> <li data-v-15113a2f><a highlight-on="exact" href="/about.html" class="nav-link" data-v-15113a2f>ABOUT</a></li> <li data-v-15113a2f><a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header></div> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>User Guide</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/userGuide/gettingStarted.html" data-v-e8c82f88><strong data-v-e8c82f88>Getting Started</strong></a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Authoring Contents</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/authoringContents.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/addingPages.html" data-v-e8c82f88>Adding Pages</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindSyntaxOverview.html" data-v-e8c82f88>MarkBind Syntax Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/formattingContents.html" data-v-e8c82f88>Formatting Contents</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingComponents.html" data-v-e8c82f88>Using Components</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingHtmlJavaScriptCss.html" data-v-e8c82f88>Using HTML, JavaScript, CSS</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tweakingThePageStructure.html" data-v-e8c82f88>Tweaking the Page Structure</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/reusingContents.html" data-v-e8c82f88>Reusing Contents</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Working with sites</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/workingWithSites.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/settingSiteProperties.html" data-v-e8c82f88>Setting Site Properties</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingPlugins.html" data-v-e8c82f88>Using Plugins</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/makingTheSiteSearchable.html" data-v-e8c82f88>Making the Site Searchable</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/themes.html" data-v-e8c82f88>Applying Themes</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/deployingTheSite.html" data-v-e8c82f88>Deploying the Site</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindInTheProjectWorkflow.html" data-v-e8c82f88>MarkBind in the Project Workflow</a></div></li></ul></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>References</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/cliCommands.html" data-v-e8c82f88>CLI Commands</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/readerFacingFeatures.html" data-v-e8c82f88>Reader-Facing Features</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/fullSyntaxReference.html" data-v-e8c82f88>Full Syntax Reference</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/syntaxCheatSheet.html" data-v-e8c82f88>Syntax Cheat Sheet</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/siteJsonFile.html" data-v-e8c82f88><code class="hljs inline no-lang" data-v-e8c82f88>site.json</code> File</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/tipsAndTricks.html" data-v-e8c82f88>Tips &amp; Tricks</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/glossary.html" data-v-e8c82f88>Glossary</a></div></li></ul></li> <!----></ul></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><p><span id="title" class="d-none">Tweaking the Page Structure</span></p> <span id="link" class="d-none"><span><a href="/userGuide/tweakingThePageStructure.html"><em>User Guide → Tweaking the Page Structure</em></a></span></span> <h1 id="tweaking-the-page-structure"><span id="tweaking-the-page-structure" class="anchor"></span>Tweaking the Page Structure<a href="#tweaking-the-page-structure" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p><span id="overview" class="lead"><strong>MarkBind offers several ways to easily tweak the overall structure of a page</strong>, for example, using headers, footers, scripts, or stylesheets.</span></p> <div><h2 id="front-matter"><span id="front-matter" class="anchor"></span>Front Matter<a href="#front-matter" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p><strong>You can use a <em>Front Matter</em> section to specify page properties such as the title and keywords of the page.</strong> To specify front matter for a page, insert a <code class="hljs inline no-lang">&lt;frontmatter&gt;</code> tag in the following format at the beginning of the page.</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  property1: value1
 </span><span>  property2: value2
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here, we set the page <code class="hljs inline no-lang" v-pre>title</code> attribute as <code class="hljs inline no-lang" v-pre>Binary Search Tree</code>.</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre><div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Here, we set the page <code class="hljs inline no-lang">title</code> attribute as <code class="hljs inline no-lang">Binary Search Tree</code>.</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  title: Binary Search Tree
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <box type="warning" seamless>
-            <p>Should you need more expressive formatting, or encounter any issues when formatting the frontmatter, note that the frontmatter follows the <a href="https://yaml.org/refcard.html">yaml</a> spec.
-            </p>
-          </box>
-          <p></p>
-          <p><strong>Page properties:</strong></p>
-          <ul>
-            <li><strong><code class="hljs inline no-lang" v-pre>title</code></strong>: The title of the page. Will be used as the <code class="hljs inline no-lang" v-pre>&lt;title&gt;</code> attribute of the HTML page generated.</li>
-            <li>Other properties such as <code class="hljs inline no-lang" v-pre>keywords</code>, <code class="hljs inline no-lang" v-pre>layout</code>, <code class="hljs inline no-lang" v-pre>head</code> etc. will be explained in other places of this user guide.</li>
-          </ul>
-          <div>
-            <box type="warning">
-              <p>Note: Page properties that are defined in <code class="hljs inline no-lang" v-pre>site.json</code> for a particular page will override those defined in the front matter of the page.
-              </p>
-            </box>
-            <p></p>
-          </div>
-          <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></div> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-warning" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Should you need more expressive formatting, or encounter any issues when formatting the frontmatter, note that the frontmatter follows the <a href="https://yaml.org/refcard.html" data-v-7d17494f>yaml</a> spec.</p></div> <!----></div></div></div> <p><strong>Page properties:</strong></p> <ul><li><strong><code class="hljs inline no-lang">title</code></strong>: The title of the page. Will be used as the <code class="hljs inline no-lang">&lt;title&gt;</code> attribute of the HTML page generated.</li> <li>Other properties such as <code class="hljs inline no-lang">keywords</code>, <code class="hljs inline no-lang">layout</code>, etc. will be explained in other places of this user guide.</li></ul> <div><div class="alert box-container alert-warning" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Note: Page properties that are defined in <code class="hljs inline no-lang" data-v-7d17494f>site.json</code> for a particular page will override those defined in the front matter of the page.</p></div> <!----></div></div></div></div> <span id="short" class="d-none"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  title: Binary Search Tree
 </span><span>  pageNav: 2
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre></span>
-        </div>
-        <hr>
-        <div>
-          <h2 id="page-head"><span id="page-head" class="anchor"></span>Page <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code><a class="fa fa-anchor" href="#page-head" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>MarkBind allows you to insert code into the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> section of the generated HTML page</strong>, for example, to add links to custom JavaScript or CSS files.</p>
-          <p>Steps:</p>
-          <ol>
-            <li>Put the code you want to insert into the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> into a file inside the <code class="hljs inline no-lang" v-pre>_markbind/head</code> directory.</li>
-            <li>Specify the file as an attribute named <code class="hljs inline no-lang" v-pre>head</code> in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the page.</li>
-          </ol>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you want to insert the code below into the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> of a page, and you have saved the code as <strong><code class="hljs inline no-lang" v-pre>_markbind/head/</code></strong><code class="hljs inline no-lang" v-pre>myCustomLinks.md</code>:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/myCustomScript.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/main.css&quot;</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/extra.css&quot;</span>&gt;</span>
-</span></code></pre>
-            <p>To specify that you want to insert <code class="hljs inline no-lang" v-pre>myCustomLinks.md</code> into the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> of <code class="hljs inline no-lang" v-pre>myPage.html</code>, update the front matter of the <code class="hljs inline no-lang" v-pre>myPage.md</code> as follows:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  head: myCustomLinks.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>...
-</span></code></pre>
-          </div>
-          <p><strong>All content is inserted at the bottom of the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> tag by default.</strong> You can use the optional <code class="hljs inline no-lang" v-pre>&lt;head-top&gt;</code> tag to specify content that should be inserted at the top of the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> tag instead.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here's how you can force the line <code class="hljs inline no-lang" v-pre>&lt;script ... &gt; ... &lt;/script&gt;</code> to be inserted at the top of the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> section.</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span></span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/myCustomScript.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</span><span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span></span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/main.css&quot;</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/extra.css&quot;</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <p><strong>Multiple head files can be included</strong> within a page by providing a comma separated list. They will be added to the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> in the order in which they are listed.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big></p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  head: customStyles.md, extraScripts.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <span id="short" class="d-none">
-            <p><code class="hljs inline no-lang" v-pre>_markbind/head/myCustomLinks.md</code>:</p>
-            <pre><code class="no-line-numbers hljs html" v-pre><span><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-top</span>&gt;</span></span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;``/js/myCustomScript.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</span><span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-top</span>&gt;</span></span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;``/css/main.css&quot;</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;``/css/extra.css&quot;</span>&gt;</span>
-</span></code></pre>
-            <pre><code class="hljs html" v-pre><span> <span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>   head: myCustomLinks.md
-</span><span> <span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          </span>
-          <p>If you wish to use a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> but exclude its head file, specify <code class="hljs inline no-lang" v-pre>head: none</code> in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the page.</p>
-        </div>
-        <hr>
-        <div>
-          <h2 id="headers"><span id="headers" class="anchor"></span>Headers<a class="fa fa-anchor" href="#headers" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can specify a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Content to be placed at the top of a page.</span>page header</span></strong> above your page contents and <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Site Navigation and <br>Page Navigation menus</span>navigation menus</span> using a header file.</p>
-          <p>You can save multiple header files in the <code class="hljs inline no-lang" v-pre>_markbind/headers</code> folder and specify it in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              <strong><code class="hljs inline no-lang" v-pre>_markbind/headers/</code></strong><code class="hljs inline no-lang" v-pre>welcomeBanner.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bg-primary display-4 text-center text-white&quot;</span>&gt;</span>
-</span><span>    Welcome!
+</span></code></pre></span></div> <hr> <h2 id="layouts"><span id="layouts" class="anchor"></span>Layouts<a href="#layouts" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>MarkBind layouts can be used to provide structure and content around pages easily.</p> <p>To add a layout, first add any source file to the <code class="hljs inline no-lang">_markbind/layouts</code> folder. Then, specify the layout the page will use using one of the following:</p> <ul><li>the <a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang">layout</code> property</a> of your site configuration file</li> <li>the <a href="#front-matter"><code class="hljs inline no-lang">layout</code> property</a> of the page front matter.</li></ul> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>If no layout is specified, the page defaults to the default layout (<code class="hljs inline no-lang" data-v-7d17494f>default.md</code>).</p> <p data-v-7d17494f>When using <code class="hljs inline no-lang" data-v-7d17494f>markbind init</code>, a default layout is provided in the <code class="hljs inline no-lang" data-v-7d17494f>_markbind/layouts</code> folder.</p></div> <!----></div></div></div> <p>Next, edit the layout file to your liking, and add the <code class="hljs inline no-lang">{{ content }}</code> variable where you want the page content to be rendered.</p> <div id="layout-code-snippet"><pre><code class="no-line-numbers hljs html"><span><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">head-bottom</span>&gt;</span></span>
+</span><span>  <span class="highlighted"><span class="hljs-comment">&lt;!-- Use head-top and head-bottom tags to insert content into the html &lt;head&gt; tag --&gt;</span></span>
+</span><span>  <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{baseUrl}}/css/main.css&quot;</span>&gt;</span></span>
+</span><span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">head-bottom</span>&gt;</span></span>
+</span><span>
+</span><span><span class="hljs-comment">&lt;!-- Fix the header to the top while scrolling using the fixed attribute in a &lt;header&gt; tag --&gt;</span>
+</span><span><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">fixed</span>&gt;</span></span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;dark&quot;</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{baseUrl}}/index.html&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;{{baseUrl}}/images/logo-darkbackground.png&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{baseUrl}}/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>HOME<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;environment--ug&quot;</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;sibling-or-child&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{baseUrl}}/userGuide/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>USER GUIDE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;environment--dg&quot;</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;sibling-or-child&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{baseUrl}}/devGuide/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>DEVELOPER GUIDE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-form&quot;</span>&gt;</span>
+</span><span>        <span class="hljs-tag">&lt;<span class="hljs-name">searchbar</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;searchData&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Search&quot;</span> <span class="hljs-attr">:on-hit</span>=<span class="hljs-string">&quot;searchCallback&quot;</span> <span class="hljs-attr">menu-align-right</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">searchbar</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">navbar</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;flex-body&quot;</span>&gt;</span>
+</span><span>  <span class="hljs-comment">&lt;!-- Push content downward when using a fixed header with the fixed-header-padding class --&gt;</span>
+</span><span>  <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;site-nav&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fixed-header-padding&quot;</span>&gt;</span></span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;site-nav-top&quot;</span>&gt;</span>
+</span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-weight-bold mb-2&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 1.25rem;&quot;</span>&gt;</span>User Guide<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-component slim-scroll&quot;</span>&gt;</span>
+</span><span class="highlighted">      <span class="hljs-tag">&lt;<span class="hljs-name">site-nav</span>&gt;</span>
+</span><span class="highlighted">* [**Getting Started**]({{baseUrl}}/userGuide/gettingStarted.html)
+</span><span class="highlighted">  * **Authoring Contents** :expanded:
+</span><span class="highlighted">  * [Overview]({{baseUrl}}/userGuide/authoringContents.html)
+</span><span class="highlighted">  * [Adding Pages]({{baseUrl}}/userGuide/addingPages.html)
+</span><span class="highlighted">  * [MarkBind Syntax Overview]({{baseUrl}}/userGuide/markBindSyntaxOverview.html)
+</span><span class="highlighted">  * [Formatting Contents]({{baseUrl}}/userGuide/formattingContents.html)
+</span><span class="highlighted">  * [Using Components]({{baseUrl}}/userGuide/usingComponents.html)
+</span><span class="highlighted">      <span class="hljs-tag">&lt;/<span class="hljs-name">site-nav</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content-wrapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fixed-header-padding&quot;</span>&gt;</span>
+</span><span>    <span class="hljs-comment">&lt;!-- Insert the page's content into the layout using the {{ content }} variable --&gt;</span>
+</span><span>    <span class="highlighted">{{ content }}</span>
 </span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
-</span></code></pre>
-            <p>In the page that you want to include the header:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  header: welcomeBanner.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <p>You can fix the header to be always on the top by add <code class="hljs inline no-lang" v-pre>fixed</code> attribute to the <code class="hljs inline no-lang" v-pre>&lt;header&gt;</code> tag of your header file:</p>
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-            <strong><code class="hljs inline no-lang" v-pre>_markbind/headers/</code></strong><code class="hljs inline no-lang" v-pre>header.md</code>:</p>
-          <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">fixed</span>&gt;</span>
-</span><span>    <span class="hljs-comment">&lt;!--Normal header stuff goes here--&gt;</span>
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;page-nav&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fixed-header-padding&quot;</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-component slim-scroll&quot;</span>&gt;</span>
+</span><span>      <span class="hljs-comment">&lt;!-- Insert a page navigation menu using the &lt;page-nav /&gt; component --&gt;</span>
+</span><span>      <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">page-nav</span> /&gt;</span></span>
+</span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span><span>
-</span></code></pre>
-          <p>Notes:</p>
-          <ul>
-            <li>Any inline headers will be removed by MarkBind to ensure compatibility with header files.</li>
-            <li>If a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> is specified, the header file specified in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> will override the header within the Layout.</li>
-            <li>If you wish to use a Layout but exclude its header file, specify <code class="hljs inline no-lang" v-pre>header: none</code> in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the page.</li>
-            <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tags</a> are not supported in headers.</li>
-          </ul>
-          <span id="short" class="d-none">
-            ```html
-            <header>
-              <div class="bg-primary display-4 text-center text-white" style="height: 200px;">
-                Welcome!
-              </div>
-            </header>
-            ```
-            ```html
-            <frontmatter>
-              header: welcomeBanner.md
-            </frontmatter>
-            ```
-          </span>
-          <span id="examples" class="d-none">
-            <div class="bg-primary display-4 text-center text-white" style="height: 150px;">
-              Content to be placed at the top of your page.
-            </div>
-          </span>
-        </div>
-        <hr>
-        <div>
-          <h2 id="footers"><span id="footers" class="anchor"></span>Footers<a class="fa fa-anchor" href="#footers" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>You can specify a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">For an example of a page footer, see the bottom of this page.</span>page footer</span></strong> using a footer file.</p>
-          <p>You can save multiple footer files in the <code class="hljs inline no-lang" v-pre>_markbind/footers</code> folder and specify it in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the pages in which it should appear.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              <strong><code class="hljs inline no-lang" v-pre>_markbind/footers/</code></strong><code class="hljs inline no-lang" v-pre>commonFooter.md</code>:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
-</span><span>  This page is not updated anymore!
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-center&quot;</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>[Generated by {{MarkBind}} on {{timestamp}}]<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>This site is powered by <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.netlify.com/&quot;</span>&gt;</span>Netlify<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
-</span></code></pre>
-            <p>In the page that you want to include the footer:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  footer: commonFooter.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <p>Notes:</p>
-          <ul>
-            <li>Any inline footers will be removed by MarkBind to ensure compatibility with footer files.</li>
-            <li>If a <a href="/userGuide/tweakingThePageStructure.html#page-layouts">Layout</a> is specified, the footer file specified in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> will override the footer within the Layout.</li>
-            <li>If you wish to use a Layout but exclude its footer file, specify <code class="hljs inline no-lang" v-pre>footer: none</code> in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the page.</li>
-            <li><a href="/userGuide/usingComponents.html">MarkBind Components</a> and <a href="/userGuide/reusingContents.html#the-include-tag"><code class="hljs inline no-lang" v-pre>&lt;include&gt;</code> tags</a> are not supported in footers.</li>
-          </ul>
-          <span id="short" class="d-none">
-            ```html
-            <footer>
-              This page is not updated anymore!
-            </footer>
-            ```
-            ```html
-            <frontmatter>
-              footer: commonFooter.md
-            </frontmatter>
-            ```
-          </span>
-          <span id="examples" class="d-none">
-            <p>You can see an example of a footer <mark>at the bottom</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.
-            </p>
-          </span>
-          <p></p>
-        </div>
-        <hr>
-        <div>
-          <h2 id="site-navigation-menus"><span id="site-navigation-menus" class="anchor"></span>Site Navigation Menus<a class="fa fa-anchor" href="#site-navigation-menus" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>A <em>Site Navigation Menu</em> (<mark><em>siteNav</em> for short</mark>) is a fixed menu on the <mark>left edge</mark> of a page</strong>, that can be used to show a road map of the main pages of your site.</p>
-          <p>Steps to add a siteNav:</p>
-          <ol>
-            <li>Format your siteNav as an unordered Markdown list and save it inside the <code class="hljs inline no-lang" v-pre>_markbind/navigation</code> directory.</li>
-            <li>Specify the file as the value of the <code class="hljs inline no-lang" v-pre>siteNav</code> attribute in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the page.</li>
-          </ol>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Here is an example siteNav code saved in <strong><code class="hljs inline no-lang" v-pre>_markbind/navigation/</code></strong><code class="hljs inline no-lang" v-pre>mySiteNav.md</code> file:</p>
-            <pre><code class="no-line-numbers hljs" v-pre><span>* [:house: Home](/index.html)
-</span><span>* ---
-</span><span>* Docs
-</span><span>  * [User Guide](/ug.html)
-</span><span>  * [Dev Guide](/dg.html)
-</span><span>* [Search](/search.html)
-</span><span>  * [Google Search](https://www.google.com/)
-</span><span>  * [YouTube Search](https://www.youtube.com/)
-</span><span>* [Contact](/contact.html)
-</span></code></pre>
-            <p>Here's how another page can make use of the above siteNav:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  siteNav: mySiteNav.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>...
-</span></code></pre>
-            <p>And here's how the above siteNav would appear:</p>
-            <div style="width:300px;" class="mb-3">
-              <ul class="site-nav-list site-nav-list-root">
-                <li>
-                  <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-0"><a href="/index.html">🏠 Home</a></div>
-                </li>
-                <li>
-                  <hr>
-                </li>
-                <li>
-                  <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-0">Docs
-                    <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon"><span aria-hidden="true" class="glyphicon glyphicon-menu-down"></span></i></div>
-                  <ul class="site-nav-dropdown-container site-nav-list">
-                    <li>
-                      <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-1"><a href="/ug.html">User Guide</a></div>
-                    </li>
-                    <li>
-                      <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-1"><a href="/dg.html">Dev Guide</a></div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-0"><a href="/search.html">Search</a> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon"><span aria-hidden="true" class="glyphicon glyphicon-menu-down"></span></i></div>
-                  <ul class="site-nav-dropdown-container site-nav-list">
-                    <li>
-                      <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-1"><a href="https://www.google.com/">Google Search</a></div>
-                    </li>
-                    <li>
-                      <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-1"><a href="https://www.youtube.com/">YouTube Search</a></div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div onclick="handleSiteNavClick(this)" class="site-nav-list-item-content site-nav-list-item-content-0"><a href="/contact.html">Contact</a></div>
-                </li>
-              </ul>
-            </div>
-            <p>MarkBind has styles nested lists with additional padding and smaller text sizes up to <strong>4</strong> nesting levels.
-              Beyond that, you'd have to include your own styles!</p>
-            <p>More than one siteNav file can be in <code class="hljs inline no-lang" v-pre>_markbind/navigation/</code> directory but a page may not have more than one siteNav.</p>
-            <p>A siteNav has a fixed width of <code class="hljs inline no-lang" v-pre>300</code> pixels for its contents. A siteNav is <a href="https://www.w3schools.com/html/html_responsive.asp"><em>responsive</em></a> in that it will collapse to a menu button when the screen width is smaller than <code class="hljs inline no-lang" v-pre>992</code> pixels. It will then be completely hidden when the screen size is smaller than <code class="hljs inline no-lang" v-pre>576</code> pixels.</p>
-            <p>If you wish to use a Layout but exclude its navigation file, specify <code class="hljs inline no-lang" v-pre>siteNav: none</code> in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of the page.</p>
-            <h4 id="expanding-menu-items-by-default"><span id="expanding-menu-items-by-default" class="anchor"></span>Expanding menu items by default<a class="fa fa-anchor" href="#expanding-menu-items-by-default" onclick="event.stopPropagation()"></a></h4>
-            <p>You can <strong>append the <code class="hljs inline no-lang" v-pre>:expanded:</code> to a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">a menu item with sub menu-items</span>parent menu item</span> to make it expand by default.</strong> In the example above, <code class="hljs inline no-lang" v-pre>* Docs :expanded:</code> will make the menu item <code class="hljs inline no-lang" v-pre>Docs</code> expand by default.</p>
-            <p>A parent menu item that is also linked will not be collapsible <span class="dimmed">e.g., the <code class="hljs inline no-lang" v-pre>Search</code> menu item in the above example</span>.</p>
-            <h4 id="additional-content-in-site-navs"><span id="additional-content-in-site-navs" class="anchor"></span>Additional content in site navs<a class="fa fa-anchor" href="#additional-content-in-site-navs" onclick="event.stopPropagation()"></a></h4>
-            <p>You may have additional HTML and Markdown content in a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">the file containing the code for a site navigation menu, e.g., <code class="hljs inline no-lang" v-pre>mySiteNav.md</code> in the example above</span>siteNav file</span>, in which case the code for the siteNav should be enclosed in a <code class="hljs inline no-lang" v-pre>&lt;navigation&gt;</code> tag. There should only be one <code class="hljs inline no-lang" v-pre>&lt;navigation&gt;</code> tag in the file.</p>
-            <div class="indented">
-              <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> To include a heading for the site nav,</p>
-              <pre><code class="no-line-numbers hljs" v-pre><span># Site Map
 </span><span>
-</span><span>&lt;navigation&gt;
-</span><span>* [:house: Home](/index.html)
-</span><span>* ---
-</span><span>* Docs
-</span><span>...
-</span><span>&lt;/navigation&gt;
-</span></code></pre>
-            </div>
-            <p>You can also include additional content between navigation items, such as <a href="/userGuide/readerFacingFeatures.html#horizontal-rules">horizontal dividers.</a>
-              Just be sure to include it as a list item as well!</p>
-            <div class="indented">
-              <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Inserting a horizontal divider:</p>
-              <pre><code class="hljs" v-pre><span>* [:house: Home](/index.html)
-</span><span>* ---
-</span><span>* Docs
-</span><span>...
-</span></code></pre>
-            </div>
-            <span id="short" class="d-none">
-              <pre><code class="no-line-numbers hljs" v-pre><span># Site Map
-</span><span>&lt;navigation&gt;
-</span><span>* [:house: Home](/index.html)
-</span><span>* Docs :expanded:
-</span><span>  * [User Guide](/ug.html)
-</span><span>  * [Dev Guide](/dg.html)
-</span><span>* [Search](/search.html)
-</span><span>&lt;/navigation&gt;
-</span></code></pre>
-              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  siteNav: mySiteNav.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>...
-</span></code></pre></span>
-            <span id="examples" class="d-none">
-              <p>You can see an example of a Page Navigation Bar <mark>on the left side</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.</p>
-            </span>
-          </div>
-        </div>
-        <hr>
-        <div>
-          <h2 id="page-navigation-menus"><span id="page-navigation-menus" class="anchor"></span>Page Navigation Menus<a class="fa fa-anchor" href="#page-navigation-menus" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>A <em>Page Navigation Menu</em> (<mark><em>pageNav</em> for short</mark>) is a fixed menu on the <mark>right edge</mark> of your page contents</strong>. You can use a pageNav to show a list of the current page's headings.</p>
-          <p>Steps to add a pageNav:</p>
-          <ol>
-            <li>Specify your pageNav within the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of a page with <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The value <code class="hljs inline no-lang" v-pre>default</code> will use <code class="hljs inline no-lang" v-pre>headingIndexingLevel</code> within <code class="hljs inline no-lang" v-pre>site.json</code>.</span><code class="hljs inline no-lang" v-pre>&quot;default&quot;</code></span> or a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">HTML defines six levels of headings, numbered from <br><code class="hljs inline no-lang" v-pre>1 to 6</code>.</span><code class="hljs inline no-lang" v-pre>heading level</code></span>.</li>
-            <li>(Optional) You may also specify a page navigation title within <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> that will be placed at the top of the page navigation menu.</li>
-          </ol>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
-              In the page that you want to have page navigation:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span><span><span class="hljs-comment">&lt;!-- Insert content after the html &lt;body&gt; tag using the &lt;script-bottom&gt; tag --&gt;</span>
+</span><span><span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">script-bottom</span>&gt;</span></span>
+</span><span>  <span class="highlighted"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span></span>
+</span><span><span class="highlighted"><span class="javascript">    alert(<span class="hljs-string">'Hi!'</span>)</span></span>
+</span><span><span class="highlighted"><span class="javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</span><span><span class="highlighted"><span class="hljs-tag">&lt;/<span class="hljs-name">script-bottom</span>&gt;</span></span>
+</span></code></pre></div> <p>The rest of this section explains the other convenient features MarkBind provides in its layouts system, and references
+the above code snippet.</p> <br> <h3 id="inserting-content-into-the-head"><span id="inserting-content-into-the-head" class="anchor"></span>Inserting content into the <code class="hljs inline no-lang">&lt;head&gt;</code><a href="#inserting-content-into-the-head" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>You can insert code into the <code class="hljs inline no-lang">&lt;head&gt;</code> section of the generated HTML page</strong>, for example, to add links to custom JavaScript or CSS files.</p> <p>You may do so by inserting the html <code class="hljs inline no-lang">&lt;head&gt;</code> content into <code class="hljs inline no-lang">&lt;head-top&gt;</code> and <code class="hljs inline no-lang">&lt;head-bottom&gt;</code> tags in the layout file, which are inserted at the top and bottom (after MarkBind's assets) of the <code class="hljs inline no-lang">&lt;head&gt;</code> tag respectively.</p> <p>The above example shows the use of the <code class="hljs inline no-lang">&lt;head-bottom&gt;</code> tag to insert a custom stylesheet (<code class="hljs inline no-lang">main.css</code>).</p> <hr> <h3 id="inserting-scripts-after-the-body-tag"><span id="inserting-scripts-after-the-body-tag" class="anchor"></span>Inserting scripts after the <code class="hljs inline no-lang">&lt;body&gt;</code> tag<a href="#inserting-scripts-after-the-body-tag" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>You may also insert html code after the <code class="hljs inline no-lang">&lt;body&gt;</code> section of the generated HTML page</strong>. This is useful for including custom scripts.
+Simply insert the code / <code class="hljs inline no-lang">&lt;script&gt;</code> tags into a <code class="hljs inline no-lang">&lt;script-bottom&gt;</code> tag.</p> <p>The above example shows the use of the <code class="hljs inline no-lang">&lt;script-bottom&gt;</code> tag to show a browser alert box with the message <strong>'Hi!'</strong>.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>The scripts inserted here are processed last, after all of MarkBind's processing.</p> <p data-v-7d17494f>If you wish insert scripts at the bottom, before MarkBind's scripts, simply insert them into the bottom of the layout file.</p></div> <!----></div></div></div> <hr> <h3 id="fixing-the-header-to-the-top"><span id="fixing-the-header-to-the-top" class="anchor"></span>Fixing the header to the top<a href="#fixing-the-header-to-the-top" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Headers are commonly included inside the html <code class="hljs inline no-lang">&lt;header&gt;</code> tag. In encouraging this, a convenient interface to implement <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">Headers that stick to the top of the page while scrolling the content</span>fixed headers</span> surrounding the <code class="hljs inline no-lang">&lt;header&gt;</code> tag is provided that ensures page anchors work correctly.</p> <p><strong><strong>To fix the <code class="hljs inline no-lang">&lt;header&gt;</code></strong></strong></p> <ol><li><p>Add the <code class="hljs inline no-lang">fixed</code> attribute to your <code class="hljs inline no-lang">&lt;header&gt;</code> element in the layout per the above example.</p></li> <li><p>Then, to add the necessary top padding for the main content, add the <code class="hljs inline no-lang">fixed-header-padding</code> class to <strong>elements that should be shifted down</strong> in accordance with the fixed header.</p></li></ol> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-success" data-v-7d17494f><i class="fas fa-lightbulb" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>If you are not sure where to put the <code class="hljs inline no-lang" data-v-7d17494f>fixed-header-padding</code> attribute, you may also refer to the default template for <code class="hljs inline no-lang" data-v-7d17494f>markbind init</code>, which already has this setup.</p></div> <!----></div></div></div> <hr> <h3 id="constructing-a-site-navigation-menu-easily"><span id="constructing-a-site-navigation-menu-easily" class="anchor"></span>Constructing a site navigation menu easily<a href="#constructing-a-site-navigation-menu-easily" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <br> <div><p><strong>A <em>Site Navigation Menu</em> (<mark><em>siteNav</em> for short</mark>) can be used to show a road map of the main pages of your site.</strong></p> <p>Steps to add a siteNav:</p> <ol><li>Format your siteNav as an unordered Markdown list</li> <li>Include it under a <code class="hljs inline no-lang">&lt;site-nav&gt;</code> element.</li> <li>(Optional) To make siteNav accessible on smaller screens, you can use the <code class="hljs inline no-lang">&lt;site-nav-button /&gt;</code> component in the <a href="/userGuide/usingComponents.html#navbars">navbar</a>.</li></ol> <div id="short"><div><p><span class="dimmed">CODE:</span></p> <div class="indented"><pre><code class="no-line-numbers hljs"><span>&lt;site-nav&gt;
+</span><span>* [**Getting Started**](/userGuide/gettingStarted.html)
+</span><span>* **Authoring Contents** :expanded:
+</span><span>  * [Overview](/userGuide/authoringContents.html)
+</span><span>  * [Adding Pages](/userGuide/addingPages.html)
+</span><span>  * [MarkBind Syntax Overview](/userGuide/markBindSyntaxOverview.html)
+</span><span>  * [Formatting Contents](/userGuide/formattingContents.html)
+</span><span>  * [Using Components](/userGuide/usingComponents.html)
+</span><span>&lt;/site-nav&gt;
+</span></code></pre></div> <p><span class="dimmed">OUTPUT:</span></p> <div class="indented"><div class="alert box-container alert-default" style="background-color:white;border-color:white;border-left:5px solid grey;" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/userGuide/gettingStarted.html" data-v-e8c82f88><strong data-v-e8c82f88>Getting Started</strong></a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><strong data-v-e8c82f88>Authoring Contents</strong> <i onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();" class="site-nav-dropdown-btn-icon site-nav-rotate-icon" data-v-e8c82f88><span aria-hidden="true" class="glyphicon glyphicon-menu-down" data-v-e8c82f88></span></i></div><ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/authoringContents.html" data-v-e8c82f88>Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/addingPages.html" data-v-e8c82f88>Adding Pages</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/markBindSyntaxOverview.html" data-v-e8c82f88>MarkBind Syntax Overview</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/formattingContents.html" data-v-e8c82f88>Formatting Contents</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-1" data-v-e8c82f88><a href="/userGuide/usingComponents.html" data-v-e8c82f88>Using Components</a></div></li></ul></li> <!----></ul></div></div> <!----></div></div></div></div></div></div> <p>MarkBind has styles nested lists with additional padding and smaller text sizes up to <strong>4</strong> nesting levels.
+Beyond that, you'd have to include your own styles.</p> <p><strong><strong>Expanding menu items by default</strong></strong></p> <p>You can <strong>append the <code class="hljs inline no-lang">:expanded:</code> to a <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">a menu item with sub menu-items</span>parent menu item</span> to make it expand by default.</strong> In the example above, <code class="hljs inline no-lang">* Docs :expanded:</code> will make the menu item <code class="hljs inline no-lang">Docs</code> expand by default.</p> <p>A parent menu item that is also linked will not be collapsible <span class="dimmed">e.g., the <code class="hljs inline no-lang">Search</code> menu item in the above example</span>.</p></div> <hr> <h3 id="constructing-a-page-navigation-menu"><span id="constructing-a-page-navigation-menu" class="anchor"></span>Constructing a page navigation menu<a href="#constructing-a-page-navigation-menu" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <br> <div><p><strong>A <em>Page Navigation Menu</em> (<mark><em>pageNav</em> for short</mark>)  a list of the current page's headings.</strong> Page navigation menus are only available for use in <a href="/userGuide/tweakingThePageStructure.html#layouts">layouts</a>.</p> <p><strong><strong>Adding a pageNav</strong></strong></p> <ol><li><p><strong>Specify the smallest heading level you want to be included</strong> within the <code class="hljs inline no-lang">&lt;frontmatter&gt;</code> of a page with <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">The value <code class="hljs inline no-lang">default</code> will use <code class="hljs inline no-lang">headingIndexingLevel</code> within <code class="hljs inline no-lang">site.json</code>.</span><code class="hljs inline no-lang">&quot;default&quot;</code></span> or a <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">HTML defines six levels of headings, numbered from <br><code class="hljs inline no-lang">1 to 6</code>.</span><code class="hljs inline no-lang">heading level</code></span>.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>The <code class="hljs inline no-lang" data-v-7d17494f>default</code> level uses the <a href="/userGuide/siteJsonFile.html#headingindexinglevel" data-v-7d17494f><code class="hljs inline no-lang" data-v-7d17494f>headingIndexingLevel</code> property</a> of your site configuration file.</p></div> <!----></div></div></div></li> <li><p><strong>(Optional) You may also specify a page navigation title</strong> within <code class="hljs inline no-lang">&lt;frontmatter&gt;</code> that will be placed at the top of the page navigation menu.</p></li> <li><p><strong>Position the page navigation menu</strong> within your layout using the <code class="hljs inline no-lang">&lt;page-nav /&gt;</code> component.</p></li> <li><p><strong>(Optional) To make pageNav accessible on smaller screens, you can use the <code class="hljs inline no-lang">&lt;page-nav-button /&gt;</code> component in the <a href="/userGuide/usingComponents.html#navbars">navbar</a>.</strong></p></li></ol> <div id="short" class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big>
+In the page that you want to have page navigation, you may show only <code class="hljs inline no-lang">&lt;h1&gt;</code> and <code class="hljs inline no-lang">&lt;h2&gt;</code> headings in the pageNav, and set a custom pageNav title like so:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  pageNav: 2
 </span><span>  pageNavTitle: &quot;Chapters of This Page&quot;
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-            <p>The example above will create a page navigation containing only heading levels of <code class="hljs inline no-lang" v-pre>1 and 2</code>.</p>
-          </div>
-          <p>A pageNav has a fixed width of 300 pixels for its contents. It is <a href="https://www.w3schools.com/html/html_responsive.asp"><em>responsive</em></a> by design and will be completely hidden when the screen size is smaller than 1300 pixels.</p>
-          <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  pageNav: 2
-</span><span>  pageNavTitle: &quot;Chapters of This Page&quot;
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre></span>
-          <span id="examples" class="d-none">
-            <p>You can see an example of a Page Navigation Bar <mark>on the right side</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.
-            </p>
-          </span>
-          <p></p>
-        </div>
-        <hr>
-        <div>
-          <h2 id="page-layouts"><span id="page-layouts" class="anchor"></span>Page Layouts<a class="fa fa-anchor" href="#page-layouts" onclick="event.stopPropagation()"></a></h2>
-          <p><strong>A <em>layout</em> is a set of page-tweaks that can be applied to a page (or group of pages) in one go.</strong></p>
-          <p>A layout consists of the following files:</p>
-          <ol>
-            <li>A header (filename: <code class="hljs inline no-lang" v-pre>header.md</code>)</li>
-            <li>A footer (filename: <code class="hljs inline no-lang" v-pre>footer.md</code>)</li>
-            <li>Tweaks to the <code class="hljs inline no-lang" v-pre>&lt;head&gt;</code> (<code class="hljs inline no-lang" v-pre>head.md</code>)</li>
-            <li>A site navigation menu (<code class="hljs inline no-lang" v-pre>navigation.md</code>)</li>
-            <li>An expressive layout template to embed your content (<code class="hljs inline no-lang" v-pre>page.md</code>)</li>
-            <li>Custom styles (<code class="hljs inline no-lang" v-pre>styles.css</code>)</li>
-            <li>Custom scripts (<code class="hljs inline no-lang" v-pre>scripts.js</code>)</li>
-          </ol>
-          <p>A layout is represented by a sub-directory in the <code class="hljs inline no-lang" v-pre>_markbind/layouts/</code> containing the files listed above. The name of the layout is same as the name of the sub-directory.</p>
-          <p>To apply the layout, specify it as an attribute named <code class="hljs inline no-lang" v-pre>layout</code> in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of each page, or in the <code class="hljs inline no-lang" v-pre>site.json</code>.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose you have a layout named <code class="hljs inline no-lang" v-pre>chapterLayout</code>.</p>
-            <pre><code class="hljs" v-pre><span>&lt;root&gt;/_markbind/layouts/
-</span><span>                  └── chapterLayout/
-</span><span>                        ├── header.md
-</span><span>                        ├── footer.md
-</span><span>                        ├── head.md
-</span><span>                        ├── page.md
-</span><span>                        ├── navigation.md
-</span><span>                        ├── styles.css
-</span><span>                        └── scripts.js
-</span></code></pre>
-            <p>You can apply it to the <code class="hljs inline no-lang" v-pre>chapter.md</code> by setting its <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> as follows:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  layout: chapterLayout
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>...
-</span></code></pre>
-            <p>You can apply it to all <code class="hljs inline no-lang" v-pre>chapter.md</code> files by adding this entry to the <code class="hljs inline no-lang" v-pre>site.json</code>.</p>
-            <pre><code class="hljs json" v-pre><span>{
-</span><span>  <span class="hljs-attr">&quot;glob&quot;</span>: <span class="hljs-string">&quot;**/chapter.md&quot;</span>,
-</span><span>  <span class="hljs-attr">&quot;layout&quot;</span>: <span class="hljs-string">&quot;chapterLayout&quot;</span>
-</span><span>}
-</span></code></pre>
-          </div>
-          <p>The layout specified in the <code class="hljs inline no-lang" v-pre>site.json</code> overrides the one specified in the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code>.</p>
-          <p>Any files specified in <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> overrides the corresponding file in the layout applied.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Suppose a file has the following:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  layout: chapterLayout
-</span><span>  head: myHead.md
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>...
-</span></code></pre>
-            <p>In this case <code class="hljs inline no-lang" v-pre>myHead.md</code> will override the <code class="hljs inline no-lang" v-pre>chapterLayout/head.md</code>.</p>
-          </div>
-          <p><strong>The layout named <code class="hljs inline no-lang" v-pre>default</code> (if any) is automatically applied to every single page.</strong> When you <code class="hljs inline no-lang" v-pre>init</code> a MarkBind site, MarkBind also generates an empty <code class="hljs inline no-lang" v-pre>default</code> layout.</p>
-          <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
-</span><span>  layout: chapterLayout
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre></span>
-          <h4 id="using-expressive-layout-templates"><span id="using-expressive-layout-templates" class="anchor"></span>Using Expressive Layout Templates<a class="fa fa-anchor" href="#using-expressive-layout-templates" onclick="event.stopPropagation()"></a></h4>
-          <p>In the <code class="hljs inline no-lang" v-pre>page.md</code> file of your layouts, it should come with the following reserved variable:</p>
-          <box>
-            <p><code class="hljs inline no-lang" v-pre>{{ MAIN_CONTENT_BODY }}</code></p>
-          </box>
-          <p></p>
-          <p>which injects the actual page content in every page. This allows you to build layouts in different ways.</p>
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Adding statistics formula to the bottom of every page</p>
-          <div class="code-block">
-            <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.html">index.md</a></span></div>
-            <div class="code-block-content">
-              <pre><code heading="index.md" class="hljs html" v-pre><span>#### Main content of your page
-</span><span>
-</span><span>Content of your page
-</span></code></pre>
-            </div>
-          </div>
-          <div class="code-block">
-            <div class="code-block-heading inline-markdown-heading"><span><a href="http://page.html">page.md</a></span></div>
-            <div class="code-block-content">
-              <pre><code heading="page.md" class="hljs html" v-pre><span>  {{ MAIN_CONTENT_BODY }}
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Statistics Formula for the class&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path_to_your_formula.png&quot;</span> /&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span>
-</span></code></pre>
-            </div>
-          </div>
-          <p>Here's how the above content would appear:</p>
-          <box>
-            <i>index.html</i>
-            <br><br>
-            <h4 id="main-content-of-your-page"><span id="main-content-of-your-page" class="anchor"></span>Main content of your page<a class="fa fa-anchor" href="#main-content-of-your-page" onclick="event.stopPropagation()"></a></h4>
-            <p>Content of your page</p>
-            <panel type="primary"><template slot="header">
-                <p>Statistics Formula for the class</p>
-              </template>
-              <img src="/userGuide/syntax/extra/stats.png" width="420px" height="320px"></panel>
-          </box>
-        </div>
-        <hr>
-        <div>
-          <h3 id="plugin-tags"><span id="plugin-tags" class="anchor"></span>Plugin: Tags<a class="fa fa-anchor" href="#plugin-tags" onclick="event.stopPropagation()"></a></h3>
-          <p>With this plugin you can use tags to selectively filter content when building a site.</p>
-          <h4 id="toggling-alternative-contents"><span id="toggling-alternative-contents" class="anchor"></span>Toggling alternative contents<a class="fa fa-anchor" href="#toggling-alternative-contents" onclick="event.stopPropagation()"></a></h4>
-          <p>Tags are specified by the <code class="hljs inline no-lang" v-pre>tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code class="hljs inline no-lang" v-pre>site.json</code> files will be rendered.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching tags to elements:</p>
-            <pre><code class="hljs html" v-pre><span># Print &#x27;Hello world&#x27;
+</span></code></pre><p>Then, in your <a href="/userGuide/tweakingThePageStructure.html#layouts">layout file</a>, use the <code class="hljs inline no-lang">&lt;page-nav /&gt;</code> component to position the pageNav.</p></div></div> <hr> <div><h2 id="plugin-tags"><span id="plugin-tags" class="anchor"></span>Plugin: Tags<a href="#plugin-tags" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>With this plugin you can use tags to selectively filter content when building a site.</p> <h4 id="toggling-alternative-contents"><span id="toggling-alternative-contents" class="anchor"></span>Toggling alternative contents<a href="#toggling-alternative-contents" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Tags are specified by the <code class="hljs inline no-lang">tags</code> attribute, <strong>and can be attached to any HTML element</strong>. During rendering, only elements that match tags specified in the <code class="hljs inline no-lang">site.json</code> files will be rendered.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Attaching tags to elements:</p> <pre><code class="hljs html"><span># Print 'Hello world'
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span></code></pre>
-            <p>You need to specify the tags to include in the <code class="hljs inline no-lang" v-pre>pluginsContext</code>, under <code class="hljs inline no-lang" v-pre>tags</code>:</p>
-            <pre><code class="hljs json" v-pre><span>{
+</span></code></pre><p>You need to specify the tags to include in the <code class="hljs inline no-lang">pluginsContext</code>, under <code class="hljs inline no-lang">tags</code>:</p> <pre><code class="hljs json"><span>{
 </span><span>  ...
 </span><span>  <span class="hljs-attr">&quot;plugins&quot;</span> : [
 </span><span>    <span class="hljs-string">&quot;filterTags&quot;</span>
@@ -617,43 +138,20 @@
 </span><span>    }
 </span><span>  }
 </span><span>}
-</span></code></pre>
-            <p>All other tagged elements will be filtered out. In this case, only the element with the <code class="hljs inline no-lang" v-pre>language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p>
-          </div>
-          <p>If the <code class="hljs inline no-lang" v-pre>filterTags</code> plugin is not enabled in <code class="hljs inline no-lang" v-pre>site.json</code>, all tagged elements will be rendered.</p>
-          <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code class="hljs inline no-lang" v-pre>tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code class="hljs inline no-lang" v-pre>site.json</code>.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Attaching multiple tags to an element:</p>
-            <pre><code class="hljs html" v-pre><span># For loops
+</span></code></pre><p>All other tagged elements will be filtered out. In this case, only the element with the <code class="hljs inline no-lang">language--java</code> tag will be rendered. This is helpful when creating multiple versions of a page without having to maintain separate copies.</p></div> <p>If the <code class="hljs inline no-lang">filterTags</code> plugin is not enabled in <code class="hljs inline no-lang">site.json</code>, all tagged elements will be rendered.</p> <p><strong>You can also use multiple tags in a single HTML element. Specify each tag in the <code class="hljs inline no-lang">tags</code> attribute</strong> separated by a space. An element will be rendered if <strong>any of the tags</strong> matches the one in <code class="hljs inline no-lang">site.json</code>.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Attaching multiple tags to an element:</p> <pre><code class="hljs html"><span># For loops
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java language--C#&quot;</span>&gt;</span>for (int i = 0; i &lt; 5; i++) { ... }<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span></code></pre>
-            <p>As long as the <code class="hljs inline no-lang" v-pre>language--java</code> or <code class="hljs inline no-lang" v-pre>language--C#</code> tag is specified, the code snippet will be rendered.</p>
-          </div>
-          <p>Alternatively, you can specify tags to render for a page in the front matter.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Specifying tags in front matter:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre><p>As long as the <code class="hljs inline no-lang">language--java</code> or <code class="hljs inline no-lang">language--C#</code> tag is specified, the code snippet will be rendered.</p></div> <p>Alternatively, you can specify tags to render for a page in the front matter.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Specifying tags in front matter:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  title: &quot;Hello World&quot;
 </span><span>  tags: [&quot;language--java&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre>
-          </div>
-          <span id="short" class="d-none">
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java advanced&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre></div> <span id="short" class="d-none"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java advanced&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C# basic&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span></code></pre>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  title: &quot;Hello World&quot;
 </span><span>  tags: [&quot;language--java&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
-</span></code></pre></span>
-          <p>Tags in <code class="hljs inline no-lang" v-pre>site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p>
-          <h4 id="advanced-tagging-tips"><span id="advanced-tagging-tips" class="anchor"></span>Advanced Tagging Tips<a class="fa fa-anchor" href="#advanced-tagging-tips" onclick="event.stopPropagation()"></a></h4>
-          <p>You can use a <code class="hljs inline no-lang" v-pre>*</code> in a tag name to match elements more generally. A <code class="hljs inline no-lang" v-pre>*</code> in a tag will match any number of characters at its position.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre></span> <p>Tags in <code class="hljs inline no-lang">site.json</code> will be merged with the ones in the front matter, and are processed after front matter tags. See <a href="/userGuide/tweakingThePageStructure.html#hiding-tags">Hiding Tags</a> for more information.</p> <h4 id="advanced-tagging-tips"><span id="advanced-tagging-tips" class="anchor"></span>Advanced Tagging Tips<a href="#advanced-tagging-tips" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>You can use a <code class="hljs inline no-lang">*</code> in a tag name to match elements more generally. A <code class="hljs inline no-lang">*</code> in a tag will match any number of characters at its position.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Using general tags:</p> <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  title: &quot;Hello World&quot;
 </span><span>  tags: [&quot;language--*&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
@@ -661,17 +159,7 @@
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span></code></pre>
-            <p>All 3 <code class="hljs inline no-lang" v-pre>&lt;p&gt;</code>s will be shown.</p>
-          </div>
-          <h4 id="hiding-tags"><span id="hiding-tags" class="anchor"></span>Hiding Tags<a class="fa fa-anchor" href="#hiding-tags" onclick="event.stopPropagation()"></a></h4>
-          <p>Using <code class="hljs inline no-lang" v-pre>-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p>
-          <div class="indented">
-            <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Using general tags:</p>
-            <div class="code-block">
-              <div class="code-block-heading inline-markdown-heading"><span><a href="http://index.html">index.md</a></span></div>
-              <div class="code-block-content">
-                <pre><code heading="index.md" class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
+</span></code></pre><p>All 3 <code class="hljs inline no-lang">&lt;p&gt;</code>s will be shown.</p></div> <h4 id="hiding-tags"><span id="hiding-tags" class="anchor"></span>Hiding Tags<a href="#hiding-tags" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Using <code class="hljs inline no-lang">-</code> at the start of a tag hides all tags matching the expression. This is helpful for disabling a group of tags and enabling a particular tag.</p> <div class="indented"><p><big><span class="badge badge-pill badge-secondary" style="padding-bottom:4px;margin-right:5px;">Example</span></big> Using general tags:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><a href="http://index.md">index.md</a></span></div><div class="code-block-content"><pre><code heading="index.md" class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">frontmatter</span>&gt;</span>
 </span><span>  title: &quot;Hello World&quot;
 </span><span>  tags: [&quot;language--java&quot;]
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
@@ -679,13 +167,7 @@
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span></code></pre>
-              </div>
-            </div>
-            <div class="code-block">
-              <div class="code-block-heading"><span>site.json</span></div>
-              <div class="code-block-content">
-                <pre><code heading="site.json" class="hljs json" v-pre><span>{
+</span></code></pre></div></div><div class="code-block"><div class="code-block-heading"><span>site.json</span></div><div class="code-block-content"><pre><code heading="site.json" class="hljs json"><span>{
 </span><span>  ...
 </span><span>  <span class="hljs-attr">&quot;plugins&quot;</span> : [
 </span><span>    <span class="hljs-string">&quot;filterTags&quot;</span>
@@ -696,74 +178,25 @@
 </span><span>    }
 </span><span>  }
 </span><span>}
-</span></code></pre>
-              </div>
-            </div>
-            <p><code class="hljs inline no-lang" v-pre>language--java</code> is overridden by <code class="hljs inline no-lang" v-pre>-language--*</code>, so only <code class="hljs inline no-lang" v-pre>language--C#</code> is shown.</p>
-          </div>
-          <p>This only works because tags are processed left to right, so all <code class="hljs inline no-lang" v-pre>language--*</code> tags are hidden before <code class="hljs inline no-lang" v-pre>language--C#</code>. Tags in <code class="hljs inline no-lang" v-pre>site.json</code> are processed after tags in <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code>.</p>
-          <span id="short" class="d-none">
-            ```html
-            # Print 'Hello world'
-            <p tags="language--java">System.out.println("Hello world");</p>
-            <p tags="language--C#">Console.WriteLine("Hello world");</p>
-            <p tags="language--python">print("Hello world")</p>
-            ```
-            ```json
-            {
-            ...
-            "plugins" : [
-            "filterTags"
-            ],
-            "pluginsContext" : {
-            "filterTags" : {
-            "tags": ["language--java"]
-            }
-            }
-            }
-            ```
-          </span>
-        </div>
-        <div class="clearfix">
-          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/usingPlugins.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using Plugins</span></span></a></span></p>
-          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/reusingContents.html"><span><span>Reusing Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
-        </div>
-        <br>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#tweaking-the-page-structure">Tweaking the Page Structure&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#front-matter">Front Matter&#x200E;</a>
-              <a class="nav-link py-1" href="#page-head">Page &lt;head&gt;&#x200E;</a>
-              <a class="nav-link py-1" href="#headers">Headers&#x200E;</a>
-              <a class="nav-link py-1" href="#footers">Footers&#x200E;</a>
-              <a class="nav-link py-1" href="#site-navigation-menus">Site Navigation Menus&#x200E;</a>
-              <a class="nav-link py-1" href="#page-navigation-menus">Page Navigation Menus&#x200E;</a>
-              <a class="nav-link py-1" href="#page-layouts">Page Layouts&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-      <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.18.1</a> on Fri, Mar 19, 2021, 2:24:17 PM UTC]</small></div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+</span></code></pre></div></div><p><code class="hljs inline no-lang">language--java</code> is overridden by <code class="hljs inline no-lang">-language--*</code>, so only <code class="hljs inline no-lang">language--C#</code> is shown.</p></div> <p>This only works because tags are processed left to right, so all <code class="hljs inline no-lang">language--*</code> tags are hidden before <code class="hljs inline no-lang">language--C#</code>. Tags in <code class="hljs inline no-lang">site.json</code> are processed after tags in <code class="hljs inline no-lang">&lt;frontmatter&gt;</code>.</p> <span id="short" class="d-none"><pre><code class="hljs html"><span># Print 'Hello world'
+</span><span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--java&quot;</span>&gt;</span>System.out.println(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--C#&quot;</span>&gt;</span>Console.WriteLine(&quot;Hello world&quot;);<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;language--python&quot;</span>&gt;</span>print(&quot;Hello world&quot;)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</span></code></pre><pre><code class="hljs json"><span>{
+</span><span>  ...
+</span><span>  <span class="hljs-attr">&quot;plugins&quot;</span> : [
+</span><span>    <span class="hljs-string">&quot;filterTags&quot;</span>
+</span><span>  ],
+</span><span>  <span class="hljs-attr">&quot;pluginsContext&quot;</span> : {
+</span><span>    <span class="hljs-attr">&quot;filterTags&quot;</span> : {
+</span><span>      <span class="hljs-attr">&quot;tags&quot;</span>: [<span class="hljs-string">&quot;language--java&quot;</span>]
+</span><span>    }
+</span><span>  }
+</span><span>}
+</span></code></pre></span></div> <div class="clearfix"><p><span class="float-left"><a href="/userGuide/usingHtmlJavaScriptCss.html" class="btn btn-light"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Using HTML, JavaScript, CSS</span></span></a></span></p> <p><span class="float-right"><a href="/userGuide/reusingContents.html" class="btn btn-light"><span><span>Reusing Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p></div> <br> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a href="#tweaking-the-page-structure" class="nav-link py-1" data-v-e8c82f88>Tweaking the Page Structure‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#front-matter" class="nav-link py-1" data-v-e8c82f88>Front Matter‎</a> <a href="#layouts" class="nav-link py-1" data-v-e8c82f88>Layouts‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a href="#inserting-content-into-the-head" class="nav-link py-1" data-v-e8c82f88>Inserting content into the &lt;head&gt;‎</a> <a href="#inserting-scripts-after-the-body-tag" class="nav-link py-1" data-v-e8c82f88>Inserting scripts after the &lt;body&gt; tag‎</a> <a href="#fixing-the-header-to-the-top" class="nav-link py-1" data-v-e8c82f88>Fixing the header to the top‎</a> <a href="#constructing-a-site-navigation-menu-easily" class="nav-link py-1" data-v-e8c82f88>Constructing a site navigation menu easily‎</a> <a href="#constructing-a-page-navigation-menu" class="nav-link py-1" data-v-e8c82f88>Constructing a page navigation menu‎</a></nav> <a href="#plugin-tags" class="nav-link py-1" data-v-e8c82f88>Plugin: Tags‎</a></nav> <!----></nav></div> <!----></nav></div> <div><footer><div class="text-center"><small>[Generated by <a href="https://markbind.org/">MarkBind 3.0.0</a> on Sun, 6 Jun 2021, 4:04:19 UTC]</small><br> <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div></footer></div></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = ''
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/userGuide/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>
