@@ -51,6 +51,81 @@
       "headingKeywords": {}
     },
     {
+      "src": "userGuide/components/advanced.md",
+      "title": "User Guide: Advanced Component Usage",
+      "headings": {
+        "advanced-tips-and-tricks": "Advanced Tips and Tricks",
+        "richer-formatting-of-attributes-using-slots": "Richer formatting of attributes using slots",
+        "inserting-custom-classes-into-components": "Inserting custom classes into components"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/components/imagesAndDiagrams.md",
+      "title": "User Guide: Image & Diagram Components",
+      "headings": {
+        "image-and-amp-diagram-components": "Image &amp; Diagram Components",
+        "pictures": "Pictures",
+        "thumbnails": "Thumbnails",
+        "diagrams": "Diagrams"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/components/navigation.md",
+      "title": "User Guide: Navigation Components",
+      "headings": {
+        "navigation-components": "Navigation Components",
+        "dropdowns": "Dropdowns",
+        "search-bars": "Search Bars",
+        "navbars": "Navbars",
+        "site-navigation-menus": "Site Navigation Menus",
+        "page-navigation-menus": "Page Navigation Menus"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/components/others.md",
+      "title": "User Guide: Other Components",
+      "headings": {
+        "other-components": "Other Components",
+        "questions-and-quizzes": "Questions and Quizzes",
+        "introduction": "Introduction",
+        "mcq-and-checkbox-questions": "MCQ and Checkbox Questions",
+        "which-of-the-following-is-true": "Which of the following is true?",
+        "text-questions": "Text Questions",
+        "quizzes": "Quizzes",
+        "which-of-the-following-is-true-2": "Which of the following is true?"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/components/popups.md",
+      "title": "User Guide: Pop-Up Components",
+      "headings": {
+        "pop-up-components": "Pop-Up Components",
+        "tooltips": "Tooltips",
+        "popovers": "Popovers",
+        "modals": "Modals"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/components/presentation.md",
+      "title": "User Guide: Presentational Components",
+      "headings": {
+        "presentational-components": "Presentational Components",
+        "badges": "Badges",
+        "boxes": "Boxes",
+        "header": "Header 🚀",
+        "header-markdown": "Header markdown 🚀",
+        "header-markdown-2": "Header markdown 🚀",
+        "panels": "Panels",
+        "tabs": "Tabs"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "userGuide/deployingTheSite.md",
       "title": "User Guide: Deploying the Site",
       "headings": {
