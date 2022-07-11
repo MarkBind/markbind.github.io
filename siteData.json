@@ -5,7 +5,8 @@
       "src": "about.md",
       "title": "About Us",
       "headings": {
-        "about-us": "About Us"
+        "about-us": "About Us",
+        "contributors": "Contributors ✨"
       },
       "headingKeywords": {}
     },
@@ -24,7 +25,8 @@
       "src": "userGuide/addingPages.md",
       "title": "User Guide: Adding Pages",
       "headings": {
-        "adding-pages": "Adding Pages"
+        "adding-pages": "Adding Pages",
+        "external-static-html-web-pages": "External Static HTML Web Pages"
       },
       "headingKeywords": {}
     },
@@ -66,8 +68,10 @@
       "headings": {
         "image-and-amp-diagram-components": "Image &amp; Diagram Components",
         "pictures": "Pictures",
+        "annotations": "Annotations",
         "thumbnails": "Thumbnails",
-        "diagrams": "Diagrams"
+        "diagrams": "Diagrams",
+        "tree": "Tree"
       },
       "headingKeywords": {}
     },
@@ -130,14 +134,14 @@
       "src": "userGuide/deployingTheSite.md",
       "title": "User Guide: Deploying the Site",
       "headings": {
-        "generating-a-github-personal-access-token": "Generating a Github Personal Access Token",
-        "deploying-via-github-actions": "Deploying via Github Actions",
+        "generating-a-github-personal-access-token": "Generating a GitHub Personal Access Token",
+        "deploying-via-github-actions": "Deploying via GitHub Actions",
         "deploying-via-travis-ci": "Deploying via Travis CI",
         "deploying-via-appveyor-ci": "Deploying via AppVeyor CI",
         "deploying-via-circle-ci": "Deploying via Circle CI",
         "deploying-the-site": "Deploying the Site",
         "generic-steps-for-deploying-a-markbind-site": "Generic steps for deploying a MarkBind site",
-        "deploying-to-github-pages": "Deploying to Github Pages",
+        "deploying-to-github-pages": "Deploying to GitHub Pages",
         "using-the-markbind-deploy-command": "Using the markbind deploy command",
         "using-ci-platforms": "Using CI Platforms",
         "deploying-to-netlify": "Deploying to Netlify",
@@ -178,6 +182,7 @@
         "horizontal-rules": "Horizontal Rules",
         "different-types-of-horizontal-rules": "Different Types Of Horizontal Rules",
         "links": "Links",
+        "autolinks": "Autolinks",
         "intra-site-links": "Intra-Site Links",
         "footnotes": "Footnotes",
         "images": "Images",
@@ -191,8 +196,8 @@
         "using-octicons": "Using Octicons",
         "using-material-icons": "Using Material Icons",
         "embeds": "Embeds",
-        "embedding-youtube-videos": "Embedding Youtube Videos",
-        "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding Powerpoint Slides (using the embed url from Powerpoint online)",
+        "embedding-youtube-videos": "Embedding YouTube Videos",
+        "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding PowerPoint Slides (using the embed URL from PowerPoint online)",
         "dates": "Dates",
         "using-variables": "Using variables",
         "custom-formatting": "Custom formatting",
@@ -208,7 +213,16 @@
       "src": "userGuide/gettingStarted.md",
       "title": "User Guide - Getting Started",
       "headings": {
-        "getting-started": "Getting Started"
+        "getting-started": "Getting Started",
+        "quick-start": "Quick Start 🚀"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/gitignoreFile.md",
+      "title": "User Guide: .gitignore",
+      "headings": {
+        "gitignore": ".gitignore"
       },
       "headingKeywords": {}
     },
@@ -216,15 +230,8 @@
       "src": "userGuide/glossary.md",
       "title": "Glossary",
       "headings": {
-        "live-preview": "Live Preview ",
-        "mbd-extension": ".mbd extension"
+        "live-preview": "Live Preview "
       },
-      "headingKeywords": {}
-    },
-    {
-      "src": "userGuide/index.md",
-      "title": "",
-      "headings": {},
       "headingKeywords": {}
     },
     {
@@ -267,7 +274,7 @@
         "markbind-extensions-to-markdown": " MarkBind Extensions to Markdown",
         "markbind-custom-syntax": " MarkBind Custom Syntax",
         "support-for-html-javascript-css": " Support for HTML, JavaScript, CSS",
-        "markbind-vue-components-and-bootstrap": " MarkBind Vue components and BootStrap",
+        "markbind-vue-components-and-bootstrap": " MarkBind Vue components and Bootstrap",
         "support-for-nunjucks": " Support for Nunjucks"
       },
       "headingKeywords": {}
@@ -286,6 +293,7 @@
         "specifying-variables-in-an-include": "Specifying Variables in an &lt;include&gt;",
         "using-boilerplate-files": "Using Boilerplate Files",
         "reusing-contents-across-sites": "Reusing Contents Across Sites",
+        "creating-custom-fragments": "Creating Custom Fragments",
         "creating-content-variations": "Creating Content Variations",
         "allowing-users-to-remove-some-contents": "Allowing users to remove some contents",
         "giving-alternative-contents": "Giving alternative contents",
@@ -317,6 +325,7 @@
         "baseurl": "baseUrl",
         "faviconpath": "faviconPath",
         "titleprefix": "titlePrefix",
+        "titlesuffix": "titleSuffix",
         "style": "style",
         "pages": "pages",
         "pagesexclude": "pagesExclude",
@@ -329,7 +338,8 @@
         "enablesearch": "enableSearch",
         "timezone": "timeZone",
         "locale": "locale",
-        "intrasitelinkvalidation": "intrasiteLinkValidation"
+        "intrasitelinkvalidation": "intrasiteLinkValidation",
+        "plantumlcheck": "plantumlCheck"
       },
       "headingKeywords": {}
     },
@@ -364,7 +374,8 @@
         "bootswatch-sketchy": "bootswatch-sketchy",
         "bootswatch-spacelab": "bootswatch-spacelab",
         "bootswatch-united": "bootswatch-united",
-        "bootswatch-yeti": "bootswatch-yeti"
+        "bootswatch-yeti": "bootswatch-yeti",
+        "bootswatch-zephyr": "bootswatch-zephyr"
       },
       "headingKeywords": {}
     },
@@ -382,6 +393,16 @@
       "headingKeywords": {}
     },
     {
+      "src": "userGuide/troubleshooting.md",
+      "title": "User Guide: Troubleshooting",
+      "headings": {
+        "troubleshooting": "Troubleshooting",
+        "html-rendering-issues": "HTML Rendering Issues",
+        "example-block-level-elements-inside-span-elements": "Example: block-level elements inside &lt;span&gt; elements"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "userGuide/tweakingThePageStructure.md",
       "title": "User Guide: Tweaking the Page Structure",
       "headings": {
@@ -390,7 +411,8 @@
         "layouts": "Layouts",
         "inserting-content-into-the-head": "Inserting content into the &lt;head&gt;",
         "inserting-scripts-after-the-body-tag": "Inserting scripts after the &lt;body&gt; tag",
-        "fixing-the-header-to-the-top": "Fixing the header to the top",
+        "sticking-the-header-to-the-top": "Sticking the header to the top",
+        "offsetting-elements-with-the-header-height": "Offsetting elements with the header height",
         "constructing-a-site-navigation-menu-easily": "Constructing a site navigation menu easily",
         "constructing-a-page-navigation-menu": "Constructing a page navigation menu",
         "plugin-tags": "Plugin: Tags",
@@ -413,7 +435,10 @@
       "title": "User Guide: Using HTML, JavaScript, CSS",
       "headings": {
         "using-html-javascript-css": "Using HTML, JavaScript, CSS",
-        "apples-bananas-cherries": "Apples Bananas Cherries"
+        "markdown-in-html": "Markdown in HTML",
+        "apples-bananas-cherries": "Apples Bananas Cherries",
+        "javascript-libraries": "JavaScript libraries",
+        "charts": "Charts"
       },
       "headingKeywords": {}
     },
@@ -433,6 +458,7 @@
         "hiding-tags": "Hiding Tags",
         "plugin-googleanalytics": "Plugin: GoogleAnalytics",
         "plugin-disqus": "Plugin: Disqus",
+        "plugin-mathdelimiters": "Plugin: MathDelimiters",
         "using-external-plugins": "Using External Plugins",
         "adding-external-plugins": "Adding External Plugins",
         "writing-plugins": "Writing Plugins"
