@@ -97,9 +97,13 @@
         "introduction": "Introduction",
         "mcq-and-checkbox-questions": "MCQ and Checkbox Questions",
         "which-of-the-following-is-true": "Which of the following is true?",
+        "fill-in-the-blanks-questions": "Fill-in-the-Blanks Questions",
+        "german-sociologist-called-the-process-of-simultaneously-analyzing-the-behavior-of-individuals-and-the-society-that-shapes-that-behavior": "German sociologist __________ called the process of simultaneously analyzing the behavior of individuals and the society that shapes that behavior __________.",
+        "in-computer-science-acid-is-a-set-of-properties-of-database-transactions-intended-to-guarantee-data-validity-despite-errors-power-failures-and-other-mishaps-these-properties-are-a-for-c-for-i-for-and-d-for": "In computer science, ACID is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. These properties are: A for __________, C for __________, I for __________, and D for __________.",
         "text-questions": "Text Questions",
         "quizzes": "Quizzes",
-        "which-of-the-following-is-true-2": "Which of the following is true?"
+        "which-of-the-following-is-true-2": "Which of the following is true?",
+        "german-sociologist-called-the-process-of-simultaneously-analyzing-the-behavior-of-individuals-and-the-society-that-shapes-that-behavior-2": "German sociologist __________ called the process of simultaneously analyzing the behavior of individuals and the society that shapes that behavior __________."
       },
       "headingKeywords": {}
     },
