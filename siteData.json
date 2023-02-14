@@ -2,6 +2,12 @@
   "enableSearch": true,
   "pages": [
     {
+      "src": "404.md",
+      "title": "Page not found",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
       "src": "about.md",
       "title": "About Us",
       "headings": {
@@ -18,6 +24,16 @@
         "course-websites": "Course Websites",
         "online-books": "Online Books",
         "product-project-websites": "Product/Project Websites"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/addingNavigationButtons.md",
+      "title": "User Guide: Adding Navigation Buttons",
+      "headings": {
+        "adding-navigation-buttons": "Adding Navigation Buttons",
+        "adding-the-required-file-and-folder": "Adding the required file and folder",
+        "editing-the-content-files": "Editing the content files"
       },
       "headingKeywords": {}
     },
@@ -86,7 +102,11 @@
         "site-navigation-menus": "Site Navigation Menus",
         "page-navigation-menus": "Page Navigation Menus"
       },
-      "headingKeywords": {}
+      "headingKeywords": {
+        "page-navigation-menus": [
+          "print page nav as table of content"
+        ]
+      }
     },
     {
       "src": "userGuide/components/others.md",
@@ -183,6 +203,7 @@
         "wrap-text-button": "Wrap text button",
         "inline-code": "Inline Code",
         "syntax-coloring-2": "Syntax coloring",
+        "displaying-content-within-curly-braces-content": "Displaying content within curly braces: {{ content }}",
         "horizontal-rules": "Horizontal Rules",
         "different-types-of-horizontal-rules": "Different Types Of Horizontal Rules",
         "links": "Links",
@@ -228,7 +249,8 @@
       "headings": {
         "gitignore": ".gitignore"
       },
-      "headingKeywords": {}
+      "headingKeywords": {},
+      "frontmatterKeywords": ".gitignore"
     },
     {
       "src": "userGuide/glossary.md",
@@ -284,6 +306,15 @@
       "headingKeywords": {}
     },
     {
+      "src": "userGuide/redirectingToACustom404Page.md",
+      "title": "User Guide: Redirecting to a Custom 404 Page",
+      "headings": {
+        "redirecting-to-a-custom-404-page": "Redirecting to a Custom 404 Page",
+        "modifying-the-default-404-page": "Modifying the default 404 page"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "userGuide/reusingContents.md",
       "title": "User Guide: Reusing Contents",
       "headings": {
@@ -295,9 +326,9 @@
         "includes": "Includes",
         "include-inside-an-included-file": "&lt;include&gt; Inside an Included File",
         "specifying-variables-in-an-include": "Specifying Variables in an &lt;include&gt;",
+        "excluding-files-from-rendering-as-pages": "Excluding Files from Rendering as Pages",
         "using-boilerplate-files": "Using Boilerplate Files",
         "reusing-contents-across-sites": "Reusing Contents Across Sites",
-        "creating-custom-fragments": "Creating Custom Fragments",
         "creating-content-variations": "Creating Content Variations",
         "allowing-users-to-remove-some-contents": "Allowing users to remove some contents",
         "giving-alternative-contents": "Giving alternative contents",
@@ -305,6 +336,7 @@
         "organizing-contents-in-alternative-ways": "Organizing contents in alternative ways",
         "optimizing-the-print-view": "Optimizing the Print View",
         "hiding-some-info-in-the-generated-content": "Hiding some info in the generated content",
+        "deploying-a-page-multiple-times-with-different-titles": "Deploying a page multiple times with different titles",
         "creating-slight-variations-of-content": "Creating slight variations of content"
       },
       "headingKeywords": {
@@ -315,7 +347,7 @@
     },
     {
       "src": "userGuide/settingSiteProperties.md",
-      "title": "site.json File",
+      "title": "User Guide: Setting Site Properties",
       "headings": {
         "setting-site-properties": "Setting Site Properties"
       },
@@ -345,7 +377,8 @@
         "intrasitelinkvalidation": "intrasiteLinkValidation",
         "plantumlcheck": "plantumlCheck"
       },
-      "headingKeywords": {}
+      "headingKeywords": {},
+      "frontmatterKeywords": "site.json"
     },
     {
       "src": "userGuide/templates.md",
@@ -411,7 +444,7 @@
       "title": "User Guide: Tweaking the Page Structure",
       "headings": {
         "tweaking-the-page-structure": "Tweaking the Page Structure",
-        "front-matter": "Front Matter",
+        "frontmatter": "Frontmatter",
         "layouts": "Layouts",
         "inserting-content-into-the-head": "Inserting content into the &lt;head&gt;",
         "inserting-scripts-after-the-body-tag": "Inserting scripts after the &lt;body&gt; tag",
