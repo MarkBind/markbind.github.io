@@ -58,7 +58,7 @@
       "src": "userGuide/cliCommands.md",
       "title": "User Guide: Command Line Interface (CLI)",
       "headings": {
-        "markbind-cli": "MarkBind CLI",
+        "cli-commands": "CLI Commands",
         "overview": "Overview",
         "init-command": "init Command",
         "serve-command": "serve Command",
@@ -72,7 +72,7 @@
       "src": "userGuide/components/advanced.md",
       "title": "User Guide: Advanced Component Usage",
       "headings": {
-        "advanced-tips-and-tricks": "Advanced Tips and Tricks",
+        "advanced": "Advanced",
         "richer-formatting-of-attributes-using-slots": "Richer formatting of attributes using slots",
         "inserting-custom-classes-into-components": "Inserting custom classes into components"
       },
@@ -82,7 +82,7 @@
       "src": "userGuide/components/imagesAndDiagrams.md",
       "title": "User Guide: Image & Diagram Components",
       "headings": {
-        "image-and-amp-diagram-components": "Image &amp; Diagram Components",
+        "images-and-amp-diagrams": "Images &amp; Diagrams",
         "pictures": "Pictures",
         "annotations": "Annotations",
         "thumbnails": "Thumbnails",
@@ -95,12 +95,15 @@
       "src": "userGuide/components/navigation.md",
       "title": "User Guide: Navigation Components",
       "headings": {
-        "navigation-components": "Navigation Components",
+        "navigation": "Navigation",
         "dropdowns": "Dropdowns",
         "search-bars": "Search Bars",
         "navbars": "Navbars",
+        "breadcrumbs": "Breadcrumbs",
+        "usage": "Usage",
         "site-navigation-menus": "Site Navigation Menus",
-        "page-navigation-menus": "Page Navigation Menus"
+        "page-navigation-menus": "Page Navigation Menus",
+        "scroll-to-top-button": "Scroll To Top Button"
       },
       "headingKeywords": {
         "page-navigation-menus": [
@@ -112,7 +115,7 @@
       "src": "userGuide/components/others.md",
       "title": "User Guide: Other Components",
       "headings": {
-        "other-components": "Other Components",
+        "others": "Others",
         "questions-and-quizzes": "Questions and Quizzes",
         "introduction": "Introduction",
         "mcq-and-checkbox-questions": "MCQ and Checkbox Questions",
@@ -123,7 +126,9 @@
         "text-questions": "Text Questions",
         "quizzes": "Quizzes",
         "which-of-the-following-is-true-2": "Which of the following is true?",
-        "german-sociologist-called-the-process-of-simultaneously-analyzing-the-behavior-of-individuals-and-the-society-that-shapes-that-behavior-2": "German sociologist __________ called the process of simultaneously analyzing the behavior of individuals and the society that shapes that behavior __________."
+        "german-sociologist-called-the-process-of-simultaneously-analyzing-the-behavior-of-individuals-and-the-society-that-shapes-that-behavior-2": "German sociologist __________ called the process of simultaneously analyzing the behavior of individuals and the society that shapes that behavior __________.",
+        "which-of-the-following-is-true-3": "Which of the following is true?",
+        "german-sociologist-called-the-process-of-simultaneously-analyzing-the-behavior-of-individuals-and-the-society-that-shapes-that-behavior-3": "German sociologist __________ called the process of simultaneously analyzing the behavior of individuals and the society that shapes that behavior __________."
       },
       "headingKeywords": {}
     },
@@ -131,7 +136,7 @@
       "src": "userGuide/components/popups.md",
       "title": "User Guide: Pop-Up Components",
       "headings": {
-        "pop-up-components": "Pop-Up Components",
+        "pop-ups": "Pop-Ups",
         "tooltips": "Tooltips",
         "popovers": "Popovers",
         "modals": "Modals"
@@ -142,7 +147,7 @@
       "src": "userGuide/components/presentation.md",
       "title": "User Guide: Presentational Components",
       "headings": {
-        "presentational-components": "Presentational Components",
+        "presentation": "Presentation",
         "badges": "Badges",
         "boxes": "Boxes",
         "header": "Header 🚀",
@@ -227,7 +232,7 @@
         "using-variables": "Using variables",
         "custom-formatting": "Custom formatting",
         "adding-days": "Adding days",
-        "page-variables": "Page variables",
+        "nunjucks-variables": "Nunjucks variables",
         "advanced-formatting": "Advanced Formatting",
         "math-formulae": "Math Formulae",
         "relevant-tips-and-amp-tricks": "Relevant Tips &amp; Tricks"
@@ -247,7 +252,7 @@
       "src": "userGuide/gitignoreFile.md",
       "title": "User Guide: .gitignore",
       "headings": {
-        "gitignore": ".gitignore"
+        "gitignore-file": ".gitignore File"
       },
       "headingKeywords": {},
       "frontmatterKeywords": ".gitignore"
@@ -256,6 +261,7 @@
       "src": "userGuide/glossary.md",
       "title": "Glossary",
       "headings": {
+        "glossary": "Glossary",
         "live-preview": "Live Preview "
       },
       "headingKeywords": {}
@@ -300,7 +306,7 @@
         "markbind-extensions-to-markdown": " MarkBind Extensions to Markdown",
         "markbind-custom-syntax": " MarkBind Custom Syntax",
         "support-for-html-javascript-css": " Support for HTML, JavaScript, CSS",
-        "markbind-vue-components-and-bootstrap": " MarkBind Vue components and Bootstrap",
+        "support-for-bootstrap": " Support for Bootstrap",
         "support-for-nunjucks": " Support for Nunjucks"
       },
       "headingKeywords": {}
@@ -393,7 +399,7 @@
       "src": "userGuide/themes.md",
       "title": "User Guide: Themes",
       "headings": {
-        "themes": "Themes",
+        "applying-themes": "Applying Themes",
         "specifying-a-theme": "Specifying a Theme",
         "supported-themes": "Supported Themes",
         "bootswatch-cerulean": "bootswatch-cerulean",
@@ -496,6 +502,7 @@
         "plugin-googleanalytics": "Plugin: GoogleAnalytics",
         "plugin-disqus": "Plugin: Disqus",
         "plugin-mathdelimiters": "Plugin: MathDelimiters",
+        "plugin-web3forms": "Plugin: Web3Forms",
         "using-external-plugins": "Using External Plugins",
         "adding-external-plugins": "Adding External Plugins",
         "writing-plugins": "Writing Plugins"

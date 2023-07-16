@@ -3,10 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 4.1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MarkBind - Page not found</title>
-    <link rel="stylesheet" href="/markbind/css/bootstrap.min.css">
+    <meta name="generator" content="MarkBind 5.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>MarkBind - Page not found</title><link rel="stylesheet" href="/markbind/css/bootstrap.min.css">
     <link rel="stylesheet" href="/markbind/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/markbind/glyphicons/css/bootstrap-glyphicons.min.css">
     <link rel="stylesheet" href="/markbind/css/octicons.css">
@@ -14,15 +12,29 @@
     <link rel="stylesheet" href="/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/markbind/css/markbind.min.css"><script src="/markbind/js/polyfill.min.js"></script>
     <script src="/markbind/js/vue.min.js"></script>
     <script src="/markbind/js/markbind.min.js"></script>
-    <script src="404.page-vue-render.js"></script>
-    <script src="/markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/plugins/markbind-plugin-tree/markbind-plugin-tree.css"><link rel="icon" href="/favicon.ico"></head>
+    <script src="404.page-vue-render.js"></script><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/plugins/markbind-plugin-tree/markbind-plugin-tree.css"><link rel="icon" href="/favicon.ico"></head>
 <script>
   const baseUrl = ''
 </script>
 <body >
-<div id="app" data-server-rendered="true"><div><p></p><div class="text-center"><p style="font-size:10rem;">404</p></div> <div class="text-center"><p style="font-size:1.5rem;">File not found<br>Click <a href="/">here</a> to go back to the home page.</p></div><p></p> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div></div>
+<div id="app" data-server-rendered="true"><div><p></p><div class="text-center"><p style="font-size:10rem;">404</p></div> <div class="text-center"><p style="font-size:1.5rem;">File not found<br>Click <a href="/">here</a> to go back to the home page.</p></div><p></p></div></div>
 </body><script src="/markbind/js/bootstrap-utility.min.js"></script>
 <script>
   MarkBind.setupWithSearch()
 </script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
 </html>
