@@ -196,6 +196,8 @@
         "text-styles": "Text Styles",
         "blockquotes": "Blockquotes",
         "lists": "Lists",
+        "heading-1-overview": "Heading 1: Overview",
+        "heading-2-detailed-description": "Heading 2: Detailed Description",
         "code": "Code",
         "themes": "Themes",
         "fenced-code": "Fenced Code",
