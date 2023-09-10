@@ -246,7 +246,9 @@
       "title": "User Guide - Getting Started",
       "headings": {
         "getting-started": "Getting Started",
-        "quick-start": "Quick Start 🚀"
+        "method-1-install-markbind-globally-with-npm": "Method 1: Install MarkBind globally with npm",
+        "method-2-install-markbind-locally-as-a-dev-dependency-in-package-json": "Method 2: Install MarkBind locally as a dev-dependency in package.json",
+        "method-3-install-markbind-via-npx": "Method 3: Install MarkBind via npx"
       },
       "headingKeywords": {}
     },
