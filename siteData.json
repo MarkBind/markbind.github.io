@@ -85,6 +85,7 @@
         "images-and-amp-diagrams": "Images &amp; Diagrams",
         "pictures": "Pictures",
         "annotations": "Annotations",
+        "content": "Content",
         "thumbnails": "Thumbnails",
         "diagrams": "Diagrams",
         "tree": "Tree"
@@ -148,6 +149,7 @@
       "title": "User Guide: Presentational Components",
       "headings": {
         "presentation": "Presentation",
+        "use-of-markdown-in-content": "Use of markdown in content",
         "badges": "Badges",
         "boxes": "Boxes",
         "header": "Header 🚀",
@@ -443,9 +445,12 @@
       "src": "userGuide/troubleshooting.md",
       "title": "User Guide: Troubleshooting",
       "headings": {
+        "example-markdown-not-rendered-without-singposting": "Example: Markdown not rendered without singposting",
         "troubleshooting": "Troubleshooting",
         "html-rendering-issues": "HTML Rendering Issues",
-        "example-block-level-elements-inside-span-elements": "Example: block-level elements inside &lt;span&gt; elements"
+        "example-block-level-elements-inside-span-elements": "Example: block-level elements inside &lt;span&gt; elements",
+        "markdown-rendering-issues": "Markdown Rendering Issues",
+        "example-correct-markdown-rendering-using-tags-or-newline": "Example: correct Markdown rendering using tags or newline:"
       },
       "headingKeywords": {}
     },
