@@ -88,6 +88,8 @@
         "content": "Content",
         "thumbnails": "Thumbnails",
         "diagrams": "Diagrams",
+        "plantuml-diagrams": "PlantUML Diagrams",
+        "mermaid-diagrams": "Mermaid Diagrams",
         "tree": "Tree"
       },
       "headingKeywords": {}
@@ -228,6 +230,7 @@
         "using-font-awesome-icons": "Using Font Awesome Icons",
         "using-glyphicons": "Using Glyphicons",
         "using-octicons": "Using Octicons",
+        "using-bootstrap-icons": "Using Bootstrap icons",
         "using-material-icons": "Using Material Icons",
         "embeds": "Embeds",
         "embedding-youtube-videos": "Embedding YouTube Videos",
@@ -451,7 +454,8 @@
         "html-rendering-issues": "HTML Rendering Issues",
         "example-block-level-elements-inside-span-elements": "Example: block-level elements inside &lt;span&gt; elements",
         "markdown-rendering-issues": "Markdown Rendering Issues",
-        "example-correct-markdown-rendering-using-tags-or-newline": "Example: correct Markdown rendering using tags or newline:"
+        "example-correct-markdown-rendering-using-tags-or-newline": "Example: correct Markdown rendering using tags or newline:",
+        "content-with-local-links-not-working-when-included-with-include": "Content with local links not working when included with &lt;include&gt;"
       },
       "headingKeywords": {}
     },
@@ -513,6 +517,8 @@
         "plugin-disqus": "Plugin: Disqus",
         "plugin-mathdelimiters": "Plugin: MathDelimiters",
         "plugin-web3forms": "Plugin: Web3Forms",
+        "plugin-datatable": "Plugin: DataTable",
+        "plugin-mermaid": "Plugin: Mermaid",
         "using-external-plugins": "Using External Plugins",
         "adding-external-plugins": "Adding External Plugins",
         "writing-plugins": "Writing Plugins"
