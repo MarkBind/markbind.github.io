@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 5.5.2">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>MarkBind - Page not found</title> <link rel="stylesheet" href="/markbind/css/bootstrap.min.css"><link rel="stylesheet" href="/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/markbind/css/markbind.min.css"><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/plugins/markbind-plugin-tree/markbind-plugin-tree.css"><link rel="icon" href="/favicon.ico"></head>
+    <meta name="generator" content="MarkBind 5.5.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>MarkBind - Page not found</title> <link rel="stylesheet" href="/markbind/css/bootstrap.min.css"><link rel="stylesheet" href="/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/markbind/css/markbind.min.css"><link rel="stylesheet" href="/plugins/web3Form/web-3-form.css"><link rel="stylesheet" href="/plugins/dataTable/datatables.min.css"><link rel="stylesheet" href="/plugins/dataTable/datatables-additional.css"><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/plugins/markbind-plugin-tree/markbind-plugin-tree.css"><link rel="icon" href="/favicon.ico"></head>
 <script>
   const baseUrl = ''
 </script>
@@ -18,6 +18,50 @@
 <script>
   MarkBind.setupWithSearch()
 </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+      } else {
+          classList.add('wrap')
+      }
+    }
+    </script>
+    
+    <script>
+        function submitForm(element) {
+            event.preventDefault();
+            const formData = new FormData(element);
+            const formProps = Object.fromEntries(formData);
+            const json = JSON.stringify(formProps);
+            const submitButton = element.querySelector('button[type="submit"]');
+            const submitButtonText = submitButton.innerText;
+            submitButton.innerText = 'Please wait...'
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json,
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    alert('Form submitted! Thank you for your response');
+                } else {
+                    alert('Error submitting form! Please try again later.');
+                }
+            })
+            .catch(error => {
+                alert('Error submitting form! Please try again later.');
+            })
+            .finally(() => {
+                submitButton.innerText = submitButtonText;
+            })
+        }
+    </script>
     <script>
     function copyCodeBlock(element) {
         const pre = element.parentElement.parentElement;
@@ -33,4 +77,55 @@
         document.body.removeChild(textElement);
     }
     </script>
+    <script src="/plugins/dataTable/datatables.min.js"></script>
+    
+  <script>
+    function getTableOptions(el) {
+      const options = {};
+      if ($(el).hasClass('sortable-table')) {
+        options.searching = false;
+        options.paging = false;
+        options.info = false;
+      } else if ($(el).hasClass('searchable-table')) {
+        options.ordering = false;
+        options.paging = false;
+        options.info = false;
+        options.dom = '<"row"<"col-sm-12"f>>' + '<"row"<"col-sm-12"t>>';
+      } else if ($(el).hasClass('sortable-searchable-table')) {
+        options.paging = false;
+        options.info = false;
+        options.dom = '<"row"<"col-sm-12"f>>' + '<"row"<"col-sm-12"t>>';
+      }
+      return options;
+    }
+
+    Vue.directive('datatable', {
+      inserted: function(el, binding) {
+        const options = binding.value || {};
+        const tableOptions = getTableOptions(el);
+        $(el).DataTable({ ...tableOptions, ...options });
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      $('table.sortable-table, table.searchable-table, table.sortable-searchable-table').each(function() {
+        const options = getTableOptions(this);
+        $(this).DataTable(options);
+      });
+    });
+  </script>
+
+    <script type="module">
+    import mermaid from 'https://unpkg.com/mermaid@10/dist/mermaid.esm.min.mjs';
+    document.addEventListener('DOMContentLoaded', () => {
+      mermaid.initialize({});
+      Vue.directive('mermaid', {
+        inserted: function(el) {
+          mermaid.run({
+            nodes: [el]
+          });
+        }
+      });
+    });
+  </script>
 </html>
