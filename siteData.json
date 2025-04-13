@@ -160,6 +160,7 @@
         "panels": "Panels",
         "global-effects-of-the-script-and-styles-from-the-imported-externals": "Global Effects of the Script and Styles from the Imported Externals",
         "tabs": "Tabs",
+        "card-stack": "Card Stack",
         "relevant-tips-and-amp-tricks": "Relevant Tips &amp; Tricks"
       },
       "headingKeywords": {}
@@ -207,6 +208,7 @@
         "syntax-coloring": "Syntax coloring",
         "line-numbering": "Line numbering",
         "line-highlighting": "Line highlighting",
+        "custom-colors": "Custom Colors",
         "heading": "Heading",
         "using-multiple-features": "Using multiple features",
         "copy-button": "Copy button",
@@ -355,11 +357,7 @@
         "deploying-a-page-multiple-times-with-different-titles": "Deploying a page multiple times with different titles",
         "creating-slight-variations-of-content": "Creating slight variations of content"
       },
-      "headingKeywords": {
-        "optimizing-the-print-view": [
-          "hide minimized panels in the print view"
-        ]
-      }
+      "headingKeywords": {}
     },
     {
       "src": "userGuide/settingSiteProperties.md",
