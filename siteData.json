@@ -42,7 +42,8 @@
       "title": "User Guide: Adding Pages",
       "headings": {
         "adding-pages": "Adding Pages",
-        "external-static-html-web-pages": "External Static HTML Web Pages"
+        "external-static-html-web-pages": "External Static HTML Web Pages",
+        "generating-custom-file-types": "Generating Custom File Types"
       },
       "headingKeywords": {}
     },
@@ -337,6 +338,8 @@
       "headings": {
         "reusing-contents": "Reusing Contents",
         "variables": "Variables",
+        "basic-usage-of-variables": "Basic Usage of Variables",
+        "escaping-nunjucks-syntax": "Escaping Nunjucks Syntax",
         "global-variables": "Global Variables",
         "built-in-global-variables": "Built-in Global Variables",
         "importing-variables-from-other-external-file-formats": "Importing variables from other external file formats",
