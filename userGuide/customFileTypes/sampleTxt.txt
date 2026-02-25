@@ -4,5 +4,5 @@ The content below demonstrates nunjucks variables usage for custom file types:
 
 
  {{ baseUrl }} : ""
- {{ timestamp }} : "Tue, 3 Feb 2026, 8:39:40 UTC"
- {{ MarkBind }} : ”<a href='https://markbind.org/'>MarkBind 6.2.0</a>“
+ {{ timestamp }} : "Wed, 25 Feb 2026, 16:01:58 UTC"
+ {{ MarkBind }} : ”<a href='https://markbind.org/'>MarkBind 6.3.0</a>“
