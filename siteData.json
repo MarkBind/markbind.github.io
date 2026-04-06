@@ -107,7 +107,8 @@
         "usage": "Usage",
         "site-navigation-menus": "Site Navigation Menus",
         "page-navigation-menus": "Page Navigation Menus",
-        "scroll-to-top-button": "Scroll To Top Button"
+        "scroll-to-top-button": "Scroll To Top Button",
+        "dark-mode-toggle": "Dark Mode Toggle"
       },
       "headingKeywords": {
         "page-navigation-menus": [
@@ -165,6 +166,18 @@
         "custom-tag-order-and-colors": "Custom Tag Order and Colors",
         "disabling-tag-counts": "Disabling Tag Counts",
         "relevant-tips-and-amp-tricks": "Relevant Tips &amp; Tricks"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "userGuide/darkMode.md",
+      "title": "User Guide: Dark Mode",
+      "headings": {
+        "dark-mode": "Dark Mode",
+        "enabling-dark-mode": "Enabling Dark Mode",
+        "adapting-existing-sites-to-dark-mode": "Adapting Existing Sites to Dark Mode",
+        "updating-stylesheet": "Updating stylesheet",
+        "adapting-your-contents": "Adapting your contents"
       },
       "headingKeywords": {}
     },
@@ -288,6 +301,11 @@
         "search-bars": "Search Bars",
         "keywords": "Keywords",
         "including-or-excluding-headings": "Including or Excluding Headings",
+        "using-pagefind-beta": "Using Pagefind (Beta)",
+        "ignoring-individual-elements-from-pagefind-search": "Ignoring Individual Elements from Pagefind Search",
+        "using-pagefind-configuration": "Using Pagefind Configuration",
+        "excluding-content-from-search-index": "Excluding Content from Search Index",
+        "limiting-which-pages-are-searchable": "Limiting Which Pages Are Searchable",
         "using-external-search-services": "Using External Search Services"
       },
       "headingKeywords": {

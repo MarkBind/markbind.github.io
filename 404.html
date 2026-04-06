@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html data-dark-mode="false" data-code-theme="light">
 <head>
+    <script src="/markbind/js/theme-manager.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 6.3.1">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>MarkBind - Page not found</title> <link rel="stylesheet" href="/markbind/css/bootstrap.min.css"><link rel="stylesheet" href="/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/markbind/css/markbind.min.css"><link rel="stylesheet" href="/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/plugins/web3Form/web-3-form.css"><link rel="stylesheet" href="/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/plugins/dataTable/datatables.min.css"><link rel="stylesheet" href="/plugins/dataTable/datatables-additional.css"><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/plugins/markbind-plugin-tree/markbind-plugin-tree.css"><link rel="icon" href="/favicon.ico"></head>
+    <meta name="generator" content="MarkBind 7.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>MarkBind - Page not found</title> <link rel="stylesheet" href="/markbind/css/bootstrap.min.css">
+    
+    
+    <link rel="stylesheet" id="markbind-highlight-light" href="/markbind/css/codeblock-light.min.css">
+    <link rel="stylesheet" id="markbind-highlight-dark" href="/markbind/css/codeblock-dark.min.css">
+    <script src="/markbind/js/code-theme.js"></script><link rel="stylesheet" href="/markbind/css/markbind.min.css"><link rel="stylesheet" href="/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/plugins/web3Form/web-3-form.css"><link rel="stylesheet" href="/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/plugins/dataTable/datatables.min.css"><link rel="stylesheet" href="/plugins/dataTable/datatables-additional.css"><link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/plugins/markbind-plugin-tree/markbind-plugin-tree.css"><link rel="icon" href="/favicon.ico"></head>
 <script>
   const baseUrl = ''
 </script>
-<body  data-code-theme="light">
+<body 
+   
+  data-code-theme="light">
 <div id="app"><div><p><div class="text-center"><p style="font-size:10rem;">404</p></div> <div class="text-center"><p style="font-size:1.5rem;">File not found<br>Click <a href="/">here</a> to go back to the home page.</p></div></p></div></div>
 </body><script src="/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/markbind/js/polyfill.min.js"></script>
@@ -22,7 +30,7 @@
     function toggleCodeBlockWrap(element) {
       const pre = element.parentElement.parentElement;
       const tooltipText = element.querySelector(".tooltiptext");
-      const classList = pre.querySelector('code').classList; 
+      const classList = pre.querySelector('code').classList;
       if (classList.contains('wrap')) {
           classList.remove('wrap');
           tooltipText.innerText  = `Wrap Text`;
@@ -87,7 +95,7 @@
     height="18"
     viewBox="2 2 22 22"
   >
-    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875
     L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
   </svg>
 `;
@@ -282,4 +290,5 @@
     });
 
   </script>
+    <script src="/markbind/js/pagefind-lazyloader.js"></script>
 </html>

@@ -1,0 +1,37 @@
+Pagefind logging initialized
+[Info]: Did not find a data-pagefind-body element on the site.
+↳ Indexing all <body> elements on the site.
+[Status]: [Reading languages]
+[Info]: Discovered 1 language: unknown
+[Info]:   * unknown: 28 pages
+[Status]: [Building search indexes]
+[Info]: Language unknown: 
+  Indexed 28 pages
+  Indexed 3171 words
+  Indexed 0 filters
+  Indexed 0 sorts
+
+[Info]: Total: 
+  Indexed 1 language
+  Indexed 28 pages
+  Indexed 3171 words
+  Indexed 0 filters
+  Indexed 0 sorts
+[Info]: Did not find a data-pagefind-body element on the site.
+↳ Indexing all <body> elements on the site.
+[Status]: [Reading languages]
+[Info]: Discovered 1 language: unknown
+[Info]:   * unknown: 28 pages
+[Status]: [Building search indexes]
+[Info]: Language unknown: 
+  Indexed 28 pages
+  Indexed 3171 words
+  Indexed 0 filters
+  Indexed 0 sorts
+
+[Info]: Total: 
+  Indexed 1 language
+  Indexed 28 pages
+  Indexed 3171 words
+  Indexed 0 filters
+  Indexed 0 sorts
