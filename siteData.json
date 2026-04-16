@@ -62,6 +62,7 @@
         "cli-commands": "CLI Commands",
         "overview": "Overview",
         "init-command": "init Command",
+        "skills-command": "skills Command",
         "serve-command": "serve Command",
         "build-command": "build Command",
         "deploy-command": "deploy Command",
